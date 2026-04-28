@@ -38,519 +38,10 @@
     }
   ]}
   </script>
-  <style>
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    html{font-size:16px;scroll-behavior:smooth}
-    body{
-      font-family:'Yu Gothic','游ゴシック',YuGothic,'Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3','Meiryo','メイリオ',sans-serif;
-      font-weight:400;
-      color:#28282D;
-      background:#fff;
-      overflow-x:hidden;
-      -webkit-font-smoothing:antialiased;
-    }
-    img{max-width:100%;height:auto;display:block}
-    a{color:inherit;text-decoration:none}
-    ul,ol{list-style:none}
-
-    /* HEADER */
-    .hd{
-      position:fixed;top:0;left:0;right:0;
-      height:72px;
-      background:#fff;
-      display:flex;align-items:center;justify-content:space-between;
-      padding:0 48px;
-      z-index:100;
-      border-bottom:1px solid #E8E8E8;
-    }
-    .hd-logo img{height:34px;width:auto}
-    .hd-nav{display:flex;align-items:center;gap:32px}
-    .hd-nav a{font-size:13px;letter-spacing:0.04em;color:#28282D;transition:opacity .2s;padding:14px 0}
-    .hd-nav a:hover{opacity:.5}
-    .hd-btn{
-      display:inline-flex;align-items:center;justify-content:center;
-      height:48px;padding:0 28px;
-      background:#28282D;color:#fff;
-      font-size:13px;letter-spacing:0.08em;font-weight:600;
-      border:1px solid #28282D;
-      transition:background .2s,color .2s;
-    }
-    .hd-btn:hover{background:#fff;color:#28282D}
-    .hd-btn-external{
-      display:inline-flex;align-items:center;justify-content:center;gap:6px;
-      height:48px;padding:0 20px;
-      background:#fff;color:#28282D;
-      font-size:12px;letter-spacing:0.04em;font-weight:600;
-      border:1.5px solid #28282D;
-      transition:background .2s,color .2s;
-      white-space:nowrap;
-      line-height:1.3;
-    }
-    .hd-btn-external:hover{background:#28282D;color:#fff}
-    .hd-btn-external svg{flex-shrink:0;transition:transform .2s}
-    .hd-btn-external:hover svg{transform:translate(2px,-2px)}
-    .hd-btns{display:flex;align-items:center;gap:10px}
-
-    /* DROPDOWN MENU */
-    .hd-nav-item{position:relative}
-    .hd-nav-item>a{display:flex;align-items:center;gap:4px;cursor:pointer;padding:14px 0}
-    .hd-nav-item>a::after{
-      content:'';
-      display:inline-block;
-      width:6px;height:6px;
-      border-right:1px solid #28282D;
-      border-bottom:1px solid #28282D;
-      transform:rotate(45deg) translateY(-2px);
-      transition:transform .2s;
-    }
-    .hd-nav-item.open>a::after{transform:rotate(-135deg) translateY(-2px)}
-    .hd-dropdown{
-      position:absolute;top:calc(100% + 12px);left:50%;
-      transform:translateX(-50%) translateY(-8px);
-      background:#fff;
-      border:1px solid #E8E8E8;
-      min-width:200px;
-      opacity:0;visibility:hidden;
-      transition:opacity .22s,transform .22s,visibility .22s;
-      z-index:200;
-      box-shadow:0 8px 32px rgba(0,0,0,.08);
-    }
-    .hd-dropdown::before{
-      content:'';
-      position:absolute;top:-14px;left:0;right:0;
-      height:14px;
-    }
-    .hd-nav-item.open .hd-dropdown{
-      opacity:1;visibility:visible;
-      transform:translateX(-50%) translateY(0);
-    }
-    .hd-dropdown a{
-      display:block;
-      padding:12px 20px;
-      font-size:13px;
-      color:#28282D;
-      border-bottom:1px solid #F0F0F0;
-      transition:background .15s;
-      white-space:nowrap;
-    }
-    .hd-dropdown a:last-child{border-bottom:none}
-    .hd-dropdown a:hover{background:#F7F7F7;opacity:1}
-    .hd-dropdown-sub{border-bottom:1px solid #F0F0F0}
-    .hd-dropdown-sub-label{
-      font-size:11px;letter-spacing:.1em;
-      color:#767680;padding:10px 20px 4px;
-      text-transform:uppercase;display:block;
-    }
-    .hd-dropdown-sub a{padding:9px 20px 9px 28px;font-size:12px;border-bottom:none}
-    .hd-dropdown-sub:last-child{border-bottom:none}
-
-    /* MEGA MENU */
-    .hd-mega-wrap{
-      position:fixed;top:72px;left:0;right:0;
-      background:#F5F5F5;
-      border-top:1px solid #E8E8E8;
-      border-bottom:1px solid #E0E0E0;
-      box-shadow:0 12px 40px rgba(0,0,0,.08);
-      opacity:0;visibility:hidden;
-      transition:opacity .22s,transform .22s,visibility .22s;
-      transform:translateY(-8px);
-      z-index:200;
-      padding:20px 0 24px;
-    }
-    .hd-nav-item.open .hd-mega-wrap{opacity:1;visibility:visible;transform:translateY(0)}
-    .hd-mega{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-      max-width:1200px;margin:0 auto;width:100%;
-      gap:12px;padding:0 24px;
-    }
-    .hd-mega::before{content:'';position:absolute;top:-14px;left:0;right:0;height:14px}
-    .hd-mega-col{background:#fff;border:1px solid #E8E8E8;padding:18px 20px 14px}
-    .hd-mega-col-label{
-      font-size:13px;letter-spacing:.04em;white-space:nowrap;font-weight:700;
-      color:#1A1A1E;display:block;padding-bottom:10px;margin-bottom:10px;
-      border-bottom:2px solid #1A1A1E;overflow:hidden;text-overflow:ellipsis;
-    }
-    .hd-mega-col a{
-      display:flex;align-items:center;gap:6px;padding:12px 0;
-      font-size:14px;color:#28282D;border-bottom:1px solid #F0F0F0;
-      transition:color .15s;white-space:nowrap;
-    }
-    .hd-mega-col a:last-child{border-bottom:none}
-    .hd-mega-col a::before{
-      content:'';width:4px;height:4px;border-radius:50%;
-      background:#1A1A1E;flex-shrink:0;opacity:.25;transition:opacity .15s;
-    }
-    .hd-mega-col a:hover{color:#000;background:none}
-    .hd-mega-col a:hover::before{opacity:1}
-
-    /* HAMBURGER */
-    .hd-hamburger{
-      display:none;flex-direction:column;justify-content:center;align-items:center;
-      width:44px;height:44px;cursor:pointer;gap:6px;background:none;border:none;padding:0;
-    }
-    .hd-hamburger span{display:block;width:24px;height:1px;background:#28282D;transition:transform .3s,opacity .3s}
-    .hd-hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
-    .hd-hamburger.open span:nth-child(2){opacity:0}
-    .hd-hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-
-    /* MOBILE DRAWER */
-    .hd-drawer{
-      display:none;position:fixed;top:72px;left:0;right:0;bottom:0;
-      background:#fff;overflow-y:auto;z-index:99;padding:24px 0 80px;
-      transform:translateX(100%);transition:transform .3s cubic-bezier(.16,1,.3,1);
-    }
-    .hd-drawer.open{transform:translateX(0)}
-    .hd-drawer-item{border-bottom:1px solid #F0F0F0}
-    .hd-drawer-link{
-      display:flex;align-items:center;justify-content:space-between;
-      padding:18px 24px;font-size:15px;color:#28282D;cursor:pointer;
-    }
-    .hd-drawer-link::after{
-      content:'';display:block;width:8px;height:8px;
-      border-right:1px solid #28282D;border-bottom:1px solid #28282D;
-      transform:rotate(45deg);transition:transform .2s;flex-shrink:0;
-    }
-    .hd-drawer-link.no-arrow::after{display:none}
-    .hd-drawer-link.open::after{transform:rotate(-135deg)}
-    .hd-drawer-sub{display:none;background:#F7F7F7;padding:8px 0}
-    .hd-drawer-sub.open{display:block}
-    .hd-drawer-sub a{
-      display:block;padding:13px 24px 13px 36px;font-size:13px;
-      color:#28282D;border-bottom:1px solid #EFEFEF;
-    }
-    .hd-drawer-sub a:last-child{border-bottom:none}
-    .hd-drawer-sub-label{font-size:11px;letter-spacing:.1em;color:#767680;padding:12px 24px 4px 36px;text-transform:uppercase}
-    .hd-drawer-cta{padding:24px;display:flex;flex-direction:column;gap:12px}
-    .hd-drawer-cta .hd-btn{display:flex;width:100%;justify-content:center;height:52px;font-size:14px}
-    .hd-drawer-cta .hd-btn-saicatsu{
-      display:flex;width:100%;justify-content:center;align-items:center;gap:6px;
-      height:52px;font-size:13px;background:#fff;color:#28282D;
-      border:1.5px solid #28282D;text-decoration:none;font-weight:500;
-      transition:background .2s,color .2s;letter-spacing:.04em;
-    }
-    .hd-drawer-cta .hd-btn-saicatsu:hover{background:#28282D;color:#fff}
-    .hd-drawer-cta .hd-btn-saicatsu:hover svg path{stroke:#fff}
-    .hd-drawer-sns{
-      padding:20px 24px 32px;border-top:1px solid #F0F0F0;
-      display:flex;flex-direction:column;align-items:center;gap:14px;
-    }
-    .hd-drawer-sns-label{font-size:10px;letter-spacing:.18em;color:#767680;font-weight:600}
-    .hd-drawer-sns-links{display:flex;align-items:center;justify-content:center;gap:12px}
-    .hd-drawer-sns-link{
-      display:flex;align-items:center;justify-content:center;
-      width:44px;height:44px;border:1px solid #D8D8DC;border-radius:50%;
-      text-decoration:none;transition:background .2s,border-color .2s;
-    }
-    .hd-drawer-sns-ig:hover{background:#E1306C;border-color:#E1306C}
-    .hd-drawer-sns-tt:hover{background:linear-gradient(135deg,#69C9D0 0%,#EE1D52 100%);border-color:transparent}
-    .hd-drawer-sns-x:hover{background:#000;border-color:#000}
-
-    /* CUSTOM CURSOR */
-    @media(hover:hover) and (pointer:fine){
-      body{cursor:none}
-      a,button,[role="button"],[tabindex]{cursor:none}
-    }
-    #cursor-dot{
-      position:fixed;top:0;left:0;z-index:9999;
-      width:6px;height:6px;background:#fff;border-radius:50%;
-      pointer-events:none;transform:translate(-50%,-50%);
-      mix-blend-mode:difference;transition:width .15s,height .15s,background .15s;
-      will-change:transform;
-    }
-    #cursor-ring{
-      position:fixed;top:0;left:0;z-index:9998;
-      width:32px;height:32px;border:1.5px solid #fff;border-radius:50%;
-      pointer-events:none;transform:translate(-50%,-50%);
-      mix-blend-mode:difference;
-      transition:width .25s cubic-bezier(.25,.46,.45,.94),height .25s cubic-bezier(.25,.46,.45,.94),background .25s,border-color .25s,mix-blend-mode 0s;
-      will-change:transform;
-    }
-    #cursor-ring.is-hovering{width:48px;height:48px;background:#fff;border-color:#fff;mix-blend-mode:difference}
-    #cursor-ring.is-cta{width:56px;height:56px;background:#fff;border-color:#fff;mix-blend-mode:difference}
-    @media(hover:none),not all and (pointer:fine){#cursor-dot,#cursor-ring{display:none}}
-
-    /* ナビリンク下線アニメーション */
-    .hd-nav>a,.footer-nav-group a{position:relative;text-decoration:none}
-    .hd-nav>a::before,.footer-nav-group a::before{
-      content:'';position:absolute;bottom:-1px;left:0;
-      width:0;height:1px;background:currentColor;
-      transition:width .3s cubic-bezier(.25,.46,.45,.94);
-    }
-    .hd-nav>a:hover::before,.footer-nav-group a:hover::before{width:100%}
-
-    /* FOOTER */
-    .footer{padding:80px 80px 48px;border-top:1px solid #E8E8E8}
-    .footer-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:64px}
-    .footer-logo img{height:30px;width:auto}
-    .footer-nav{display:grid;grid-template-columns:repeat(3,1fr);gap:48px}
-    /* フッター視認性設計原則
-       第1階層（ナビリンク）: #28282D
-       第2階層（本文情報）:   #4A4A52
-       第3階層（ラベル・補足）: #767680
-       ※ #B0B0B5以下はフッター内使用禁止 */
-    .footer-nav-title{font-size:12px;letter-spacing:.12em;color:#767680;margin-bottom:14px}
-    .footer-nav-group a{display:block;font-size:13px;color:#28282D;margin-bottom:10px;letter-spacing:.01em;transition:opacity .2s}
-    .footer-nav-group a:hover{opacity:.5}
-    .footer-bottom{display:flex;justify-content:flex-end;align-items:center;padding-top:24px;border-top:1px solid #E8E8E8}
-    .footer-copy{font-size:12px;color:#767680;letter-spacing:.05em}
-    .footer-logo-wrap{display:flex;flex-direction:column;gap:0}
-    .footer-logo-addr{font-size:12px;color:#4A4A52;line-height:1.9;font-style:normal;margin-top:20px}
-    .footer-logo-addr a{color:#4A4A52;text-decoration:none}
-    .footer-logo-addr a:hover{opacity:.6}
-    .footer-sns-block{margin-top:28px}
-    .footer-sns-label{font-size:10px;letter-spacing:.14em;color:#767680;font-weight:500;margin-bottom:12px}
-    .footer-sns{display:flex;align-items:center;gap:16px;margin-top:0}
-    .footer-logo-related{display:block;margin-top:24px;padding-top:20px;border-top:1px solid #E8E8E8}
-    .footer-related-label{display:block;font-size:10px;letter-spacing:.14em;color:#767680;font-weight:500;white-space:nowrap}
-    .footer-related-link{display:inline-flex;align-items:center;gap:5px;font-size:12px;color:#4A4A52;text-decoration:none;letter-spacing:.04em;transition:opacity .2s}
-    .footer-related-link:hover{opacity:.5}
-    .footer-bottom-right{display:flex;align-items:center;gap:24px}
-    .footer-privacy{font-size:12px;color:#4A4A52;text-decoration:none;letter-spacing:.04em}
-    .footer-privacy:hover{opacity:.6}
-
-    /* BREADCRUMB（PC表示） */
-    .breadcrumb{padding:12px 80px;border-bottom:1px solid #E8E8E8;background:#F5F5F3;}
-    .breadcrumb ol{display:flex;align-items:center;gap:8px;list-style:none;font-size:12px;color:#767680;flex-wrap:wrap}
-    .breadcrumb li{display:flex;align-items:center;gap:8px}
-    .breadcrumb li+li::before{content:'/';color:#767680}
-    .breadcrumb a{color:#767680;text-decoration:none}
-    .breadcrumb a:hover{color:#28282D}
-    .breadcrumb [aria-current]{color:#28282D}
-    /* スマホ時パンくずリスト：PC時は非表示 */
-    .breadcrumb-sp{display:none}
-
-    /* PAGE HEADER */
-    .page-header{padding:160px 80px 100px;background:#fff;border-bottom:1px solid #E8E8E8;}
-    .page-header-inner{max-width:1100px;margin:0 auto;}
-    .page-eyebrow{
-      font-size:11px;letter-spacing:.22em;color:#767680;
-      font-weight:700;text-transform:uppercase;margin-bottom:24px;
-      display:block;
-    }
-    .page-title{
-      font-size:clamp(36px,5vw,72px);
-      font-weight:700;letter-spacing:-.04em;
-      color:#28282D;line-height:1.2;margin-bottom:24px;
-    }
-    .page-subtitle{font-size:16px;color:#4A4A50;line-height:1.85;max-width:600px;}
-
-    /* CONTACT CONTENT */
-    .contact-wrap{max-width:800px;margin:0 auto;padding:64px 80px 120px}
-
-    /* INTRO */
-    .contact-intro{margin-bottom:56px}
-    .contact-intro-text{font-size:15px;line-height:1.85;color:#4A4A52;margin-bottom:24px}
-    .contact-tel-box{
-      display:flex;align-items:center;gap:32px;
-      padding:36px 40px;background:#F7F7F7;border:1px solid #E8E8E8;
-      flex-wrap:wrap;
-    }
-    .contact-tel-label{font-size:14px;letter-spacing:.08em;color:#4A4A52;font-weight:600}
-    .contact-tel-num{
-      font-size:clamp(36px,4.5vw,52px);font-weight:700;letter-spacing:-.02em;color:#28282D;
-      text-decoration:none;transition:opacity .2s;
-    }
-    .contact-tel-num:hover{opacity:.6}
-    .contact-tel-hours{font-size:14px;color:#767680;margin-top:6px}
-
-    /* FORM */
-    .contact-form-section{margin-bottom:0}
-    .contact-form-title{
-      font-size:18px;font-weight:500;letter-spacing:-.02em;color:#28282D;
-      margin-bottom:32px;padding-bottom:16px;border-bottom:1px solid #E8E8E8;
-    }
-
-    /* チェックボックス */
-    .form-check-group{margin-bottom:40px}
-    .form-checks-group-label{
-      font-size:13px;letter-spacing:.08em;color:#767680;font-weight:500;
-      text-transform:uppercase;margin-bottom:8px;margin-top:16px;
-    }
-    .form-checks-group-label:first-child{margin-top:0}
-    .form-check-label{
-      font-size:14px;letter-spacing:.02em;color:#28282D;font-weight:600;
-      margin-bottom:16px;display:block;
-    }
-    .form-check-required{
-      display:inline-block;font-size:12px;letter-spacing:.04em;
-      color:#fff;background:#D94F4F;padding:2px 8px;margin-left:8px;
-      vertical-align:middle;font-weight:600;
-    }
-    .form-check-optional{
-      display:inline-block;font-size:10px;letter-spacing:.06em;
-      color:#767680;border:1px solid #D8D8DC;padding:2px 7px;margin-left:8px;
-      vertical-align:middle;
-    }
-    .form-checks{display:flex;flex-wrap:wrap;gap:10px}
-    .form-check-item{
-      display:flex;align-items:center;gap:8px;
-      padding:10px 16px;border:1px solid #E8E8E8;cursor:pointer;
-      transition:border-color .2s,background .2s;font-size:14px;color:#28282D;
-      user-select:none;
-    }
-    .form-check-item:hover{border-color:#28282D}
-    .form-check-item input[type="checkbox"]{
-      width:16px;height:16px;accent-color:#28282D;cursor:pointer;flex-shrink:0;
-    }
-    .form-check-item.checked{background:#28282D;color:#fff;border-color:#28282D}
-    .form-check-item.checked input[type="checkbox"]{accent-color:#fff}
-
-    /* 入力フィールド */
-    .form-fields{display:flex;flex-direction:column;gap:28px}
-    .form-field{}
-    .form-field-label{
-      display:flex;align-items:center;gap:0;
-      font-size:14px;color:#28282D;font-weight:500;margin-bottom:10px;letter-spacing:.02em;
-    }
-    .form-field input[type="text"],
-    .form-field input[type="email"],
-    .form-field input[type="tel"],
-    .form-field textarea{
-      width:100%;
-      padding:14px 16px;
-      border:1px solid #D8D8DC;
-      font-size:15px;color:#28282D;
-      font-family:inherit;
-      background:#fff;
-      transition:border-color .2s;
-      border-radius:0;
-      -webkit-appearance:none;
-      appearance:none;
-    }
-    .form-field input:focus,
-    .form-field textarea:focus{
-      outline:none;border-color:#28282D;
-    }
-    .form-field textarea{resize:vertical;min-height:140px;line-height:1.7}
-    .form-field input::placeholder,
-    .form-field textarea::placeholder{color:#B0B0B5;font-size:14px}
-
-    /* 送信ボタン */
-    .form-submit{margin-top:40px;text-align:center}
-    .form-submit-btn{
-      display:inline-flex;align-items:center;justify-content:center;gap:10px;
-      width:100%;max-width:400px;height:60px;
-      background:#28282D;color:#fff;
-      font-size:15px;letter-spacing:.1em;font-weight:600;
-      border:none;cursor:pointer;
-      transition:background .2s,color .2s;
-      font-family:inherit;
-    }
-    .form-submit-btn:hover{background:#fff;color:#28282D;border:1px solid #28282D}
-    .form-submit-btn svg{transition:transform .2s}
-    .form-submit-btn:hover svg{transform:translateX(4px)}
-    .form-note{font-size:12px;color:#767680;margin-top:16px;line-height:1.7;text-align:left}
-    .form-note a{color:#28282D;text-decoration:underline;text-underline-offset:3px}
-    .form-note a:hover{opacity:.6}
-
-    /* ===== フェードアップアニメーション ===== */
-    .fu{
-      opacity:0;
-      transform:translateY(24px);
-      transition:opacity .6s cubic-bezier(.25,.46,.45,.94),transform .6s cubic-bezier(.25,.46,.45,.94);
-    }
-    .fu.on{
-      opacity:1;
-      transform:translateY(0);
-    }
-
-    /* RESPONSIVE */
-    @media(max-width:900px){
-      .hd{padding:0 20px}.hd-nav{display:none}
-      .hd-hamburger{display:flex}
-      .hd-drawer{display:block}
-      .hd-btns{display:none}
-      /* PC時パンくずを非表示 */
-      .breadcrumb{display:none}
-      /* スマホ時パンくずを表示 */
-      .breadcrumb-sp{
-        display:block;
-        padding:20px 24px 0;
-        border-top:1px solid #E8E8E8;
-      }
-      .breadcrumb-sp ol{display:flex;align-items:center;gap:8px;list-style:none;font-size:12px;color:#767680;flex-wrap:wrap}
-      .breadcrumb-sp li{display:flex;align-items:center;gap:8px}
-      .breadcrumb-sp li+li::before{content:'/';color:#767680}
-      .breadcrumb-sp a{color:#767680;text-decoration:none}
-      .breadcrumb-sp a:hover{color:#28282D}
-      .breadcrumb-sp [aria-current]{color:#28282D}
-
-      /* ===== PAGE HEADER ===== */
-      .page-header{padding:100px 24px 56px;}
-      .page-eyebrow{font-size:12px;}
-      .page-title{
-        font-size:clamp(28px,7.5vw,44px);
-        word-break:auto-phrase;
-        margin-bottom:20px;
-        line-height:1.25;
-      }
-      .page-subtitle{
-        font-size:15px;
-        line-height:1.85;
-      }
-      .page-subtitle br{display:none}
-
-      /* ===== CONTACT WRAP ===== */
-      .contact-wrap{padding:40px 24px 80px}
-
-      /* ===== TEL BOX ===== */
-      .contact-tel-box{flex-direction:column;align-items:flex-start;gap:8px;padding:24px 20px}
-      .contact-tel-num{
-        font-size:clamp(28px,7vw,40px);
-        letter-spacing:-.01em;
-      }
-      .contact-tel-hours{font-size:13px}
-
-      /* ===== FORM TITLE ===== */
-      .contact-form-title{font-size:16px;margin-bottom:24px}
-
-      /* ===== チェックボックス ===== */
-      .form-check-group{margin-bottom:32px}
-      .form-checks{gap:8px}
-      .form-check-item{
-        padding:12px 14px;
-        font-size:14px;
-        min-height:44px;
-        align-items:center;
-      }
-      .form-check-label{font-size:14px;margin-bottom:12px}
-      .form-checks-group-label{font-size:12px;margin-top:14px}
-
-      /* ===== 入力フィールド ===== */
-      .form-fields{gap:24px}
-      .form-field-label{font-size:14px;margin-bottom:8px}
-      /* iOSズーム防止: font-size を16px以上に */
-      .form-field input[type="text"],
-      .form-field input[type="email"],
-      .form-field input[type="tel"],
-      .form-field textarea{
-        font-size:16px;
-        padding:14px 14px;
-        -webkit-text-size-adjust:100%;
-      }
-      .form-field textarea{min-height:120px}
-
-      /* ===== 送信ボタン ===== */
-      .form-submit{margin-top:32px;text-align:left}
-      .form-submit-btn{
-        width:100%;
-        max-width:none;
-        height:56px;
-        font-size:15px;
-      }
-      .form-note{font-size:12px;margin-top:14px}
-
-      /* ===== FOOTER ===== */
-      .footer{padding:60px 24px 40px}
-      .footer-top{flex-direction:column;gap:40px}
-      .footer-nav{grid-template-columns:1fr 1fr;gap:28px}
-      .footer-bottom{flex-direction:column;gap:12px;align-items:flex-start}
-    }
-    @media(max-width:768px){
-      body{padding-bottom:0}
-    }
-  </style>
+    <link rel="stylesheet" href="../assets/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -561,7 +52,7 @@
 <!-- HEADER -->
 <header class="hd" role="banner">
   <a href="/" class="hd-logo" aria-label="セルフアチーブ トップページへ">
-    <img src="assets/logo_color.png" alt="selfachieve Acquisition Agency" width="160" height="34" fetchpriority="high">
+    <img src="/assets/logo_color.png" alt="selfachieve Acquisition Agency" width="160" height="34" fetchpriority="high">
   </a>
   <nav class="hd-nav" aria-label="グローバルナビゲーション">
     <span class="hd-nav-item">
@@ -569,72 +60,81 @@
       <div class="hd-mega-wrap">
       <div class="hd-mega" role="menu">
         <div class="hd-mega-col">
-          <span class="hd-mega-col-label">なんかうまくいかない...</span>
-          <a href="/strategy/" role="menuitem">WEB戦略設計</a>
+          <span class="hd-mega-col-label"><span class="col-label-main">戦略・全体</span><span class="col-label-sub">（なんか、うまくいかない…）</span></span>
+          <a href="/strategy/" role="menuitem">事業戦略</a>
+          <a href="/strategy/" role="menuitem">ブランディング</a>
+          <a href="/strategy/" role="menuitem">WEB戦略</a>
+          <a href="/strategy/" role="menuitem">マーケティング戦略</a>
+          <a href="/strategy/" role="menuitem">顧客戦略</a>
+          <a href="https://selfachieve.jp/saikatsu_r/" role="menuitem" target="_blank" rel="noopener noreferrer">採用戦略<svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-left:4px;opacity:.7"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
         </div>
         <div class="hd-mega-col">
-          <span class="hd-mega-col-label">集客したい</span>
+          <span class="hd-mega-col-label"><span class="col-label-main">集客</span><span class="col-label-sub">（サイトへの訪問者を増やしたい）</span></span>
           <a href="/seo/" role="menuitem">SEO対策</a>
           <a href="/meo/" role="menuitem">MEO対策</a>
-          <a href="/ai-seo/" role="menuitem">AI検索対策（LLM検索対策）</a>
-          <a href="/ads/listing/" role="menuitem">リスティング広告</a>
-          <a href="/ads/display/" role="menuitem">ディスプレイ広告</a>
+          <a href="/ads/" role="menuitem">WEB広告</a>
+          <a href="/sns/" role="menuitem">SNSマーケティング</a>
+          <a href="/sns/note/" role="menuitem">note対策</a>
+          <a href="/ai-seo/" role="menuitem">AI検索対策（LLM対策）</a>
         </div>
         <div class="hd-mega-col">
-          <span class="hd-mega-col-label">問い合わせを増やしたい</span>
-          <a href="/website/" role="menuitem">サイト制作・分析改善</a>
-          <a href="/strategy/" role="menuitem">WEB戦略設計</a>
+          <span class="hd-mega-col-label"><span class="col-label-main">成約</span><span class="col-label-sub">（問い合わせ・売上を増やしたい）</span></span>
+          <a href="/website/" role="menuitem">ホームページ制作</a>
+          <a href="/website/" role="menuitem">分析改善</a>
+          <a href="/website/lp/" role="menuitem">LP制作</a>
         </div>
         <div class="hd-mega-col">
-          <span class="hd-mega-col-label">追客したい</span>
+          <span class="hd-mega-col-label"><span class="col-label-main">再販・追客</span><span class="col-label-sub">（一度来た人にまた来てほしい）</span></span>
           <a href="/sns/line/" role="menuitem">LINE</a>
           <a href="/sns/instagram/" role="menuitem">Instagram</a>
           <a href="/sns/x/" role="menuitem">X（旧Twitter）</a>
           <a href="/sns/youtube/" role="menuitem">YouTube</a>
-          <a href="/sns/tiktok/" role="menuitem">TikTok</a>
-          <a href="/sns/note/" role="menuitem">note</a>
+        </div>
+        <div class="hd-mega-col">
+          <span class="hd-mega-col-label"><span class="col-label-main">AI活用</span><span class="col-label-sub">（AIで業務を効率化・最適化したい）</span></span>
+          <a href="/ai-automation/" role="menuitem">業務効率化</a>
+          <a href="/ai-automation/" role="menuitem">分析深化</a>
         </div>
       </div>
       </div>
     </span>
     <span class="hd-nav-item">
-      <a href="/service/">サービス</a>
+      <a href="javascript:void(0)">サービス</a>
       <div class="hd-mega-wrap">
       <div class="hd-mega" role="menu">
         <div class="hd-mega-col">
-          <span class="hd-mega-col-label">マーケティング戦略</span>
-          <a href="/strategy/" role="menuitem">WEB戦略設計</a>
+          <span class="hd-mega-col-label"><span class="col-label-main">戦略設計</span></span>
+          <a href="/strategy/" role="menuitem">事業戦略</a>
+          <a href="/strategy/" role="menuitem">ブランディング</a>
+          <a href="/strategy/" role="menuitem">WEB戦略</a>
+          <a href="/strategy/" role="menuitem">マーケティング戦略</a>
+          <a href="/strategy/" role="menuitem">顧客戦略</a>
+          <a href="https://selfachieve.jp/saikatsu_r/" role="menuitem" target="_blank" rel="noopener noreferrer">採用戦略<svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-left:4px;opacity:.7"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
         </div>
         <div class="hd-mega-col">
-          <span class="hd-mega-col-label">WEB集客施策</span>
-          <a href="/website/" role="menuitem">サイト制作・分析改善</a>
+          <span class="hd-mega-col-label"><span class="col-label-main">集客施策</span></span>
           <a href="/seo/" role="menuitem">SEO対策</a>
           <a href="/meo/" role="menuitem">MEO対策</a>
-          <a href="/ai-seo/" role="menuitem">AI検索対策（LLM検索対策）</a>
+          <a href="/ads/" role="menuitem">WEB広告</a>
+          <a href="/sns/" role="menuitem">SNSマーケティング</a>
+          <a href="/sns/note/" role="menuitem">note対策</a>
+          <a href="/ai-seo/" role="menuitem">AI検索対策（LLM対策）</a>
         </div>
         <div class="hd-mega-col">
-          <span class="hd-mega-col-label">SNSマーケティング特化施策</span>
-          <a href="/sns/" role="menuitem" class="hd-mega-col-top-link">SNSマーケティング</a>
-          <a href="/sns/instagram/" role="menuitem">Instagram</a>
-          <a href="/sns/tiktok/" role="menuitem">TikTok</a>
-          <a href="/sns/x/" role="menuitem">X（旧Twitter）</a>
-          <a href="/sns/youtube/" role="menuitem">YouTube</a>
-          <a href="/sns/note/" role="menuitem">note</a>
-          <a href="/sns/line/" role="menuitem">LINE</a>
+          <span class="hd-mega-col-label"><span class="col-label-main">成約</span></span>
+          <a href="/website/" role="menuitem">ホームページ制作</a>
+          <a href="/website/" role="menuitem">分析改善</a>
+          <a href="/website/lp/" role="menuitem">LP制作</a>
         </div>
         <div class="hd-mega-col">
-          <span class="hd-mega-col-label">WEB広告マーケティング</span>
-          <a href="/ads/listing/" role="menuitem">リスティング広告</a>
-          <a href="/ads/display/" role="menuitem">ディスプレイ広告</a>
-        </div>
-        <div class="hd-mega-col">
-          <span class="hd-mega-col-label">AX・業務改善</span>
-          <a href="/ai-automation/" role="menuitem">AI業務効率化・導入支援</a>
+          <span class="hd-mega-col-label"><span class="col-label-main">AI活用支援（DX/AX）</span></span>
+          <a href="/ai-automation/" role="menuitem">業務効率化</a>
+          <a href="/ai-automation/" role="menuitem">分析深化</a>
         </div>
       </div>
       </div>
     </span>
-    <a href="/works/">制作実績</a>
+    <a href="/works/">実績</a>
     <a href="/voice/">お客さまの声</a>
     <span class="hd-nav-item">
       <a href="/company/">会社情報</a>
@@ -649,7 +149,7 @@
   </nav>
   <div class="hd-btns">
     <a href="https://saikatsu-r.jp/" class="hd-btn-external" target="_blank" rel="noopener noreferrer" aria-label="企業の採用活動を成功に導く「サイカツ.R」（別サイトが開きます）">企業の採用活動を成功に導く「サイカツ.R」<svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
-    <a href="#contact" class="hd-btn" aria-label="無料相談を申し込む">無料相談</a>
+    <a href="/contact/" class="hd-btn" aria-label="初回の相談無料">初回の相談無料</a>
   </div>
   <button class="hd-hamburger" aria-label="メニューを開く" aria-expanded="false" aria-controls="hd-drawer">
     <span></span><span></span><span></span>
@@ -661,57 +161,69 @@
   <div class="hd-drawer-item">
     <div class="hd-drawer-link" data-drawer-toggle>課題から探す</div>
     <div class="hd-drawer-sub">
-      <p class="hd-drawer-sub-label">なんかうまくいかない...</p>
-      <a href="/strategy/">WEB戦略設計</a>
-      <p class="hd-drawer-sub-label">集客したい</p>
+      <p class="hd-drawer-sub-label">戦略・全体（なんか、うまくいかない…）</p>
+      <a href="/strategy/">事業戦略</a>
+      <a href="/strategy/">ブランディング</a>
+      <a href="/strategy/">WEB戦略</a>
+      <a href="/strategy/">マーケティング戦略</a>
+      <a href="/strategy/">顧客戦略</a>
+      <a href="https://selfachieve.jp/saikatsu_r/" target="_blank" rel="noopener noreferrer">採用戦略<svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-left:4px;opacity:.7"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+      <p class="hd-drawer-sub-label">集客（サイトへの訪問者を増やしたい）</p>
       <a href="/seo/">SEO対策</a>
       <a href="/meo/">MEO対策</a>
-      <a href="/ai-seo/">AI検索対策（LLM検索対策）</a>
-      <a href="/ads/listing/">リスティング広告</a>
-      <a href="/ads/display/">ディスプレイ広告</a>
-      <p class="hd-drawer-sub-label">問い合わせを増やしたい</p>
-      <a href="/website/">サイト制作・分析改善</a>
-      <a href="/strategy/">WEB戦略設計</a>
-      <p class="hd-drawer-sub-label">追客したい</p>
+      <a href="/ads/">WEB広告</a>
+      <a href="/sns/">SNSマーケティング</a>
+      <a href="/sns/note/">note対策</a>
+      <a href="/ai-seo/">AI検索対策（LLM対策）</a>
+      <p class="hd-drawer-sub-label">成約（問い合わせ・売上を増やしたい）</p>
+      <a href="/website/">ホームページ制作</a>
+      <a href="/website/">分析改善</a>
+      <a href="/website/lp/">LP制作</a>
+      <p class="hd-drawer-sub-label">再販・追客（一度来た人にまた来てほしい）</p>
       <a href="/sns/line/">LINE</a>
       <a href="/sns/instagram/">Instagram</a>
       <a href="/sns/x/">X（旧Twitter）</a>
       <a href="/sns/youtube/">YouTube</a>
-      <a href="/sns/tiktok/">TikTok</a>
-      <a href="/sns/note/">note</a>
+      <p class="hd-drawer-sub-label">AI活用（AIで業務を効率化・最適化したい）</p>
+      <a href="/ai-automation/">業務効率化</a>
+      <a href="/ai-automation/">分析深化</a>
     </div>
   </div>
   <div class="hd-drawer-item">
     <div class="hd-drawer-link" data-drawer-toggle>サービス</div>
     <div class="hd-drawer-sub">
-      <a href="/strategy/">WEB戦略設計</a>
-      <a href="/website/">サイト制作・分析改善</a>
+      <p class="hd-drawer-sub-label">戦略設計</p>
+      <a href="/strategy/">事業戦略</a>
+      <a href="/strategy/">ブランディング</a>
+      <a href="/strategy/">WEB戦略</a>
+      <a href="/strategy/">マーケティング戦略</a>
+      <a href="/strategy/">顧客戦略</a>
+      <a href="https://selfachieve.jp/saikatsu_r/" target="_blank" rel="noopener noreferrer">採用戦略<svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-left:4px;opacity:.7"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+      <p class="hd-drawer-sub-label">集客施策</p>
       <a href="/seo/">SEO対策</a>
       <a href="/meo/">MEO対策</a>
-      <a href="/ai-seo/">AI検索対策（LLM検索対策）</a>
-      <p class="hd-drawer-sub-label">SNSマーケティング</p>
-      <a href="/sns/instagram/">Instagram</a>
-      <a href="/sns/tiktok/">TikTok</a>
-      <a href="/sns/x/">X（旧Twitter）</a>
-      <a href="/sns/youtube/">YouTube</a>
-      <a href="/sns/note/">note</a>
-      <a href="/sns/line/">LINE</a>
-      <p class="hd-drawer-sub-label">WEB広告</p>
-      <a href="/ads/listing/">リスティング広告</a>
-      <a href="/ads/display/">ディスプレイ広告</a>
-      <p class="hd-drawer-sub-label">AX・業務改善</p>
-      <a href="/ai-automation/">AI業務効率化・導入支援</a>
+      <a href="/ads/">WEB広告</a>
+      <a href="/sns/">SNSマーケティング</a>
+      <a href="/sns/note/">note対策</a>
+      <a href="/ai-seo/">AI検索対策（LLM対策）</a>
+      <p class="hd-drawer-sub-label">成約</p>
+      <a href="/website/">ホームページ制作</a>
+      <a href="/website/">分析改善</a>
+      <a href="/website/lp/">LP制作</a>
+      <p class="hd-drawer-sub-label">AI活用支援（DX/AX）</p>
+      <a href="/ai-automation/">業務効率化</a>
+      <a href="/ai-automation/">分析深化</a>
     </div>
   </div>
   <div class="hd-drawer-item">
-    <a href="/works/" class="hd-drawer-link no-arrow">制作実績</a>
+    <a href="/works/" class="hd-drawer-link no-arrow">実績</a>
   </div>
   <div class="hd-drawer-item">
     <a href="/voice/" class="hd-drawer-link no-arrow">お客さまの声</a>
   </div>
   <div class="hd-drawer-item">
-    <div class="hd-drawer-link" data-drawer-toggle>会社情報</div>
-    <div class="hd-drawer-sub">
+    <div class="hd-drawer-link" data-drawer-toggle="drawer-company">会社情報</div>
+    <div class="hd-drawer-sub" id="drawer-company">
       <a href="/company/">会社情報 TOP</a>
       <a href="/company/#mission">Mission / Vision / Value</a>
       <a href="/company/#representative">代表メッセージ</a>
@@ -719,11 +231,9 @@
       <a href="/company/#access">アクセス</a>
     </div>
   </div>
-  <div class="hd-drawer-item">
-  </div>
   <div class="hd-drawer-cta">
-    <a href="/contact/" class="hd-btn" aria-label="無料相談を申し込む">無料相談を申し込む</a>
-    <a href="https://saikatsu-r.jp/" class="hd-btn-saicatsu" target="_blank" rel="noopener noreferrer" aria-label="企業の採用活動を成功に導く「サイカツ.R」（別サイトが開きます）">企業の採用活動を成功に導く「サイカツ.R」<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 2L2 10M10 2H5M10 2V7" stroke="#28282D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    <a href="#contact" class="hd-btn" aria-label="無料相談を申し込む">無料相談を申し込む</a>
+    <a href="https://saicatsu-r.jp/" class="hd-btn-saicatsu" target="_blank" rel="noopener noreferrer" aria-label="企業の採用活動を成功に導く「サイカツ.R」（別サイトが開きます）">企業の採用活動を成功に導く「サイカツ.R」<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 2L2 10M10 2H5M10 2V7" stroke="#28282D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
   </div>
   <div class="hd-drawer-sns">
     <p class="hd-drawer-sns-label">FOLLOW US</p>
@@ -740,7 +250,6 @@
     </div>
   </div>
 </div>
-
 <main>
 
   <!-- PAGE HEADER -->
@@ -895,7 +404,7 @@
   <div class="footer-top">
     <div class="footer-logo-wrap">
       <a href="/" class="footer-logo" aria-label="セルフアチーブ トップページへ">
-        <img src="assets/logo_color.png" alt="selfachieve Acquisition Agency" width="140" height="30" loading="lazy">
+        <img src="/assets/logo_color.png" alt="selfachieve Acquisition Agency" width="140" height="30" loading="lazy">
       </a>
       <address class="footer-logo-addr">
         〒658-0032 兵庫県神戸市東灘区向洋町6-9<br>
@@ -929,7 +438,6 @@
         <a href="/seo/">SEO対策</a>
         <a href="/meo/">MEO対策</a>
         <a href="/ai-seo/">AI検索対策（LLM検索対策）</a>
-        <a href="/ads/listing/">リスティング広告</a>
         <a href="/ads/display/">ディスプレイ広告</a>
         <a href="/sns/instagram/">Instagram</a>
         <a href="/sns/tiktok/">TikTok</a>
@@ -937,10 +445,11 @@
         <a href="/sns/youtube/">YouTube</a>
         <a href="/sns/note/">note</a>
         <a href="/sns/line/">LINE</a>
+        <a href="/ai-automation/">AI業務効率化・導入支援</a>
       </div>
       <div class="footer-nav-group">
         <p class="footer-nav-title">会社情報</p>
-        <a href="/works/">制作実績</a>
+        <a href="/works/">実績</a>
         <a href="/voice/">お客さまの声</a>
         <a href="/company/">会社情報</a>
     
