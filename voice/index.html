@@ -27,10 +27,341 @@
     }
   ]}
   </script>
-  <link rel="stylesheet" href="../assets/style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{font-size:16px;scroll-behavior:smooth}
+    body{
+      font-family:'Yu Gothic','游ゴシック',YuGothic,'Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3','Meiryo','メイリオ',sans-serif;
+      font-weight:400;color:#28282D;background:#fff;
+      overflow-x:hidden;-webkit-font-smoothing:antialiased;font-size:14px;
+    }
+    img{max-width:100%;height:auto;display:block}
+    a{color:inherit;text-decoration:none}
+    ul,ol{list-style:none}
+
+    /* ===== HEADER ===== */
+    .hd{position:fixed;top:0;left:0;right:0;height:72px;background:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 48px;z-index:100;border-bottom:1px solid #E8E8E8;}
+    .hd-logo img{height:34px;width:auto}
+    .hd-nav{display:flex;align-items:center;gap:32px}
+    .hd-nav a{font-size:13px;letter-spacing:0.04em;color:#28282D;transition:opacity .2s;padding:14px 0}
+    .hd-nav a:hover{opacity:.5}
+    .hd-btn{display:inline-flex;align-items:center;justify-content:center;height:48px;padding:0 28px;background:#28282D;color:#fff;font-size:13px;letter-spacing:0.08em;font-weight:600;border:1px solid #28282D;transition:background .2s,color .2s;}
+    .hd-btn:hover{background:#fff;color:#28282D}
+    .hd-btn-external{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:48px;padding:0 20px;background:#fff;color:#28282D;font-size:12px;letter-spacing:0.04em;font-weight:600;border:1.5px solid #28282D;transition:background .2s,color .2s;white-space:nowrap;line-height:1.3;}
+    .hd-btn-external:hover{background:#28282D;color:#fff}
+    .hd-btn-external svg{flex-shrink:0;transition:transform .2s}
+    .hd-btn-external:hover svg{transform:translate(2px,-2px)}
+    .hd-btns{display:flex;align-items:center;gap:10px}
+    .hd-nav-item{position:relative}
+    .hd-nav-item>a{display:flex;align-items:center;gap:4px;cursor:pointer;padding:14px 0}
+    .hd-nav-item>a::after{content:'';display:inline-block;width:6px;height:6px;border-right:1px solid #28282D;border-bottom:1px solid #28282D;transform:rotate(45deg) translateY(-2px);transition:transform .2s;}
+    .hd-nav-item.open>a::after{transform:rotate(-135deg) translateY(-2px)}
+    .hd-mega-wrap{position:fixed;top:72px;left:0;right:0;background:#F5F5F5;border-top:1px solid #E8E8E8;border-bottom:1px solid #E0E0E0;box-shadow:0 12px 40px rgba(0,0,0,.08);opacity:0;visibility:hidden;transition:opacity .22s,transform .22s,visibility .22s;transform:translateY(-8px);z-index:200;padding:20px 0 24px;}
+    .hd-mega-wrap::before{content:'';position:absolute;top:-14px;left:0;right:0;height:14px;}
+    .hd-nav-item.open .hd-mega-wrap{opacity:1;visibility:visible;transform:translateY(0);}
+    .hd-mega{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));max-width:1200px;margin:0 auto;width:100%;gap:12px;padding:0 24px;}
+    .hd-mega-col{background:#fff;border:1px solid #E8E8E8;padding:18px 20px 14px;}
+    .hd-mega-col-label{font-size:13px;letter-spacing:.04em;white-space:nowrap;font-weight:700;color:#1A1A1E;display:block;padding-bottom:10px;margin-bottom:10px;border-bottom:2px solid #1A1A1E;overflow:hidden;text-overflow:ellipsis;}
+    .hd-mega-col a{display:flex;align-items:center;gap:6px;padding:12px 0;font-size:14px;color:#28282D;border-bottom:1px solid #F0F0F0;transition:color .15s;white-space:nowrap;}
+    .hd-mega-col a:last-child{border-bottom:none}
+    .hd-mega-col a::before{content:'';width:4px;height:4px;border-radius:50%;background:#1A1A1E;flex-shrink:0;opacity:.25;transition:opacity .15s;}
+    .hd-mega-col a:hover{color:#000;background:none}
+    .hd-mega-col a:hover::before{opacity:1}
+    .hd-dropdown{position:absolute;top:calc(100% + 12px);left:50%;transform:translateX(-50%) translateY(-8px);background:#fff;border:1px solid #E8E8E8;min-width:200px;opacity:0;visibility:hidden;transition:opacity .22s,transform .22s,visibility .22s;z-index:200;box-shadow:0 8px 32px rgba(0,0,0,.08);}
+    .hd-dropdown::before{content:'';position:absolute;top:-14px;left:0;right:0;height:14px;}
+    .hd-nav-item.open .hd-dropdown{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0);}
+    .hd-dropdown a{display:block;padding:12px 20px;font-size:13px;color:#28282D;border-bottom:1px solid #F0F0F0;transition:background .15s;white-space:nowrap;}
+    .hd-dropdown a:last-child{border-bottom:none}
+    .hd-dropdown a:hover{background:#F7F7F7;opacity:1}
+    .hd-hamburger{display:none;flex-direction:column;justify-content:center;align-items:center;width:44px;height:44px;cursor:pointer;gap:6px;background:none;border:none;padding:0;}
+    .hd-hamburger span{display:block;width:24px;height:1px;background:#28282D;transition:transform .3s,opacity .3s;}
+    .hd-hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+    .hd-hamburger.open span:nth-child(2){opacity:0}
+    .hd-hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+    .hd-drawer{display:none;position:fixed;top:72px;left:0;right:0;bottom:0;background:#fff;overflow-y:auto;z-index:99;padding:24px 0 80px;transform:translateX(100%);transition:transform .3s cubic-bezier(.16,1,.3,1);}
+    .hd-drawer.open{transform:translateX(0)}
+    .hd-drawer-item{border-bottom:1px solid #F0F0F0;}
+    .hd-drawer-link{display:flex;align-items:center;justify-content:space-between;padding:18px 24px;font-size:15px;color:#28282D;cursor:pointer;}
+    .hd-drawer-link::after{content:'';display:block;width:8px;height:8px;border-right:1px solid #28282D;border-bottom:1px solid #28282D;transform:rotate(45deg);transition:transform .2s;flex-shrink:0;}
+    .hd-drawer-link.no-arrow::after{display:none}
+    .hd-drawer-link.open::after{transform:rotate(-135deg)}
+    .hd-drawer-sub{display:none;background:#F7F7F7;padding:8px 0;}
+    .hd-drawer-sub.open{display:block}
+    .hd-drawer-sub a{display:block;padding:13px 24px 13px 36px;font-size:13px;color:#28282D;border-bottom:1px solid #EFEFEF;}
+    .hd-drawer-sub a:last-child{border-bottom:none}
+    .hd-drawer-sub-label{font-size:12px;letter-spacing:.1em;color:#767680;padding:12px 24px 4px 36px;text-transform:uppercase;}
+    .hd-drawer-cta{padding:24px;display:flex;flex-direction:column;gap:12px;}
+    .hd-drawer-cta .hd-btn{display:flex;width:100%;justify-content:center;height:52px;font-size:14px;}
+    .hd-drawer-cta .hd-btn-saicatsu{display:flex;width:100%;justify-content:center;align-items:center;gap:6px;height:52px;font-size:13px;background:#fff;color:#28282D;border:1.5px solid #28282D;text-decoration:none;font-weight:500;transition:background .2s,color .2s;letter-spacing:.04em;}
+    .hd-drawer-sns{padding:20px 24px 32px;border-top:1px solid #F0F0F0;display:flex;flex-direction:column;align-items:center;gap:14px;}
+    .hd-drawer-sns-label{font-size:12px;letter-spacing:.18em;color:#767680;font-weight:600;}
+    .hd-drawer-sns-links{display:flex;align-items:center;justify-content:center;gap:12px;}
+    .hd-drawer-sns-link{display:flex;align-items:center;justify-content:center;width:44px;height:44px;border:1px solid #D8D8DC;border-radius:50%;text-decoration:none;transition:background .2s,border-color .2s;}
+
+    /* ===== BREADCRUMB ===== */
+    .breadcrumb{background:#F5F5F3;padding:10px 80px;border-bottom:1px solid #E8E8E8;}
+    .breadcrumb ol{display:flex;align-items:center;gap:8px;max-width:1100px;margin:0 auto;}
+    .breadcrumb li{font-size:12px;color:#767680;display:flex;align-items:center;gap:8px;}
+    .breadcrumb li::after{content:'/';color:#C0C0C0;}
+    .breadcrumb li:last-child::after{display:none}
+    .breadcrumb a{color:#767680;transition:color .2s;}
+    .breadcrumb a:hover{color:#28282D;}
+    .breadcrumb-sp{display:none;background:#F5F5F3;padding:10px 20px;border-top:1px solid #E8E8E8;}
+    .breadcrumb-sp ol{display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+    .breadcrumb-sp li{font-size:12px;color:#767680;display:flex;align-items:center;gap:8px;}
+    .breadcrumb-sp li::after{content:'/';color:#C0C0C0;}
+    .breadcrumb-sp li:last-child::after{display:none}
+    .breadcrumb-sp a{color:#767680;}
+
+    /* ===== PAGE HERO ===== */
+    .page-hero{padding:160px 80px 100px;background:#fff;border-bottom:1px solid #E8E8E8;}
+    .page-hero-inner{max-width:1100px;margin:0 auto;}
+    .page-hero-eyebrow{font-size:11px;letter-spacing:.22em;color:#767680;font-weight:700;text-transform:uppercase;margin-bottom:24px;display:block;}
+    .page-hero-h1{font-size:clamp(36px,5vw,72px);font-weight:700;line-height:1.2;letter-spacing:-.04em;color:#28282D;margin-bottom:24px;}
+    .page-hero-desc{font-size:16px;line-height:1.85;color:#4A4A50;max-width:600px;}
+
+    /* ===== FILTER ===== */
+    .filter-sec{background:#F7F7F5;padding:24px 80px;border-bottom:1px solid #E8E8E8;position:sticky;top:72px;z-index:50;}
+    .filter-inner{max-width:1100px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;gap:8px;}
+    .filter-label{font-size:12px;letter-spacing:.1em;color:#767680;font-weight:600;margin-right:4px;}
+    .filter-btn{display:inline-flex;align-items:center;padding:8px 20px;border:1px solid #D8D8DC;font-size:13px;color:#28282D;background:#fff;cursor:pointer;transition:background .2s,border-color .2s,color .2s;letter-spacing:.02em;}
+    .filter-btn:hover,.filter-btn.active{background:#28282D;color:#fff;border-color:#28282D;}
+
+    /* ===== PAGINATION ===== */
+    .pagination{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:64px;flex-wrap:wrap;}
+    .page-btn{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border:1px solid #D8D8DC;font-size:14px;color:#28282D;background:#fff;cursor:pointer;transition:background .2s,border-color .2s,color .2s;font-family:inherit;}
+    .page-btn:hover,.page-btn.active{background:#28282D;color:#fff;border-color:#28282D;}
+    .page-btn.prev-btn,.page-btn.next-btn{width:auto;padding:0 16px;font-size:13px;letter-spacing:.04em;}
+    .page-btn:disabled{opacity:.35;cursor:not-allowed;pointer-events:none;}
+
+    /* ===== VOICE LIST（マガジン型グリッド） ===== */
+    .voice-list-sec{padding:80px 80px 120px;}
+    .voice-list-inner{max-width:1200px;margin:0 auto;}
+
+    /* グリッド */
+    .voice-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+
+    /* 通常カード */
+    .voice-card{position:relative;overflow:hidden;background:#fff;border:1px solid #E0E0E0;transition:box-shadow .25s,transform .25s;}
+    .voice-card:hover{box-shadow:0 12px 40px rgba(0,0,0,.1);transform:translateY(-3px);}
+    .voice-card-link{display:block;color:inherit;text-decoration:none;}
+    .voice-card-img-wrap{position:relative;overflow:hidden;height:300px;}
+    .voice-card-img-wrap img{width:100%;height:100%;object-fit:cover;object-position:center top;transition:transform .5s cubic-bezier(.16,1,.3,1);}
+    .voice-card:hover .voice-card-img-wrap img{transform:scale(1.05);}
+    .voice-card-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.55) 0%,transparent 60%);opacity:0;transition:opacity .3s;}
+    .voice-card:hover .voice-card-overlay{opacity:1;}
+    .voice-card-hover-quote{position:absolute;bottom:16px;left:16px;right:16px;font-size:13px;color:#fff;line-height:1.6;font-style:italic;opacity:0;transform:translateY(6px);transition:opacity .3s .05s,transform .3s .05s;}
+    .voice-card:hover .voice-card-hover-quote{opacity:1;transform:translateY(0);}
+    .voice-card-body{padding:24px 28px 28px;}
+    .voice-card-meta-top{display:flex;align-items:center;gap:8px;margin-bottom:14px;flex-wrap:wrap;}
+    .voice-card-num{font-size:11px;letter-spacing:.14em;color:#BBBBC0;font-weight:700;}
+    /* バッジ色分け */
+    .voice-card-tag{display:inline-flex;align-items:center;padding:3px 10px;font-size:11px;letter-spacing:.06em;font-weight:600;border-radius:2px;}
+    .voice-card-tag.tag-seo{background:#E6F4EA;color:#1E7E34;}
+    .voice-card-tag.tag-listing{background:#FFF3E0;color:#E65100;}
+    .voice-card-tag.tag-sns{background:#FCE4EC;color:#C62828;}
+    .voice-card-tag.tag-web{background:#E3F2FD;color:#1565C0;}
+    .voice-card-tag.tag-marketing{background:#EDE7F6;color:#4527A0;}
+    .voice-card-tag.tag-meo{background:#E0F7FA;color:#00695C;}
+    .voice-card-tag.tag-default{background:#F5F5F5;color:#555;}
+    .voice-card-title{font-size:clamp(15px,1.4vw,18px);font-weight:700;line-height:1.55;color:#28282D;letter-spacing:-.02em;margin-bottom:16px;}
+    .voice-card-info{display:flex;gap:16px;flex-wrap:wrap;}
+    .voice-card-info-item{display:flex;align-items:center;gap:6px;}
+    .voice-card-info-label{font-size:11px;letter-spacing:.1em;color:#BBBBC0;font-weight:700;white-space:nowrap;}
+    .voice-card-info-val{font-size:12px;color:#4A4A50;letter-spacing:.02em;}
+    .voice-card-read{display:inline-flex;align-items:center;gap:8px;margin-top:16px;font-size:11px;font-weight:700;color:#28282D;letter-spacing:.1em;text-transform:uppercase;}
+    .voice-card-read svg{transition:transform .2s;}
+    .voice-card:hover .voice-card-read svg{transform:translateX(4px);}
+    .voice-card-img-placeholder{width:100%;height:300px;display:flex;align-items:center;justify-content:center;background:#EDEDEE;}
+
+
+
+    /* ===== CTA ===== */
+    .cta-sec{background:#111111;padding:120px 80px;position:relative;overflow:hidden;}
+    .cta-sec::before{content:'';position:absolute;top:-40px;right:80px;width:400px;height:400px;background:radial-gradient(circle,rgba(99,102,241,.15) 0%,transparent 70%);pointer-events:none;}
+    .cta-wrap{max-width:800px;margin:0 auto;text-align:center;position:relative;z-index:1;}
+    .cta-eyebrow{font-size:11px;letter-spacing:.22em;color:rgba(255,255,255,.5);margin-bottom:24px;display:block;text-transform:uppercase;font-weight:600;}
+    .cta-h2-line{display:block}
+    .cta-h2{font-size:clamp(28px,4vw,52px);font-weight:700;line-height:1.3;letter-spacing:-.04em;color:#fff;margin-bottom:24px;}
+    .cta-body{font-size:14px;line-height:1.9;color:rgba(255,255,255,.8);margin-bottom:56px;}
+    .cta-actions{display:flex;align-items:center;justify-content:center;gap:40px;flex-wrap:wrap;}
+    .btn-cta{display:inline-flex;align-items:center;justify-content:center;height:60px;padding:0 52px;background:#fff;color:#28282D;font-size:15px;font-weight:700;letter-spacing:.06em;transition:opacity .2s;}
+    .btn-cta:hover{opacity:.85;}
+
+    /* ===== FOOTER ===== */
+    .footer{background:#F7F7F5;padding:80px 80px 48px;border-top:1px solid #E8E8E8;}
+    .footer-top{display:flex;gap:80px;margin-bottom:60px;}
+    .footer-nav{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;flex:1;}
+    .footer-nav-title{font-size:13px;font-weight:700;color:#28282D;margin-bottom:16px;letter-spacing:.04em;}
+    .footer-nav-group a{display:block;font-size:13px;color:#767680;padding:6px 0;letter-spacing:.02em;transition:color .2s;}
+    .footer-nav-group a:hover{color:#28282D;}
+    .footer-bottom{border-top:1px solid #E8E8E8;padding-top:24px;display:flex;align-items:center;justify-content:space-between;}
+    .footer-copy{font-size:12px;color:#BBBBC0;letter-spacing:.04em;}
+    .footer-logo img{height:28px;width:auto;}
+    .footer-logo-wrap{display:flex;flex-direction:column;gap:0;}
+    .footer-logo-addr{font-size:12px;color:#4A4A52;line-height:1.9;font-style:normal;margin-top:20px;}
+    .footer-logo-addr a{color:#4A4A52;text-decoration:none;}
+    .footer-logo-addr a:hover{opacity:.6;}
+    .footer-sns-block{margin-top:28px;}
+    .footer-sns-label{font-size:12px;letter-spacing:.14em;color:#767680;font-weight:500;margin-bottom:12px;}
+    .footer-sns{display:flex;align-items:center;gap:16px;}
+    .footer-logo-related{display:block;margin-top:24px;padding-top:20px;border-top:1px solid #E8E8E8;}
+    .footer-related-label{font-size:12px;letter-spacing:.14em;color:#767680;font-weight:500;white-space:nowrap;}
+    .footer-related-link{display:inline-flex;align-items:center;gap:5px;font-size:12px;color:#4A4A52;text-decoration:none;letter-spacing:.04em;transition:opacity .2s;}
+    .footer-related-link:hover{opacity:.5;}
+    .footer-bottom-right{display:flex;align-items:center;gap:24px;}
+    .footer-privacy{font-size:12px;color:#4A4A52;text-decoration:none;letter-spacing:.04em;}
+    .footer-privacy:hover{opacity:.6;}
+
+    /* ===== FADE UP ===== */
+    .fu{opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1);}
+    .fu.on{opacity:1;transform:translateY(0);}
+
+    /* ===== CUSTOM CURSOR ===== */
+    @media(hover:hover) and (pointer:fine){body{cursor:none}a,button,[role="button"],[tabindex]{cursor:none}}
+    #cursor-dot{position:fixed;top:0;left:0;z-index:9999;width:6px;height:6px;background:#28282D;border-radius:50%;pointer-events:none;transform:translate(-50%,-50%);transition:width .15s,height .15s;will-change:transform;}
+    #cursor-ring{position:fixed;top:0;left:0;z-index:9998;width:32px;height:32px;border:1.5px solid #28282D;border-radius:50%;pointer-events:none;transform:translate(-50%,-50%);transition:width .25s cubic-bezier(.25,.46,.45,.94),height .25s cubic-bezier(.25,.46,.45,.94);will-change:transform;}
+    #cursor-ring.is-hovering{width:48px;height:48px;background:rgba(40,40,45,.08);}
+    @media(hover:none),not all and (pointer:fine){#cursor-dot,#cursor-ring{display:none}}
+
+    /* ===== FIXED MOBILE CTA ===== */
+    .sp-fixed-cta{display:none;position:fixed;bottom:0;left:0;right:0;background:#111111;padding:12px 16px;padding-bottom:calc(12px + env(safe-area-inset-bottom));z-index:90;box-shadow:0 -2px 12px rgba(0,0,0,.15);transform:translateY(100%);transition:transform .3s ease,opacity .3s ease;opacity:0;}
+    .sp-fixed-cta.visible{transform:translateY(0);opacity:1;}
+    .sp-fixed-cta-inner{display:flex;align-items:center;gap:10px;}
+    .sp-fixed-cta-consult{flex:1;display:flex;align-items:center;justify-content:center;height:48px;background:#fff;color:#28282D;font-size:14px;font-weight:700;text-decoration:none;letter-spacing:.02em;}
+    .sp-fixed-cta-tel{display:flex;align-items:center;justify-content:center;gap:6px;height:48px;padding:0 16px;border:1.5px solid rgba(255,255,255,.6);color:#fff;text-decoration:none;white-space:nowrap;}
+    .sp-fixed-cta-tel-num{font-size:13px;font-weight:500;letter-spacing:.03em;}
+    @media(min-width:769px){.sp-fixed-cta{display:none!important}}
+
+    /* ===== SP引用テキスト（常時表示） ===== */
+    .voice-card-sp-quote{display:none;}
+
+    /* ===== RESPONSIVE ===== */
+    @media(max-width:900px){
+      .hd{padding:0 20px}.hd-nav{display:none}.hd-hamburger{display:flex}.hd-drawer{display:block}.hd-btns{display:none}
+      .breadcrumb{display:none;}
+      .breadcrumb-sp{display:block;}
+
+      /* ===== KV見出し最適化 ===== */
+      .page-hero{padding:100px 20px 56px;}
+      .page-hero-eyebrow{font-size:12px;}
+      .page-hero-h1{font-size:clamp(28px,7vw,52px);letter-spacing:-.03em;}
+      .page-hero-desc{font-size:15px;line-height:1.8;}
+
+      /* ===== フィルター ===== */
+      .filter-sec{padding:12px 16px;position:static;overflow-x:auto;-webkit-overflow-scrolling:touch;}
+      .filter-inner{gap:8px;flex-wrap:nowrap;width:max-content;}
+      .filter-btn{font-size:13px;padding:8px 14px;white-space:nowrap;min-height:40px;}
+
+      /* ===== ボイスリスト ===== */
+      .voice-list-sec{padding:40px 16px 80px;}
+      .voice-grid{grid-template-columns:1fr;gap:16px;}
+
+      /* ===== カード最適化 ===== */
+      .voice-card{
+        border-radius:0;
+        border-left:3px solid #28282D;
+        transition:box-shadow .25s,transform .25s;
+      }
+      .voice-card-link{display:flex;flex-direction:column;}
+      .voice-card-img-wrap{height:200px;flex-shrink:0;}
+      .voice-card-img{order:-1;}
+      .voice-card-img-placeholder{min-height:200px;}
+      /* ホバーオーバーレイはSPでは非表示 */
+      .voice-card-overlay{display:none;}
+      .voice-card-hover-quote{display:none;}
+
+      /* カードボディ */
+      .voice-card-body{padding:16px 16px 20px;}
+      .voice-card-meta-top{gap:6px;margin-bottom:10px;}
+      .voice-card-num{font-size:11px;}
+      .voice-card-tag{font-size:11px;padding:3px 8px;}
+
+      /* タイトル：読み物として最適化 */
+      .voice-card-title{
+        font-size:15px;
+        line-height:1.65;
+        margin-bottom:12px;
+        letter-spacing:-.01em;
+      }
+      /* 引用符内フレーズを強調（「」で囲まれた部分） */
+      .voice-card-title-quote{
+        display:block;
+        font-size:14px;
+        font-weight:700;
+        color:#28282D;
+        background:linear-gradient(transparent 60%,rgba(40,40,45,.1) 60%);
+        padding:0 2px;
+        margin-bottom:4px;
+        line-height:1.7;
+      }
+
+      /* SP引用テキスト（常時表示） */
+      .voice-card-sp-quote{
+        display:block;
+        font-size:13px;
+        color:#4A4A50;
+        line-height:1.7;
+        font-style:italic;
+        padding:10px 12px;
+        margin:0 0 12px;
+        background:#F7F7F5;
+        border-left:2px solid #BBBBC0;
+        position:relative;
+      }
+      .voice-card-sp-quote::before{
+        content:'\201C';
+        font-size:20px;
+        color:#BBBBC0;
+        line-height:1;
+        display:block;
+        margin-bottom:2px;
+      }
+
+      /* 情報行 */
+      .voice-card-info{gap:8px;}
+      .voice-card-info-label{font-size:11px;}
+      .voice-card-info-val{font-size:13px;}
+      .voice-card-read{font-size:12px;margin-top:12px;}
+
+      /* スタッガーアニメーション（カード） */
+      .voice-card:nth-child(1){transition-delay:0s;}
+      .voice-card:nth-child(2){transition-delay:.06s;}
+      .voice-card:nth-child(3){transition-delay:.12s;}
+      .voice-card:nth-child(4){transition-delay:.18s;}
+      .voice-card:nth-child(5){transition-delay:.24s;}
+      .voice-card:nth-child(6){transition-delay:.30s;}
+
+      /* ===== ページネーション ===== */
+      .pagination{gap:6px;margin-top:32px;}
+      .page-btn{width:40px;height:44px;font-size:14px;}
+      .page-btn.prev-btn,.page-btn.next-btn{padding:0 14px;font-size:13px;}
+
+      /* ===== CTA ===== */
+      .cta-sec{padding:72px 20px;}
+      .cta-eyebrow{font-size:12px;}
+      .cta-h2{font-size:clamp(22px,6vw,40px);}
+      .cta-body br{display:none;}
+      .cta-actions{flex-direction:column;align-items:center;gap:16px;}
+      .btn-cta{width:100%;max-width:360px;min-height:56px;}
+
+      /* ===== フッター ===== */
+      .footer{padding:56px 20px 40px;}
+      .footer-top{flex-direction:column;gap:36px;}
+      .footer-nav{grid-template-columns:1fr 1fr;gap:24px;}
+      .footer-bottom{flex-direction:column;gap:12px;align-items:flex-start;}
+    }
+    @media(max-width:480px){
+      .page-hero-h1{font-size:clamp(24px,7.5vw,40px);}
+      .voice-card-img-wrap{height:180px;}
+      .voice-card-img-placeholder{min-height:180px;}
+    }
+    @media(max-width:768px){
+      .sp-fixed-cta{display:block}
+      body{padding-bottom:80px}
+      .sp-fixed-cta-tel-num{font-size:14px;}
+    }
+  </style>
 </head>
 <body>
 
@@ -38,8 +369,8 @@
 <div id="cursor-ring" aria-hidden="true"></div>
 
 <header class="hd" role="banner">
-  <a href=".././" class="hd-logo" aria-label="セルフアチーブ トップページへ">
-    <img src="../assets/logo_color.png" alt="selfachieve Acquisition Agency" width="160" height="34" fetchpriority="high">
+  <a href="/" class="hd-logo" aria-label="セルフアチーブ トップページへ">
+    <img src="assets/logo_color.png" alt="selfachieve Acquisition Agency" width="160" height="34" fetchpriority="high">
   </a>
   <nav class="hd-nav" aria-label="グローバルナビゲーション">
     <span class="hd-nav-item">
@@ -48,32 +379,29 @@
       <div class="hd-mega" role="menu">
         <div class="hd-mega-col">
           <span class="hd-mega-col-label">なんかうまくいかない...</span>
-          <a href="../strategy/" role="menuitem">WEB戦略設計</a>
-          <a href="../ai-automation/" role="menuitem">AI業務効率化・導入支援</a>
+          <a href="/strategy/" role="menuitem">WEB戦略設計</a>
+          <a href="/ai-automation/" role="menuitem">AI業務効率化・導入支援</a>
         </div>
         <div class="hd-mega-col">
           <span class="hd-mega-col-label">集客したい</span>
-          <a href="../seo/" role="menuitem">SEO対策</a>
-          <a href="../meo/" role="menuitem">MEO対策</a>
-          <a href="../ads/display/" role="menuitem">WEB広告</a>
-          <a href="../sns/" role="menuitem">SNSマーケティング</a>
-          <a href="../sns/note/" role="menuitem">note対策</a>
-          <a href="../ai-seo/" role="menuitem">AI検索対策（LLM検索対策）</a>
+          <a href="/seo/" role="menuitem">SEO対策</a>
+          <a href="/meo/" role="menuitem">MEO対策</a>
+          <a href="/ai-seo/" role="menuitem">AI検索対策（LLM検索対策）</a>
+          <a href="/ads/display/" role="menuitem">ディスプレイ広告</a>
         </div>
         <div class="hd-mega-col">
-          <span class="hd-mega-col-label">成約したい</span>
-          <a href="../website/" role="menuitem">ホームページ制作</a>
-          <a href="../website/#analysis" role="menuitem">分析改善</a>
-          <a href="../website/#lp" role="menuitem">LP制作</a>
+          <span class="hd-mega-col-label">問い合わせを増やしたい</span>
+          <a href="/website/" role="menuitem">サイト制作・分析改善</a>
+          <a href="/strategy/" role="menuitem">WEB戦略設計</a>
         </div>
         <div class="hd-mega-col">
           <span class="hd-mega-col-label">追客したい</span>
-          <a href="../sns/line/" role="menuitem">LINE</a>
-          <a href="../sns/instagram/" role="menuitem">Instagram</a>
-          <a href="../sns/x/" role="menuitem">X（旧Twitter）</a>
-          <a href="../sns/youtube/" role="menuitem">YouTube</a>
-          <a href="../sns/tiktok/" role="menuitem">TikTok</a>
-          <a href="../sns/note/" role="menuitem">note</a>
+          <a href="/sns/line/" role="menuitem">LINE</a>
+          <a href="/sns/instagram/" role="menuitem">Instagram</a>
+          <a href="/sns/x/" role="menuitem">X（旧Twitter）</a>
+          <a href="/sns/youtube/" role="menuitem">YouTube</a>
+          <a href="/sns/tiktok/" role="menuitem">TikTok</a>
+          <a href="/sns/note/" role="menuitem">note</a>
         </div>
       </div>
       </div>
@@ -84,53 +412,52 @@
       <div class="hd-mega" role="menu">
         <div class="hd-mega-col">
           <span class="hd-mega-col-label">マーケティング戦略</span>
-          <a href="../strategy/" role="menuitem">WEB戦略設計</a>
+          <a href="/strategy/" role="menuitem">WEB戦略設計</a>
         </div>
         <div class="hd-mega-col">
           <span class="hd-mega-col-label">WEB集客施策</span>
-          <a href="../website/" role="menuitem">サイト制作・分析改善</a>
-          <a href="../seo/" role="menuitem">SEO対策</a>
-          <a href="../meo/" role="menuitem">MEO対策</a>
-          <a href="../ai-seo/" role="menuitem">AI検索対策（LLM検索対策）</a>
+          <a href="/website/" role="menuitem">サイト制作・分析改善</a>
+          <a href="/seo/" role="menuitem">SEO対策</a>
+          <a href="/meo/" role="menuitem">MEO対策</a>
+          <a href="/ai-seo/" role="menuitem">AI検索対策（LLM検索対策）</a>
         </div>
         <div class="hd-mega-col">
           <span class="hd-mega-col-label">SNSマーケティング特化施策</span>
-          <a href="../sns/" role="menuitem" class="hd-mega-col-top-link">SNSマーケティング</a>
-          <a href="../sns/instagram/" role="menuitem">Instagram</a>
-          <a href="../sns/tiktok/" role="menuitem">TikTok</a>
-          <a href="../sns/x/" role="menuitem">X（旧Twitter）</a>
-          <a href="../sns/youtube/" role="menuitem">YouTube</a>
-          <a href="../sns/note/" role="menuitem">note</a>
-          <a href="../sns/line/" role="menuitem">LINE</a>
+          <a href="/sns/" role="menuitem" class="hd-mega-col-top-link">SNSマーケティング</a>
+          <a href="/sns/instagram/" role="menuitem">Instagram</a>
+          <a href="/sns/tiktok/" role="menuitem">TikTok</a>
+          <a href="/sns/x/" role="menuitem">X（旧Twitter）</a>
+          <a href="/sns/youtube/" role="menuitem">YouTube</a>
+          <a href="/sns/note/" role="menuitem">note</a>
+          <a href="/sns/line/" role="menuitem">LINE</a>
         </div>
         <div class="hd-mega-col">
           <span class="hd-mega-col-label">WEB広告マーケティング</span>
-          <a href="../ads/display/" role="menuitem">ディスプレイ広告</a>
+          <a href="/ads/display/" role="menuitem">ディスプレイ広告</a>
         </div>
         <div class="hd-mega-col">
           <span class="hd-mega-col-label">AX・業務改善</span>
-          <a href="../ai-automation/" role="menuitem">AI業務効率化・導入支援</a>
+          <a href="/ai-automation/" role="menuitem">AI業務効率化・導入支援</a>
         </div>
       </div>
       </div>
     </span>
-    <a href="https://selfachieve.jp/saikatsu_r/" target="_blank" rel="noopener noreferrer">採用戦略<svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-left:3px;vertical-align:middle"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
-    <a href="../works/">制作実績</a>
-    <a href="../voice/">お客さまの声</a>
+    <a href="/works/">制作実績</a>
+    <a href="/voice/">お客さまの声</a>
     <span class="hd-nav-item">
-      <a href="../company/">会社情報</a>
+      <a href="/company/">会社情報</a>
       <div class="hd-dropdown" role="menu">
-        <a href="../company/#mission" role="menuitem">Mission / Vision / Value</a>
-        <a href="../company/#representative" role="menuitem">代表メッセージ</a>
-        <a href="../company/#overview" role="menuitem">会社概要</a>
-        <a href="../company/#access" role="menuitem">アクセス</a>
+        <a href="/company/#mission" role="menuitem">Mission / Vision / Value</a>
+        <a href="/company/#representative" role="menuitem">代表メッセージ</a>
+        <a href="/company/#overview" role="menuitem">会社概要</a>
+        <a href="/company/#access" role="menuitem">アクセス</a>
       </div>
     </span>
 
   </nav>
   <div class="hd-btns">
     <a href="https://saikatsu-r.jp/" class="hd-btn-external" target="_blank" rel="noopener noreferrer" aria-label="企業の採用活動を成功に導く「サイカツ.R」（別サイトが開きます）">企業の採用活動を成功に導く「サイカツ.R」<svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
-    <a href="../contact/" class="hd-btn" aria-label="初回の相談無料">初回の相談無料</a>
+    <a href="/contact/" class="hd-btn" aria-label="初回の相談無料">初回の相談無料</a>
   </div>
   <button class="hd-hamburger" aria-label="メニューを開く" aria-expanded="false" aria-controls="hd-drawer">
     <span></span><span></span><span></span>
@@ -143,65 +470,59 @@
     <div class="hd-drawer-link" data-drawer-toggle>課題から探す</div>
     <div class="hd-drawer-sub">
       <p class="hd-drawer-sub-label">なんかうまくいかない...</p>
-      <a href="../strategy/">WEB戦略設計</a>
+      <a href="/strategy/">WEB戦略設計</a>
       <p class="hd-drawer-sub-label">集客したい</p>
-      <a href="../seo/">SEO対策</a>
-      <a href="../meo/">MEO対策</a>
-      <a href="../ads/display/">WEB広告</a>
-      <a href="../sns/">SNSマーケティング</a>
-      <a href="../sns/note/">note対策</a>
-      <a href="../ai-seo/">AI検索対策（LLM検索対策）</a>
-      <p class="hd-drawer-sub-label">成約したい</p>
-      <a href="../website/">ホームページ制作</a>
-      <a href="../website/#analysis">分析改善</a>
-      <a href="../website/#lp">LP制作</a>
+      <a href="/seo/">SEO対策</a>
+      <a href="/meo/">MEO対策</a>
+      <a href="/ai-seo/">AI検索対策（LLM検索対策）</a>
+      <a href="/ads/display/">ディスプレイ広告</a>
+      <p class="hd-drawer-sub-label">問い合わせを増やしたい</p>
+      <a href="/website/">サイト制作・分析改善</a>
+      <a href="/strategy/">WEB戦略設計</a>
       <p class="hd-drawer-sub-label">追客したい</p>
-      <a href="../sns/line/">LINE</a>
-      <a href="../sns/instagram/">Instagram</a>
-      <a href="../sns/x/">X（旧Twitter）</a>
-      <a href="../sns/youtube/">YouTube</a>
-      <a href="../sns/tiktok/">TikTok</a>
-      <a href="../sns/note/">note</a>
+      <a href="/sns/line/">LINE</a>
+      <a href="/sns/instagram/">Instagram</a>
+      <a href="/sns/x/">X（旧Twitter）</a>
+      <a href="/sns/youtube/">YouTube</a>
+      <a href="/sns/tiktok/">TikTok</a>
+      <a href="/sns/note/">note</a>
     </div>
   </div>
   <div class="hd-drawer-item">
     <div class="hd-drawer-link" data-drawer-toggle>サービス</div>
     <div class="hd-drawer-sub">
-      <a href="../strategy/">WEB戦略設計</a>
-      <a href="../website/">サイト制作・分析改善</a>
-      <a href="../seo/">SEO対策</a>
-      <a href="../meo/">MEO対策</a>
-      <a href="../ai-seo/">AI検索対策（LLM検索対策）</a>
+      <a href="/strategy/">WEB戦略設計</a>
+      <a href="/website/">サイト制作・分析改善</a>
+      <a href="/seo/">SEO対策</a>
+      <a href="/meo/">MEO対策</a>
+      <a href="/ai-seo/">AI検索対策（LLM検索対策）</a>
       <p class="hd-drawer-sub-label">SNSマーケティング</p>
-      <a href="../sns/instagram/">Instagram</a>
-      <a href="../sns/tiktok/">TikTok</a>
-      <a href="../sns/x/">X（旧Twitter）</a>
-      <a href="../sns/youtube/">YouTube</a>
-      <a href="../sns/note/">note</a>
-      <a href="../sns/line/">LINE</a>
+      <a href="/sns/instagram/">Instagram</a>
+      <a href="/sns/tiktok/">TikTok</a>
+      <a href="/sns/x/">X（旧Twitter）</a>
+      <a href="/sns/youtube/">YouTube</a>
+      <a href="/sns/note/">note</a>
+      <a href="/sns/line/">LINE</a>
       <p class="hd-drawer-sub-label">WEB広告</p>
-      <a href="../ads/display/">ディスプレイ広告</a>
+      <a href="/ads/display/">ディスプレイ広告</a>
       <p class="hd-drawer-sub-label">AX・業務改善</p>
-      <a href="../ai-automation/">AI業務効率化・導入支援</a>
+      <a href="/ai-automation/">AI業務効率化・導入支援</a>
     </div>
   </div>
   <div class="hd-drawer-item">
-    <a href="https://selfachieve.jp/saikatsu_r/" class="hd-drawer-link no-arrow" target="_blank" rel="noopener noreferrer">採用戦略<svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-left:4px;vertical-align:middle"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+    <a href="/works/" class="hd-drawer-link no-arrow">制作実績</a>
   </div>
   <div class="hd-drawer-item">
-    <a href="../works/" class="hd-drawer-link no-arrow">制作実績</a>
-  </div>
-  <div class="hd-drawer-item">
-    <a href="../voice/" class="hd-drawer-link no-arrow">お客さまの声</a>
+    <a href="/voice/" class="hd-drawer-link no-arrow">お客さまの声</a>
   </div>
   <div class="hd-drawer-item">
     <div class="hd-drawer-link" data-drawer-toggle="drawer-company">会社情報</div>
     <div class="hd-drawer-sub" id="drawer-company">
-      <a href="../company/">会社情報 TOP</a>
-      <a href="../company/#mission">Mission / Vision / Value</a>
-      <a href="../company/#representative">代表メッセージ</a>
-      <a href="../company/#overview">会社概要</a>
-      <a href="../company/#access">アクセス</a>
+      <a href="/company/">会社情報 TOP</a>
+      <a href="/company/#mission">Mission / Vision / Value</a>
+      <a href="/company/#representative">代表メッセージ</a>
+      <a href="/company/#overview">会社概要</a>
+      <a href="/company/#access">アクセス</a>
     </div>
   </div>
   <div class="hd-drawer-cta">
@@ -237,7 +558,7 @@
 
 <nav class="breadcrumb" aria-label="パンくずリスト">
   <ol>
-    <li><a href="../index.html">ホーム</a></li>
+    <li><a href="/">ホーム</a></li>
     <li><span aria-current="page">お客さまの声</span></li>
   </ol>
 </nav>
@@ -261,7 +582,7 @@
 
       <!-- 18 -->
       <article class="voice-card fu" data-category="seo">
-          <a href="../voice/iwazawa/" class="voice-card-link">
+          <a href="/voice/iwazawa/" class="voice-card-link">
             <div class="voice-card-img-wrap">
               <img src="../assets/voice/iwazawa.jpg" alt="岩沢法理事務所" width="921" height="614" loading="eager">
               <div class="voice-card-overlay"></div>
@@ -284,7 +605,7 @@
         </article>
 
       <article class="voice-card fu" data-category="listing seo">
-          <a href="../voice/edulabo/" class="voice-card-link">
+          <a href="/voice/edulabo/" class="voice-card-link">
             <div class="voice-card-img-wrap">
               <img src="../assets/voice/edurabo.jpg" alt="株式会社エデュラボ" width="921" height="614" loading="lazy">
               <div class="voice-card-overlay"></div>
@@ -306,7 +627,7 @@
           </a>
         </article>
       <article class="voice-card fu" data-category="listing">
-          <a href="../voice/jiyuhomu/" class="voice-card-link">
+          <a href="/voice/jiyuhomu/" class="voice-card-link">
             <div class="voice-card-img-wrap">
               <img src="../assets/voice/jiyu-law.jpg" alt="自由法律事務所" width="921" height="614" loading="lazy">
               <div class="voice-card-overlay"></div>
@@ -328,7 +649,7 @@
           </a>
         </article>
       <article class="voice-card fu" data-category="listing">
-          <a href="../voice/furari/" class="voice-card-link">
+          <a href="/voice/furari/" class="voice-card-link">
             <div class="voice-card-img-wrap">
               <img src="../assets/voice/furarido.jpg" alt="ふらり堂" width="921" height="614" loading="lazy">
               <div class="voice-card-overlay"></div>
@@ -350,7 +671,7 @@
           </a>
         </article>
       <article class="voice-card fu" data-category="sns">
-          <a href="../voice/halpets/" class="voice-card-link">
+          <a href="/voice/halpets/" class="voice-card-link">
             <div class="voice-card-img-wrap">
               <img src="../assets/voice/harupets.png" alt="ハルペッツ神戸" width="921" height="614" loading="lazy">
               <div class="voice-card-overlay"></div>
@@ -372,7 +693,7 @@
           </a>
         </article>
       <article class="voice-card fu" data-category="sns">
-          <a href="../voice/taka/" class="voice-card-link">
+          <a href="/voice/taka/" class="voice-card-link">
             <div class="voice-card-img-wrap">
               <img src="../assets/voice/taka.png" alt="焼き菓子Taka" width="921" height="614" loading="lazy">
               <div class="voice-card-overlay"></div>
@@ -391,7 +712,7 @@
           </a>
         </article>
       <article class="voice-card fu" data-category="listing sns">
-          <a href="../voice/hyogo-u/" class="voice-card-link">
+          <a href="/voice/hyogo-u/" class="voice-card-link">
             <div class="voice-card-img-wrap">
               <img src="../assets/voice/hyogo-univ.jpg" alt="兵庫県立大学大学院" width="921" height="614" loading="lazy">
               <div class="voice-card-overlay"></div>
@@ -410,7 +731,7 @@
           </a>
         </article>
       <article class="voice-card fu" data-category="listing">
-          <a href="../voice/agate/" class="voice-card-link">
+          <a href="/voice/agate/" class="voice-card-link">
             <div class="voice-card-img-wrap">
               <img src="../assets/voice/agate.jpg" alt="株式会社AGATE" width="921" height="614" loading="lazy">
               <div class="voice-card-overlay"></div>
@@ -429,7 +750,7 @@
           </a>
         </article>
       <article class="voice-card fu" data-category="seo">
-          <a href="../voice/yamaguchi/" class="voice-card-link">
+          <a href="/voice/yamaguchi/" class="voice-card-link">
             <div class="voice-card-img-wrap">
               <img src="../assets/voice/yamaguchi.jpg" alt="山口不動産" width="921" height="614" loading="lazy">
               <div class="voice-card-overlay"></div>
@@ -448,7 +769,7 @@
           </a>
         </article>
       <article class="voice-card fu" data-category="listing">
-          <a href="../voice/perpetua/" class="voice-card-link">
+          <a href="/voice/perpetua/" class="voice-card-link">
             <div class="voice-card-img-wrap">
               <img src="../assets/voice/perpetua.jpg" alt="株式会社パーペチュア" width="921" height="614" loading="lazy">
               <div class="voice-card-overlay"></div>
@@ -467,7 +788,7 @@
           </a>
         </article>
       <article class="voice-card fu" data-category="marketing web">
-          <a href="../voice/nodental/" class="voice-card-link">
+          <a href="/voice/nodental/" class="voice-card-link">
             <div class="voice-card-img-wrap">
               <img src="../assets/voice/noshika.jpg" alt="脳歯科" width="921" height="614" loading="lazy">
               <div class="voice-card-overlay"></div>
@@ -486,7 +807,7 @@
           </a>
         </article>
       <article class="voice-card fu" data-category="seo">
-          <a href="../voice/fourseasons/" class="voice-card-link">
+          <a href="/voice/fourseasons/" class="voice-card-link">
             <div class="voice-card-img-wrap">
               <img src="../assets/voice/fourseasons.jpg" alt="フォーシーズンズ美容皮膚科" width="921" height="614" loading="lazy">
               <div class="voice-card-overlay"></div>
@@ -505,7 +826,7 @@
           </a>
         </article>
       <article class="voice-card fu" data-category="web">
-          <a href="../voice/ksd/" class="voice-card-link">
+          <a href="/voice/ksd/" class="voice-card-link">
             <div class="voice-card-img-wrap">
               <img src="../assets/voice/ksd.jpg" alt="株式会社ケー・エス・ディー" width="921" height="614" loading="lazy">
               <div class="voice-card-overlay"></div>
@@ -524,7 +845,7 @@
           </a>
         </article>
       <article class="voice-card fu" data-category="web">
-          <a href="../voice/showa/" class="voice-card-link">
+          <a href="/voice/showa/" class="voice-card-link">
             <div class="voice-card-img-wrap">
               <img src="../assets/voice/showa.jpg" alt="昭和コンピュータ株式会社" width="921" height="614" loading="lazy">
               <div class="voice-card-overlay"></div>
@@ -543,7 +864,7 @@
           </a>
         </article>
       <article class="voice-card fu" data-category="web">
-          <a href="../voice/shanghaiferr/" class="voice-card-link">
+          <a href="/voice/shanghaiferr/" class="voice-card-link">
             <div class="voice-card-img-wrap">
               <img src="../assets/voice/shanghai.jpg" alt="上海フェリー株式会社" width="921" height="614" loading="lazy">
               <div class="voice-card-overlay"></div>
@@ -562,7 +883,7 @@
           </a>
         </article>
       <article class="voice-card fu" data-category="web">
-          <a href="../voice/canlee/" class="voice-card-link">
+          <a href="/voice/canlee/" class="voice-card-link">
             <div class="voice-card-img-wrap">
               <img src="../assets/voice/canlee.jpg" alt="Can&Lee" width="921" height="614" loading="lazy">
               <div class="voice-card-overlay"></div>
@@ -581,7 +902,7 @@
           </a>
         </article>
       <article class="voice-card fu" data-category="web">
-          <a href="../voice/fpinnovation/" class="voice-card-link">
+          <a href="/voice/fpinnovation/" class="voice-card-link">
             <div class="voice-card-img-wrap">
               <img src="../assets/voice/fp-innovation.jpg" alt="株式会社FPイノベーション" width="921" height="614" loading="lazy">
               <div class="voice-card-overlay"></div>
@@ -600,7 +921,7 @@
           </a>
         </article>
       <article class="voice-card fu" data-category="marketing">
-          <a href="../voice/nadi/" class="voice-card-link">
+          <a href="/voice/nadi/" class="voice-card-link">
             <div class="voice-card-img-wrap">
               <img src="../assets/voice/nadi.jpg" alt="Nadi" width="921" height="614" loading="lazy">
               <div class="voice-card-overlay"></div>
@@ -636,7 +957,7 @@
       「何から始めればいいかわからない」という段階でも大丈夫です。
     </p>
     <div class="cta-actions fu" style="transition-delay:.2s">
-      <a href="../contact/" class="btn-cta">無料相談を申し込む</a>
+      <a href="/contact/" class="btn-cta">無料相談を申し込む</a>
     </div>
   </div>
 </section>
@@ -645,7 +966,7 @@
 
 <nav class="breadcrumb-sp" aria-label="パンくずリスト（スマートフォン）">
   <ol>
-    <li><a href="../index.html">ホーム</a></li>
+    <li><a href="/">ホーム</a></li>
     <li><span aria-current="page">お客さまの声</span></li>
   </ol>
 </nav>
@@ -653,8 +974,8 @@
 <footer class="footer" role="contentinfo">
   <div class="footer-top">
     <div class="footer-logo-wrap">
-      <a href=".././" class="footer-logo" aria-label="セルフアチーブ トップページへ">
-        <img src="../assets/logo_color.png" alt="selfachieve Acquisition Agency" width="140" height="30" loading="lazy">
+      <a href="/" class="footer-logo" aria-label="セルフアチーブ トップページへ">
+        <img src="assets/logo_color.png" alt="selfachieve Acquisition Agency" width="140" height="30" loading="lazy">
       </a>
       <address class="footer-logo-addr">
         〒658-0032 兵庫県神戸市東灘区向洋町6-9<br>
@@ -683,50 +1004,49 @@
     <nav class="footer-nav" aria-label="フッターナビゲーション">
       <div class="footer-nav-group">
         <p class="footer-nav-title">サービス</p>
-        <a href="../strategy/">WEB戦略設計</a>
-        <a href="../website/">サイト制作・分析改善</a>
-        <a href="../seo/">SEO対策</a>
-        <a href="../meo/">MEO対策</a>
-        <a href="../ai-seo/">AI検索対策（LLM検索対策）</a>
-        <a href="../ads/display/">ディスプレイ広告</a>
-        <a href="../sns/instagram/">Instagram</a>
-        <a href="../sns/tiktok/">TikTok</a>
-        <a href="../sns/x/">X（旧Twitter）</a>
-        <a href="../sns/youtube/">YouTube</a>
-        <a href="../sns/note/">note</a>
-        <a href="../sns/line/">LINE</a>
-        <a href="../ai-automation/">AI業務効率化・導入支援</a>
+        <a href="/strategy/">WEB戦略設計</a>
+        <a href="/website/">サイト制作・分析改善</a>
+        <a href="/seo/">SEO対策</a>
+        <a href="/meo/">MEO対策</a>
+        <a href="/ai-seo/">AI検索対策（LLM検索対策）</a>
+        <a href="/ads/listing/">リスティング広告</a>
+        <a href="/ads/display/">ディスプレイ広告</a>
+        <a href="/sns/instagram/">Instagram</a>
+        <a href="/sns/tiktok/">TikTok</a>
+        <a href="/sns/x/">X（旧Twitter）</a>
+        <a href="/sns/youtube/">YouTube</a>
+        <a href="/sns/note/">note</a>
+        <a href="/sns/line/">LINE</a>
       </div>
       <div class="footer-nav-group">
         <p class="footer-nav-title">会社情報</p>
-        <a href="../works/">制作実績</a>
-        <a href="../voice/">お客さまの声</a>
-        <a href="../company/">会社情報</a>
+        <a href="/works/">制作実績</a>
+        <a href="/voice/">お客さまの声</a>
+        <a href="/company/">会社情報</a>
     
-                <a href="../columns/">コラム</a>
-        <a href="../news/">お知らせ</a>
+                <a href="/columns/">コラム</a>
+        <a href="/news/">お知らせ</a>
       </div>
       <div class="footer-nav-group">
         <p class="footer-nav-title">お問い合わせ</p>
-        <a href="../contact/">無料相談のお申し込み</a>
+        <a href="/contact/">無料相談のお申し込み</a>
         <a href="tel:0788068338">078-806-8338（平日 9:00～19:00）</a>
       </div>
     </nav>
   </div>
   <div class="footer-bottom">
     <div class="footer-bottom-right">
-      <a href="../privacy/" class="footer-privacy">プライバシーポリシー</a>
+      <a href="/privacy/" class="footer-privacy">プライバシーポリシー</a>
       <p class="footer-copy">&copy; <span id="copyright-year">2026</span> Self Achieve Inc. All Rights Reserved.</p>
     </div>
   </div>
 </footer>
 
-<!-- FIXED MOBILE CTA -->
-<div class="sp-fixed-cta" id="sp-fixed-cta" role="complementary" aria-label="お問い合わせ">
+<div class="sp-fixed-cta" id="sp-fixed-cta">
   <div class="sp-fixed-cta-inner">
-    <a href="../contact/" class="sp-fixed-cta-consult" aria-label="無料相談を申し込む">無料相談を申し込む</a>
-    <a href="tel:0788068338" class="sp-fixed-cta-tel" aria-label="電話番号 078-806-8338">
-      <svg class="sp-fixed-cta-tel-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.61 21 3 13.39 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1.02l-2.2 2.2z" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <a href="/contact/" class="sp-fixed-cta-consult">無料相談を申し込む</a>
+    <a href="tel:0788068338" class="sp-fixed-cta-tel">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
       <span class="sp-fixed-cta-tel-num">078-806-8338</span>
     </a>
   </div>
