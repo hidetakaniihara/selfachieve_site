@@ -2,11 +2,11 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>WEB戦略設計 | 神戸・兵庫の中小企業向けWEBコンサルティング | セルフアチーブ</title>
   <meta name="description" content="WEB施策がうまくいかない根本原因は、マーケティング戦略の不在にあります。現状把握・課題設定・施策設計まで一貫した戦略設計を神戸・兵庫の中小企業に提供。初回15分無料相談。">
   <meta name="robots" content="index, follow">
-  <link rel="stylesheet" href="../assets/style.css">
   <link rel="canonical" href="https://selfachieve.jp/strategy/">
   <meta property="og:type" content="website">
   <meta property="og:title" content="WEB戦略設計 | 神戸・兵庫の中小企業向けWEBコンサルティング | セルフアチーブ">
@@ -17,8 +17,6 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="theme-color" content="#ffffff">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
   <script type="application/ld+json">
   {"@context":"https://schema.org","@graph":[
     {"@type":"Service","@id":"https://selfachieve.jp/strategy/#service",
@@ -53,7 +51,7 @@
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     html{font-size:16px;scroll-behavior:smooth}
     body{
-      font-family:'Noto Sans JP','Yu Gothic','游ゴシック',YuGothic,'Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3','Meiryo','メイリオ',sans-serif;
+      font-family:'Yu Gothic','游ゴシック',YuGothic,'Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3','Meiryo','メイリオ',sans-serif;
       font-weight:400;
       color:#28282D;
       background:#fff;
@@ -64,18 +62,150 @@
     a{color:inherit;text-decoration:none}
     ul,ol{list-style:none}
 
+    /* ===== HEADER ===== */
+    .hd{
+      position:fixed;top:0;left:0;right:0;
+      height:72px;
+      background:#fff;
+      display:flex;align-items:center;justify-content:space-between;
+      padding:0 48px;
+      z-index:100;
+      border-bottom:1px solid #E8E8E8;
+    }
+    .hd-logo img{height:34px;width:auto}
+    .hd-nav{display:flex;align-items:center;gap:32px}
+    .hd-nav a{font-size:13px;letter-spacing:0.04em;color:#28282D;transition:opacity .2s;padding:14px 0}
+    .hd-nav a:hover{opacity:.5}
+    .hd-btn{
+      display:inline-flex;align-items:center;justify-content:center;
+      height:48px;padding:0 28px;
+      background:#28282D;color:#fff;
+      font-size:13px;letter-spacing:0.08em;font-weight:600;
+      border:1px solid #28282D;
+      transition:background .2s,color .2s;
+    }
+    .hd-btn:hover{background:#fff;color:#28282D}
+    .hd-btn-external{
+      display:inline-flex;align-items:center;justify-content:center;gap:6px;
+      height:48px;padding:0 20px;
+      background:#fff;color:#28282D;
+      font-size:12px;letter-spacing:0.04em;font-weight:600;
+      border:1.5px solid #28282D;
+      transition:background .2s,color .2s;
+      white-space:nowrap;line-height:1.3;
+    }
+    .hd-btn-external:hover{background:#28282D;color:#fff}
+    .hd-btn-external svg{flex-shrink:0;transition:transform .2s}
+    .hd-btn-external:hover svg{transform:translate(2px,-2px)}
+    .hd-btns{display:flex;align-items:center;gap:10px}
+    .hd-nav-item{position:relative}
+    .hd-nav-item>a{display:flex;align-items:center;gap:4px;cursor:pointer;padding:14px 0}
+    .hd-nav-item>a::after{
+      content:'';display:inline-block;width:6px;height:6px;
+      border-right:1px solid #28282D;border-bottom:1px solid #28282D;
+      transform:rotate(45deg) translateY(-2px);transition:transform .2s;
+    }
+    .hd-nav-item.open>a::after{transform:rotate(-135deg) translateY(-2px)}
+    .hd-mega-wrap{
+      position:fixed;top:72px;left:0;right:0;
+      background:#F5F5F5;border-top:1px solid #E8E8E8;border-bottom:1px solid #E0E0E0;
+      box-shadow:0 12px 40px rgba(0,0,0,.08);
+      opacity:0;visibility:hidden;transition:opacity .22s,transform .22s,visibility .22s;
+      transform:translateY(-8px);z-index:200;padding:20px 0 24px;
+    }
+    .hd-mega-wrap::before{content:'';position:absolute;top:-14px;left:0;right:0;height:14px;}
+    .hd-nav-item.open .hd-mega-wrap{opacity:1;visibility:visible;transform:translateY(0);}
+    .hd-mega{
+      display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+      max-width:1200px;margin:0 auto;width:100%;gap:12px;padding:0 24px;
+    }
+    .hd-mega-col{background:#fff;border:1px solid #E8E8E8;padding:18px 20px 14px;}
+    .hd-mega-col-label{
+      font-size:13px;letter-spacing:.04em;white-space:nowrap;font-weight:700;
+      color:#1A1A1E;display:block;padding-bottom:10px;margin-bottom:10px;
+      border-bottom:2px solid #1A1A1E;overflow:hidden;text-overflow:ellipsis;
+    }
+    .hd-mega-col a{
+      display:flex;align-items:center;gap:6px;padding:12px 0;
+      font-size:14px;color:#28282D;border-bottom:1px solid #F0F0F0;
+      transition:color .15s;white-space:nowrap;
+    }
+    .hd-mega-col a:last-child{border-bottom:none}
+    .hd-mega-col a::before{
+      content:'';width:4px;height:4px;border-radius:50%;
+      background:#1A1A1E;flex-shrink:0;opacity:.25;transition:opacity .15s;
+    }
+    .hd-mega-col a:hover{color:#000;background:none}
+    .hd-mega-col a:hover::before{opacity:1}
+    .hd-dropdown{
+      position:absolute;top:calc(100% + 12px);left:50%;
+      transform:translateX(-50%) translateY(-8px);
+      background:#fff;border:1px solid #E8E8E8;min-width:200px;
+      opacity:0;visibility:hidden;transition:opacity .22s,transform .22s,visibility .22s;
+      z-index:200;box-shadow:0 8px 32px rgba(0,0,0,.08);
+    }
+    .hd-dropdown::before{content:'';position:absolute;top:-14px;left:0;right:0;height:14px;}
+    .hd-nav-item.open .hd-dropdown{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0);}
+    .hd-dropdown a{display:block;padding:12px 20px;font-size:13px;color:#28282D;border-bottom:1px solid #F0F0F0;transition:background .15s;white-space:nowrap;}
+    .hd-dropdown a:last-child{border-bottom:none}
+    .hd-dropdown a:hover{background:#F7F7F7;opacity:1}
+    .hd-hamburger{
+      display:none;flex-direction:column;justify-content:center;align-items:center;
+      width:44px;height:44px;cursor:pointer;gap:6px;background:none;border:none;padding:0;
+    }
+    .hd-hamburger span{display:block;width:24px;height:1px;background:#28282D;transition:transform .3s,opacity .3s;}
+    .hd-hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+    .hd-hamburger.open span:nth-child(2){opacity:0}
+    .hd-hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+    .hd-drawer{
+      display:none;position:fixed;top:72px;left:0;right:0;bottom:0;
+      background:#fff;overflow-y:auto;z-index:99;
+      padding:24px 0 80px;
+      transform:translateX(100%);transition:transform .3s cubic-bezier(.16,1,.3,1);
+    }
+    .hd-drawer.open{transform:translateX(0)}
+    .hd-drawer-item{border-bottom:1px solid #F0F0F0;}
+    .hd-drawer-link{
+      display:flex;align-items:center;justify-content:space-between;
+      padding:18px 24px;font-size:15px;color:#28282D;cursor:pointer;
+    }
+    .hd-drawer-link::after{
+      content:'';display:block;width:8px;height:8px;
+      border-right:1px solid #28282D;border-bottom:1px solid #28282D;
+      transform:rotate(45deg);transition:transform .2s;flex-shrink:0;
+    }
+    .hd-drawer-link.no-arrow::after{display:none}
+    .hd-drawer-link.open::after{transform:rotate(-135deg)}
+    .hd-drawer-sub{display:none;background:#F7F7F7;padding:8px 0;}
+    .hd-drawer-sub.open{display:block}
+    .hd-drawer-sub a{display:block;padding:13px 24px 13px 36px;font-size:13px;color:#28282D;border-bottom:1px solid #EFEFEF;}
+    .hd-drawer-sub a:last-child{border-bottom:none}
+    .hd-drawer-sub-label{font-size:12px;letter-spacing:.1em;color:#767680;padding:12px 24px 4px 36px;text-transform:uppercase;}
+    .hd-drawer-cta{padding:24px;display:flex;flex-direction:column;gap:12px;}
+    .hd-drawer-cta .hd-btn{display:flex;width:100%;justify-content:center;height:52px;font-size:14px;}
+    .hd-drawer-cta .hd-btn-saicatsu{
+      display:flex;width:100%;justify-content:center;align-items:center;gap:6px;
+      height:52px;font-size:13px;background:#fff;color:#28282D;
+      border:1.5px solid #28282D;text-decoration:none;font-weight:500;
+      transition:background .2s,color .2s;letter-spacing:.04em;
+    }
+    .hd-drawer-sns{padding:20px 24px 32px;border-top:1px solid #F0F0F0;display:flex;flex-direction:column;align-items:center;gap:14px;}
+    .hd-drawer-sns-label{font-size:12px;letter-spacing:.18em;color:#767680;font-weight:600;}
+    .hd-drawer-sns-links{display:flex;align-items:center;justify-content:center;gap:12px;}
+    .hd-drawer-sns-link{display:flex;align-items:center;justify-content:center;width:44px;height:44px;border:1px solid #D8D8DC;border-radius:50%;text-decoration:none;transition:background .2s,border-color .2s;}
+
     /* ===== BREADCRUMB ===== */
     .breadcrumb{background:#F5F5F3;padding:10px 80px;border-bottom:1px solid #E8E8E8;}
     .breadcrumb ol{display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
-    .breadcrumb li{font-size:12px;color:#555558;}
+    .breadcrumb li{font-size:12px;color:#767680;}
     .breadcrumb li+li::before{content:'/';margin-right:8px;color:#BBBBC0;}
-    .breadcrumb a{color:#555558;transition:color .2s;}
+    .breadcrumb a{color:#767680;transition:color .2s;}
     .breadcrumb a:hover{color:#28282D;}
     .breadcrumb-sp{background:#F5F5F3;padding:10px 20px;border-top:1px solid #E8E8E8;display:none;}
     .breadcrumb-sp ol{display:flex;align-items:center;gap:6px;flex-wrap:wrap;}
-    .breadcrumb-sp li{font-size:12px;color:#555558;}
+    .breadcrumb-sp li{font-size:12px;color:#767680;}
     .breadcrumb-sp li+li::before{content:'/';margin-right:6px;color:#BBBBC0;}
-    .breadcrumb-sp a{color:#555558;}
+    .breadcrumb-sp a{color:#767680;}
 
     /* ===== MAIN LAYOUT ===== */
     main{padding-top:72px;}
@@ -167,13 +297,13 @@
       letter-spacing:-.03em;color:#28282D;
       margin-bottom:20px;
     }
-    .sec-body{font-size:16px;line-height:1.85;color:#333336;}
+    .sec-body{font-size:14px;line-height:1.85;color:#4A4A50;}
 
     /* ===== PROBLEM SECTION ===== */
     .problem-sec{
       background:#F7F7F5;
       padding:100px 80px;
-      
+      border-top:1px solid #E8E8E8;
     }
     .problem-inner{max-width:1100px;margin:0 auto;}
     .problem-head{margin-bottom:64px;}
@@ -206,7 +336,7 @@
       margin-bottom:16px;
       flex:1;
     }
-    .problem-desc{font-size:16px;line-height:1.85;color:#3A3A40;}
+    .problem-desc{font-size:14px;line-height:1.85;color:#5A5A60;}
 
     /* problem-resolve: CHECKカード後の締めメッセージ */
     .problem-resolve{
@@ -250,7 +380,7 @@
       line-height:1.1;
       margin-top:16px;
     }
-    .funnel-head .sec-body{color:#6B6B70;max-width:600px;margin:24px 0 0;font-size:16px;}
+    .funnel-head .sec-body{color:#6B6B70;max-width:600px;margin:24px 0 0;font-size:15px;}
     .funnel-head-note{
       font-size:clamp(14px,1.6vw,18px);color:#28282D;
       margin-top:32px;letter-spacing:-.02em;
@@ -259,258 +389,234 @@
       line-height:1.4;
     }
 
-    /* ===== 垂直レイヤーブロック形式（壁×ファネル融合デザイン） ===== */
+    /* ===== jbnet仕様：左ファネル図（固定）× 右縦積み黒カード ===== */
+    .funnel-layout{
+      display:grid;
+      grid-template-columns:320px 1fr;
+      gap:0 64px;
+      align-items:start;
+      margin-top:80px;
+    }
 
-    /* 旧要素は非表示 */
-    .funnel-visual{display:none;}
+    /* ---- 左カラム：逆三角形ファネル図（sticky固定） ---- */
+    .funnel-visual{
+      position:sticky;
+      top:120px;
+      padding-right:0;
+    }
+    .funnel-visual-title{
+      font-size:10px;letter-spacing:.18em;
+      color:#9B9BA0;font-weight:700;
+      text-transform:uppercase;
+      margin-bottom:20px;
+      display:block;
+    }
+    /* 凡例（廃止） */
+    .funnel-legend{display:none;}
+    /* 逆三角形の各段 */
+    .funnel-shape{
+      display:flex;
+      flex-direction:column;
+      gap:4px;
+      overflow:hidden;
+    }
+    .funnel-bar{
+      height:88px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:0;
+      font-size:13px;
+      font-weight:700;
+      letter-spacing:.08em;
+      color:#ffffff;
+      background:#28282D;
+      cursor:pointer;
+      transition:background .25s ease, box-shadow .2s ease;
+      position:relative;
+    }
+    .funnel-bar:nth-child(1){clip-path:polygon(0 0,100% 0,94% 100%,6% 100%);}
+    .funnel-bar:nth-child(2){clip-path:polygon(6% 0,94% 0,88% 100%,12% 100%);}
+    .funnel-bar:nth-child(3){clip-path:polygon(12% 0,88% 0,82% 100%,18% 100%);}
+    .funnel-bar:nth-child(4){clip-path:polygon(18% 0,82% 0,76% 100%,24% 100%);}
+    .funnel-bar:nth-child(5){clip-path:polygon(24% 0,76% 0,50% 100%,50% 100%);}
+    .funnel-bar.is-problem{background:#28282D;}
+    .funnel-bar.is-success{background:#28282D;color:#ffffff;}
+    /* アクティブ時：白抜き反転 */
+    .funnel-bar.is-active{
+      background:#ffffff !important;
+      color:#28282D !important;
+      box-shadow:0 0 0 2px #28282D inset;
+      z-index:1;
+    }
+    .funnel-bar.is-active .funnel-bar-label{
+      color:#28282D;
+    }
+    .funnel-bar-label{
+      font-size:clamp(18px,2vw,26px);letter-spacing:.06em;
+      white-space:nowrap;
+      text-align:center;
+      font-weight:700;
+      transition:color .2s;
+    }
+    /* クリック誘導テキスト */
+    .funnel-click-hint{
+      margin-top:16px;
+      font-size:11px;letter-spacing:.08em;
+      color:#9B9BA0;font-weight:700;
+      text-transform:uppercase;
+      display:flex;align-items:center;gap:6px;
+    }
+    .funnel-click-hint::before{
+      content:'';
+      display:inline-block;
+      width:16px;height:1px;
+      background:#9B9BA0;
+    }
+
+    /* ---- 右カラム：縦積み黒カード ---- */
+    .funnel-cards-wrap{
+      position:relative;
+    }
+    /* 横スクロール誘導UI（廃止） */
     .funnel-scroll-hint{display:none;}
     .funnel-nav{display:none;}
     .funnel-dots{display:none;}
-    .funnel-click-hint{display:none;}
-    .funnel-legend{display:none;}
-    .funnel-stage-tag{display:none;}
-    .funnel-stage-arrow{display:none;}
-    .funnel-bar{display:none;}
-    .funnel-shape{display:none;}
 
-    /* レイアウト */
-    .funnel-layout{
-      display:block;
-      margin-top:80px;
-    }
-    .funnel-cards-wrap{
-      position:relative;
-      max-width:960px;
-      margin:0 auto;
-    }
-
-    /* ストラテジーライン：全ブロックを貫通する垂直線 */
-    .funnel-strategy-line{
-      position:absolute;
-      top:0;
-      bottom:0;
-      left:72px;
-      width:1px;
-      background:#1A1A20;
-      opacity:.25;
-      pointer-events:none;
-      z-index:0;
-    }
-
-    /* 左インジケーター：ホバーに合わせてスライドする縦ライン */
-    #funnel-indicator{
-      position:absolute;
-      left:0;
-      width:3px;
-      background:#28282D;
-      pointer-events:none;
-      z-index:4;
-      opacity:0;
-      transition:top .35s cubic-bezier(.4,0,.2,1),height .35s cubic-bezier(.4,0,.2,1),opacity .25s ease;
-    }
-    #funnel-indicator.is-active{
-      opacity:1;
-    }
-
+    /* ---- 縦積みカード ---- */
     .funnel-diagram{
       display:flex;
       flex-direction:column;
       gap:0;
-      position:relative;
+      overflow:visible;
     }
 
-    /* 各ブロック：3カラムグリッド */
+    /* 各カード */
     .funnel-stage{
       position:relative;
-      display:grid;
-      grid-template-columns:80px 220px 1fr;
-      gap:0;
-      align-items:stretch;
-      border-bottom:1px solid rgba(40,40,45,.15);
+      display:block;
+      padding:44px 48px;
+      border-bottom:1px solid rgba(40,40,45,.12);
       background:transparent;
-      opacity:0;
-      transform:translateY(12px);
-      transition:opacity .5s ease,transform .5s ease,background-color .3s ease;
-      z-index:1;
       cursor:default;
+      opacity:0;transform:translateY(16px);
+      transition:opacity .5s ease,transform .5s ease,background .3s ease,padding .3s ease;
+      overflow:hidden;
     }
     .funnel-stage:first-child{
-      border-top:1px solid rgba(40,40,45,.15);
-      background:#F7F7F5;
+      border-top:1px solid rgba(40,40,45,.12);
     }
     .funnel-stage.stage-visible{opacity:1;transform:translateY(0);}
+    /* アクティブ時：黒背景カードに変化（jbnet仕様） */
+    .funnel-stage.is-active-card{
+      background:#28282D;
+      border-color:transparent;
+      border-radius:0;
+    }
+    .funnel-stage.is-active-card + .funnel-stage{
+      border-top:none;
+    }
+    /* 上ボーダーアクセント（廃止） */
+    .funnel-stage::before{display:none;}
 
-    /* ホバーインタラクション：フォーカスエフェクト（他ブロックを30%に減光） */
-    .funnel-diagram:has(.funnel-stage:hover) .funnel-stage{
-      opacity:.3;
-      transition:opacity .3s ease,background-color .3s ease;
-    }
-    .funnel-diagram:has(.funnel-stage:hover) .funnel-stage:hover{
-      opacity:1;
-      background:#F9F9F9;
-    }
-    .funnel-diagram:has(.funnel-stage:hover) .funnel-stage:first-child:hover{
-      background:#F4F4F2;
-    }
-    /* ホバー時：壁テキストを黒に */
-    .funnel-stage:hover .funnel-stage-wall{
-      color:#000000;
-    }
-    /* ホバー時：英字ラベルを鮮明に */
-    .funnel-stage:hover .funnel-stage-label{
-      opacity:1;
-    }
-
-    /* 壁テキスト（境界線の上に浮かぶ悩みの一言） */
-    .funnel-stage-wall{
-      position:absolute;
-      bottom:-14px;
-      left:80px;
-      font-size:12px;
-      letter-spacing:.08em;
-      color:#AAAAAF;
-      font-weight:400;
-      font-style:normal;
-      background:#F7F7F4;
-      padding:0 12px;
-      white-space:nowrap;
-      z-index:2;
-      line-height:28px;
-      transition:color .3s ease;
-    }
-    .funnel-stage:first-child .funnel-stage-wall{
-      background:#F7F7F5;
-    }
-
-    /* 左カラム：ステップ番号 */
+    /* 番号（右上に絶対配置・装飾） */
     .funnel-stage-num{
-      font-size:clamp(36px,3.5vw,52px);
-      font-weight:700;
+      position:absolute;
+      top:32px;
+      right:40px;
+      font-size:clamp(56px,6vw,88px);
       letter-spacing:-.04em;
-      color:#28282D;
+      color:rgba(40,40,45,.07);
+      font-weight:700;
       line-height:1;
-      opacity:.12;
+      transition:color .3s;
       pointer-events:none;
       user-select:none;
-      font-style:normal;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:40px 0;
-      border-right:1px solid rgba(40,40,45,.1);
     }
-    .funnel-stage:first-child .funnel-stage-num{
-      opacity:.25;
+    .funnel-stage.is-active-card .funnel-stage-num{
+      color:rgba(255,255,255,.1);
     }
 
-    /* 中央カラム：カテゴリ名 */
-    .funnel-stage-category{
-      display:flex;
-      flex-direction:column;
-      justify-content:center;
-      padding:40px 32px;
-      border-right:1px solid rgba(40,40,45,.1);
-    }
-    .funnel-stage-label{
-      display:block;
-      font-size:11px;
-      letter-spacing:.18em;
-      color:#AAAAAF;
-      font-weight:700;
-      text-transform:uppercase;
-      margin-bottom:8px;
-      font-style:normal;
-      opacity:.45;
-      transition:opacity .3s ease;
-    }
-    .funnel-stage:first-child .funnel-stage-label{
-      color:#888890;
-    }
-    .funnel-stage-title{
-      font-size:clamp(22px,2.2vw,30px);
-      font-weight:700;
-      color:#28282D;
-      line-height:1.2;
-      letter-spacing:-.03em;
-      font-style:normal;
-    }
-
-    /* 右カラム：役割・ゴール */
+    /* カード本体（全幅） */
     .funnel-stage-body{
       display:flex;
       flex-direction:column;
-      justify-content:center;
-      padding:40px 40px;
       gap:0;
+      position:relative;
+      z-index:1;
     }
-    .funnel-stage-subtitle{display:none;}
-    .funnel-stage-head{display:none;}
-
-    /* 詳細エリア */
-    .funnel-stage-detail{
-      margin-top:0;
-    }
-
-    /* 役割・ゴールのラベル */
-    .funnel-stage-meta-label{
-      display:inline-block;
-      font-size:12px;
-      letter-spacing:.14em;
+    /* フェーズラベル */
+    .funnel-stage-label{
+      display:block;
+      font-size:10px;letter-spacing:.18em;
+      color:#9B9BA0;
       font-weight:700;
       text-transform:uppercase;
-      color:#AAAAAF;
-      margin-bottom:6px;
-      margin-top:20px;
-      font-style:normal;
+      margin-bottom:12px;
+      transition:color .3s;
     }
-    .funnel-stage-meta-label:first-child{
-      margin-top:0;
+    .funnel-stage.is-active-card .funnel-stage-label{color:rgba(255,255,255,.45);}
+    .funnel-stage-head{display:block;}
+    .funnel-stage-title{
+      font-size:clamp(22px,2.4vw,32px);
+      font-weight:700;color:#28282D;
+      line-height:1.3;letter-spacing:-.03em;
+      transition:color .3s;
     }
-    .funnel-stage:first-child .funnel-stage-meta-label{
-      color:#888890;
+    .funnel-stage.is-active-card .funnel-stage-title{color:#ffffff;}
+    /* 詳細（常時表示） */
+    .funnel-stage-detail{
+      margin-top:14px;
+      opacity:1;
     }
-
-    /* 役割の本文 */
     .funnel-stage-desc{
-      font-size:16px;
-      line-height:1.8;
-      color:#555558;
-      font-style:normal;
+      font-size:14px;line-height:1.8;
+      color:#6B6B70;
+      transition:color .3s;
     }
-    .funnel-stage:first-child .funnel-stage-desc{
-      color:#3A3A40;
+    .funnel-stage.is-active-card .funnel-stage-desc{color:rgba(255,255,255,.7);}
+    .funnel-stage-tag{
+      display:inline-flex;align-items:center;gap:5px;
+      padding:5px 12px;
+      background:rgba(40,40,45,.06);
+      border:1px solid rgba(40,40,45,.2);
+      font-size:11px;color:#28282D;
+      font-weight:700;letter-spacing:.06em;
+      width:fit-content;
+      margin-top:16px;
+      transition:background .3s,border-color .3s,color .3s;
     }
-
-    /* ゴール文（強調） */
-    .funnel-stage-goal{
-      font-size:16px;
-      line-height:1.8;
-      color:#28282D;
-      font-weight:600;
-      font-style:normal;
+    .funnel-stage.is-active-card .funnel-stage-tag{
+      background:rgba(255,255,255,.1);
+      border-color:rgba(255,255,255,.3);
+      color:#ffffff;
     }
-
     /* 施策リンク */
     .funnel-stage-services{
-      display:flex;
-      flex-wrap:wrap;
-      gap:6px;
-      margin-top:20px;
+      display:flex;flex-wrap:wrap;gap:5px;
+      margin-top:14px;
     }
     .funnel-stage-service-tag{
-      font-size:12px;
-      padding:4px 12px;
+      font-size:11px;padding:4px 10px;
       border:1px solid rgba(40,40,45,.2);
-      color:#555558;
+      color:#9B9BA0;
       letter-spacing:.03em;
-      transition:border-color .2s,color .2s;
+      transition:border-color .2s,color .2s,background .2s;
       display:inline-block;
-      font-style:normal;
+    }
+    .funnel-stage.is-active-card .funnel-stage-service-tag{
+      border-color:rgba(255,255,255,.25);
+      color:rgba(255,255,255,.6);
     }
     a.funnel-stage-service-tag:hover{
       border-color:#28282D;
       color:#28282D;
     }
+    .funnel-stage.is-active-card a.funnel-stage-service-tag:hover{
+      border-color:#ffffff;
+      color:#ffffff;
+    }
+    .funnel-stage-arrow{display:none;}
 
     /* ===== SOLUTION SECTION ===== */
     .solution-sec{
@@ -520,34 +626,19 @@
     }
     .solution-inner{max-width:1100px;margin:0 auto;}
     .solution-head{margin-bottom:72px;}
-    .solution-head .sec-eyebrow{font-weight:700;}
-    .solution-head .sec-h2{color:#28282D;margin-bottom:48px;}
-    .solution-head .sec-body{max-width:600px;margin-top:0;}
+    .solution-head .sec-h2{color:#28282D;}
+    .solution-head .sec-body{max-width:600px;margin-top:16px;}
     .solution-head-reason{
-      display:inline-block;
-      position:relative;
-      margin-top:32px;
-      font-size:16px;line-height:1.8;
+      display:block;
+      margin-top:28px;
+      font-size:15px;line-height:1.75;
       color:#28282D;
-      font-weight:500;
+      font-weight:600;
       letter-spacing:.01em;
-      padding-bottom:10px;
-      font-style:normal;
-    }
-    /* 下線アニメーション（左→右） */
-    .solution-head-reason::after{
-      content:'';
-      position:absolute;
-      bottom:0;
-      left:0;
-      width:0;
-      height:1px;
-      background:#444444;
-      transition:width .8s cubic-bezier(.4,0,.2,1);
-    }
-    .solution-head-reason.on::after{
-      width:100%;
-      transition-delay:.5s;
+      padding:20px 24px;
+      background:#F7F7F5;
+      border-left:3px solid #28282D;
+      max-width:600px;
     }
 
     /* 大番号 + 2カラム縦型レイアウト */
@@ -589,8 +680,8 @@
       margin-bottom:16px;
     }
     .solution-item-desc{
-      font-size:16px;line-height:1.9;
-      color:#3A3A40;
+      font-size:14px;line-height:1.9;
+      color:#5A5A60;
       max-width:560px;
     }
     .solution-item-tag{
@@ -631,7 +722,7 @@
       letter-spacing:-.03em;color:#ffffff;
     }
     .mid-cta-body{
-      font-size:16px;line-height:1.8;
+      font-size:14px;line-height:1.8;
       color:#ffffff;margin-top:12px;
     }
     .mid-cta-actions{display:flex;flex-direction:column;gap:12px;align-items:flex-end;flex-shrink:0;}
@@ -652,7 +743,7 @@
     /* ===== CASE SECTION ===== */
     .case-sec{
       background:#F7F7F5;
-      
+      border-top:1px solid #E8E8E8;
       padding:100px 80px;
     }
     .case-inner{max-width:1100px;margin:0 auto;}
@@ -665,7 +756,7 @@
       display:flex;flex-direction:column;align-items:flex-end;gap:10px;
     }
     .view-all{
-      font-size:13px;color:#555558;
+      font-size:13px;color:#767680;
       display:flex;align-items:center;gap:6px;
       letter-spacing:.04em;
       transition:color .2s;white-space:nowrap;
@@ -686,7 +777,7 @@
     .case-card:last-child{border-right:none;}
     .case-industry{
       font-size:11px;letter-spacing:.22em;
-      color:#555558;margin-bottom:16px;
+      color:#767680;margin-bottom:16px;
       font-weight:700;
       text-transform:uppercase;
     }
@@ -698,7 +789,7 @@
     }
     .case-body{
       font-size:13px;line-height:1.85;
-      color:#3A3A40;margin-bottom:32px;
+      color:#5A5A60;margin-bottom:32px;
     }
     .case-result{
       border-top:1px solid #E8E8E8;
@@ -707,7 +798,7 @@
     }
     .case-result-label{
       font-size:11px;letter-spacing:.22em;
-      color:#555558;margin-bottom:8px;
+      color:#767680;margin-bottom:8px;
       font-weight:700;
       text-transform:uppercase;
     }
@@ -719,7 +810,7 @@
       display:block;
     }
     .case-result-num sup{font-size:.38em;vertical-align:super;font-weight:700;letter-spacing:-.02em;}
-    .case-result-desc{font-size:12px;color:#555558;margin-bottom:0;}
+    .case-result-desc{font-size:12px;color:#767680;margin-bottom:0;}
 
     /* ===== AUTHORITY SECTION ===== */
     .authority-sec{
@@ -744,7 +835,7 @@
       margin-bottom:24px;
     }
     .authority-body{
-      font-size:16px;line-height:1.9;
+      font-size:14px;line-height:1.9;
       color:#ffffff;margin-bottom:48px;
     }
     .authority-stats-other{display:flex;gap:56px;flex-wrap:wrap;}
@@ -768,11 +859,11 @@
       transition:border-color .2s,color .2s,background .2s;
     }
     .authority-tag:hover{border-color:rgba(255,255,255,.8);color:#fff;background:rgba(255,255,255,.08);}
-    .authority-tag.lg{font-size:16px;padding:8px 18px;}
+    .authority-tag.lg{font-size:14px;padding:8px 18px;}
     .authority-tag.sm{font-size:12px;padding:5px 12px;}
 
     /* ===== AREA SECTION ===== */
-    .area-sec{}
+    .area-sec{border-top:1px solid #E8E8E8}
     .area-inner{
       display:grid;grid-template-columns:1fr 1fr;
       min-height:400px;
@@ -782,14 +873,14 @@
       border-right:1px solid #E8E8E8;
       display:flex;flex-direction:column;justify-content:center;
     }
-    .area-eyebrow{font-size:11px;letter-spacing:.22em;color:#555558;margin-bottom:24px;text-transform:uppercase;font-weight:600}
+    .area-eyebrow{font-size:11px;letter-spacing:.22em;color:#767680;margin-bottom:24px;text-transform:uppercase;font-weight:600}
     .area-h2{
       font-size:clamp(32px,4.5vw,56px);
       font-weight:700;letter-spacing:-.04em;
       line-height:1.15;color:#28282D;
       margin-bottom:24px;
     }
-    .area-desc{font-size:16px;line-height:1.8;color:#3D3D42;max-width:400px}
+    .area-desc{font-size:15px;line-height:1.8;color:#3D3D42;max-width:400px}
     .area-right{
       padding:80px;
       background:#EDEDEE;
@@ -803,7 +894,7 @@
       display:inline-flex;align-items:center;gap:8px;
       padding:10px 20px;
       border:1px solid #C0C0C0;
-      font-size:16px;color:#28282D;
+      font-size:14px;color:#28282D;
       letter-spacing:.02em;
       transition:background .2s,border-color .2s;
     }
@@ -812,11 +903,11 @@
       width:6px;height:6px;border-radius:50%;
       background:currentColor;opacity:.5;
     }
-    .area-note{font-size:12px;color:#555558;line-height:1.7}
+    .area-note{font-size:12px;color:#767680;line-height:1.7}
     .area-group{margin-bottom:32px}
     .area-group:last-child{margin-bottom:0}
     .area-group-label{
-      font-size:12px;letter-spacing:.12em;color:#555558;
+      font-size:12px;letter-spacing:.12em;color:#767680;
       margin-bottom:12px;display:flex;align-items:center;gap:8px;
     }
     .area-group-label::before{
@@ -829,7 +920,7 @@
     .area-group .area-tags{margin-bottom:0}
 
     /* FAQ */
-    .faq-sec{}
+    .faq-sec{border-top:1px solid #E8E8E8;}
     .faq-head{
       padding:80px 80px 52px;
       display:flex;align-items:flex-end;justify-content:space-between;
@@ -838,7 +929,7 @@
       font-size:clamp(40px,5.5vw,72px);
       font-weight:700;letter-spacing:-.04em;color:#28282D;
     }
-    .faq-list{}
+    .faq-list{border-top:1px solid #E8E8E8;}
     .faq-item{
       border-bottom:1px solid #E8E8E8;
       overflow:hidden;
@@ -852,7 +943,7 @@
     }
     .faq-q:hover{background:#F8F8F7;}
     .faq-q-mark{
-      font-size:13px;letter-spacing:.06em;color:#555558;
+      font-size:13px;letter-spacing:.06em;color:#767680;
       font-weight:700;flex-shrink:0;margin-top:2px;
     }
     .faq-q-text{
@@ -905,7 +996,7 @@
       line-height:1;
       z-index:0;
     }
-    .challenge-sec{}
+    .challenge-sec{border-top:1px solid #E8E8E8}
     .challenge-head{position:relative;overflow:hidden;
       padding:120px 80px 48px;
       display:flex;align-items:flex-start;gap:72px;
@@ -914,7 +1005,7 @@
     .challenge-grid{
       display:grid;
       grid-template-columns:1fr 1fr 1fr 1fr;
-      
+      border-top:1px solid #E8E8E8;
       align-items:stretch;
     }
     .challenge-card{
@@ -930,7 +1021,7 @@
       margin-bottom:24px;
     }
     .challenge-card-num-n{
-      font-size:13px;letter-spacing:.08em;color:#555558;
+      font-size:13px;letter-spacing:.08em;color:#767680;
     }
     .challenge-card-title{
       font-size:clamp(20px,2.5vw,28px);
@@ -954,140 +1045,70 @@
     }
     .challenge-card-desc{
       font-size:13px;line-height:1.85;
-      color:#333336;margin-bottom:0;
+      color:#4A4A50;margin-bottom:0;
     }
     .challenge-tags-label{
       font-size:11px;letter-spacing:.14em;
-      color:#555558;font-weight:600;
+      color:#767680;font-weight:600;
       margin-top:auto;
       padding-top:28px;
       margin-bottom:10px;
     }
-    .challenge-card--overall .challenge-tags-wrap{
-      display:flex;flex-direction:column;gap:0;
-      margin-bottom:0;
+    .challenge-tags-wrap{
+      display:flex;flex-wrap:wrap;gap:8px;
+      margin-bottom:28px;
     }
     .challenge-tag{
-      font-size:clamp(14px,1.2vw,16px);letter-spacing:-.01em;
-      font-weight:600;
-      color:#28282D;
-      background:transparent;
-      padding:9px 0;
+      font-size:12px;letter-spacing:.06em;
+      color:#4A4A50;
+      background:#F3F4F6;
+      padding:4px 12px;
       text-decoration:none;
-      border-bottom:1px solid #E8E8E8;
-      transition:color .15s;
-      display:flex;align-items:center;justify-content:space-between;
-      gap:8px;
-    }
-    .challenge-tag:last-child{border-bottom:none}
-    .challenge-tag::after{
-      content:'→';
-      font-size:13px;
-      color:#A0A0A8;
-      font-weight:400;
-      transition:color .15s;
-      flex-shrink:0;
+      transition:background .15s,color .15s;
     }
     a.challenge-tag:hover{
-      color:#000;
-    }
-    a.challenge-tag:hover::after{
-      color:#000;
-    }
-    /* カテゴリチップ */
-    .challenge-cat-chip{
-      display:inline-block;
-      width:fit-content;
-      font-size:14px;letter-spacing:.08em;font-weight:700;
-      color:#fff;
       background:#28282D;
-      padding:5px 14px;
-      border-radius:2px;
-      margin-bottom:14px;
-      align-self:flex-start;
-      line-height:1.4;
+      color:#fff;
     }
-    /* 全般カード：上段全幅・2カラム */
-    .challenge-card--overall{
-      grid-column:1/-1;
-      border-right:none;
-      border-bottom:1px solid #E0E0E4;
-      background:#fff;
-      display:grid!important;
-      grid-template-columns:1fr 1fr;
-      gap:0;
-      padding:0;
-      flex-direction:unset;
+
+    /* ===== CTA SECTION ===== */
+    .cta-sec{
+      background:#111111;
+      padding:120px 80px;
     }
-    .challenge-card--overall .challenge-card-left{
-      padding:56px 48px 56px 40px;
-      border-right:1px solid #E0E0E4;
-      display:flex;flex-direction:column;
+    .cta-wrap{max-width:800px;margin:0 auto;text-align:center;}
+    .cta-eyebrow{font-size:11px;letter-spacing:.22em;color:#ffffff;margin-bottom:24px;display:block;text-transform:uppercase;font-weight:600;}
+    .cta-h2{
+      font-size:clamp(28px,4vw,52px);
+      font-weight:700;line-height:1.3;
+      letter-spacing:-.04em;color:#fff;
+      margin-bottom:24px;
     }
-    .challenge-card--overall .challenge-card-right{
-      padding:56px 40px 56px 48px;
-      display:flex;flex-direction:column;
-      justify-content:flex-start;
-      align-self:start;
+    .cta-body{
+      font-size:14px;line-height:1.9;
+      color:#ffffff;
+      margin-bottom:56px;
     }
-    .challenge-card--overall .challenge-card-right .challenge-tags-label{
-      margin-top:0!important;
-      padding-top:0!important;
+    .cta-actions{
+      display:flex;align-items:center;justify-content:center;
+      gap:40px;flex-wrap:wrap;
     }
-    /* 全般カード左カラム：ダークテーマ上書き（白背景のため黒文字に） */
-    .challenge-card--overall .challenge-card-left .challenge-card-title{
-      color:#28282D!important;
+    .btn-cta{
+      display:inline-flex;align-items:center;justify-content:center;
+      height:60px;padding:0 52px;
+      background:#fff;color:#28282D;
+      font-size:15px;font-weight:700;letter-spacing:.06em;
+      transition:opacity .2s;
     }
-    .challenge-card--overall .challenge-card-left .challenge-card-num-n{
-      color:rgba(40,40,45,.45)!important;
-    }
-    .challenge-card--overall .challenge-card-left .challenge-card-desc{
-      color:#333336!important;
-    }
-    .challenge-card--overall .challenge-card-title{
-      font-size:clamp(24px,3vw,36px);
-    }
-    /* 推奨施策ラベル強化 */
-    .challenge-tags-label{
-      font-size:10px;letter-spacing:.18em;
-      color:#A0A0A8;font-weight:500;
-      text-transform:uppercase;
-      margin-top:auto;
-      padding-top:32px;
-      margin-bottom:12px;
-    }
-    /* 全般カード推奨施策タグ */
-    .challenge-card--overall .challenge-tag{
-      font-size:clamp(15px,1.4vw,18px);letter-spacing:-.01em;
-      font-weight:700;
-      color:#28282D;
-      background:transparent;
-      padding:10px 0;
-      text-decoration:none;
-      border-bottom:1px solid #E8E8E8;
-      transition:color .15s;
-      display:flex;align-items:center;justify-content:space-between;
-      gap:8px;
-    }
-    .challenge-card--overall .challenge-tag:last-child{border-bottom:none}
-    .challenge-card--overall .challenge-tag::after{
-      content:'→';
-      font-size:16px;
-      color:#A0A0A8;
-      font-weight:400;
-      transition:color .15s,transform .15s;
-      flex-shrink:0;
-    }
-    .challenge-card--overall a.challenge-tag:hover{
-      color:#000;
-    }
-    .challenge-card--overall a.challenge-tag:hover::after{
-      color:#000;
-    }
+    .btn-cta:hover{opacity:.85;}
+    .cta-tel-wrap{}
+    .cta-tel-label{font-size:12px;letter-spacing:.1em;color:#ffffff;margin-bottom:4px;}
+    .cta-tel{font-size:24px;font-weight:400;letter-spacing:-.02em;color:#fff;}
+
     /* ===== OTHER SERVICES ===== */
     .other-sec{
       background:#fff;
-      
+      border-top:1px solid #E8E8E8;
       padding:100px 80px;
     }
     .other-inner{max-width:1100px;margin:0 auto;}
@@ -1117,10 +1138,94 @@
     .other-card.is-current .other-card-num{color:#ffffff;}
     .other-card-title{font-size:clamp(16px,1.8vw,20px);font-weight:700;color:#28282D;letter-spacing:-.02em;line-height:1.35;}
     .other-card.is-current .other-card-title{color:#fff;}
-    .other-card-desc{font-size:13px;line-height:1.8;color:#3A3A40;flex:1;}
+    .other-card-desc{font-size:13px;line-height:1.8;color:#5A5A60;flex:1;}
     .other-card.is-current .other-card-desc{color:#ffffff;}
-    .other-card-link{font-size:13px;color:#555558;letter-spacing:.04em;}
+    .other-card-link{font-size:13px;color:#767680;letter-spacing:.04em;}
     .other-card:hover .other-card-link{color:#28282D;}
+
+    /* ===== FOOTER ===== */
+    .footer{
+      background:#F7F7F5;
+      padding:80px 80px 48px;
+      border-top:1px solid #E8E8E8;
+    }
+    .footer-top{display:flex;gap:80px;margin-bottom:60px;}
+    .footer-nav{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;flex:1;}
+    .footer-nav-group{}
+    .footer-nav-title{
+      font-size:13px;font-weight:700;color:#28282D;
+      margin-bottom:16px;letter-spacing:.04em;
+    }
+    .footer-nav-group a{
+      display:block;font-size:13px;color:#767680;
+      padding:6px 0;letter-spacing:.02em;
+      transition:color .2s;
+    }
+    .footer-nav-group a:hover{color:#28282D;}
+    .footer-bottom{
+      border-top:1px solid #E8E8E8;
+      padding-top:24px;
+      display:flex;align-items:center;justify-content:space-between;
+    }
+    .footer-copy{font-size:12px;color:#BBBBC0;letter-spacing:.04em;}
+    .footer-logo img{height:28px;width:auto;}
+    .footer-logo-wrap{display:flex;flex-direction:column;gap:0;}
+    .footer-logo-addr{font-size:12px;color:#4A4A52;line-height:1.9;font-style:normal;margin-top:20px;}
+    .footer-logo-addr a{color:#4A4A52;text-decoration:none;}
+    .footer-logo-addr a:hover{opacity:.6;}
+    .footer-sns-block{margin-top:28px;}
+    .footer-sns-label{font-size:12px;letter-spacing:.14em;color:#767680;font-weight:500;margin-bottom:12px;}
+    .footer-sns{display:flex;align-items:center;gap:16px;}
+    .footer-logo-related{display:block;margin-top:24px;padding-top:20px;border-top:1px solid #E8E8E8;}
+    .footer-related-label{font-size:12px;letter-spacing:.14em;color:#767680;font-weight:500;white-space:nowrap;}
+    .footer-related-link{display:inline-flex;align-items:center;gap:5px;font-size:12px;color:#4A4A52;text-decoration:none;letter-spacing:.04em;transition:opacity .2s;}
+    .footer-related-link:hover{opacity:.5;}
+    .footer-bottom-right{display:flex;align-items:center;gap:24px;}
+    .footer-privacy{font-size:12px;color:#4A4A52;text-decoration:none;letter-spacing:.04em;}
+    .footer-privacy:hover{opacity:.6;}
+
+    /* ===== FADE UP ===== */
+    .fu{opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1);}
+    .fu.on{opacity:1;transform:translateY(0);}
+
+    /* ===== CUSTOM CURSOR ===== */
+    @media(hover:hover) and (pointer:fine){body{cursor:none}a,button,[role="button"],[tabindex]{cursor:none}}
+    #cursor-dot{position:fixed;top:0;left:0;z-index:9999;width:6px;height:6px;background:#fff;border-radius:50%;pointer-events:none;transform:translate(-50%,-50%);mix-blend-mode:difference;transition:width .15s,height .15s,background .15s;will-change:transform;}
+    #cursor-ring{position:fixed;top:0;left:0;z-index:9998;width:32px;height:32px;border:1.5px solid #fff;border-radius:50%;pointer-events:none;transform:translate(-50%,-50%);mix-blend-mode:difference;transition:width .25s cubic-bezier(.25,.46,.45,.94),height .25s cubic-bezier(.25,.46,.45,.94),background .25s,border-color .25s;will-change:transform;}
+    #cursor-ring.is-hovering{width:48px;height:48px;background:#fff;border-color:#fff;}
+    #cursor-ring.is-cta{width:56px;height:56px;background:#fff;border-color:#fff;}
+    @media(hover:none),not all and (pointer:fine){#cursor-dot,#cursor-ring{display:none}}
+
+    /* ===== FIXED MOBILE CTA ===== */
+    .sp-fixed-cta{
+      display:none;position:fixed;bottom:0;left:0;right:0;
+      background:#28282D;padding:12px 16px;
+      padding-bottom:calc(12px + env(safe-area-inset-bottom));
+      z-index:90;box-shadow:0 -2px 12px rgba(0,0,0,.15);
+      transform:translateY(100%);transition:transform .3s ease,opacity .3s ease;opacity:0;
+    }
+    .sp-fixed-cta.visible{transform:translateY(0);opacity:1;}
+    .sp-fixed-cta-inner{display:flex;align-items:center;gap:10px;}
+    .sp-fixed-cta-consult{
+      flex:1;display:flex;align-items:center;justify-content:center;
+      height:48px;background:#fff;color:#28282D;
+      font-size:14px;font-weight:700;text-decoration:none;letter-spacing:.02em;
+    }
+    .sp-fixed-cta-tel{
+      display:flex;align-items:center;justify-content:center;gap:6px;
+      height:48px;padding:0 16px;border:1.5px solid rgba(255,255,255,.6);
+      color:#fff;text-decoration:none;white-space:nowrap;
+    }
+    .sp-fixed-cta-tel-num{font-size:13px;font-weight:500;letter-spacing:.03em;}
+    @media(min-width:769px){.sp-fixed-cta{display:none!important}}
+    @media(max-width:768px){.sp-fixed-cta{display:block}body{padding-bottom:80px}}
+
+    /* ===== SWIPE HINTS (SP only) ===== */
+    .problem-swipe-hint,
+    .solution-swipe-hint,
+    .case-swipe-hint{
+      display:none;
+    }
 
     /* ===== RESPONSIVE ===== */
     @media(max-width:900px){
@@ -1149,7 +1254,7 @@
         margin-bottom:24px;
       }
       .kv-body{
-        font-size:16px;
+        font-size:14px;
         line-height:1.85;
         margin-bottom:36px;
       }
@@ -1177,7 +1282,7 @@
       /* ---- SECTION COMMON ---- */
       .sec-eyebrow{font-size:16px;}
       .sec-h2{font-size:clamp(24px,7vw,36px);line-height:1.3;}
-      .sec-body{font-size:16px;line-height:1.85;}
+      .sec-body{font-size:14px;line-height:1.85;}
 
       /* ---- SWIPE HINTS ---- */
       .problem-swipe-hint,
@@ -1292,132 +1397,72 @@
       .funnel-bar:nth-child(5){width:50%;}
       .funnel-bar-label{font-size:14px;letter-spacing:.04em;text-align:center;}
       .funnel-click-hint{margin-top:8px;font-size:12px;}
-      /* SP：垂直レイヤーブロック形式 */
-      .funnel-strategy-line{display:none;}
+      /* SPカード：横スワイプ（全幅から左右paddingを引いた幅で制御） */
       .funnel-cards-wrap{
         width:100%;
         max-width:100%;
-        overflow:visible;
+        overflow:hidden;
         box-sizing:border-box;
-        padding:0;
-        position:relative;
       }
       .funnel-diagram{
         display:flex;
-        flex-direction:column;
+        flex-direction:row;
+        overflow-x:auto;
+        scroll-snap-type:x mandatory;
+        -webkit-overflow-scrolling:touch;
         gap:0;
+        scrollbar-width:none;
+        /* 左パディングでカード開始位置を設定 */
+        padding:0 0 16px 24px;
         width:100%;
         box-sizing:border-box;
       }
-      /* SP各ブロック：縦積み（番号＋カテゴリ名 → 役割・ゴール） */
+      .funnel-diagram::-webkit-scrollbar{display:none;}
       .funnel-stage{
-        display:grid;
-        grid-template-columns:56px 1fr;
-        grid-template-rows:auto auto;
-        gap:0;
-        align-items:start;
-        padding:32px 0;
-        border-bottom:1px solid rgba(40,40,45,.12);
-        border-right:none;
-        border-left:none;
-        margin:0;
-        background:transparent;
+        flex:0 0 82vw;
+        max-width:320px;
+        scroll-snap-align:start;
+        display:block;
+        /* opacityアニメーションをリセット（SPでは常時表示） */
         opacity:1 !important;
         transform:none !important;
-        box-sizing:border-box;
-        position:relative;
+        padding:24px 20px;
+        border:1px solid rgba(40,40,45,.12);
+        border-right:none;
+        margin-right:0;
+        /* 最後のカードの左にスペースを確保 */
+        margin-right:0;
       }
-      .funnel-stage:first-child{
-        border-top:1px solid rgba(40,40,45,.12);
-        background:#F7F7F5;
+      /* 最後のカードの右に24pxのスペースを確保 */
+      .funnel-stage:last-child{
+        border-right:1px solid rgba(40,40,45,.12);
+        margin-right:24px;
+      }
+      .funnel-stage:first-child{border-top:1px solid rgba(40,40,45,.12);}
+      .funnel-stage.is-active-card{
         padding-left:20px;
         padding-right:20px;
-        margin-left:-24px;
-        margin-right:-24px;
-        width:calc(100% + 48px);
+        margin:0;
       }
-      .funnel-stage:first-child::before{
-        content:'';
-        position:absolute;
-        top:0;
-        bottom:0;
-        left:0;
-        width:3px;
-        background:#28282D;
+      .funnel-stage.is-active-card:last-child{
+        margin-right:24px;
       }
-      /* 番号：左上 */
-      .funnel-stage-num{
-        font-size:32px;
-        font-weight:700;
-        opacity:.12;
+      .funnel-stage-num{font-size:40px;margin-bottom:8px;display:block;}
+      .funnel-stage-title{font-size:16px;margin-bottom:8px;}
+      .funnel-stage-desc{font-size:14px;line-height:1.75;}
+      .funnel-dots{
         display:flex;
-        align-items:center;
         justify-content:center;
-        padding:4px 0 0;
-        line-height:1;
-        grid-column:1;
-        grid-row:1;
-        font-style:normal;
+        gap:6px;
+        margin-top:16px;
       }
-      .funnel-stage:first-child .funnel-stage-num{opacity:.22;}
-      /* カテゴリ：右上 */
-      .funnel-stage-category{
-        grid-column:2;
-        grid-row:1;
-        padding:4px 0 12px 16px;
-        border-right:none;
-      }
-      .funnel-stage-label{
-        font-size:10px;
-        letter-spacing:.14em;
-        color:#AAAAAF;
-        margin-bottom:4px;
-        font-style:normal;
-        opacity:.45;
-      }
-      .funnel-stage:first-child .funnel-stage-label{color:#888890;}
-      .funnel-stage-title{font-size:20px;margin-bottom:0;font-style:normal;}
-      /* 役割・ゴール：下段（2カラム全幅） */
-      .funnel-stage-body{
-        grid-column:1 / -1;
-        grid-row:2;
-        padding:0 0 8px;
-        border-right:none;
-      }
-      .funnel-stage-desc{font-size:16px;line-height:1.8;font-style:normal;}
-      .funnel-stage-goal{font-size:16px;line-height:1.8;font-weight:600;font-style:normal;}
-      .funnel-stage-meta-label{font-size:12px;margin-top:14px;font-style:normal;}
-      /* スマホではインジケーターを非表示 */
-      #funnel-indicator{display:none;}
-      .funnel-stage-services{margin-top:16px;gap:5px;}
-      .funnel-stage-service-tag{font-size:12px;padding:4px 10px;font-style:normal;}
-      /* 壁テキスト */
-      .funnel-stage-wall{
-        font-size:11px;
-        left:56px;
-        background:#F7F7F4;
-        padding:0 8px;
-        line-height:24px;
-        bottom:-12px;
-        white-space:normal;
-      }
-      .funnel-stage:first-child .funnel-stage-wall{background:#F7F7F5;}
-      .funnel-dots{display:none;}
       .funnel-scroll-hint{display:none;}
 
       /* ---- SOLUTION ---- */
       .solution-sec{padding:64px 0;}
       .solution-inner{padding:0;}
       .solution-head{padding:0 24px;margin-bottom:40px;}
-      .solution-head-reason{
-        font-size:16px;
-        display:inline-block;
-        padding:0 0 10px 0;
-        background:none;
-        border-left:none;
-        font-weight:500;
-        font-style:normal;
-      }
+      .solution-head-reason{font-size:14px;}
       /* 横スワイプカード */
       .solution-items{
         display:flex;
@@ -1454,7 +1499,7 @@
         border-top:none;
       }
       .solution-item-title{font-size:18px;margin-bottom:12px;}
-      .solution-item-desc{font-size:16px;line-height:1.8;}
+      .solution-item-desc{font-size:14px;line-height:1.8;}
       /* スワイプ誘導ラベル */
       .solution-swipe-hint{
         display:flex;
@@ -1540,6 +1585,9 @@
       .faq-a-inner{padding:0 24px 24px;}
 
       /* ---- CTA ---- */
+      .cta-sec{padding:72px 24px;}
+      .cta-actions{flex-direction:column;align-items:center;gap:20px;}
+      .btn-cta{width:100%;max-width:360px;}
 
       /* ---- OTHER ---- */
       .other-sec{padding:64px 24px;}
@@ -1551,29 +1599,24 @@
 
       /* ---- CHALLENGE ---- */
       .challenge-head{position:relative;overflow:hidden;padding:72px 24px 40px;flex-direction:column;gap:24px}
-      .challenge-head-body{position:relative;z-index:1;}
       .challenge-grid{grid-template-columns:1fr}
       .challenge-card{border-right:none;border-bottom:1px solid #E8E8E8;padding:36px 24px;}
       .challenge-card:last-child{border-bottom:none}
-      .challenge-card--overall{grid-column:1/-1;border-right:none;grid-template-columns:1fr!important}
-      .challenge-card--overall .challenge-card-left{border-right:none;border-bottom:1px solid #E0E0E4;padding:40px 24px}
-      .challenge-card--overall .challenge-card-right{padding:32px 24px 40px;align-self:auto}
-
       .sec-vert{
         position:absolute;
         top:50%;
         left:50%;
         transform:translate(-50%,-50%);
-        font-size:clamp(72px,18vw,120px);
+        font-size:clamp(100px,15vw,220px);
         font-weight:900;
         letter-spacing:-.04em;
-        color:rgba(40,40,45,.04);
+        color:rgba(40,40,45,.05);
         -webkit-text-stroke:none;
         white-space:nowrap;
         pointer-events:none;
         user-select:none;
         line-height:1;
-        z-index:-1;
+        z-index:0;
       }
 
       /* ---- FOOTER ---- */
@@ -1583,7 +1626,7 @@
       .footer-nav{grid-template-columns:1fr;gap:32px;}
       .footer-nav-group a{
         display:block;
-        font-size:16px;
+        font-size:14px;
         padding:6px 0;
         line-height:1.5;
       }
@@ -1594,16 +1637,19 @@
       .area-inner{grid-template-columns:1fr}
       .area-left{padding:56px 24px 36px;border-right:none;border-bottom:1px solid #E8E8E8}
       .area-right{padding:36px 24px 56px}
-    }</style>
+    }
+  </style>
 </head>
 <body>
 
 <!-- CUSTOM CURSOR -->
+<div id="cursor-dot" aria-hidden="true"></div>
+<div id="cursor-ring" aria-hidden="true"></div>
 
 <!-- HEADER -->
 <header class="hd" role="banner">
   <a href="/" class="hd-logo" aria-label="セルフアチーブ トップページへ">
-    <img src="/assets/logo_color.png" alt="selfachieve Acquisition Agency" width="160" height="34" fetchpriority="high">
+    <img src="assets/logo_color.png" alt="selfachieve Acquisition Agency" width="160" height="34" fetchpriority="high">
   </a>
   <nav class="hd-nav" aria-label="グローバルナビゲーション">
     <span class="hd-nav-item">
@@ -1611,81 +1657,72 @@
       <div class="hd-mega-wrap">
       <div class="hd-mega" role="menu">
         <div class="hd-mega-col">
-          <span class="hd-mega-col-label"><span class="col-label-main">戦略・全体</span><span class="col-label-sub">（なんか、うまくいかない…）</span></span>
-          <a href="/strategy/" role="menuitem">事業戦略</a>
-          <a href="/strategy/" role="menuitem">ブランディング</a>
-          <a href="/strategy/" role="menuitem">WEB戦略</a>
-          <a href="/strategy/" role="menuitem">マーケティング戦略</a>
-          <a href="/strategy/" role="menuitem">顧客戦略</a>
-          <a href="https://selfachieve.jp/saikatsu_r/" role="menuitem" target="_blank" rel="noopener noreferrer">採用戦略<svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-left:4px;opacity:.7"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+          <span class="hd-mega-col-label">なんかうまくいかない...</span>
+          <a href="/strategy/" role="menuitem">WEB戦略設計</a>
         </div>
         <div class="hd-mega-col">
-          <span class="hd-mega-col-label"><span class="col-label-main">集客</span><span class="col-label-sub">（サイトへの訪問者を増やしたい）</span></span>
+          <span class="hd-mega-col-label">集客したい</span>
           <a href="/seo/" role="menuitem">SEO対策</a>
           <a href="/meo/" role="menuitem">MEO対策</a>
-          <a href="/ads/" role="menuitem">WEB広告</a>
-          <a href="/sns/" role="menuitem">SNSマーケティング</a>
-          <a href="/sns/note/" role="menuitem">note対策</a>
-          <a href="/ai-seo/" role="menuitem">AI検索対策（LLM対策）</a>
+          <a href="/ai-seo/" role="menuitem">AI検索対策（LLM検索対策）</a>
+          <a href="/ads/listing/" role="menuitem">リスティング広告</a>
+          <a href="/ads/display/" role="menuitem">ディスプレイ広告</a>
         </div>
         <div class="hd-mega-col">
-          <span class="hd-mega-col-label"><span class="col-label-main">成約</span><span class="col-label-sub">（問い合わせ・売上を増やしたい）</span></span>
-          <a href="/website/" role="menuitem">ホームページ制作</a>
-          <a href="/website/" role="menuitem">分析改善</a>
-          <a href="/website/lp/" role="menuitem">LP制作</a>
+          <span class="hd-mega-col-label">問い合わせを増やしたい</span>
+          <a href="/website/" role="menuitem">サイト制作・分析改善</a>
+          <a href="/strategy/" role="menuitem">WEB戦略設計</a>
         </div>
         <div class="hd-mega-col">
-          <span class="hd-mega-col-label"><span class="col-label-main">再販・追客</span><span class="col-label-sub">（一度来た人にまた来てほしい）</span></span>
+          <span class="hd-mega-col-label">追客したい</span>
           <a href="/sns/line/" role="menuitem">LINE</a>
           <a href="/sns/instagram/" role="menuitem">Instagram</a>
           <a href="/sns/x/" role="menuitem">X（旧Twitter）</a>
           <a href="/sns/youtube/" role="menuitem">YouTube</a>
-        </div>
-        <div class="hd-mega-col">
-          <span class="hd-mega-col-label"><span class="col-label-main">AI活用</span><span class="col-label-sub">（AIで業務を効率化・最適化したい）</span></span>
-          <a href="/ai-automation/" role="menuitem">業務効率化</a>
-          <a href="/ai-automation/" role="menuitem">分析深化</a>
+          <a href="/sns/tiktok/" role="menuitem">TikTok</a>
+          <a href="/sns/note/" role="menuitem">note</a>
         </div>
       </div>
       </div>
     </span>
     <span class="hd-nav-item">
-      <a href="javascript:void(0)">サービス</a>
+      <a href="/service/">サービス</a>
       <div class="hd-mega-wrap">
       <div class="hd-mega" role="menu">
         <div class="hd-mega-col">
-          <span class="hd-mega-col-label"><span class="col-label-main">戦略設計</span></span>
-          <a href="/strategy/" role="menuitem">事業戦略</a>
-          <a href="/strategy/" role="menuitem">ブランディング</a>
-          <a href="/strategy/" role="menuitem">WEB戦略</a>
-          <a href="/strategy/" role="menuitem">マーケティング戦略</a>
-          <a href="/strategy/" role="menuitem">顧客戦略</a>
-          <a href="https://selfachieve.jp/saikatsu_r/" role="menuitem" target="_blank" rel="noopener noreferrer">採用戦略<svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-left:4px;opacity:.7"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+          <span class="hd-mega-col-label">マーケティング戦略</span>
+          <a href="/strategy/" role="menuitem">WEB戦略設計</a>
         </div>
         <div class="hd-mega-col">
-          <span class="hd-mega-col-label"><span class="col-label-main">集客施策</span></span>
+          <span class="hd-mega-col-label">WEB集客施策</span>
+          <a href="/website/" role="menuitem">サイト制作・分析改善</a>
           <a href="/seo/" role="menuitem">SEO対策</a>
           <a href="/meo/" role="menuitem">MEO対策</a>
-          <a href="/ads/" role="menuitem">WEB広告</a>
-          <a href="/sns/" role="menuitem">SNSマーケティング</a>
-          <a href="/sns/note/" role="menuitem">note対策</a>
-          <a href="/ai-seo/" role="menuitem">AI検索対策（LLM対策）</a>
+          <a href="/ai-seo/" role="menuitem">AI検索対策（LLM検索対策）</a>
         </div>
         <div class="hd-mega-col">
-          <span class="hd-mega-col-label"><span class="col-label-main">成約</span></span>
-          <a href="/website/" role="menuitem">ホームページ制作</a>
-          <a href="/website/" role="menuitem">分析改善</a>
-          <a href="/website/lp/" role="menuitem">LP制作</a>
+          <span class="hd-mega-col-label">SNSマーケティング特化施策</span>
+          <a href="/sns/" role="menuitem" class="hd-mega-col-top-link">SNSマーケティング</a>
+          <a href="/sns/instagram/" role="menuitem">Instagram</a>
+          <a href="/sns/tiktok/" role="menuitem">TikTok</a>
+          <a href="/sns/x/" role="menuitem">X（旧Twitter）</a>
+          <a href="/sns/youtube/" role="menuitem">YouTube</a>
+          <a href="/sns/note/" role="menuitem">note</a>
+          <a href="/sns/line/" role="menuitem">LINE</a>
         </div>
         <div class="hd-mega-col">
-          <span class="hd-mega-col-label"><span class="col-label-main">AI活用支援（DX/AX）</span></span>
-          <a href="/ai-automation/" role="menuitem">業務効率化</a>
-          <a href="/ai-automation/" role="menuitem">分析深化</a>
+          <span class="hd-mega-col-label">WEB広告マーケティング</span>
+          <a href="/ads/listing/" role="menuitem">リスティング広告</a>
+          <a href="/ads/display/" role="menuitem">ディスプレイ広告</a>
+        </div>
+        <div class="hd-mega-col">
+          <span class="hd-mega-col-label">AX・業務改善</span>
+          <a href="/ai-automation/" role="menuitem">AI業務効率化・導入支援</a>
         </div>
       </div>
       </div>
     </span>
-    <a href="/works/">実績</a>
+    <a href="/works/">制作実績</a>
     <a href="/voice/">お客さまの声</a>
     <span class="hd-nav-item">
       <a href="/company/">会社情報</a>
@@ -1700,80 +1737,62 @@
   </nav>
   <div class="hd-btns">
     <a href="https://saikatsu-r.jp/" class="hd-btn-external" target="_blank" rel="noopener noreferrer" aria-label="企業の採用活動を成功に導く「サイカツ.R」（別サイトが開きます）">企業の採用活動を成功に導く「サイカツ.R」<svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
-    <a href="/contact/" class="hd-btn" aria-label="初回の相談無料">初回の相談無料</a>
+    <a href="#contact" class="hd-btn" aria-label="無料相談を申し込む">無料相談</a>
   </div>
   <button class="hd-hamburger" aria-label="メニューを開く" aria-expanded="false" aria-controls="hd-drawer">
     <span></span><span></span><span></span>
   </button>
 </header>
 
-
-
 <!-- MOBILE DRAWER -->
 <div class="hd-drawer" id="hd-drawer" role="dialog" aria-label="モバイルメニュー">
   <div class="hd-drawer-item">
     <div class="hd-drawer-link" data-drawer-toggle>課題から探す</div>
     <div class="hd-drawer-sub">
-      <p class="hd-drawer-sub-label">戦略・全体（なんか、うまくいかない…）</p>
-      <a href="/strategy/">事業戦略</a>
-      <a href="/strategy/">ブランディング</a>
-      <a href="/strategy/">WEB戦略</a>
-      <a href="/strategy/">マーケティング戦略</a>
-      <a href="/strategy/">顧客戦略</a>
-      <a href="https://selfachieve.jp/saikatsu_r/" target="_blank" rel="noopener noreferrer">採用戦略<svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-left:4px;opacity:.7"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
-      <p class="hd-drawer-sub-label">集客（サイトへの訪問者を増やしたい）</p>
+      <p class="hd-drawer-sub-label">なんかうまくいかない...</p>
+      <a href="/strategy/">WEB戦略設計</a>
+      <p class="hd-drawer-sub-label">集客したい</p>
       <a href="/seo/">SEO対策</a>
       <a href="/meo/">MEO対策</a>
-      <a href="/ads/">WEB広告</a>
-      <a href="/sns/">SNSマーケティング</a>
-      <a href="/sns/note/">note対策</a>
-      <a href="/ai-seo/">AI検索対策（LLM対策）</a>
-      <p class="hd-drawer-sub-label">成約（問い合わせ・売上を増やしたい）</p>
-      <a href="/website/">ホームページ制作</a>
-      <a href="/website/">分析改善</a>
-      <a href="/website/lp/">LP制作</a>
-      <p class="hd-drawer-sub-label">再販・追客（一度来た人にまた来てほしい）</p>
+      <a href="/ai-seo/">AI検索対策（LLM検索対策）</a>
+      <a href="/ads/listing/">リスティング広告</a>
+      <a href="/ads/display/">ディスプレイ広告</a>
+      <p class="hd-drawer-sub-label">問い合わせを増やしたい</p>
+      <a href="/website/">サイト制作・分析改善</a>
+      <a href="/strategy/">WEB戦略設計</a>
+      <p class="hd-drawer-sub-label">追客したい</p>
       <a href="/sns/line/">LINE</a>
       <a href="/sns/instagram/">Instagram</a>
       <a href="/sns/x/">X（旧Twitter）</a>
       <a href="/sns/youtube/">YouTube</a>
-      <p class="hd-drawer-sub-label">AI活用（AIで業務を効率化・最適化したい）</p>
-      <a href="/ai-automation/">業務効率化</a>
-      <a href="/ai-automation/">分析深化</a>
+      <a href="/sns/tiktok/">TikTok</a>
+      <a href="/sns/note/">note</a>
     </div>
   </div>
   <div class="hd-drawer-item">
     <div class="hd-drawer-link" data-drawer-toggle>サービス</div>
     <div class="hd-drawer-sub">
-      <p class="hd-drawer-sub-label">戦略設計</p>
-      <a href="/strategy/">事業戦略</a>
-      <a href="/strategy/">ブランディング</a>
-      <a href="/strategy/">WEB戦略</a>
-      <a href="/strategy/">マーケティング戦略</a>
-      <a href="/strategy/">顧客戦略</a>
-      <a href="https://selfachieve.jp/saikatsu_r/" target="_blank" rel="noopener noreferrer">採用戦略<svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-left:4px;opacity:.7"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
-      <p class="hd-drawer-sub-label">集客施策</p>
+      <a href="/strategy/">WEB戦略設計</a>
+      <a href="/website/">サイト制作・分析改善</a>
       <a href="/seo/">SEO対策</a>
       <a href="/meo/">MEO対策</a>
-      <a href="/ads/">WEB広告</a>
-      <a href="/sns/">SNSマーケティング</a>
-      <a href="/sns/note/">note対策</a>
-      <a href="/ai-seo/">AI検索対策（LLM対策）</a>
-      <p class="hd-drawer-sub-label">成約</p>
-      <a href="/website/">ホームページ制作</a>
-      <a href="/website/">分析改善</a>
-      <a href="/website/lp/">LP制作</a>
-      <p class="hd-drawer-sub-label">AI活用支援（DX/AX）</p>
-      <a href="/ai-automation/">業務効率化</a>
-      <a href="/ai-automation/">分析深化</a>
+      <a href="/ai-seo/">AI検索対策（LLM検索対策）</a>
+      <p class="hd-drawer-sub-label">SNSマーケティング</p>
+      <a href="/sns/instagram/">Instagram</a>
+      <a href="/sns/tiktok/">TikTok</a>
+      <a href="/sns/x/">X（旧Twitter）</a>
+      <a href="/sns/youtube/">YouTube</a>
+      <a href="/sns/note/">note</a>
+      <a href="/sns/line/">LINE</a>
+      <p class="hd-drawer-sub-label">WEB広告</p>
+      <a href="/ads/listing/">リスティング広告</a>
+      <a href="/ads/display/">ディスプレイ広告</a>
+      <p class="hd-drawer-sub-label">AX・業務改善</p>
+      <a href="/ai-automation/">AI業務効率化・導入支援</a>
     </div>
   </div>
-  <div class="hd-drawer-item">
-    <a href="/works/" class="hd-drawer-link no-arrow">実績</a>
-  </div>
-  <div class="hd-drawer-item">
-    <a href="/voice/" class="hd-drawer-link no-arrow">お客さまの声</a>
-  </div>
+  <div class="hd-drawer-item"><a href="/works/" class="hd-drawer-link no-arrow">制作実績</a></div>
+  <div class="hd-drawer-item"><a href="/voice/" class="hd-drawer-link no-arrow">お客さまの声</a></div>
   <div class="hd-drawer-item">
     <div class="hd-drawer-link" data-drawer-toggle="drawer-company">会社情報</div>
     <div class="hd-drawer-sub" id="drawer-company">
@@ -1784,21 +1803,22 @@
       <a href="/company/#access">アクセス</a>
     </div>
   </div>
+  <div class="hd-drawer-item"></div>
   <div class="hd-drawer-cta">
-    <a href="#contact" class="hd-btn" aria-label="無料相談を申し込む">無料相談を申し込む</a>
-    <a href="https://saicatsu-r.jp/" class="hd-btn-saicatsu" target="_blank" rel="noopener noreferrer" aria-label="企業の採用活動を成功に導く「サイカツ.R」（別サイトが開きます）">企業の採用活動を成功に導く「サイカツ.R」<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 2L2 10M10 2H5M10 2V7" stroke="#28282D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    <a href="#contact" class="hd-btn">無料相談を申し込む</a>
+    <a href="https://saikatsu-r.jp/" class="hd-btn-saicatsu" target="_blank" rel="noopener noreferrer">企業の採用活動を成功に導く「サイカツ.R」<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 2L2 10M10 2H5M10 2V7" stroke="#28282D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
   </div>
   <div class="hd-drawer-sns">
     <p class="hd-drawer-sns-label">FOLLOW US</p>
     <div class="hd-drawer-sns-links">
-      <a href="https://www.instagram.com/self.achieve/" class="hd-drawer-sns-link hd-drawer-sns-ig" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="20" height="20" rx="5" stroke="#28282D" stroke-width="1.5"/><circle cx="12" cy="12" r="4" stroke="#28282D" stroke-width="1.5"/><circle cx="17.5" cy="6.5" r="1" fill="#28282D"/></svg>
+      <a href="https://www.instagram.com/self.achieve/" class="hd-drawer-sns-link" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" stroke="#28282D" stroke-width="1.5"/><circle cx="12" cy="12" r="4" stroke="#28282D" stroke-width="1.5"/><circle cx="17.5" cy="6.5" r="1" fill="#28282D"/></svg>
       </a>
-      <a href="https://www.tiktok.com/@selfachieve" class="hd-drawer-sns-link hd-drawer-sns-tt" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" stroke="#28282D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <a href="https://www.tiktok.com/@selfachieve" class="hd-drawer-sns-link" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" stroke="#28282D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
-      <a href="https://x.com/selfachieve" class="hd-drawer-sns-link hd-drawer-sns-x" target="_blank" rel="noopener noreferrer" aria-label="X（旧Twitter）">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 4l16 16M4 20L20 4" stroke="#28282D" stroke-width="1.5" stroke-linecap="round"/></svg>
+      <a href="https://x.com/selfachieve" class="hd-drawer-sns-link" target="_blank" rel="noopener noreferrer" aria-label="X（旧Twitter）">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 4l16 16M4 20L20 4" stroke="#28282D" stroke-width="1.5" stroke-linecap="round"/></svg>
       </a>
     </div>
   </div>
@@ -1807,14 +1827,13 @@
 <!-- FIXED MOBILE CTA -->
 <div class="sp-fixed-cta" id="sp-fixed-cta" role="complementary" aria-label="お問い合わせ">
   <div class="sp-fixed-cta-inner">
-    <a href="/contact/" class="sp-fixed-cta-consult" aria-label="無料相談を申し込む">無料相談を申し込む</a>
-    <a href="tel:0788068338" class="sp-fixed-cta-tel" aria-label="電話番号 078-806-8338">
-      <svg class="sp-fixed-cta-tel-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.61 21 3 13.39 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1.02l-2.2 2.2z" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <a href="/contact/" class="sp-fixed-cta-consult">無料相談を申し込む</a>
+    <a href="tel:0788068338" class="sp-fixed-cta-tel">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.61 21 3 13.39 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1.02l-2.2 2.2z" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
       <span class="sp-fixed-cta-tel-num">078-806-8338</span>
     </a>
   </div>
 </div>
-
 
 <main>
 
@@ -1822,17 +1841,17 @@
 <section class="kv" aria-labelledby="kv-h1">
   <img src="../assets/splash-strategy.png" alt="" class="kv-splash" aria-hidden="true">
   <div class="kv-wrap">
-    <p class="kv-eyebrow fu on">WEB STRATEGY DESIGN</p>
-    <p class="kv-question fu on" style="transition-delay:.05s">なんでうまくいかないの？</p>
-    <h1 class="kv-h1 fu on" id="kv-h1" style="transition-delay:.1s">それ、<em>戦略</em>の問題です。</h1>
-    <p class="kv-sub fu on" style="transition-delay:.15s">施策の前に、戦略がある。</p>
-    <p class="kv-body fu on" style="transition-delay:.2s">
+    <p class="kv-eyebrow fu">WEB STRATEGY DESIGN</p>
+    <p class="kv-question fu" style="transition-delay:.05s">なんでうまくいかないの？</p>
+    <h1 class="kv-h1 fu" id="kv-h1" style="transition-delay:.1s">それ、<em>戦略</em>の問題です。</h1>
+    <p class="kv-sub fu" style="transition-delay:.15s">施策の前に、戦略がある。</p>
+    <p class="kv-body fu" style="transition-delay:.2s">
       SEOも広告もSNSも試した。なのに成果が出ない。<br>
       その原因は、施策の質ではなく<strong style="color:#fff">戦略の不在</strong>にあります。<br>
       現状把握・課題設定・施策設計まで、<br>
       根拠のある戦略を一緒に作ります。
     </p>
-    <div class="kv-actions fu on" style="transition-delay:.3s">
+    <div class="kv-actions fu" style="transition-delay:.3s">
       <a href="/contact/" class="btn-primary">15分無料相談を申し込む</a>
       <div class="kv-tel-wrap">
         <p class="kv-tel-label">お電話でのご相談</p>
@@ -1929,95 +1948,86 @@
         <p class="funnel-click-hint">クリックして確認</p>
       </div>
 
-      <!-- 垂直レイヤーブロック形式 -->
+      <!-- 右：縦積みカード -->
       <div class="funnel-cards-wrap">
-        <!-- ストラテジーライン：全ブロックを貫通する垂直線 -->
-        <div class="funnel-strategy-line" aria-hidden="true"></div>
-        <!-- 左インジケーター：ホバーに合わせてスライドする縦ライン -->
-        <div id="funnel-indicator" aria-hidden="true"></div>
-
+        <!-- スクロール誘導ヒント（非表示） -->
+        <div class="funnel-scroll-hint">
+          <span class="funnel-scroll-label">SCROLL TO EXPLORE</span>
+          <div class="funnel-nav" role="group" aria-label="カードナビゲーション">
+            <button class="funnel-nav-btn" id="funnel-prev" aria-label="前のカード" disabled>
+              <svg viewBox="0 0 14 14" aria-hidden="true"><polyline points="9,2 4,7 9,12"/></svg>
+            </button>
+            <button class="funnel-nav-btn" id="funnel-next" aria-label="次のカード">
+              <svg viewBox="0 0 14 14" aria-hidden="true"><polyline points="5,2 10,7 5,12"/></svg>
+            </button>
+          </div>
+        </div>
         <div class="funnel-diagram" role="list" id="funnel-cards">
 
-        <!-- 01 戦略・全体（起点 / 薄グレー背景＋左アクセントライン） -->
+        <!-- 01 認知 -->
         <div class="funnel-stage" role="listitem" data-index="0">
+          <span class="funnel-stage-label">認知</span>
           <span class="funnel-stage-num">01</span>
-          <div class="funnel-stage-category">
-            <span class="funnel-stage-label">Strategy &amp; Overview</span>
-            <p class="funnel-stage-title">戦略・全体</p>
-          </div>
           <div class="funnel-stage-body">
+            <div class="funnel-stage-head">
+              <p class="funnel-stage-title">そもそも知られていない</p>
+            </div>
             <div class="funnel-stage-detail">
-              <span class="funnel-stage-meta-label">役割</span>
-              <p class="funnel-stage-desc">現状分析、競合調査、独自資源の再定義。</p>
-              <span class="funnel-stage-meta-label">ゴール</span>
-              <p class="funnel-stage-goal">全体を俦瞳し、成果を阻害している「真の原因」を特定します。</p>
-              <div class="funnel-stage-services">
-                <a href="/strategy/" class="funnel-stage-service-tag">WEB戦略設計</a>
-              </div>
+              <p class="funnel-stage-desc">検索しても出てこない。SNSでも見かけない。存在を知られていなければ、どんなに良いサービスでも選ばれない。</p>
             </div>
           </div>
-          <span class="funnel-stage-wall">なんか、うまくいかない…</span>
         </div>
 
-        <!-- 02 集客 -->
-        <div class="funnel-stage" role="listitem" data-index="1">
+        <!-- 02 流入（問題） -->
+        <div class="funnel-stage is-problem" role="listitem" data-index="1">
+          <span class="funnel-stage-label">流入</span>
           <span class="funnel-stage-num">02</span>
-          <div class="funnel-stage-category">
-            <span class="funnel-stage-label">Acquisition</span>
-            <p class="funnel-stage-title">集客</p>
-          </div>
           <div class="funnel-stage-body">
+            <div class="funnel-stage-head">
+              <p class="funnel-stage-title">サイトに人が来ない</p>
+            </div>
             <div class="funnel-stage-detail">
-              <span class="funnel-stage-meta-label">役割</span>
-              <p class="funnel-stage-desc">SEO、広告、SNS、AI検索対策。</p>
-              <span class="funnel-stage-meta-label">ゴール</span>
-              <p class="funnel-stage-goal">ターゲットユーザーを、低コストかつ継続的にサイトへ誘導します。</p>
+              <p class="funnel-stage-desc">SEOや広告を出しているのにアクセスが増えない。キーワード選定や媒体選択が課題に合っていない可能性があります。</p>
+              <span class="funnel-stage-tag">集客フェーズで詰まっている</span>
               <div class="funnel-stage-services">
                 <a href="/seo/" class="funnel-stage-service-tag">SEO対策</a>
                 <a href="/ads/listing/" class="funnel-stage-service-tag">リスティング広告</a>
                 <a href="/meo/" class="funnel-stage-service-tag">MEO対策</a>
-                <a href="/sns/" class="funnel-stage-service-tag">SNS運用</a>
               </div>
             </div>
           </div>
-          <span class="funnel-stage-wall">サイトへの訪問者を増やしたい</span>
         </div>
 
-        <!-- 03 成約 -->
-        <div class="funnel-stage" role="listitem" data-index="2">
+        <!-- 03 閲覧・検討（問題） -->
+        <div class="funnel-stage is-problem" role="listitem" data-index="2">
+          <span class="funnel-stage-label">閲覧・検討</span>
           <span class="funnel-stage-num">03</span>
-          <div class="funnel-stage-category">
-            <span class="funnel-stage-label">Conversion</span>
-            <p class="funnel-stage-title">成約</p>
-          </div>
           <div class="funnel-stage-body">
+            <div class="funnel-stage-head">
+              <p class="funnel-stage-title">来ても問い合わせしない</p>
+            </div>
             <div class="funnel-stage-detail">
-              <span class="funnel-stage-meta-label">役割</span>
-              <p class="funnel-stage-desc">LP改善、サイトUI/UX、導線設計、コピーライティング。</p>
-              <span class="funnel-stage-meta-label">ゴール</span>
-              <p class="funnel-stage-goal">訪問者を逃さず、確実な成果（コンバージョン）に結びつけます。</p>
+              <p class="funnel-stage-desc">アクセスはあるのに問い合わせがない。直帰率が高い。サイトの構造・コンテンツ・導線に問題があります。</p>
+              <span class="funnel-stage-tag">接客フェーズで詰まっている</span>
               <div class="funnel-stage-services">
                 <a href="/website/" class="funnel-stage-service-tag">サイト制作・改善</a>
                 <a href="/strategy/" class="funnel-stage-service-tag">WEB戦略設計</a>
               </div>
             </div>
           </div>
-          <span class="funnel-stage-wall">問い合わせ・売上を増やしたい</span>
         </div>
 
-        <!-- 04 再販・追客 -->
-        <div class="funnel-stage" role="listitem" data-index="3">
+        <!-- 04 追客・リピート（問題） -->
+        <div class="funnel-stage is-problem" role="listitem" data-index="3">
+          <span class="funnel-stage-label">追客・リピート</span>
           <span class="funnel-stage-num">04</span>
-          <div class="funnel-stage-category">
-            <span class="funnel-stage-label">Retention &amp; LTV</span>
-            <p class="funnel-stage-title">再販・追客</p>
-          </div>
           <div class="funnel-stage-body">
+            <div class="funnel-stage-head">
+              <p class="funnel-stage-title">一度来た人が戻ってこない</p>
+            </div>
             <div class="funnel-stage-detail">
-              <span class="funnel-stage-meta-label">役割</span>
-              <p class="funnel-stage-desc">LINE活用、メルマガ、CRM分析。</p>
-              <span class="funnel-stage-meta-label">ゴール</span>
-              <p class="funnel-stage-goal">既存客との接点を強化し、LTVを最大化。リピートを生む仕組みを作ります。</p>
+              <p class="funnel-stage-desc">新規集客に頼りすぎて、既存顧客のリピートやファン化ができていない。LINEやSNSの活用が不十分な状態。</p>
+              <span class="funnel-stage-tag">追客フェーズで詰まっている</span>
               <div class="funnel-stage-services">
                 <a href="/sns/line/" class="funnel-stage-service-tag">LINE運用</a>
                 <a href="/sns/instagram/" class="funnel-stage-service-tag">Instagram</a>
@@ -2027,23 +2037,47 @@
           </div>
         </div>
 
+        <!-- 05 成約・継続（成功） -->
+        <div class="funnel-stage is-success" role="listitem" data-index="4">
+          <span class="funnel-stage-label">成約・継続</span>
+          <span class="funnel-stage-num">05</span>
+          <div class="funnel-stage-body">
+            <div class="funnel-stage-head">
+              <p class="funnel-stage-title">戦略が機能している状態</p>
+            </div>
+            <div class="funnel-stage-detail">
+              <p class="funnel-stage-desc">各フェーズの施策が連動し、認知から成約・リピートまでの流れが機能している。PDCAが回り、改善が積み上がっている。</p>
+              <span class="funnel-stage-tag">ここを目指します</span>
+            </div>
+          </div>
+        </div>
+
       </div><!-- /funnel-diagram -->
+        <!-- ドットインジケーター -->
+        <div class="funnel-dots" role="tablist" aria-label="カード位置">
+          <button class="funnel-dot is-active" data-dot="0" aria-label="1枚目" role="tab" aria-selected="true"></button>
+          <button class="funnel-dot" data-dot="1" aria-label="2枚目" role="tab" aria-selected="false"></button>
+          <button class="funnel-dot" data-dot="2" aria-label="3枚目" role="tab" aria-selected="false"></button>
+          <button class="funnel-dot" data-dot="3" aria-label="4枚目" role="tab" aria-selected="false"></button>
+          <button class="funnel-dot" data-dot="4" aria-label="5枚目" role="tab" aria-selected="false"></button>
+        </div>
       </div><!-- /funnel-cards-wrap -->
     </div>
   </div>
 </section>
 
+<!-- SOLUTION: 解決方法はこれです -->
 <section class="solution-sec" aria-labelledby="solution-h2">
   <div class="solution-inner">
     <div class="solution-head">
-      <span class="sec-eyebrow fu">私たちの答えは、シンプルです。</span>
+      <span class="sec-eyebrow fu">解決方法はこれです</span>
       <h2 class="sec-h2 fu" id="solution-h2" style="transition-delay:.1s">
         現状把握から施策設計まで、<br>一貫した戦略を作ります。
       </h2>
       <p class="sec-body fu" style="transition-delay:.2s">
         「とりあえずSEO」「とりあえず広告」ではなく、根拠のある優先順位で施策を選びます。必要ならビジネスモデルの見直しも行います。
       </p>
-      <span class="solution-head-reason fu" style="transition-delay:.3s">施策の前に必ず現状把握を行うのは、根拠のない施策が最大のコスト浪費だから。</span>
+      <span class="solution-head-reason fu" style="transition-delay:.3s">施策の前に必ず現状把握を行うのは、根拠のない施策が最大のコスト浪費だからです。</span>
     </div>
     <!-- SP スワイプ誘導ヒント -->
     <p class="solution-swipe-hint" aria-hidden="true">スワイプして確認</p>
@@ -2323,14 +2357,17 @@
   <div class="cta-wrap">
     <span class="cta-eyebrow fu">FREE CONSULTATION</span>
     <h2 class="cta-h2 fu" id="cta-h2" style="transition-delay:.1s">
-      <span class="cta-h2-main">まず、お話してみませんか。</span>
+      まず、現状をお話しください。<br>一緒に課題点を探します。
     </h2>
-    <p class="cta-sub fu" style="transition-delay:.15s">初回相談は無料です。</p>
-    <div class="cta-actions fu" style="transition-delay:.25s">
-      <a href="/contact/" class="btn-cta" aria-label="無料相談を申し込む">無料相談を申し込む</a>
+    <p class="cta-body fu" style="transition-delay:.2s">
+      「何から始めればいいかわからない」「予算が少ない」「まず話だけ聞きたい」、
+      どの段階でもお気軽にご連絡ください。初回15分相談は完全無料です。
+    </p>
+    <div class="cta-actions fu" style="transition-delay:.3s">
+      <a href="/contact/" class="btn-cta">15分無料相談を申し込む</a>
       <div class="cta-tel-wrap">
         <p class="cta-tel-label">お電話でのご相談</p>
-        <a href="tel:0788068338" class="cta-tel" aria-label="電話番号 078-806-8338">078-806-8338</a>
+        <a href="tel:0788068338" class="cta-tel">078-806-8338</a>
       </div>
     </div>
   </div>
@@ -2354,29 +2391,23 @@
   </div>
   <div class="challenge-grid">
     <!-- 01 なんかうまくいかない -->
-    <article class="challenge-card challenge-card--overall fu">
-      <div class="challenge-card-left">
-        <span class="challenge-cat-chip">全般</span>
-        <div class="challenge-card-num">
+    <article class="challenge-card fu">
+      <div class="challenge-card-num">
         <span class="challenge-card-num-n">01</span>
       </div>
-        <h3 class="challenge-card-title">
+      <h3 class="challenge-card-title">
         なんかうまく<br>いかない...
       </h3>
-        <p class="challenge-card-desc">
+      <p class="challenge-card-desc">
         何が問題かわからない。施策を試しても手応えがない。まず現状を整理したい。
       </p>
-      </div>
-      <div class="challenge-card-right">
-        <p class="challenge-tags-label">推奨施策</p>
-        <div class="challenge-tags-wrap">
+      <p class="challenge-tags-label">推奨施策</p>
+      <div class="challenge-tags-wrap">
         <a href="/strategy/" class="challenge-tag">WEB戦略設計</a>
-      </div>
       </div>
     </article>
     <!-- 02 集客 -->
     <article class="challenge-card fu" style="transition-delay:.1s">
-      <span class="challenge-cat-chip">集客</span>
       <div class="challenge-card-num">
         <span class="challenge-card-num-n">02</span>
       </div>
@@ -2396,7 +2427,6 @@
     </article>
     <!-- 03 転換 -->
     <article class="challenge-card fu" style="transition-delay:.2s">
-      <span class="challenge-cat-chip">成約</span>
       <div class="challenge-card-num">
         <span class="challenge-card-num-n">03</span>
       </div>
@@ -2414,7 +2444,6 @@
     </article>
     <!-- 04 追客 -->
     <article class="challenge-card fu" style="transition-delay:.3s">
-      <span class="challenge-cat-chip">再販</span>
       <div class="challenge-card-num">
         <span class="challenge-card-num-n">04</span>
       </div>
@@ -2451,7 +2480,7 @@
   <div class="footer-top">
     <div class="footer-logo-wrap">
       <a href="/" class="footer-logo" aria-label="セルフアチーブ トップページへ">
-        <img src="/assets/logo_color.png" alt="selfachieve Acquisition Agency" width="140" height="30" loading="lazy">
+        <img src="assets/logo_color.png" alt="selfachieve Acquisition Agency" width="140" height="30" loading="lazy">
       </a>
       <address class="footer-logo-addr">
         〒658-0032 兵庫県神戸市東灘区向洋町6-9<br>
@@ -2485,6 +2514,7 @@
         <a href="/seo/">SEO対策</a>
         <a href="/meo/">MEO対策</a>
         <a href="/ai-seo/">AI検索対策（LLM検索対策）</a>
+        <a href="/ads/listing/">リスティング広告</a>
         <a href="/ads/display/">ディスプレイ広告</a>
         <a href="/sns/instagram/">Instagram</a>
         <a href="/sns/tiktok/">TikTok</a>
@@ -2492,11 +2522,10 @@
         <a href="/sns/youtube/">YouTube</a>
         <a href="/sns/note/">note</a>
         <a href="/sns/line/">LINE</a>
-        <a href="/ai-automation/">AI業務効率化・導入支援</a>
       </div>
       <div class="footer-nav-group">
         <p class="footer-nav-title">会社情報</p>
-        <a href="/works/">実績</a>
+        <a href="/works/">制作実績</a>
         <a href="/voice/">お客さまの声</a>
         <a href="/company/">会社情報</a>
     
@@ -2518,8 +2547,6 @@
   </div>
 </footer>
 
-
-
 <script>
   // Copyright year
   (function(){
@@ -2532,19 +2559,6 @@
     entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('on'); obs.unobserve(e.target); } });
   }, { threshold: 0.1 });
   document.querySelectorAll('.fu').forEach(el => obs.observe(el));
-  // KV等ページロード時に既にビューポート内の .fu 要素を即座に表示
-  (function applyInitialFu() {
-    requestAnimationFrame(function() {
-      requestAnimationFrame(function() {
-        document.querySelectorAll('.fu').forEach(function(el) {
-          var r = el.getBoundingClientRect();
-          if (r.top < window.innerHeight && r.bottom > 0) {
-            el.classList.add('on');
-          }
-        });
-      });
-    });
-  })();
 
   // FUNNEL STAGE SEQUENTIAL ANIMATION + FUNNEL BAR SYNC
   (function(){
@@ -2697,54 +2711,33 @@
 
   // SP FIXED CTA
   (function(){
-    const spCta=document.getElementById('sp-fixed-cta');
-    if(spCta){
-      let ctaSecVisible=false;
-      const ctaSec=document.getElementById('contact');
-      if(ctaSec&&'IntersectionObserver' in window){
-        new IntersectionObserver(entries=>{
-          ctaSecVisible=entries[0].isIntersecting;
-          if(ctaSecVisible){spCta.classList.remove('visible');}
-          else if(window.scrollY>300){spCta.classList.add('visible');}
-        },{threshold:0}).observe(ctaSec);
-      }
-      const show=()=>{if(window.scrollY>300&&!ctaSecVisible){spCta.classList.add('visible');}}
-      window.addEventListener('scroll',show,{passive:true});
-      show();
-    }
+    const cta = document.getElementById('sp-fixed-cta');
+    if(!cta) return;
+    let shown = false;
+    window.addEventListener('scroll', () => {
+      if(window.scrollY > 300 && !shown){ cta.classList.add('visible'); shown = true; }
+    }, { passive: true });
   })();
 
-  // FUNNEL STAGE CLICK: 削除（クリック導線なし・読解専用セクション）
-
-  // FUNNEL INDICATOR: ホバーに合わせて左インジケーターをスライド
+  // CUSTOM CURSOR
   (function(){
-    const indicator = document.getElementById('funnel-indicator');
-    const wrap = document.querySelector('.funnel-cards-wrap');
-    const stages = document.querySelectorAll('.funnel-stage');
-    if(!indicator || !wrap || !stages.length) return;
-
-    function moveIndicator(stage){
-      const wrapRect = wrap.getBoundingClientRect();
-      const stageRect = stage.getBoundingClientRect();
-      const top = stageRect.top - wrapRect.top + wrap.scrollTop;
-      const height = stageRect.height;
-      indicator.style.top = top + 'px';
-      indicator.style.height = height + 'px';
-      indicator.classList.add('is-active');
-    }
-
-    function hideIndicator(){
-      indicator.classList.remove('is-active');
-    }
-
-    stages.forEach(stage => {
-      stage.addEventListener('mouseenter', () => moveIndicator(stage));
-      stage.addEventListener('mouseleave', () => hideIndicator());
+    const dot = document.getElementById('cursor-dot');
+    const ring = document.getElementById('cursor-ring');
+    if(!dot || !ring) return;
+    let mx = 0, my = 0, rx = 0, ry = 0;
+    document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; dot.style.transform = 'translate(' + (mx-3) + 'px,' + (my-3) + 'px)'; }, { passive: true });
+    function lerp(a, b, t){ return a + (b - a) * t; }
+    function loop(){ rx = lerp(rx, mx, 0.12); ry = lerp(ry, my, 0.12); ring.style.transform = 'translate(' + (rx-16) + 'px,' + (ry-16) + 'px)'; requestAnimationFrame(loop); }
+    loop();
+    document.querySelectorAll('a,button,[role=button]').forEach(el => {
+      el.addEventListener('mouseenter', () => ring.classList.add('is-hovering'));
+      el.addEventListener('mouseleave', () => ring.classList.remove('is-hovering'));
+    });
+    document.querySelectorAll('.btn-primary,.btn-cta,.btn-mid-cta').forEach(el => {
+      el.addEventListener('mouseenter', () => { ring.classList.remove('is-hovering'); ring.classList.add('is-cta'); });
+      el.addEventListener('mouseleave', () => ring.classList.remove('is-cta'));
     });
   })();
-
-  
 </script>
-<script src="../assets/master.js"></script>
 </body>
 </html>

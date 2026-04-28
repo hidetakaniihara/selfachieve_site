@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>会社情報 | 神戸のWEBマーケティング会社 セルフアチーブ</title>
   <meta name="description" content="株式会社セルフアチーブの会社情報ページです。ミッション・ビジョン・バリュー、会社概要、アクセスをご確認いただけます。">
   <meta name="robots" content="index, follow">
-  <link rel="stylesheet" href="../assets/style.css">
   <link rel="canonical" href="https://selfachieve.jp/company/">
   <meta property="og:type" content="website">
   <meta property="og:title" content="会社情報 | 神戸のWEBマーケティング会社 セルフアチーブ">
@@ -17,8 +17,6 @@
   <meta name="theme-color" content="#ffffff">
   <meta name="color-scheme" content="light">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
   <script type="application/ld+json">
   {"@context":"https://schema.org","@graph":[
     {"@type":"Organization","@id":"https://selfachieve.jp/#organization",
@@ -48,7 +46,7 @@
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     html{font-size:16px;scroll-behavior:smooth}
     body{
-      font-family:'Noto Sans JP','Yu Gothic','游ゴシック',YuGothic,'Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3','Meiryo','メイリオ',sans-serif;
+      font-family:'Yu Gothic','游ゴシック',YuGothic,'Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3','Meiryo','メイリオ',sans-serif;
       font-weight:400;
       color:#28282D;
       background:#fff;
@@ -59,12 +57,329 @@
     a{color:inherit;text-decoration:none}
     ul,ol{list-style:none}
 
+    /* HEADER */
+        .hd{
+          position:fixed;top:0;left:0;right:0;
+          height:72px;
+          background:#fff;
+          display:flex;align-items:center;justify-content:space-between;
+          padding:0 48px;
+          z-index:100;
+          border-bottom:1px solid #E8E8E8;
+        }
+        .hd-logo img{height:34px;width:auto}
+        .hd-nav{display:flex;align-items:center;gap:32px}
+        .hd-nav a{font-size:13px;letter-spacing:0.04em;color:#28282D;transition:opacity .2s;padding:14px 0}
+        .hd-nav a:hover{opacity:.5}
+        .hd-btn{
+          display:inline-flex;align-items:center;justify-content:center;
+          height:48px;padding:0 28px;
+          background:#28282D;color:#fff;
+          font-size:13px;letter-spacing:0.08em;font-weight:600;
+          border:1px solid #28282D;
+          transition:background .2s,color .2s;
+        }
+        .hd-btn:hover{background:#fff;color:#28282D}
+        /* サイカツ.R 別サイトボタン */
+        .hd-btn-external{
+          display:inline-flex;align-items:center;justify-content:center;gap:6px;
+          height:48px;padding:0 20px;
+          background:#fff;color:#28282D;
+          font-size:12px;letter-spacing:0.04em;font-weight:600;
+          border:1.5px solid #28282D;
+          transition:background .2s,color .2s;
+          white-space:nowrap;
+          line-height:1.3;
+        }
+        .hd-btn-external:hover{background:#28282D;color:#fff}
+        .hd-btn-external svg{flex-shrink:0;transition:transform .2s}
+        .hd-btn-external:hover svg{transform:translate(2px,-2px)}
+        .hd-btns{display:flex;align-items:center;gap:10px}
+
+        /* DROPDOWN MENU */
+        .hd-nav-item{position:relative}
+        .hd-nav-item>a{display:flex;align-items:center;gap:4px;cursor:pointer;padding:14px 0}
+        .hd-nav-item>a::after{
+          content:'';
+          display:inline-block;
+          width:6px;height:6px;
+          border-right:1px solid #28282D;
+          border-bottom:1px solid #28282D;
+          transform:rotate(45deg) translateY(-2px);
+          transition:transform .2s;
+        }
+        .hd-nav-item.open>a::after{transform:rotate(-135deg) translateY(-2px)}
+        .hd-dropdown{
+          position:absolute;top:calc(100% + 12px);left:50%;
+          transform:translateX(-50%) translateY(-8px);
+          background:#fff;
+          border:1px solid #E8E8E8;
+          min-width:200px;
+          opacity:0;visibility:hidden;
+          transition:opacity .22s,transform .22s,visibility .22s;
+          z-index:200;
+          box-shadow:0 8px 32px rgba(0,0,0,.08);
+        }
+        /* ドロップダウンとナビアイテムの間に透明ブリッジを設けてカーソルが外れにくくする */
+        .hd-dropdown::before{
+          content:'';
+          position:absolute;top:-14px;left:0;right:0;
+          height:14px;
+        }
+        .hd-nav-item.open .hd-dropdown{
+          opacity:1;visibility:visible;
+          transform:translateX(-50%) translateY(0);
+        }
+        .hd-dropdown a{
+          display:block;
+          padding:12px 20px;
+          font-size:13px;
+          color:#28282D;
+          border-bottom:1px solid #F0F0F0;
+          transition:background .15s;
+          white-space:nowrap;
+        }
+        .hd-dropdown a:last-child{border-bottom:none}
+        .hd-dropdown a:hover{background:#F7F7F7;opacity:1}
+        .hd-dropdown-sub{
+          border-bottom:1px solid #F0F0F0;
+        }
+        .hd-dropdown-sub-label{
+          font-size:11px;letter-spacing:.1em;
+          color:#767680;padding:10px 20px 4px;
+          text-transform:uppercase;display:block;
+        }
+        .hd-dropdown-sub a{
+          padding:9px 20px 9px 28px;
+          font-size:12px;
+          border-bottom:none;
+        }
+        .hd-dropdown-sub:last-child{border-bottom:none}
+
+        /* MEGA MENU for サービス — Plan D カード型 */
+        .hd-mega-wrap{
+          position:fixed;top:72px;left:0;right:0;
+          background:#F5F5F5;
+          border-top:1px solid #E8E8E8;
+          border-bottom:1px solid #E0E0E0;
+          box-shadow:0 12px 40px rgba(0,0,0,.08);
+          opacity:0;visibility:hidden;
+          transition:opacity .22s,transform .22s,visibility .22s;
+          transform:translateY(-8px);
+          z-index:200;
+          padding:20px 0 24px;
+        }
+        .hd-nav-item.open .hd-mega-wrap{
+          opacity:1;visibility:visible;
+          transform:translateY(0);
+        }
+        .hd-mega{
+          display:grid;
+          grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+          max-width:1200px;
+          margin:0 auto;
+          width:100%;
+          gap:12px;
+          padding:0 24px;
+        }
+        .hd-mega::before{
+          content:'';
+          position:absolute;top:-14px;left:0;right:0;
+          height:14px;
+        }
+        .hd-mega-col{
+          background:#fff;
+          border:1px solid #E8E8E8;
+          padding:18px 20px 14px;
+        }
+        .hd-mega-col-label{
+          font-size:13px;letter-spacing:.04em;
+          white-space:nowrap;
+          font-weight:700;
+          color:#1A1A1E;
+          display:block;
+          padding-bottom:10px;
+          margin-bottom:10px;
+          border-bottom:2px solid #1A1A1E;
+          overflow:hidden;
+          text-overflow:ellipsis;
+        }
+        .hd-mega-col a{
+          display:flex;
+          align-items:center;
+          gap:6px;
+          padding:12px 0;
+          font-size:14px;
+          color:#28282D;
+          border-bottom:1px solid #F0F0F0;
+          transition:color .15s;
+          white-space:nowrap;
+        }
+        .hd-mega-col-label-link{
+          color:#28282D !important;
+          text-decoration:none;
+          transition:opacity .2s !important;
+          border-bottom:2px solid #1A1A1E !important;
+          padding-bottom:10px !important;
+        }
+        .hd-mega-col-label-link:hover{
+          opacity:.6;
+        }
+        .hd-mega-col a:last-child{border-bottom:none}
+        .hd-mega-col a::before{
+          content:'';
+          width:4px;height:4px;
+          border-radius:50%;
+          background:#1A1A1E;
+          flex-shrink:0;
+          opacity:.25;
+          transition:opacity .15s;
+        }
+        .hd-mega-col a:hover{color:#000;background:none}
+        .hd-mega-col a:hover::before{opacity:1}
+
+        /* HAMBURGER */
+        .hd-hamburger{
+          display:none;
+          flex-direction:column;justify-content:center;align-items:center;
+          width:44px;height:44px;
+          cursor:pointer;
+          gap:6px;
+          background:none;border:none;padding:0;
+        }
+        .hd-hamburger span{
+          display:block;width:24px;height:1px;
+          background:#28282D;
+          transition:transform .3s,opacity .3s;
+        }
+        .hd-hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+        .hd-hamburger.open span:nth-child(2){opacity:0}
+        .hd-hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+        /* MOBILE DRAWER */
+        .hd-drawer{
+          display:none;
+          position:fixed;top:72px;left:0;right:0;bottom:0;
+          background:#fff;
+          overflow-y:auto;
+          z-index:99;
+          padding:24px 0 80px;
+          transform:translateX(100%);
+          transition:transform .3s cubic-bezier(.16,1,.3,1);
+        }
+        .hd-drawer.open{transform:translateX(0)}
+        .hd-drawer-item{
+          border-bottom:1px solid #F0F0F0;
+        }
+        .hd-drawer-link{
+          display:flex;align-items:center;justify-content:space-between;
+          padding:18px 24px;
+          font-size:15px;
+          color:#28282D;
+          cursor:pointer;
+        }
+        .hd-drawer-link::after{
+          content:'';
+          display:block;width:8px;height:8px;
+          border-right:1px solid #28282D;
+          border-bottom:1px solid #28282D;
+          transform:rotate(45deg);
+          transition:transform .2s;
+          flex-shrink:0;
+        }
+        .hd-drawer-link.no-arrow::after{display:none}
+        .hd-drawer-link.open::after{transform:rotate(-135deg)}
+        .hd-drawer-sub{
+          display:none;
+          background:#F7F7F7;
+          padding:8px 0;
+        }
+        .hd-drawer-sub.open{display:block}
+        .hd-drawer-sub a{
+          display:block;
+          padding:13px 24px 13px 36px;
+          font-size:13px;
+          color:#28282D;
+          border-bottom:1px solid #EFEFEF;
+        }
+        .hd-drawer-sub a:last-child{border-bottom:none}
+        .hd-drawer-sub-label{
+          font-size:11px;letter-spacing:.1em;
+          color:#767680;padding:12px 24px 4px 36px;
+          text-transform:uppercase;
+        }
+        .hd-drawer-cta{
+          padding:24px;
+          display:flex;flex-direction:column;gap:12px;
+        }
+        .hd-drawer-cta .hd-btn{
+          display:flex;width:100%;justify-content:center;
+          height:52px;font-size:14px;
+        }
+        .hd-drawer-cta .hd-btn-saicatsu{
+          display:flex;width:100%;justify-content:center;align-items:center;gap:6px;
+          height:52px;font-size:13px;
+          background:#fff;color:#28282D;
+          border:1.5px solid #28282D;
+          text-decoration:none;font-weight:500;
+          transition:background .2s,color .2s;
+          letter-spacing:.04em;
+        }
+        .hd-drawer-cta .hd-btn-saicatsu:hover{background:#28282D;color:#fff}
+        .hd-drawer-cta .hd-btn-saicatsu:hover svg path{stroke:#fff}
+        .hd-drawer-sns{
+          padding:20px 24px 32px;
+          border-top:1px solid #F0F0F0;
+          display:flex;flex-direction:column;align-items:center;gap:14px;
+        }
+        .hd-drawer-sns-label{
+          font-size:10px;letter-spacing:.18em;color:#767680;font-weight:600;
+        }
+        .hd-drawer-sns-links{
+          display:flex;align-items:center;justify-content:center;gap:12px;
+        }
+        .hd-drawer-sns-link{
+          display:flex;align-items:center;justify-content:center;
+          width:44px;height:44px;
+          border:1px solid #D8D8DC;
+          border-radius:50%;
+          text-decoration:none;
+          transition:background .2s,border-color .2s;
+        }
+        .hd-drawer-sns-ig:hover{background:#E1306C;border-color:#E1306C}
+        .hd-drawer-sns-tt:hover{background:linear-gradient(135deg,#69C9D0 0%,#EE1D52 100%);border-color:transparent}
+        .hd-drawer-sns-x:hover{background:#000;border-color:#000}
+    /* FOOTER */
+    .footer{padding:80px 80px 48px;border-top:1px solid #E8E8E8}
+    .footer-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:64px}
+    .footer-logo img{height:30px;width:auto}
+    .footer-nav{display:grid;grid-template-columns:repeat(3,1fr);gap:48px}
+    .footer-nav-title{font-size:12px;letter-spacing:.12em;color:#767680;margin-bottom:14px}
+    .footer-nav-group a{display:block;font-size:13px;color:#28282D;margin-bottom:10px;letter-spacing:.01em;transition:opacity .2s}
+    .footer-nav-group a:hover{opacity:.5}
+    .footer-bottom{display:flex;justify-content:flex-end;align-items:center;padding-top:24px;border-top:1px solid #E8E8E8}
+    .footer-copy{font-size:12px;color:#767680;letter-spacing:.05em}
+    .footer-logo-wrap{display:flex;flex-direction:column;gap:0}
+    .footer-logo-addr{font-size:12px;color:#4A4A52;line-height:1.9;font-style:normal;margin-top:20px}
+    .footer-logo-addr a{color:#4A4A52;text-decoration:none}
+    .footer-logo-addr a:hover{opacity:.6}
+    .footer-sns-block{margin-top:28px}
+    .footer-sns-label{font-size:10px;letter-spacing:.14em;color:#767680;font-weight:500;margin-bottom:12px}
+    .footer-sns{display:flex;align-items:center;gap:16px;margin-top:0}
+    .footer-logo-related{display:block;margin-top:24px;padding-top:20px;border-top:1px solid #E8E8E8}
+    .footer-related-label{display:block;font-size:10px;letter-spacing:.14em;color:#767680;font-weight:500;white-space:nowrap}
+    .footer-related-link{display:inline-flex;align-items:center;gap:5px;font-size:12px;color:#4A4A52;text-decoration:none;letter-spacing:.04em;transition:opacity .2s}
+    .footer-related-link:hover{opacity:.5}
+    .footer-bottom-right{display:flex;align-items:center;gap:24px}
+    .footer-privacy{font-size:12px;color:#4A4A52;text-decoration:none;letter-spacing:.04em}
+    .footer-privacy:hover{opacity:.6}
+
     /* BREADCRUMB */
     .breadcrumb{padding:12px 80px;border-bottom:1px solid #E8E8E8;background:#F5F5F3;}
-    .breadcrumb ol{display:flex;align-items:center;gap:8px;list-style:none;font-size:12px;color:#555558;flex-wrap:wrap}
+    .breadcrumb ol{display:flex;align-items:center;gap:8px;list-style:none;font-size:12px;color:#767680;flex-wrap:wrap}
     .breadcrumb li{display:flex;align-items:center;gap:8px}
-    .breadcrumb li+li::before{content:'/';color:#555558}
-    .breadcrumb a{color:#555558;text-decoration:none}
+    .breadcrumb li+li::before{content:'/';color:#767680}
+    .breadcrumb a{color:#767680;text-decoration:none}
     .breadcrumb a:hover{color:#28282D}
     .breadcrumb [aria-current]{color:#28282D}
     .breadcrumb-sp{display:none}
@@ -73,7 +388,7 @@
     .page-header{padding:160px 80px 100px;background:#fff;border-bottom:1px solid #E8E8E8;}
     .page-header-inner{max-width:1100px;margin:0 auto;}
     .page-eyebrow{
-      font-size:11px;letter-spacing:.22em;color:#555558;
+      font-size:11px;letter-spacing:.22em;color:#767680;
       font-weight:700;text-transform:uppercase;margin-bottom:24px;
       display:block;
     }
@@ -83,12 +398,12 @@
       color:#28282D;line-height:1.2;margin-bottom:24px;
     }
     .page-desc{
-      font-size:16px;line-height:1.85;color:#333336;max-width:600px;
+      font-size:16px;line-height:1.85;color:#4A4A50;max-width:600px;
     }
 
     /* SECTION COMMON */
     .sec-eyebrow{
-      font-size:11px;letter-spacing:.2em;color:#555558;
+      font-size:11px;letter-spacing:.2em;color:#767680;
       text-transform:uppercase;margin-bottom:16px;
       display:block;
     }
@@ -183,7 +498,7 @@
       width:100%;
     }
     .value-desc{
-      font-size:16px;line-height:1.85;color:#555558;
+      font-size:14px;line-height:1.85;color:#767680;
     }
 
     /* ===== REPRESENTATIVE ===== */
@@ -253,7 +568,7 @@
       font-size:22px;font-weight:700;letter-spacing:.04em;color:#28282D;
     }
     .rep-title{
-      font-size:12px;color:#555558;letter-spacing:.06em;margin-top:4px;
+      font-size:12px;color:#767680;letter-spacing:.06em;margin-top:4px;
     }
     .rep-body{}
     .rep-eyebrow{
@@ -307,14 +622,14 @@
       position:relative;top:-1px;
     }
     .rep-career-text{
-      font-size:16px;color:#28282D;line-height:1.7;
+      font-size:14px;color:#28282D;line-height:1.7;
     }
     .rep-message-label{
       font-size:13px;letter-spacing:.2em;color:#4A4A52;
       text-transform:uppercase;margin-bottom:20px;font-weight:600;
     }
     .rep-message{
-      font-size:16px;line-height:2;color:#4A4A52;
+      font-size:15px;line-height:2;color:#4A4A52;
     }
     .rep-message p+p{margin-top:1.6em}
 
@@ -343,7 +658,7 @@
     }
     .overview-table td{
       padding:24px 32px;
-      font-size:16px;line-height:1.8;color:#4A4A52;
+      font-size:14px;line-height:1.8;color:#4A4A52;
       vertical-align:top;
     }
     .overview-table td a{color:#28282D;text-decoration:underline;text-underline-offset:3px}
@@ -385,7 +700,7 @@
     .access-map iframe{width:100%;height:100%;border:0;display:block}
     .access-info{}
     .access-address{
-      font-size:16px;line-height:1.9;color:#4A4A52;
+      font-size:14px;line-height:1.9;color:#4A4A52;
       margin-bottom:32px;
       padding-bottom:32px;
       border-bottom:1px solid #E8E8E8;
@@ -407,7 +722,35 @@
       content:'';display:block;width:20px;height:1px;background:#28282D;
     }
     .access-route-text{
-      font-size:16px;line-height:1.8;color:#4A4A52;
+      font-size:14px;line-height:1.8;color:#4A4A52;
+    }
+
+    /* ===== CTA SECTION ===== */
+    .cta-section{
+      padding:100px 80px;
+      background:#111111;
+      text-align:center;
+    }
+    .cta-section-eyebrow{
+      font-size:11px;letter-spacing:.2em;color:rgba(255,255,255,.92);
+      text-transform:uppercase;margin-bottom:20px;
+      display:flex;align-items:center;justify-content:center;gap:12px;
+    }
+    .cta-section-eyebrow::before,.cta-section-eyebrow::after{
+      content:'';display:block;width:24px;height:1px;background:rgba(255,255,255,.6);
+    }
+    .cta-section-title{
+      font-size:clamp(26px,3vw,42px);
+      font-weight:700;letter-spacing:-.03em;
+      color:#fff;line-height:1.3;margin-bottom:20px;
+    }
+    .cta-h2-line{display:block;}
+    .cta-section-sub{
+      font-size:15px;color:rgba(255,255,255,.92);line-height:1.8;
+      margin-bottom:48px;
+    }
+    .cta-section-btns{
+      display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;
     }
     .cta-btn-primary{
       display:inline-flex;align-items:center;justify-content:center;
@@ -428,6 +771,32 @@
     }
     .cta-btn-tel:hover{border-color:#fff;background:rgba(255,255,255,.08)}
     .cta-btn-tel-note{font-size:11px;color:rgba(255,255,255,.92);margin-top:12px;letter-spacing:.04em}
+
+    /* CUSTOM CURSOR */
+    #cursor-dot{
+      position:fixed;top:0;left:0;
+      width:8px;height:8px;
+      background:#28282D;
+      border-radius:50%;
+      pointer-events:none;
+      z-index:9999;
+      will-change:transform;
+      transition:opacity .3s;
+    }
+    #cursor-ring{
+      position:fixed;top:0;left:0;
+      width:36px;height:36px;
+      border:1.5px solid #28282D;
+      border-radius:50%;
+      pointer-events:none;
+      z-index:9998;
+      will-change:transform;
+      transition:width .2s,height .2s,border-color .2s,opacity .3s;
+    }
+    #cursor-ring.is-hovering{width:48px;height:48px;border-color:#28282D}
+    #cursor-ring.is-cta{width:52px;height:52px;background:rgba(40,40,45,.08);border-color:#28282D}
+    @media(hover:none),(pointer:coarse){#cursor-dot,#cursor-ring{display:none}}
+
     /* SCROLL ANIMATION */
     .fu{
       opacity:0;
@@ -438,11 +807,200 @@
       opacity:1;
       transform:translateY(0);
     }
-</style>
+
+    /* RESPONSIVE */
+    @media(max-width:900px){
+      .hd{padding:0 20px}.hd-nav{display:none}
+      .hd-hamburger{display:flex}
+      .hd-drawer{display:block}
+      .hd-btns{display:none}
+      .breadcrumb{display:none}
+      .breadcrumb-sp{
+        display:block;
+        padding:20px 24px 0;
+        border-top:1px solid #E8E8E8;
+      }
+      .breadcrumb-sp ol{display:flex;align-items:center;gap:8px;list-style:none;font-size:12px;color:#767680;flex-wrap:wrap}
+      .breadcrumb-sp li{display:flex;align-items:center;gap:8px}
+      .breadcrumb-sp li+li::before{content:'/';color:#767680}
+      .breadcrumb-sp a{color:#767680;text-decoration:none}
+      .breadcrumb-sp [aria-current]{color:#28282D}
+      .page-header{padding:100px 24px 64px;}
+      .page-eyebrow{font-size:12px;}
+      .page-title{margin-bottom:20px;}
+      .mission{padding:64px 24px}
+      .mission-inner{grid-template-columns:1fr;gap:40px}
+      .vision{padding:64px 24px}
+      .vision-statement{font-size:clamp(18px,4.5vw,26px);padding-left:20px}
+      .value{padding:64px 24px}
+      .value-list{grid-template-columns:1fr;border-left:none}
+      .value-item{padding:32px 0;border-right:none;border-left:none}
+      .overview{padding:64px 24px}
+      .overview-table th{width:100px;padding:16px 16px;font-size:13px}
+      .overview-table td{padding:16px 16px;font-size:14px}
+      .representative{padding:64px 24px}
+      .representative-inner{grid-template-columns:1fr;gap:48px}
+      .rep-photo{position:static}
+      .rep-photo-frame{aspect-ratio:4/3;max-width:280px}
+      .rep-catch{font-size:clamp(24px,5.5vw,32px);margin-bottom:32px;padding-bottom:32px}
+      .rep-career-item{grid-template-columns:80px 1fr}
+      .access{padding:64px 24px}
+      .access-body{grid-template-columns:1fr;gap:40px}
+      .access-map{aspect-ratio:4/3}
+      .cta-section{padding:64px 24px}
+      .cta-section-title{font-size:clamp(22px,6vw,36px);word-break:auto-phrase}
+      .cta-h2-line{display:inline}
+      .cta-section-btns{flex-direction:column;gap:12px}
+      .cta-btn-primary,.cta-btn-tel{width:100%;height:52px;justify-content:center}
+      .footer{padding:60px 24px 40px}
+      .footer-top{flex-direction:column;gap:40px}
+      .footer-nav{grid-template-columns:1fr 1fr;gap:28px}
+      .footer-bottom{flex-direction:column;gap:12px;align-items:flex-start}
+
+      /* ===== KV・ページヘッダー ===== */
+      .page-title{
+        font-size:clamp(32px,8vw,48px);
+        word-break:auto-phrase;
+      }
+      .page-desc{
+        font-size:15px;
+        line-height:1.85;
+      }
+
+      /* ===== MISSION ===== */
+      .mission-body p{
+        font-size:15px;
+        line-height:2;
+      }
+
+      /* ===== VISION ===== */
+      .vision-statement{
+        font-size:clamp(17px,4.8vw,24px);
+        padding-left:16px;
+        border-left:3px solid #28282D;
+      }
+
+      /* ===== VALUE ===== */
+      .value-num{font-size:clamp(40px,10vw,56px)}
+      .value-phrase{font-size:clamp(18px,5vw,24px)}
+      .value-desc{font-size:14px;line-height:1.85}
+
+      /* ===== OVERVIEW TABLE（縦積みレスポンシブ化）===== */
+      .overview-table,
+      .overview-table tbody,
+      .overview-table tr,
+      .overview-table th,
+      .overview-table td{
+        display:block;
+        width:100%;
+      }
+      .overview-table tr{
+        border-bottom:1px solid #E8E8E8;
+        padding:0;
+      }
+      .overview-table tr:first-child{border-top:1px solid #E8E8E8}
+      .overview-table th{
+        width:100%;
+        padding:14px 16px 6px;
+        font-size:12px;
+        font-weight:600;
+        letter-spacing:.06em;
+        color:#767680;
+        background:#F7F7F5;
+        border-bottom:none;
+        text-transform:uppercase;
+      }
+      .overview-table td{
+        padding:10px 16px 16px;
+        font-size:14px;
+        line-height:1.8;
+        color:#28282D;
+        border-top:none;
+      }
+      .overview-sns{
+        flex-wrap:wrap;
+        gap:8px;
+      }
+      .overview-sns-link{
+        font-size:11px;
+        padding:5px 10px;
+      }
+
+      /* ===== REPRESENTATIVE ===== */
+      .rep-message{font-size:14px;line-height:1.95}
+
+      /* ===== ACCESS ===== */
+      .access-address strong{font-size:14px}
+      .access-route-label{font-size:13px}
+      .access-route-text{font-size:14px}
+
+      /* ===== CTA ===== */
+      .cta-section-sub br{display:none}
+      .cta-section-sub{font-size:14px;line-height:1.85;text-align:left}
+
+      /* ===== VISION ===== */
+      .vision-statement{word-break:auto-phrase}
+    }
+
+    /* FIXED MOBILE CTA */
+    .sp-fixed-cta{
+      display:none;
+      position:fixed;
+      bottom:0;left:0;right:0;
+      background:#28282D;
+      padding:12px 16px;
+      padding-bottom:calc(12px + env(safe-area-inset-bottom));
+      z-index:90;
+      box-shadow:0 -2px 12px rgba(0,0,0,.15);
+      transform:translateY(100%);
+      transition:transform .3s ease,opacity .3s ease;
+      opacity:0;
+    }
+    .sp-fixed-cta.visible{
+      transform:translateY(0);
+      opacity:1;
+    }
+    .sp-fixed-cta-inner{
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+    .sp-fixed-cta-consult{
+      flex:1;
+      display:flex;align-items:center;justify-content:center;
+      height:48px;
+      background:#fff;
+      color:#28282D;
+      font-size:14px;
+      font-weight:600;
+      text-decoration:none;
+      border-radius:4px;
+      letter-spacing:.02em;
+    }
+    .sp-fixed-cta-tel{
+      display:flex;align-items:center;justify-content:center;gap:6px;
+      height:48px;
+      padding:0 16px;
+      border:1.5px solid rgba(255,255,255,.4);
+      border-radius:4px;
+      color:#fff;
+      text-decoration:none;
+      white-space:nowrap;
+    }
+    .sp-fixed-cta-tel-icon{flex-shrink:0}
+    .sp-fixed-cta-tel-num{font-size:13px;font-weight:500;letter-spacing:.03em}
+    @media(min-width:769px){.sp-fixed-cta{display:none!important}}
+    @media(max-width:768px){
+      .sp-fixed-cta{display:block}
+      body{padding-bottom:80px}
+    }
+  </style>
 </head>
 <body>
 
 <!-- CUSTOM CURSOR -->
+<div id="cursor-dot" aria-hidden="true"></div>
+<div id="cursor-ring" aria-hidden="true"></div>
 
 <!-- FIXED MOBILE CTA -->
 <div class="sp-fixed-cta" id="sp-fixed-cta" role="complementary" aria-label="お問い合わせ">
@@ -458,7 +1016,7 @@
 <!-- HEADER -->
 <header class="hd" role="banner">
   <a href="/" class="hd-logo" aria-label="セルフアチーブ トップページへ">
-    <img src="/assets/logo_color.png" alt="selfachieve Acquisition Agency" width="160" height="34" fetchpriority="high">
+    <img src="assets/logo_color.png" alt="selfachieve Acquisition Agency" width="160" height="34" fetchpriority="high">
   </a>
   <nav class="hd-nav" aria-label="グローバルナビゲーション">
     <span class="hd-nav-item">
@@ -466,40 +1024,30 @@
       <div class="hd-mega-wrap">
       <div class="hd-mega" role="menu">
         <div class="hd-mega-col">
-          <span class="hd-mega-col-label"><span class="col-label-main">戦略・全体</span><span class="col-label-sub">（なんか、うまくいかない…）</span></span>
-          <a href="/strategy/" role="menuitem">事業戦略</a>
-          <a href="/strategy/" role="menuitem">ブランディング</a>
-          <a href="/strategy/" role="menuitem">WEB戦略</a>
-          <a href="/strategy/" role="menuitem">マーケティング戦略</a>
-          <a href="/strategy/" role="menuitem">顧客戦略</a>
-          <a href="https://selfachieve.jp/saikatsu_r/" role="menuitem" target="_blank" rel="noopener noreferrer">採用戦略<svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-left:4px;opacity:.7"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+          <span class="hd-mega-col-label">なんかうまくいかない...</span>
+          <a href="/strategy/" role="menuitem">WEB戦略設計</a>
+          <a href="/ai-automation/" role="menuitem">AI業務効率化・導入支援</a>
         </div>
         <div class="hd-mega-col">
-          <span class="hd-mega-col-label"><span class="col-label-main">集客</span><span class="col-label-sub">（サイトへの訪問者を増やしたい）</span></span>
+          <span class="hd-mega-col-label">集客したい</span>
           <a href="/seo/" role="menuitem">SEO対策</a>
           <a href="/meo/" role="menuitem">MEO対策</a>
-          <a href="/ads/" role="menuitem">WEB広告</a>
-          <a href="/sns/" role="menuitem">SNSマーケティング</a>
-          <a href="/sns/note/" role="menuitem">note対策</a>
-          <a href="/ai-seo/" role="menuitem">AI検索対策（LLM対策）</a>
+          <a href="/ai-seo/" role="menuitem">AI検索対策（LLM検索対策）</a>
+          <a href="/ads/display/" role="menuitem">ディスプレイ広告</a>
         </div>
         <div class="hd-mega-col">
-          <span class="hd-mega-col-label"><span class="col-label-main">成約</span><span class="col-label-sub">（問い合わせ・売上を増やしたい）</span></span>
-          <a href="/website/" role="menuitem">ホームページ制作</a>
-          <a href="/website/" role="menuitem">分析改善</a>
-          <a href="/website/lp/" role="menuitem">LP制作</a>
+          <span class="hd-mega-col-label">問い合わせを増やしたい</span>
+          <a href="/website/" role="menuitem">サイト制作・分析改善</a>
+          <a href="/strategy/" role="menuitem">WEB戦略設計</a>
         </div>
         <div class="hd-mega-col">
-          <span class="hd-mega-col-label"><span class="col-label-main">再販・追客</span><span class="col-label-sub">（一度来た人にまた来てほしい）</span></span>
+          <span class="hd-mega-col-label">追客したい</span>
           <a href="/sns/line/" role="menuitem">LINE</a>
           <a href="/sns/instagram/" role="menuitem">Instagram</a>
           <a href="/sns/x/" role="menuitem">X（旧Twitter）</a>
           <a href="/sns/youtube/" role="menuitem">YouTube</a>
-        </div>
-        <div class="hd-mega-col">
-          <span class="hd-mega-col-label"><span class="col-label-main">AI活用</span><span class="col-label-sub">（AIで業務を効率化・最適化したい）</span></span>
-          <a href="/ai-automation/" role="menuitem">業務効率化</a>
-          <a href="/ai-automation/" role="menuitem">分析深化</a>
+          <a href="/sns/tiktok/" role="menuitem">TikTok</a>
+          <a href="/sns/note/" role="menuitem">note</a>
         </div>
       </div>
       </div>
@@ -509,38 +1057,38 @@
       <div class="hd-mega-wrap">
       <div class="hd-mega" role="menu">
         <div class="hd-mega-col">
-          <span class="hd-mega-col-label"><span class="col-label-main">戦略設計</span></span>
-          <a href="/strategy/" role="menuitem">事業戦略</a>
-          <a href="/strategy/" role="menuitem">ブランディング</a>
-          <a href="/strategy/" role="menuitem">WEB戦略</a>
-          <a href="/strategy/" role="menuitem">マーケティング戦略</a>
-          <a href="/strategy/" role="menuitem">顧客戦略</a>
-          <a href="https://selfachieve.jp/saikatsu_r/" role="menuitem" target="_blank" rel="noopener noreferrer">採用戦略<svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-left:4px;opacity:.7"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+          <span class="hd-mega-col-label">マーケティング戦略</span>
+          <a href="/strategy/" role="menuitem">WEB戦略設計</a>
         </div>
         <div class="hd-mega-col">
-          <span class="hd-mega-col-label"><span class="col-label-main">集客施策</span></span>
+          <span class="hd-mega-col-label">WEB集客施策</span>
+          <a href="/website/" role="menuitem">サイト制作・分析改善</a>
           <a href="/seo/" role="menuitem">SEO対策</a>
           <a href="/meo/" role="menuitem">MEO対策</a>
-          <a href="/ads/" role="menuitem">WEB広告</a>
-          <a href="/sns/" role="menuitem">SNSマーケティング</a>
-          <a href="/sns/note/" role="menuitem">note対策</a>
-          <a href="/ai-seo/" role="menuitem">AI検索対策（LLM対策）</a>
+          <a href="/ai-seo/" role="menuitem">AI検索対策（LLM検索対策）</a>
         </div>
         <div class="hd-mega-col">
-          <span class="hd-mega-col-label"><span class="col-label-main">成約</span></span>
-          <a href="/website/" role="menuitem">ホームページ制作</a>
-          <a href="/website/" role="menuitem">分析改善</a>
-          <a href="/website/lp/" role="menuitem">LP制作</a>
+          <span class="hd-mega-col-label">SNSマーケティング特化施策</span>
+          <a href="/sns/" role="menuitem" class="hd-mega-col-top-link">SNSマーケティング</a>
+          <a href="/sns/instagram/" role="menuitem">Instagram</a>
+          <a href="/sns/tiktok/" role="menuitem">TikTok</a>
+          <a href="/sns/x/" role="menuitem">X（旧Twitter）</a>
+          <a href="/sns/youtube/" role="menuitem">YouTube</a>
+          <a href="/sns/note/" role="menuitem">note</a>
+          <a href="/sns/line/" role="menuitem">LINE</a>
         </div>
         <div class="hd-mega-col">
-          <span class="hd-mega-col-label"><span class="col-label-main">AI活用支援（DX/AX）</span></span>
-          <a href="/ai-automation/" role="menuitem">業務効率化</a>
-          <a href="/ai-automation/" role="menuitem">分析深化</a>
+          <span class="hd-mega-col-label">WEB広告マーケティング</span>
+          <a href="/ads/display/" role="menuitem">ディスプレイ広告</a>
+        </div>
+        <div class="hd-mega-col">
+          <span class="hd-mega-col-label">AX・業務改善</span>
+          <a href="/ai-automation/" role="menuitem">AI業務効率化・導入支援</a>
         </div>
       </div>
       </div>
     </span>
-    <a href="/works/">実績</a>
+    <a href="/works/">制作実績</a>
     <a href="/voice/">お客さまの声</a>
     <span class="hd-nav-item">
       <a href="/company/">会社情報</a>
@@ -561,8 +1109,6 @@
     <span></span><span></span><span></span>
   </button>
 </header>
-
-
 
 <!-- MOBILE DRAWER -->
 <div class="hd-drawer" id="hd-drawer" role="dialog" aria-label="モバイルメニュー">
@@ -610,7 +1156,7 @@
     </div>
   </div>
   <div class="hd-drawer-item">
-    <a href="/works/" class="hd-drawer-link no-arrow">実績</a>
+    <a href="/works/" class="hd-drawer-link no-arrow">制作実績</a>
   </div>
   <div class="hd-drawer-item">
     <a href="/voice/" class="hd-drawer-link no-arrow">お客さまの声</a>
@@ -914,23 +1460,19 @@
   </section>
 
   <!-- CTA SECTION -->
-  <!-- CTA -->
-<section class="cta-sec" id="contact" aria-labelledby="cta-h2">
-  <div class="cta-wrap">
-    <span class="cta-eyebrow fu">FREE CONSULTATION</span>
-    <h2 class="cta-h2 fu" id="cta-h2" style="transition-delay:.1s">
-      <span class="cta-h2-main">まず、お話してみませんか。</span>
-    </h2>
-    <p class="cta-sub fu" style="transition-delay:.15s">初回相談は無料です。</p>
-    <div class="cta-actions fu" style="transition-delay:.25s">
-      <a href="/contact/" class="btn-cta" aria-label="無料相談を申し込む">無料相談を申し込む</a>
-      <div class="cta-tel-wrap">
-        <p class="cta-tel-label">お電話でのご相談</p>
-        <a href="tel:0788068338" class="cta-tel" aria-label="電話番号 078-806-8338">078-806-8338</a>
-      </div>
+  <section class="cta-section fu">
+    <p class="cta-section-eyebrow">FREE CONSULTATION</p>
+    <h2 class="cta-section-title"><span class="cta-h2-line">まず、お話してみませんか。</span><span class="cta-h2-line">初回相談は無料です。</span></h2>
+    <p class="cta-section-sub">「何から始めればいいかわからない」という段階でも構いません。<br>現状のヒアリングから、最適な施策をご提案します。</p>
+    <div class="cta-section-btns">
+      <a href="/contact/" class="cta-btn-primary" aria-label="無料相談を申し込む">無料相談を申し込む</a>
+      <a href="tel:0788068338" class="cta-btn-tel" aria-label="電話番号 078-806-8338">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.61 21 3 13.39 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1.02l-2.2 2.2z" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        078-806-8338
+      </a>
     </div>
-  </div>
-</section>
+    <p class="cta-btn-tel-note">営業時間：平日 9:00〜19:00</p>
+  </section>
 
 
 </main>
@@ -948,7 +1490,7 @@
   <div class="footer-top">
     <div class="footer-logo-wrap">
       <a href="/" class="footer-logo" aria-label="セルフアチーブ トップページへ">
-        <img src="/assets/logo_color.png" alt="selfachieve Acquisition Agency" width="140" height="30" loading="lazy">
+        <img src="assets/logo_color.png" alt="selfachieve Acquisition Agency" width="140" height="30" loading="lazy">
       </a>
       <address class="footer-logo-addr">
         〒658-0032 兵庫県神戸市東灘区向洋町6-9<br>
@@ -982,6 +1524,7 @@
         <a href="/seo/">SEO対策</a>
         <a href="/meo/">MEO対策</a>
         <a href="/ai-seo/">AI検索対策（LLM検索対策）</a>
+        <a href="/ads/listing/">リスティング広告</a>
         <a href="/ads/display/">ディスプレイ広告</a>
         <a href="/sns/instagram/">Instagram</a>
         <a href="/sns/tiktok/">TikTok</a>
@@ -989,11 +1532,10 @@
         <a href="/sns/youtube/">YouTube</a>
         <a href="/sns/note/">note</a>
         <a href="/sns/line/">LINE</a>
-        <a href="/ai-automation/">AI業務効率化・導入支援</a>
       </div>
       <div class="footer-nav-group">
         <p class="footer-nav-title">会社情報</p>
-        <a href="/works/">実績</a>
+        <a href="/works/">制作実績</a>
         <a href="/voice/">お客さまの声</a>
         <a href="/company/">会社情報</a>
     
@@ -1014,8 +1556,6 @@
     </div>
   </div>
 </footer>
-
-
 
 <script>
   // Copyright year (JST)
@@ -1105,7 +1645,55 @@
   });
 
   // Custom cursor (PC / pointer device only)
-  
+  (function(){
+    var isTouch = window.matchMedia('(hover:none)').matches || !window.matchMedia('(pointer:fine)').matches;
+    if(isTouch) return;
+    var dot  = document.getElementById('cursor-dot');
+    var ring = document.getElementById('cursor-ring');
+    if(!dot || !ring) return;
+
+    var mouseX = 0, mouseY = 0;
+    var ringX  = 0, ringY  = 0;
+
+    document.addEventListener('mousemove', function(e){
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      dot.style.transform = 'translate3d(calc(' + mouseX + 'px - 50%), calc(' + mouseY + 'px - 50%), 0)';
+    }, {passive: true});
+
+    function lerp(a, b, t){ return a + (b - a) * t; }
+    function loop(){
+      ringX = lerp(ringX, mouseX, 0.12);
+      ringY = lerp(ringY, mouseY, 0.12);
+      ring.style.transform = 'translate3d(calc(' + ringX + 'px - 50%), calc(' + ringY + 'px - 50%), 0)';
+      requestAnimationFrame(loop);
+    }
+    loop();
+
+    var hoverTargets = 'a, button, [role="button"], [tabindex]';
+    var ctaTargets   = '.cta-btn, .sp-fixed-cta, .hd-cta, .cta-btn-primary, .cta-btn-tel';
+
+    document.querySelectorAll(hoverTargets).forEach(function(el){
+      el.addEventListener('mouseenter', function(){
+        var isCta = el.closest(ctaTargets);
+        ring.classList.remove('is-hovering','is-cta');
+        if(isCta){ ring.classList.add('is-cta'); }
+        else { ring.classList.add('is-hovering'); }
+      });
+      el.addEventListener('mouseleave', function(){
+        ring.classList.remove('is-hovering','is-cta');
+      });
+    });
+
+    document.addEventListener('mouseleave', function(){
+      dot.style.opacity  = '0';
+      ring.style.opacity = '0';
+    });
+    document.addEventListener('mouseenter', function(){
+      dot.style.opacity  = '1';
+      ring.style.opacity = '1';
+    });
+  })();
   // SCROLL FADE-UP (.fu → .fu.on)
   (function(){
     var fuEls = document.querySelectorAll('.fu');
@@ -1119,19 +1707,6 @@
       });
     }, {threshold: 0.1});
     fuEls.forEach(function(el){ fuObserver.observe(el); });
-    // KV等ページロード時に既にビューポート内の .fu 要素を即座に表示
-    (function() {
-      requestAnimationFrame(function() {
-        requestAnimationFrame(function() {
-          fuEls.forEach(function(el) {
-            var r = el.getBoundingClientRect();
-            if (r.top < window.innerHeight && r.bottom > 0) {
-              el.classList.add('on');
-            }
-          });
-        });
-      });
-    })();
   })();
 
   // VALUE フレーズ 下線アニメーション
@@ -1151,6 +1726,5 @@
     phrases.forEach(function(el){ observer.observe(el); });
   })();
 </script>
-<script src="../assets/master.js"></script>
 </body>
 </html>
