@@ -2,11 +2,11 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>神戸のWEBマーケティング・集客支援会社 | セルフアチーブ</title>
   <meta name="description" content="神戸の中小企業に特化したWEBマーケティング会社。SEO対策・リスティング広告・ホームページ制作で集客を支援。累計200社以上・14年の実績。初回相談無料。">
   <meta name="robots" content="index, follow">
-  <link rel="stylesheet" href="assets/style.css">
   <link rel="canonical" href="https://selfachieve.jp/">
   <link rel="alternate" hreflang="ja" href="https://selfachieve.jp/">
   <meta property="og:type" content="website">
@@ -27,8 +27,6 @@
   <meta name="theme-color" content="#ffffff">
   <meta name="color-scheme" content="light">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
   <script type="application/ld+json">
   {"@context":"https://schema.org","@graph":[
     {"@type":["Organization","LocalBusiness"],"@id":"https://selfachieve.jp/#organization",
@@ -78,10 +76,16 @@
     }
   ]}
   </script>
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
 
 <!-- CUSTOM CURSOR -->
+<div id="cursor-dot" aria-hidden="true"></div>
+<div id="cursor-ring" aria-hidden="true"></div>
 
 <!-- HEADER -->
 <header class="hd" role="banner">
@@ -94,40 +98,30 @@
       <div class="hd-mega-wrap">
       <div class="hd-mega" role="menu">
         <div class="hd-mega-col">
-          <span class="hd-mega-col-label"><span class="col-label-main">戦略・全体</span><span class="col-label-sub">（なんか、うまくいかない…）</span></span>
-          <a href="strategy/" role="menuitem">事業戦略</a>
-          <a href="strategy/" role="menuitem">ブランディング</a>
-          <a href="strategy/" role="menuitem">WEB戦略</a>
-          <a href="strategy/" role="menuitem">マーケティング戦略</a>
-          <a href="strategy/" role="menuitem">顧客戦略</a>
-          <a href="https://selfachieve.jp/saikatsu_r/" role="menuitem" target="_blank" rel="noopener noreferrer">採用戦略<svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-left:4px;opacity:.7"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+          <span class="hd-mega-col-label">なんかうまくいかない...</span>
+          <a href="strategy/" role="menuitem">WEB戦略設計</a>
+          <a href="ai-automation/" role="menuitem">AI業務効率化・導入支援</a>
         </div>
         <div class="hd-mega-col">
-          <span class="hd-mega-col-label"><span class="col-label-main">集客</span><span class="col-label-sub">（サイトへの訪問者を増やしたい）</span></span>
+          <span class="hd-mega-col-label">集客したい</span>
           <a href="seo/" role="menuitem">SEO対策</a>
           <a href="meo/" role="menuitem">MEO対策</a>
-          <a href="ads/" role="menuitem">WEB広告</a>
-          <a href="sns/" role="menuitem">SNSマーケティング</a>
-          <a href="sns/note/" role="menuitem">note対策</a>
-          <a href="ai-seo/" role="menuitem">AI検索対策（LLM対策）</a>
+          <a href="ai-seo/" role="menuitem">AI検索対策（LLM検索対策）</a>
+          <a href="ads/display/" role="menuitem">ディスプレイ広告</a>
         </div>
         <div class="hd-mega-col">
-          <span class="hd-mega-col-label"><span class="col-label-main">成約</span><span class="col-label-sub">（問い合わせ・売上を増やしたい）</span></span>
-          <a href="website/" role="menuitem">ホームページ制作</a>
-          <a href="website/" role="menuitem">分析改善</a>
-          <a href="website/lp/" role="menuitem">LP制作</a>
+          <span class="hd-mega-col-label">問い合わせを増やしたい</span>
+          <a href="website/" role="menuitem">サイト制作・分析改善</a>
+          <a href="strategy/" role="menuitem">WEB戦略設計</a>
         </div>
         <div class="hd-mega-col">
-          <span class="hd-mega-col-label"><span class="col-label-main">再販・追客</span><span class="col-label-sub">（一度来た人にまた来てほしい）</span></span>
+          <span class="hd-mega-col-label">追客したい</span>
           <a href="sns/line/" role="menuitem">LINE</a>
           <a href="sns/instagram/" role="menuitem">Instagram</a>
           <a href="sns/x/" role="menuitem">X（旧Twitter）</a>
           <a href="sns/youtube/" role="menuitem">YouTube</a>
-        </div>
-        <div class="hd-mega-col">
-          <span class="hd-mega-col-label"><span class="col-label-main">AI活用</span><span class="col-label-sub">（AIで業務を効率化・最適化したい）</span></span>
-          <a href="ai-automation/" role="menuitem">業務効率化</a>
-          <a href="ai-automation/" role="menuitem">分析深化</a>
+          <a href="sns/tiktok/" role="menuitem">TikTok</a>
+          <a href="sns/note/" role="menuitem">note</a>
         </div>
       </div>
       </div>
@@ -137,38 +131,38 @@
       <div class="hd-mega-wrap">
       <div class="hd-mega" role="menu">
         <div class="hd-mega-col">
-          <span class="hd-mega-col-label"><span class="col-label-main">戦略設計</span></span>
-          <a href="strategy/" role="menuitem">事業戦略</a>
-          <a href="strategy/" role="menuitem">ブランディング</a>
-          <a href="strategy/" role="menuitem">WEB戦略</a>
-          <a href="strategy/" role="menuitem">マーケティング戦略</a>
-          <a href="strategy/" role="menuitem">顧客戦略</a>
-          <a href="https://selfachieve.jp/saikatsu_r/" role="menuitem" target="_blank" rel="noopener noreferrer">採用戦略<svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-left:4px;opacity:.7"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+          <span class="hd-mega-col-label">マーケティング戦略</span>
+          <a href="strategy/" role="menuitem">WEB戦略設計</a>
         </div>
         <div class="hd-mega-col">
-          <span class="hd-mega-col-label"><span class="col-label-main">集客施策</span></span>
+          <span class="hd-mega-col-label">WEB集客施策</span>
+          <a href="website/" role="menuitem">サイト制作・分析改善</a>
           <a href="seo/" role="menuitem">SEO対策</a>
           <a href="meo/" role="menuitem">MEO対策</a>
-          <a href="ads/" role="menuitem">WEB広告</a>
-          <a href="sns/" role="menuitem">SNSマーケティング</a>
-          <a href="sns/note/" role="menuitem">note対策</a>
-          <a href="ai-seo/" role="menuitem">AI検索対策（LLM対策）</a>
+          <a href="ai-seo/" role="menuitem">AI検索対策（LLM検索対策）</a>
         </div>
         <div class="hd-mega-col">
-          <span class="hd-mega-col-label"><span class="col-label-main">成約</span></span>
-          <a href="website/" role="menuitem">ホームページ制作</a>
-          <a href="website/" role="menuitem">分析改善</a>
-          <a href="website/lp/" role="menuitem">LP制作</a>
+          <span class="hd-mega-col-label">SNSマーケティング特化施策</span>
+          <a href="sns/" role="menuitem" class="hd-mega-col-top-link">SNSマーケティング</a>
+          <a href="sns/instagram/" role="menuitem">Instagram</a>
+          <a href="sns/tiktok/" role="menuitem">TikTok</a>
+          <a href="sns/x/" role="menuitem">X（旧Twitter）</a>
+          <a href="sns/youtube/" role="menuitem">YouTube</a>
+          <a href="sns/note/" role="menuitem">note</a>
+          <a href="sns/line/" role="menuitem">LINE</a>
         </div>
         <div class="hd-mega-col">
-          <span class="hd-mega-col-label"><span class="col-label-main">AI活用支援（DX/AX）</span></span>
-          <a href="ai-automation/" role="menuitem">業務効率化</a>
-          <a href="ai-automation/" role="menuitem">分析深化</a>
+          <span class="hd-mega-col-label">WEB広告マーケティング</span>
+          <a href="ads/display/" role="menuitem">ディスプレイ広告</a>
+        </div>
+        <div class="hd-mega-col">
+          <span class="hd-mega-col-label">AX・業務改善</span>
+          <a href="ai-automation/" role="menuitem">AI業務効率化・導入支援</a>
         </div>
       </div>
       </div>
     </span>
-    <a href="works/">実績</a>
+    <a href="works/">制作実績</a>
     <a href="voice/">お客さまの声</a>
     <span class="hd-nav-item">
       <a href="company/">会社情報</a>
@@ -195,62 +189,48 @@
   <div class="hd-drawer-item">
     <div class="hd-drawer-link" data-drawer-toggle>課題から探す</div>
     <div class="hd-drawer-sub">
-      <p class="hd-drawer-sub-label">戦略・全体（なんか、うまくいかない…）</p>
-      <a href="strategy/">事業戦略</a>
-      <a href="strategy/">ブランディング</a>
-      <a href="strategy/">WEB戦略</a>
-      <a href="strategy/">マーケティング戦略</a>
-      <a href="strategy/">顧客戦略</a>
-      <a href="https://selfachieve.jp/saikatsu_r/" target="_blank" rel="noopener noreferrer">採用戦略<svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-left:4px;opacity:.7"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
-      <p class="hd-drawer-sub-label">集客（サイトへの訪問者を増やしたい）</p>
+      <p class="hd-drawer-sub-label">なんかうまくいかない...</p>
+      <a href="strategy/">WEB戦略設計</a>
+      <p class="hd-drawer-sub-label">集客したい</p>
       <a href="seo/">SEO対策</a>
       <a href="meo/">MEO対策</a>
-      <a href="ads/">WEB広告</a>
-      <a href="sns/">SNSマーケティング</a>
-      <a href="sns/note/">note対策</a>
-      <a href="ai-seo/">AI検索対策（LLM対策）</a>
-      <p class="hd-drawer-sub-label">成約（問い合わせ・売上を増やしたい）</p>
-      <a href="website/">ホームページ制作</a>
-      <a href="website/">分析改善</a>
-      <a href="website/lp/">LP制作</a>
-      <p class="hd-drawer-sub-label">再販・追客（一度来た人にまた来てほしい）</p>
+      <a href="ai-seo/">AI検索対策（LLM検索対策）</a>
+      <a href="ads/display/">ディスプレイ広告</a>
+      <p class="hd-drawer-sub-label">問い合わせを増やしたい</p>
+      <a href="website/">サイト制作・分析改善</a>
+      <a href="strategy/">WEB戦略設計</a>
+      <p class="hd-drawer-sub-label">追客したい</p>
       <a href="sns/line/">LINE</a>
       <a href="sns/instagram/">Instagram</a>
       <a href="sns/x/">X（旧Twitter）</a>
       <a href="sns/youtube/">YouTube</a>
-      <p class="hd-drawer-sub-label">AI活用（AIで業務を効率化・最適化したい）</p>
-      <a href="ai-automation/">業務効率化</a>
-      <a href="ai-automation/">分析深化</a>
+      <a href="sns/tiktok/">TikTok</a>
+      <a href="sns/note/">note</a>
     </div>
   </div>
   <div class="hd-drawer-item">
     <div class="hd-drawer-link" data-drawer-toggle>サービス</div>
     <div class="hd-drawer-sub">
-      <p class="hd-drawer-sub-label">戦略設計</p>
-      <a href="strategy/">事業戦略</a>
-      <a href="strategy/">ブランディング</a>
-      <a href="strategy/">WEB戦略</a>
-      <a href="strategy/">マーケティング戦略</a>
-      <a href="strategy/">顧客戦略</a>
-      <a href="https://selfachieve.jp/saikatsu_r/" target="_blank" rel="noopener noreferrer">採用戦略<svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-left:4px;opacity:.7"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
-      <p class="hd-drawer-sub-label">集客施策</p>
+      <a href="strategy/">WEB戦略設計</a>
+      <a href="website/">サイト制作・分析改善</a>
       <a href="seo/">SEO対策</a>
       <a href="meo/">MEO対策</a>
-      <a href="ads/">WEB広告</a>
-      <a href="sns/">SNSマーケティング</a>
-      <a href="sns/note/">note対策</a>
-      <a href="ai-seo/">AI検索対策（LLM対策）</a>
-      <p class="hd-drawer-sub-label">成約</p>
-      <a href="website/">ホームページ制作</a>
-      <a href="website/">分析改善</a>
-      <a href="website/lp/">LP制作</a>
-      <p class="hd-drawer-sub-label">AI活用支援（DX/AX）</p>
-      <a href="ai-automation/">業務効率化</a>
-      <a href="ai-automation/">分析深化</a>
+      <a href="ai-seo/">AI検索対策（LLM検索対策）</a>
+      <p class="hd-drawer-sub-label">SNSマーケティング</p>
+      <a href="sns/instagram/">Instagram</a>
+      <a href="sns/tiktok/">TikTok</a>
+      <a href="sns/x/">X（旧Twitter）</a>
+      <a href="sns/youtube/">YouTube</a>
+      <a href="sns/note/">note</a>
+      <a href="sns/line/">LINE</a>
+      <p class="hd-drawer-sub-label">WEB広告</p>
+      <a href="ads/display/">ディスプレイ広告</a>
+      <p class="hd-drawer-sub-label">AX・業務改善</p>
+      <a href="ai-automation/">AI業務効率化・導入支援</a>
     </div>
   </div>
   <div class="hd-drawer-item">
-    <a href="works/" class="hd-drawer-link no-arrow">実績</a>
+    <a href="works/" class="hd-drawer-link no-arrow">制作実績</a>
   </div>
   <div class="hd-drawer-item">
     <a href="voice/" class="hd-drawer-link no-arrow">お客さまの声</a>
@@ -301,16 +281,20 @@
 <!-- KV -->
 <section class="kv" aria-labelledby="kv-h1">
   <div class="kv-wrap">
-    <p class="kv-eyebrow fu on">WEB MARKETING AGENCY — KOBE</p>
-    <h1 class="kv-h1 fu on" id="kv-h1" style="transition-delay:.1s">
+    <p class="kv-eyebrow fu">WEB MARKETING AGENCY — KOBE</p>
+    <h1 class="kv-h1 fu" id="kv-h1" style="transition-delay:.1s">
       向き合う姿勢、<br>どこまでも真摯に。
     </h1>
-    <p class="kv-body fu on" style="transition-delay:.2s">
+    <p class="kv-body fu" style="transition-delay:.2s">
       「なぜ集客できないのか」を徹底的に分析し、<br>
       最適な施策の組み合わせで成果を最大化します。<br>
       神戸を拠点に、累計200社以上の集客を支援してきました。
     </p>
-    <div class="kv-stats fu on" style="transition-delay:.3s">
+    <div class="kv-stats fu" style="transition-delay:.3s">
+      <div class="kv-stat">
+        <div class="kv-stat-n" data-count="12">0<sup>社</sup></div>
+        <div class="kv-stat-l">月間新規平均相談数<span class="kv-stat-note">2025年度実績</span></div>
+      </div>
       <div class="kv-stat">
         <div class="kv-stat-n" data-count="200">0<sup>社以上</sup></div>
         <div class="kv-stat-l">累計支援実績</div>
@@ -337,14 +321,17 @@
   <a href="news/" class="notice-bar-all" aria-label="お知らせ一覧を見る">一覧を見る<span class="notice-bar-arrow">→</span></a>
 </div>
 
+
+
 <!-- CHALLENGE -->
 <section id="challenge" class="challenge-sec" aria-labelledby="challenge-h2-top">
     <div class="challenge-head">
-    <div class="challenge-head-left">
+    <div class="challenge-watermark" aria-hidden="true">Challenge</div>
+    <div class="challenge-head-body">
       <p class="sec-eyebrow fu">YOUR CHALLENGE</p>
-      <h2 class="sec-h2 fu" id="challenge-h2-top" style="transition-delay:.1s;white-space:nowrap">あなたの課題はどれですか？</h2>
-    </div>
-    <div class="challenge-head-right">
+      <h2 class="sec-h2 fu" id="challenge-h2-top" style="transition-delay:.1s">
+        あなたの課題は<br>どれですか？
+      </h2>
       <p class="sec-body fu" style="transition-delay:.2s">
         なんかうまくいかない。<br>
         WEBで成果が出ない理由は、必ずあります。<br>
@@ -354,35 +341,24 @@
   </div>
   <div class="challenge-grid">
     <!-- 01 なんかうまくいかない -->
-    <article class="challenge-card challenge-card--overall fu">
-      <div class="challenge-card-left">
-        <span class="challenge-cat-chip">全般</span>
-        <div class="challenge-card-num">
-          <span class="challenge-card-num-n">01</span>
-        </div>
-        <h3 class="challenge-card-title">
-          なんか、うまくいかない...
-        </h3>
-        <p class="challenge-card-desc">
-          何が問題かわからない。施策を試しても手応えがない。まず現状を整理したい。業務効率化したいがやり方がわからない
-        </p>
+    <article class="challenge-card fu">
+      <div class="challenge-card-num">
+        <span class="challenge-card-num-n">01</span>
       </div>
-      <div class="challenge-card-right">
-        <p class="challenge-tags-label">推奨施策</p>
-        <div class="challenge-tags-wrap">
-          <a href="strategy/" class="challenge-tag">事業戦略</a>
-          <a href="strategy/" class="challenge-tag">ブランディング</a>
-          <a href="strategy/" class="challenge-tag">WEB戦略</a>
-          <a href="strategy/" class="challenge-tag">マーケティング戦略</a>
-          <a href="strategy/" class="challenge-tag">顧客戦略</a>
-          <a href="strategy/" class="challenge-tag">採用戦略</a>
-          <a href="ai-automation/" class="challenge-tag">AI業務効率化・導入支援</a>
-        </div>
+      <h3 class="challenge-card-title">
+        なんかうまく<br>いかない...
+      </h3>
+      <p class="challenge-card-desc">
+        何が問題かわからない。施策を試しても手応えがない。まず現状を整理したい。業務効率化したいがやり方がわからない
+      </p>
+      <p class="challenge-tags-label">推奨施策</p>
+      <div class="challenge-tags-wrap">
+        <a href="strategy/" class="challenge-tag">WEB戦略設計</a>
+        <a href="ai-automation/" class="challenge-tag">AI業務効率化・導入支援</a>
       </div>
     </article>
     <!-- 02 集客 -->
     <article class="challenge-card fu" style="transition-delay:.1s">
-      <span class="challenge-cat-chip">集客</span>
       <div class="challenge-card-num">
         <span class="challenge-card-num-n">02</span>
       </div>
@@ -402,7 +378,6 @@
     </article>
     <!-- 03 転換 -->
     <article class="challenge-card fu" style="transition-delay:.2s">
-      <span class="challenge-cat-chip">成約</span>
       <div class="challenge-card-num">
         <span class="challenge-card-num-n">03</span>
       </div>
@@ -420,7 +395,6 @@
     </article>
     <!-- 04 追客 -->
     <article class="challenge-card fu" style="transition-delay:.3s">
-      <span class="challenge-cat-chip">再販</span>
       <div class="challenge-card-num">
         <span class="challenge-card-num-n">04</span>
       </div>
@@ -509,14 +483,18 @@
 </section>
 
 <!-- CTA -->
-<section class="cta-sec" id="contact" aria-labelledby="cta-h2">
+<section id="contact" class="cta" aria-labelledby="cta-h2">
   <div class="cta-wrap">
-    <span class="cta-eyebrow fu">FREE CONSULTATION</span>
+    <p class="cta-eyebrow fu">FREE CONSULTATION</p>
     <h2 class="cta-h2 fu" id="cta-h2" style="transition-delay:.1s">
-      <span class="cta-h2-main">まず、お話してみませんか。</span>
+      <span class="cta-h2-line">まず、お話してみませんか。</span>
+      <span class="cta-h2-line">初回相談は無料です。</span>
     </h2>
-    <p class="cta-sub fu" style="transition-delay:.15s">初回相談は無料です。</p>
-    <div class="cta-actions fu" style="transition-delay:.25s">
+    <p class="cta-body fu" style="transition-delay:.2s">
+      「何から始めればいいかわからない」という段階でも構いません。
+      現状のヒアリングから、最適な施策をご提案します。
+    </p>
+    <div class="cta-actions fu" style="transition-delay:.3s">
       <a href="contact/" class="btn-cta" aria-label="無料相談を申し込む">無料相談を申し込む</a>
       <div class="cta-tel-wrap">
         <p class="cta-tel-label">お電話でのご相談</p>
@@ -531,15 +509,15 @@
   <div class="works-head">
     <div>
       <p class="sec-eyebrow fu">OUR WORKS</p>
-      <h2 class="sec-title-lg fu" id="works-title">数字で証明する、<br>実績。</h2>
+      <h2 class="sec-title-lg fu" id="works-title">数字で証明する、<br>制作実績。</h2>
     </div>
-    <a href="works/" class="view-all fu" aria-label="実績をすべて見る">すべて見る</a>
+    <a href="works/" class="view-all fu" aria-label="制作実績をすべて見る">すべて見る</a>
   </div>
   <div class="works-grid">
     <article class="work-card fu">
-      <a href="works/sanplaza/" class="work-link" aria-label="さんプラザコンタクトレンズの実績を詳しく見る">
+      <a href="works/sanplaza/" class="work-link" aria-label="さんプラザコンタクトレンズの制作実績を詳しく見る">
       <div class="work-thumb">
-        <img src="assets/works/sanplaza_pc.jpg" alt="さんプラザコンタクトレンズ ホームページ実績" width="600" height="375" loading="lazy">
+        <img src="assets/works/sanplaza_pc.jpg" alt="さんプラザコンタクトレンズ ホームページ制作実績" width="600" height="375" loading="lazy">
       </div>
       <div class="work-info">
         <p class="work-cat">SEO対策 / ホームページ制作</p>
@@ -550,9 +528,9 @@
       </a>
     </article>
     <article class="work-card fu" style="transition-delay:.1s">
-      <a href="works/inohara/" class="work-link" aria-label="猪原食べる総合歯科医療クリニックの実績を詳しく見る">
+      <a href="works/inohara/" class="work-link" aria-label="猪原食べる総合歯科医療クリニックの制作実績を詳しく見る">
       <div class="work-thumb">
-        <img src="assets/works/inohara_pc.jpg" alt="猪原食べる総合歯科医療クリニック 実績" width="600" height="375" loading="lazy">
+        <img src="assets/works/inohara_pc.jpg" alt="猪原食べる総合歯科医療クリニック 制作実績" width="600" height="375" loading="lazy">
       </div>
       <div class="work-info">
         <p class="work-cat">MEO対策 / リスティング広告</p>
@@ -563,9 +541,9 @@
       </a>
     </article>
     <article class="work-card fu" style="transition-delay:.2s">
-      <a href="works/nadi/" class="work-link" aria-label="Nadiヨガスタジオの実績を詳しく見る">
+      <a href="works/nadi/" class="work-link" aria-label="Nadiヨガスタジオの制作実績を詳しく見る">
       <div class="work-thumb">
-        <img src="assets/works/nadi_pc.png" alt="Nadi ヨガスタジオ 実績" width="600" height="375" loading="lazy">
+        <img src="assets/works/nadi_pc.png" alt="Nadi ヨガスタジオ 制作実績" width="600" height="375" loading="lazy">
       </div>
       <div class="work-info">
         <p class="work-cat">ホームページ制作 / SNS運用</p>
@@ -709,25 +687,25 @@
       <div class="service-opt-card fu">
         <span class="service-opt-num">01</span>
         <h3 class="service-opt-name">まるごと<br>お任せしたい</h3>
-        <p style="font-size:14px;color:#3D3D42;line-height:1.8">社内にWeb担当がいない、または全部まとめて外注・委託したい方へ。SEO・広告・SNS・MEO・LPOなど、Webマーケティングの代行をまるごとお任せいただけます。</p>
+        <p style="font-size:13px;color:#3D3D42;line-height:1.7">社内にWeb担当がいない、または全部まとめて外注・委託したい方へ。SEO・広告・SNS・MEO・LPOなど、Webマーケティングの代行をまるごとお任せいただけます。</p>
 
       </div>
       <div class="service-opt-card fu" style="transition-delay:.1s">
         <span class="service-opt-num">02</span>
         <h3 class="service-opt-name">広告だけ<br>強化したい</h3>
-        <p style="font-size:14px;color:#3D3D42;line-height:1.8">広告費を使っているのに成果が出ない方へ。広告代理店として、リスティング広告・SNS広告の費用対効果を最大化する戦略設計から運用まで一貫して担います。</p>
+        <p style="font-size:13px;color:#3D3D42;line-height:1.7">広告費を使っているのに成果が出ない方へ。広告代理店として、リスティング広告・SNS広告の費用対効果を最大化する戦略設計から運用まで一貫して担います。</p>
 
       </div>
       <div class="service-opt-card fu" style="transition-delay:.2s">
         <span class="service-opt-num">03</span>
         <h3 class="service-opt-name">一緒に考えながら<br>進めたい</h3>
-        <p style="font-size:14px;color:#3D3D42;line-height:1.8">「神戸の会社に頼みたい」「伴走してほしい」という方へ。単発施策ではなく、成果が出るまで寄り添う集客支援パートナーとして中小企業・店舗に特化したプランをご提案します。</p>
+        <p style="font-size:13px;color:#3D3D42;line-height:1.7">「神戸の会社に頼みたい」「伴走してほしい」という方へ。単発施策ではなく、成果が出るまで寄り添う集客支援パートナーとして中小企業・店舗に特化したプランをご提案します。</p>
 
       </div>
       <div class="service-opt-card fu" style="transition-delay:.3s">
         <span class="service-opt-num">04</span>
         <h3 class="service-opt-name">まず話だけ<br>聞きたい</h3>
-        <p style="font-size:14px;color:#3D3D42;line-height:1.8">「何から始めればいいか分からない」「予算が決まっていない」段階でも大丈夫です。Webマーケティングの相談・Web集客の相談だけでも、初回は完全無料でお受けします。</p>
+        <p style="font-size:13px;color:#3D3D42;line-height:1.7">「何から始めればいいか分からない」「予算が決まっていない」段階でも大丈夫です。Webマーケティングの相談・Web集客の相談だけでも、初回は完全無料でお受けします。</p>
 
       </div>
     </div>
@@ -922,7 +900,7 @@
       </div>
       <div class="footer-nav-group">
         <p class="footer-nav-title">会社情報</p>
-        <a href="works/">実績</a>
+        <a href="works/">制作実績</a>
         <a href="voice/">お客さまの声</a>
         <a href="company/">会社情報</a>
     
@@ -956,19 +934,6 @@
     entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('on'); obs.unobserve(e.target); } });
   }, { threshold: 0.1 });
   document.querySelectorAll('.fu').forEach(el => obs.observe(el));
-  // KV等ページロード時に既にビューポート内の .fu 要素を即座に表示
-  (function applyInitialFu() {
-    requestAnimationFrame(function() {
-      requestAnimationFrame(function() {
-        document.querySelectorAll('.fu').forEach(function(el) {
-          var r = el.getBoundingClientRect();
-          if (r.top < window.innerHeight && r.bottom > 0) {
-            el.classList.add('on');
-          }
-        });
-      });
-    });
-  })();
 
   // FAQ accordion
   document.querySelectorAll('.faq-q').forEach(btn => {
@@ -1146,7 +1111,58 @@
   });
 
   // Custom cursor (PC / pointer device only)
-  
+  (function(){
+    var isTouch = window.matchMedia('(hover:none)').matches || !window.matchMedia('(pointer:fine)').matches;
+    if(isTouch) return;
+    var dot  = document.getElementById('cursor-dot');
+    var ring = document.getElementById('cursor-ring');
+    if(!dot || !ring) return;
+
+    var mouseX = 0, mouseY = 0;
+    var ringX  = 0, ringY  = 0;
+    var raf;
+
+    document.addEventListener('mousemove', function(e){
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      dot.style.transform = 'translate3d(calc(' + mouseX + 'px - 50%), calc(' + mouseY + 'px - 50%), 0)';
+    });
+
+    function lerp(a, b, t){ return a + (b - a) * t; }
+    function loop(){
+      ringX = lerp(ringX, mouseX, 0.12);
+      ringY = lerp(ringY, mouseY, 0.12);
+      ring.style.transform = 'translate3d(calc(' + ringX + 'px - 50%), calc(' + ringY + 'px - 50%), 0)';
+      raf = requestAnimationFrame(loop);
+    }
+    loop();
+
+    // Hover state
+    var hoverTargets = 'a, button, [role="button"], [tabindex]';
+    var ctaTargets   = '.cta-btn, .sp-fixed-cta, .hd-cta';
+
+    document.querySelectorAll(hoverTargets).forEach(function(el){
+      el.addEventListener('mouseenter', function(){
+        var isCta = el.closest(ctaTargets);
+        ring.classList.remove('is-hovering','is-cta');
+        if(isCta){ ring.classList.add('is-cta'); }
+        else { ring.classList.add('is-hovering'); }
+      });
+      el.addEventListener('mouseleave', function(){
+        ring.classList.remove('is-hovering','is-cta');
+      });
+    });
+
+    // Hide cursor when leaving window
+    document.addEventListener('mouseleave', function(){
+      dot.style.opacity  = '0';
+      ring.style.opacity = '0';
+    });
+    document.addEventListener('mouseenter', function(){
+      dot.style.opacity  = '1';
+      ring.style.opacity = '1';
+    });
+  })();
 </script>
 </body>
 </html>
