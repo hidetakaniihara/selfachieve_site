@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>案A改善 デザイン3案 プレビュー</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Noto Sans JP',sans-serif;background:#fff;color:#28282D;line-height:1.6}
+
+  /* ===== ページヘッダー ===== */
+  .page-header{background:#28282D;color:#fff;text-align:center;padding:40px 24px 32px}
+  .page-header h1{font-size:clamp(18px,3vw,28px);font-weight:700;margin-bottom:8px}
+  .page-header p{font-size:14px;color:rgba(255,255,255,.6)}
+
+  /* ===== セクションラベル ===== */
+  .section-label{
+    background:#28282D;color:#fff;
+    font-family:'Montserrat',sans-serif;
+    font-size:11px;font-weight:700;letter-spacing:.15em;
+    padding:12px 24px 10px;
+    display:flex;align-items:center;gap:12px
+  }
+  .section-label .badge{
+    background:linear-gradient(135deg,#EC4899,#8B5CF6);
+    color:#fff;font-size:10px;font-weight:700;letter-spacing:.1em;
+    padding:3px 10px;border-radius:2px
+  }
+  .section-label .desc{color:rgba(255,255,255,.5);font-size:10px}
+
+  /* ===== 選択ボタン ===== */
+  .select-bar{
+    background:#F5F5F3;border-top:1px solid #E8E8E5;
+    padding:20px 24px;text-align:center
+  }
+  .select-bar p{font-size:13px;color:#666;margin-bottom:12px}
+  .select-btn{
+    display:inline-block;
+    background:#28282D;color:#fff;
+    font-size:13px;font-weight:700;
+    padding:12px 32px;border-radius:2px;
+    text-decoration:none;cursor:pointer;
+    border:none;
+    transition:background .2s
+  }
+  .select-btn:hover{background:#EC4899}
+
+  /* ===== 共通スペーサー ===== */
+  .spacer{height:1px;background:#E8E8E5}
+
+  /* ============================================================
+     A-1：数値の流れ込み型
+  ============================================================ */
+  .banner-a1{
+    background:#FAFAFA;
+    padding:80px 0;
+    overflow:hidden;
+    position:relative;
+  }
+  .banner-a1::before{
+    content:'';
+    position:absolute;left:0;top:0;bottom:0;width:4px;
+    background:linear-gradient(180deg,#EC4899,#8B5CF6);
+  }
+  .banner-a1-inner{
+    max-width:1200px;margin:0 auto;padding:0 48px;
+    display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;
+  }
+  /* 左：数値 */
+  .a1-metrics{display:flex;flex-direction:column;gap:32px}
+  .a1-metric-item{
+    display:flex;align-items:baseline;gap:16px;
+    opacity:0;transform:translateX(-40px);
+    transition:opacity .7s ease, transform .7s ease;
+  }
+  .a1-metric-item.visible{opacity:1;transform:translateX(0)}
+  .a1-metric-item:nth-child(2){transition-delay:.15s}
+  .a1-metric-item:nth-child(3){transition-delay:.3s}
+  .a1-metric-num{
+    font-family:'Montserrat',sans-serif;
+    font-size:clamp(48px,6vw,80px);font-weight:900;
+    color:#28282D;line-height:1;
+    position:relative;
+  }
+  .a1-metric-num::after{
+    content:'';
+    position:absolute;bottom:-4px;left:0;right:0;height:3px;
+    background:linear-gradient(90deg,#EC4899,#8B5CF6);
+    transform:scaleX(0);transform-origin:left;
+    transition:transform .5s ease .4s;
+  }
+  .a1-metric-item.visible .a1-metric-num::after{transform:scaleX(1)}
+  .a1-metric-unit{
+    font-family:'Montserrat',sans-serif;
+    font-size:clamp(20px,2.5vw,32px);font-weight:700;color:#28282D;
+  }
+  .a1-metric-label{
+    font-size:12px;color:#999;letter-spacing:.05em;margin-top:4px;
+  }
+  .a1-metric-note{
+    font-size:10px;color:#bbb;margin-top:2px;
+  }
+  /* 右：コピー */
+  .a1-copy{
+    opacity:0;transform:translateX(30px);
+    transition:opacity .8s ease .3s, transform .8s ease .3s;
+  }
+  .a1-copy.visible{opacity:1;transform:translateX(0)}
+  .a1-eyebrow{
+    font-family:'Montserrat',sans-serif;
+    font-size:10px;font-weight:700;letter-spacing:.2em;
+    color:#EC4899;margin-bottom:20px;
+    display:flex;align-items:center;gap:8px;
+  }
+  .a1-eyebrow::before{content:'';width:24px;height:1px;background:#EC4899}
+  .a1-headline{
+    font-size:clamp(28px,3.5vw,48px);font-weight:900;line-height:1.25;
+    margin-bottom:24px;
+  }
+  .a1-headline em{
+    font-style:normal;
+    background:linear-gradient(135deg,#EC4899,#8B5CF6);
+    -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+    background-clip:text;
+  }
+  .a1-body{
+    font-size:15px;color:#555;line-height:1.8;margin-bottom:32px;
+  }
+  .a1-cta{
+    display:inline-flex;align-items:center;gap:10px;
+    background:linear-gradient(135deg,#EC4899,#8B5CF6);
+    color:#fff;font-size:14px;font-weight:700;
+    padding:16px 32px;border-radius:2px;
+    text-decoration:none;
+    transition:opacity .2s,transform .2s;
+  }
+  .a1-cta:hover{opacity:.85;transform:translateY(-1px)}
+  .a1-cta-arrow{font-size:16px}
+
+  /* ============================================================
+     A-2：全幅タイポグラフィ型
+  ============================================================ */
+  .banner-a2{
+    background:#F8F6F2;
+    padding:80px 0 64px;
+    overflow:hidden;
+  }
+  .banner-a2-inner{
+    max-width:1200px;margin:0 auto;padding:0 48px;
+  }
+  /* 数値3つ：全幅 */
+  .a2-numbers{
+    display:grid;grid-template-columns:repeat(3,1fr);
+    gap:0;margin-bottom:40px;
+  }
+  .a2-num-item{
+    padding:0 32px 32px 0;
+    border-right:1px solid #D8D5CF;
+    opacity:0;transform:translateY(20px);
+    transition:opacity .6s ease, transform .6s ease;
+  }
+  .a2-num-item:last-child{border-right:none;padding-right:0}
+  .a2-num-item.visible{opacity:1;transform:translateY(0)}
+  .a2-num-item:nth-child(2){transition-delay:.1s}
+  .a2-num-item:nth-child(3){transition-delay:.2s}
+  .a2-num-value{
+    font-family:'Montserrat',sans-serif;
+    font-size:clamp(56px,8vw,120px);font-weight:900;
+    line-height:.9;color:#28282D;
+    display:block;margin-bottom:12px;
+  }
+  .a2-num-unit{
+    font-family:'Montserrat',sans-serif;
+    font-size:clamp(28px,4vw,56px);font-weight:900;color:#EC4899;
+  }
+  .a2-num-label{
+    font-size:12px;color:#999;letter-spacing:.08em;
+    margin-top:8px;display:block;
+  }
+  /* 区切り線 */
+  .a2-divider{
+    height:1px;background:#28282D;
+    margin-bottom:40px;
+    transform:scaleX(0);transform-origin:left;
+    transition:transform .8s ease .3s;
+  }
+  .a2-divider.visible{transform:scaleX(1)}
+  /* 下段：コピー＋CTA */
+  .a2-bottom{
+    display:flex;align-items:flex-end;justify-content:space-between;gap:40px;
+    opacity:0;transform:translateY(16px);
+    transition:opacity .6s ease .5s, transform .6s ease .5s;
+  }
+  .a2-bottom.visible{opacity:1;transform:translateY(0)}
+  .a2-copy-main{
+    font-size:clamp(18px,2.2vw,28px);font-weight:700;line-height:1.5;
+    max-width:600px;
+  }
+  .a2-copy-main em{
+    font-style:normal;
+    background:linear-gradient(135deg,#EC4899,#8B5CF6);
+    -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+    background-clip:text;
+  }
+  .a2-cta{
+    flex-shrink:0;
+    display:inline-flex;align-items:center;gap:10px;
+    background:#28282D;color:#fff;
+    font-size:13px;font-weight:700;
+    padding:16px 28px;border-radius:2px;
+    text-decoration:none;white-space:nowrap;
+    transition:background .2s;
+  }
+  .a2-cta:hover{background:#EC4899}
+
+  /* ============================================================
+     A-3：ビフォーアフター対比型
+  ============================================================ */
+  .banner-a3{
+    overflow:hidden;
+    position:relative;
+  }
+  .banner-a3-split{
+    display:grid;grid-template-columns:1fr 1fr;
+    min-height:400px;
+  }
+  /* 左：BEFORE */
+  .a3-before{
+    background:#EEECE8;
+    padding:64px 48px 64px 48px;
+    display:flex;flex-direction:column;justify-content:center;
+    position:relative;
+  }
+  .a3-before-eyebrow{
+    font-family:'Montserrat',sans-serif;
+    font-size:10px;font-weight:700;letter-spacing:.2em;
+    color:#999;margin-bottom:24px;
+  }
+  .a3-before-title{
+    font-size:clamp(18px,2vw,24px);font-weight:700;
+    color:#888;margin-bottom:24px;
+  }
+  .a3-before-list{
+    list-style:none;display:flex;flex-direction:column;gap:14px;
+  }
+  .a3-before-list li{
+    font-size:14px;color:#888;
+    display:flex;align-items:flex-start;gap:10px;
+    line-height:1.5;
+  }
+  .a3-before-list li::before{
+    content:'—';color:#bbb;flex-shrink:0;margin-top:1px;
+  }
+  /* 中央ライン */
+  .a3-center-line{
+    position:absolute;right:0;top:0;bottom:0;width:3px;
+    background:linear-gradient(180deg,#EC4899,#8B5CF6);
+    z-index:2;
+  }
+  /* 右：AFTER */
+  .a3-after{
+    background:#28282D;
+    padding:64px 48px 64px 56px;
+    display:flex;flex-direction:column;justify-content:center;
+  }
+  .a3-after-eyebrow{
+    font-family:'Montserrat',sans-serif;
+    font-size:10px;font-weight:700;letter-spacing:.2em;
+    color:#EC4899;margin-bottom:24px;
+  }
+  .a3-after-metrics{display:flex;flex-direction:column;gap:20px}
+  .a3-after-metric{display:flex;align-items:baseline;gap:8px}
+  .a3-after-num{
+    font-family:'Montserrat',sans-serif;
+    font-size:clamp(40px,5vw,64px);font-weight:900;
+    color:#fff;line-height:1;
+  }
+  .a3-after-unit{
+    font-family:'Montserrat',sans-serif;
+    font-size:clamp(18px,2.2vw,28px);font-weight:700;
+    color:#EC4899;
+  }
+  .a3-after-label{
+    font-size:11px;color:rgba(255,255,255,.4);
+    letter-spacing:.05em;margin-top:2px;
+  }
+  /* 下段：全幅 */
+  .a3-bottom{
+    background:#1A1A1F;
+    padding:40px 48px;
+    display:flex;align-items:center;justify-content:space-between;gap:32px;
+  }
+  .a3-bottom-copy{
+    font-size:clamp(15px,1.8vw,20px);font-weight:700;
+    color:#fff;line-height:1.5;
+  }
+  .a3-bottom-copy em{
+    font-style:normal;
+    background:linear-gradient(135deg,#EC4899,#8B5CF6);
+    -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+    background-clip:text;
+  }
+  .a3-cta{
+    flex-shrink:0;
+    display:inline-flex;align-items:center;gap:10px;
+    background:linear-gradient(135deg,#EC4899,#8B5CF6);
+    color:#fff;font-size:13px;font-weight:700;
+    padding:16px 28px;border-radius:2px;
+    text-decoration:none;white-space:nowrap;
+    transition:opacity .2s;
+  }
+  .a3-cta:hover{opacity:.85}
+
+  /* ===== レスポンシブ ===== */
+  @media(max-width:768px){
+    /* ---- A-1 SP：数値3列横並び＋コピー縦積み ---- */
+    .banner-a1{padding:48px 0}
+    .banner-a1-inner{
+      grid-template-columns:1fr;
+      gap:32px;
+      padding:0 20px;
+    }
+    /* 数値を横3列グリッドに変更 */
+    .a1-metrics{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:0;
+      border-top:1px solid #E8E8E5;
+      border-bottom:1px solid #E8E8E5;
+      padding:20px 0;
+    }
+    .a1-metric-item{
+      padding:0 12px;
+      border-right:1px solid #E8E8E5;
+      transform:none;
+      opacity:1;
+    }
+    .a1-metric-item:first-child{padding-left:0}
+    .a1-metric-item:last-child{border-right:none;padding-right:0}
+    .a1-metric-num{
+      font-size:clamp(28px,7vw,36px);
+    }
+    .a1-metric-unit{
+      font-size:clamp(14px,3.5vw,18px);
+    }
+    .a1-metric-label{
+      font-size:10px;
+      margin-top:4px;
+    }
+    .a1-metric-note{display:none} /* SP時は業種注釈を非表示 */
+    /* コピー部分 */
+    .a1-copy{transform:none;opacity:1}
+    .a1-headline{font-size:clamp(24px,6vw,32px)}
+    .a1-body{font-size:14px;margin-bottom:24px}
+    .a1-cta{width:100%;justify-content:center;padding:16px 24px}
+    /* ---- A-2 SP ---- */
+    .banner-a2-inner{padding:0 20px}
+    .banner-a2-numbers{grid-template-columns:1fr;gap:24px}
+    .a2-num-item{border-right:none;border-bottom:1px solid #D8D5CF;padding:0 0 24px}
+    .a2-num-item:last-child{border-bottom:none}
+    .a2-bottom{flex-direction:column;align-items:flex-start}
+    /* ---- A-3 SP ---- */
+    .banner-a3-split{grid-template-columns:1fr}
+    .a3-center-line{display:none}
+    .a3-before{padding:40px 20px}
+    .a3-after{padding:40px 20px}
+    .a3-bottom{flex-direction:column;align-items:flex-start;padding:28px 20px;gap:20px}
+    .a3-cta{width:100%;justify-content:center}
+    .banner-a2{padding:48px 0 40px}
+  }
+</style>
+  <link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+
+<div class="page-header">
+  <h1>案A 改善デザイン3案 プレビュー</h1>
+  <p>「余韻を活かす静寂型」をベースに、さらに洗練された3案です。お好みの案をお選びください。</p>
+</div>
+
+<!-- ===== A-1 ===== -->
+<div class="section-label">
+  <span class="badge">A-1</span>
+  <span>数値の流れ込み型</span>
+  <span class="desc">スライダーの数値がこのセクションに「流れ込む」動きを演出。視線：左の数値（スライドイン）→ 右の断言コピー → ピンクCTA</span>
+</div>
+
+<section class="banner-a1" id="a1">
+  <div class="banner-a1-inner">
+    <!-- 左：数値 -->
+    <div class="a1-metrics">
+      <div class="a1-metric-item">
+        <div>
+          <div style="display:flex;align-items:baseline;gap:4px">
+            <span class="a1-metric-num">380</span>
+            <span class="a1-metric-unit">%</span>
+          </div>
+          <div class="a1-metric-label">フォロワー増加率</div>
+          <div class="a1-metric-note">飲食店 / 6ヶ月</div>
+        </div>
+      </div>
+      <div class="a1-metric-item">
+        <div>
+          <div style="display:flex;align-items:baseline;gap:4px">
+            <span class="a1-metric-num">2.5</span>
+            <span class="a1-metric-unit">倍</span>
+          </div>
+          <div class="a1-metric-label">新規問い合わせ数</div>
+          <div class="a1-metric-note">美容サロン / 3ヶ月比較</div>
+        </div>
+      </div>
+      <div class="a1-metric-item">
+        <div>
+          <div style="display:flex;align-items:baseline;gap:4px">
+            <span class="a1-metric-num">320</span>
+            <span class="a1-metric-unit">%</span>
+          </div>
+          <div class="a1-metric-label">EC売上増加</div>
+          <div class="a1-metric-note">アパレル / 年比</div>
+        </div>
+      </div>
+    </div>
+    <!-- 右：コピー -->
+    <div class="a1-copy" id="a1-copy">
+      <div class="a1-eyebrow">YOUR RESULT</div>
+      <h2 class="a1-headline">この成果は、<br>偶然では<em>ありません。</em></h2>
+      <p class="a1-body">業種・規模・フェーズに関わらず、同じ伴走の仕組みで成果を出してきました。<br>まずは15分、御社の課題をお聞かせください。</p>
+      <a href="#" class="a1-cta">無料相談で可能性を確かめる <span class="a1-cta-arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+<div class="select-bar">
+  <p>A-1「数値の流れ込み型」を選択する場合</p>
+  <button class="select-btn" onclick="alert('A-1を選択しました。Instagramページに反映します。')">A-1 を採用する</button>
+</div>
+<div class="spacer"></div>
+
+<!-- ===== A-2 ===== -->
+<div class="section-label">
+  <span class="badge">A-2</span>
+  <span>全幅タイポグラフィ型</span>
+  <span class="desc">数値を「見出し」として全幅に大きく展開。余白と文字だけで構成するAwwwardsレベルのタイポグラフィ重視</span>
+</div>
+
+<section class="banner-a2" id="a2">
+  <div class="banner-a2-inner">
+    <div class="a2-numbers">
+      <div class="a2-num-item" id="a2-n1">
+        <span class="a2-num-value">380<span class="a2-num-unit">%</span></span>
+        <span class="a2-num-label">フォロワー増加率</span>
+      </div>
+      <div class="a2-num-item" id="a2-n2" style="padding-left:32px">
+        <span class="a2-num-value">2.5<span class="a2-num-unit">倍</span></span>
+        <span class="a2-num-label">新規問い合わせ数</span>
+      </div>
+      <div class="a2-num-item" id="a2-n3" style="padding-left:32px">
+        <span class="a2-num-value">320<span class="a2-num-unit">%</span></span>
+        <span class="a2-num-label">EC売上増加</span>
+      </div>
+    </div>
+    <div class="a2-divider" id="a2-divider"></div>
+    <div class="a2-bottom" id="a2-bottom">
+      <p class="a2-copy-main">これは全て、<em>同じ伴走</em>から<br>生まれた数字です。</p>
+      <a href="#" class="a2-cta">15分、話してみませんか →</a>
+    </div>
+  </div>
+</section>
+
+<div class="select-bar">
+  <p>A-2「全幅タイポグラフィ型」を選択する場合</p>
+  <button class="select-btn" onclick="alert('A-2を選択しました。Instagramページに反映します。')">A-2 を採用する</button>
+</div>
+<div class="spacer"></div>
+
+<!-- ===== A-3 ===== -->
+<div class="section-label">
+  <span class="badge">A-3</span>
+  <span>ビフォーアフター対比型</span>
+  <span class="desc">「伴走前」と「伴走後」の対比で、ユーザーが自分の現状と未来を重ねやすくする。視線：左の課題（自分ごと化）→ ピンクライン → 右の成果 → 下のCTA</span>
+</div>
+
+<section class="banner-a3" id="a3">
+  <div class="banner-a3-split">
+    <!-- 左：BEFORE -->
+    <div class="a3-before">
+      <div class="a3-before-eyebrow">BEFORE — 伴走前</div>
+      <h2 class="a3-before-title">こんな状況、<br>続いていませんか？</h2>
+      <ul class="a3-before-list">
+        <li>フォロワーが増えない</li>
+        <li>投稿が続かない、ネタが尽きる</li>
+        <li>費用対効果が見えない</li>
+        <li>何を改善すればいいかわからない</li>
+      </ul>
+      <div class="a3-center-line"></div>
+    </div>
+    <!-- 右：AFTER -->
+    <div class="a3-after">
+      <div class="a3-after-eyebrow">AFTER — 伴走後</div>
+      <div class="a3-after-metrics">
+        <div>
+          <div class="a3-after-metric">
+            <span class="a3-after-num">380</span>
+            <span class="a3-after-unit">%</span>
+          </div>
+          <div class="a3-after-label">フォロワー増加率（飲食店 / 6ヶ月）</div>
+        </div>
+        <div>
+          <div class="a3-after-metric">
+            <span class="a3-after-num">2.5</span>
+            <span class="a3-after-unit">倍</span>
+          </div>
+          <div class="a3-after-label">新規問い合わせ数（美容サロン / 3ヶ月比較）</div>
+        </div>
+        <div>
+          <div class="a3-after-metric">
+            <span class="a3-after-num">320</span>
+            <span class="a3-after-unit">%</span>
+          </div>
+          <div class="a3-after-label">EC売上増加（アパレル / 年比）</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 下段：全幅 -->
+  <div class="a3-bottom">
+    <p class="a3-bottom-copy">この差を生み出したのは、<em>戦略的な伴走</em>です。<br>御社の課題にも、同じ仕組みを。</p>
+    <a href="#" class="a3-cta">無料相談で確かめる →</a>
+  </div>
+</section>
+
+<div class="select-bar">
+  <p>A-3「ビフォーアフター対比型」を選択する場合</p>
+  <button class="select-btn" onclick="alert('A-3を選択しました。Instagramページに反映します。')">A-3 を採用する</button>
+</div>
+
+<script>
+// Intersection Observer でスクロールアニメーション
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('visible');
+    }
+  });
+}, {threshold: 0.2});
+
+// A-1
+document.querySelectorAll('.a1-metric-item, .a1-copy').forEach(el => observer.observe(el));
+
+// A-2
+document.querySelectorAll('.a2-num-item, .a2-divider, .a2-bottom').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

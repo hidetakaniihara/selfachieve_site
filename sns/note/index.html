@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>note運用代行・note記事制作 | selfachieve Acquisition Agency</title>
+  <meta name="description" content="note運用代行・記事制作を神戸から全国へ。読まれるほど、選ばれる。中小企業・店舗向けにnote運用代行・SEO記事制作を一貫支援します。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Noto+Sans+JP:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+    body{font-family:'Noto Sans JP','Yu Gothic','游ゴシック',YuGothic,'Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3','Meiryo','メイリオ',sans-serif;font-size:16px;line-height:1.8;color:#28282D;background:#fff;overflow-x:hidden}
+    a{text-decoration:none;color:inherit}
+    img{max-width:100%;height:auto;display:block}
+    ul,ol{list-style:none}
+    button{cursor:pointer;font-family:inherit;background:none;border:none}
+    
+    
+    
+    
+        .hd{
+      position:fixed;top:0;left:0;right:0;
+      height:72px;
+      background:#fff;
+      display:flex;align-items:center;justify-content:space-between;
+      padding:0 48px;
+      z-index:100;
+      border-bottom:1px solid #E8E8E8;
+    }
+    .hd-logo img{height:34px;width:auto}
+    .hd-nav{display:flex;align-items:center;gap:32px}
+    .hd-nav a{font-size:13px;letter-spacing:0.04em;color:#28282D;transition:opacity .2s;padding:14px 0}
+    .hd-nav a:hover{opacity:.5}
+    .hd-btn{
+      display:inline-flex;align-items:center;justify-content:center;
+      height:48px;padding:0 28px;
+      background:#28282D;color:#fff;
+      font-size:13px;letter-spacing:0.08em;font-weight:600;
+      border:1px solid #28282D;
+      transition:background .2s,color .2s;
+    }
+    .hd-btn:hover{background:#fff;color:#28282D}
+    .hd-btn-external{
+      display:inline-flex;align-items:center;justify-content:center;gap:6px;
+      height:48px;padding:0 20px;
+      background:#fff;color:#28282D;
+      font-size:12px;letter-spacing:0.04em;font-weight:600;
+      border:1.5px solid #28282D;
+      transition:background .2s,color .2s;
+      white-space:nowrap;
+      line-height:1.3;
+    }
+    .hd-btn-external:hover{background:#28282D;color:#fff}
+    .hd-btn-external svg{flex-shrink:0;transition:transform .2s}
+    .hd-btn-external:hover svg{transform:translate(2px,-2px)}
+    .hd-btns{display:flex;align-items:center;gap:10px}
+    /* KV */
+    .kv{background:#0D0D0D;padding-top:72px;min-height:100svh;display:flex;align-items:center;position:relative;overflow:hidden}
+    .kv::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 70% 50%,rgba(65,201,180,.10) 0%,transparent 70%);pointer-events:none}
+    .kv-inner{max-width:1200px;margin:0 auto;padding:80px 48px;display:flex;align-items:center;justify-content:space-between;gap:48px;width:100%}
+    .kv-left{flex:1;min-width:0}
+    .kv-eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;letter-spacing:.2em;color:#41C9B4;margin-bottom:24px}
+    .kv-h1{font-size:clamp(36px,5vw,68px);font-weight:900;line-height:1.15;letter-spacing:-.02em;color:#fff;margin-bottom:20px}
+    .kv-service-label{display:inline-block;font-size:13px;font-weight:700;letter-spacing:.08em;color:#41C9B4;margin-bottom:20px}
+    .kv-sub{font-size:16px;line-height:1.9;color:#fff;margin-bottom:40px;max-width:520px}
+    .kv-actions{display:flex;align-items:center;gap:24px;flex-wrap:wrap}
+    .kv-tel-wrap{display:flex;flex-direction:column;gap:2px}
+    .kv-tel-label{font-size:11px;color:rgba(255,255,255,.45);letter-spacing:.06em}
+    .kv-tel{font-size:20px;font-weight:700;color:#fff;letter-spacing:.04em}
+    .kv-right{flex-shrink:0;width:420px}
+    /* OUR NOTE */
+    .our-note-sec{background:#F7F7F5;padding:120px 40px;border-top:1px solid #E8E8E8}
+    .our-note-inner{max-width:1100px;margin:0 auto}
+    .our-note-head{text-align:center;margin-bottom:64px}
+    .our-note-head-sub{font-size:16px;color:#333336;line-height:1.8;margin-top:16px}
+    .our-note-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:#E8E8E8;margin-bottom:48px}
+    .our-note-stat{background:#fff;padding:40px 32px;text-align:center}
+    .our-note-stat-num{font-family:'Montserrat',sans-serif;font-size:clamp(36px,4vw,56px);font-weight:900;color:#41C9B4;line-height:1;margin-bottom:8px}
+    .our-note-stat-label{font-size:13px;color:#333336;line-height:1.6}
+    .our-note-articles{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:#E8E8E8;margin-bottom:40px}
+    .our-note-article{background:#fff;padding:28px 24px;transition:background .2s}
+    .our-note-article:hover{background:#F0FBF9}
+    .our-note-article-link{display:block;color:inherit}
+    .our-note-article-tag{font-size:10px;letter-spacing:.14em;color:#41C9B4;font-weight:700;margin-bottom:10px;text-transform:uppercase}
+    .our-note-article-title{font-size:16px;font-weight:600;line-height:1.6;color:#28282D;margin-bottom:12px}
+    .our-note-article-likes{display:flex;align-items:center;gap:6px;font-size:13px;color:#9B9BA0}
+    .our-note-article-likes-icon{color:#E74C3C}
+    .our-note-account-info{display:flex;align-items:center;justify-content:space-between;gap:32px;background:#F7F7F7;border:1px solid #E8E8E8;padding:28px 32px;margin-top:32px}
+    .our-note-account-desc{flex:1;min-width:0}
+    .our-note-account-desc-title{font-size:12px;font-weight:700;letter-spacing:.12em;color:#9B9BA0;margin-bottom:8px;font-family:'Montserrat',sans-serif}
+    .our-note-account-desc-text{font-size:16px;line-height:1.8;color:#333336}
+    .our-note-account-link{display:inline-flex;align-items:center;gap:10px;padding:16px 28px;background:#28282D;color:#fff;font-size:14px;font-weight:600;letter-spacing:.04em;transition:background .2s;white-space:nowrap;flex-shrink:0}
+    .our-note-account-link:hover{background:#000}
+    /* RESULT BANNER */
+    .case-result-banner{background:#FAFAFA;padding:80px 0;overflow:hidden;position:relative;border-bottom:1px solid #D8D8D8}
+    .case-result-banner::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;background:linear-gradient(180deg,#41C9B4,#A8EDE5)}
+    .case-result-banner-inner{max-width:800px;margin:0 auto;padding:0 48px;display:block;text-align:center}
+    .crb-industries{opacity:0;transform:translateX(30px);transition:opacity .8s ease .5s,transform .8s ease .5s}
+    .crb-industries.visible{opacity:1;transform:translateX(0)}
+    .crb-industries-label{font-size:11px;font-weight:700;letter-spacing:.18em;color:#888;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+    .crb-industries-label::before{content:'';width:20px;height:1px;background:#ccc}
+    .crb-tag-list{display:flex;flex-wrap:wrap;gap:8px}
+    .crb-tag{display:inline-block;padding:7px 14px;border:1px solid #D8D8D8;border-radius:2px;font-size:13px;font-weight:500;color:#444;background:#fff;line-height:1.4;transition:border-color .2s,color .2s,background .2s}
+    .crb-tag:hover{border-color:#41C9B4;color:#41C9B4;background:#F0FBF9}
+    .crb-tag.crb-tag-more{border-style:dashed;color:#888;background:transparent}
+    .crb-copy{opacity:0;transform:translateX(-30px);transition:opacity .8s ease .3s,transform .8s ease .3s}
+    .crb-copy.visible{opacity:1;transform:translateX(0)}
+    .crb-eyebrow{font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;letter-spacing:.2em;color:#41C9B4;margin-bottom:20px;display:flex;align-items:center;gap:8px}
+    .crb-eyebrow::before{content:'';width:24px;height:1px;background:#41C9B4}
+    .crb-headline{font-size:clamp(28px,3.5vw,48px);font-weight:900;line-height:1.25;margin-bottom:24px;color:#28282D}
+    .crb-headline em{font-style:normal;background:linear-gradient(135deg,#41C9B4,#A8EDE5);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .crb-body{font-size:16px;color:#555;line-height:1.8;margin-bottom:32px}
+    .crb-cta{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#41C9B4,#A8EDE5);color:#fff;font-size:16px;font-weight:700;padding:16px 32px;text-decoration:none;transition:opacity .2s,transform .2s}
+    .crb-cta:hover{opacity:.85;transform:translateY(-1px)}
+    /* WHAT WE DO */
+    .what-sec{padding:120px 40px;background:#fff}
+    .what-inner{max-width:1100px;margin:0 auto}
+    .what-head{text-align:center;margin-bottom:64px}
+    .what-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;background:#E8E8E8}
+    .what-card{background:#fff;padding:48px 40px}
+    .what-card-tag{display:inline-flex;align-items:center;gap:8px;padding:6px 16px;background:#28282D;color:#fff;font-size:11px;letter-spacing:.12em;font-weight:700;margin-bottom:28px}
+    .what-card-tag.green{background:#41C9B4}
+    .what-card-h3{font-size:clamp(20px,2.5vw,28px);font-weight:700;line-height:1.3;margin-bottom:16px}
+    .what-card-desc{font-size:16px;line-height:1.9;color:#333336;margin-bottom:32px}
+    .what-card-desc-lead{display:block;font-size:clamp(14px,1.2vw,15px);font-weight:700;color:#28282D;line-height:1.7;margin-bottom:12px;padding:14px 18px;background:#F7F7F5;border-left:3px solid #41C9B4}
+    .what-card-features{display:flex;flex-direction:column;gap:10px}
+    .what-card-feature{display:flex;align-items:flex-start;gap:10px;font-size:13px;color:#28282D;line-height:1.6}
+    .what-card-feature::before{content:'';display:block;flex-shrink:0;width:6px;height:6px;border-radius:50%;background:#41C9B4;margin-top:6px}
+    /* VOICE */
+    .voice-sec{background:#F7F7F7;}
+    .voice-head{padding:120px 80px 72px;display:flex;align-items:flex-end;justify-content:space-between}
+    .voice-grid{display:grid;grid-template-columns:repeat(3,1fr);}
+    .voice-card{border-right:1px solid #E8E8E8;overflow:hidden;transition:background .2s}
+    .voice-card:last-child{border-right:none}
+    .voice-card:hover{background:#EFEFEF}
+    .voice-link{display:block;text-decoration:none;color:inherit}
+    .voice-avatar{aspect-ratio:3/2;overflow:hidden;background:#E8E8E8}
+    .voice-avatar img{width:100%;height:100%;object-fit:cover;object-position:center top;transition:transform .5s ease}
+    .voice-card:hover .voice-avatar img{transform:scale(1.04)}
+    .voice-body{padding:28px 36px 36px;border-top:1px solid #E8E8E8}
+    .voice-quote{font-size:16px;line-height:1.9;color:#28282D;margin-bottom:24px}
+    .voice-meta{border-top:1px solid #E8E8E8;padding-top:16px}
+    .voice-co{font-size:12px;letter-spacing:.06em;color:#333336;margin-bottom:4px}
+    .voice-name{font-size:16px;font-weight:500;color:#28282D}
+    .voice-more{font-size:12px;color:#555558;margin-top:8px}
+    .view-all{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:#28282D;letter-spacing:.04em;border-bottom:1px solid #28282D;padding-bottom:2px;transition:opacity .2s}
+    .view-all:hover{opacity:.5}
+    /* CTA MID */
+    .cta-mid-sec{padding:80px 40px;background:#28282D}
+    .cta-mid-inner{max-width:800px;margin:0 auto;text-align:center}
+    .cta-mid-eyebrow{display:block;font-size:11px;letter-spacing:.16em;color:#41C9B4;font-weight:700;text-transform:uppercase;margin-bottom:20px}
+    .cta-mid-h2{font-size:clamp(24px,3vw,36px);font-weight:700;color:#fff;line-height:1.3;margin-bottom:16px}
+    .cta-mid-body{font-size:16px;color:rgba(255,255,255,.65);line-height:1.8;margin-bottom:36px}
+    .cta-mid-actions{display:flex;align-items:center;justify-content:center;gap:24px;flex-wrap:wrap}
+    .cta-mid-tel-wrap{display:flex;flex-direction:column;gap:4px;align-items:center}
+    .cta-mid-tel-label{font-size:11px;letter-spacing:.08em;color:rgba(255,255,255,.5)}
+    .cta-mid-tel{font-size:22px;font-weight:700;color:#fff;letter-spacing:.04em}
+    /* PLAN */
+    .plan-sec{padding:120px 40px;background:#F7F7F5}
+    .plan-inner{max-width:1100px;margin:0 auto}
+    .plan-head{margin-bottom:64px}
+    .plan-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:#E8E8E8}
+    .plan-card{background:#fff;padding:36px 28px;display:flex;flex-direction:column;gap:20px}
+    .plan-type{font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;letter-spacing:.16em;color:#9B9BA0}
+    .plan-name{font-size:clamp(18px,2vw,24px);font-weight:700;line-height:1.3}
+    .plan-tagline{font-size:16px;line-height:1.7;color:#333336}
+    .plan-price-block{padding:20px 0;border-top:1px solid #E8E8E8;border-bottom:1px solid #E8E8E8}
+    .plan-price-label{font-size:12px;color:#9B9BA0;margin-bottom:8px;letter-spacing:.04em}
+    .plan-price{font-size:clamp(26px,2.8vw,38px);font-weight:900;letter-spacing:-.02em;color:#28282D;line-height:1}
+    .plan-price span{font-size:.45em;font-weight:400;color:#9B9BA0;vertical-align:middle}
+    .plan-price-note{font-size:12px;color:#9B9BA0;margin-top:8px;line-height:1.6}
+    .plan-features{display:flex;flex-direction:column;gap:8px;flex:1}
+    .plan-feature{display:flex;align-items:flex-start;gap:10px;font-size:13px;color:#28282D;line-height:1.6}
+    .plan-feature::before{content:'';display:block;flex-shrink:0;width:6px;height:6px;border-radius:50%;background:#41C9B4;margin-top:6px}
+    .plan-note-box{display:flex;align-items:flex-start;gap:12px;padding:20px 24px;background:#fff;border:1px solid #E8E8E8;margin-top:24px}
+    .plan-note-icon{width:18px;height:18px;flex-shrink:0;color:#9B9BA0;margin-top:1px}
+    .plan-note-text{font-size:13px;color:#555558;line-height:1.7}
+    /* FAQ */
+    .faq-sec{}
+    .faq-head{padding:80px 80px 48px;display:flex;align-items:flex-start;justify-content:space-between;gap:48px}
+    .faq-h2{font-size:clamp(32px,4vw,56px);font-weight:900;letter-spacing:-.02em;line-height:1}
+    .faq-item{border-bottom:1px solid #E8E8E8}
+    .faq-q{display:flex;align-items:center;gap:20px;padding:28px 80px;cursor:pointer;transition:background .15s}
+    .faq-q:hover{background:#FAFAFA}
+    .faq-q-mark{font-family:'Montserrat',sans-serif;font-size:16px;font-weight:700;color:#555558;flex-shrink:0;width:20px}
+    .faq-q-text{flex:1;font-size:16px;font-weight:600;line-height:1.5}
+    .faq-q-icon{flex-shrink:0;width:20px;height:20px;position:relative}
+    .faq-q-icon::before,.faq-q-icon::after{content:'';position:absolute;background:#28282D;border-radius:1px;transition:transform .25s,opacity .25s}
+    .faq-q-icon::before{width:12px;height:1.5px;top:50%;left:50%;transform:translate(-50%,-50%)}
+    .faq-q-icon::after{width:1.5px;height:12px;top:50%;left:50%;transform:translate(-50%,-50%)}
+    .faq-item.open .faq-q-icon::after{transform:translate(-50%,-50%) rotate(90deg);opacity:0}
+    .faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease}
+    .faq-item.open .faq-a{max-height:400px}
+    .faq-a-inner{display:flex;gap:20px;padding:0 80px 28px}
+    .faq-a-mark{font-family:'Montserrat',sans-serif;font-size:16px;font-weight:700;color:#28282D;flex-shrink:0;width:20px}
+    .faq-a-text{font-size:16px;line-height:1.85;color:#333336}
+    /* CHALLENGE */
+    .challenge-sec{padding:120px 40px;background:#F7F7F5;}
+    .challenge-head{max-width:1100px;margin:0 auto 64px;display:flex;align-items:flex-start;justify-content:space-between;gap:48px}
+    .challenge-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:#E8E8E8}
+    .challenge-card{background:#fff;padding:36px 28px;transition:background .2s}
+    .challenge-card:hover{background:#F7F7F5}
+    .challenge-card-num{margin-bottom:20px}
+    .challenge-card-num-n{font-family:'Montserrat',sans-serif;font-size:13px;font-weight:700;letter-spacing:.1em;color:#D0D0D5}
+    .challenge-card-title{font-size:clamp(16px,1.8vw,20px);font-weight:700;line-height:1.4;margin-bottom:12px}
+    .challenge-card-desc{font-size:13px;line-height:1.8;color:#333336;margin-bottom:20px}
+    .challenge-tags-label{font-size:11px;letter-spacing:.1em;color:#9B9BA0;margin-bottom:8px}
+    .challenge-card--overall .challenge-tags-wrap{
+      display:flex;flex-direction:column;gap:0;
+      margin-bottom:0;
+    }
+    .challenge-tag{
+      font-size:clamp(14px,1.2vw,16px);letter-spacing:-.01em;
+      font-weight:600;
+      color:#28282D;
+      background:transparent;
+      padding:9px 0;
+      text-decoration:none;
+      border-bottom:1px solid #E8E8E8;
+      transition:color .15s;
+      display:flex;align-items:center;justify-content:space-between;
+      gap:8px;
+    }
+    .challenge-tag:last-child{border-bottom:none}
+    .challenge-tag::after{
+      content:'→';
+      font-size:13px;
+      color:#A0A0A8;
+      font-weight:400;
+      transition:color .15s;
+      flex-shrink:0;
+    }
+    a.challenge-tag:hover{
+      color:#000;
+    }
+    a.challenge-tag:hover::after{
+      color:#000;
+    }
+    /* AREA */
+    .area-sec{}
+    .area-inner{display:grid;grid-template-columns:1fr 1fr}
+    .area-left{padding:80px 80px 80px 48px;border-right:1px solid #E8E8E8}
+    .area-right{padding:80px 48px 80px 80px}
+    .area-eyebrow{font-size:10px;letter-spacing:.18em;color:#9B9BA0;font-weight:700;margin-bottom:16px}
+    .area-h2{font-size:clamp(24px,3vw,36px);font-weight:700;margin-bottom:20px}
+    .area-desc{font-size:16px;line-height:1.85;color:#333336}
+    .area-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+    .area-tag{display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border:1px solid #E8E8E8;font-size:13px;color:#333336;background:#fff;transition:background .15s,border-color .15s}
+    .area-tag:hover{background:#F3F4F6;border-color:#C0C0C0}
+    .area-tag-dot{width:6px;height:6px;border-radius:50%;background:currentColor;opacity:.5}
+    .area-note{font-size:12px;color:#555558;line-height:1.7}
+    .area-group{margin-bottom:32px}
+    .area-group:last-child{margin-bottom:0}
+    .area-group-label{font-size:12px;letter-spacing:.12em;color:#555558;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+    .area-group-label::before{content:'';display:inline-block;width:8px;height:8px;border-radius:50%}
+    .area-group-label.easy::before{background:#28282D}
+    .area-group-label.adjust::before{background:#B0B0B5}
+    .area-group-label.online::before{background:#D8D8DB;border:1px solid #B0B0B5}
+    .area-group .area-tags{margin-bottom:0}
+    /* BLOG */
+    .blog-sec{padding:120px 40px;background:#fff;}
+    .blog-inner{max-width:1100px;margin:0 auto}
+    .blog-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:48px}
+    .blog-h2{font-size:clamp(22px,2.5vw,32px);font-weight:700}
+    .blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:#E8E8E8}
+    .blog-card{background:#fff;padding:32px 28px;transition:background .2s}
+    .blog-card:hover{background:#F7F7F5}
+    .blog-cat{font-size:10px;letter-spacing:.14em;color:#41C9B4;font-weight:700;margin-bottom:12px;text-transform:uppercase}
+    .blog-title{font-size:15px;font-weight:600;line-height:1.6;color:#28282D;margin-bottom:16px}
+    .blog-date{font-size:12px;color:#9B9BA0}
+        /* フッターSNSアイコン */
+    .footer-sns{
+      display:flex;align-items:center;gap:16px;
+      margin-top:20px;
+    }
+    .footer-sns-link{
+      display:flex;align-items:center;justify-content:center;
+      width:36px;height:36px;
+      border:1px solid #E8E8E8;
+      color:#28282D;
+      text-decoration:none;
+      transition:background .2s,border-color .2s;
+    }
+    .footer-sns-link:hover{background:#28282D;border-color:#28282D}
+    .footer-sns-link:hover svg path,.footer-sns-link:hover svg rect,.footer-sns-link:hover svg circle,.footer-sns-link:hover svg polygon{stroke:#fff;fill:none}
+    .footer-sns-ig:hover{background:#E1306C;border-color:#E1306C}
+    .footer-sns-tt:hover{background:linear-gradient(135deg,#69C9D0 0%,#EE1D52 100%);border-color:transparent}
+    .footer-sns-x:hover{background:#000;border-color:#000}</style>
+  <link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+
+
+<header class="hd" role="banner">
+  <a href="/" class="hd-logo" aria-label="セルフアチーブ トップページへ">
+    <img src="/assets/logo_color.png" alt="selfachieve Acquisition Agency" width="160" height="34" fetchpriority="high">
+  </a>
+  <nav class="hd-nav" aria-label="グローバルナビゲーション">
+    <span class="hd-nav-item">
+      <a href="#challenge">課題から探す</a>
+      <div class="hd-mega-wrap">
+      <div class="hd-mega" role="menu">
+        <div class="hd-mega-col">
+          <span class="hd-mega-col-label"><span class="col-label-main">戦略・全体</span><span class="col-label-sub">（なんか、うまくいかない…）</span></span>
+          <a href="/strategy/" role="menuitem">事業戦略</a>
+          <a href="/strategy/" role="menuitem">ブランディング</a>
+          <a href="/strategy/" role="menuitem">WEB戦略</a>
+          <a href="/strategy/" role="menuitem">マーケティング戦略</a>
+          <a href="/strategy/" role="menuitem">顧客戦略</a>
+          <a href="https://selfachieve.jp/saikatsu_r/" role="menuitem" target="_blank" rel="noopener noreferrer">採用戦略<svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-left:4px;opacity:.7"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+        </div>
+        <div class="hd-mega-col">
+          <span class="hd-mega-col-label"><span class="col-label-main">集客</span><span class="col-label-sub">（サイトへの訪問者を増やしたい）</span></span>
+          <a href="/seo/" role="menuitem">SEO対策</a>
+          <a href="/meo/" role="menuitem">MEO対策</a>
+          <a href="/ads/" role="menuitem">WEB広告</a>
+          <a href="/sns/" role="menuitem">SNSマーケティング</a>
+          <a href="/sns/note/" role="menuitem">note対策</a>
+          <a href="/ai-seo/" role="menuitem">AI検索対策（LLM対策）</a>
+        </div>
+        <div class="hd-mega-col">
+          <span class="hd-mega-col-label"><span class="col-label-main">成約</span><span class="col-label-sub">（問い合わせ・売上を増やしたい）</span></span>
+          <a href="/website/" role="menuitem">ホームページ制作</a>
+          <a href="/website/" role="menuitem">分析改善</a>
+          <a href="/website/lp/" role="menuitem">LP制作</a>
+        </div>
+        <div class="hd-mega-col">
+          <span class="hd-mega-col-label"><span class="col-label-main">再販・追客</span><span class="col-label-sub">（一度来た人にまた来てほしい）</span></span>
+          <a href="/sns/line/" role="menuitem">LINE</a>
+          <a href="/sns/instagram/" role="menuitem">Instagram</a>
+          <a href="/sns/x/" role="menuitem">X（旧Twitter）</a>
+          <a href="/sns/youtube/" role="menuitem">YouTube</a>
+        </div>
+        <div class="hd-mega-col">
+          <span class="hd-mega-col-label"><span class="col-label-main">AI活用</span><span class="col-label-sub">（AIで業務を効率化・最適化したい）</span></span>
+          <a href="/ai-automation/" role="menuitem">業務効率化</a>
+          <a href="/ai-automation/" role="menuitem">分析深化</a>
+        </div>
+      </div>
+      </div>
+    </span>
+    <span class="hd-nav-item">
+      <a href="javascript:void(0)">サービス</a>
+      <div class="hd-mega-wrap">
+      <div class="hd-mega" role="menu">
+        <div class="hd-mega-col">
+          <span class="hd-mega-col-label"><span class="col-label-main">戦略設計</span></span>
+          <a href="/strategy/" role="menuitem">事業戦略</a>
+          <a href="/strategy/" role="menuitem">ブランディング</a>
+          <a href="/strategy/" role="menuitem">WEB戦略</a>
+          <a href="/strategy/" role="menuitem">マーケティング戦略</a>
+          <a href="/strategy/" role="menuitem">顧客戦略</a>
+          <a href="https://selfachieve.jp/saikatsu_r/" role="menuitem" target="_blank" rel="noopener noreferrer">採用戦略<svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-left:4px;opacity:.7"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+        </div>
+        <div class="hd-mega-col">
+          <span class="hd-mega-col-label"><span class="col-label-main">集客施策</span></span>
+          <a href="/seo/" role="menuitem">SEO対策</a>
+          <a href="/meo/" role="menuitem">MEO対策</a>
+          <a href="/ads/" role="menuitem">WEB広告</a>
+          <a href="/sns/" role="menuitem">SNSマーケティング</a>
+          <a href="/sns/note/" role="menuitem">note対策</a>
+          <a href="/ai-seo/" role="menuitem">AI検索対策（LLM対策）</a>
+        </div>
+        <div class="hd-mega-col">
+          <span class="hd-mega-col-label"><span class="col-label-main">成約</span></span>
+          <a href="/website/" role="menuitem">ホームページ制作</a>
+          <a href="/website/" role="menuitem">分析改善</a>
+          <a href="/website/lp/" role="menuitem">LP制作</a>
+        </div>
+        <div class="hd-mega-col">
+          <span class="hd-mega-col-label"><span class="col-label-main">AI活用支援（DX/AX）</span></span>
+          <a href="/ai-automation/" role="menuitem">業務効率化</a>
+          <a href="/ai-automation/" role="menuitem">分析深化</a>
+        </div>
+      </div>
+      </div>
+    </span>
+    <a href="/works/">実績</a>
+    <a href="/voice/">お客さまの声</a>
+    <span class="hd-nav-item">
+      <a href="/company/">会社情報</a>
+      <div class="hd-dropdown" role="menu">
+        <a href="/company/#mission" role="menuitem">Mission / Vision / Value</a>
+        <a href="/company/#representative" role="menuitem">代表メッセージ</a>
+        <a href="/company/#overview" role="menuitem">会社概要</a>
+        <a href="/company/#access" role="menuitem">アクセス</a>
+      </div>
+    </span>
+
+  </nav>
+  <div class="hd-btns">
+    <a href="https://saikatsu-r.jp/" class="hd-btn-external" target="_blank" rel="noopener noreferrer" aria-label="企業の採用活動を成功に導く「サイカツ.R」（別サイトが開きます）">企業の採用活動を成功に導く「サイカツ.R」<svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+    <a href="/contact/" class="hd-btn" aria-label="初回の相談無料">初回の相談無料</a>
+  </div>
+  <button class="hd-hamburger" aria-label="メニューを開く" aria-expanded="false" aria-controls="hd-drawer">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+
+<!-- MOBILE DRAWER -->
+<div class="hd-drawer" id="hd-drawer" role="dialog" aria-label="モバイルメニュー">
+  <div class="hd-drawer-item">
+    <div class="hd-drawer-link" data-drawer-toggle>課題から探す</div>
+    <div class="hd-drawer-sub">
+      <p class="hd-drawer-sub-label">戦略・全体（なんか、うまくいかない…）</p>
+      <a href="/strategy/">事業戦略</a>
+      <a href="/strategy/">ブランディング</a>
+      <a href="/strategy/">WEB戦略</a>
+      <a href="/strategy/">マーケティング戦略</a>
+      <a href="/strategy/">顧客戦略</a>
+      <a href="https://selfachieve.jp/saikatsu_r/" target="_blank" rel="noopener noreferrer">採用戦略<svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-left:4px;opacity:.7"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+      <p class="hd-drawer-sub-label">集客（サイトへの訪問者を増やしたい）</p>
+      <a href="/seo/">SEO対策</a>
+      <a href="/meo/">MEO対策</a>
+      <a href="/ads/">WEB広告</a>
+      <a href="/sns/">SNSマーケティング</a>
+      <a href="/sns/note/">note対策</a>
+      <a href="/ai-seo/">AI検索対策（LLM対策）</a>
+      <p class="hd-drawer-sub-label">成約（問い合わせ・売上を増やしたい）</p>
+      <a href="/website/">ホームページ制作</a>
+      <a href="/website/">分析改善</a>
+      <a href="/website/lp/">LP制作</a>
+      <p class="hd-drawer-sub-label">再販・追客（一度来た人にまた来てほしい）</p>
+      <a href="/sns/line/">LINE</a>
+      <a href="/sns/instagram/">Instagram</a>
+      <a href="/sns/x/">X（旧Twitter）</a>
+      <a href="/sns/youtube/">YouTube</a>
+      <p class="hd-drawer-sub-label">AI活用（AIで業務を効率化・最適化したい）</p>
+      <a href="/ai-automation/">業務効率化</a>
+      <a href="/ai-automation/">分析深化</a>
+    </div>
+  </div>
+  <div class="hd-drawer-item">
+    <div class="hd-drawer-link" data-drawer-toggle>サービス</div>
+    <div class="hd-drawer-sub">
+      <p class="hd-drawer-sub-label">戦略設計</p>
+      <a href="/strategy/">事業戦略</a>
+      <a href="/strategy/">ブランディング</a>
+      <a href="/strategy/">WEB戦略</a>
+      <a href="/strategy/">マーケティング戦略</a>
+      <a href="/strategy/">顧客戦略</a>
+      <a href="https://selfachieve.jp/saikatsu_r/" target="_blank" rel="noopener noreferrer">採用戦略<svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-left:4px;opacity:.7"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+      <p class="hd-drawer-sub-label">集客施策</p>
+      <a href="/seo/">SEO対策</a>
+      <a href="/meo/">MEO対策</a>
+      <a href="/ads/">WEB広告</a>
+      <a href="/sns/">SNSマーケティング</a>
+      <a href="/sns/note/">note対策</a>
+      <a href="/ai-seo/">AI検索対策（LLM対策）</a>
+      <p class="hd-drawer-sub-label">成約</p>
+      <a href="/website/">ホームページ制作</a>
+      <a href="/website/">分析改善</a>
+      <a href="/website/lp/">LP制作</a>
+      <p class="hd-drawer-sub-label">AI活用支援（DX/AX）</p>
+      <a href="/ai-automation/">業務効率化</a>
+      <a href="/ai-automation/">分析深化</a>
+    </div>
+  </div>
+  <div class="hd-drawer-item">
+    <a href="/works/" class="hd-drawer-link no-arrow">実績</a>
+  </div>
+  <div class="hd-drawer-item">
+    <a href="/voice/" class="hd-drawer-link no-arrow">お客さまの声</a>
+  </div>
+  <div class="hd-drawer-item">
+    <div class="hd-drawer-link" data-drawer-toggle="drawer-company">会社情報</div>
+    <div class="hd-drawer-sub" id="drawer-company">
+      <a href="/company/">会社情報 TOP</a>
+      <a href="/company/#mission">Mission / Vision / Value</a>
+      <a href="/company/#representative">代表メッセージ</a>
+      <a href="/company/#overview">会社概要</a>
+      <a href="/company/#access">アクセス</a>
+    </div>
+  </div>
+  <div class="hd-drawer-cta">
+    <a href="#contact" class="hd-btn" aria-label="無料相談を申し込む">無料相談を申し込む</a>
+    <a href="https://saicatsu-r.jp/" class="hd-btn-saicatsu" target="_blank" rel="noopener noreferrer" aria-label="企業の採用活動を成功に導く「サイカツ.R」（別サイトが開きます）">企業の採用活動を成功に導く「サイカツ.R」<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 2L2 10M10 2H5M10 2V7" stroke="#28282D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+  </div>
+  <div class="hd-drawer-sns">
+    <p class="hd-drawer-sns-label">FOLLOW US</p>
+    <div class="hd-drawer-sns-links">
+      <a href="https://www.instagram.com/self.achieve/" class="hd-drawer-sns-link hd-drawer-sns-ig" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="20" height="20" rx="5" stroke="#28282D" stroke-width="1.5"/><circle cx="12" cy="12" r="4" stroke="#28282D" stroke-width="1.5"/><circle cx="17.5" cy="6.5" r="1" fill="#28282D"/></svg>
+      </a>
+      <a href="https://www.tiktok.com/@selfachieve" class="hd-drawer-sns-link hd-drawer-sns-tt" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" stroke="#28282D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="https://x.com/selfachieve" class="hd-drawer-sns-link hd-drawer-sns-x" target="_blank" rel="noopener noreferrer" aria-label="X（旧Twitter）">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 4l16 16M4 20L20 4" stroke="#28282D" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- FIXED MOBILE CTA -->
+<div class="sp-fixed-cta" id="sp-fixed-cta" role="complementary" aria-label="お問い合わせ">
+  <div class="sp-fixed-cta-inner">
+    <a href="/contact/" class="sp-fixed-cta-consult" aria-label="無料相談を申し込む">無料相談を申し込む</a>
+    <a href="tel:0788068338" class="sp-fixed-cta-tel" aria-label="電話番号 078-806-8338">
+      <svg class="sp-fixed-cta-tel-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.61 21 3 13.39 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1.02l-2.2 2.2z" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span class="sp-fixed-cta-tel-num">078-806-8338</span>
+    </a>
+  </div>
+</div>
+
+
+<main>
+<section class="kv" aria-labelledby="kv-h1">
+  <div class="kv-inner">
+    <div class="kv-left">
+      <span class="kv-eyebrow fu on">note Marketing</span>
+      <h1 class="kv-h1 fu on" id="kv-h1" style="transition-delay:.08s">読まれないSEO記事を、<br>いつまで量産しますか？</h1>
+      <span class="kv-service-label fu on" style="transition-delay:.12s">note運用代行・記事制作</span>
+      <p class="kv-sub fu on" style="transition-delay:.16s">検索順位だけを狙った無機質な記事では、決して「ファン」は生まれません。<br>noteは、企業の想いや開発の裏側を届け、価格競争から脱却するためのストーリーテリングの場です。<br>読者の心を動かし、「あなたから買いたい」と言わせる。<br>そんな体温のある記事を、企画から執筆まで伴走します。</p>
+      <div class="kv-actions fu on" style="transition-delay:.24s">
+        <a href="/contact/" class="btn-primary">15分無料相談を申し込む</a>
+        <div class="kv-tel-wrap">
+          <p class="kv-tel-label">お電話でのご相談</p>
+          <a href="tel:0788068338" class="kv-tel">078-806-8338</a>
+        </div>
+      </div>
+    </div>
+    <div class="kv-right fu on" style="transition-delay:.2s"></div>
+  </div>
+</section>
+<nav class="breadcrumb" aria-label="パンくずリスト">
+  <ol>
+    <li><a href="/">ホーム</a></li>
+    <li><a href="/service/">サービス</a></li>
+    <li><a href="/sns/">SNSマーケティング</a></li>
+    <li><span aria-current="page">note運用代行</span></li>
+  </ol>
+</nav>
+<section class="our-note-sec" aria-labelledby="our-note-h2">
+  <div class="our-note-inner">
+    <div class="our-note-head">
+      <span class="sec-eyebrow fu">OUR NOTE</span>
+      <h2 class="sec-h2 fu" id="our-note-h2" style="transition-delay:.1s">私たちも、<br>noteで発信しています。</h2>
+      <p class="our-note-head-sub fu" style="transition-delay:.15s">「依頼する前に、実力を確かめたい」という方へ。<br>私たちが実際に運営するnoteアカウントの実績をご覧ください。</p>
+    </div>
+    <div class="our-note-stats">
+      <div class="our-note-stat fu">
+        <div class="our-note-stat-num">524</div>
+        <p class="our-note-stat-label">フォロワー数<br>（平均値の約9倍）</p>
+      </div>
+      <div class="our-note-stat fu" style="transition-delay:.08s">
+        <div class="our-note-stat-num">327</div>
+        <p class="our-note-stat-label">最大スキ数（1記事）<br>（平均値の約30倍）</p>
+      </div>
+      <div class="our-note-stat fu" style="transition-delay:.16s">
+        <div class="our-note-stat-num">80+</div>
+        <p class="our-note-stat-label">平均スキ数（直近）<br>（平均値の約7倍）</p>
+      </div>
+    </div>
+    <div class="our-note-articles">
+      <article class="our-note-article fu">
+        <a href="https://note.com/sa_saikatsu_r10" class="our-note-article-link" target="_blank" rel="noopener noreferrer">
+          <p class="our-note-article-tag">採用支援</p>
+          <h3 class="our-note-article-title">採用に悩む中小企業が知っておくべき、求職者の本音とは</h3>
+          <p class="our-note-article-likes"><span class="our-note-article-likes-icon">♥</span> 327スキ</p>
+        </a>
+      </article>
+      <article class="our-note-article fu" style="transition-delay:.08s">
+        <a href="https://note.com/sa_saikatsu_r10" class="our-note-article-link" target="_blank" rel="noopener noreferrer">
+          <p class="our-note-article-tag">採用支援</p>
+          <h3 class="our-note-article-title">「給与を上げれば採れる」は本当か？採用成功企業が共通してやっていること</h3>
+          <p class="our-note-article-likes"><span class="our-note-article-likes-icon">♥</span> 112スキ</p>
+        </a>
+      </article>
+      <article class="our-note-article fu" style="transition-delay:.16s">
+        <a href="https://note.com/sa_saikatsu_r10" class="our-note-article-link" target="_blank" rel="noopener noreferrer">
+          <p class="our-note-article-tag">採用支援</p>
+          <h3 class="our-note-article-title">採用担当者が語る「応募が増えた求人票」と「増えなかった求人票」の違い</h3>
+          <p class="our-note-article-likes"><span class="our-note-article-likes-icon">♥</span> 98スキ</p>
+        </a>
+      </article>
+    </div>
+    <div class="our-note-account-info fu">
+      <div class="our-note-account-desc">
+        <p class="our-note-account-desc-title">セルフアチーブ運営 noteアカウント</p>
+        <p class="our-note-account-desc-text">採用支援ブランド「サイカツ.R」として運営。中小企業の採用担当者・経営者に向けた採用戦略・求人設計のノウハウを発信しています。業界特化のコンテンツ設計と、読者の悩みに直接答える記事構成が高エンゲージメントの源泉です。</p>
+      </div>
+      <a href="https://note.com/sa_saikatsu_r10" class="our-note-account-link" target="_blank" rel="noopener noreferrer">実際のnoteアカウントを見る →</a>
+    </div>
+  </div>
+</section>
+<div class="case-result-banner" role="complementary">
+  <div class="case-result-banner-inner">
+    <div class="crb-copy" id="crb-copy">
+      <div class="crb-eyebrow">YOUR RESULT</div>
+      <h2 class="crb-headline">noteの強みを他のWeb施策と<br>組み合わせることで、<br>集客力は大きく<em>引き上げられます。</em></h2>
+      <p class="crb-body">業種・規模・フェーズを問わず、同じ伴走の仕組みで成果を出してきました。<br>まずは15分、御社の課題をお聴かせください。</p>
+      <a href="/contact/" class="crb-cta">無料相談で可能性を確かめる →</a>
+    </div>
+  </div>
+</div>
+<section class="what-sec" aria-labelledby="what-h2">
+  <div class="what-inner">
+    <div class="what-head">
+      <span class="sec-eyebrow fu">WHAT WE DO</span>
+      <h2 class="sec-h2 fu" id="what-h2" style="transition-delay:.1s">noteで、何ができるのか。</h2>
+      <p class="sec-body fu" style="transition-delay:.15s;max-width:640px;margin:20px auto 0">SEO資産を積み上げる「記事運用」と、読者をファンに変える「コンテンツ設計」。<br>目的に合わせて、最適な運用をご提案します。</p>
+    </div>
+    <div class="what-grid">
+      <div class="what-card fu">
+        <span class="what-card-tag green">NOTE MANAGEMENT</span>
+        <h3 class="what-card-h3">note運用代行</h3>
+        <p class="what-card-desc">
+          <strong class="what-card-desc-lead">読まれる記事が、信頼の資産になる。</strong>
+          記事企画・執筆・公開・分析まで一貫して対応。ターゲットの検索意図に合わせたテーマ設計と、読まれ続ける文章構成で、noteを集客・信頼構築の基盤に育てます。
+        </p>
+        <div class="what-card-features">
+          <div class="what-card-feature">記事テーマ企画・キーワード設計</div>
+          <div class="what-card-feature">記事執筆・校正・公開</div>
+          <div class="what-card-feature">アイキャッチ画像制作</div>
+          <div class="what-card-feature">プロフィール・マガジン最適化</div>
+          <div class="what-card-feature">アクセス分析・月次レポート</div>
+        </div>
+      </div>
+      <div class="what-card fu" style="transition-delay:.1s">
+        <span class="what-card-tag">CONTENT STRATEGY</span>
+        <h3 class="what-card-h3">コンテンツ戦略設計</h3>
+        <p class="what-card-desc">
+          <strong class="what-card-desc-lead">書くだけでは、読まれない。</strong>
+          どのテーマで、誰に、何を伝えるか。ターゲット分析・競合調査・検索意図の把握から、noteを「選ばれる理由」に変えるコンテンツ戦略を設計します。
+        </p>
+        <div class="what-card-features">
+          <div class="what-card-feature">ターゲット・ペルソナ設計</div>
+          <div class="what-card-feature">競合note分析</div>
+          <div class="what-card-feature">テーマ・キーワードマップ作成</div>
+          <div class="what-card-feature">既存記事の改善提案</div>
+          <div class="what-card-feature">他SNSとの連携設計</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="voice-sec" aria-labelledby="voice-h2">
+  <div class="voice-head">
+    <div>
+      <span class="sec-eyebrow fu">CUSTOMER VOICE</span>
+      <h2 class="sec-h2 fu" id="voice-h2" style="transition-delay:.1s">伴走してきた企業の、<br>リアルな声。</h2>
+    </div>
+    <a href="/voice/" class="view-all fu" style="transition-delay:.15s">すべて見る</a>
+  </div>
+  <div class="voice-grid">
+    <article class="voice-card fu">
+      <a href="/voice/iwazawa/" class="voice-link">
+        <div class="voice-avatar"><img src="../../assets/voice/iwazawa.jpg" alt="岩澤法理事務所" width="280" height="280" loading="lazy"></div>
+        <div class="voice-body">
+          <p class="voice-quote">「特殊な業界だからこそ、心強い」<br>共に課題へ向き合うWeb集客のパートナー</p>
+          <div class="voice-meta">
+            <p class="voice-co">法律事務所</p>
+            <p class="voice-name">岩澤法理事務所 様</p>
+            <p class="voice-more">詳しく見る →</p>
+          </div>
+        </div>
+      </a>
+    </article>
+    <article class="voice-card fu" style="transition-delay:.1s">
+      <a href="/voice/" class="voice-link">
+        <div class="voice-avatar"><img src="../../assets/voice/edurabo.jpg" alt="株式会社エデュラボ" width="280" height="280" loading="lazy"></div>
+        <div class="voice-body">
+          <p class="voice-quote">SNS運用で「見てもらえる」から<br>「選んでもらえる」へ。</p>
+          <div class="voice-meta">
+            <p class="voice-co">学習塾の運営</p>
+            <p class="voice-name">株式会社 エデュラボ 様</p>
+            <p class="voice-more">詳しく見る →</p>
+          </div>
+        </div>
+      </a>
+    </article>
+    <article class="voice-card fu" style="transition-delay:.2s">
+      <a href="/voice/" class="voice-link">
+        <div class="voice-avatar"><img src="../../assets/voice/nadi.jpg" alt="Nadi ピラティス・ヨガスタジオ" width="280" height="280" loading="lazy"></div>
+        <div class="voice-body">
+          <p class="voice-quote">正解がない業態だからこそ、<br>同じ目線で、1つの「チーム」で。</p>
+          <div class="voice-meta">
+            <p class="voice-co">ピラティス・ヨガスタジオ</p>
+            <p class="voice-name">Nadi 様</p>
+            <p class="voice-more">詳しく見る →</p>
+          </div>
+        </div>
+      </a>
+    </article>
+  </div>
+</section>
+<section class="cta-mid-sec" aria-labelledby="cta-mid-h2">
+  <div class="cta-mid-inner">
+    <span class="cta-mid-eyebrow fu">FREE CONSULTATION</span>
+    <h2 class="cta-mid-h2 fu" id="cta-mid-h2" style="transition-delay:.1s">まず、話してみませんか。</h2>
+    <p class="cta-mid-body fu" style="transition-delay:.15s">15分の無料相談で、貴社のnote運用課題を整理します。<br>「何から始めればいいかわからない」という段階でも大丈夫です。</p>
+    <div class="cta-mid-actions fu" style="transition-delay:.2s">
+      <a href="/contact/" class="btn-cta">15分無料相談を申し込む</a>
+      <div class="cta-mid-tel-wrap">
+        <p class="cta-mid-tel-label">お電話でのご相談</p>
+        <a href="tel:0788068338" class="cta-mid-tel">078-806-8338</a>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="plan-sec" aria-labelledby="plan-h2">
+  <div class="plan-inner">
+    <div class="plan-head">
+      <span class="sec-eyebrow fu">PRICING</span>
+      <h2 class="sec-h2 fu" id="plan-h2" style="transition-delay:.1s">料金プラン</h2>
+      <p class="sec-body fu" style="transition-delay:.15s;max-width:600px">月の記事本数に応じた3プランをご用意しています。<br>目標・フェーズ・予算に合わせて、最適なプランをご提案します。</p>
+    </div>
+    <div class="plan-grid">
+      <div class="plan-card fu">
+        <span class="plan-type">NOTE LIGHT</span>
+        <h3 class="plan-name">ライトプラン</h3>
+        <p class="plan-tagline">まずnoteを始めたい方に。月4本の継続発信でアカウントを立ち上げます。</p>
+        <div class="plan-price-block">
+          <p class="plan-price-label">月額費用</p>
+          <div class="plan-price">60,000<span>円（税込）〜</span></div>
+          <p class="plan-price-note">※ 記事文字数・画像制作有無により変動 / 初回相談無料</p>
+        </div>
+        <div class="plan-features">
+          <div class="plan-feature">記事企画・執筆（月4本）</div>
+          <div class="plan-feature">アイキャッチ画像制作</div>
+          <div class="plan-feature">プロフィール最適化</div>
+          <div class="plan-feature">月次アクセスレポート</div>
+        </div>
+        <a href="/contact/" class="btn-plan">このプランで相談する</a>
+      </div>
+      <div class="plan-card fu" style="transition-delay:.05s">
+        <span class="plan-type">NOTE STANDARD</span>
+        <h3 class="plan-name">スタンダードプラン</h3>
+        <p class="plan-tagline">本格的な記事資産の蓄積に。月8本の継続発信でSEO・ファン形成を加速します。</p>
+        <div class="plan-price-block">
+          <p class="plan-price-label">月額費用</p>
+          <div class="plan-price">100,000<span>円（税込）〜</span></div>
+          <p class="plan-price-note">※ 記事文字数・画像制作数により変動 / 初回相談無料</p>
+        </div>
+        <div class="plan-features">
+          <div class="plan-feature">記事企画・執筆（月8本）</div>
+          <div class="plan-feature">アイキャッチ画像制作</div>
+          <div class="plan-feature">プロフィール・マガジン最適化</div>
+          <div class="plan-feature">キーワード・テーマ設計</div>
+          <div class="plan-feature">月次アクセス分析・改善レポート</div>
+        </div>
+        <a href="/contact/" class="btn-plan">このプランで相談する</a>
+      </div>
+      <div class="plan-card fu" style="transition-delay:.1s">
+        <span class="plan-type">NOTE FULL</span>
+        <h3 class="plan-name">フルサポートプラン</h3>
+        <p class="plan-tagline">戦略設計から他SNS連携まで。noteをビジネスの集客基盤に育てたい方に。</p>
+        <div class="plan-price-block">
+          <p class="plan-price-label">月額費用</p>
+          <div class="plan-price">150,000<span>円（税込）〜</span></div>
+          <p class="plan-price-note">※ 記事本数・連携施策により変動 / 初回相談無料</p>
+        </div>
+        <div class="plan-features">
+          <div class="plan-feature">コンテンツ戦略設計・競合分析</div>
+          <div class="plan-feature">記事企画・執筆（月12本〜）</div>
+          <div class="plan-feature">アイキャッチ・バナー画像制作</div>
+          <div class="plan-feature">プロフィール・マガジン最適化</div>
+          <div class="plan-feature">他SNS（X・Instagram等）との連携設計</div>
+          <div class="plan-feature">月次アクセス分析・改善レポート・定例MTG</div>
+        </div>
+        <a href="/contact/" class="btn-plan">このプランで相談する</a>
+      </div>
+    </div>
+    <div class="plan-note-box fu">
+      <svg class="plan-note-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      <p class="plan-note-text">上記は標準プランです。ご要望・規模に応じてカスタマイズが可能です。まずは無料相談でご要望をお聴かせください。</p>
+    </div>
+  </div>
+</section>
+<section class="faq-sec" aria-labelledby="faq-h2">
+  <div class="faq-head">
+    <h2 class="faq-h2 fu" id="faq-h2">よくある質問</h2>
+    <a href="/faq/" class="view-all fu" style="transition-delay:.1s">すべて見る</a>
+  </div>
+  <ul class="faq-list" role="list">
+    <li class="faq-item fu" role="listitem">
+      <div class="faq-q" role="button" tabindex="0" aria-expanded="false" aria-controls="faq-a-1">
+        <span class="faq-q-mark">Q</span>
+        <span class="faq-q-text">note運用代行の費用はいくらですか？</span>
+        <span class="faq-q-icon" aria-hidden="true"></span>
+      </div>
+      <div class="faq-a" id="faq-a-1">
+        <div class="faq-a-inner">
+          <span class="faq-a-mark">A</span>
+          <p class="faq-a-text">ライトプランは月額60,000円（税込）〜、スタンダードプランは月額100,000円（税込）〜、フルサポートプランは月額150,000円（税込）〜となります。記事文字数・画像制作有無により変動します。まずは無料相談でご要望をお聞かせください。</p>
+        </div>
+      </div>
+    </li>
+    <li class="faq-item fu" role="listitem">
+      <div class="faq-q" role="button" tabindex="0" aria-expanded="false" aria-controls="faq-a-2">
+        <span class="faq-q-mark">Q</span>
+        <span class="faq-q-text">記事の内容は確認・修正できますか？</span>
+        <span class="faq-q-icon" aria-hidden="true"></span>
+      </div>
+      <div class="faq-a" id="faq-a-2">
+        <div class="faq-a-inner">
+          <span class="faq-a-mark">A</span>
+          <p class="faq-a-text">はい、公開前に必ずご確認いただきます。修正も承ります。事前にブランドトーン・発信テーマ・NG表現などをヒアリングした上で執筆しますので、大幅な修正が必要になるケースは少ないです。</p>
+        </div>
+      </div>
+    </li>
+    <li class="faq-item fu" role="listitem">
+      <div class="faq-q" role="button" tabindex="0" aria-expanded="false" aria-controls="faq-a-3">
+        <span class="faq-q-mark">Q</span>
+        <span class="faq-q-text">noteはSEOに効果がありますか？</span>
+        <span class="faq-q-icon" aria-hidden="true"></span>
+      </div>
+      <div class="faq-a" id="faq-a-3">
+        <div class="faq-a-inner">
+          <span class="faq-a-mark">A</span>
+          <p class="faq-a-text">はい、noteはGoogleの検索結果に表示されやすいドメインパワーを持っています。適切なキーワード設計と継続的な記事投稿により、検索流入を獲得できます。自社サイトのSEOと並行して活用することで、集客の間口を広げることができます。</p>
+        </div>
+      </div>
+    </li>
+    <li class="faq-item fu" role="listitem">
+      <div class="faq-q" role="button" tabindex="0" aria-expanded="false" aria-controls="faq-a-4">
+        <span class="faq-q-mark">Q</span>
+        <span class="faq-q-text">どんな業種でも対応できますか？</span>
+        <span class="faq-q-icon" aria-hidden="true"></span>
+      </div>
+      <div class="faq-a" id="faq-a-4">
+        <div class="faq-a-inner">
+          <span class="faq-a-mark">A</span>
+          <p class="faq-a-text">はい、医療・士業・飲食・EC・教育・製造業など幅広い業種に対応しています。業種ごとの専門知識が必要な場合は、ヒアリングや資料提供をお願いすることがあります。まずは無料相談でご相談ください。</p>
+        </div>
+      </div>
+    </li>
+    <li class="faq-item fu" role="listitem">
+      <div class="faq-q" role="button" tabindex="0" aria-expanded="false" aria-controls="faq-a-5">
+        <span class="faq-q-mark">Q</span>
+        <span class="faq-q-text">最低契約期間はありますか？</span>
+        <span class="faq-q-icon" aria-hidden="true"></span>
+      </div>
+      <div class="faq-a" id="faq-a-5">
+        <div class="faq-a-inner">
+          <span class="faq-a-mark">A</span>
+          <p class="faq-a-text">3ヶ月〜をお願いしています。note運用は記事が積み上がることで効果が出る施策のため、短期間では効果を正確に評価できません。</p>
+        </div>
+      </div>
+    </li>
+  </ul>
+</section>
+<section class="challenge-sec" id="challenge" aria-labelledby="challenge-h2">
+  <div class="challenge-head">
+    <div>
+      <span class="sec-eyebrow fu">YOUR CHALLENGE</span>
+      <h2 class="sec-h2 fu" id="challenge-h2" style="transition-delay:.1s">あなたの課題は<br>どれですか？</h2>
+      <p class="sec-body fu" style="transition-delay:.15s">なんかうまくいかない。<br>WEBで成果が出ない理由は、必ずあります。<br>課題を特定し、最適な施策を設計します。</p>
+    </div>
+  </div>
+  <div class="challenge-grid">
+    <article class="challenge-card challenge-card--overall fu">
+      <div class="challenge-card-left">
+        <span class="challenge-cat-chip">全般</span>
+        <div class="challenge-card-num"><span class="challenge-card-num-n">01</span></div>
+        <h3 class="challenge-card-title">なんかうまく<br>いかない...</h3>
+        <p class="challenge-card-desc">何が問題かわからない。施策を試しても手応えがない。まず現状を整理したい。</p>
+      </div>
+      <div class="challenge-card-right">
+        <p class="challenge-tags-label">推奨施策</p>
+        <div class="challenge-tags-wrap"><a href="/strategy/" class="challenge-tag">WEB戦略設計</a></div>
+      </div>
+    </article>
+    <article class="challenge-card fu" style="transition-delay:.08s">
+      <span class="challenge-cat-chip">集客</span>
+      <div class="challenge-card-num"><span class="challenge-card-num-n">02</span></div>
+      <h3 class="challenge-card-title">サイトへの<br>訪問者を増やしたい</h3>
+      <p class="challenge-card-desc">検索で見つけてもらえない。広告を出しても費用対効果が悪い。もっと多くの見込み客に届けたい。</p>
+      <p class="challenge-tags-label">推奨施策</p>
+      <div class="challenge-tags-wrap">
+        <a href="/seo/" class="challenge-tag">SEO対策</a>
+        <a href="/meo/" class="challenge-tag">MEO対策</a>
+        <a href="/ads/listing/" class="challenge-tag">リスティング広告</a>
+      </div>
+    </article>
+    <article class="challenge-card fu" style="transition-delay:.16s">
+      <span class="challenge-cat-chip">成約</span>
+      <div class="challenge-card-num"><span class="challenge-card-num-n">03</span></div>
+      <h3 class="challenge-card-title">来てくれた人が<br>問い合わせない</h3>
+      <p class="challenge-card-desc">アクセスはあるのに成約しない。サイトを見ても離脱してしまう。訪問者を顧客に変えたい。</p>
+      <p class="challenge-tags-label">推奨施策</p>
+      <div class="challenge-tags-wrap">
+        <a href="/website/" class="challenge-tag">ホームページ制作</a>
+        <a href="/strategy/" class="challenge-tag">WEB戦略設計</a>
+      </div>
+    </article>
+    <article class="challenge-card fu" style="transition-delay:.24s">
+      <span class="challenge-cat-chip">再販</span>
+      <div class="challenge-card-num"><span class="challenge-card-num-n">04</span></div>
+      <h3 class="challenge-card-title">一度来た人に<br>また来てほしい</h3>
+      <p class="challenge-card-desc">リピーターが増えない。既存顧客との関係を維持したい。ファンを育てる仕組みをつくりたい。</p>
+      <p class="challenge-tags-label">推奨施策</p>
+      <div class="challenge-tags-wrap">
+        <a href="/sns/line/" class="challenge-tag">LINE構築</a>
+        <a href="/sns/youtube/" class="challenge-tag">YouTube</a>
+        <a href="/sns/note/" class="challenge-tag">note</a>
+      </div>
+    </article>
+  </div>
+</section>
+<!-- CTA -->
+<section class="cta-sec" id="contact" aria-labelledby="cta-h2">
+  <div class="cta-wrap">
+    <span class="cta-eyebrow fu">FREE CONSULTATION</span>
+    <h2 class="cta-h2 fu" id="cta-h2" style="transition-delay:.1s">
+      <span class="cta-h2-main">まず、お話してみませんか。</span>
+    </h2>
+    <p class="cta-sub fu" style="transition-delay:.15s">初回相談は無料です。</p>
+    <div class="cta-actions fu" style="transition-delay:.25s">
+      <a href="/contact/" class="btn-cta" aria-label="無料相談を申し込む">無料相談を申し込む</a>
+      <div class="cta-tel-wrap">
+        <p class="cta-tel-label">お電話でのご相談</p>
+        <a href="tel:0788068338" class="cta-tel" aria-label="電話番号 078-806-8338">078-806-8338</a>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="area-sec" aria-labelledby="area-h2">
+  <div class="area-inner">
+    <div class="area-left">
+      <p class="area-eyebrow fu">SERVICE AREA</p>
+      <h2 class="area-h2 fu" id="area-h2" style="transition-delay:.1s">対応エリア</h2>
+      <p class="area-desc fu" style="transition-delay:.2s">神戸市を中心に、兵庫県全域および近隣府県の中小企業・店舗の集客支援を行っています。オンラインにて全国対応も可能です。</p>
+    </div>
+    <div class="area-right">
+      <div class="area-group fu">
+        <p class="area-group-label easy">柔軟にお伺いできます</p>
+        <div class="area-tags" role="list">
+          <span class="area-tag" role="listitem"><span class="area-tag-dot"></span>神戸市</span>
+          <span class="area-tag" role="listitem"><span class="area-tag-dot"></span>姫路市</span>
+          <span class="area-tag" role="listitem"><span class="area-tag-dot"></span>明石市</span>
+          <span class="area-tag" role="listitem"><span class="area-tag-dot"></span>加古川市</span>
+          <span class="area-tag" role="listitem"><span class="area-tag-dot"></span>芦屋市</span>
+          <span class="area-tag" role="listitem"><span class="area-tag-dot"></span>西宮市</span>
+          <span class="area-tag" role="listitem"><span class="area-tag-dot"></span>尼崎市</span>
+          <span class="area-tag" role="listitem"><span class="area-tag-dot"></span>宝塚市</span>
+          <span class="area-tag" role="listitem"><span class="area-tag-dot"></span>三木市</span>
+          <span class="area-tag" role="listitem"><span class="area-tag-dot"></span>三田市</span>
+          <span class="area-tag" role="listitem"><span class="area-tag-dot"></span>淡路市</span>
+        </div>
+      </div>
+      <div class="area-group fu" style="transition-delay:.1s">
+        <p class="area-group-label adjust">調整の上お伺いできます</p>
+        <div class="area-tags" role="list">
+          <span class="area-tag" role="listitem"><span class="area-tag-dot"></span>上記以外の兵庫県内</span>
+          <span class="area-tag" role="listitem"><span class="area-tag-dot"></span>大阪府</span>
+          <span class="area-tag" role="listitem"><span class="area-tag-dot"></span>京都府</span>
+          <span class="area-tag" role="listitem"><span class="area-tag-dot"></span>その他関西圏</span>
+        </div>
+      </div>
+      <div class="area-group fu" style="transition-delay:.2s">
+        <p class="area-group-label online">オンライン対応</p>
+        <div class="area-tags" role="list">
+          <span class="area-tag" role="listitem"><span class="area-tag-dot"></span>全国どこでも</span>
+        </div>
+      </div>
+      <p class="area-note fu" style="transition-delay:.3s">※ 訪問エリアは目安です。上記以外の地域もご相談ください。<br>※ オンラインでの打ち合わせも対応しています。</p>
+    </div>
+  </div>
+</section>
+<section class="blog-sec" aria-labelledby="blog-h2">
+  <div class="blog-inner">
+    <div class="blog-head">
+      <h2 class="blog-h2 fu" id="blog-h2">noteコラム</h2>
+      <a href="/blog/" class="view-all fu" style="transition-delay:.1s">すべて見る</a>
+    </div>
+    <div class="blog-grid">
+      <article class="blog-card fu">
+        <a href="/blog/note-management/">
+          <p class="blog-cat">note運用</p>
+          <h3 class="blog-title">中小企業がnoteで集客するための5つの原則｜継続と設計が鍵</h3>
+          <p class="blog-date">2025.04.10</p>
+        </a>
+      </article>
+      <article class="blog-card fu" style="transition-delay:.1s">
+        <a href="/blog/note-seo/">
+          <p class="blog-cat">note運用</p>
+          <h3 class="blog-title">noteはSEOに強い？Googleに評価される記事の書き方と設計方法</h3>
+          <p class="blog-date">2025.03.20</p>
+        </a>
+      </article>
+      <article class="blog-card fu" style="transition-delay:.2s">
+        <a href="/blog/note-outsource/">
+          <p class="blog-cat">note運用</p>
+          <h3 class="blog-title">note運用代行の費用相場と依頼前に確認すべき5つのポイント</h3>
+          <p class="blog-date">2025.02.25</p>
+        </a>
+      </article>
+    </div>
+  </div>
+</section>
+<nav class="breadcrumb-sp" aria-label="パンくずリスト（スマートフォン）">
+  <ol>
+    <li><a href="/">ホーム</a></li>
+    <li><a href="/service/">サービス</a></li>
+    <li><a href="/sns/">SNSマーケティング</a></li>
+    <li><span aria-current="page">note運用代行</span></li>
+  </ol>
+</nav>
+<footer class="footer" role="contentinfo">
+  <div class="footer-top">
+    <div class="footer-logo-wrap">
+      <a href="/" class="footer-logo" aria-label="セルフアチーブ トップページへ">
+        <img src="/assets/logo_color.png" alt="selfachieve Acquisition Agency" width="140" height="30" loading="lazy">
+      </a>
+      <address class="footer-logo-addr">
+        〒658-0032 兵庫県神戸市東灘区向洋町6-9<br>
+        TEL：<a href="tel:0788068338">078-806-8338</a><br>
+        営業時間：平日 9:00〜19:00
+      </address>
+      <div class="footer-sns-block">
+        <p class="footer-sns-label">OFFICIAL SNS</p>
+        <div class="footer-sns" aria-label="公式SNSアカウント">
+          <a href="https://www.instagram.com/self.achieve/" class="footer-sns-link footer-sns-ig" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="20" height="20" rx="5" stroke="#28282D" stroke-width="1.5"/><circle cx="12" cy="12" r="4" stroke="#28282D" stroke-width="1.5"/><circle cx="17.5" cy="6.5" r="1" fill="#28282D"/></svg>
+          </a>
+          <a href="https://www.tiktok.com/@selfachieve" class="footer-sns-link footer-sns-tt" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" stroke="#28282D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="https://x.com/selfachieve" class="footer-sns-link footer-sns-x" target="_blank" rel="noopener noreferrer" aria-label="X（旧Twitter）">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 4l16 16M4 20L20 4" stroke="#28282D" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-logo-related">
+        <span class="footer-related-label">RELATED SERVICE</span>
+        <a href="https://saikatsu-r.jp/" class="footer-related-link" target="_blank" rel="noopener noreferrer" aria-label="企業の採用活動を成功に導く「サイカツ.R」（別サイトが開きます）">企業の採用活動を成功に導く「サイカツ.R」<svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+      </div>
+    </div>
+    <nav class="footer-nav" aria-label="フッターナビゲーション">
+      <div class="footer-nav-group">
+        <p class="footer-nav-title">サービス</p>
+        <a href="/strategy/">WEB戦略設計</a>
+        <a href="/website/">サイト制作・分析改善</a>
+        <a href="/seo/">SEO対策</a>
+        <a href="/meo/">MEO対策</a>
+        <a href="/ai-seo/">AI検索対策（LLM検索対策）</a>
+        <a href="/ads/display/">ディスプレイ広告</a>
+        <a href="/sns/instagram/">Instagram</a>
+        <a href="/sns/tiktok/">TikTok</a>
+        <a href="/sns/x/">X（旧Twitter）</a>
+        <a href="/sns/youtube/">YouTube</a>
+        <a href="/sns/note/">note</a>
+        <a href="/sns/line/">LINE</a>
+        <a href="/ai-automation/">AI業務効率化・導入支援</a>
+      </div>
+      <div class="footer-nav-group">
+        <p class="footer-nav-title">会社情報</p>
+        <a href="/works/">実績</a>
+        <a href="/voice/">お客さまの声</a>
+        <a href="/company/">会社情報</a>
+    
+                <a href="/columns/">コラム</a>
+        <a href="/news/">お知らせ</a>
+      </div>
+      <div class="footer-nav-group">
+        <p class="footer-nav-title">お問い合わせ</p>
+        <a href="/contact/">無料相談のお申し込み</a>
+        <a href="tel:0788068338">078-806-8338（平日 9:00～19:00）</a>
+      </div>
+    </nav>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-right">
+      <a href="/privacy/" class="footer-privacy">プライバシーポリシー</a>
+      <p class="footer-copy">&copy; <span id="copyright-year">2026</span> Self Achieve Inc. All Rights Reserved.</p>
+    </div>
+  </div>
+</footer>
+
+
+</main>
+<script>
+// .fu フェードアップアニメーション（IntersectionObserver）
+(function(){
+  var fuEls = document.querySelectorAll('.fu');
+  if (!fuEls.length) return;
+  var obs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) { e.target.classList.add('on'); obs.unobserve(e.target); }
+    });
+  }, { threshold: 0.1 });
+  fuEls.forEach(function(el) { obs.observe(el); });
+  // KV等ページロード時に既にビューポート内の .fu 要素を即座に表示
+  (function() {
+    requestAnimationFrame(function() {
+      requestAnimationFrame(function() {
+        fuEls.forEach(function(el) {
+          var r = el.getBoundingClientRect();
+          if (r.top < window.innerHeight && r.bottom > 0) {
+            el.classList.add('on');
+          }
+        });
+      });
+    });
+  })();
+})();
+</script>
+<script src="../../assets/master.js"></script>
+</body>
+</html>

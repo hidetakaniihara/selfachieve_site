@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>お知らせ一覧 | セルフアチーブ</title>
+  <meta name="description" content="株式会社セルフアチーブからのお知らせ一覧。営業日・休業日・サービス改定・オフィス情報など最新情報をお届けします。">
+  <meta name="robots" content="index, follow">
+  <link rel="stylesheet" href="../assets/style.css">
+  <link rel="canonical" href="https://selfachieve.jp/news/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="お知らせ一覧 | セルフアチーブ">
+  <meta property="og:description" content="株式会社セルフアチーブからのお知らせ一覧。最新情報をお届けします。">
+  <meta property="og:url" content="https://selfachieve.jp/news/">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:image" content="https://selfachieve.jp/assets/ogp.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="color-scheme" content="light">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@graph":[
+    {"@type":"Organization","@id":"https://selfachieve.jp/#organization",
+     "name":"株式会社セルフアチーブ","url":"https://selfachieve.jp/"},
+    {"@type":"WebPage","@id":"https://selfachieve.jp/news/#webpage",
+     "url":"https://selfachieve.jp/news/",
+     "name":"お知らせ一覧 | セルフアチーブ",
+     "description":"株式会社セルフアチーブからのお知らせ一覧。",
+     "isPartOf":{"@id":"https://selfachieve.jp/#website"},
+     "breadcrumb":{"@id":"https://selfachieve.jp/news/#breadcrumb"},
+     "inLanguage":"ja"
+    },
+    {"@type":"BreadcrumbList","@id":"https://selfachieve.jp/news/#breadcrumb",
+     "itemListElement":[
+       {"@type":"ListItem","position":1,"name":"ホーム","item":"https://selfachieve.jp/"},
+       {"@type":"ListItem","position":2,"name":"お知らせ","item":"https://selfachieve.jp/news/"}
+     ]
+    }
+  ]}
+  </script>
+  <style>
+    /* ===== NEWS LIST ===== */
+    .news-list-sec{padding:160px 80px 120px;background:#fff;}
+    .news-list-inner{max-width:900px;margin:0 auto;}
+    .news-list-head{margin-bottom:64px;}
+    .news-list-eyebrow{font-size:12px;letter-spacing:.15em;color:#555558;text-transform:uppercase;margin-bottom:16px;}
+    .news-list-title{font-size:clamp(28px,4vw,40px);font-weight:700;letter-spacing:-.03em;color:#000;line-height:1.2;}
+    .news-list-title span{display:block;font-size:14px;font-weight:400;color:#555558;letter-spacing:.05em;margin-top:8px;}
+    /* ニュースリスト */
+    .news-list{list-style:none;}
+    .news-item{border-bottom:1px solid #E8E8E8;}
+    .news-item:first-child{border-top:1px solid #E8E8E8;}
+    .news-item a{display:grid;grid-template-columns:auto auto 1fr auto;align-items:center;gap:16px 24px;padding:28px 0;text-decoration:none;color:inherit;transition:opacity .2s;}
+    .news-item a:hover{opacity:.7;}
+    .news-item-date{font-size:14px;color:#555558;letter-spacing:.05em;white-space:nowrap;}
+    .news-item-cat{font-size:11px;letter-spacing:.08em;color:#555558;border:1px solid #D8D8DC;padding:3px 10px;white-space:nowrap;}
+    .news-item-title{font-size:16px;font-weight:500;color:#28282D;line-height:1.5;}
+    .news-item-arrow{font-size:18px;color:#C0C0C0;}
+    /* ページネーション */
+    .news-pagination{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:64px;}
+    .page-btn{display:inline-flex;align-items:center;justify-content:center;min-width:40px;height:40px;padding:0 12px;border:1px solid #E8E8E8;background:#fff;font-size:14px;color:#28282D;cursor:pointer;transition:border-color .2s,background .2s;font-family:inherit;}
+    .page-btn:hover:not(.disabled){border-color:#28282D;background:#F8F8F8;}
+    .page-btn.active{background:#28282D;color:#fff;border-color:#28282D;}
+    .page-btn.disabled{color:#C0C0C0;cursor:default;}
+    /* パンくずリスト（SP） */
+    .breadcrumb-sp{display:none;background:#F5F5F3;padding:10px 20px;border-top:1px solid #E8E8E8;}
+    .breadcrumb-sp ol{display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+    .breadcrumb-sp li{font-size:12px;color:#555558;display:flex;align-items:center;gap:8px;}
+    .breadcrumb-sp li::after{content:'/';color:#C0C0C0;}
+    .breadcrumb-sp li:last-child::after{display:none;}
+    .breadcrumb-sp a{color:#555558;}
+    /* ===== RESPONSIVE ===== */
+    @media(max-width:900px){
+      .hd{padding:0 20px;}
+      .hd-nav{display:none;}
+      .hd-hamburger{display:flex;}
+      .hd-drawer{display:block;}
+      .hd-btns{display:none;}
+      .breadcrumb{display:none;}
+      .breadcrumb-sp{display:block;}
+      .news-list-sec{padding:100px 24px 80px;}
+      .news-item a{grid-template-columns:1fr auto;grid-template-rows:auto auto;gap:8px 12px;padding:20px 0;}
+      .news-item-date{grid-column:1;grid-row:1;}
+      .news-item-cat{grid-column:2;grid-row:1;}
+      .news-item-title{grid-column:1/3;grid-row:2;font-size:15px;}
+      .news-item-arrow{display:none;}
+    }
+  </style>
+</head>
+<body>
+<header class="hd" role="banner">
+  <a href="/" class="hd-logo" aria-label="セルフアチーブ トップページへ">
+    <img src="/assets/logo_color.png" alt="selfachieve Acquisition Agency" width="160" height="34" fetchpriority="high">
+  </a>
+  <nav class="hd-nav" aria-label="グローバルナビゲーション">
+    <span class="hd-nav-item">
+      <a href="#challenge">課題から探す</a>
+      <div class="hd-mega-wrap">
+      <div class="hd-mega" role="menu">
+        <div class="hd-mega-col">
+          <span class="hd-mega-col-label"><span class="col-label-main">戦略・全体</span><span class="col-label-sub">（なんか、うまくいかない…）</span></span>
+          <a href="/strategy/" role="menuitem">事業戦略</a>
+          <a href="/strategy/" role="menuitem">ブランディング</a>
+          <a href="/strategy/" role="menuitem">WEB戦略</a>
+          <a href="/strategy/" role="menuitem">マーケティング戦略</a>
+          <a href="/strategy/" role="menuitem">顧客戦略</a>
+          <a href="https://selfachieve.jp/saikatsu_r/" role="menuitem" target="_blank" rel="noopener noreferrer">採用戦略<svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-left:4px;opacity:.7"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+        </div>
+        <div class="hd-mega-col">
+          <span class="hd-mega-col-label"><span class="col-label-main">集客</span><span class="col-label-sub">（サイトへの訪問者を増やしたい）</span></span>
+          <a href="/seo/" role="menuitem">SEO対策</a>
+          <a href="/meo/" role="menuitem">MEO対策</a>
+          <a href="/ads/" role="menuitem">WEB広告</a>
+          <a href="/sns/" role="menuitem">SNSマーケティング</a>
+          <a href="/sns/note/" role="menuitem">note対策</a>
+          <a href="/ai-seo/" role="menuitem">AI検索対策（LLM対策）</a>
+        </div>
+        <div class="hd-mega-col">
+          <span class="hd-mega-col-label"><span class="col-label-main">成約</span><span class="col-label-sub">（問い合わせ・売上を増やしたい）</span></span>
+          <a href="/website/" role="menuitem">ホームページ制作</a>
+          <a href="/website/" role="menuitem">分析改善</a>
+          <a href="/website/lp/" role="menuitem">LP制作</a>
+        </div>
+        <div class="hd-mega-col">
+          <span class="hd-mega-col-label"><span class="col-label-main">再販・追客</span><span class="col-label-sub">（一度来た人にまた来てほしい）</span></span>
+          <a href="/sns/line/" role="menuitem">LINE</a>
+          <a href="/sns/instagram/" role="menuitem">Instagram</a>
+          <a href="/sns/x/" role="menuitem">X（旧Twitter）</a>
+          <a href="/sns/youtube/" role="menuitem">YouTube</a>
+        </div>
+        <div class="hd-mega-col">
+          <span class="hd-mega-col-label"><span class="col-label-main">AI活用</span><span class="col-label-sub">（AIで業務を効率化・最適化したい）</span></span>
+          <a href="/ai-automation/" role="menuitem">業務効率化</a>
+          <a href="/ai-automation/" role="menuitem">分析深化</a>
+        </div>
+      </div>
+      </div>
+    </span>
+    <span class="hd-nav-item">
+      <a href="javascript:void(0)">サービス</a>
+      <div class="hd-mega-wrap">
+      <div class="hd-mega" role="menu">
+        <div class="hd-mega-col">
+          <span class="hd-mega-col-label"><span class="col-label-main">戦略設計</span></span>
+          <a href="/strategy/" role="menuitem">事業戦略</a>
+          <a href="/strategy/" role="menuitem">ブランディング</a>
+          <a href="/strategy/" role="menuitem">WEB戦略</a>
+          <a href="/strategy/" role="menuitem">マーケティング戦略</a>
+          <a href="/strategy/" role="menuitem">顧客戦略</a>
+          <a href="https://selfachieve.jp/saikatsu_r/" role="menuitem" target="_blank" rel="noopener noreferrer">採用戦略<svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-left:4px;opacity:.7"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+        </div>
+        <div class="hd-mega-col">
+          <span class="hd-mega-col-label"><span class="col-label-main">集客施策</span></span>
+          <a href="/seo/" role="menuitem">SEO対策</a>
+          <a href="/meo/" role="menuitem">MEO対策</a>
+          <a href="/ads/" role="menuitem">WEB広告</a>
+          <a href="/sns/" role="menuitem">SNSマーケティング</a>
+          <a href="/sns/note/" role="menuitem">note対策</a>
+          <a href="/ai-seo/" role="menuitem">AI検索対策（LLM対策）</a>
+        </div>
+        <div class="hd-mega-col">
+          <span class="hd-mega-col-label"><span class="col-label-main">成約</span></span>
+          <a href="/website/" role="menuitem">ホームページ制作</a>
+          <a href="/website/" role="menuitem">分析改善</a>
+          <a href="/website/lp/" role="menuitem">LP制作</a>
+        </div>
+        <div class="hd-mega-col">
+          <span class="hd-mega-col-label"><span class="col-label-main">AI活用支援（DX/AX）</span></span>
+          <a href="/ai-automation/" role="menuitem">業務効率化</a>
+          <a href="/ai-automation/" role="menuitem">分析深化</a>
+        </div>
+      </div>
+      </div>
+    </span>
+    <a href="/works/">実績</a>
+    <a href="/voice/">お客さまの声</a>
+    <span class="hd-nav-item">
+      <a href="/company/">会社情報</a>
+      <div class="hd-dropdown" role="menu">
+        <a href="/company/#mission" role="menuitem">Mission / Vision / Value</a>
+        <a href="/company/#representative" role="menuitem">代表メッセージ</a>
+        <a href="/company/#overview" role="menuitem">会社概要</a>
+        <a href="/company/#access" role="menuitem">アクセス</a>
+      </div>
+    </span>
+
+  </nav>
+  <div class="hd-btns">
+    <a href="https://saikatsu-r.jp/" class="hd-btn-external" target="_blank" rel="noopener noreferrer" aria-label="企業の採用活動を成功に導く「サイカツ.R」（別サイトが開きます）">企業の採用活動を成功に導く「サイカツ.R」<svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+    <a href="/contact/" class="hd-btn" aria-label="初回の相談無料">初回の相談無料</a>
+  </div>
+  <button class="hd-hamburger" aria-label="メニューを開く" aria-expanded="false" aria-controls="hd-drawer">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<!-- MOBILE DRAWER -->
+<div class="hd-drawer" id="hd-drawer" role="dialog" aria-label="モバイルメニュー">
+  <div class="hd-drawer-item">
+    <div class="hd-drawer-link" data-drawer-toggle>課題から探す</div>
+    <div class="hd-drawer-sub">
+      <p class="hd-drawer-sub-label">戦略・全体（なんか、うまくいかない…）</p>
+      <a href="/strategy/">事業戦略</a>
+      <a href="/strategy/">ブランディング</a>
+      <a href="/strategy/">WEB戦略</a>
+      <a href="/strategy/">マーケティング戦略</a>
+      <a href="/strategy/">顧客戦略</a>
+      <a href="https://selfachieve.jp/saikatsu_r/" target="_blank" rel="noopener noreferrer">採用戦略<svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-left:4px;opacity:.7"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+      <p class="hd-drawer-sub-label">集客（サイトへの訪問者を増やしたい）</p>
+      <a href="/seo/">SEO対策</a>
+      <a href="/meo/">MEO対策</a>
+      <a href="/ads/">WEB広告</a>
+      <a href="/sns/">SNSマーケティング</a>
+      <a href="/sns/note/">note対策</a>
+      <a href="/ai-seo/">AI検索対策（LLM対策）</a>
+      <p class="hd-drawer-sub-label">成約（問い合わせ・売上を増やしたい）</p>
+      <a href="/website/">ホームページ制作</a>
+      <a href="/website/">分析改善</a>
+      <a href="/website/lp/">LP制作</a>
+      <p class="hd-drawer-sub-label">再販・追客（一度来た人にまた来てほしい）</p>
+      <a href="/sns/line/">LINE</a>
+      <a href="/sns/instagram/">Instagram</a>
+      <a href="/sns/x/">X（旧Twitter）</a>
+      <a href="/sns/youtube/">YouTube</a>
+      <p class="hd-drawer-sub-label">AI活用（AIで業務を効率化・最適化したい）</p>
+      <a href="/ai-automation/">業務効率化</a>
+      <a href="/ai-automation/">分析深化</a>
+    </div>
+  </div>
+  <div class="hd-drawer-item">
+    <div class="hd-drawer-link" data-drawer-toggle>サービス</div>
+    <div class="hd-drawer-sub">
+      <p class="hd-drawer-sub-label">戦略設計</p>
+      <a href="/strategy/">事業戦略</a>
+      <a href="/strategy/">ブランディング</a>
+      <a href="/strategy/">WEB戦略</a>
+      <a href="/strategy/">マーケティング戦略</a>
+      <a href="/strategy/">顧客戦略</a>
+      <a href="https://selfachieve.jp/saikatsu_r/" target="_blank" rel="noopener noreferrer">採用戦略<svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-left:4px;opacity:.7"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+      <p class="hd-drawer-sub-label">集客施策</p>
+      <a href="/seo/">SEO対策</a>
+      <a href="/meo/">MEO対策</a>
+      <a href="/ads/">WEB広告</a>
+      <a href="/sns/">SNSマーケティング</a>
+      <a href="/sns/note/">note対策</a>
+      <a href="/ai-seo/">AI検索対策（LLM対策）</a>
+      <p class="hd-drawer-sub-label">成約</p>
+      <a href="/website/">ホームページ制作</a>
+      <a href="/website/">分析改善</a>
+      <a href="/website/lp/">LP制作</a>
+      <p class="hd-drawer-sub-label">AI活用支援（DX/AX）</p>
+      <a href="/ai-automation/">業務効率化</a>
+      <a href="/ai-automation/">分析深化</a>
+    </div>
+  </div>
+  <div class="hd-drawer-item">
+    <a href="/works/" class="hd-drawer-link no-arrow">実績</a>
+  </div>
+  <div class="hd-drawer-item">
+    <a href="/voice/" class="hd-drawer-link no-arrow">お客さまの声</a>
+  </div>
+  <div class="hd-drawer-item">
+    <div class="hd-drawer-link" data-drawer-toggle="drawer-company">会社情報</div>
+    <div class="hd-drawer-sub" id="drawer-company">
+      <a href="/company/">会社情報 TOP</a>
+      <a href="/company/#mission">Mission / Vision / Value</a>
+      <a href="/company/#representative">代表メッセージ</a>
+      <a href="/company/#overview">会社概要</a>
+      <a href="/company/#access">アクセス</a>
+    </div>
+  </div>
+  <div class="hd-drawer-cta">
+    <a href="#contact" class="hd-btn" aria-label="無料相談を申し込む">無料相談を申し込む</a>
+    <a href="https://saicatsu-r.jp/" class="hd-btn-saicatsu" target="_blank" rel="noopener noreferrer" aria-label="企業の採用活動を成功に導く「サイカツ.R」（別サイトが開きます）">企業の採用活動を成功に導く「サイカツ.R」<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 2L2 10M10 2H5M10 2V7" stroke="#28282D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+  </div>
+  <div class="hd-drawer-sns">
+    <p class="hd-drawer-sns-label">FOLLOW US</p>
+    <div class="hd-drawer-sns-links">
+      <a href="https://www.instagram.com/self.achieve/" class="hd-drawer-sns-link hd-drawer-sns-ig" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="20" height="20" rx="5" stroke="#28282D" stroke-width="1.5"/><circle cx="12" cy="12" r="4" stroke="#28282D" stroke-width="1.5"/><circle cx="17.5" cy="6.5" r="1" fill="#28282D"/></svg>
+      </a>
+      <a href="https://www.tiktok.com/@selfachieve" class="hd-drawer-sns-link hd-drawer-sns-tt" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" stroke="#28282D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="https://x.com/selfachieve" class="hd-drawer-sns-link hd-drawer-sns-x" target="_blank" rel="noopener noreferrer" aria-label="X（旧Twitter）">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 4l16 16M4 20L20 4" stroke="#28282D" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- FIXED MOBILE CTA -->
+<div class="sp-fixed-cta" id="sp-fixed-cta" role="complementary" aria-label="お問い合わせ">
+  <div class="sp-fixed-cta-inner">
+    <a href="/contact/" class="sp-fixed-cta-consult" aria-label="無料相談を申し込む">無料相談を申し込む</a>
+    <a href="tel:0788068338" class="sp-fixed-cta-tel" aria-label="電話番号 078-806-8338">
+      <svg class="sp-fixed-cta-tel-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.61 21 3 13.39 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1.02l-2.2 2.2z" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span class="sp-fixed-cta-tel-num">078-806-8338</span>
+    </a>
+  </div>
+</div>
+
+
+<main id="main" role="main">
+
+  <!-- パンくずリスト（PC） -->
+  <nav class="breadcrumb" aria-label="パンくずリスト">
+    <ol>
+      <li><a href="/">ホーム</a></li>
+      <li><span aria-current="page">お知らせ</span></li>
+    </ol>
+  </nav>
+
+  <!-- ニュース一覧セクション -->
+  <section class="news-list-sec" aria-labelledby="news-list-title">
+    <div class="news-list-inner">
+      <div class="news-list-head">
+        <p class="news-list-eyebrow">NEWS</p>
+        <h1 class="news-list-title" id="news-list-title">
+          お知らせ
+          <span>セルフアチーブからの最新情報</span>
+        </h1>
+      </div>
+
+      <ul class="news-list" role="list">
+        <li class="news-item fu">
+          <a href="/news/20260110/">
+            <span class="news-item-date">2026.01.10</span>
+            <span class="news-item-cat">お知らせ</span>
+            <span class="news-item-title">2026年 営業開始日のご案内</span>
+            <span class="news-item-arrow" aria-hidden="true">→</span>
+          </a>
+        </li>
+        <li class="news-item fu">
+          <a href="/news/20251201/">
+            <span class="news-item-date">2025.12.01</span>
+            <span class="news-item-cat">お知らせ</span>
+            <span class="news-item-title">年末年始休業のご案内</span>
+            <span class="news-item-arrow" aria-hidden="true">→</span>
+          </a>
+        </li>
+        <li class="news-item fu">
+          <a href="/news/20251001/">
+            <span class="news-item-date">2025.10.01</span>
+            <span class="news-item-cat">お知らせ</span>
+            <span class="news-item-title">サービス内容の一部改定について</span>
+            <span class="news-item-arrow" aria-hidden="true">→</span>
+          </a>
+        </li>
+        <li class="news-item fu">
+          <a href="/news/20250701/">
+            <span class="news-item-date">2025.07.01</span>
+            <span class="news-item-cat">お知らせ</span>
+            <span class="news-item-title">オフィス移転のご案内</span>
+            <span class="news-item-arrow" aria-hidden="true">→</span>
+          </a>
+        </li>
+      </ul>
+
+      <div id="news-pagination" class="news-pagination" role="navigation" aria-label="ページネーション"></div>
+    </div>
+  </section>
+
+  <!-- パンくずリスト（SP） -->
+  <nav class="breadcrumb-sp" aria-label="パンくずリスト（スマホ）">
+    <ol>
+      <li><a href="/">ホーム</a></li>
+      <li><span aria-current="page">お知らせ</span></li>
+    </ol>
+  </nav>
+
+</main>
+
+<footer class="footer" role="contentinfo">
+  <div class="footer-top">
+    <div class="footer-logo-wrap">
+      <a href="/" class="footer-logo" aria-label="セルフアチーブ トップページへ">
+        <img src="/assets/logo_color.png" alt="selfachieve Acquisition Agency" width="140" height="30" loading="lazy">
+      </a>
+      <address class="footer-logo-addr">
+        〒658-0032 兵庫県神戸市東灘区向洋町6-9<br>
+        TEL：<a href="tel:0788068338">078-806-8338</a><br>
+        営業時間：平日 9:00〜19:00
+      </address>
+      <div class="footer-sns-block">
+        <p class="footer-sns-label">OFFICIAL SNS</p>
+        <div class="footer-sns" aria-label="公式SNSアカウント">
+          <a href="https://www.instagram.com/self.achieve/" class="footer-sns-link footer-sns-ig" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="20" height="20" rx="5" stroke="#28282D" stroke-width="1.5"/><circle cx="12" cy="12" r="4" stroke="#28282D" stroke-width="1.5"/><circle cx="17.5" cy="6.5" r="1" fill="#28282D"/></svg>
+          </a>
+          <a href="https://www.tiktok.com/@selfachieve" class="footer-sns-link footer-sns-tt" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" stroke="#28282D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="https://x.com/selfachieve" class="footer-sns-link footer-sns-x" target="_blank" rel="noopener noreferrer" aria-label="X（旧Twitter）">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 4l16 16M4 20L20 4" stroke="#28282D" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-logo-related">
+        <span class="footer-related-label">RELATED SERVICE</span>
+        <a href="https://saikatsu-r.jp/" class="footer-related-link" target="_blank" rel="noopener noreferrer" aria-label="企業の採用活動を成功に導く「サイカツ.R」（別サイトが開きます）">企業の採用活動を成功に導く「サイカツ.R」<svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+      </div>
+    </div>
+    <nav class="footer-nav" aria-label="フッターナビゲーション">
+      <div class="footer-nav-group">
+        <p class="footer-nav-title">サービス</p>
+        <a href="/strategy/">WEB戦略設計</a>
+        <a href="/website/">サイト制作・分析改善</a>
+        <a href="/seo/">SEO対策</a>
+        <a href="/meo/">MEO対策</a>
+        <a href="/ai-seo/">AI検索対策（LLM検索対策）</a>
+        <a href="/ads/display/">ディスプレイ広告</a>
+        <a href="/sns/instagram/">Instagram</a>
+        <a href="/sns/tiktok/">TikTok</a>
+        <a href="/sns/x/">X（旧Twitter）</a>
+        <a href="/sns/youtube/">YouTube</a>
+        <a href="/sns/note/">note</a>
+        <a href="/sns/line/">LINE</a>
+        <a href="/ai-automation/">AI業務効率化・導入支援</a>
+      </div>
+      <div class="footer-nav-group">
+        <p class="footer-nav-title">会社情報</p>
+        <a href="/works/">実績</a>
+        <a href="/voice/">お客さまの声</a>
+        <a href="/company/">会社情報</a>
+    
+                <a href="/columns/">コラム</a>
+        <a href="/news/">お知らせ</a>
+      </div>
+      <div class="footer-nav-group">
+        <p class="footer-nav-title">お問い合わせ</p>
+        <a href="/contact/">無料相談のお申し込み</a>
+        <a href="tel:0788068338">078-806-8338（平日 9:00～19:00）</a>
+      </div>
+    </nav>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-right">
+      <a href="/privacy/" class="footer-privacy">プライバシーポリシー</a>
+      <p class="footer-copy">&copy; <span id="copyright-year">2026</span> Self Achieve Inc. All Rights Reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // ページネーション
+  (function(){
+    const PER_PAGE=10;
+    const list=document.querySelector('.news-list');
+    const paginationEl=document.getElementById('news-pagination');
+    if(!list||!paginationEl)return;
+    const allItems=Array.from(list.querySelectorAll('.news-item'));
+    const total=allItems.length;
+    const totalPages=Math.ceil(total/PER_PAGE);
+    let currentPage=1;
+    const obs=new IntersectionObserver(entries=>{
+      entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');obs.unobserve(e.target);}});
+    },{threshold:0.1});
+    function showPage(page){
+      currentPage=page;
+      let visIdx=0;
+      allItems.forEach((item,i)=>{
+        const show=(i>=(page-1)*PER_PAGE)&&(i<page*PER_PAGE);
+        item.style.display=show?'':'none';
+        if(show){
+          item.classList.remove('on');
+          item.style.transitionDelay=(visIdx*0.05)+'s';
+          visIdx++;
+          requestAnimationFrame(()=>requestAnimationFrame(()=>obs.observe(item)));
+        }
+      });
+      renderPagination();
+      window.scrollTo({top:list.closest('.news-list-sec').offsetTop-100,behavior:'smooth'});
+    }
+    function renderPagination(){
+      paginationEl.innerHTML='';
+      if(totalPages<=1)return;
+      const prev=document.createElement('button');
+      prev.className='page-btn prev'+(currentPage===1?' disabled':'');
+      prev.setAttribute('aria-label','前のページ');
+      prev.innerHTML='&#8592; 前へ';
+      prev.addEventListener('click',()=>{if(currentPage>1)showPage(currentPage-1);});
+      paginationEl.appendChild(prev);
+      for(let p=1;p<=totalPages;p++){
+        const btn=document.createElement('button');
+        btn.className='page-btn'+(p===currentPage?' active':'');
+        btn.textContent=p;
+        btn.setAttribute('aria-label',p+'ページ目');
+        if(p===currentPage)btn.setAttribute('aria-current','page');
+        btn.addEventListener('click',()=>{if(p!==currentPage)showPage(p);});
+        paginationEl.appendChild(btn);
+      }
+      const next=document.createElement('button');
+      next.className='page-btn next'+(currentPage===totalPages?' disabled':'');
+      next.setAttribute('aria-label','次のページ');
+      next.innerHTML='次へ &#8594;';
+      next.addEventListener('click',()=>{if(currentPage<totalPages)showPage(currentPage+1);});
+      paginationEl.appendChild(next);
+    }
+    showPage(1);
+  })();
+</script>
+<script src="../assets/master.js"></script>
+</body>
+</html>

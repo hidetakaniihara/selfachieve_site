@@ -1,0 +1,526 @@
+/*
+ * selfachieve Global Typography & Contrast CSS
+ * Version: 2.0.0
+ * Last updated: 2026-04-25
+ *
+ * このファイルはサイト全体のタイポグラフィ・コントラスト基準を定義します。
+ * WordPress移行時は functions.php で wp_enqueue_style() を使用してください。
+ *
+ * ■ カラー基準
+ *   ライト背景: 本文 #333333 / 見出し #000000
+ *   ダーク背景: 本文 #DDDDDD / 見出し・数字 #FFFFFF
+ *
+ * ■ フォントサイズ基準（全デバイス共通）
+ *   本文最小: 16px（PC・SP共通）
+ *   注釈最小: 14px
+ *   パンくず: 14px
+ *   ナビ: 16px
+ *   ボタン: 16px + Bold
+ *
+ * ■ 見出し階層
+ *   H1: 32px〜40px + Bold
+ *   H2: 24px〜28px + Bold
+ *   H3: 18px〜20px + Bold
+ *
+ * ■ 行間基準
+ *   本文: line-height 1.8
+ *   見出し: line-height 1.4〜1.5
+ */
+
+/* ============================================================
+   1. BASE RESET & BODY
+   ============================================================ */
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Noto Sans JP', 'Yu Gothic', '游ゴシック', YuGothic,
+    'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3',
+    'Meiryo', 'メイリオ', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.8;
+  color: #333333;
+  background: #fff;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ============================================================
+   1-B. CURSOR STANDARDIZATION（カーソル標準化）
+   カスタムカーソルを廃止し、ブラウザ標準カーソルに統一。
+   クリック可能な要素のみ pointer を明示。
+   ============================================================ */
+
+/* 全要素：ブラウザ標準カーソル */
+* {
+  cursor: inherit;
+}
+
+body {
+  cursor: default;
+}
+
+/* クリック可能な要素：pointer（手）カーソル */
+a,
+button,
+[role="button"],
+[type="submit"],
+[type="button"],
+[type="reset"],
+select,
+label[for],
+.accordion-trigger,
+.faq-q,
+.tab-btn,
+.modal-trigger {
+  cursor: pointer;
+}
+
+/* テキスト選択可能な要素：text カーソル */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="search"],
+textarea {
+  cursor: text;
+}
+
+/* 非インタラクティブ要素：default カーソル維持 */
+.funnel-stage,
+.funnel-diagram {
+  cursor: default !important;
+}
+
+/* ============================================================
+   2. TYPOGRAPHY SCALE（情報階層）
+   ============================================================ */
+
+/* 本文・説明文 */
+p,
+.body-text,
+.sec-body,
+.entry-content p,
+.wp-content p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #333333;
+}
+
+/* 補足・キャプション */
+small,
+.caption,
+.meta-text,
+.note {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #555555;
+}
+
+/* 注釈（最小サイズ） */
+.annotation,
+.footnote {
+  font-size: 13px;
+  line-height: 1.7;
+  color: #767680;
+}
+
+/* ============================================================
+   3. HEADING HIERARCHY（見出し階層）
+   H1: 32px〜40px / H2: 24px〜28px / H3: 18px〜20px
+   ============================================================ */
+
+/* 見出し共通 */
+h1, h2, h3, h4, h5, h6 {
+  font-style: normal;
+  line-height: 1.4;
+  letter-spacing: -0.02em;
+  color: #000000;
+}
+
+/* H1：ページタイトル */
+h1 {
+  font-size: clamp(32px, 4vw, 40px);
+  font-weight: 700;
+}
+
+/* H2：セクション見出し（サイズのみ。極細線は .sec-h2 と .entry-content h2 に限定） */
+h2 {
+  font-size: clamp(24px, 2.8vw, 28px);
+  font-weight: 700;
+}
+
+/* セクション見出し：余白のみで区切り（線なし） */
+.sec-h2,
+.entry-content h2,
+.wp-content h2 {
+  padding-top: 0;
+  padding-bottom: 0;
+  border-top: none;
+  border-bottom: none;
+}
+
+/* H3：カード内見出し等 */
+h3 {
+  font-size: clamp(18px, 2vw, 20px);
+  font-weight: 700;
+}
+
+/* ============================================================
+   4. NAVIGATION
+   ============================================================ */
+
+/* グローバルナビゲーション */
+.hd-nav a,
+nav a {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+/* モバイルドロワー */
+.hd-drawer-link {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+/* ============================================================
+   5. BREADCRUMB（パンくずリスト）
+   背景色を透明に統一。各ページのインラインCSSを !important で上書き。
+   ============================================================ */
+
+/* PC版パンくず：背景削除・余白調整 */
+.breadcrumb {
+  background: transparent !important;
+  border-bottom: none !important;
+  border-top: none !important;
+  padding-top: 24px !important;
+  padding-bottom: 24px !important;
+}
+
+/* SP版パンくず：背景削除・余白調整 */
+.breadcrumb-sp {
+  background: transparent !important;
+  border-bottom: none !important;
+  border-top: none !important;
+  padding-top: 20px !important;
+  padding-bottom: 20px !important;
+}
+
+/* テキストカラー維持（白背景上のグレー） */
+.breadcrumb li,
+.breadcrumb a,
+.breadcrumb-sp li,
+.breadcrumb-sp a {
+  font-size: 14px;
+  color: #555555;
+  background: none !important;
+}
+
+/* ダーク背景パンくず（実績KV内など） */
+.works-hero-breadcrumb li,
+.works-hero-breadcrumb a,
+.dark-breadcrumb li,
+.dark-breadcrumb a {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+/* ============================================================
+   6. META INFORMATION（実績・記事のメタ情報）
+   ============================================================ */
+
+.meta-label,
+.works-hero-meta-label,
+.card-meta-label,
+.tag-label {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.meta-val,
+.works-hero-meta-val,
+.card-meta-val {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+/* ============================================================
+   7. BUTTONS（CTA）
+   ============================================================ */
+
+.btn,
+.hd-btn,
+.btn-cta,
+button,
+[type="submit"],
+[type="button"] {
+  font-size: 16px;
+  font-weight: 700;
+  min-height: 48px;
+  padding-left: 28px;
+  padding-right: 28px;
+}
+
+/* ============================================================
+   8. LIGHT BACKGROUND TEXT COLORS
+   ライト背景（#fff / #F7F7F5等）上のテキスト
+   ============================================================ */
+
+/* 本文・説明文 */
+.sec-body,
+.featured-card-desc,
+.problem-desc,
+.card-desc,
+.entry-content,
+.wp-content {
+  color: #333333;
+}
+
+/* 補足・サブテキスト */
+.sub-text,
+.card-sub,
+.works-card-client {
+  color: #555555;
+}
+
+/* ============================================================
+   9. DARK BACKGROUND TEXT COLORS
+   ダーク背景（#111111 / #28282D等）上のテキスト
+   WCAG基準: コントラスト比 4.5:1 以上
+   ============================================================ */
+
+/* ダーク背景上の本文（#DDDDDD: コントラスト比 約10:1） */
+.dark-bg p,
+.dark-bg .body-text,
+[style*="background:#111"] p,
+[style*="background:#28282D"] p {
+  color: #DDDDDD;
+}
+
+/* ダーク背景上の補足（rgba(255,255,255,.7): 約7:1） */
+.dark-bg .sub-text,
+.dark-bg small {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+/* ============================================================
+   10. WORDPRESS CMS 本文エリア
+   .entry-content / .wp-content に自動適用
+   ============================================================ */
+
+.entry-content,
+.wp-content,
+.post-body,
+.article-body {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #333333;
+}
+
+.entry-content p,
+.wp-content p,
+.post-body p,
+.article-body p {
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 1.6em;
+}
+
+/* WordPress h2：サイト共通ルール適用 */
+.entry-content h2,
+.wp-content h2 {
+  font-size: clamp(24px, 2.8vw, 28px);
+  font-weight: 700;
+  margin-top: 2.4em;
+  margin-bottom: 0.8em;
+  color: #000000;
+}
+
+/* WordPress h3：サイト共通ルール適用 */
+.entry-content h3,
+.wp-content h3 {
+  font-size: clamp(18px, 2vw, 20px);
+  font-weight: 700;
+  margin-top: 2em;
+  margin-bottom: 0.6em;
+  color: #000000;
+}
+
+.entry-content ul,
+.entry-content ol,
+.wp-content ul,
+.wp-content ol {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #333333;
+  padding-left: 1.5em;
+  margin-bottom: 1.2em;
+}
+
+.entry-content li,
+.wp-content li {
+  font-size: 16px;
+  margin-bottom: 0.4em;
+}
+
+/* ============================================================
+   11. STRATEGY PAGE 固有ルール
+   ファネルセクションの「役割」「ゴール」ラベル
+   ============================================================ */
+
+/* 役割・ゴールラベル（14px〜15px + Bold） */
+.funnel-stage-meta-label {
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.08em;
+  color: #767680;
+}
+
+/* 役割・ゴール詳細テキスト（16px 維持） */
+.funnel-stage-desc,
+.funnel-stage-goal {
+  font-size: 16px !important;
+  line-height: 1.8 !important;
+}
+
+/* 数値下のラベル（実績KV等） */
+.works-hero-meta-label,
+.kv-stat-label {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+/* ============================================================
+   12. ITALIC 完全禁止
+   斜体（Italic）はブランドマナーとして全ページで使用禁止。
+   <em> タグは意味論的強調として使用可能だが、視覚的にはNormalに。
+   ============================================================ */
+
+em,
+i,
+cite,
+dfn,
+address,
+[style*="font-style:italic"],
+[style*="font-style: italic"] {
+  font-style: normal !important;
+}
+
+/* ============================================================
+   13. RESPONSIVE（スマートフォン）
+   本文・ボタン・ナビは全デバイスで 16px 厳守
+   ============================================================ */
+
+@media (max-width: 900px) {
+
+  html {
+    font-size: 16px;
+  }
+
+  body {
+    font-size: 16px;
+    line-height: 1.8;
+  }
+
+  p,
+  .body-text,
+  .sec-body,
+  .entry-content p,
+  .wp-content p {
+    font-size: 16px;
+    line-height: 1.8;
+  }
+
+  small,
+  .caption,
+  .meta-text {
+    font-size: 14px;
+  }
+
+  /* H1：SP */
+  h1 {
+    font-size: clamp(28px, 7vw, 36px);
+  }
+
+  /* H2：SP */
+  h2 {
+    font-size: clamp(20px, 5.5vw, 26px);
+  }
+
+  /* H3：SP */
+  h3 {
+    font-size: clamp(17px, 4.5vw, 19px);
+  }
+
+  .hd-nav a,
+  nav a {
+    font-size: 16px;
+  }
+
+  .hd-drawer-link {
+    font-size: 16px;
+  }
+
+  .breadcrumb-sp li,
+  .breadcrumb-sp a {
+    font-size: 14px;
+  }
+
+  .meta-val,
+  .works-hero-meta-val {
+    font-size: 16px;
+  }
+
+  .btn,
+  .hd-btn,
+  .btn-cta,
+  button,
+  [type="submit"] {
+    font-size: 16px;
+    min-height: 52px;
+  }
+
+  .entry-content,
+  .wp-content,
+  .post-body,
+  .article-body {
+    font-size: 16px;
+  }
+
+  .entry-content p,
+  .wp-content p {
+    font-size: 16px;
+  }
+
+  .entry-content h2,
+  .wp-content h2 {
+    font-size: clamp(20px, 5.5vw, 26px);
+  }
+
+  .entry-content h3,
+  .wp-content h3 {
+    font-size: clamp(17px, 4.5vw, 19px);
+  }
+
+}
+
+@media (max-width: 480px) {
+
+  body {
+    font-size: 16px;
+  }
+
+  p,
+  .body-text,
+  .sec-body {
+    font-size: 16px;
+  }
+
+}
