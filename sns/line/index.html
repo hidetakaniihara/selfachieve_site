@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>LINE構築・運用代行 | 神戸・兵庫の中小企業向けLINEマーケティング | セルフアチーブ</title>
+    <link rel="stylesheet" href="../../assets/style.css">
   <meta name="description" content="LINE構築・運用代行に対応。フォロワーを顧客に変えるLINEマーケティングを神戸・兵庫の中小企業・店舗に特化して提供。アカウント運用から広告まで一貫支援。初回15分無料相談。">
   <meta name="keywords" content="line 運用代行,line 広告代行,インスタグラム 運用代行,インスタグラム 広告,line マーケティング 神戸,line 運用代行 兵庫">
   <meta name="robots" content="index, follow">
@@ -52,1551 +53,13 @@
     }
   ]}
   </script>
-  <style>
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    html{font-size:16px;scroll-behavior:smooth}
-    body{
-      font-family:'Yu Gothic','游ゴシック',YuGothic,'Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3','Meiryo','メイリオ',sans-serif;
-      font-weight:400;
-      color:#28282D;
-      background:#fff;
-      overflow-x:hidden;
-      -webkit-font-smoothing:antialiased;
-      font-size:14px;
-    }
-    img{max-width:100%;height:auto;display:block}
-    a{color:inherit;text-decoration:none}
-    ul,ol{list-style:none}
-    /* ===== HEADER ===== */
-        .hd{
-      position:fixed;top:0;left:0;right:0;
-      height:72px;
-      background:#fff;
-      display:flex;align-items:center;justify-content:space-between;
-      padding:0 48px;
-      z-index:100;
-      border-bottom:1px solid #E8E8E8;
-    }
-    .hd-logo img{height:34px;width:auto}
-    .hd-nav{display:flex;align-items:center;gap:32px}
-    .hd-nav a{font-size:13px;letter-spacing:0.04em;color:#28282D;transition:opacity .2s;padding:14px 0}
-    .hd-nav a:hover{opacity:.5}
-    .hd-btn{
-      display:inline-flex;align-items:center;justify-content:center;
-      height:48px;padding:0 28px;
-      background:#28282D;color:#fff;
-      font-size:13px;letter-spacing:0.08em;font-weight:600;
-      border:1px solid #28282D;
-      transition:background .2s,color .2s;
-    }
-    .hd-btn:hover{background:#fff;color:#28282D}
-    .hd-btn-external{
-      display:inline-flex;align-items:center;justify-content:center;gap:6px;
-      height:48px;padding:0 20px;
-      background:#fff;color:#28282D;
-      font-size:12px;letter-spacing:0.04em;font-weight:600;
-      border:1.5px solid #28282D;
-      transition:background .2s,color .2s;
-      white-space:nowrap;
-      line-height:1.3;
-    }
-    .hd-btn-external:hover{background:#28282D;color:#fff}
-    .hd-btn-external svg{flex-shrink:0;transition:transform .2s}
-    .hd-btn-external:hover svg{transform:translate(2px,-2px)}
-    .hd-btns{display:flex;align-items:center;gap:10px}
-    /* DROPDOWN MENU */
-    .hd-nav-item{position:relative}
-    .hd-nav-item>a{display:flex;align-items:center;gap:4px;cursor:pointer;padding:14px 0}
-    .hd-nav-item>a::after{
-      content:'';
-      display:inline-block;
-      width:6px;height:6px;
-      border-right:1px solid #28282D;
-      border-bottom:1px solid #28282D;
-      transform:rotate(45deg) translateY(-2px);
-      transition:transform .2s;
-    }
-    .hd-nav-item.open>a::after{transform:rotate(-135deg) translateY(-2px)}
-    .hd-dropdown{
-      position:absolute;top:calc(100% + 12px);left:50%;
-      transform:translateX(-50%) translateY(-8px);
-      background:#fff;
-      border:1px solid #E8E8E8;
-      min-width:200px;
-      opacity:0;visibility:hidden;
-      transition:opacity .22s,transform .22s,visibility .22s;
-      z-index:200;
-      box-shadow:0 8px 32px rgba(0,0,0,.08);
-    }
-    .hd-dropdown::before{
-      content:'';
-      position:absolute;top:-14px;left:0;right:0;
-      height:14px;
-    }
-    .hd-nav-item.open .hd-dropdown{
-      opacity:1;visibility:visible;
-      transform:translateX(-50%) translateY(0);
-    }
-    .hd-dropdown a{
-      display:block;
-      padding:12px 20px;
-      font-size:13px;
-      color:#28282D;
-      border-bottom:1px solid #F0F0F0;
-      transition:background .15s;
-      white-space:nowrap;
-    }
-    .hd-dropdown a:last-child{border-bottom:none}
-    .hd-dropdown a:hover{background:#F7F7F7;opacity:1}
-    .hd-dropdown-sub{border-bottom:1px solid #F0F0F0}
-    .hd-dropdown-sub-label{font-size:11px;letter-spacing:.1em;color:#767680;padding:10px 20px 4px;text-transform:uppercase;display:block}
-    .hd-dropdown-sub a{padding:9px 20px 9px 28px;font-size:12px;border-bottom:none}
-    .hd-dropdown-sub:last-child{border-bottom:none}
-    /* MEGA MENU */
-    .hd-mega-wrap{
-      position:fixed;top:72px;left:0;right:0;
-      background:#F5F5F5;
-      border-top:1px solid #E8E8E8;
-      border-bottom:1px solid #E0E0E0;
-      box-shadow:0 12px 40px rgba(0,0,0,.08);
-      opacity:0;visibility:hidden;
-      transition:opacity .22s,transform .22s,visibility .22s;
-      transform:translateY(-8px);
-      z-index:200;
-      padding:20px 0 24px;
-    }
-    .hd-nav-item.open .hd-mega-wrap{
-      opacity:1;visibility:visible;
-      transform:translateY(0);
-    }
-    .hd-mega{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-      max-width:1200px;
-      margin:0 auto;
-      width:100%;
-      gap:12px;
-      padding:0 24px;
-    }
-    .hd-mega::before{
-      content:'';
-      position:absolute;top:-14px;left:0;right:0;
-      height:14px;
-    }
-    .hd-mega-col{
-      background:#fff;
-      border:1px solid #E8E8E8;
-      padding:18px 20px 14px;
-    }
-    .hd-mega-col-label{
-      font-size:13px;letter-spacing:.04em;
-      white-space:nowrap;
-      font-weight:700;
-      color:#1A1A1E;
-      display:block;
-      padding-bottom:10px;
-      margin-bottom:10px;
-      border-bottom:2px solid #1A1A1E;
-      overflow:hidden;
-      text-overflow:ellipsis;
-    }
-    .hd-mega-col a{
-      display:flex;
-      align-items:center;
-      gap:6px;
-      padding:12px 0;
-      font-size:14px;
-      color:#28282D;
-      border-bottom:1px solid #F0F0F0;
-      transition:color .15s;
-      white-space:nowrap;
-    }
-    .hd-mega-col-label-link{
-      color:#28282D !important;
-      text-decoration:none;
-      transition:opacity .2s !important;
-      border-bottom:2px solid #1A1A1E !important;
-      padding-bottom:10px !important;
-    }
-    .hd-mega-col-label-link:hover{opacity:.6}
-
-    .hd-mega-col a:last-child{border-bottom:none}
-    .hd-mega-col a::before{
-      content:'';
-      width:4px;height:4px;
-      border-radius:50%;
-      background:#1A1A1E;
-      flex-shrink:0;
-      opacity:.25;
-      transition:opacity .15s;
-    }
-    .hd-mega-col a:hover{color:#000;background:none}
-    .hd-mega-col a:hover::before{opacity:1}
-    /* HAMBURGER */
-    .hd-hamburger{
-      display:none;
-      flex-direction:column;justify-content:center;align-items:center;
-      width:44px;height:44px;
-      cursor:pointer;
-      gap:6px;
-      background:none;border:none;padding:0;
-    }
-    .hd-hamburger span{
-      display:block;width:24px;height:1px;
-      background:#28282D;
-      transition:transform .3s,opacity .3s;
-    }
-    .hd-hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
-    .hd-hamburger.open span:nth-child(2){opacity:0}
-    .hd-hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-    /* MOBILE DRAWER */
-    .hd-drawer{
-      display:none;
-      position:fixed;top:72px;left:0;right:0;bottom:0;
-      background:#fff;
-      overflow-y:auto;
-      z-index:99;
-      padding:24px 0 80px;
-      transform:translateX(100%);
-      transition:transform .3s cubic-bezier(.16,1,.3,1);
-    }
-    .hd-drawer.open{transform:translateX(0)}
-    .hd-drawer-item{border-bottom:1px solid #F0F0F0}
-    .hd-drawer-link{
-      display:flex;align-items:center;justify-content:space-between;
-      padding:18px 24px;
-      font-size:15px;
-      color:#28282D;
-      cursor:pointer;
-    }
-    .hd-drawer-link::after{
-      content:'';
-      display:block;width:8px;height:8px;
-      border-right:1px solid #28282D;
-      border-bottom:1px solid #28282D;
-      transform:rotate(45deg);
-      transition:transform .2s;
-      flex-shrink:0;
-    }
-    .hd-drawer-link.no-arrow::after{display:none}
-    .hd-drawer-link.open::after{transform:rotate(-135deg)}
-    .hd-drawer-sub{
-      display:none;
-      background:#F7F7F7;
-      padding:8px 0;
-    }
-    .hd-drawer-sub.open{display:block}
-    .hd-drawer-sub a{
-      display:block;
-      padding:13px 24px 13px 36px;
-      font-size:13px;
-      color:#28282D;
-      border-bottom:1px solid #EFEFEF;
-    }
-    .hd-drawer-sub a:last-child{border-bottom:none}
-    .hd-drawer-sub-label{
-      font-size:11px;letter-spacing:.1em;
-      color:#767680;padding:12px 24px 4px 36px;
-      text-transform:uppercase;
-    }
-    .hd-drawer-cta{
-      padding:24px;
-      display:flex;flex-direction:column;gap:12px;
-    }
-    .hd-drawer-cta .hd-btn{
-      display:flex;width:100%;justify-content:center;
-      height:52px;font-size:14px;
-    }
-    .hd-drawer-cta .hd-btn-saicatsu{
-      display:flex;width:100%;justify-content:center;align-items:center;gap:6px;
-      height:52px;font-size:13px;
-      background:#fff;color:#28282D;
-      border:1.5px solid #28282D;
-      text-decoration:none;font-weight:500;
-      transition:background .2s,color .2s;
-      letter-spacing:.04em;
-    }
-    .hd-drawer-cta .hd-btn-saicatsu:hover{background:#28282D;color:#fff}
-    .hd-drawer-cta .hd-btn-saicatsu:hover svg path{stroke:#fff}
-    .hd-drawer-sns{
-      padding:20px 24px 32px;
-      border-top:1px solid #F0F0F0;
-      display:flex;flex-direction:column;align-items:center;gap:14px;
-    }
-    .hd-drawer-sns-label{font-size:10px;letter-spacing:.18em;color:#767680;font-weight:600}
-    .hd-drawer-sns-links{display:flex;align-items:center;justify-content:center;gap:12px}
-    .hd-drawer-sns-link{
-      display:flex;align-items:center;justify-content:center;
-      width:44px;height:44px;
-      border:1px solid #D8D8DC;
-      border-radius:50%;
-      text-decoration:none;
-      transition:background .2s,border-color .2s;
-    }
-    .hd-drawer-sns-ig:hover{background:#E1306C;border-color:#E1306C}
-    .hd-drawer-sns-tt:hover{background:linear-gradient(135deg,#69C9D0 0%,#EE1D52 100%);border-color:transparent}
-    .hd-drawer-sns-x:hover{background:#000;border-color:#000}
-    .hd-drawer-link::after{
-      content:'';
-      display:block;width:8px;height:8px;
-      border-right:1px solid #28282D;
-      border-bottom:1px solid #28282D;
-      transform:rotate(45deg);
-      transition:transform .2s;
-      flex-shrink:0;
-    }
-    .hd-drawer-link.no-arrow::after{display:none}
-    .hd-drawer-link.open::after{transform:rotate(-135deg)}
-    .hd-drawer-sub{
-      display:none;
-      background:#F7F7F7;
-      padding:8px 0;
-    }
-    .hd-drawer-sub.open{display:block}
-    .hd-drawer-sub a{
-      display:block;
-      padding:13px 24px 13px 36px;
-      font-size:13px;
-      color:#28282D;
-      border-bottom:1px solid #EFEFEF;
-    }
-    .hd-drawer-sub a:last-child{border-bottom:none}
-    .hd-drawer-sub-label{
-      font-size:11px;letter-spacing:.1em;
-      color:#767680;padding:12px 24px 4px 36px;
-      text-transform:uppercase;
-    }
-    .hd-drawer-cta{
-      padding:24px;
-      display:flex;flex-direction:column;gap:12px;
-    }
-    .hd-drawer-cta .hd-btn{
-      display:flex;width:100%;justify-content:center;
-      height:52px;font-size:14px;
-    }
-    .hd-btn-saicatsu{
-      display:flex;width:100%;justify-content:center;align-items:center;gap:6px;
-      height:52px;font-size:13px;
-      background:#fff;color:#28282D;
-      border:1.5px solid #28282D;
-      text-decoration:none;font-weight:500;
-      transition:background .2s,color .2s;
-      letter-spacing:.04em;
-    }
-    .hd-btn-saicatsu:hover{background:#28282D;color:#fff}
-    .hd-btn-saicatsu:hover svg path{stroke:#fff}
-    .hd-drawer-sns{
-      padding:20px 24px 32px;
-      border-top:1px solid #F0F0F0;
-      display:flex;flex-direction:column;align-items:center;gap:14px;
-    }
-    .hd-drawer-sns-label{
-      font-size:10px;letter-spacing:.18em;color:#767680;font-weight:600;
-    }
-    .hd-drawer-sns-links{
-      display:flex;align-items:center;justify-content:center;gap:12px;
-    }
-    .hd-drawer-sns-link{
-      display:flex;align-items:center;justify-content:center;
-      width:44px;height:44px;
-      border:1px solid #D8D8DC;
-      border-radius:50%;
-      text-decoration:none;
-      transition:background .2s,border-color .2s;
-    }
-    .hd-drawer-sns-ig:hover{background:#E1306C;border-color:#E1306C}
-    .hd-drawer-sns-tt:hover{background:linear-gradient(135deg,#69C9D0 0%,#EE1D52 100%);border-color:transparent}
-    .hd-drawer-sns-x:hover{background:#000;border-color:#000}
-    /* CURSOR */
-    #cursor-dot{
-      position:fixed;top:0;left:0;width:6px;height:6px;
-      background:#28282D;border-radius:50%;
-      pointer-events:none;z-index:9999;
-      transform:translate(-50%,-50%);
-    }
-    #cursor-ring{
-      position:fixed;top:0;left:0;width:32px;height:32px;
-      border:1.5px solid rgba(40,40,45,.4);border-radius:50%;
-      pointer-events:none;z-index:9998;
-      transform:translate(-50%,-50%);
-      transition:width .2s,height .2s,border-color .2s;
-    }
-    #cursor-ring.is-hovering{width:48px;height:48px;border-color:rgba(40,40,45,.2)}
-    #cursor-ring.is-cta{width:56px;height:56px;background:rgba(6,199,85,.08);border-color:rgba(6,199,85,.5)}
-    @media(hover:none){#cursor-dot,#cursor-ring{display:none}}
-    /* SP FIXED CTA */
-    .sp-fixed-cta{
-      display:none;
-      position:fixed;
-      bottom:0;left:0;right:0;
-      background:#28282D;
-      padding:12px 16px;
-      padding-bottom:calc(12px + env(safe-area-inset-bottom));
-      z-index:90;
-      box-shadow:0 -2px 12px rgba(0,0,0,.15);
-      transform:translateY(100%);
-      transition:transform .3s ease,opacity .3s ease;
-      opacity:0;
-    }
-    .sp-fixed-cta.visible{
-      transform:translateY(0);
-      opacity:1;
-    }
-    .sp-fixed-cta-inner{
-      display:flex;
-      align-items:center;
-      gap:10px;
-    }
-    .sp-fixed-cta-consult{
-      flex:1;
-      display:flex;align-items:center;justify-content:center;
-      height:48px;
-      background:#fff;
-      color:#28282D;
-      font-size:14px;
-      font-weight:600;
-      text-decoration:none;
-      border-radius:4px;
-      letter-spacing:.02em;
-    }
-    .sp-fixed-cta-tel{
-      display:flex;align-items:center;justify-content:center;gap:6px;
-      height:48px;
-      padding:0 16px;
-      border:1.5px solid rgba(255,255,255,.4);
-      border-radius:4px;
-      color:#fff;
-      text-decoration:none;
-      white-space:nowrap;
-    }
-    .sp-fixed-cta-tel-icon{
-      flex-shrink:0;
-    }
-    .sp-fixed-cta-tel-num{font-size:13px;font-weight:500;letter-spacing:.03em}
-    /* ===== FADE UP ===== */
-    .fu{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
-    .fu.on{opacity:1;transform:translateY(0)}
-    /* ===== COMMON ===== */
-    .sec-eyebrow{display:block;font-size:12px;letter-spacing:.15em;color:#767680;font-weight:700;text-transform:uppercase;margin-bottom:20px}
-    .sec-h2{font-size:clamp(28px,3.5vw,48px);font-weight:700;line-height:1.35;letter-spacing:-.03em;color:#28282D;margin-bottom:20px}
-    .sec-body{font-size:15px;line-height:1.9;color:#4A4A50;margin-top:20px}
-    .btn-primary{
-      display:inline-flex;align-items:center;justify-content:center;
-      height:56px;padding:0 36px;
-      background:#28282D;color:#fff;
-      font-size:14px;font-weight:600;letter-spacing:.06em;
-      border:1.5px solid #28282D;
-      transition:background .2s,color .2s;
-    }
-    .btn-primary:hover{background:#fff;color:#28282D}
-    .btn-cta{
-      display:inline-flex;align-items:center;justify-content:center;
-      height:60px;padding:0 48px;
-      background:#06C755;color:#fff;
-      font-size:15px;font-weight:700;letter-spacing:.06em;
-      transition:opacity .2s;
-    }
-    .btn-cta:hover{opacity:.85}
-    /* ===== BREADCRUMB ===== */
-    .breadcrumb{
-      max-width:1100px;margin:0 auto;
-      padding:16px 40px;
-    }
-    .breadcrumb ol{display:flex;flex-wrap:wrap;gap:4px;align-items:center}
-    .breadcrumb li{display:flex;align-items:center;gap:4px;font-size:12px;color:#9B9BA0}
-    .breadcrumb li::after{content:'›';color:#C8C8D0}
-    .breadcrumb li:last-child::after{display:none}
-    .breadcrumb a{color:#9B9BA0;transition:color .2s}
-    .breadcrumb a:hover{color:#28282D}
-    .breadcrumb span{color:#4A4A50}
-    .breadcrumb-sp{display:none;padding:24px 24px 0;border-top:1px solid #E8E8E8;margin-top:0}
-    .breadcrumb-sp ol{display:flex;flex-wrap:wrap;gap:4px;align-items:center}
-    .breadcrumb-sp li{display:flex;align-items:center;gap:4px;font-size:11px;color:#9B9BA0}
-    .breadcrumb-sp li::after{content:'›';color:#C8C8D0}
-    .breadcrumb-sp li:last-child::after{display:none}
-    .breadcrumb-sp a{color:#9B9BA0}
-    .breadcrumb-sp span{color:#4A4A50}
-    /* ===== KV ===== */
-    .kv{
-      min-height:100vh;
-      background:#1A1A1F;
-      display:flex;align-items:center;
-      padding-top:72px;
-      overflow:hidden;
-      position:relative;
-    }
-    .kv::before{
-      content:'';
-      position:absolute;inset:0;
-      background:radial-gradient(ellipse 60% 80% at 70% 50%, rgba(6,199,85,.12) 0%, transparent 70%);
-      pointer-events:none;
-    }
-    .kv-inner{
-      max-width:1200px;width:100%;
-      display:grid;
-      grid-template-columns:1fr;
-      gap:0;
-      align-items:center;
-      position:relative;z-index:1;
-      min-height:520px;
-      padding:80px 80px 60px;
-      margin:0 auto;
-    }
-    .kv-left{position:relative;z-index:2;max-width:900px}
-    .kv-eyebrow{font-size:11px;letter-spacing:.18em;color:#06C755;font-weight:700;text-transform:uppercase;margin-bottom:24px;display:flex;align-items:center;gap:8px;}
-    .kv-eyebrow svg{flex-shrink:0;}
-    .kv-service-label{
-      display:block;
-      font-size:clamp(17px,1.8vw,20px);
-      font-weight:600;
-      color:#06C755;
-      letter-spacing:.04em;
-      margin-bottom:28px;
-    }
-    .kv-h1{
-      font-size:clamp(40px,5.5vw,80px);
-      font-weight:800;line-height:1.15;
-      letter-spacing:-.04em;
-      color:#fff;
-      margin-bottom:28px;
-      position:relative;z-index:3;
-      white-space:normal;
-    }
-    .kv-sub{font-size:15px;line-height:1.9;color:#fff;margin-bottom:40px}
-    .kv-actions{display:flex;align-items:center;gap:24px;flex-wrap:wrap;margin-bottom:40px}
-    .kv-tel-wrap{display:flex;flex-direction:column;gap:4px}
-    .kv-tel-label{font-size:11px;letter-spacing:.08em;color:rgba(255,255,255,.5)}
-    .kv-tel{font-size:20px;font-weight:700;color:#fff;letter-spacing:.04em}
-
-    .kv-right{
-      display:block;
-      position:absolute;
-      top:50%;
-      right:-60px;
-      transform:translateY(-50%);
-      width:560px;
-      height:560px;
-      pointer-events:none;
-      z-index:0;
-    }
-    .kv-right.fu.on{transform:translateY(-50%)}
-    .kv-splash{
-      width:100%;
-      height:100%;
-      object-fit:contain;
-      filter:drop-shadow(0 0 60px rgba(6,199,85,.4));
-    }
-    /* ===== CASE STUDY (SLIDER) ===== */
-    .case-sec{padding:120px 0 120px;background:#fff;overflow:hidden;border-bottom:1px solid #D8D8D8}
-    .case-inner{max-width:1100px;margin:0 auto;padding:0 40px}
-    .case-head{text-align:center;margin-bottom:72px}
-    .case-note{
-      display:inline-flex;align-items:flex-start;gap:10px;
-      background:#F5F5F3;
-      border-left:3px solid #06C755;
-      padding:12px 16px;
-      font-size:13px;color:#4A4A50;line-height:1.7;
-      margin-top:20px;
-    }
-    .case-note::before{content:"\26A0";color:#06C755;font-size:14px;flex-shrink:0;margin-top:1px}
-    /* Case Grid */
-    .case-swiper-wrap{
-      max-width:1100px;
-      margin:0 auto;
-      padding:0 40px;
-    }
-    .case-swiper{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:2px;
-    }
-
-    .case-screenshot{
-      width:100%;
-      aspect-ratio:9/6.5;
-      overflow:hidden;
-      background:#F0F0F0;
-      margin-bottom:0;
-      position:relative;
-      flex-shrink:0;
-    }
-    .case-screenshot img{
-      width:100%;height:100%;object-fit:cover;display:block;
-    }
-    .case-screenshot-placeholder{
-      width:100%;height:100%;
-      display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;
-      color:#ABABAB;
-    }
-    .case-screenshot-placeholder svg{opacity:.4}
-    .case-screenshot-placeholder span{font-size:11px;letter-spacing:.06em;color:#ABABAB}
-    .case-card{
-      background:#fff;
-      border:1px solid #E8E8E8;
-      padding:0;
-      height:100%;
-      display:flex;flex-direction:column;
-      transition:background .2s,box-shadow .2s;
-      overflow:hidden;
-    }
-    .case-card-body{
-      padding:32px 28px;
-      display:flex;flex-direction:column;flex:1;
-    }
-    .case-card:hover{box-shadow:0 4px 24px rgba(0,0,0,.06)}
-    .case-card:hover .case-card-body{background:#F7F7F5}
-    .case-industry{
-      display:inline-flex;align-items:center;
-      padding:4px 12px;
-      background:#F0F0F0;
-      font-size:11px;letter-spacing:.08em;color:#4A4A50;font-weight:600;
-      margin-bottom:24px;
-    }
-    .case-overview{font-size:14px;line-height:1.8;color:#4A4A50;margin-bottom:32px;flex:1}
-    .case-results{display:flex;flex-direction:column;gap:16px}
-    .case-result-item{border-top:1px solid #E8E8E8;padding-top:16px}
-    .case-result-num{
-      font-size:clamp(40px,4.5vw,64px);
-      font-weight:700;line-height:1;
-      color:#06C755;
-      letter-spacing:-.03em;
-      margin-bottom:4px;
-    }
-    .case-result-num span{font-size:.45em;font-weight:700;vertical-align:super}
-    .case-result-label{font-size:12px;color:#9B9BA0;letter-spacing:.04em}
-    .case-result-desc{font-size:13px;color:#4A4A50;line-height:1.6;margin-top:4px}
-    /* Case nav (hidden) */
-    .case-swiper-nav{display:none}
-    /* ===== WHAT IS ===== */
-    .what-sec{padding:120px 40px;background:#EBEBEA;border-top:1px solid #D8D8D8}
-    .what-inner{max-width:1100px;margin:0 auto}
-    .what-head{text-align:center;margin-bottom:72px}
-    .what-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;background:#E8E8E8}
-    .what-card{
-      background:#fff;
-      padding:48px 40px;
-    }
-    .what-card-tag{
-      display:inline-flex;align-items:center;gap:8px;
-      padding:6px 16px;
-      background:#28282D;color:#fff;
-      font-size:11px;letter-spacing:.12em;font-weight:700;
-      margin-bottom:28px;
-    }
-    .what-card-tag.ads{background:#06C755}
-    .what-card-h3{font-size:clamp(20px,2.5vw,28px);font-weight:700;line-height:1.3;margin-bottom:16px}
-    .what-card-desc{font-size:14px;line-height:1.9;color:#4A4A50;margin-bottom:32px}
-    .what-card-desc-lead{
-      display:block;
-      font-size:clamp(14px,1.2vw,15px);
-      font-weight:700;
-      color:#28282D;
-      line-height:1.7;
-      margin-bottom:12px;
-      padding:14px 18px;
-      background:#F7F7F5;
-      border-left:3px solid #06C755;
-    }
-    /* ===== CASE RESULT BANNER ===== */
-    /* ============================================================
-       A-1：数値の流れ込み型バナー
-    ============================================================ */
-    .case-result-banner{
-      background:#FAFAFA;
-      padding:80px 0;
-      overflow:hidden;
-      position:relative;
-      border-bottom:1px solid #D8D8D8;
-    }
-    .case-result-banner::before{
-      content:'';
-      position:absolute;left:0;top:0;bottom:0;width:4px;
-      background:linear-gradient(180deg,#06C755,#8B5CF6);
-    }
-    .case-result-banner-inner{
-      max-width:1200px;margin:0 auto;padding:0 48px;
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:64px;
-      align-items:center;
-    }
-    /* 業種タグ */
-    .crb-industries{
-      opacity:0;transform:translateX(30px);
-      transition:opacity .8s ease .5s, transform .8s ease .5s;
-    }
-    .crb-industries.visible{opacity:1;transform:translateX(0)}
-    .crb-industries-label{
-      font-size:11px;font-weight:700;letter-spacing:.18em;
-      color:#888;margin-bottom:16px;
-      display:flex;align-items:center;gap:8px;
-    }
-    .crb-industries-label::before{content:'';width:20px;height:1px;background:#ccc;}
-    .crb-tag-list{
-      display:flex;flex-wrap:wrap;gap:8px;
-    }
-    .crb-tag{
-      display:inline-block;
-      padding:7px 14px;
-      border:1px solid #D8D8D8;
-      border-radius:2px;
-      font-size:13px;font-weight:500;
-      color:#444;
-      background:#fff;
-      line-height:1.4;
-      transition:border-color .2s, color .2s, background .2s;
-    }
-    .crb-tag:hover{
-      border-color:#06C755;
-      color:#06C755;
-      background:#FFF0F6;
-    }
-    .crb-tag.crb-tag-more{
-      border-style:dashed;
-      color:#888;
-      background:transparent;
-    }
-    /* 左：数値 */
-    .crb-metrics{display:flex;flex-direction:column;gap:32px}
-    .crb-metric-item{
-      display:flex;align-items:baseline;gap:16px;
-      opacity:0;transform:translateX(-40px);
-      transition:opacity .7s ease, transform .7s ease;
-    }
-    .crb-metric-item.visible{opacity:1;transform:translateX(0)}
-    .crb-metric-item:nth-child(2){transition-delay:.15s}
-    .crb-metric-item:nth-child(3){transition-delay:.3s}
-    .crb-metric-wrap{}
-    .crb-metric-numrow{display:flex;align-items:baseline;gap:4px}
-    .crb-metric-num{
-      font-family:'Montserrat',sans-serif;
-      font-size:clamp(48px,6vw,80px);font-weight:900;
-      color:#28282D;line-height:1;
-      position:relative;
-    }
-    .crb-metric-num::after{
-      content:'';
-      position:absolute;bottom:-4px;left:0;right:0;height:3px;
-      background:linear-gradient(90deg,#06C755,#8B5CF6);
-      transform:scaleX(0);transform-origin:left;
-      transition:transform .5s ease .4s;
-    }
-    .crb-metric-item.visible .crb-metric-num::after{transform:scaleX(1)}
-    .crb-metric-unit{
-      font-family:'Montserrat',sans-serif;
-      font-size:clamp(20px,2.5vw,32px);font-weight:700;color:#28282D;
-    }
-    .crb-metric-label{
-      font-size:14px;color:#28282D;font-weight:600;letter-spacing:.03em;margin-top:8px;
-    }
-    .crb-metric-note{
-      font-size:13px;color:#666;margin-top:3px;
-    }
-    /* 右：コピー */
-    .crb-copy{
-      opacity:0;transform:translateX(30px);
-      transition:opacity .8s ease .3s, transform .8s ease .3s;
-    }
-    .crb-copy.visible{opacity:1;transform:translateX(0)}
-    .crb-eyebrow{
-      font-family:'Montserrat',sans-serif;
-      font-size:10px;font-weight:700;letter-spacing:.2em;
-      color:#06C755;margin-bottom:20px;
-      display:flex;align-items:center;gap:8px;
-    }
-    .crb-eyebrow::before{content:'';width:24px;height:1px;background:#06C755}
-    .crb-headline{
-      font-size:clamp(28px,3.5vw,48px);font-weight:900;line-height:1.25;
-      margin-bottom:24px;color:#28282D;
-    }
-    .crb-headline em{
-      font-style:normal;
-      background:linear-gradient(135deg,#06C755,#8B5CF6);
-      -webkit-background-clip:text;-webkit-text-fill-color:transparent;
-      background-clip:text;
-    }
-    .crb-body{
-      font-size:14px;color:#555;line-height:1.8;margin-bottom:32px;
-      white-space:nowrap;
-    }
-    .crb-cta{
-      display:inline-flex;align-items:center;gap:10px;
-      background:linear-gradient(135deg,#06C755,#8B5CF6);
-      color:#fff;font-size:14px;font-weight:700;
-      padding:16px 32px;border-radius:2px;
-      text-decoration:none;
-      transition:opacity .2s,transform .2s;
-    }
-    .crb-cta:hover{opacity:.85;transform:translateY(-1px)}
-    .what-card-features{display:flex;flex-direction:column;gap:10px}
-    .what-card-feature{
-      display:flex;align-items:flex-start;gap:10px;
-      font-size:13px;color:#28282D;line-height:1.6;
-    }
-    .what-card-feature::before{
-      content:'';display:block;flex-shrink:0;
-      width:6px;height:6px;border-radius:50%;
-      background:#06C755;margin-top:6px;
-    }
-    /* ===== VOICE ===== */
-    .voice-sec{background:#F7F7F7;border-top:1px solid #E8E8E8}
-    .voice-head{
-      padding:120px 80px 72px;
-      border-top:1px solid #E8E8E8;
-      display:flex;align-items:flex-end;justify-content:space-between;
-    }
-    .voice-grid{
-      display:grid;grid-template-columns:repeat(3,1fr);
-      border-top:1px solid #E8E8E8;
-    }
-    .voice-card{border-right:1px solid #E8E8E8;overflow:hidden;transition:background .2s}
-    .voice-card:last-child{border-right:none}
-    .voice-card:hover{background:#EFEFEF}
-    .voice-link{display:block;text-decoration:none;color:inherit}
-    .voice-avatar{
-      aspect-ratio:3/2;overflow:hidden;
-      background:#E8E8E8;
-    }
-    .voice-avatar img{width:100%;height:100%;object-fit:cover;object-position:center top;transition:transform .5s ease}
-    .voice-card:hover .voice-avatar img{transform:scale(1.04)}
-    .voice-body{
-      padding:28px 36px 36px;
-      border-top:1px solid #E8E8E8;
-    }
-    .voice-quote{font-size:14px;line-height:1.9;color:#28282D;margin-bottom:24px}
-    .voice-meta{border-top:1px solid #E8E8E8;padding-top:16px}
-    .voice-co{font-size:12px;letter-spacing:.06em;color:#4A4A50;margin-bottom:4px}
-    .voice-name{font-size:14px;font-weight:500;color:#28282D}
-    .voice-more{font-size:12px;color:#767680;margin-top:8px}
-    .view-all{
-      display:inline-flex;align-items:center;gap:6px;
-      font-size:13px;color:#28282D;letter-spacing:.04em;
-      border-bottom:1px solid #28282D;padding-bottom:2px;
-      transition:opacity .2s;
-    }
-    .view-all:hover{opacity:.5}
-    /* ===== CTA (MID) ===== */
-    .cta-mid-sec{
-      padding:80px 40px;
-      background:#28282D;
-    }
-    .cta-mid-inner{
-      max-width:800px;margin:0 auto;
-      text-align:center;
-    }
-    .cta-mid-eyebrow{display:block;font-size:11px;letter-spacing:.16em;color:#06C755;font-weight:700;text-transform:uppercase;margin-bottom:20px}
-    .cta-mid-h2{font-size:clamp(24px,3vw,36px);font-weight:700;color:#fff;line-height:1.3;margin-bottom:16px}
-    .cta-mid-body{font-size:14px;color:rgba(255,255,255,.65);line-height:1.8;margin-bottom:36px}
-    .cta-mid-actions{display:flex;align-items:center;justify-content:center;gap:24px;flex-wrap:wrap}
-    .cta-mid-tel-wrap{display:flex;flex-direction:column;gap:4px;align-items:center}
-    .cta-mid-tel-label{font-size:11px;letter-spacing:.08em;color:rgba(255,255,255,.5)}
-    .cta-mid-tel{font-size:22px;font-weight:700;color:#fff;letter-spacing:.04em}
-    /* ===== PLAN ===== */
-    .plan-sec{padding:120px 40px;background:#fff}
-    .plan-inner{max-width:1100px;margin:0 auto}
-    .plan-head{margin-bottom:64px}
-    /* 広告費用表 */
-    .plan-ad-fee-table{
-      width:100%;border:1px solid #E8E8E8;
-      margin-bottom:8px;
-    }
-    .plan-ad-fee-row{
-      display:flex;align-items:center;
-      border-bottom:1px solid #E8E8E8;
-    }
-    .plan-ad-fee-row:last-child{border-bottom:none}
-    .plan-ad-fee-range{
-      flex:0 0 45%;padding:12px 16px;
-      border-right:1px solid #E8E8E8;
-      font-size:14px;color:#4A4A50;line-height:1.4;
-    }
-    .plan-ad-fee-price{
-      flex:1;padding:12px 16px;
-      font-size:clamp(18px,2vw,24px);font-weight:700;
-      color:#28282D;letter-spacing:-.01em;
-    }
-    .plan-ad-fee-price span{font-size:.55em;font-weight:400;color:#9B9BA0;vertical-align:middle}
-    .plan-ad-fee-percent{
-      color:#3B82F6;
-      font-size:clamp(16px,1.8vw,22px);
-    }
-    /* タブ切り替え */
-    .plan-tabs{
-      display:flex;gap:0;
-      margin-bottom:48px;
-      border-bottom:2px solid #E8E8E8;
-    }
-    .plan-tab-btn{
-      flex:1;
-      padding:18px 24px;
-      font-size:15px;font-weight:700;letter-spacing:.02em;
-      color:#9B9BA0;
-      background:transparent;
-      border:none;cursor:pointer;
-      position:relative;
-      transition:color .2s;
-      text-align:center;
-    }
-    .plan-tab-btn::after{
-      content:'';
-      position:absolute;bottom:-2px;left:0;right:0;
-      height:2px;
-      background:#06C755;
-      transform:scaleX(0);
-      transition:transform .25s;
-    }
-    .plan-tab-btn.is-active{color:#28282D}
-    .plan-tab-btn.is-active::after{transform:scaleX(1)}
-    .plan-tab-panel{display:none}
-    .plan-tab-panel.is-active{display:block}
-    /* プランカードグリッド */
-    .plan-grid{
-      display:grid;grid-template-columns:repeat(2,1fr);
-      gap:2px;background:#E8E8E8;
-      margin-bottom:2px;
-    }
-    .plan-grid.plan-grid-3{grid-template-columns:repeat(3,1fr)}
-    .plan-card{
-      background:#fff;
-      padding:36px 28px 36px;
-      display:flex;flex-direction:column;
-      transition:background .2s;
-      position:relative;
-    }
-    .plan-card:hover{background:#FAFAFA}
-
-    .plan-type{font-size:10px;letter-spacing:.14em;color:#9B9BA0;font-weight:700;margin-bottom:12px;text-transform:uppercase}
-    .plan-name{font-size:clamp(20px,2.2vw,28px);font-weight:700;line-height:1.2;margin-bottom:8px}
-    .plan-tagline{font-size:13px;color:#4A4A50;line-height:1.6;margin-bottom:24px}
-    .plan-price-block{margin-bottom:24px;padding-bottom:24px;border-bottom:1px solid #E8E8E8}
-    .plan-price-label{font-size:11px;letter-spacing:.1em;color:#9B9BA0;font-weight:700;margin-bottom:8px}
-    .plan-price{font-size:clamp(26px,2.8vw,38px);font-weight:700;color:#28282D;line-height:1;letter-spacing:-.02em}
-    .plan-price span{font-size:.38em;font-weight:400;color:#9B9BA0;vertical-align:middle;letter-spacing:0}
-    .plan-price-note{font-size:12px;color:#9B9BA0;margin-top:8px;line-height:1.6}
-    /* 料金内訳テーブル */
-    .plan-fee-table{width:100%;border:1px solid #E8E8E8;margin-bottom:32px;font-size:13px}
-    .plan-fee-row{display:flex;border-bottom:1px solid #E8E8E8}
-    .plan-fee-row:last-child{border-bottom:none}
-    .plan-fee-row span{flex:1;padding:10px 14px;line-height:1.5}
-    .plan-fee-row span:first-child{border-right:1px solid #E8E8E8;color:#5A5A60;flex:0 0 40%}
-    .plan-fee-header{background:#F7F7F5}
-    .plan-fee-header span{font-size:11px;letter-spacing:.08em;color:#9B9BA0;font-weight:700}
-    .plan-fee-price{font-weight:700;color:#28282D!important}
-    .plan-features{display:flex;flex-direction:column;gap:8px;margin-bottom:28px;flex:1}
-    .plan-feature{
-      display:flex;align-items:flex-start;gap:8px;
-      font-size:13px;color:#28282D;line-height:1.6;
-    }
-    .plan-feature::before{
-      content:'';display:block;flex-shrink:0;
-      width:6px;height:6px;border-radius:50%;
-      background:#06C755;margin-top:6px;
-    }
-    .plan-caution{font-size:12px;color:#9B9BA0;line-height:1.6;margin-bottom:28px}
-    .btn-plan{
-      display:flex;align-items:center;justify-content:center;
-      height:52px;
-      background:#28282D;color:#fff;
-      font-size:13px;font-weight:600;letter-spacing:.06em;
-      border:1.5px solid #28282D;
-      transition:background .2s,color .2s;
-      margin-top:auto;
-    }
-    .btn-plan:hover{background:#fff;color:#28282D}
-    /* 初期費用カード */
-    .plan-init-card{
-      background:#F7F7F5;
-      border:1px solid #E8E8E8;
-      padding:36px 40px;
-      margin-bottom:2px;
-    }
-    .plan-init-title{font-size:14px;font-weight:700;letter-spacing:.04em;margin-bottom:16px;color:#28282D}
-    .plan-init-row{
-      display:flex;align-items:center;gap:24px;
-      flex-wrap:wrap;
-    }
-    .plan-init-item{display:flex;flex-direction:column;gap:4px}
-    .plan-init-label{font-size:11px;letter-spacing:.08em;color:#9B9BA0;font-weight:700}
-    .plan-init-price{font-size:clamp(20px,2.5vw,28px);font-weight:700;color:#28282D;letter-spacing:-.01em}
-    .plan-init-price span{font-size:.5em;font-weight:400;color:#9B9BA0;vertical-align:middle}
-    .plan-init-sep{width:1px;height:40px;background:#E8E8E8;flex-shrink:0}
-    /* オプション表 */
-    .plan-option-card{
-      background:#fff;
-      border:1px solid #E8E8E8;
-      padding:36px 40px;
-      margin-bottom:40px;
-    }
-    .plan-option-title{font-size:14px;font-weight:700;letter-spacing:.04em;margin-bottom:20px;color:#28282D}
-    .plan-option-table{width:100%;border-collapse:collapse;font-size:13px}
-    .plan-option-table th,.plan-option-table td{
-      padding:12px 16px;
-      border:1px solid #E8E8E8;
-      text-align:left;
-      line-height:1.5;
-    }
-    .plan-option-table th{background:#F7F7F5;font-size:11px;letter-spacing:.08em;color:#9B9BA0;font-weight:700}
-    .plan-option-table td:last-child{font-weight:700;color:#28282D}
-    .plan-note-box{
-      padding:20px 24px;
-      background:#F7F7F5;
-      border-left:3px solid #06C755;
-      display:flex;align-items:flex-start;gap:12px;
-    }
-    .plan-note-icon{width:20px;height:20px;flex-shrink:0;color:#06C755;margin-top:1px}
-    .plan-note-text{font-size:13px;color:#4A4A50;line-height:1.7}
-    /* プランカテゴリラベル */
-    .plan-category-label{
-      display:flex;align-items:baseline;gap:20px;
-      padding:40px 0 28px;
-      border-top:2px solid #28282D;
-      margin-bottom:24px;
-    }
-    .plan-category-eyebrow{
-      font-size:clamp(40px,5vw,64px);
-      font-weight:700;letter-spacing:-.04em;
-      color:#E8E8E8;
-      line-height:1;flex-shrink:0;
-    }
-    .plan-category-h3{
-      font-size:clamp(20px,2.5vw,28px);
-      font-weight:700;letter-spacing:-.02em;
-      color:#28282D;line-height:1.2;
-      flex-shrink:0;
-    }
-    .plan-category-desc{
-      font-size:14px;color:#4A4A50;line-height:1.7;
-      flex:1;
-    }
-    /* ===== FAQ (SEOページ同一レイアウト) ===== */
-    /* ===== OFFICIAL ACCOUNT ===== */
-    .official-account-sec{
-      padding:80px 0;
-      background:#F8F8F7;
-      border-top:1px solid #E8E8E8;
-    }
-    .official-account-inner{
-      max-width:1200px;margin:0 auto;padding:0 48px;
-      display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;
-    }
-    .official-account-head .sec-eyebrow{margin-bottom:16px}
-    .official-account-h2{
-      font-size:clamp(22px,2.5vw,32px);
-      font-weight:700;letter-spacing:-.01em;
-      color:#1A1A1E;line-height:1.3;
-      margin-bottom:20px;
-    }
-    .official-account-body{
-      font-size:15px;line-height:1.8;color:#3D3D42;
-    }
-    .official-account-card{
-      display:flex;flex-direction:column;gap:20px;
-      padding:36px;
-      background:#fff;
-      border:1px solid #E8E8E8;
-      text-decoration:none;
-      transition:box-shadow .2s,transform .2s;
-    }
-    .official-account-card:hover{
-      box-shadow:0 8px 32px rgba(0,0,0,.08);
-      transform:translateY(-2px);
-    }
-    .official-account-icon--ig{
-      width:56px;height:56px;
-      background:linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);
-      display:flex;align-items:center;justify-content:center;
-      flex-shrink:0;
-    }
-    .official-account-name{
-      font-size:20px;font-weight:700;color:#1A1A1E;letter-spacing:.02em;
-    }
-    .official-account-desc{
-      font-size:13px;color:#767680;letter-spacing:.06em;font-weight:600;
-      text-transform:uppercase;margin-top:4px;
-    }
-    .official-account-note{
-      font-size:14px;line-height:1.8;color:#3D3D42;margin-top:8px;
-    }
-    .official-account-arrow{
-      font-size:13px;font-weight:700;color:#06C755;letter-spacing:.06em;
-    }
-    .faq-sec{border-top:1px solid #E8E8E8}
-    .faq-head{
-      padding:80px 80px 52px;
-      display:flex;align-items:flex-end;justify-content:space-between;
-    }
-    .faq-h2{
-      font-size:clamp(40px,5.5vw,72px);
-      font-weight:400;letter-spacing:-.04em;color:#28282D;
-    }
-    .faq-list{border-top:1px solid #E8E8E8}
-    .faq-item{
-      border-bottom:1px solid #E8E8E8;
-      overflow:hidden;
-    }
-    .faq-q{
-      display:flex;align-items:flex-start;gap:24px;
-      padding:32px 80px;
-      cursor:pointer;
-      list-style:none;
-      transition:background .2s;
-    }
-    .faq-q:hover{background:#F8F8F7}
-    .faq-q-mark{
-      font-size:13px;letter-spacing:.06em;color:#767680;
-      font-weight:700;flex-shrink:0;margin-top:2px;
-    }
-    .faq-q-text{
-      font-size:clamp(15px,1.6vw,18px);
-      font-weight:400;color:#28282D;
-      letter-spacing:-.01em;line-height:1.5;
-      flex:1;
-    }
-    .faq-q-icon{
-      flex-shrink:0;width:20px;height:20px;
-      position:relative;margin-top:2px;
-    }
-    .faq-q-icon::before,.faq-q-icon::after{
-      content:'';position:absolute;
-      background:#28282D;border-radius:1px;
-    }
-    .faq-q-icon::before{width:20px;height:1px;top:50%;left:0;transform:translateY(-50%)}
-    .faq-q-icon::after{width:1px;height:20px;top:0;left:50%;transform:translateX(-50%);transition:transform .3s,opacity .3s}
-    .faq-item.open .faq-q-icon::after{transform:translateX(-50%) rotate(90deg);opacity:0}
-    .faq-a{
-      max-height:0;overflow:hidden;
-      transition:max-height .4s cubic-bezier(.16,1,.3,1);
-    }
-    .faq-item.open .faq-a{max-height:400px}
-    .faq-a-inner{
-      display:flex;gap:24px;
-      padding:0 80px 32px;
-    }
-    .faq-a-mark{
-      font-size:13px;letter-spacing:.06em;color:#28282D;
-      font-weight:700;flex-shrink:0;margin-top:2px;
-    }
-    .faq-a-text{font-size:15px;color:#3D3D42;line-height:1.8;letter-spacing:.01em}
-    /* ===== CHALLENGE (SEOページ同一) ===== */
-    .challenge-sec{
-      padding:120px 40px;
-      background:#1A1A1F;
-      position:relative;overflow:hidden;
-    }
-    .challenge-head{position:relative;overflow:hidden;
-      max-width:1100px;margin:0 auto 64px;
-      display:flex;align-items:flex-start;gap:80px;
-    }
-    .challenge-head-body{flex:1}
-    .sec-vert{
-      position:absolute;left:-20px;top:50%;transform:translateY(-50%) rotate(-90deg);
-      font-size:80px;font-weight:700;color:rgba(255,255,255,.03);
-      letter-spacing:-.02em;white-space:nowrap;pointer-events:none;
-    }
-    .challenge-head .sec-eyebrow{color:rgba(255,255,255,.65)}
-    .challenge-head .sec-h2{color:#fff}
-    .challenge-head .sec-body{color:rgba(255,255,255,.85)}
-    .challenge-grid{
-      max-width:1100px;margin:0 auto;
-      display:grid;grid-template-columns:repeat(4,1fr);
-      gap:2px;background:rgba(255,255,255,.06);
-    }
-    .challenge-card{
-      background:#1A1A1F;
-      padding:36px 28px;
-      transition:background .2s;
-    }
-    .challenge-card:hover{background:#222228}
-    .challenge-card-num{margin-bottom:20px}
-    .challenge-card-num-n{font-size:13px;letter-spacing:.12em;color:rgba(255,255,255,.55);font-weight:700}
-    .challenge-card-title{font-size:clamp(16px,1.8vw,20px);font-weight:700;line-height:1.4;color:#fff;margin-bottom:12px}
-    .challenge-card-desc{font-size:13px;line-height:1.8;color:rgba(255,255,255,.8);margin-bottom:20px}
-    .challenge-tags-label{font-size:11px;letter-spacing:.1em;color:rgba(255,255,255,.55);font-weight:700;margin-bottom:8px}
-    .challenge-tags-wrap{display:flex;flex-wrap:wrap;gap:6px}
-    .challenge-tag{
-      display:inline-flex;align-items:center;
-      padding:5px 12px;
-      border:1px solid rgba(255,255,255,.15);
-      font-size:12px;color:rgba(255,255,255,.85);
-      transition:border-color .2s,color .2s;
-    }
-    .challenge-tag:hover{border-color:rgba(6,199,85,.6);color:#06C755}
-    /* ===== CTA ===== */
-    .cta-sec{
-      padding:120px 40px;
-      background:#fff;
-      border-top:1px solid #E8E8E8;
-    }
-    .cta-wrap{max-width:720px;margin:0 auto;text-align:center}
-    .cta-eyebrow{display:block;font-size:11px;letter-spacing:.16em;color:#06C755;font-weight:700;text-transform:uppercase;margin-bottom:20px}
-    .cta-h2{font-size:clamp(28px,4vw,48px);font-weight:700;line-height:1.2;letter-spacing:-.02em;margin-bottom:20px}
-    .cta-body{font-size:15px;line-height:1.9;color:#4A4A50;margin-bottom:40px}
-    .cta-actions{display:flex;align-items:center;justify-content:center;gap:24px;flex-wrap:wrap}
-    .cta-tel-wrap{display:flex;flex-direction:column;gap:4px;align-items:center}
-    .cta-tel-label{font-size:11px;letter-spacing:.08em;color:#9B9BA0}
-    .cta-tel{font-size:24px;font-weight:700;color:#28282D;letter-spacing:.04em}
-    /* ===== AREA (TOPページ同一) ===== */
-    .area-sec{border-top:1px solid #E8E8E8}
-    .area-inner{
-      display:grid;grid-template-columns:1fr 1fr;
-      min-height:400px;
-    }
-    .area-left{
-      padding:80px;
-      border-right:1px solid #E8E8E8;
-      display:flex;flex-direction:column;justify-content:center;
-    }
-    .area-eyebrow{font-size:12px;letter-spacing:.15em;color:#767680;margin-bottom:24px}
-    .area-h2{
-      font-size:clamp(32px,4.5vw,56px);
-      font-weight:700;letter-spacing:-.04em;
-      line-height:1.15;color:#28282D;
-      margin-bottom:24px;
-    }
-    .area-desc{font-size:15px;line-height:1.8;color:#3D3D42;max-width:400px}
-    .area-right{
-      padding:80px;
-      background:#EDEDEE;
-      display:flex;flex-direction:column;justify-content:center;
-    }
-    .area-tags{
-      display:flex;flex-wrap:wrap;gap:12px;
-      margin-bottom:40px;
-    }
-    .area-tag{
-      display:inline-flex;align-items:center;gap:8px;
-      padding:10px 20px;
-      border:1px solid #C0C0C0;
-      font-size:14px;color:#28282D;
-      letter-spacing:.02em;
-      transition:background .2s,border-color .2s;
-    }
-    .area-tag:hover{background:#F3F4F6;border-color:#C0C0C0}
-    .area-tag-dot{
-      width:6px;height:6px;border-radius:50%;
-      background:currentColor;opacity:.5;
-    }
-    .area-note{font-size:12px;color:#767680;line-height:1.7}
-    .area-group{margin-bottom:32px}
-    .area-group:last-child{margin-bottom:0}
-    .area-group-label{
-      font-size:12px;letter-spacing:.12em;color:#767680;
-      margin-bottom:12px;display:flex;align-items:center;gap:8px;
-    }
-    .area-group-label::before{
-      content:'';display:inline-block;
-      width:8px;height:8px;border-radius:50%;
-    }
-    .area-group-label.easy::before{background:#28282D}
-    .area-group-label.adjust::before{background:#B0B0B5}
-    .area-group-label.online::before{background:#D8D8DB;border:1px solid #B0B0B5}
-    .area-group .area-tags{margin-bottom:0}
-    /* ===== BLOG ===== */
-    .blog-sec{padding:120px 40px;background:#fff;border-top:1px solid #E8E8E8}
-    .blog-inner{max-width:1100px;margin:0 auto}
-    .blog-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:48px}
-    .blog-h2{font-size:clamp(22px,2.5vw,32px);font-weight:700}
-    .blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:#E8E8E8}
-    .blog-card{
-      background:#fff;padding:32px 28px;
-      transition:background .2s;
-    }
-    .blog-card:hover{background:#F7F7F5}
-    .blog-cat{font-size:10px;letter-spacing:.14em;color:#06C755;font-weight:700;margin-bottom:12px;text-transform:uppercase}
-    .blog-title{font-size:15px;font-weight:600;line-height:1.6;color:#28282D;margin-bottom:16px}
-    .blog-date{font-size:12px;color:#9B9BA0}
-    /* ===== FOOTER ===== */
-    .footer{background:#F7F7F5;border-top:1px solid #E8E8E8}
-    .footer-top{
-      max-width:1200px;margin:0 auto;
-      padding:64px 40px 48px;
-      display:flex;gap:80px;
-    }
-    .footer-logo-wrap{flex-shrink:0;width:240px;display:flex;flex-direction:column;gap:20px}
-    .footer-logo img{height:28px;width:auto}
-    .footer-logo-addr{font-size:12px;line-height:1.8;color:#4A4A50;font-style:normal}
-    .footer-logo-addr a{color:#4A4A50;transition:color .2s}
-    .footer-logo-addr a:hover{color:#28282D}
-    .footer-sns-block{display:flex;flex-direction:column;gap:8px}
-    .footer-sns-label{font-size:10px;letter-spacing:.14em;color:#9B9BA0;font-weight:700}
-    .footer-sns{display:flex;gap:8px}
-    .footer-sns-link{
-      display:flex;align-items:center;justify-content:center;
-      width:36px;height:36px;
-      border:1px solid #E8E8E8;background:#fff;
-      transition:background .2s,border-color .2s;
-    }
-    .footer-sns-link:hover{background:#28282D;border-color:#28282D}
-    .footer-sns-link:hover svg rect,.footer-sns-link:hover svg circle,.footer-sns-link:hover svg path{stroke:#fff}
-    .footer-logo-related{display:flex;flex-direction:column;gap:6px}
-    .footer-related-label{font-size:10px;letter-spacing:.14em;color:#9B9BA0;font-weight:700}
-    .footer-related-link{
-      display:inline-flex;align-items:center;gap:4px;
-      font-size:12px;color:#4A4A52;
-      transition:color .2s;line-height:1.5;
-    }
-    .footer-related-link:hover{color:#28282D}
-    .footer-nav{flex:1;display:flex;gap:40px}
-    .footer-nav-group{display:flex;flex-direction:column;gap:10px}
-    .footer-nav-title{font-size:11px;letter-spacing:.12em;color:#9B9BA0;font-weight:700;text-transform:uppercase;margin-bottom:4px}
-    .footer-nav a{font-size:13px;color:#4A4A50;transition:color .2s}
-    .footer-nav a:hover{color:#28282D}
-    .footer-bottom{
-      border-top:1px solid #E8E8E8;
-      max-width:1200px;margin:0 auto;
-      padding:20px 40px;
-      display:flex;align-items:center;justify-content:space-between;
-    }
-    .footer-copy{font-size:12px;color:#9B9BA0}
-    .footer-bottom-right{display:flex;gap:20px}
-    .footer-privacy{font-size:12px;color:#9B9BA0;transition:color .2s}
-    .footer-privacy:hover{color:#28282D}
-    /* ===== RESPONSIVE ===== */
-    @media(max-width:1024px){
-      .hd{padding:0 24px}
-      .hd-nav{display:none}
-      .hd-btns{display:none}
-      .hd-hamburger{display:flex}
-      .sp-fixed-cta{display:block}
-      .kv-inner{padding:60px 24px 60px;}
-      .kv-right{position:relative;top:auto;right:auto;transform:none;width:100%;max-width:320px;height:auto;margin:0 auto;display:flex;justify-content:center;}
-      .kv-splash{max-width:320px}
-      .breadcrumb{display:none}
-      .breadcrumb-sp{display:block}
-      .case-sec{padding:80px 0}
-      .case-inner{padding:0 24px}
-      .case-swiper-wrap{padding:0 24px}
-      .case-swiper{grid-template-columns:1fr}
-      .what-sec{padding:80px 24px;background:#EBEBEA}
-      .what-grid{grid-template-columns:1fr}
-      .voice-head{padding:60px 24px 36px;flex-direction:column;gap:20px;align-items:flex-start}
-      .voice-grid{grid-template-columns:1fr}
-      .voice-card{border-right:none;border-bottom:1px solid #E8E8E8}
-      .voice-card:last-child{border-bottom:none}
-      .cta-mid-sec{padding:60px 24px}
-      .plan-sec{padding:80px 24px}
-      .plan-grid{grid-template-columns:1fr}
-      .plan-grid.plan-grid-3{grid-template-columns:1fr}
-      .plan-category-label{flex-direction:column;gap:8px;padding:32px 0 20px}
-      .plan-category-eyebrow{font-size:36px}
-      .plan-init-card{padding:28px 24px}
-      .plan-option-card{padding:28px 24px}
-      .official-account-sec{padding:60px 0}
-      .official-account-inner{grid-template-columns:1fr;gap:36px;padding:0 24px}
-      .official-account-card{padding:28px}
-      .faq-sec{}
-      .faq-head{padding:60px 24px 36px;flex-direction:column;gap:20px;align-items:flex-start}
-      .faq-q{padding:24px}
-      .faq-a-inner{padding:0 24px 24px}
-      .challenge-sec{padding:80px 24px}
-      .challenge-head{position:relative;overflow:hidden;flex-direction:column;gap:24px}
-      .challenge-grid{grid-template-columns:repeat(2,1fr)}
-      .cta-sec{padding:80px 24px}
-      .area-sec{}
-      .area-inner{grid-template-columns:1fr}
-      .area-left{padding:60px 24px 40px;border-right:none;border-bottom:1px solid #E8E8E8}
-      .area-right{padding:40px 24px 60px}
-      .blog-sec{padding:80px 24px}
-      .blog-grid{grid-template-columns:1fr}
-      .footer-top{flex-direction:column;gap:40px;padding:48px 24px 36px}
-      .footer-logo-wrap{width:100%}
-      .footer-nav{flex-wrap:wrap;gap:32px}
-      .footer-bottom{padding:16px 24px;flex-direction:column;gap:12px;text-align:center}
-      .footer-bottom-right{justify-content:center}
-    }
-    @media(max-width:640px){
-      /* ===== KV ===== */
-      .kv-inner{padding:60px 20px 60px}
-      .kv-h1{
-        font-size:clamp(26px,7vw,40px);
-        font-weight:900;
-        word-break:keep-all;
-        white-space:normal;
-        line-height:1.25;
-      }
-      .kv-sub br{display:none}
-      .kv-sub{font-size:14px;line-height:1.8}
-      .kv-actions{flex-direction:column;align-items:flex-start;gap:16px}
-      .kv-service-label{font-size:15px;margin-bottom:20px}
-      /* ===== SEC-H2 ===== */
-      .sec-h2{font-size:clamp(22px,6vw,28px);word-break:keep-all}
-      /* ===== CASE SWIPER ===== */
-      .case-swiper-wrap{padding:0 0 0 20px;overflow:hidden}
-      .case-swiper{
-        display:flex;
-        flex-direction:row;
-        overflow-x:auto;
-        -webkit-overflow-scrolling:touch;
-        scroll-snap-type:x mandatory;
-        gap:12px;
-        padding-bottom:16px;
-        background:transparent;
-        grid-template-columns:none;
-      }
-      .case-swiper::-webkit-scrollbar{display:none}
-      .case-swiper .case-card{
-        flex:0 0 calc(100vw - 60px);
-        scroll-snap-align:start;
-        min-width:0;
-      }
-      /* ===== WHAT GRID ===== */
-      .what-sec{padding:60px 0 60px 20px;background:#EBEBEA}
-      .what-head{text-align:left;margin-bottom:36px;padding-right:20px}
-      .what-grid{
-        display:flex;
-        flex-direction:row;
-        overflow-x:auto;
-        -webkit-overflow-scrolling:touch;
-        scroll-snap-type:x mandatory;
-        gap:12px;
-        background:transparent;
-        padding-bottom:16px;
-        grid-template-columns:none;
-      }
-      .what-grid::-webkit-scrollbar{display:none}
-      .what-grid .what-card{
-        flex:0 0 calc(100vw - 60px);
-        scroll-snap-align:start;
-        min-width:0;
-      }
-      /* ===== VOICE GRID ===== */
-      .voice-head{padding:60px 20px 36px;flex-direction:column;gap:20px;align-items:flex-start}
-      .voice-grid{
-        display:flex;
-        flex-direction:row;
-        overflow-x:auto;
-        -webkit-overflow-scrolling:touch;
-        scroll-snap-type:x mandatory;
-        gap:0;
-        border-top:none;
-        padding:0 0 16px 20px;
-        grid-template-columns:none;
-      }
-      .voice-grid::-webkit-scrollbar{display:none}
-      .voice-grid .voice-card{
-        flex:0 0 calc(100vw - 60px);
-        scroll-snap-align:start;
-        min-width:0;
-        border-right:1px solid #E8E8E8;
-        border-bottom:none;
-      }
-      .voice-grid .voice-card:last-child{margin-right:20px}
-      /* ===== PLAN TABS ===== */
-      .plan-tabs{overflow-x:auto;-webkit-overflow-scrolling:touch;flex-wrap:nowrap}
-      .plan-tabs::-webkit-scrollbar{display:none}
-      .plan-tab-btn{white-space:nowrap;font-size:12px;padding:14px 16px;flex:0 0 auto}
-      /* ===== PLAN GRID ===== */
-      .plan-sec{padding:80px 0 80px 0}
-      .plan-inner{padding:0 24px}
-      .plan-tab-panel.is-active .plan-grid,
-      .plan-tab-panel .plan-grid{
-        display:flex;
-        flex-direction:row;
-        overflow-x:auto;
-        -webkit-overflow-scrolling:touch;
-        scroll-snap-type:x mandatory;
-        gap:12px;
-        background:transparent;
-        padding-bottom:16px;
-        margin-left:-24px;
-        padding-left:24px;
-        grid-template-columns:none;
-      }
-      .plan-tab-panel.is-active .plan-grid::-webkit-scrollbar,
-      .plan-tab-panel .plan-grid::-webkit-scrollbar{display:none}
-      .plan-tab-panel.is-active .plan-grid .plan-card,
-      .plan-tab-panel .plan-grid .plan-card{
-        flex:0 0 calc(100vw - 60px);
-        scroll-snap-align:start;
-        min-width:0;
-      }
-      .plan-init-row{flex-direction:column;gap:16px}
-      .plan-init-sep{display:none}
-      /* ===== CHALLENGE GRID ===== */
-      .challenge-sec{padding:80px 0 80px 20px}
-      .challenge-head{padding-right:20px;margin-bottom:40px}
-      .challenge-grid{
-        display:flex;
-        flex-direction:row;
-        overflow-x:auto;
-        -webkit-overflow-scrolling:touch;
-        scroll-snap-type:x mandatory;
-        gap:12px;
-        background:transparent;
-        padding-bottom:16px;
-        max-width:none;
-        grid-template-columns:none;
-      }
-      .challenge-grid::-webkit-scrollbar{display:none}
-      .challenge-grid .challenge-card{
-        flex:0 0 calc(100vw - 60px);
-        scroll-snap-align:start;
-        min-width:0;
-      }
-      /* ===== CTA ===== */
-      .cta-sec{padding:80px 24px}
-      .cta-wrap{text-align:left}
-      .cta-body br{display:none}
-      .cta-body{font-size:14px;line-height:1.8}
-      .cta-actions{flex-direction:column;align-items:flex-start;gap:16px}
-      .cta-tel-wrap{align-items:flex-start}
-      /* ===== CTA MID ===== */
-      .cta-mid-body br{display:none}
-      .cta-mid-body{font-size:14px;line-height:1.8}
-      .cta-mid-actions{flex-direction:column;align-items:flex-start;gap:16px}
-      .cta-mid-tel-wrap{align-items:flex-start}
-      /* ===== A-1バナー SP：数値3列横並び＋コピー縦積み ===== */
-      .case-result-banner{padding:48px 0}
-      .case-result-banner-inner{
-        grid-template-columns:1fr;
-        gap:32px;
-        padding:0 20px;
-      }
-      .crb-metrics{
-        display:grid;
-        grid-template-columns:repeat(3,1fr);
-        gap:0;
-        border-top:1px solid #E8E8E5;
-        border-bottom:1px solid #E8E8E5;
-        padding:20px 0;
-      }
-      .crb-metric-item{
-        padding:0 12px;
-        border-right:1px solid #E8E8E5;
-        transform:none;
-        opacity:1;
-      }
-      .crb-metric-item:first-child{padding-left:0}
-      .crb-metric-item:last-child{border-right:none;padding-right:0}
-      .crb-metric-num{font-size:clamp(28px,7vw,36px)}
-      .crb-metric-unit{font-size:clamp(14px,3.5vw,18px)}
-      .crb-metric-label{font-size:13px;font-weight:600;color:#28282D;margin-top:6px}
-      .crb-metric-note{font-size:12px;color:#666;display:block}
-      .crb-copy{transform:none;opacity:1}
-      .crb-industries{transform:none;opacity:1}
-      .crb-tag{font-size:14px;padding:8px 14px;}
-      .crb-headline{font-size:clamp(24px,6vw,32px)}
-      .crb-body{font-size:14px;margin-bottom:24px;white-space:normal;}
-      .crb-cta{width:100%;justify-content:center;padding:16px 24px;display:flex}
-      /* ===== BUTTONS ===== */
-      .btn-cta{height:56px;padding:0 32px;font-size:15px;width:100%;justify-content:center}
-      .btn-primary{height:52px;padding:0 28px;width:100%;justify-content:center}
-      /* ===== FAQ ===== */
-      .faq-q{padding:20px 16px}
-      .faq-a-inner{padding:0 16px 20px}
-    }
-    @media(max-width:360px){
-      .kv-inner{padding:60px 16px 60px}
-      .kv-h1{font-size:clamp(24px,6.5vw,36px)}
-    }
-  </style>
 </head>
 <body>
 <div id="cursor-dot" aria-hidden="true"></div>
 <div id="cursor-ring" aria-hidden="true"></div>
 <!-- HEADER -->
 <header class="hd" role="banner">
-  <a href="/" class="hd-logo" aria-label="セルフアチーブ トップページへ">
+  <a href="../../" class="hd-logo" aria-label="セルフアチーブ トップページへ">
     <img src="../../assets/logo_color.png" alt="selfachieve Acquisition Agency" width="160" height="34" fetchpriority="high">
   </a>
   <nav class="hd-nav" aria-label="グローバルナビゲーション">
@@ -1606,85 +69,88 @@
       <div class="hd-mega" role="menu">
         <div class="hd-mega-col">
           <span class="hd-mega-col-label">なんかうまくいかない...</span>
-          <a href="/strategy/" role="menuitem">WEB戦略設計</a>
+          <a href="../../strategy/" role="menuitem">WEB戦略設計</a>
+          <a href="../../ai-automation/" role="menuitem">AI業務効率化・導入支援</a>
         </div>
         <div class="hd-mega-col">
           <span class="hd-mega-col-label">集客したい</span>
-          <a href="/seo/" role="menuitem">SEO対策</a>
-          <a href="/meo/" role="menuitem">MEO対策</a>
-          <a href="/ai-seo/" role="menuitem">AI検索対策（LLM検索対策）</a>
-          <a href="/ads/listing/" role="menuitem">リスティング広告</a>
-          <a href="/ads/display/" role="menuitem">ディスプレイ広告</a>
+          <a href="../../seo/" role="menuitem">SEO対策</a>
+          <a href="../../meo/" role="menuitem">MEO対策</a>
+          <a href="../../ads/display/" role="menuitem">WEB広告</a>
+          <a href="../../sns/" role="menuitem">SNSマーケティング</a>
+          <a href="../../sns/note/" role="menuitem">note対策</a>
+          <a href="../../ai-seo/" role="menuitem">AI検索対策（LLM検索対策）</a>
         </div>
         <div class="hd-mega-col">
-          <span class="hd-mega-col-label">問い合わせを増やしたい</span>
-          <a href="/website/" role="menuitem">サイト制作・分析改善</a>
-          <a href="/strategy/" role="menuitem">WEB戦略設計</a>
+          <span class="hd-mega-col-label">成約したい</span>
+          <a href="../../website/" role="menuitem">ホームページ制作</a>
+          <a href="../../website/#analysis" role="menuitem">分析改善</a>
+          <a href="../../website/#lp" role="menuitem">LP制作</a>
         </div>
         <div class="hd-mega-col">
           <span class="hd-mega-col-label">追客したい</span>
-          <a href="/sns/line/" role="menuitem">LINE</a>
-          <a href="/sns/instagram/" role="menuitem">Instagram</a>
-          <a href="/sns/x/" role="menuitem">X（旧Twitter）</a>
-          <a href="/sns/youtube/" role="menuitem">YouTube</a>
-          <a href="/sns/tiktok/" role="menuitem">TikTok</a>
-          <a href="/sns/note/" role="menuitem">note</a>
+          <a href="../../sns/line/" role="menuitem">LINE</a>
+          <a href="../../sns/instagram/" role="menuitem">Instagram</a>
+          <a href="../../sns/x/" role="menuitem">X（旧Twitter）</a>
+          <a href="../../sns/youtube/" role="menuitem">YouTube</a>
+          <a href="../../sns/tiktok/" role="menuitem">TikTok</a>
+          <a href="../../sns/note/" role="menuitem">note</a>
         </div>
       </div>
       </div>
     </span>
     <span class="hd-nav-item">
-      <a href="/service/">サービス</a>
+      <a href="../../javascript:void(0)">サービス</a>
       <div class="hd-mega-wrap">
       <div class="hd-mega" role="menu">
         <div class="hd-mega-col">
           <span class="hd-mega-col-label">マーケティング戦略</span>
-          <a href="/strategy/" role="menuitem">WEB戦略設計</a>
+          <a href="../../strategy/" role="menuitem">WEB戦略設計</a>
         </div>
         <div class="hd-mega-col">
           <span class="hd-mega-col-label">WEB集客施策</span>
-          <a href="/website/" role="menuitem">サイト制作・分析改善</a>
-          <a href="/seo/" role="menuitem">SEO対策</a>
-          <a href="/meo/" role="menuitem">MEO対策</a>
-          <a href="/ai-seo/" role="menuitem">AI検索対策（LLM検索対策）</a>
+          <a href="../../website/" role="menuitem">サイト制作・分析改善</a>
+          <a href="../../seo/" role="menuitem">SEO対策</a>
+          <a href="../../meo/" role="menuitem">MEO対策</a>
+          <a href="../../ai-seo/" role="menuitem">AI検索対策（LLM検索対策）</a>
         </div>
         <div class="hd-mega-col">
           <span class="hd-mega-col-label">SNSマーケティング特化施策</span>
-          <a href="/sns/" role="menuitem" class="hd-mega-col-top-link">SNSマーケティング</a>
-          <a href="/sns/instagram/" role="menuitem">Instagram</a>
-          <a href="/sns/tiktok/" role="menuitem">TikTok</a>
-          <a href="/sns/x/" role="menuitem">X（旧Twitter）</a>
-          <a href="/sns/youtube/" role="menuitem">YouTube</a>
-          <a href="/sns/note/" role="menuitem">note</a>
-          <a href="/sns/line/" role="menuitem">LINE</a>
+          <a href="../../sns/" role="menuitem" class="hd-mega-col-top-link">SNSマーケティング</a>
+          <a href="../../sns/instagram/" role="menuitem">Instagram</a>
+          <a href="../../sns/tiktok/" role="menuitem">TikTok</a>
+          <a href="../../sns/x/" role="menuitem">X（旧Twitter）</a>
+          <a href="../../sns/youtube/" role="menuitem">YouTube</a>
+          <a href="../../sns/note/" role="menuitem">note</a>
+          <a href="../../sns/line/" role="menuitem">LINE</a>
         </div>
         <div class="hd-mega-col">
           <span class="hd-mega-col-label">WEB広告マーケティング</span>
-          <a href="/ads/listing/" role="menuitem">リスティング広告</a>
-          <a href="/ads/display/" role="menuitem">ディスプレイ広告</a>
+          <a href="../../ads/display/" role="menuitem">ディスプレイ広告</a>
         </div>
         <div class="hd-mega-col">
           <span class="hd-mega-col-label">AX・業務改善</span>
-          <a href="/ai-automation/" role="menuitem">AI業務効率化・導入支援</a>
+          <a href="../../ai-automation/" role="menuitem">AI業務効率化・導入支援</a>
         </div>
       </div>
       </div>
     </span>
-    <a href="/works/">制作実績</a>
-    <a href="/voice/">お客さまの声</a>
+    <a href="../../works/">制作実績</a>
+    <a href="../../voice/">お客さまの声</a>
     <span class="hd-nav-item">
-      <a href="/company/">会社情報</a>
+      <a href="../../company/">会社情報</a>
       <div class="hd-dropdown" role="menu">
-        <a href="/company/#mission" role="menuitem">Mission / Vision / Value</a>
-        <a href="/company/#representative" role="menuitem">代表メッセージ</a>
-        <a href="/company/#overview" role="menuitem">会社概要</a>
-        <a href="/company/#access" role="menuitem">アクセス</a>
+        <a href="../../company/#mission" role="menuitem">Mission / Vision / Value</a>
+        <a href="../../company/#representative" role="menuitem">代表メッセージ</a>
+        <a href="../../company/#overview" role="menuitem">会社概要</a>
+        <a href="../../company/#access" role="menuitem">アクセス</a>
       </div>
     </span>
+
   </nav>
   <div class="hd-btns">
     <a href="https://saikatsu-r.jp/" class="hd-btn-external" target="_blank" rel="noopener noreferrer" aria-label="企業の採用活動を成功に導く「サイカツ.R」（別サイトが開きます）">企業の採用活動を成功に導く「サイカツ.R」<svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
-    <a href="#contact" class="hd-btn" aria-label="無料相談を申し込む">無料相談</a>
+    <a href="../../contact/" class="hd-btn" aria-label="初回の相談無料">初回の相談無料</a>
   </div>
   <button class="hd-hamburger" aria-label="メニューを開く" aria-expanded="false" aria-controls="hd-drawer">
     <span></span><span></span><span></span>
@@ -1696,66 +162,70 @@
     <div class="hd-drawer-link" data-drawer-toggle>課題から探す</div>
     <div class="hd-drawer-sub">
       <p class="hd-drawer-sub-label">なんかうまくいかない...</p>
-      <a href="/strategy/">WEB戦略設計</a>
+      <a href="../../strategy/">WEB戦略設計</a>
       <p class="hd-drawer-sub-label">集客したい</p>
-      <a href="/seo/">SEO対策</a>
-      <a href="/meo/">MEO対策</a>
-      <a href="/ai-seo/">AI検索対策（LLM検索対策）</a>
-      <a href="/ads/listing/">リスティング広告</a>
-      <a href="/ads/display/">ディスプレイ広告</a>
-      <p class="hd-drawer-sub-label">問い合わせを増やしたい</p>
-      <a href="/website/">サイト制作・分析改善</a>
-      <a href="/strategy/">WEB戦略設計</a>
+      <a href="../../seo/">SEO対策</a>
+      <a href="../../meo/">MEO対策</a>
+      <a href="../../ads/display/">WEB広告</a>
+      <a href="../../sns/">SNSマーケティング</a>
+      <a href="../../sns/note/">note対策</a>
+      <a href="../../ai-seo/">AI検索対策（LLM検索対策）</a>
+      <p class="hd-drawer-sub-label">成約したい</p>
+      <a href="../../website/">ホームページ制作</a>
+      <a href="../../website/#analysis">分析改善</a>
+      <a href="../../website/#lp">LP制作</a>
       <p class="hd-drawer-sub-label">追客したい</p>
-      <a href="/sns/line/">LINE</a>
-      <a href="/sns/instagram/">Instagram</a>
-      <a href="/sns/x/">X（旧Twitter）</a>
-      <a href="/sns/youtube/">YouTube</a>
-      <a href="/sns/tiktok/">TikTok</a>
-      <a href="/sns/note/">note</a>
+      <a href="../../sns/line/">LINE</a>
+      <a href="../../sns/instagram/">Instagram</a>
+      <a href="../../sns/x/">X（旧Twitter）</a>
+      <a href="../../sns/youtube/">YouTube</a>
+      <a href="../../sns/tiktok/">TikTok</a>
+      <a href="../../sns/note/">note</a>
     </div>
   </div>
   <div class="hd-drawer-item">
     <div class="hd-drawer-link" data-drawer-toggle>サービス</div>
     <div class="hd-drawer-sub">
-      <a href="/strategy/">WEB戦略設計</a>
-      <a href="/website/">サイト制作・分析改善</a>
-      <a href="/seo/">SEO対策</a>
-      <a href="/meo/">MEO対策</a>
-      <a href="/ai-seo/">AI検索対策（LLM検索対策）</a>
+      <a href="../../strategy/">WEB戦略設計</a>
+      <a href="../../website/">サイト制作・分析改善</a>
+      <a href="../../seo/">SEO対策</a>
+      <a href="../../meo/">MEO対策</a>
+      <a href="../../ai-seo/">AI検索対策（LLM検索対策）</a>
       <p class="hd-drawer-sub-label">SNSマーケティング</p>
-      <a href="/sns/instagram/">Instagram</a>
-      <a href="/sns/tiktok/">TikTok</a>
-      <a href="/sns/x/">X（旧Twitter）</a>
-      <a href="/sns/youtube/">YouTube</a>
-      <a href="/sns/note/">note</a>
-      <a href="/sns/line/">LINE</a>
+      <a href="../../sns/instagram/">Instagram</a>
+      <a href="../../sns/tiktok/">TikTok</a>
+      <a href="../../sns/x/">X（旧Twitter）</a>
+      <a href="../../sns/youtube/">YouTube</a>
+      <a href="../../sns/note/">note</a>
+      <a href="../../sns/line/">LINE</a>
       <p class="hd-drawer-sub-label">WEB広告</p>
-      <a href="/ads/listing/">リスティング広告</a>
-      <a href="/ads/display/">ディスプレイ広告</a>
+      <a href="../../ads/display/">ディスプレイ広告</a>
       <p class="hd-drawer-sub-label">AX・業務改善</p>
-      <a href="/ai-automation/">AI業務効率化・導入支援</a>
+      <a href="../../ai-automation/">AI業務効率化・導入支援</a>
     </div>
   </div>
   <div class="hd-drawer-item">
-    <a href="/works/" class="hd-drawer-link no-arrow">制作実績</a>
+    <a href="https://selfachieve.jp/saikatsu_r/" class="hd-drawer-link no-arrow" target="_blank" rel="noopener noreferrer">採用戦略<svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-left:4px;vertical-align:middle"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
   </div>
   <div class="hd-drawer-item">
-    <a href="/voice/" class="hd-drawer-link no-arrow">お客さまの声</a>
+    <a href="../../works/" class="hd-drawer-link no-arrow">制作実績</a>
+  </div>
+  <div class="hd-drawer-item">
+    <a href="../../voice/" class="hd-drawer-link no-arrow">お客さまの声</a>
   </div>
   <div class="hd-drawer-item">
     <div class="hd-drawer-link" data-drawer-toggle="drawer-company">会社情報</div>
     <div class="hd-drawer-sub" id="drawer-company">
-      <a href="/company/">会社情報 TOP</a>
-      <a href="/company/#mission">Mission / Vision / Value</a>
-      <a href="/company/#representative">代表メッセージ</a>
-      <a href="/company/#overview">会社概要</a>
-      <a href="/company/#access">アクセス</a>
+      <a href="../../company/">会社情報 TOP</a>
+      <a href="../../company/#mission">Mission / Vision / Value</a>
+      <a href="../../company/#representative">代表メッセージ</a>
+      <a href="../../company/#overview">会社概要</a>
+      <a href="../../company/#access">アクセス</a>
     </div>
   </div>
   <div class="hd-drawer-cta">
     <a href="#contact" class="hd-btn" aria-label="無料相談を申し込む">無料相談を申し込む</a>
-    <a href="https://saikatsu-r.jp/" class="hd-btn-saicatsu" target="_blank" rel="noopener noreferrer" aria-label="企業の採用活動を成功に導く「サイカツ.R」（別サイトが開きます）">企業の採用活動を成功に導く「サイカツ.R」<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 2L2 10M10 2H5M10 2V7" stroke="#28282D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    <a href="https://saicatsu-r.jp/" class="hd-btn-saicatsu" target="_blank" rel="noopener noreferrer" aria-label="企業の採用活動を成功に導く「サイカツ.R」（別サイトが開きます）">企業の採用活動を成功に導く「サイカツ.R」<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 2L2 10M10 2H5M10 2V7" stroke="#28282D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
   </div>
   <div class="hd-drawer-sns">
     <p class="hd-drawer-sns-label">FOLLOW US</p>
@@ -1772,10 +242,11 @@
     </div>
   </div>
 </div>
-<!-- SP FIXED CTA -->
+
+<!-- FIXED MOBILE CTA -->
 <div class="sp-fixed-cta" id="sp-fixed-cta" role="complementary" aria-label="お問い合わせ">
   <div class="sp-fixed-cta-inner">
-    <a href="/contact/" class="sp-fixed-cta-consult" aria-label="無料相談を申し込む">無料相談を申し込む</a>
+    <a href="../../contact/" class="sp-fixed-cta-consult" aria-label="無料相談を申し込む">無料相談を申し込む</a>
     <a href="tel:0788068338" class="sp-fixed-cta-tel" aria-label="電話番号 078-806-8338">
       <svg class="sp-fixed-cta-tel-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.61 21 3 13.39 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1.02l-2.2 2.2z" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
       <span class="sp-fixed-cta-tel-num">078-806-8338</span>
@@ -1799,7 +270,7 @@
         ビジネス成果直結の運用を一貫支援します。
       </p>
       <div class="kv-actions fu" style="transition-delay:.24s">
-        <a href="/contact/" class="btn-primary">15分無料相談を申し込む</a>
+        <a href="../../contact/" class="btn-primary">15分無料相談を申し込む</a>
         <div class="kv-tel-wrap">
           <p class="kv-tel-label">お電話でのご相談</p>
           <a href="tel:0788068338" class="kv-tel">078-806-8338</a>
@@ -1815,9 +286,9 @@
 <!-- PC BREADCRUMB (KV直後) -->
 <nav class="breadcrumb" aria-label="パンくずリスト">
   <ol>
-    <li><a href="/">ホーム</a></li>
-    <li><a href="/service/">サービス</a></li>
-    <li><a href="/sns/">SNSマーケティング</a></li>
+    <li><a href="../../">ホーム</a></li>
+    <li><a href="../../service/">サービス</a></li>
+    <li><a href="../../sns/">SNSマーケティング</a></li>
     <li><span aria-current="page">LINE運用代行</span></li>
   </ol>
 </nav>
@@ -1910,7 +381,7 @@
       <div class="crb-eyebrow">YOUR RESULT</div>
       <h2 class="crb-headline">この成果は、<br>偶然では<em>ありません。</em><br>目的を追った、<br>運用の結果です。</h2>
       <p class="crb-body">業種・規模・フェーズを問わず、同じ伴走の仕組みで成果を出してきました。<br>まずは15分、御社の課題をお聴かせください。</p>
-      <a href="/contact/" class="crb-cta">無料相談で可能性を確かめる →</a>
+      <a href="../../contact/" class="crb-cta">無料相談で可能性を確かめる →</a>
     </div>
     <!-- 右：対応業種タグ -->
     <div class="crb-industries" id="crb-industries">
@@ -2000,11 +471,11 @@
         伴走してきた企業の、<br>リアルな声。
       </h2>
     </div>
-    <a href="/voice/" class="view-all fu" style="transition-delay:.15s">すべて見る</a>
+    <a href="../../voice/" class="view-all fu" style="transition-delay:.15s">すべて見る</a>
   </div>
   <div class="voice-grid">
     <article class="voice-card fu">
-      <a href="/voice/iwazawa/" class="voice-link" aria-label="岩澤法理事務所の声を詳しく見る">
+      <a href="../../voice/iwazawa/" class="voice-link" aria-label="岩澤法理事務所の声を詳しく見る">
         <div class="voice-avatar">
           <img src="../../assets/voice/iwazawa.jpg" alt="岩澤法理事務所" width="280" height="280" loading="lazy">
         </div>
@@ -2022,7 +493,7 @@
       </a>
     </article>
     <article class="voice-card fu" style="transition-delay:.1s">
-      <a href="/voice/" class="voice-link" aria-label="株式会社エデュラボの声を詳しく見る">
+      <a href="../../voice/" class="voice-link" aria-label="株式会社エデュラボの声を詳しく見る">
         <div class="voice-avatar">
           <img src="../../assets/voice/edurabo.jpg" alt="株式会社エデュラボ" width="280" height="280" loading="lazy">
         </div>
@@ -2039,7 +510,7 @@
       </a>
     </article>
     <article class="voice-card fu" style="transition-delay:.2s">
-      <a href="/voice/" class="voice-link" aria-label="Nadiの声を詳しく見る">
+      <a href="../../voice/" class="voice-link" aria-label="Nadiの声を詳しく見る">
         <div class="voice-avatar">
           <img src="../../assets/voice/nadi.jpg" alt="Nadi ピラティス・ヨガスタジオ" width="280" height="280" loading="lazy">
         </div>
@@ -2070,7 +541,7 @@
       「何から始めればいいかわからない」という段階でも大丈夫です。
     </p>
     <div class="cta-mid-actions fu" style="transition-delay:.2s">
-      <a href="/contact/" class="btn-cta">15分無料相談を申し込む</a>
+      <a href="../../contact/" class="btn-cta">15分無料相談を申し込む</a>
       <div class="cta-mid-tel-wrap">
         <p class="cta-mid-tel-label">お電話でのご相談</p>
         <a href="tel:0788068338" class="cta-mid-tel">078-806-8338</a>
@@ -2116,7 +587,7 @@
             <div class="plan-feature">自動メッセージ設定</div>
             <div class="plan-feature">リッチメニュー制作</div>
           </div>
-          <a href="/contact/" class="btn-plan">このプランで相談する</a>
+          <a href="../../contact/" class="btn-plan">このプランで相談する</a>
         </div>
         <!-- ベーシックプラン -->
         <div class="plan-card fu" style="transition-delay:.05s">
@@ -2137,7 +608,7 @@
             <div class="plan-feature">流入別経路URL設定</div>
             <div class="plan-feature">フォーム作成（回答フォーム・カレンダー予約フォーム等）</div>
           </div>
-          <a href="/contact/" class="btn-plan">このプランで相談する</a>
+          <a href="../../contact/" class="btn-plan">このプランで相談する</a>
         </div>
         <!-- プロプラン -->
         <div class="plan-card fu" style="transition-delay:.1s">
@@ -2159,7 +630,7 @@
             <div class="plan-feature">リッチメニュー制作</div>
             <div class="plan-feature">シナリオ構築、設定</div>
           </div>
-          <a href="/contact/" class="btn-plan">このプランで相談する</a>
+          <a href="../../contact/" class="btn-plan">このプランで相談する</a>
         </div>
       </div>
       <div class="plan-note-box fu">
@@ -2199,7 +670,7 @@
             <div class="plan-feature">月次パフォーマンスレポート・定例MTG</div>
           </div>
           <p class="plan-caution">※ 広告クリエイティブ制作が必要な場合は別途お見積りとなります</p>
-          <a href="/contact/" class="btn-plan">無料相談を申し込む</a>
+          <a href="../../contact/" class="btn-plan">無料相談を申し込む</a>
         </div>
         <div class="plan-card fu" style="transition-delay:.1s">
           <span class="plan-type">CREATIVE</span>
@@ -2211,7 +682,7 @@
             <p class="plan-price-note">制作内容・数量により異なります / 初回相談無料</p>
           </div>
           <p style="color:#111111;font-size:15px;line-height:1.7;margin:0">広告運用代行と併せてのご依頼の場合、クリエイティブの内容を考慮した一体的な提案が可能です。</p>
-          <a href="/contact/" class="btn-plan">無料相談を申し込む</a>
+          <a href="../../contact/" class="btn-plan">無料相談を申し込む</a>
         </div>
       </div>
       <div class="plan-note-box fu">
@@ -2317,7 +788,7 @@
       <p class="challenge-card-desc">何が問題かわからない。施策を試しても手応えがない。まず現状を整理したい。</p>
       <p class="challenge-tags-label">推奨施策</p>
       <div class="challenge-tags-wrap">
-        <a href="/strategy/" class="challenge-tag">WEB戦略設計</a>
+        <a href="../../strategy/" class="challenge-tag">WEB戦略設計</a>
       </div>
     </article>
     <article class="challenge-card fu" style="transition-delay:.08s">
@@ -2326,10 +797,10 @@
       <p class="challenge-card-desc">検索で見つけてもらえない。広告を出しても費用対効果が悪い。もっと多くの見込み客に届けたい。</p>
       <p class="challenge-tags-label">推奨施策</p>
       <div class="challenge-tags-wrap">
-        <a href="/seo/" class="challenge-tag">SEO対策</a>
-        <a href="/meo/" class="challenge-tag">MEO対策</a>
-        <a href="/ai-seo/" class="challenge-tag">AI検索対策</a>
-        <a href="/ads/listing/" class="challenge-tag">リスティング広告</a>
+        <a href="../../seo/" class="challenge-tag">SEO対策</a>
+        <a href="../../meo/" class="challenge-tag">MEO対策</a>
+        <a href="../../ai-seo/" class="challenge-tag">AI検索対策</a>
+        <a href="../../ads/listing/" class="challenge-tag">リスティング広告</a>
       </div>
     </article>
     <article class="challenge-card fu" style="transition-delay:.16s">
@@ -2338,8 +809,8 @@
       <p class="challenge-card-desc">アクセスはあるのに成約しない。サイトを見ても離脱してしまう。訪問者を顧客に変えたい。</p>
       <p class="challenge-tags-label">推奨施策</p>
       <div class="challenge-tags-wrap">
-        <a href="/website/" class="challenge-tag">ホームページ制作</a>
-        <a href="/strategy/" class="challenge-tag">WEB戦略設計</a>
+        <a href="../../website/" class="challenge-tag">ホームページ制作</a>
+        <a href="../../strategy/" class="challenge-tag">WEB戦略設計</a>
       </div>
     </article>
     <article class="challenge-card fu" style="transition-delay:.24s">
@@ -2348,10 +819,10 @@
       <p class="challenge-card-desc">リピーターが増えない。既存顧客との関係を維持したい。ファンを育てる仕組みをつくりたい。</p>
       <p class="challenge-tags-label">推奨施策</p>
       <div class="challenge-tags-wrap">
-        <a href="/sns/line/" class="challenge-tag">LINE構築</a>
-        <a href="/sns/line/" class="challenge-tag">LINE広告</a>
-        <a href="/sns/x/" class="challenge-tag">X（旧Twitter）</a>
-        <a href="/sns/youtube/" class="challenge-tag">YouTube</a>
+        <a href="../../sns/line/" class="challenge-tag">LINE構築</a>
+        <a href="../../sns/line/" class="challenge-tag">LINE広告</a>
+        <a href="../../sns/x/" class="challenge-tag">X（旧Twitter）</a>
+        <a href="../../sns/youtube/" class="challenge-tag">YouTube</a>
       </div>
     </article>
   </div>
@@ -2368,7 +839,7 @@
       「何から始めればいいかわからない」という段階でも大丈夫です。
     </p>
     <div class="cta-actions fu" style="transition-delay:.2s">
-      <a href="/contact/" class="btn-cta">15分無料相談を申し込む</a>
+      <a href="../../contact/" class="btn-cta">15分無料相談を申し込む</a>
       <div class="cta-tel-wrap">
         <p class="cta-tel-label">お電話でのご相談</p>
         <a href="tel:0788068338" class="cta-tel">078-806-8338</a>
@@ -2431,25 +902,25 @@
   <div class="blog-inner">
     <div class="blog-head">
       <h2 class="blog-h2 fu" id="blog-h2">LINEコラム</h2>
-      <a href="/blog/" class="view-all fu" style="transition-delay:.1s">すべて見る</a>
+      <a href="../../blog/" class="view-all fu" style="transition-delay:.1s">すべて見る</a>
     </div>
     <div class="blog-grid">
       <article class="blog-card fu">
-        <a href="/blog/line-follower/">
+        <a href="../../blog/line-follower/">
           <p class="blog-cat">LINE</p>
           <h3 class="blog-title">LINEフォロワーを増やす7つの方法｜中小企業・店舗向け実践ガイド</h3>
           <p class="blog-date">2025.03.10</p>
         </a>
       </article>
       <article class="blog-card fu" style="transition-delay:.1s">
-        <a href="/blog/line-reel/">
+        <a href="../../blog/line-reel/">
           <p class="blog-cat">LINE</p>
           <h3 class="blog-title">LINEリールで集客する方法｜バズる動画の作り方と運用のコツ</h3>
           <p class="blog-date">2025.02.20</p>
         </a>
       </article>
       <article class="blog-card fu" style="transition-delay:.2s">
-        <a href="/blog/line-ads-cost/">
+        <a href="../../blog/line-ads-cost/">
           <p class="blog-cat">LINE広告</p>
           <h3 class="blog-title">LINE広告の費用相場と効果的な予算配分｜2025年最新版</h3>
           <p class="blog-date">2025.01.15</p>
@@ -2461,9 +932,9 @@
 <!-- SP BREADCRUMB (フッター直前) -->
 <nav class="breadcrumb-sp" aria-label="パンくずリスト（スマートフォン）">
   <ol>
-    <li><a href="/">ホーム</a></li>
-    <li><a href="/service/">サービス</a></li>
-    <li><a href="/sns/">SNSマーケティング</a></li>
+    <li><a href="../../">ホーム</a></li>
+    <li><a href="../../service/">サービス</a></li>
+    <li><a href="../../sns/">SNSマーケティング</a></li>
     <li><span aria-current="page">LINE運用代行</span></li>
   </ol>
 </nav>
@@ -2471,7 +942,7 @@
 <footer class="footer" role="contentinfo">
   <div class="footer-top">
     <div class="footer-logo-wrap">
-      <a href="/" class="footer-logo" aria-label="セルフアチーブ トップページへ">
+      <a href="../../" class="footer-logo" aria-label="セルフアチーブ トップページへ">
         <img src="../../assets/logo_color.png" alt="selfachieve Acquisition Agency" width="140" height="30" loading="lazy">
       </a>
       <address class="footer-logo-addr">
@@ -2501,38 +972,39 @@
     <nav class="footer-nav" aria-label="フッターナビゲーション">
       <div class="footer-nav-group">
         <p class="footer-nav-title">サービス</p>
-        <a href="/strategy/">WEB戦略設計</a>
-        <a href="/website/">サイト制作・分析改善</a>
-        <a href="/seo/">SEO対策</a>
-        <a href="/meo/">MEO対策</a>
-        <a href="/ai-seo/">AI検索対策（LLM検索対策）</a>
-        <a href="/ads/listing/">リスティング広告</a>
-        <a href="/ads/display/">ディスプレイ広告</a>
-        <a href="/sns/instagram/">Instagram</a>
-        <a href="/sns/tiktok/">TikTok</a>
-        <a href="/sns/x/">X（旧Twitter）</a>
-        <a href="/sns/youtube/">YouTube</a>
-        <a href="/sns/note/">note</a>
-        <a href="/sns/line/">LINE</a>
+        <a href="../../strategy/">WEB戦略設計</a>
+        <a href="../../website/">サイト制作・分析改善</a>
+        <a href="../../seo/">SEO対策</a>
+        <a href="../../meo/">MEO対策</a>
+        <a href="../../ai-seo/">AI検索対策（LLM検索対策）</a>
+        <a href="../../ads/display/">ディスプレイ広告</a>
+        <a href="../../sns/instagram/">Instagram</a>
+        <a href="../../sns/tiktok/">TikTok</a>
+        <a href="../../sns/x/">X（旧Twitter）</a>
+        <a href="../../sns/youtube/">YouTube</a>
+        <a href="../../sns/note/">note</a>
+        <a href="../../sns/line/">LINE</a>
+        <a href="../../ai-automation/">AI業務効率化・導入支援</a>
       </div>
       <div class="footer-nav-group">
         <p class="footer-nav-title">会社情報</p>
-        <a href="/works/">制作実績</a>
-        <a href="/voice/">お客さまの声</a>
-        <a href="/company/">会社情報</a>
-        <a href="/columns/">コラム</a>
-        <a href="/news/">お知らせ</a>
+        <a href="../../works/">制作実績</a>
+        <a href="../../voice/">お客さまの声</a>
+        <a href="../../company/">会社情報</a>
+    
+                <a href="../../columns/">コラム</a>
+        <a href="../../news/">お知らせ</a>
       </div>
       <div class="footer-nav-group">
         <p class="footer-nav-title">お問い合わせ</p>
-        <a href="/contact/">無料相談のお申し込み</a>
+        <a href="../../contact/">無料相談のお申し込み</a>
         <a href="tel:0788068338">078-806-8338（平日 9:00～19:00）</a>
       </div>
     </nav>
   </div>
   <div class="footer-bottom">
     <div class="footer-bottom-right">
-      <a href="/privacy/" class="footer-privacy">プライバシーポリシー</a>
+      <a href="../../privacy/" class="footer-privacy">プライバシーポリシー</a>
       <p class="footer-copy">&copy; <span id="copyright-year">2026</span> Self Achieve Inc. All Rights Reserved.</p>
     </div>
   </div>
