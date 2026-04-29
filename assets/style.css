@@ -6400,3 +6400,164 @@ a.funnel-stage-service-tag:hover{
 .point-head{font-size:clamp(18px,2vw,26px);font-weight:700;line-height:1.5;color:#28282D;letter-spacing:-.01em;margin-bottom:24px;}
 .point-body{font-size:15px;line-height:2;color:#4A4A50;letter-spacing:.02em;}
 .back-link:hover svg path{stroke:#fff;}
+
+/* ================================================================
+   下層ページ KV（キービジュアル）専用スタイル
+   TOPページの .kv とは内部構造が異なるため、別途定義する
+   ================================================================ */
+
+/* ----------------------------------------------------------------
+   .kv-splash（背景スプラッシュ画像）
+   下層ページでは position:absolute で右側に配置される
+   ---------------------------------------------------------------- */
+.kv-splash {
+  position: absolute;
+  right: -40px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 520px;
+  height: 520px;
+  object-fit: contain;
+  opacity: .85;
+  pointer-events: none;
+  z-index: 0;
+  animation: splashFloat 6s ease-in-out infinite;
+}
+
+/* ----------------------------------------------------------------
+   .kv-right（スプラッシュ画像のラッパー）
+   listing/index.html 等で使用
+   ---------------------------------------------------------------- */
+.kv-right {
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: -60px;
+  transform: translateY(-50%);
+  width: 520px;
+  height: 520px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ----------------------------------------------------------------
+   .kv-inner（下層ページ用グリッドレイアウト）
+   ---------------------------------------------------------------- */
+.kv-inner {
+  max-width: 1200px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* ----------------------------------------------------------------
+   .kv-left（左カラム：テキストエリア）
+   ---------------------------------------------------------------- */
+.kv-left {
+  position: relative;
+  z-index: 1;
+}
+
+/* ----------------------------------------------------------------
+   .kv-badge（下層ページ版：枠線スタイル）
+   ---------------------------------------------------------------- */
+.kv-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 14px;
+  border: 1px solid rgba(255,255,255,.3);
+  font-size: 12px;
+  color: #28282D;
+  letter-spacing: .04em;
+  background: #ffffff;
+}
+
+/* ----------------------------------------------------------------
+   .kv-actions（CTAボタン群）
+   ---------------------------------------------------------------- */
+.kv-actions {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+/* ----------------------------------------------------------------
+   .kv-tel-wrap / .kv-tel-label / .kv-tel（電話番号エリア）
+   ---------------------------------------------------------------- */
+.kv-tel-label {
+  font-size: 11px;
+  letter-spacing: .18em;
+  color: rgba(255,255,255,.6);
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.kv-tel {
+  font-size: 24px;
+  font-weight: 400;
+  letter-spacing: -.02em;
+  color: #fff;
+}
+
+/* ----------------------------------------------------------------
+   レスポンシブ：タブレット（768px以下）
+   ---------------------------------------------------------------- */
+@media (max-width: 768px) {
+  .kv-splash {
+    width: 200px;
+    height: 200px;
+    right: -20px;
+    opacity: .2;
+  }
+
+  .kv-right {
+    display: none;
+  }
+
+  .kv-inner {
+    padding: 0;
+    gap: 32px;
+  }
+
+  .kv-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+    width: 100%;
+  }
+
+  .kv-tel-wrap {
+    text-align: center;
+  }
+}
+
+/* ----------------------------------------------------------------
+   レスポンシブ：スマートフォン（480px以下）
+   ---------------------------------------------------------------- */
+@media (max-width: 480px) {
+  .kv-splash {
+    width: 260px;
+    height: 260px;
+    right: -30px;
+    top: auto;
+    bottom: -20px;
+    transform: none;
+    opacity: .28;
+    animation: none;
+  }
+
+  .kv-right {
+    display: none;
+  }
+
+  .kv-badge {
+    font-size: 11px;
+    padding: 5px 10px;
+  }
+}
