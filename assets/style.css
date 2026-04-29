@@ -6763,3 +6763,54 @@ a.funnel-stage-service-tag:hover{
     padding: 5px 10px;
   }
 }
+
+/* ========================================
+   GLOBAL OVERRIDE: Sub-page Recovery (Final)
+   ======================================== */
+
+/* 1. KV（ヒーローエリア）の視認性完全復元 */
+.kv-left .kv-h1 {
+  font-weight: 900 !important;
+  color: #ffffff !important;
+  line-height: 1.15;
+}
+.kv-left .kv-sub {
+  color: rgba(255, 255, 255, 0.95) !important;
+  font-weight: 500;
+}
+.kv-h1-accent {
+  display: block;
+  font-size: 16px;
+  letter-spacing: .2em;
+  font-weight: 700;
+  color: #ffffff !important;
+}
+
+/* 2. 暗い背景セクションのテキスト色強制 */
+.results-h2, .cta-h2, .point-h2 {
+  color: #ffffff !important;
+  font-weight: 900 !important;
+}
+.results-sec .sec-eyebrow, .cta .cta-body {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+/* 3. カード類（実績・プラン・ポイント）の復元 */
+.result-card, .plan-col, .point-card, .case-card {
+  background: #ffffff !important;
+  color: #28282D !important;
+  border: 1px solid #E8E8E8;
+}
+.result-big-num {
+  font-weight: 900 !important;
+  color: #28282D !important;
+}
+.case-title, .plan-name {
+  font-weight: 900 !important;
+  color: #28282D !important;
+}
+
+/* 4. 外部リンクアイコン等の微調整 */
+.hd-btn-external svg {
+  stroke: currentColor;
+}
