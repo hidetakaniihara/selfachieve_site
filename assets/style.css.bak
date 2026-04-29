@@ -2380,7 +2380,8 @@ a.challenge-tag:hover{
       .footer-bottom{flex-direction:column-reverse;gap:12px;text-align:center}
     }
 .hd-mega-wrap::before{content:'';position:absolute;top:-14px;left:0;right:0;height:14px;}
-
+.breadcrumb li+li::before{content:'/';margin-right:8px;color:#BBBBC0;}
+.breadcrumb-sp li+li::before{content:'/';margin-right:6px;color:#BBBBC0;}
 main{padding-top:72px;}
 .kv::after{content:'';display:none;}
 .kv-particles{position:absolute;inset:0;pointer-events:none;overflow:hidden;}
@@ -4753,7 +4754,8 @@ main{padding-top:72px;}
 .hd-drawer-sns-ig:hover svg circle:last-child{fill:#fff;stroke:none}
 .hd-drawer-sns-tt:hover svg path{stroke:#fff}
 .hd-drawer-sns-x:hover svg path{stroke:#fff}
-
+.breadcrumb li:not(:last-child)::after{content:'/';color:#C8C8C8}
+.breadcrumb-sp li:not(:last-child)::after{content:'/';color:#C8C8C8}
 .kv-h1-l1,.kv-h1-l2{display:inline}
 .kv-badge-link{
       transition:border-color .2s,color .2s,background .2s;

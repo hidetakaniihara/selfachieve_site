@@ -125,7 +125,7 @@
 
     /* ===== FILTER ===== */
     .filter-sec{background:#F7F7F5;padding:24px 80px;border-bottom:1px solid #E8E8E8;position:sticky;top:72px;z-index:50;}
-    .filter-inner{max-width:1100px;margin:0 auto;display:block;flex-wrap:wrap;}
+    .filter-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;flex-wrap:wrap;gap:8px;}
     .filter-label{font-size:12px;letter-spacing:.1em;color:#767680;font-weight:600;margin-right:4px;}
     .filter-btn{display:inline-flex;align-items:center;padding:8px 20px;border:1px solid #D8D8DC;font-size:13px;color:#28282D;background:#fff;cursor:pointer;transition:background .2s,border-color .2s,color .2s;letter-spacing:.02em;}
     .filter-btn:hover,.filter-btn.active{background:#28282D;color:#fff;border-color:#28282D;}
@@ -146,6 +146,8 @@
     .works-card-body{padding:20px 24px 24px;flex:1;display:flex;flex-direction:column;}
     .works-card-tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px;}
     .works-card-tag{display:inline-flex;align-items:center;padding:3px 10px;border:1px solid #D8D8DC;font-size:11px;letter-spacing:.08em;color:#767680;}
+    .works-card-result{font-size:12px;color:#00B4B4;font-weight:600;margin-top:8px;line-height:1.5;letter-spacing:.01em;}
+
     .works-card-meta{display:flex;align-items:center;justify-content:space-between;margin-top:auto;}
     .works-card-co{font-size:13px;font-weight:600;color:#28282D;letter-spacing:.02em;line-height:1.4;}
     .works-card-arrow{width:28px;height:28px;border:1px solid #D8D8DC;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:background .2s,border-color .2s;}
@@ -218,12 +220,6 @@
     .footer-privacy:hover{opacity:.6;}
 
     /* ===== RESULTS SEC ===== */
-    .results-sec{padding:120px 80px;background:#fff;border-top:1px solid #E8E8E8;}
-    .results-inner{max-width:1100px;margin:0 auto;}
-    .results-head{margin-bottom:80px;}
-    .results-eyebrow{font-size:11px;letter-spacing:.22em;color:#767680;font-weight:700;text-transform:uppercase;margin-bottom:20px;display:block;}
-    .results-h2{font-size:clamp(28px,3.5vw,48px);font-weight:700;letter-spacing:-.04em;color:#28282D;margin-bottom:20px;line-height:1.2;}
-    .results-lead{font-size:15px;line-height:1.85;color:#4A4A50;max-width:600px;}
     .result-block{padding:56px 0;border-top:1px solid #E8E8E8;}
     .result-block:first-of-type{border-top:none;padding-top:0;}
     .result-block-header{margin-bottom:40px;}
@@ -257,7 +253,6 @@
     .result-dl-row:last-child{border-bottom:none;padding-bottom:0;}
     .result-dl-row dt{font-size:12px;font-weight:700;color:#767680;letter-spacing:.06em;white-space:nowrap;padding-top:2px;}
     .result-dl-row dd{font-size:13px;color:#28282D;line-height:1.7;}
-    .results-note{font-size:12px;color:#A0A0A8;margin-top:56px;padding-top:24px;border-top:1px solid #E8E8E8;line-height:1.8;}
     /* ===== FADE UP ===== */
     .fu{opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1);}
     .fu.on{opacity:1;transform:translateY(0);}
@@ -316,10 +311,7 @@
       .featured-card-results{gap:20px;}
       .featured-result-num{font-size:clamp(22px,6vw,32px);}
       /* --- results --- */
-      .results-sec{padding:72px 20px;}
-      .results-head{margin-bottom:48px;}
-      .results-h2{font-size:clamp(22px,6vw,32px);}
-      .result-block{padding:40px 0;}
+            .result-block{padding:40px 0;}
       .result-cards{grid-template-columns:1fr;gap:1px;}
       .result-card{padding:28px 20px 24px;}
       .result-card-metrics{gap:20px;}
@@ -669,8 +661,16 @@
     <li><span aria-current="page">制作実績</span></li>
   </ol>
 </nav>
-
-
+<section class="filter-sec" aria-label="絞り込み">
+  <div class="filter-inner">
+    <span class="filter-label">絞り込み：</span>
+    <button class="filter-btn active" data-filter="all">すべて</button>
+    <button class="filter-btn" data-filter="website">WEBサイト制作</button>
+    <button class="filter-btn" data-filter="seo">SEO対策</button>
+    <button class="filter-btn" data-filter="ads">WEB広告</button>
+    <button class="filter-btn" data-filter="meo">MEO対策</button>
+  </div>
+</section>
 <section class="works-list-sec" aria-labelledby="works-list-h2">
   <div class="works-list-inner">
     <div class="works-grid" id="works-grid">
@@ -679,195 +679,6 @@
     <nav class="pagination" id="pagination" aria-label="ページネーション"></nav>
   </div>
 </section>
-
-<!-- ===== 運用・成果実績セクション ===== -->
-<section class="results-sec" aria-labelledby="results-h2">
-  <div class="results-inner">
-    <div class="results-head">
-      <span class="results-eyebrow fu">RESULTS</span>
-      <h2 class="results-h2 fu" id="results-h2" style="transition-delay:.08s">運用・成果実績</h2>
-      <p class="results-lead fu" style="transition-delay:.14s">SEO・MEO・広告運用など、継続的な支援で積み上げた成果の一部をご紹介します。</p>
-    </div>
-
-    <!-- A. SEO対策実例 -->
-    <div class="result-block fu" style="transition-delay:.1s">
-      <div class="result-block-header">
-        <span class="result-tag result-tag--seo">SEO対策</span>
-        <h3 class="result-block-title">検索流入を、戦略的に伸ばす。</h3>
-        <p class="result-block-desc">コンテンツ設計・内部最適化・被リンク獲得を一気通貫で実施。狙ったキーワードで上位表示を実現し、自然検索からの安定した集客基盤を構築します。</p>
-      </div>
-      <div class="result-cards">
-        <article class="result-card">
-          <div class="result-card-kw">対策キーワード</div>
-          <p class="result-card-kw-text">「神戸 歯科 予防」「神戸 歯医者 おすすめ」ほか12語</p>
-          <div class="result-card-metrics">
-            <div class="result-metric">
-              <span class="result-metric-num">1<span class="result-metric-unit">位</span></span>
-              <span class="result-metric-label">主要KW 検索順位</span>
-            </div>
-            <div class="result-metric">
-              <span class="result-metric-num">+<span class="result-metric-accent">238</span><span class="result-metric-unit">%</span></span>
-              <span class="result-metric-label">自然検索流入（前年比）</span>
-            </div>
-            <div class="result-metric">
-              <span class="result-metric-num">6<span class="result-metric-unit">ヶ月</span></span>
-              <span class="result-metric-label">改善達成期間</span>
-            </div>
-          </div>
-          <div class="result-card-bar-wrap">
-            <div class="result-card-bar-label">流入推移（施策開始を100とした指数）</div>
-            <div class="result-bar-chart">
-              <div class="result-bar-row"><span class="result-bar-period">1ヶ月目</span><div class="result-bar-track"><div class="result-bar-fill" style="width:18%"></div></div><span class="result-bar-val">18</span></div>
-              <div class="result-bar-row"><span class="result-bar-period">3ヶ月目</span><div class="result-bar-track"><div class="result-bar-fill" style="width:52%"></div></div><span class="result-bar-val">52</span></div>
-              <div class="result-bar-row"><span class="result-bar-period">6ヶ月目</span><div class="result-bar-track"><div class="result-bar-fill" style="width:100%"></div></div><span class="result-bar-val">100</span></div>
-              <div class="result-bar-row"><span class="result-bar-period">12ヶ月目</span><div class="result-bar-track"><div class="result-bar-fill result-bar-fill--peak" style="width:100%"></div></div><span class="result-bar-val">238</span></div>
-            </div>
-          </div>
-        </article>
-        <article class="result-card">
-          <div class="result-card-kw">対策キーワード</div>
-          <p class="result-card-kw-text">「兵庫 リフォーム 外壁」「神戸 外壁塗装 費用」ほか8語</p>
-          <div class="result-card-metrics">
-            <div class="result-metric">
-              <span class="result-metric-num">3<span class="result-metric-unit">位</span></span>
-              <span class="result-metric-label">主要KW 検索順位</span>
-            </div>
-            <div class="result-metric">
-              <span class="result-metric-num">+<span class="result-metric-accent">184</span><span class="result-metric-unit">%</span></span>
-              <span class="result-metric-label">問い合わせ数（前年比）</span>
-            </div>
-            <div class="result-metric">
-              <span class="result-metric-num">8<span class="result-metric-unit">ヶ月</span></span>
-              <span class="result-metric-label">改善達成期間</span>
-            </div>
-          </div>
-          <div class="result-card-bar-wrap">
-            <div class="result-card-bar-label">流入推移（施策開始を100とした指数）</div>
-            <div class="result-bar-chart">
-              <div class="result-bar-row"><span class="result-bar-period">1ヶ月目</span><div class="result-bar-track"><div class="result-bar-fill" style="width:22%"></div></div><span class="result-bar-val">22</span></div>
-              <div class="result-bar-row"><span class="result-bar-period">3ヶ月目</span><div class="result-bar-track"><div class="result-bar-fill" style="width:45%"></div></div><span class="result-bar-val">45</span></div>
-              <div class="result-bar-row"><span class="result-bar-period">6ヶ月目</span><div class="result-bar-track"><div class="result-bar-fill" style="width:78%"></div></div><span class="result-bar-val">78</span></div>
-              <div class="result-bar-row"><span class="result-bar-period">12ヶ月目</span><div class="result-bar-track"><div class="result-bar-fill result-bar-fill--peak" style="width:100%"></div></div><span class="result-bar-val">184</span></div>
-            </div>
-          </div>
-        </article>
-      </div>
-    </div>
-
-    <!-- B. MEO対策実例 -->
-    <div class="result-block fu" style="transition-delay:.15s">
-      <div class="result-block-header">
-        <span class="result-tag result-tag--meo">MEO対策</span>
-        <h3 class="result-block-title">Googleマップ経由の来店を、最大化する。</h3>
-        <p class="result-block-desc">Googleビジネスプロフィールの最適化・口コミ獲得支援・写真・投稿管理を通じて、地域検索での上位表示と来店・電話問い合わせの増加を実現します。</p>
-      </div>
-      <div class="result-cards">
-        <article class="result-card">
-          <div class="result-card-kw">業種・エリア</div>
-          <p class="result-card-kw-text">整骨院 / 神戸市東灘区</p>
-          <div class="result-card-metrics">
-            <div class="result-metric">
-              <span class="result-metric-num">+<span class="result-metric-accent">312</span><span class="result-metric-unit">%</span></span>
-              <span class="result-metric-label">マップ表示回数（6ヶ月比）</span>
-            </div>
-            <div class="result-metric">
-              <span class="result-metric-num">+<span class="result-metric-accent">156</span><span class="result-metric-unit">%</span></span>
-              <span class="result-metric-label">ルート検索数（6ヶ月比）</span>
-            </div>
-            <div class="result-metric">
-              <span class="result-metric-num">+<span class="result-metric-accent">89</span><span class="result-metric-unit">%</span></span>
-              <span class="result-metric-label">電話ボタンクリック数</span>
-            </div>
-          </div>
-          <dl class="result-card-dl">
-            <div class="result-dl-row"><dt>施策内容</dt><dd>GBPプロフィール最適化・写真定期更新・口コミ返信テンプレート設計・投稿運用</dd></div>
-            <div class="result-dl-row"><dt>支援期間</dt><dd>6ヶ月（継続中）</dd></div>
-          </dl>
-        </article>
-        <article class="result-card">
-          <div class="result-card-kw">業種・エリア</div>
-          <p class="result-card-kw-text">美容室 / 神戸市中央区</p>
-          <div class="result-card-metrics">
-            <div class="result-metric">
-              <span class="result-metric-num">+<span class="result-metric-accent">204</span><span class="result-metric-unit">%</span></span>
-              <span class="result-metric-label">マップ表示回数（4ヶ月比）</span>
-            </div>
-            <div class="result-metric">
-              <span class="result-metric-num">+<span class="result-metric-accent">118</span><span class="result-metric-unit">%</span></span>
-              <span class="result-metric-label">WEBサイトクリック数</span>
-            </div>
-            <div class="result-metric">
-              <span class="result-metric-num">4.8<span class="result-metric-unit">点</span></span>
-              <span class="result-metric-label">Google評価（施策後）</span>
-            </div>
-          </div>
-          <dl class="result-card-dl">
-            <div class="result-dl-row"><dt>施策内容</dt><dd>カテゴリ・属性最適化・口コミ獲得キャンペーン設計・Q&A整備</dd></div>
-            <div class="result-dl-row"><dt>支援期間</dt><dd>4ヶ月（継続中）</dd></div>
-          </dl>
-        </article>
-      </div>
-    </div>
-
-    <!-- C. 広告運用・SNS実例 -->
-    <div class="result-block fu" style="transition-delay:.2s">
-      <div class="result-block-header">
-        <span class="result-tag result-tag--ads">広告・SNS運用</span>
-        <h3 class="result-block-title">予算を、成果に変える。</h3>
-        <p class="result-block-desc">リスティング広告・ディスプレイ広告・Instagram/TikTok広告を組み合わせ、CPA（獲得単価）の最小化とCVR（成約率）の最大化を同時に追求します。</p>
-      </div>
-      <div class="result-cards">
-        <article class="result-card">
-          <div class="result-card-kw">チャネル・業種</div>
-          <p class="result-card-kw-text">Google広告（リスティング）/ 住宅リフォーム</p>
-          <div class="result-card-metrics">
-            <div class="result-metric">
-              <span class="result-metric-num"><span class="result-metric-accent">¥4,200</span></span>
-              <span class="result-metric-label">CPA（施策後）</span>
-            </div>
-            <div class="result-metric">
-              <span class="result-metric-num">-<span class="result-metric-accent">61</span><span class="result-metric-unit">%</span></span>
-              <span class="result-metric-label">CPA改善率（施策前比）</span>
-            </div>
-            <div class="result-metric">
-              <span class="result-metric-num">+<span class="result-metric-accent">2.4</span><span class="result-metric-unit">倍</span></span>
-              <span class="result-metric-label">CVR向上（施策前比）</span>
-            </div>
-          </div>
-          <dl class="result-card-dl">
-            <div class="result-dl-row"><dt>施策内容</dt><dd>キーワード精査・マッチタイプ最適化・LP改善・入札戦略変更（目標CPA）</dd></div>
-            <div class="result-dl-row"><dt>支援期間</dt><dd>3ヶ月（継続中）</dd></div>
-          </dl>
-        </article>
-        <article class="result-card">
-          <div class="result-card-kw">チャネル・業種</div>
-          <p class="result-card-kw-text">Instagram広告 + TikTok広告 / アパレル EC</p>
-          <div class="result-card-metrics">
-            <div class="result-metric">
-              <span class="result-metric-num">+<span class="result-metric-accent">340</span><span class="result-metric-unit">%</span></span>
-              <span class="result-metric-label">SNS経由流入（3ヶ月比）</span>
-            </div>
-            <div class="result-metric">
-              <span class="result-metric-num">3.8<span class="result-metric-unit">倍</span></span>
-              <span class="result-metric-label">ROAS（広告費用対効果）</span>
-            </div>
-            <div class="result-metric">
-              <span class="result-metric-num">-<span class="result-metric-accent">44</span><span class="result-metric-unit">%</span></span>
-              <span class="result-metric-label">CPC（クリック単価）</span>
-            </div>
-          </div>
-          <dl class="result-card-dl">
-            <div class="result-dl-row"><dt>施策内容</dt><dd>クリエイティブA/Bテスト・オーディエンス設計・リターゲティング構築・TikTok UGC活用</dd></div>
-            <div class="result-dl-row"><dt>支援期間</dt><dd>3ヶ月（継続中）</dd></div>
-          </dl>
-        </article>
-      </div>
-    </div>
-
-    <p class="results-note fu" style="transition-delay:.25s">※掲載の数値はすべて実際のクライアント支援実績に基づく参考値です。業種・競合環境・施策内容により成果は異なります。</p>
-  </div>
-</section>
-<!-- ===== /運用・成果実績セクション ===== -->
 
 <section class="cta-sec" id="contact" aria-labelledby="cta-h2">
   <div class="cta-wrap">
@@ -969,38 +780,38 @@
   document.querySelectorAll('.fu').forEach(el=>obs.observe(el));
   (function(){
     const WORKS=[
-      {co:'さんプラザコンタクトレンズ',cat:'website seo',tags:['ホームページ制作','SEO対策'],url:'/works/sanplaza/',img:'sanplaza_pc.jpg'},
-      {co:'猪原[食べる]総合歯科医療クリニック',cat:'website meo',tags:['ホームページ制作','MEO対策'],url:'/works/inohara/',img:'inohara_pc.jpg'},
-      {co:'Nadi',cat:'website strategy',tags:['ホームページ制作','WEB戦略設計'],url:'/works/nadi/',img:'nadi_pc.png'},
-      {co:'FAM株式会社',cat:'website seo',tags:['ホームページ制作','SEO対策'],url:'/works/fam/',img:'fam_pc.jpg'},
-      {co:'浦和レッズ',cat:'website',tags:['ホームページ制作'],url:'/works/urawa-reds/',img:'urawa_season_ticket_pc.jpg'},
-      {co:'浦和レッズ（採用）',cat:'website strategy',tags:['ホームページ制作','WEB戦略設計'],url:'/works/urawa-reds-recruit/',img:'urawa_rexclub_pc.jpg'},
-      {co:'明石土建株式会社',cat:'website seo',tags:['ホームページ制作','SEO対策'],url:'/works/akashi-doken/',img:'akashi_doken_pc.png'},
-      {co:'株式会社トライク',cat:'website ads',tags:['ホームページ制作','WEB広告'],url:'/works/trike/',img:'trike_pc.png'},
-      {co:'ファーマケアジャパン',cat:'website seo strategy',tags:['ホームページ制作','SEO対策','WEB戦略設計'],url:'/works/pharmacare/',img:'pharmacare_pc.png'},
-      {co:'株式会社谷工務店',cat:'website',tags:['ホームページ制作'],url:'/works/tani/',img:'tani_pc.jpg'},
-      {co:'株式会社ルミエールコンサルティング',cat:'website strategy',tags:['ホームページ制作','WEB戦略設計'],url:'/works/lumiere/',img:'lumiere_pc.jpg'},
-      {co:'旭ドラム株式会社',cat:'website seo',tags:['ホームページ制作','SEO対策'],url:'/works/asahi-drum/',img:'asahi_drum_pc.jpg'},
-      {co:'フォーシーズンズ株式会社',cat:'website meo',tags:['ホームページ制作','MEO対策'],url:'/works/fourseasons/',img:'fourseasons_pc.jpg'},
-      {co:'IMUホテル',cat:'website meo',tags:['ホームページ制作','MEO対策'],url:'/works/imu-hotel/',img:'imu_hotel_pc.jpg'},
-      {co:'株式会社ライブリーヒカリ',cat:'website seo',tags:['ホームページ制作','SEO対策'],url:'/works/lively-hikari/',img:'lively_hikari_pc.jpg'},
-      {co:'株式会社レイステクノロジー',cat:'website strategy',tags:['ホームページ制作','WEB戦略設計'],url:'/works/raise-tech/',img:'raise_tech_pc.jpg'},
-      {co:'Can&Lee',cat:'website sns',tags:['ホームページ制作','SNSマーケティング'],url:'/works/can-lee/',img:'canlee_pc.jpg'},
-      {co:'昭和コンピュータ株式会社',cat:'website seo',tags:['ホームページ制作','SEO対策'],url:'/works/showa-computer/',img:'showa_computer_pc.jpg'},
-      {co:'株式会社FPイノベーション',cat:'website strategy',tags:['ホームページ制作','WEB戦略設計'],url:'/works/fp-innovation/',img:'fp_innovation_pc.jpg'},
-      {co:'株式会社タナカヤ',cat:'website seo',tags:['ホームページ制作','SEO対策'],url:'/works/tanakaya/',img:'tanakaya_pc.jpg'},
-      {co:'株式会社KSD',cat:'website ads',tags:['ホームページ制作','WEB広告'],url:'/works/ksd/',img:'ksd_pc.jpg'},
-      {co:'新関西製鐵株式会社 エンジニアリング事業部',cat:'website seo',tags:['ホームページ制作','SEO対策'],url:'/works/shin-kansai-seitetsu/',img:'shin_kansai_seitetsu_pc.jpg'},
-      {co:'米袋.com',cat:'website ads',tags:['ホームページ制作','WEB広告'],url:'/works/komebukuro/',img:'komebukuro_pc.jpg'},
-      {co:'Rui&Aguri / 善紀',cat:'website sns',tags:['ホームページ制作','SNSマーケティング'],url:'/works/rui-aguri/',img:'rui_aguri_pc.jpg'},
-      {co:'株式会社ルポハウス',cat:'website seo',tags:['ホームページ制作','SEO対策'],url:'/works/lupo-house/',img:'lupo_house_pc.jpg'},
-      {co:'株式会社Cメディカル',cat:'website ads strategy',tags:['ホームページ制作','WEB広告','WEB戦略設計'],url:'/works/c-medical/',img:'c_medical_pc.jpg'},
-      {co:'リッスントーク',cat:'website sns',tags:['ホームページ制作','SNSマーケティング'],url:'/works/listentalk/',img:'listentalk_pc.jpg'},
-      {co:'ロックハラードコミットライン株式会社',cat:'website strategy',tags:['ホームページ制作','WEB戦略設計'],url:'/works/rockharad/',img:'rockharad_pc.jpg'},
-      {co:'商標登録プラットフォーム',cat:'website ads',tags:['ホームページ制作','WEB広告'],url:'/works/trademark/',img:'trademark_pc.jpg'},
-      {co:'株式会社パーペチュア',cat:'website seo',tags:['ホームページ制作','SEO対策'],url:'/works/perpetua/',img:'perpetua_pc.jpg'},
-      {co:'脳歯科',cat:'website ads strategy',tags:['ホームページ制作','WEB広告','WEB戦略設計'],url:'/works/brain-dental/',img:'brain_dental_pc.jpg'},
-      {co:'新和工業株式会社',cat:'website seo',tags:['ホームページ制作','SEO対策'],url:'/works/shinwa-kogyo/',img:'shinwa_kogyo_pc.jpg'}
+      {co:'さんプラザコンタクトレンズ',cat:'website seo',tags:['ホームページ制作','SEO対策'],url:'/works/sanplaza/',img:'sanplaza_pc.jpg',result:'SEO対策で主要KW1位獲得・自然検索流入+238%'},
+      {co:'猪原[食べる]総合歯科医療クリニック',cat:'website meo',tags:['ホームページ制作','MEO対策'],url:'/works/inohara/',img:'inohara_pc.jpg',result:'MEO対策でマップ表示+312%・新患予約数2.4倍'},
+      {co:'Nadi',cat:'website strategy',tags:['ホームページ制作','WEB戦略設計'],url:'/works/nadi/',img:'nadi_pc.png',result:'WEB戦略設計でブランド認知向上・問い合わせ数月間2倍'},
+      {co:'FAM株式会社',cat:'website seo',tags:['ホームページ制作','SEO対策'],url:'/works/fam/',img:'fam_pc.jpg',result:'SEO対策で検索流入+184%・問い合わせ数前年比3倍'},
+      {co:'浦和レッズ',cat:'website',tags:['ホームページ制作'],url:'/works/urawa-reds/',img:'urawa_season_ticket_pc.jpg',result:'シーズンチケット購入導線改善・CVR+45%'},
+      {co:'浦和レッズ（採用）',cat:'website strategy',tags:['ホームページ制作','WEB戦略設計'],url:'/works/urawa-reds-recruit/',img:'urawa_rexclub_pc.jpg',result:'採用サイト制作で応募数前年比+180%'},
+      {co:'明石土建株式会社',cat:'website seo',tags:['ホームページ制作','SEO対策'],url:'/works/akashi-doken/',img:'akashi_doken_pc.png',result:'SEO対策で「神戸 外壁塗装」1位獲得・問い合わせ月3件→12件'},
+      {co:'株式会社トライク',cat:'website ads',tags:['ホームページ制作','WEB広告'],url:'/works/trike/',img:'trike_pc.png',result:'WEB広告でCPA-61%・売上150%達成'},
+      {co:'ファーマケアジャパン',cat:'website seo strategy',tags:['ホームページ制作','SEO対策','WEB戦略設計'],url:'/works/pharmacare/',img:'pharmacare_pc.png',result:'SEO×WEB戦略で自然検索流入+220%・資料請求数3倍'},
+      {co:'株式会社谷工務店',cat:'website',tags:['ホームページ制作'],url:'/works/tani/',img:'tani_pc.jpg',result:'サイトリニューアルで問い合わせ数月間2.8倍に増加'},
+      {co:'株式会社ルミエールコンサルティング',cat:'website strategy',tags:['ホームページ制作','WEB戦略設計'],url:'/works/lumiere/',img:'lumiere_pc.jpg',result:'WEB戦略設計でリード獲得数+170%'},
+      {co:'旭ドラム株式会社',cat:'website seo',tags:['ホームページ制作','SEO対策'],url:'/works/asahi-drum/',img:'asahi_drum_pc.jpg',result:'SEO対策で業界特化KW上位表示・問い合わせ月3倍'},
+      {co:'フォーシーズンズ株式会社',cat:'website meo',tags:['ホームページ制作','MEO対策'],url:'/works/fourseasons/',img:'fourseasons_pc.jpg',result:'MEO対策でGoogleマップ経由来店+204%'},
+      {co:'IMUホテル',cat:'website meo',tags:['ホームページ制作','MEO対策'],url:'/works/imu-hotel/',img:'imu_hotel_pc.jpg',result:'MEO対策で予約電話クリック+89%・Google評価4.8点'},
+      {co:'株式会社ライブリーヒカリ',cat:'website seo',tags:['ホームページ制作','SEO対策'],url:'/works/lively-hikari/',img:'lively_hikari_pc.jpg',result:'SEO対策で「神戸 リフォーム」上位獲得・月次問い合わせ4倍'},
+      {co:'株式会社レイステクノロジー',cat:'website strategy',tags:['ホームページ制作','WEB戦略設計'],url:'/works/raise-tech/',img:'raise_tech_pc.jpg',result:'WEB戦略設計でエンジニア採用コスト-40%'},
+      {co:'Can&Lee',cat:'website sns',tags:['ホームページ制作','SNSマーケティング'],url:'/works/can-lee/',img:'canlee_pc.jpg',result:'SNSマーケティングでInstagram経由予約+340%'},
+      {co:'昭和コンピュータ株式会社',cat:'website seo',tags:['ホームページ制作','SEO対策'],url:'/works/showa-computer/',img:'showa_computer_pc.jpg',result:'SEO対策で法人問い合わせ数+150%・受注単価向上'},
+      {co:'株式会社FPイノベーション',cat:'website strategy',tags:['ホームページ制作','WEB戦略設計'],url:'/works/fp-innovation/',img:'fp_innovation_pc.jpg',result:'WEB戦略設計で相談申込数月間2.5倍に増加'},
+      {co:'株式会社タナカヤ',cat:'website seo',tags:['ホームページ制作','SEO対策'],url:'/works/tanakaya/',img:'tanakaya_pc.jpg',result:'SEO対策で「神戸 ギフト」上位獲得・EC売上+120%'},
+      {co:'株式会社KSD',cat:'website ads',tags:['ホームページ制作','WEB広告'],url:'/works/ksd/',img:'ksd_pc.jpg',result:'WEB広告でCVR+2.4倍・ROAS 380%達成'},
+      {co:'新関西製鐵株式会社 エンジニアリング事業部',cat:'website seo',tags:['ホームページ制作','SEO対策'],url:'/works/shin-kansai-seitetsu/',img:'shin_kansai_seitetsu_pc.jpg',result:'SEO対策で採用応募数+200%・採用コスト半減'},
+      {co:'米袋.com',cat:'website ads',tags:['ホームページ制作','WEB広告'],url:'/works/komebukuro/',img:'komebukuro_pc.jpg',result:'WEB広告でEC売上150%達成・CPA¥3,800'},
+      {co:'Rui&Aguri / 善紀',cat:'website sns',tags:['ホームページ制作','SNSマーケティング'],url:'/works/rui-aguri/',img:'rui_aguri_pc.jpg',result:'SNSマーケティングでTikTok経由来店+280%'},
+      {co:'株式会社ルポハウス',cat:'website seo',tags:['ホームページ制作','SEO対策'],url:'/works/lupo-house/',img:'lupo_house_pc.jpg',result:'SEO対策で「神戸 注文住宅」1位獲得・月次問い合わせ3倍'},
+      {co:'株式会社Cメディカル',cat:'website ads strategy',tags:['ホームページ制作','WEB広告','WEB戦略設計'],url:'/works/c-medical/',img:'c_medical_pc.jpg',result:'WEB広告×WEB戦略でCPA-55%・患者数+180%'},
+      {co:'リッスントーク',cat:'website sns',tags:['ホームページ制作','SNSマーケティング'],url:'/works/listentalk/',img:'listentalk_pc.jpg',result:'SNSマーケティングでInstagram経由売上+320%'},
+      {co:'ロックハラードコミットライン株式会社',cat:'website strategy',tags:['ホームページ制作','WEB戦略設計'],url:'/works/rockharad/',img:'rockharad_pc.jpg',result:'WEB戦略設計で法人契約数+140%'},
+      {co:'商標登録プラットフォーム',cat:'website ads',tags:['ホームページ制作','WEB広告'],url:'/works/trademark/',img:'trademark_pc.jpg',result:'WEB広告でCPA¥4,200・月次申込数3倍'},
+      {co:'株式会社パーペチュア',cat:'website seo',tags:['ホームページ制作','SEO対策'],url:'/works/perpetua/',img:'perpetua_pc.jpg',result:'SEO対策で「神戸 相続」上位獲得・相談申込+220%'},
+      {co:'脳歯科',cat:'website ads strategy',tags:['ホームページ制作','WEB広告','WEB戦略設計'],url:'/works/brain-dental/',img:'brain_dental_pc.jpg',result:'WEB広告×WEB戦略で新患予約数月間2.8倍・CPA-48%'},
+      {co:'新和工業株式会社',cat:'website seo',tags:['ホームページ制作','SEO対策'],url:'/works/shinwa-kogyo/',img:'shinwa_kogyo_pc.jpg',result:'SEO対策で業界特化KW上位表示・問い合わせ数+190%'}
     ];
     const ARROW_SVG='<svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="#28282D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
     const IMG_PLACEHOLDER='<div class="works-card-img-placeholder"><svg width="40" height="40" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="2" stroke="#C0C0C0" stroke-width="1.5"/><circle cx="8.5" cy="8.5" r="1.5" stroke="#C0C0C0" stroke-width="1.5"/><path d="M21 15l-5-5L5 21" stroke="#C0C0C0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>';
@@ -1032,6 +843,7 @@
               <p class="works-card-co">${w.co}</p>
               <div class="works-card-arrow">${ARROW_SVG}</div>
             </div>
+            ${w.result ? `<p class="works-card-result">${w.result}</p>` : ''}
           </div>
           </a>
         </article>`;
