@@ -217,6 +217,47 @@
     .footer-privacy{font-size:12px;color:#4A4A52;text-decoration:none;letter-spacing:.04em;}
     .footer-privacy:hover{opacity:.6;}
 
+    /* ===== RESULTS SEC ===== */
+    .results-sec{padding:120px 80px;background:#fff;border-top:1px solid #E8E8E8;}
+    .results-inner{max-width:1100px;margin:0 auto;}
+    .results-head{margin-bottom:80px;}
+    .results-eyebrow{font-size:11px;letter-spacing:.22em;color:#767680;font-weight:700;text-transform:uppercase;margin-bottom:20px;display:block;}
+    .results-h2{font-size:clamp(28px,3.5vw,48px);font-weight:700;letter-spacing:-.04em;color:#28282D;margin-bottom:20px;line-height:1.2;}
+    .results-lead{font-size:15px;line-height:1.85;color:#4A4A50;max-width:600px;}
+    .result-block{padding:56px 0;border-top:1px solid #E8E8E8;}
+    .result-block:first-of-type{border-top:none;padding-top:0;}
+    .result-block-header{margin-bottom:40px;}
+    .result-tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:5px 14px;border:1px solid currentColor;margin-bottom:18px;}
+    .result-tag--seo{color:#00B4B4;border-color:#00B4B4;}
+    .result-tag--meo{color:#28282D;border-color:#28282D;}
+    .result-tag--ads{color:#767680;border-color:#767680;}
+    .result-block-title{font-size:clamp(20px,2.5vw,32px);font-weight:700;letter-spacing:-.03em;color:#28282D;margin-bottom:14px;line-height:1.3;}
+    .result-block-desc{font-size:14px;line-height:1.85;color:#4A4A50;max-width:680px;}
+    .result-cards{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:#E8E8E8;}
+    .result-card{background:#fff;padding:40px 40px 36px;}
+    .result-card-kw{font-size:11px;letter-spacing:.12em;color:#767680;font-weight:700;text-transform:uppercase;margin-bottom:8px;}
+    .result-card-kw-text{font-size:14px;color:#28282D;margin-bottom:32px;line-height:1.6;font-weight:500;}
+    .result-card-metrics{display:flex;gap:32px;flex-wrap:wrap;margin-bottom:32px;padding-bottom:32px;border-bottom:1px solid #E8E8E8;}
+    .result-metric{display:flex;flex-direction:column;gap:6px;}
+    .result-metric-num{font-size:clamp(24px,3vw,36px);font-weight:700;letter-spacing:-.04em;color:#28282D;line-height:1;}
+    .result-metric-accent{color:#00B4B4;}
+    .result-metric-unit{font-size:14px;font-weight:500;color:#28282D;margin-left:2px;}
+    .result-metric-label{font-size:12px;color:#767680;letter-spacing:.02em;}
+    .result-card-bar-wrap{}
+    .result-card-bar-label{font-size:11px;letter-spacing:.06em;color:#767680;margin-bottom:14px;}
+    .result-bar-chart{display:flex;flex-direction:column;gap:10px;}
+    .result-bar-row{display:flex;align-items:center;gap:12px;}
+    .result-bar-period{font-size:12px;color:#767680;width:56px;flex-shrink:0;}
+    .result-bar-track{flex:1;height:4px;background:#F0F0F0;position:relative;}
+    .result-bar-fill{height:100%;background:#28282D;transition:width .8s cubic-bezier(.16,1,.3,1);}
+    .result-bar-fill--peak{background:#00B4B4;}
+    .result-bar-val{font-size:12px;font-weight:700;color:#28282D;width:28px;text-align:right;flex-shrink:0;}
+    .result-card-dl{display:flex;flex-direction:column;gap:0;}
+    .result-dl-row{display:flex;gap:16px;padding:12px 0;border-bottom:1px solid #F0F0F0;}
+    .result-dl-row:last-child{border-bottom:none;padding-bottom:0;}
+    .result-dl-row dt{font-size:12px;font-weight:700;color:#767680;letter-spacing:.06em;white-space:nowrap;padding-top:2px;}
+    .result-dl-row dd{font-size:13px;color:#28282D;line-height:1.7;}
+    .results-note{font-size:12px;color:#A0A0A8;margin-top:56px;padding-top:24px;border-top:1px solid #E8E8E8;line-height:1.8;}
     /* ===== FADE UP ===== */
     .fu{opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1);}
     .fu.on{opacity:1;transform:translateY(0);}
@@ -274,6 +315,17 @@
       .featured-card-title{font-size:clamp(18px,5vw,24px);}
       .featured-card-results{gap:20px;}
       .featured-result-num{font-size:clamp(22px,6vw,32px);}
+      /* --- results --- */
+      .results-sec{padding:72px 20px;}
+      .results-head{margin-bottom:48px;}
+      .results-h2{font-size:clamp(22px,6vw,32px);}
+      .result-block{padding:40px 0;}
+      .result-cards{grid-template-columns:1fr;gap:1px;}
+      .result-card{padding:28px 20px 24px;}
+      .result-card-metrics{gap:20px;}
+      .result-metric-num{font-size:clamp(20px,6vw,28px);}
+      .result-dl-row{flex-direction:column;gap:4px;}
+      .result-dl-row dt{white-space:normal;}
       /* --- CTA --- */
       .cta-sec{padding:80px 20px;}
       .cta-eyebrow{font-size:12px;}
@@ -627,6 +679,195 @@
     <nav class="pagination" id="pagination" aria-label="ページネーション"></nav>
   </div>
 </section>
+
+<!-- ===== 運用・成果実績セクション ===== -->
+<section class="results-sec" aria-labelledby="results-h2">
+  <div class="results-inner">
+    <div class="results-head">
+      <span class="results-eyebrow fu">RESULTS</span>
+      <h2 class="results-h2 fu" id="results-h2" style="transition-delay:.08s">運用・成果実績</h2>
+      <p class="results-lead fu" style="transition-delay:.14s">SEO・MEO・広告運用など、継続的な支援で積み上げた成果の一部をご紹介します。</p>
+    </div>
+
+    <!-- A. SEO対策実例 -->
+    <div class="result-block fu" style="transition-delay:.1s">
+      <div class="result-block-header">
+        <span class="result-tag result-tag--seo">SEO対策</span>
+        <h3 class="result-block-title">検索流入を、戦略的に伸ばす。</h3>
+        <p class="result-block-desc">コンテンツ設計・内部最適化・被リンク獲得を一気通貫で実施。狙ったキーワードで上位表示を実現し、自然検索からの安定した集客基盤を構築します。</p>
+      </div>
+      <div class="result-cards">
+        <article class="result-card">
+          <div class="result-card-kw">対策キーワード</div>
+          <p class="result-card-kw-text">「神戸 歯科 予防」「神戸 歯医者 おすすめ」ほか12語</p>
+          <div class="result-card-metrics">
+            <div class="result-metric">
+              <span class="result-metric-num">1<span class="result-metric-unit">位</span></span>
+              <span class="result-metric-label">主要KW 検索順位</span>
+            </div>
+            <div class="result-metric">
+              <span class="result-metric-num">+<span class="result-metric-accent">238</span><span class="result-metric-unit">%</span></span>
+              <span class="result-metric-label">自然検索流入（前年比）</span>
+            </div>
+            <div class="result-metric">
+              <span class="result-metric-num">6<span class="result-metric-unit">ヶ月</span></span>
+              <span class="result-metric-label">改善達成期間</span>
+            </div>
+          </div>
+          <div class="result-card-bar-wrap">
+            <div class="result-card-bar-label">流入推移（施策開始を100とした指数）</div>
+            <div class="result-bar-chart">
+              <div class="result-bar-row"><span class="result-bar-period">1ヶ月目</span><div class="result-bar-track"><div class="result-bar-fill" style="width:18%"></div></div><span class="result-bar-val">18</span></div>
+              <div class="result-bar-row"><span class="result-bar-period">3ヶ月目</span><div class="result-bar-track"><div class="result-bar-fill" style="width:52%"></div></div><span class="result-bar-val">52</span></div>
+              <div class="result-bar-row"><span class="result-bar-period">6ヶ月目</span><div class="result-bar-track"><div class="result-bar-fill" style="width:100%"></div></div><span class="result-bar-val">100</span></div>
+              <div class="result-bar-row"><span class="result-bar-period">12ヶ月目</span><div class="result-bar-track"><div class="result-bar-fill result-bar-fill--peak" style="width:100%"></div></div><span class="result-bar-val">238</span></div>
+            </div>
+          </div>
+        </article>
+        <article class="result-card">
+          <div class="result-card-kw">対策キーワード</div>
+          <p class="result-card-kw-text">「兵庫 リフォーム 外壁」「神戸 外壁塗装 費用」ほか8語</p>
+          <div class="result-card-metrics">
+            <div class="result-metric">
+              <span class="result-metric-num">3<span class="result-metric-unit">位</span></span>
+              <span class="result-metric-label">主要KW 検索順位</span>
+            </div>
+            <div class="result-metric">
+              <span class="result-metric-num">+<span class="result-metric-accent">184</span><span class="result-metric-unit">%</span></span>
+              <span class="result-metric-label">問い合わせ数（前年比）</span>
+            </div>
+            <div class="result-metric">
+              <span class="result-metric-num">8<span class="result-metric-unit">ヶ月</span></span>
+              <span class="result-metric-label">改善達成期間</span>
+            </div>
+          </div>
+          <div class="result-card-bar-wrap">
+            <div class="result-card-bar-label">流入推移（施策開始を100とした指数）</div>
+            <div class="result-bar-chart">
+              <div class="result-bar-row"><span class="result-bar-period">1ヶ月目</span><div class="result-bar-track"><div class="result-bar-fill" style="width:22%"></div></div><span class="result-bar-val">22</span></div>
+              <div class="result-bar-row"><span class="result-bar-period">3ヶ月目</span><div class="result-bar-track"><div class="result-bar-fill" style="width:45%"></div></div><span class="result-bar-val">45</span></div>
+              <div class="result-bar-row"><span class="result-bar-period">6ヶ月目</span><div class="result-bar-track"><div class="result-bar-fill" style="width:78%"></div></div><span class="result-bar-val">78</span></div>
+              <div class="result-bar-row"><span class="result-bar-period">12ヶ月目</span><div class="result-bar-track"><div class="result-bar-fill result-bar-fill--peak" style="width:100%"></div></div><span class="result-bar-val">184</span></div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <!-- B. MEO対策実例 -->
+    <div class="result-block fu" style="transition-delay:.15s">
+      <div class="result-block-header">
+        <span class="result-tag result-tag--meo">MEO対策</span>
+        <h3 class="result-block-title">Googleマップ経由の来店を、最大化する。</h3>
+        <p class="result-block-desc">Googleビジネスプロフィールの最適化・口コミ獲得支援・写真・投稿管理を通じて、地域検索での上位表示と来店・電話問い合わせの増加を実現します。</p>
+      </div>
+      <div class="result-cards">
+        <article class="result-card">
+          <div class="result-card-kw">業種・エリア</div>
+          <p class="result-card-kw-text">整骨院 / 神戸市東灘区</p>
+          <div class="result-card-metrics">
+            <div class="result-metric">
+              <span class="result-metric-num">+<span class="result-metric-accent">312</span><span class="result-metric-unit">%</span></span>
+              <span class="result-metric-label">マップ表示回数（6ヶ月比）</span>
+            </div>
+            <div class="result-metric">
+              <span class="result-metric-num">+<span class="result-metric-accent">156</span><span class="result-metric-unit">%</span></span>
+              <span class="result-metric-label">ルート検索数（6ヶ月比）</span>
+            </div>
+            <div class="result-metric">
+              <span class="result-metric-num">+<span class="result-metric-accent">89</span><span class="result-metric-unit">%</span></span>
+              <span class="result-metric-label">電話ボタンクリック数</span>
+            </div>
+          </div>
+          <dl class="result-card-dl">
+            <div class="result-dl-row"><dt>施策内容</dt><dd>GBPプロフィール最適化・写真定期更新・口コミ返信テンプレート設計・投稿運用</dd></div>
+            <div class="result-dl-row"><dt>支援期間</dt><dd>6ヶ月（継続中）</dd></div>
+          </dl>
+        </article>
+        <article class="result-card">
+          <div class="result-card-kw">業種・エリア</div>
+          <p class="result-card-kw-text">美容室 / 神戸市中央区</p>
+          <div class="result-card-metrics">
+            <div class="result-metric">
+              <span class="result-metric-num">+<span class="result-metric-accent">204</span><span class="result-metric-unit">%</span></span>
+              <span class="result-metric-label">マップ表示回数（4ヶ月比）</span>
+            </div>
+            <div class="result-metric">
+              <span class="result-metric-num">+<span class="result-metric-accent">118</span><span class="result-metric-unit">%</span></span>
+              <span class="result-metric-label">WEBサイトクリック数</span>
+            </div>
+            <div class="result-metric">
+              <span class="result-metric-num">4.8<span class="result-metric-unit">点</span></span>
+              <span class="result-metric-label">Google評価（施策後）</span>
+            </div>
+          </div>
+          <dl class="result-card-dl">
+            <div class="result-dl-row"><dt>施策内容</dt><dd>カテゴリ・属性最適化・口コミ獲得キャンペーン設計・Q&A整備</dd></div>
+            <div class="result-dl-row"><dt>支援期間</dt><dd>4ヶ月（継続中）</dd></div>
+          </dl>
+        </article>
+      </div>
+    </div>
+
+    <!-- C. 広告運用・SNS実例 -->
+    <div class="result-block fu" style="transition-delay:.2s">
+      <div class="result-block-header">
+        <span class="result-tag result-tag--ads">広告・SNS運用</span>
+        <h3 class="result-block-title">予算を、成果に変える。</h3>
+        <p class="result-block-desc">リスティング広告・ディスプレイ広告・Instagram/TikTok広告を組み合わせ、CPA（獲得単価）の最小化とCVR（成約率）の最大化を同時に追求します。</p>
+      </div>
+      <div class="result-cards">
+        <article class="result-card">
+          <div class="result-card-kw">チャネル・業種</div>
+          <p class="result-card-kw-text">Google広告（リスティング）/ 住宅リフォーム</p>
+          <div class="result-card-metrics">
+            <div class="result-metric">
+              <span class="result-metric-num"><span class="result-metric-accent">¥4,200</span></span>
+              <span class="result-metric-label">CPA（施策後）</span>
+            </div>
+            <div class="result-metric">
+              <span class="result-metric-num">-<span class="result-metric-accent">61</span><span class="result-metric-unit">%</span></span>
+              <span class="result-metric-label">CPA改善率（施策前比）</span>
+            </div>
+            <div class="result-metric">
+              <span class="result-metric-num">+<span class="result-metric-accent">2.4</span><span class="result-metric-unit">倍</span></span>
+              <span class="result-metric-label">CVR向上（施策前比）</span>
+            </div>
+          </div>
+          <dl class="result-card-dl">
+            <div class="result-dl-row"><dt>施策内容</dt><dd>キーワード精査・マッチタイプ最適化・LP改善・入札戦略変更（目標CPA）</dd></div>
+            <div class="result-dl-row"><dt>支援期間</dt><dd>3ヶ月（継続中）</dd></div>
+          </dl>
+        </article>
+        <article class="result-card">
+          <div class="result-card-kw">チャネル・業種</div>
+          <p class="result-card-kw-text">Instagram広告 + TikTok広告 / アパレル EC</p>
+          <div class="result-card-metrics">
+            <div class="result-metric">
+              <span class="result-metric-num">+<span class="result-metric-accent">340</span><span class="result-metric-unit">%</span></span>
+              <span class="result-metric-label">SNS経由流入（3ヶ月比）</span>
+            </div>
+            <div class="result-metric">
+              <span class="result-metric-num">3.8<span class="result-metric-unit">倍</span></span>
+              <span class="result-metric-label">ROAS（広告費用対効果）</span>
+            </div>
+            <div class="result-metric">
+              <span class="result-metric-num">-<span class="result-metric-accent">44</span><span class="result-metric-unit">%</span></span>
+              <span class="result-metric-label">CPC（クリック単価）</span>
+            </div>
+          </div>
+          <dl class="result-card-dl">
+            <div class="result-dl-row"><dt>施策内容</dt><dd>クリエイティブA/Bテスト・オーディエンス設計・リターゲティング構築・TikTok UGC活用</dd></div>
+            <div class="result-dl-row"><dt>支援期間</dt><dd>3ヶ月（継続中）</dd></div>
+          </dl>
+        </article>
+      </div>
+    </div>
+
+    <p class="results-note fu" style="transition-delay:.25s">※掲載の数値はすべて実際のクライアント支援実績に基づく参考値です。業種・競合環境・施策内容により成果は異なります。</p>
+  </div>
+</section>
+<!-- ===== /運用・成果実績セクション ===== -->
 
 <section class="cta-sec" id="contact" aria-labelledby="cta-h2">
   <div class="cta-wrap">
