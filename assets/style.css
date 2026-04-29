@@ -5555,9 +5555,9 @@ main{padding-top:72px;}
 .official-account-arrow{
       font-size:13px;font-weight:700;color:#EC4899;letter-spacing:.06em;
     }
-.challenge-head .sec-eyebrow{color:rgba(255,255,255,.65)}
-.challenge-head .sec-h2{color:#fff}
-.challenge-head .sec-body{color:rgba(255,255,255,.85)}
+.challenge-head .sec-eyebrow{color:#767680}
+.challenge-head .sec-h2{color:#28282D}
+.challenge-head .sec-body{color:#4A4A50}
 .footer-sns-link:hover svg rect,.footer-sns-link:hover svg circle,.footer-sns-link:hover svg path{stroke:#fff}
 .footer-nav a{font-size:13px;color:#4A4A50;transition:color .2s}
 .footer-nav a:hover{color:#28282D}
