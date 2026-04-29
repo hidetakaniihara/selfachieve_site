@@ -1127,54 +1127,7 @@
       document.body.style.overflow = '';
     });
   });
-  // 「推奨施策」ラベルを横一列に揃える（絶対座標ベース）
-  function alignChallengeLabels() {
-    const cards = Array.from(document.querySelectorAll('.challenge-card'));
-    if (cards.length === 0) return;
-    // まずリセット
-    cards.forEach(card => {
-      const label = card.querySelector('.challenge-tags-label');
-      if (label) {
-        label.style.paddingTop = '28px';
-        label.style.marginTop = '0';
-      }
-    });
-    // スマホ1列時（768px以下）は揃え処理をしない
-    if (window.innerWidth <= 768) return;
-    // getBoundingClientRect で絶対座標を取得
-    const descBottoms = cards.map(card => {
-      const desc = card.querySelector('.challenge-card-desc');
-      if (!desc) return 0;
-      return desc.getBoundingClientRect().bottom;
-    });
-    const maxBottom = Math.max(...descBottoms);
-    cards.forEach((card, i) => {
-      const label = card.querySelector('.challenge-tags-label');
-      if (label && descBottoms[i] > 0) {
-        const diff = maxBottom - descBottoms[i];
-        label.style.paddingTop = (28 + diff) + 'px';
-      }
-    });
-  }
-  // ロード後・リサイズ後に実行
-  window.addEventListener('load', alignChallengeLabels);
-  window.addEventListener('resize', alignChallengeLabels);
-  // フォント読み込み完了後にも実行
-  if (document.fonts && document.fonts.ready) {
-    document.fonts.ready.then(alignChallengeLabels);
-  }
-  // IntersectionObserverでカードが画面内に入った時にも実行
-  const challengeSection = document.querySelector('.challenge-grid');
-  if (challengeSection && 'IntersectionObserver' in window) {
-    const obs = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          alignChallengeLabels();
-        }
-      });
-    }, { threshold: 0.1 });
-    obs.observe(challengeSection);
-  }
+
 
   // スマホ固定CTA 表示制御
   const spCta = document.getElementById('sp-fixed-cta');

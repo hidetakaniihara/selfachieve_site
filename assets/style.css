@@ -564,8 +564,8 @@ ul,ol{list-style:none}
 .challenge-tags-label{
       font-size:11px;letter-spacing:.14em;
       color:#767680;font-weight:600;
-      margin-top:auto;
-      padding-top:16px;
+      margin-top:24px;
+      padding-top:0;
       margin-bottom:8px;
     }
 .challenge-tags-wrap{
@@ -7352,7 +7352,7 @@ a.funnel-stage-service-tag:hover{
     }
     .btn-more-inv:hover{background:#E8E8E8;opacity:1}
     .challenge-card{
-      padding:56px 40px;
+      padding:36px 32px;
       border-right:1px solid #E8E8E8;
       display:flex;flex-direction:column;
       transition:background .2s;
@@ -7413,8 +7413,8 @@ a.funnel-stage-service-tag:hover{
       font-size:14px;letter-spacing:.08em;
       color:#333336;font-weight:600;
       text-transform:uppercase;
-      margin-top:auto;
-      padding-top:24px;
+      margin-top:24px;
+      padding-top:0;
       margin-bottom:10px;
       display:flex;align-items:center;gap:8px;
     }
