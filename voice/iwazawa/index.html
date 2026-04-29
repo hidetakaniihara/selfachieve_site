@@ -87,15 +87,17 @@
       max-width:960px;margin:0 auto;
       padding:64px 48px;
     }
-    .interview-inner{display:flex;flex-direction:column;gap:72px;}
+    .interview-inner{display:flex;flex-direction:column;}
     .interview-item{
       display:grid;
       grid-template-columns:1fr 1fr;
       gap:48px;
       align-items:start;
+      padding-top:72px;
       padding-bottom:72px;
       border-bottom:1px solid #E8E8E8;
     }
+    .interview-item:first-child{padding-top:0;}
     .interview-item:last-child{border-bottom:none;padding-bottom:0;}
     .interview-num{
       font-size:10px;letter-spacing:.2em;color:#767680;
@@ -114,7 +116,7 @@
       letter-spacing:.02em;
     }
     .interview-img{
-      aspect-ratio:16/9;
+      aspect-ratio:1/1;
       border-radius:2px;
       overflow:hidden;
       background:#F5F5F5;
