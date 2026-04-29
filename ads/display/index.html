@@ -56,9 +56,6 @@
 </head>
 <body>
 
-<div id="cursor-dot" aria-hidden="true"></div>
-<div id="cursor-ring" aria-hidden="true"></div>
-
 <!-- HEADER -->
 <header class="hd" role="banner">
   <a href="../../index.html" class="hd-logo" aria-label="セルフアチーブ トップページへ">
@@ -1237,186 +1234,13 @@
 </main>
 
 <script>
-/* ===== CUSTOM CURSOR ===== */
-(function(){
-  const dot=document.getElementById('cursor-dot');
-  const ring=document.getElementById('cursor-ring');
-  if(!dot||!ring)return;
-  let mx=0,my=0,rx=0,ry=0;
-  document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;dot.style.transform=`translate(${mx-3}px,${my-3}px)`;});
-  function lerp(a,b,t){return a+(b-a)*t}
-  function loop(){rx=lerp(rx,mx,.12);ry=lerp(ry,my,.12);ring.style.transform=`translate(${rx-16}px,${ry-16}px)`;requestAnimationFrame(loop);}
-  loop();
-})();
 
-/* ===== HEADER: MEGA MENU & DROPDOWN ===== */
-(function(){
-  const navItems=document.querySelectorAll('.hd-nav-item');
-  let openItem=null;
-  function closeAll(){
-    navItems.forEach(item=>{
-      item.classList.remove('open');
-      const trigger=item.querySelector(':scope>a');
-      if(trigger)trigger.setAttribute('aria-expanded','false');
-    });
-    openItem=null;
-  }
-  navItems.forEach(item=>{
-    const trigger=item.querySelector(':scope>a');
-    if(!trigger)return;
-    trigger.addEventListener('click',e=>{
-      e.preventDefault();
-      if(item.classList.contains('open')){closeAll();return;}
-      closeAll();
-      item.classList.add('open');
-      trigger.setAttribute('aria-expanded','true');
-      openItem=item;
-    });
-  });
-  document.addEventListener('click',e=>{
-    if(openItem&&!openItem.contains(e.target))closeAll();
-  });
-  document.addEventListener('keydown',e=>{if(e.key==='Escape')closeAll();});
-})();
 
-/* ===== HAMBURGER / DRAWER ===== */
-(function(){
-  const btn=document.querySelector('.hd-hamburger');
-  const drawer=document.getElementById('hd-drawer');
-  if(!btn||!drawer)return;
-  btn.addEventListener('click',()=>{
-    const isOpen=btn.classList.toggle('open');
-    drawer.classList.toggle('open',isOpen);
-    btn.setAttribute('aria-expanded',String(isOpen));
-    document.body.style.overflow=isOpen?'hidden':'';
-  });
-  drawer.querySelectorAll('[data-drawer-toggle]').forEach(toggle=>{
-    toggle.addEventListener('click',()=>{
-      const sub=toggle.nextElementSibling;
-      if(!sub)return;
-      toggle.classList.toggle('open');
-      sub.classList.toggle('open');
-    });
-  });
-})();
 
-/* ===== SP FIXED CTA ===== */
-(function(){
-  const el=document.getElementById('sp-fixed-cta');
-  if(!el)return;
-  const kv=document.querySelector('.kv');
-  if(!kv)return;
-  const obs=new IntersectionObserver(entries=>{
-    entries.forEach(en=>{
-      el.classList.toggle('visible',!en.isIntersecting);
-    });
-  },{threshold:0});
-  obs.observe(kv);
-})();
 
-/* ===== FADE UP ===== */
-(function(){
-  const els=document.querySelectorAll('.fu');
-  const obs=new IntersectionObserver(entries=>{
-    entries.forEach(en=>{
-      if(en.isIntersecting){en.target.classList.add('on');obs.unobserve(en.target);}
-    });
-  },{threshold:.12});
-  els.forEach(el=>obs.observe(el));
-})();
 
-/* ===== COUNT UP (AFTER数字) ===== */
-(function(){
-  const els=document.querySelectorAll('[data-count]');
-  if(!els.length)return;
-  const obs=new IntersectionObserver(entries=>{
-    entries.forEach(en=>{
-      if(!en.isIntersecting)return;
-      obs.unobserve(en.target);
-      const el=en.target;
-      const target=parseFloat(el.dataset.count);
-      const sep=el.dataset.separator||'';
-      const suffix=el.dataset.suffix||'';
-      const isFloat=String(target).includes('.');
-      const decimals=isFloat?1:0;
-      const duration=2000;
-      let start=null;
-      function easeOutExpo(t){return t===1?1:1-Math.pow(2,-10*t);}
-      function format(v){
-        let s=isFloat?v.toFixed(decimals):Math.round(v).toString();
-        if(sep&&!isFloat){
-          s=Math.round(v).toString().replace(/\B(?=(\d{3})+(?!\d))/g,sep);
-        }
-        return s+suffix;
-      }
-      function step(ts){
-        if(!start)start=ts;
-        const elapsed=ts-start;
-        const progress=Math.min(elapsed/duration,1);
-        const eased=easeOutExpo(progress);
-        const current=eased*target;
-        el.textContent=format(current);
-        const scale=1+Math.sin(progress*Math.PI)*0.06;
-        el.style.transform=`scale(${scale})`;
-        if(progress<1)requestAnimationFrame(step);
-        else{el.textContent=format(target);el.style.transform='scale(1)';}
-      }
-      requestAnimationFrame(step);
-    });
-  },{threshold:.3});
-  els.forEach(el=>obs.observe(el));
-})();
 
-/* ===== FAQ ===== */
-(function(){
-  document.querySelectorAll('.faq-q').forEach(q=>{
-    q.addEventListener('click',()=>{
-      const item=q.closest('.faq-item');
-      const isOpen=item.classList.toggle('open');
-      q.setAttribute('aria-expanded',String(isOpen));
-    });
-    q.addEventListener('keydown',e=>{
-      if(e.key==='Enter'||e.key===' '){e.preventDefault();q.click();}
-    });
-  });
-})();
 
-/* ===== CHARTS ===== */
-(function(){
-  const blue='#0077B6';
-  const blueLight='rgba(0,119,182,0.12)';
-  const gray='rgba(40,40,45,0.08)';
-
-  function makeLineChart(id,labels,before,after){
-    const ctx=document.getElementById(id);
-    if(!ctx)return;
-    new Chart(ctx,{
-      type:'line',
-      data:{
-        labels:labels,
-        datasets:[
-          {label:'BEFORE',data:before,borderColor:'#C0C0C5',borderWidth:1.5,pointRadius:0,fill:false,tension:.4},
-          {label:'AFTER',data:after,borderColor:blue,borderWidth:2,pointRadius:0,fill:{target:'origin',above:blueLight},tension:.4}
-        ]
-      },
-      options:{
-        responsive:true,maintainAspectRatio:false,
-        plugins:{legend:{display:false},tooltip:{enabled:false}},
-        scales:{
-          x:{display:false,grid:{display:false}},
-          y:{display:false,grid:{display:false}}
-        },
-        animation:{duration:1200,easing:'easeOutQuart'}
-      }
-    });
-  }
-
-  const months=['4月','5月','6月','7月','8月','9月','10月','11月','12月'];
-  makeLineChart('chart1',months,[1200,1180,1220,1250,1200,1230,1210,1240,1200],[1200,1400,1700,2100,2600,3000,3400,3700,3840]);
-  makeLineChart('chart2',months,[100,95,102,98,100,97,103,99,100],[100,120,160,220,290,360,420,480,410]);
-  makeLineChart('chart3',months,[24000,23800,24200,24000,23900,24100,24000,23800,24000],[24000,22000,19000,16500,14000,12500,11500,10800,10200]);
-  makeLineChart('chart4',months,[200,210,195,205,200,210,205,200,210],[200,280,380,500,620,730,820,880,890]);
-})();
 </script>
 </body>
 </html>

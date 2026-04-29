@@ -58,8 +58,8 @@
   </script>
 </head>
 <body>
-<div id="cursor-dot" aria-hidden="true"></div>
-<div id="cursor-ring" aria-hidden="true"></div>
+
+
 <!-- HEADER -->
 <header class="hd" role="banner">
   <a href="../../index.html" class="hd-logo" aria-label="セルフアチーブ トップページへ">
@@ -1116,20 +1116,10 @@
 <script>
 (function(){
   /* ===== CURSOR ===== */
-  const dot = document.getElementById('cursor-dot');
-  const ring = document.getElementById('cursor-ring');
   if(dot && ring){
-    let mx=0,my=0,rx=0,ry=0;
-    document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;dot.style.left=mx+'px';dot.style.top=my+'px'});
-    (function loop(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(loop)})();
-    document.querySelectorAll('a,button,[role="button"]').forEach(el=>{
-      el.addEventListener('mouseenter',()=>ring.classList.add('is-hovering'));
-      el.addEventListener('mouseleave',()=>ring.classList.remove('is-hovering'));
-    });
+my=e.clientY;    ();
     document.querySelectorAll('.btn-cta,.btn-plan').forEach(el=>{
-      el.addEventListener('mouseenter',()=>{ring.classList.remove('is-hovering');ring.classList.add('is-cta')});
-      el.addEventListener('mouseleave',()=>ring.classList.remove('is-cta'));
-    });
+      el.addEventListener('mouseenter',()=>{      el.addEventListener('mouseleave',()=>    });
   }
 
     // DROPDOWN MENU (hover with delay)
@@ -1222,8 +1212,6 @@
     },{threshold:.5});
     countEls.forEach(el=>cio.observe(el));
   }
-
-
 
   /* ===== PLAN TABS ===== */
   const tabBtns = document.querySelectorAll('.plan-tab-btn');

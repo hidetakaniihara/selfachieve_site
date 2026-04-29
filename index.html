@@ -84,8 +84,6 @@
 <body>
 
 <!-- CUSTOM CURSOR -->
-<div id="cursor-dot" aria-hidden="true"></div>
-<div id="cursor-ring" aria-hidden="true"></div>
 
 <!-- HEADER -->
 <header class="hd" role="banner">
@@ -429,8 +427,6 @@
   </a>
   <a href="news/" class="notice-bar-all" aria-label="お知らせ一覧を見る">一覧を見る<span class="notice-bar-arrow">→</span></a>
 </div>
-
-
 
 <!-- CHALLENGE -->
 <section id="challenge" class="challenge-sec" aria-labelledby="challenge-h2-top">
@@ -1219,59 +1215,6 @@
     });
   });
 
-  // Custom cursor (PC / pointer device only)
-  (function(){
-    var isTouch = window.matchMedia('(hover:none)').matches || !window.matchMedia('(pointer:fine)').matches;
-    if(isTouch) return;
-    var dot  = document.getElementById('cursor-dot');
-    var ring = document.getElementById('cursor-ring');
-    if(!dot || !ring) return;
-
-    var mouseX = 0, mouseY = 0;
-    var ringX  = 0, ringY  = 0;
-    var raf;
-
-    document.addEventListener('mousemove', function(e){
-      mouseX = e.clientX;
-      mouseY = e.clientY;
-      dot.style.transform = 'translate3d(calc(' + mouseX + 'px - 50%), calc(' + mouseY + 'px - 50%), 0)';
-    });
-
-    function lerp(a, b, t){ return a + (b - a) * t; }
-    function loop(){
-      ringX = lerp(ringX, mouseX, 0.12);
-      ringY = lerp(ringY, mouseY, 0.12);
-      ring.style.transform = 'translate3d(calc(' + ringX + 'px - 50%), calc(' + ringY + 'px - 50%), 0)';
-      raf = requestAnimationFrame(loop);
-    }
-    loop();
-
-    // Hover state
-    var hoverTargets = 'a, button, [role="button"], [tabindex]';
-    var ctaTargets   = '.cta-btn, .sp-fixed-cta, .hd-cta';
-
-    document.querySelectorAll(hoverTargets).forEach(function(el){
-      el.addEventListener('mouseenter', function(){
-        var isCta = el.closest(ctaTargets);
-        ring.classList.remove('is-hovering','is-cta');
-        if(isCta){ ring.classList.add('is-cta'); }
-        else { ring.classList.add('is-hovering'); }
-      });
-      el.addEventListener('mouseleave', function(){
-        ring.classList.remove('is-hovering','is-cta');
-      });
-    });
-
-    // Hide cursor when leaving window
-    document.addEventListener('mouseleave', function(){
-      dot.style.opacity  = '0';
-      ring.style.opacity = '0';
-    });
-    document.addEventListener('mouseenter', function(){
-      dot.style.opacity  = '1';
-      ring.style.opacity = '1';
-    });
-  })();
 </script>
 </body>
 </html>

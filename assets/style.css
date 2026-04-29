@@ -819,47 +819,12 @@ a.challenge-tag:hover{
       font-weight:700;letter-spacing:-.04em;
       color:#28282D;line-height:1.2;
     }
-@media(hover:hover) and (pointer:fine){
-      body{cursor:none}
-      a,button,[role="button"],[tabindex]{cursor:none}
-    }
-#cursor-dot{
-      position:fixed;top:0;left:0;z-index:9999;
-      width:6px;height:6px;
-      background:#fff;
-      border-radius:50%;
-      pointer-events:none;
-      transform:translate(-50%,-50%);
-      mix-blend-mode:difference;
-      transition:width .15s,height .15s,background .15s;
-      will-change:transform;
-    }
-#cursor-ring{
-      position:fixed;top:0;left:0;z-index:9998;
-      width:32px;height:32px;
-      border:1.5px solid #fff;
-      border-radius:50%;
-      pointer-events:none;
-      transform:translate(-50%,-50%);
-      mix-blend-mode:difference;
-      transition:width .25s cubic-bezier(.25,.46,.45,.94),height .25s cubic-bezier(.25,.46,.45,.94),background .25s,border-color .25s,mix-blend-mode 0s;
-      will-change:transform;
-    }
-#cursor-ring.is-hovering{
-      width:48px;height:48px;
-      background:#fff;
-      border-color:#fff;
-      mix-blend-mode:difference;
-    }
-#cursor-ring.is-cta{
-      width:56px;height:56px;
-      background:#fff;
-      border-color:#fff;
-      mix-blend-mode:difference;
-    }
-@media(hover:none),not all and (pointer:fine){
-      #cursor-dot,#cursor-ring{display:none}
-    }
+
+
+
+
+
+
 .hd-nav>a,
     .footer-nav-group a{
       position:relative;
@@ -4051,7 +4016,7 @@ main{padding-top:72px;}
     }
 .cta-btn-tel:hover{border-color:#fff;background:rgba(255,255,255,.08)}
 .cta-btn-tel-note{font-size:11px;color:rgba(255,255,255,.92);margin-top:12px;letter-spacing:.04em}
-@media(hover:none),(pointer:coarse){#cursor-dot,#cursor-ring{display:none}}
+
 .hd-nav>a,.footer-nav-group a{position:relative;text-decoration:none}
 .hd-nav>a::before,.footer-nav-group a::before{
       content:'';position:absolute;bottom:-1px;left:0;
@@ -5172,7 +5137,7 @@ main{padding-top:72px;}
 .area-group-label.adjust{color:#767680}
 .area-group-label.online{color:#9B9BA0}
 .hd-btn-saicatsu:hover svg path{stroke:#fff}
-@media(hover:none){#cursor-dot,#cursor-ring{display:none}}
+
 .kv-eyebrow svg{flex-shrink:0;}
 .kv-service-label{
       display:block;
@@ -5709,10 +5674,6 @@ button{cursor:pointer;font-family:inherit;background:none;border:none}
       transition:transform .2s;
     }
 .hd-drawer-link[data-drawer-toggle].open::after{transform:rotate(-135deg)}
-#cursor-dot,#cursor-ring{
-      position:fixed;pointer-events:none;z-index:9999;border-radius:50%;
-      transform:translate(-50%,-50%);transition:opacity .3s;
-    }
 .why-sec{
       background:#0D0D0D;
       padding:120px 40px;

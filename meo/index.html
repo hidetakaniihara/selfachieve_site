@@ -58,8 +58,6 @@
 <body>
 
 <!-- CUSTOM CURSOR -->
-<div id="cursor-dot" aria-hidden="true"></div>
-<div id="cursor-ring" aria-hidden="true"></div>
 
 <!-- HEADER -->
 <header class="hd" role="banner">
@@ -1327,27 +1325,10 @@
     });
   })();
 
-  // CUSTOM CURSOR
-  (function(){
-    const dot = document.getElementById('cursor-dot');
-    const ring = document.getElementById('cursor-ring');
-    if(!dot || !ring) return;
-    let mx = 0, my = 0, rx = 0, ry = 0;
-    document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; dot.style.transform = `translate(${mx}px,${my}px) translate(-50%,-50%)`; });
-    (function animRing(){
-      rx += (mx - rx) * 0.12;
-      ry += (my - ry) * 0.12;
-      ring.style.transform = `translate(${rx}px,${ry}px) translate(-50%,-50%)`;
-      requestAnimationFrame(animRing);
-    })();
     document.querySelectorAll('a,button,[role="button"]').forEach(el => {
-      el.addEventListener('mouseenter', () => ring.classList.add('is-hovering'));
-      el.addEventListener('mouseleave', () => ring.classList.remove('is-hovering'));
-    });
+      el.addEventListener('mouseenter', () =>      el.addEventListener('mouseleave', () =>    });
     document.querySelectorAll('.btn-primary,.btn-cta,.btn-plan,.btn-mid-cta').forEach(el => {
-      el.addEventListener('mouseenter', () => { ring.classList.remove('is-hovering'); ring.classList.add('is-cta'); });
-      el.addEventListener('mouseleave', () => ring.classList.remove('is-cta'));
-    });
+      el.addEventListener('mouseenter', () => {      el.addEventListener('mouseleave', () =>    });
   })();
 
   // SP FIXED CTA

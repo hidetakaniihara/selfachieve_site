@@ -14,8 +14,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Noto+Sans+JP:wght@400;500;600;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
-<div id="cursor-dot" aria-hidden="true"></div>
-<div id="cursor-ring" aria-hidden="true"></div>
+
+
 <header class="hd" role="banner">
   <a href="../../index.html" class="hd-logo" aria-label="セルフアチーブ トップページへ">
     <img src="../../assets/logo_color.png" alt="selfachieve Acquisition Agency" width="160" height="34" fetchpriority="high">
@@ -920,16 +920,6 @@
 </main>
 <script>
 (function(){
-  const dot=document.getElementById('cursor-dot'),ring=document.getElementById('cursor-ring');
-  if(dot&&ring){
-    let mx=0,my=0,rx=0,ry=0;
-    document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;dot.style.left=mx+'px';dot.style.top=my+'px'});
-    (function loop(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(loop)})();
-    document.querySelectorAll('a,button,[role="button"]').forEach(el=>{
-      el.addEventListener('mouseenter',()=>ring.classList.add('is-hovering'));
-      el.addEventListener('mouseleave',()=>ring.classList.remove('is-hovering'));
-    });
-  }
   // DROPDOWN MENU (hover with delay)
   const NAV_ITEMS = document.querySelectorAll('.hd-nav-item');
   NAV_ITEMS.forEach(item => {
