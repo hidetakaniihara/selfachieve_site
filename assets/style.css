@@ -6561,3 +6561,43 @@ a.funnel-stage-service-tag:hover{
     padding: 5px 10px;
   }
 }
+
+/* ========================================
+   Sub-page Specific Headings (Override)
+   TOPページのルールに上書きされた下層ページ専用スタイルを強制復元
+   ======================================== */
+
+/* KV見出し：極太に修正 */
+.kv-left .kv-h1 {
+  font-size: clamp(38px, 5.2vw, 72px);
+  font-weight: 900 !important;
+  line-height: 1.15;
+  letter-spacing: -.02em;
+}
+
+/* KV見出し上のアクセントラベル（地域No.1など） */
+.kv-h1-accent {
+  display: block;
+  font-size: 16px;
+  letter-spacing: .2em;
+  font-weight: 700;
+  color: #28282D;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+
+/* 各セクションのメイン見出し：重厚感を出す */
+.results-h2,
+.sec-h2,
+.problem-title,
+.case-title,
+.flow-item-title {
+  font-weight: 900 !important;
+  letter-spacing: -.02em;
+}
+
+/* 導入実績の大きな数字 */
+.result-big-num {
+  font-weight: 900;
+  letter-spacing: -.05em;
+}
