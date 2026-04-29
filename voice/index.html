@@ -113,8 +113,7 @@
     .breadcrumb-sp{display:none;background:#F5F5F3;padding:10px 20px;border-top:1px solid #E8E8E8;}
     .breadcrumb-sp ol{display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
     .breadcrumb-sp li{font-size:12px;color:#767680;display:flex;align-items:center;gap:8px;}
-    .breadcrumb-sp li::after{content:'/';color:#C0C0C0;}
-    .breadcrumb-sp li:last-child::after{display:none}
+    .breadcrumb-sp li:last-child::after{content:'';display:none;}
     .breadcrumb-sp a{color:#767680;}
 
     /* ===== PAGE HERO ===== */
@@ -359,7 +358,6 @@
       body{padding-bottom:80px}
       .sp-fixed-cta-tel-num{font-size:14px;}
     }
-  </style>
   </style>
 </head>
 <body>
@@ -895,7 +893,7 @@
     <li><a href="../">ホーム</a></li>
     <li><span aria-current="page">お客さまの声</span></li>
   </ol>
-
+</nav>
 
 <footer class="footer" role="contentinfo">
   <div class="footer-top">
@@ -978,7 +976,6 @@
   </div>
 </div>
 
-<script>
 <script>
   (function(){var jst=new Date(new Date().toLocaleString('en-US',{timeZone:'Asia/Tokyo'}));document.getElementById('copyright-year').textContent=jst.getFullYear();})();
   const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');obs.unobserve(e.target);}});},{threshold:0.1});
