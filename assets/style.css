@@ -8345,7 +8345,7 @@ a.funnel-stage-service-tag:hover{
 /* カードグリッド */
 .wall-grid{
   display:grid;
-  grid-template-columns:repeat(2,1fr);
+  grid-template-columns:1fr;
   border-left:1px solid #E8E8E8;
   gap:0;
 }
