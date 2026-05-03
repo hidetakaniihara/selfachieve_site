@@ -1421,7 +1421,7 @@ a.challenge-tag:hover{
     }
 .problem-title{
       font-size:clamp(16px,1.8vw,20px);
-      font-weight:700;line-height:1.4;
+      font-weight:400;line-height:1.4;
       letter-spacing:-.02em;color:#28282D;
       margin-bottom:12px;
     }
@@ -6685,7 +6685,6 @@ a.funnel-stage-service-tag:hover{
 .results-h2,
 .sec-h2,
 .sec-title-lg,
-.problem-title,
 .case-title,
 .flow-item-title,
 .point-h2 {
@@ -6717,10 +6716,14 @@ a.funnel-stage-service-tag:hover{
 }
 
 /* 5. 課題・解決カード (.case-card / .problem-item) */
-.case-title,
-.problem-title {
+.case-title {
   font-size: 1.25rem;
   font-weight: 900 !important;
+  margin-bottom: 1rem;
+}
+.problem-title {
+  font-size: 1.25rem;
+  font-weight: 400 !important;
   margin-bottom: 1rem;
 }
 
