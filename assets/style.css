@@ -6546,12 +6546,12 @@ a.funnel-stage-service-tag:hover{
    Sub-page Specific Headings, Colors & Cards (Final)
    ======================================== */
 
-/* 1. KVエリア：視認性の完全確保 */
+/* 1. KVエリア：視認性の完全確保 - TOPページ .kv-h1 と完全同値 */
 .kv-left .kv-h1 {
-  font-size: clamp(38px, 5.2vw, 72px);
-  font-weight: 900 !important;
-  line-height: 1.15;
-  letter-spacing: -.02em;
+  font-size: clamp(56px, 8vw, 104px) !important;
+  font-weight: 700 !important;
+  line-height: 1.2 !important;
+  letter-spacing: -0.04em !important;
   color: #ffffff !important;
 }
 .kv-left .kv-sub {
@@ -6568,15 +6568,17 @@ a.funnel-stage-service-tag:hover{
   text-transform: uppercase;
 }
 
-/* 2. セクション見出し：重厚感の付与 */
+/* 2. セクション見出し： TOPページ .sec-h2 と完全同値 */
 .results-h2,
 .sec-h2,
 .problem-title,
 .case-title,
 .flow-item-title,
 .point-h2 {
-  font-weight: 900 !important;
-  letter-spacing: -.02em;
+  font-size: clamp(28px, 3.5vw, 48px) !important;
+  font-weight: 700 !important;
+  line-height: 1.35 !important;
+  letter-spacing: -0.03em !important;
   color: #28282D;
 }
 
@@ -6748,11 +6750,13 @@ a.funnel-stage-service-tag:hover{
    GLOBAL OVERRIDE: Sub-page Recovery (Final)
    ======================================== */
 
-/* 1. KV（ヒーローエリア）の視認性完全復元 */
+/* 1. KV（ヒーローエリア）の視認性完全復元 - TOPページ .kv-h1 と完全同値 */
 .kv-left .kv-h1 {
-  font-weight: 900 !important;
+  font-size: clamp(56px, 8vw, 104px) !important;
+  font-weight: 700 !important;
+  line-height: 1.2 !important;
+  letter-spacing: -0.04em !important;
   color: #ffffff !important;
-  line-height: 1.15;
 }
 .kv-left .kv-sub {
   color: #28282D;
