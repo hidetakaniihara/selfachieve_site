@@ -746,11 +746,11 @@ a.challenge-tag:hover{
 .about-stat-l{font-size:13px;color:#4A4A50;margin-top:8px;letter-spacing:.06em}
 .about-visual{
       background:#F7F7F7;
-      display:flex;align-items:center;justify-content:center;
+      display:flex;align-items:flex-start;justify-content:flex-start;
     }
-.about-mission{text-align:center;padding:40px}
-.about-mission-label{font-size:12px;letter-spacing:.15em;color:#767680;margin-bottom:20px;text-align:center}
-.about-mission-label::before{margin-left:auto;margin-right:auto}
+.about-mission{text-align:left;padding:120px 80px}
+.about-mission-label{font-size:12px;letter-spacing:.15em;color:#767680;margin-bottom:20px;text-align:left}
+.about-mission-label::before{margin-left:0;margin-right:auto}
 .about-mission-text{
       font-size:var(--sec-h2-size);
       font-weight:var(--sec-h2-weight);line-height:var(--sec-h2-line-height);
@@ -809,18 +809,18 @@ a.challenge-tag:hover{
 .footer-sns-x:hover{background:#000;border-color:#000}
 .about-sns{
       margin-top:28px;
-      text-align:center;
+      text-align:left;
     }
 .about-sns-label{
       font-size:10px;letter-spacing:.18em;color:#767680;font-weight:600;
       margin-bottom:14px;
     }
 .about-sns-links{
-      display:flex;align-items:center;justify-content:center;gap:12px;
+      display:flex;align-items:center;justify-content:flex-start;gap:12px;
     }
 .about-sns-link{
       display:flex;align-items:center;justify-content:center;
-      width:40px;height:40px;
+      width:64px;height:64px;
       border:1px solid #D8D8DC;
       color:#28282D;
       text-decoration:none;
@@ -7618,9 +7618,9 @@ a.funnel-stage-service-tag:hover{
     .about-stat-l{font-size:13px;color:#333336;margin-top:8px;letter-spacing:.06em}
     .about-visual{
       background:#F7F7F7;
-      display:flex;align-items:center;justify-content:center;
+      display:flex;align-items:flex-start;justify-content:flex-start;
     }
-    .about-mission{text-align:center;padding:40px}
+    .about-mission{text-align:left;padding:120px 80px}
     .about-mission-label{font-size:12px;letter-spacing:.15em;color:#555558;margin-bottom:20px}
     .about-mission-text{
       font-size:var(--sec-h2-size);
@@ -7686,18 +7686,18 @@ a.funnel-stage-service-tag:hover{
     /* ABOUT SNS */
     .about-sns{
       margin-top:28px;
-      text-align:center;
+      text-align:left;
     }
     .about-sns-label{
       font-size:10px;letter-spacing:.18em;color:#555558;font-weight:600;
       margin-bottom:14px;
     }
     .about-sns-links{
-      display:flex;align-items:center;justify-content:center;gap:12px;
+      display:flex;align-items:center;justify-content:flex-start;gap:12px;
     }
     .about-sns-link{
       display:flex;align-items:center;justify-content:center;
-      width:40px;height:40px;
+      width:64px;height:64px;
       border:1px solid #D8D8DC;
       color:#28282D;
       text-decoration:none;
