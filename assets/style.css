@@ -8347,6 +8347,7 @@ a.funnel-stage-service-tag:hover{
   display:grid;
   grid-template-columns:repeat(2,1fr);
   border-left:1px solid #E8E8E8;
+  gap:0;
 }
 .wall-card{
   padding:40px 36px;
@@ -8440,7 +8441,7 @@ a.funnel-stage-service-tag:hover{
   letter-spacing:.12em;
   text-transform:uppercase;
   color:#A0A0A8;
-  margin-top:28px;
+  margin-top:32px;
   margin-bottom:10px;
   display:block;
 }
@@ -8459,7 +8460,7 @@ a.funnel-stage-service-tag:hover{
   line-height:1.5;
   letter-spacing:-.01em;
   color:#000000;
-  margin-bottom:0;
+  margin-bottom:32px;
 }
 /* 推奨施策ラベル: 12〜14px Bold #999（ガイド役） */
 .wall-tags-label{
