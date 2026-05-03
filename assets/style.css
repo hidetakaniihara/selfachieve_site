@@ -8401,12 +8401,11 @@ a.funnel-stage-service-tag:hover{
 }
 /* あなたの壁はこれ！ラベル */
 .wall-wall-label{
-  font-size:13px;
-  letter-spacing:.1em;
+  font-size:18px;
+  letter-spacing:.02em;
   color:#28282D;
   font-weight:700;
   margin-bottom:10px;
-  text-transform:uppercase;
   padding-bottom:8px;
   border-bottom:2px solid #28282D;
   display:inline-block;
@@ -8430,7 +8429,7 @@ a.funnel-stage-service-tag:hover{
 .wall-tags-label{
   font-size:18px;
   font-weight:700;
-  color:#00B4B4;
+  color:#A0A0A8;
   letter-spacing:.02em;
   margin-bottom:12px;
 }
