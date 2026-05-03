@@ -20,6 +20,87 @@
   <meta property="og:image" content="https://selfachieve.jp/assets/ogp.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="theme-color" content="#ffffff">
+  <style>
+/* ===== KV: WEB戦略設計 ===== */
+.kv-right { display: none !important; }
+.kv-splash { display: none !important; }
+.kv {
+  min-height: auto !important;
+  padding: var(--kv-padding-v, 72px) 80px !important;
+}
+@media (min-width: 769px) {
+  .kv .kv-inner {
+    grid-template-columns: 1fr !important;
+    max-width: 1400px !important;
+  }
+  .kv .kv-h1 {
+    font-size: clamp(40px, 6vw, 88px) !important;
+    line-height: 1.2 !important;
+    letter-spacing: -0.04em !important;
+    margin-bottom: 32px !important;
+  }
+  .kv .kv-eyebrow {
+    font-size: clamp(14px, 1.5vw, 18px) !important;
+    font-weight: 700 !important;
+    letter-spacing: .15em !important;
+    color: rgba(255,255,255,.85) !important;
+    margin-bottom: 24px !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+  }
+  .kv .kv-eyebrow::before {
+    content: '' !important;
+    display: inline-block !important;
+    width: 32px !important;
+    height: 2px !important;
+    background: rgba(255,255,255,.7) !important;
+    flex-shrink: 0 !important;
+  }
+  .kv .kv-sub {
+    font-size: clamp(16px, 1.6vw, 20px) !important;
+    color: rgba(255,255,255,.8) !important;
+    margin-bottom: 12px !important;
+    font-weight: 400 !important;
+  }
+  .kv .kv-body {
+    font-size: clamp(14px, 1.3vw, 16px) !important;
+    color: rgba(255,255,255,.75) !important;
+    line-height: 1.9 !important;
+    margin-bottom: 40px !important;
+    font-weight: 400 !important;
+  }
+}
+@media (max-width: 768px) {
+  .kv {
+    padding: var(--kv-padding-v-sp, 56px) 24px !important;
+    min-height: auto !important;
+  }
+  .kv .kv-h1 {
+    font-size: clamp(32px, 8vw, 48px) !important;
+  }
+}
+/* ===== KV em: 強調ワード（白・下線） ===== */
+.kv .kv-h1 em {
+  font-style: normal !important;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  background-clip: unset !important;
+  font-weight: 900 !important;
+  border-bottom: 3px solid rgba(255,255,255,.5) !important;
+  padding-bottom: 2px !important;
+}
+/* ===== KV question（サブキャッチ） ===== */
+.kv-question {
+  font-size: clamp(14px, 1.4vw, 18px) !important;
+  color: rgba(255,255,255,.65) !important;
+  font-weight: 400 !important;
+  margin-bottom: 16px !important;
+  letter-spacing: .05em !important;
+}
+  </style>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <script type="application/ld+json">
   {"@context":"https://schema.org","@graph":[
@@ -357,22 +438,24 @@
 
 <!-- KV -->
 <section class="kv" aria-labelledby="kv-h1" style="background:#28282D;position:relative;overflow:hidden;">
-  <div class="kv-wrap">
-    <p class="kv-eyebrow fu">WEB STRATEGY DESIGN</p>
-    <p class="kv-question fu" style="transition-delay:.05s">なんでうまくいかないの？</p>
-    <h1 class="kv-h1 fu" id="kv-h1" style="transition-delay:.1s">それ、<em>戦略</em>の問題です。</h1>
-    <p class="kv-sub fu" style="transition-delay:.15s">施策の前に、戦略がある。</p>
-    <p class="kv-body fu" style="transition-delay:.2s">
-      SEOも広告もSNSも試した。なのに成果が出ない。<br>
-      その原因は、施策の質ではなく<strong style="color:#fff">戦略の不在</strong>にあります。<br>
-      現状把握・課題設定・施策設計まで、<br>
-      根拠のある戦略を一緒に作ります。
-    </p>
-    <div class="kv-actions fu" style="transition-delay:.3s">
-      <a href="../contact/" class="btn-primary">15分無料相談を申し込む</a>
-      <div class="kv-tel-wrap">
-        <p class="kv-tel-label">お電話でのご相談</p>
-        <a href="tel:0788068338" class="kv-tel">078-806-8338</a>
+  <div class="kv-inner">
+    <div class="kv-left">
+      <p class="kv-eyebrow fu">WEB戦略設計</p>
+      <p class="kv-question fu" style="transition-delay:.05s">なんでうまくいかないの？</p>
+      <h1 class="kv-h1 fu" id="kv-h1" style="transition-delay:.1s">それ、<em>戦略</em>の問題です。</h1>
+      <p class="kv-sub fu" style="transition-delay:.15s">施策の前に、戦略がある。</p>
+      <p class="kv-body fu" style="transition-delay:.2s">
+        SEOも広告もSNSも試した。なのに成果が出ない。<br>
+        その原因は、施策の質ではなく<strong style="color:#fff">戦略の不在</strong>にあります。<br>
+        現状把握・課題設定・施策設計まで、<br>
+        根拠のある戦略を一緒に作ります。
+      </p>
+      <div class="kv-actions fu" style="transition-delay:.3s">
+        <a href="../contact/" class="btn-primary">15分無料相談を申し込む</a>
+        <div class="kv-tel-wrap">
+          <p class="kv-tel-label">お電話でのご相談</p>
+          <a href="tel:0788068338" class="kv-tel">078-806-8338</a>
+        </div>
       </div>
     </div>
   </div>
@@ -452,7 +535,7 @@
             <span class="funnel-bar-label">流入</span>
           </div>
           <div class="funnel-bar is-problem" data-index="2">
-            <span class="funnel-bar-label">閉覧</span>
+            <span class="funnel-bar-label">閲覧</span>
           </div>
           <div class="funnel-bar is-problem" data-index="3">
             <span class="funnel-bar-label">追客</span>
