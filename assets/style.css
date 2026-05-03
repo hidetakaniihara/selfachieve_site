@@ -4786,14 +4786,14 @@ main{padding-top:72px;}
       margin-bottom:16px;display:block;
     }
 .case-tags{
-      display:flex;flex-wrap:wrap;gap:8px;
+      display:flex;flex-wrap:wrap;gap:12px 16px;
     }
 .case-tag{
       display:inline-flex;align-items:center;
-      padding:6px 16px;
+      padding:10px 20px;
       border:1px solid rgba(255,255,255,.3);
-      font-size:13px;color:#ffffff;
-      letter-spacing:.04em;
+      font-size:20px;font-weight:700;color:#ffffff;
+      letter-spacing:.02em;
       transition:background .2s,border-color .2s,color .2s;
       cursor:default;
     }
