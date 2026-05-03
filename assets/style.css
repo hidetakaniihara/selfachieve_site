@@ -526,6 +526,10 @@ ul,ol{list-style:none}
   line-height:1.8;
   letter-spacing:.02em;
 }
+.challenge-split-num{
+  font-size:13px;letter-spacing:.08em;color:#767680;
+  margin-bottom:0;
+}
 .challenge-split-tags{
   display:flex;flex-direction:column;gap:0;
 }
