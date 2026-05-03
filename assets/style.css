@@ -8296,32 +8296,165 @@ a.funnel-stage-service-tag:hover{
 
   
 /* ===== WALL SECTION (strategy page) ===== */
-.wall-sec{background:#F7F7F4;padding:120px 80px;border-top:1px solid #E8E8E8;}
-.wall-inner{max-width:1200px;margin:0 auto;}
-.wall-head{margin-bottom:64px;text-align:left;}
-.wall-head .sec-eyebrow{color:#28282D;border-left-color:#28282D;}
-.wall-head .sec-h2{color:#28282D;font-size:clamp(36px,5vw,64px);letter-spacing:-.04em;line-height:1.15;margin-top:16px;}
-.wall-lead{font-size:16px;color:#6B6B70;line-height:1.85;margin-top:24px;max-width:640px;}
-.wall-grid{display:grid;grid-template-columns:repeat(2,1fr);border-top:1px solid #E8E8E8;border-left:1px solid #E8E8E8;}
-.wall-card{padding:40px 36px;border-right:1px solid #E8E8E8;border-bottom:1px solid #E8E8E8;display:flex;flex-direction:column;background:#fff;transition:background .2s;}
+/* ===== WALL SECTION (strategy page) - 2カラム構造 ===== */
+.wall-sec{
+  border-top:1px solid #E8E8E8;
+  background:#28282D;
+}
+/* 左右2カラムコンテナ */
+.wall-split{
+  display:grid;
+  grid-template-columns:1fr 1.8fr;
+  align-items:flex-start;
+  min-height:480px;
+}
+/* 左：黒背景見出しエリア */
+.wall-split-left{
+  padding:80px 64px 80px 80px;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+  gap:24px;
+  background:#28282D;
+  position:sticky;
+  top:72px;
+  align-self:flex-start;
+}
+.wall-split-left .sec-eyebrow{
+  color:rgba(255,255,255,.55);
+}
+.wall-split-left .sec-eyebrow::before{
+  background:rgba(255,255,255,.4);
+}
+.wall-split-left .sec-h2{
+  color:#fff;
+  font-size:clamp(28px,3.2vw,48px);
+  line-height:1.25;
+}
+.wall-split-body{
+  font-size:16px;
+  color:rgba(255,255,255,.7);
+  line-height:1.85;
+}
+/* 右：カードグリッドエリア */
+.wall-split-right{
+  background:#F7F7F4;
+  padding:0;
+}
+/* カードグリッド */
+.wall-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  border-left:1px solid #E8E8E8;
+}
+.wall-card{
+  padding:40px 36px;
+  border-right:1px solid #E8E8E8;
+  border-bottom:1px solid #E8E8E8;
+  display:flex;
+  flex-direction:column;
+  background:#fff;
+  transition:background .2s;
+}
 .wall-card:hover{background:#F8F8F8;}
 .wall-card--full{grid-column:1/-1;}
-.wall-card-num{display:block;margin-bottom:20px;}
-.wall-card-num-n{font-size:18px;letter-spacing:.08em;color:#767680;font-weight:700;}
-.wall-card-title{font-size:clamp(20px,2.2vw,28px);font-weight:700;line-height:1.35;letter-spacing:-.02em;color:#28282D;margin-bottom:6px;white-space:nowrap;}
-.wall-card-category{font-size:12px;letter-spacing:.12em;color:#767680;font-weight:600;margin-bottom:16px;}
-.wall-card-desc{font-size:16px;line-height:1.85;color:#4A4A50;flex:1;}
-.wall-card-feeling{font-size:16px;line-height:1.85;color:#4A4A50;margin-bottom:0;font-weight:400;}
-.wall-tags-label{font-size:11px;letter-spacing:.14em;color:#767680;font-weight:600;margin-top:24px;margin-bottom:8px;}
+/* カード内要素 */
+.wall-card-num{display:block;margin-bottom:16px;}
+.wall-card-num-n{
+  font-size:14px;
+  letter-spacing:.12em;
+  color:#A0A0A8;
+  font-weight:600;
+}
+.wall-card-title{
+  font-size:clamp(18px,2vw,24px);
+  font-weight:700;
+  line-height:1.35;
+  letter-spacing:-.02em;
+  color:#28282D;
+  margin-bottom:4px;
+}
+.wall-card-category{
+  font-size:11px;
+  letter-spacing:.14em;
+  color:#A0A0A8;
+  font-weight:600;
+  margin-bottom:24px;
+  text-transform:uppercase;
+}
+/* 悩み（Feeling）: 16px 標準 */
+.wall-card-feeling{
+  font-size:16px;
+  line-height:1.85;
+  color:#4A4A50;
+  font-weight:400;
+  margin-bottom:24px;
+}
+/* あなたの壁はこれ！ラベル */
+.wall-wall-label{
+  font-size:13px;
+  letter-spacing:.1em;
+  color:#28282D;
+  font-weight:700;
+  margin-bottom:10px;
+  text-transform:uppercase;
+  padding-bottom:8px;
+  border-bottom:2px solid #28282D;
+  display:inline-block;
+}
+/* あなたの壁はこれ！本文：最優先・大きく極太 */
+.wall-wall-body-strong{
+  font-size:clamp(20px,2vw,26px);
+  font-weight:900;
+  line-height:1.45;
+  letter-spacing:-.02em;
+  color:#28282D;
+  margin-bottom:24px;
+}
+.wall-wall-body{
+  font-size:16px;
+  line-height:1.8;
+  color:#4A4A50;
+  margin-bottom:24px;
+}
+/* 推奨施策ラベル */
+.wall-tags-label{
+  font-size:18px;
+  font-weight:700;
+  color:#00B4B4;
+  letter-spacing:.02em;
+  margin-bottom:12px;
+}
 .wall-tags-wrap{display:flex;flex-wrap:wrap;gap:8px;}
-.wall-tag{font-size:12px;letter-spacing:.06em;color:#4A4A50;background:#F3F4F6;padding:4px 12px;text-decoration:none;transition:background .15s,color .15s;}
+.wall-tag{
+  font-size:12px;
+  letter-spacing:.06em;
+  color:#4A4A50;
+  background:#F3F4F6;
+  padding:4px 12px;
+  text-decoration:none;
+  transition:background .15s,color .15s;
+}
 a.wall-tag:hover{background:#28282D;color:#fff;}
-@media(max-width:1024px){.wall-sec{padding:80px 40px;}.wall-card-title{white-space:normal;}}
-@media(max-width:768px){.wall-sec{padding:64px 20px;}.wall-head{margin-bottom:40px;}.wall-grid{grid-template-columns:1fr;}.wall-card--full{grid-column:1;}.wall-card{padding:32px 20px;}.wall-card-title{font-size:clamp(18px,5vw,22px);white-space:normal;}.wall-lead{font-size:16px;}}
+/* レスポンシブ */
+@media(max-width:1100px){
+  .wall-split{grid-template-columns:1fr 1.6fr;}
+  .wall-split-left{padding:64px 40px 64px 48px;}
+}
+@media(max-width:900px){
+  .wall-split{
+    grid-template-columns:1fr;
+    align-items:stretch;
+  }
+  .wall-split-left{
+    padding:64px 24px 56px;
+    position:static;
+  }
+  .wall-split-left .sec-h2{font-size:clamp(28px,7vw,40px);}
+  .wall-grid{grid-template-columns:1fr;border-left:none;}
+  .wall-card--full{grid-column:1;}
+  .wall-card{padding:32px 24px;}
+  .wall-card-title{font-size:clamp(18px,5vw,22px);}
+}
 /* ===== END WALL SECTION ===== */
 
-/* ===== WALL CARD: 壁説明ブロック ===== */
-.wall-wall-label{font-size:11px;letter-spacing:.14em;color:#28282D;font-weight:700;margin-top:28px;margin-bottom:8px;text-transform:uppercase;}
-.wall-wall-body-strong{font-size:clamp(20px,2.2vw,26px);font-weight:900;line-height:1.4;letter-spacing:-.02em;color:#28282D;margin-bottom:0;}
-.wall-wall-body{font-size:16px;line-height:1.8;color:#4A4A50;margin-bottom:0;padding-left:12px;border-left:2px solid #28282D;}
-/* ===== END WALL CARD: 壁説明ブロック ===== */
