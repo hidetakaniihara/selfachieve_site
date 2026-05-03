@@ -40,11 +40,16 @@
 /* ===== KV SPLASH: REMOVED ===== */
 .kv-right { display: none !important; }
 .kv-splash { display: none !important; }
-/* ===== KV INNER: full-width text layout ===== */
+/* ===== KV INNER: full-width text layout (2-line H1) ===== */
 @media (min-width: 769px) {
   .kv .kv-inner {
     grid-template-columns: 1fr !important;
-    max-width: 760px !important;
+    max-width: 1400px !important;
+  }
+  .kv .kv-h1 {
+    font-size: clamp(40px, 6vw, 88px) !important;
+    line-height: 1.2 !important;
+    letter-spacing: -0.04em !important;
   }
 }
   </style>
