@@ -4780,7 +4780,7 @@ main{padding-top:72px;}
       margin-bottom:40px;
     }
 .case-tags-label{
-      font-size:11px;letter-spacing:.18em;color:#767680;
+      font-size:11px;letter-spacing:.18em;color:#ffffff;
       font-weight:700;text-transform:uppercase;
       margin-bottom:16px;display:block;
     }
@@ -4790,8 +4790,8 @@ main{padding-top:72px;}
 .case-tag{
       display:inline-flex;align-items:center;
       padding:6px 16px;
-      border:1px solid #D8D8DC;
-      font-size:13px;color:#4A4A52;
+      border:1px solid rgba(255,255,255,.3);
+      font-size:13px;color:#ffffff;
       letter-spacing:.04em;
       transition:background .2s,border-color .2s,color .2s;
       cursor:default;
