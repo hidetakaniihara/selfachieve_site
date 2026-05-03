@@ -11,13 +11,14 @@
   --kv-h1-color: #28282D;
   --kv-h1-mb: 48px;
 
-  /* Section H2 - TOPページ .sec-h2 に完全準拠 */
-  --sec-h2-size: clamp(28px,3.5vw,48px);
-  --sec-h2-weight: 700;
-  --sec-h2-line-height: 1.35;
-  --sec-h2-letter-spacing: -0.03em;
+  /* Section H2 - 全ページ統一基準（sec-title-lg基準・最大インパクト） */
+  --sec-h2-size: clamp(36px,4.2vw,60px);
+  --sec-h2-weight: 900;
+  --sec-h2-line-height: 1.2;
+  --sec-h2-letter-spacing: -0.04em;
   --sec-h2-color: #28282D;
   --sec-h2-mb: 20px;
+  --sec-h2-size-sp: clamp(28px,7.5vw,44px);
 
   /* Section H3 - TOPページ中見出しに準拠 */
   --sec-h3-size: clamp(20px,2.5vw,28px);
@@ -453,10 +454,12 @@ ul,ol{list-style:none}
 .sec-head-body{padding-top:4px}
 .sec-eyebrow{font-size:12px;letter-spacing:.15em;color:#767680;margin-bottom:20px}
 .sec-h2{
-      font-size:clamp(28px,3.5vw,48px);
-      font-weight:700;line-height:1.35;
-      letter-spacing:-.03em;color:#28282D;
-      margin-bottom:20px;
+      font-size:var(--sec-h2-size,clamp(36px,4.2vw,60px));
+      font-weight:var(--sec-h2-weight,900);
+      line-height:var(--sec-h2-line-height,1.2);
+      letter-spacing:var(--sec-h2-letter-spacing,-.04em);
+      color:var(--sec-h2-color,#28282D);
+      margin-bottom:var(--sec-h2-mb,20px);
     }
 .sec-body{font-size:14px;line-height:1.85;color:#4A4A50;max-width:460px}
 .challenge-sec{border-top:1px solid #E8E8E8}
@@ -855,9 +858,12 @@ a.challenge-tag:hover{
     }
 .view-all:hover{opacity:.5}
 .sec-title-lg{
-      font-size:clamp(36px,4.2vw,60px);
-      font-weight:700;letter-spacing:-.04em;
-      color:#28282D;line-height:1.2;
+      font-size:var(--sec-h2-size,clamp(36px,4.2vw,60px));
+      font-weight:var(--sec-h2-weight,900);
+      line-height:var(--sec-h2-line-height,1.2);
+      letter-spacing:var(--sec-h2-letter-spacing,-.04em);
+      color:var(--sec-h2-color,#28282D);
+      margin-bottom:var(--sec-h2-mb,20px);
     }
 
 
@@ -1198,8 +1204,6 @@ a.challenge-tag:hover{
 @media(max-width:768px){
       .sp-fixed-cta{display:block}
       body{padding-bottom:80px}
-      .sec-title-lg{font-size:7.5vw}
-      
       .challenge-grid{grid-template-columns:1fr}
       .challenge-card{border-right:none;border-bottom:1px solid #E8E8E8;padding:36px 24px;min-height:auto}
       .challenge-card:last-child{border-bottom:none}
@@ -1998,11 +2002,12 @@ a.challenge-tag:hover{
       .fu:nth-child(6){transition-delay:.40s}
 
       
-      .sec-h2{
-        font-size:clamp(26px,7.5vw,36px);
+      .sec-h2,
+      .sec-title-lg{
+        font-size:var(--sec-h2-size-sp,clamp(28px,7.5vw,44px));
         font-weight:900;
         line-height:1.15;
-        letter-spacing:-.03em;
+        letter-spacing:-.04em;
       }
       .sec-eyebrow{
         font-size:10px;
@@ -6572,17 +6577,18 @@ a.funnel-stage-service-tag:hover{
   text-transform: uppercase;
 }
 
-/* 2. セクション見出し： TOPページ .sec-h2 と完全同値 */
+/* 2. セクション見出し： 全ページ統一基準（sec-title-lg基準・最大インパクト） */
 .results-h2,
 .sec-h2,
+.sec-title-lg,
 .problem-title,
 .case-title,
 .flow-item-title,
 .point-h2 {
-  font-size: clamp(28px, 3.5vw, 48px) !important;
-  font-weight: 700 !important;
-  line-height: 1.35 !important;
-  letter-spacing: -0.03em !important;
+  font-size: var(--sec-h2-size, clamp(36px, 4.2vw, 60px)) !important;
+  font-weight: var(--sec-h2-weight, 900) !important;
+  line-height: var(--sec-h2-line-height, 1.2) !important;
+  letter-spacing: var(--sec-h2-letter-spacing, -0.04em) !important;
   color: #28282D;
 }
 
@@ -7262,10 +7268,12 @@ a.funnel-stage-service-tag:hover{
     .sec-head-body{padding-top:4px}
     .sec-eyebrow{font-size:12px;letter-spacing:.15em;color:#555558;margin-bottom:20px}
     .sec-h2{
-      font-size:clamp(28px,3.5vw,48px);
-      font-weight:700;line-height:1.35;
-      letter-spacing:-.03em;color:#28282D;
-      margin-bottom:20px;
+      font-size:var(--sec-h2-size,clamp(36px,4.2vw,60px));
+      font-weight:var(--sec-h2-weight,900);
+      line-height:var(--sec-h2-line-height,1.2);
+      letter-spacing:var(--sec-h2-letter-spacing,-.04em);
+      color:var(--sec-h2-color,#28282D);
+      margin-bottom:var(--sec-h2-mb,20px);
     }
     .sec-body{font-size:16px;line-height:1.85;color:#333336;max-width:460px}
 
@@ -7717,9 +7725,12 @@ a.funnel-stage-service-tag:hover{
 
     /* SECTION TITLE */
     .sec-title-lg{
-      font-size:clamp(36px,4.2vw,60px);
-      font-weight:700;letter-spacing:-.04em;
-      color:#28282D;line-height:1.2;
+      font-size:var(--sec-h2-size,clamp(36px,4.2vw,60px));
+      font-weight:var(--sec-h2-weight,900);
+      line-height:var(--sec-h2-line-height,1.2);
+      letter-spacing:var(--sec-h2-letter-spacing,-.04em);
+      color:var(--sec-h2-color,#28282D);
+      margin-bottom:var(--sec-h2-mb,20px);
     }
     /* ナビリンク下線アニメーション */
     .hd-nav>a,
@@ -7983,7 +7994,7 @@ a.funnel-stage-service-tag:hover{
       .challenge-head-left{padding-right:0;border-right:none;text-align:center}
       .challenge-head-right{padding-left:0;text-align:center}
       .challenge-head-right .sec-body{font-size:16px}
-      #challenge-h2-top{white-space:normal!important;font-size:clamp(22px,5.5vw,32px)}
+      #challenge-h2-top{white-space:normal!important;font-size:var(--sec-h2-size-sp,clamp(28px,7.5vw,44px))!important}
       .challenge-overall-top{grid-template-columns:1fr;padding:48px 24px 32px;gap:32px}
       .challenge-overall-steps{grid-template-columns:1fr;border-left:none}
       .challenge-overall-step{border-right:none;border-bottom:1px solid #E8E8E8}
@@ -8084,7 +8095,6 @@ a.funnel-stage-service-tag:hover{
     @media(max-width:768px){
       .sp-fixed-cta{display:block}
       body{padding-bottom:80px}
-      .sec-title-lg{font-size:7.5vw}
       /* [1] 課題カード：スマホで1カラム・自然な高さ・余白縮小 */
       .challenge-grid{grid-template-columns:1fr}
       .challenge-card{border-right:none;border-bottom:1px solid #E8E8E8;padding:36px 24px;min-height:auto}
