@@ -873,18 +873,18 @@ a.challenge-tag:hover{
 .footer-sns-x:hover{background:#000;border-color:#000}
 .about-sns{
       margin-top:28px;
-      text-align:left;
+      text-align:center;
     }
 .about-sns-label{
       font-size:10px;letter-spacing:.18em;color:#767680;font-weight:600;
       margin-bottom:14px;
     }
 .about-sns-links{
-      display:flex;align-items:center;justify-content:flex-start;gap:12px;
+      display:flex;align-items:center;justify-content:center;gap:12px;
     }
 .about-sns-link{
       display:flex;align-items:center;justify-content:center;
-      width:64px;height:64px;
+      width:100px;height:100px;
       border:1px solid #D8D8DC;
       color:#28282D;
       text-decoration:none;
