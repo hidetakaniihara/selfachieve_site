@@ -686,7 +686,7 @@ a.challenge-tag:hover{
 .work-title{font-size:17px;font-weight:500;letter-spacing:-.01em;color:#28282D;margin-bottom:6px}
 .work-result{font-size:13px;color:#3D3D42;font-weight:500}
 .cta{
-      padding:160px 80px;
+      padding:80px 80px;
       border-top:1px solid #E8E8E8;
       background:#111111;
     }
@@ -1121,7 +1121,7 @@ a.challenge-tag:hover{
       .voice-card{border-right:none;border-bottom:1px solid #E8E8E8}
       .works-grid{grid-template-columns:1fr}
       .work-card{border-right:none;border-bottom:1px solid #E8E8E8}
-      .cta{padding:80px 24px}
+      .cta{padding:56px 24px}
       .about-inner{grid-template-columns:1fr}
       .about-text{padding:80px 24px}
       .about-visual{min-height:280px}
@@ -1820,7 +1820,7 @@ a.challenge-tag:hover{
 .faq-item:last-child{border-bottom:1px solid #E8E8E8}
 .cta-sec{
       background:#28282D;
-      padding:120px 80px;
+      padding:72px 80px;
     }
 .blog-sec{
       background:#fff;
@@ -2330,7 +2330,7 @@ a.challenge-tag:hover{
       }
 
       
-      .cta-sec{padding:64px 20px}
+      .cta-sec{padding:48px 20px}
       .btn-cta{
         width:100%;
         text-align:center;
@@ -4002,7 +4002,7 @@ main{padding-top:72px;}
       font-size:14px;line-height:1.8;color:#4A4A52;
     }
 .cta-section{
-      padding:100px 80px;
+      padding:72px 80px;
       background:#111111;
       text-align:center;
     }
