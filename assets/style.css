@@ -8311,7 +8311,7 @@ a.funnel-stage-service-tag:hover{
 }
 /* 左：黒背景見出しエリア */
 .wall-split-left{
-  padding:80px 0 80px 80px;
+  padding:40px 0 80px 80px;
   display:flex;
   flex-direction:column;
   justify-content:flex-start;
@@ -8399,30 +8399,33 @@ a.funnel-stage-service-tag:hover{
   color:#767680;
   font-weight:400;
   font-style:italic;
-  margin-bottom:24px;
+  margin-bottom:0;
+  padding-bottom:24px;
+  border-bottom:1px solid #E8E8E8;
 }
 /* あなたの壁はこれ！ラベル */
 .wall-wall-label{
-  font-size:14px;
-  letter-spacing:.1em;
+  font-size:12px;
+  letter-spacing:.12em;
   color:#A0A0A8;
   font-weight:600;
+  margin-top:24px;
   margin-bottom:8px;
   text-transform:uppercase;
   display:block;
 }
-/* あなたの壁はこれ！本文：24px・太字・純黑 */
+/* あなたの壁はこれ！本文：clamp 22〜28px・極太・純黑 */
 .wall-wall-body-strong{
-  font-size:clamp(20px,2vw,26px);
+  font-size:clamp(22px,2.2vw,28px);
   font-weight:900;
   line-height:1.45;
   letter-spacing:-.02em;
-  color:#28282D;
+  color:#000000;
   margin-bottom:24px;
 }
 .wall-wall-body{
-  font-size:24px;
-  font-weight:700;
+  font-size:clamp(22px,2.2vw,28px);
+  font-weight:900;
   line-height:1.5;
   letter-spacing:-.02em;
   color:#000000;
@@ -8437,18 +8440,19 @@ a.funnel-stage-service-tag:hover{
   text-transform:uppercase;
   margin-bottom:10px;
 }
-.wall-tags-wrap{display:flex;flex-wrap:wrap;gap:8px;}
+.wall-tags-wrap{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px;}
 .wall-tag{
-  font-size:12px;
-  letter-spacing:.06em;
-  color:#28282D;
-  background:#F0F0F0;
-  padding:5px 14px;
-  border-radius:2px;
+  font-size:13px;
+  letter-spacing:.04em;
+  color:#000000;
+  background:#f0f0f0;
+  padding:4px 12px;
+  border-radius:4px;
   text-decoration:none;
   font-weight:500;
   transition:background .15s,color .15s;
   cursor:default;
+  display:inline-block;
 }
 a.wall-tag{
   cursor:pointer;
