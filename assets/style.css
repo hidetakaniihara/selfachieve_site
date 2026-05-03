@@ -551,7 +551,7 @@ ul,ol{list-style:none}
 .challenge-head-body{position:relative;z-index:1;padding-top:4px}
 .challenge-grid{
       display:grid;
-      grid-template-columns:repeat(3,1fr);
+      grid-template-columns:repeat(2,1fr);
       border-top:1px solid #E8E8E8;
       align-items:stretch;
     }
@@ -630,11 +630,10 @@ ul,ol{list-style:none}
       transition:background .2s;
     }
 .challenge-card:last-child{border-right:none}
-/* 3列グリッド: 3の倍数カードの右ボーダーを消し、上段3枚の下ボーダーを追加 */
-.challenge-card:nth-child(3n){border-right:none}
-.challenge-card:nth-child(-n+3){border-bottom:1px solid #E8E8E8}
-/* 下段1枚（4番目=05）を中央列に配置 */
-.challenge-card:nth-child(4){grid-column:2/3}
+/* 2列グリッド: 偶数カードの右ボーダーを消し、上段2枚の下ボーダーを追加 */
+.challenge-card:nth-child(even){border-right:none}
+.challenge-card:nth-child(-n+2){border-bottom:1px solid #E8E8E8}
+
 .challenge-card:hover{background:#F8F8F8}
 .challenge-card-num{
       display:block;
@@ -7400,7 +7399,7 @@ a.funnel-stage-service-tag:hover{
     .challenge-head-right .sec-body{max-width:none;font-size:16px;color:#333336;line-height:1.8}
     .challenge-grid{
       display:grid;
-      grid-template-columns:repeat(3,1fr);
+      grid-template-columns:repeat(2,1fr);
       align-items:stretch;
     }
     .challenge-card--overall{
