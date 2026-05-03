@@ -8307,10 +8307,11 @@ a.funnel-stage-service-tag:hover{
   grid-template-columns:1fr 1.8fr;
   align-items:flex-start;
   min-height:480px;
+  gap:0 80px;
 }
 /* 左：黒背景見出しエリア */
 .wall-split-left{
-  padding:80px 64px 80px 80px;
+  padding:80px 0 80px 80px;
   display:flex;
   flex-direction:column;
   justify-content:flex-start;
@@ -8391,26 +8392,26 @@ a.funnel-stage-service-tag:hover{
   margin-bottom:24px;
   text-transform:uppercase;
 }
-/* 悩み（Feeling）: 16px 標準 */
+/* 悩み（Feeling）: 16px イタリック・薄い色 */
 .wall-card-feeling{
   font-size:16px;
   line-height:1.85;
-  color:#4A4A50;
+  color:#767680;
   font-weight:400;
+  font-style:italic;
   margin-bottom:24px;
 }
 /* あなたの壁はこれ！ラベル */
 .wall-wall-label{
-  font-size:18px;
-  letter-spacing:.02em;
-  color:#28282D;
-  font-weight:700;
-  margin-bottom:10px;
-  padding-bottom:8px;
-  border-bottom:2px solid #28282D;
-  display:inline-block;
+  font-size:14px;
+  letter-spacing:.1em;
+  color:#A0A0A8;
+  font-weight:600;
+  margin-bottom:8px;
+  text-transform:uppercase;
+  display:block;
 }
-/* あなたの壁はこれ！本文：最優先・大きく極太 */
+/* あなたの壁はこれ！本文：24px・太字・純黑 */
 .wall-wall-body-strong{
   font-size:clamp(20px,2vw,26px);
   font-weight:900;
@@ -8420,28 +8421,37 @@ a.funnel-stage-service-tag:hover{
   margin-bottom:24px;
 }
 .wall-wall-body{
-  font-size:16px;
-  line-height:1.8;
-  color:#4A4A50;
+  font-size:24px;
+  font-weight:700;
+  line-height:1.5;
+  letter-spacing:-.02em;
+  color:#000000;
   margin-bottom:24px;
 }
 /* 推奨施策ラベル */
 .wall-tags-label{
-  font-size:18px;
-  font-weight:700;
+  font-size:14px;
+  font-weight:600;
   color:#A0A0A8;
-  letter-spacing:.02em;
-  margin-bottom:12px;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  margin-bottom:10px;
 }
 .wall-tags-wrap{display:flex;flex-wrap:wrap;gap:8px;}
 .wall-tag{
   font-size:12px;
   letter-spacing:.06em;
-  color:#4A4A50;
-  background:#F3F4F6;
-  padding:4px 12px;
+  color:#28282D;
+  background:#F0F0F0;
+  padding:5px 14px;
+  border-radius:2px;
   text-decoration:none;
+  font-weight:500;
   transition:background .15s,color .15s;
+  cursor:default;
+}
+a.wall-tag{
+  cursor:pointer;
 }
 a.wall-tag:hover{background:#28282D;color:#fff;}
 /* レスポンシブ */
