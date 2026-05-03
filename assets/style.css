@@ -1,4 +1,40 @@
 /* ========================================
+   CSS Custom Properties (Design Tokens)
+   v27 - 2026-05-03
+   ======================================== */
+:root{
+  /* KV H1 - TOPページ .kv-h1 に完全準拠 */
+  --kv-h1-size: clamp(56px,8vw,104px);
+  --kv-h1-weight: 700;
+  --kv-h1-line-height: 1.2;
+  --kv-h1-letter-spacing: -0.04em;
+  --kv-h1-color: #28282D;
+  --kv-h1-mb: 48px;
+
+  /* Section H2 - TOPページ .sec-h2 に完全準拠 */
+  --sec-h2-size: clamp(28px,3.5vw,48px);
+  --sec-h2-weight: 700;
+  --sec-h2-line-height: 1.35;
+  --sec-h2-letter-spacing: -0.03em;
+  --sec-h2-color: #28282D;
+  --sec-h2-mb: 20px;
+
+  /* Section H3 - TOPページ中見出しに準拠 */
+  --sec-h3-size: clamp(20px,2.5vw,28px);
+  --sec-h3-weight: 700;
+  --sec-h3-line-height: 1.5;
+  --sec-h3-letter-spacing: -0.02em;
+  --sec-h3-color: #28282D;
+  --sec-h3-mb: 16px;
+
+  /* KV Body */
+  --kv-body-size: 16px;
+  --kv-body-line-height: 1.85;
+  --kv-body-color: #4A4A50;
+  --kv-body-mb: 48px;
+}
+
+/* ========================================
    Base CSS (extracted from index.html)
    ======================================== */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}

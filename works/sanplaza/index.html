@@ -35,11 +35,7 @@
     /* ===== WORKS DETAIL PAGE — INLINE CSS ===== */
     /* ヒーロー（黒背景・ダイナミック） */
     .works-hero{background:#111111;padding:160px 80px 100px;position:relative;overflow:hidden;}
-    .works-hero::before{
-      content:'';position:absolute;top:0;left:0;right:0;bottom:0;
-      background:radial-gradient(ellipse 80% 60% at 70% 50%,rgba(255,255,255,.03) 0%,transparent 70%);
-      pointer-events:none;
-    }
+    /* works-hero::before: radial-gradient削除済（ノイズゼロ） */
     .works-hero-inner{max-width:1200px;margin:0 auto;position:relative;z-index:1;}
     .works-hero-eyebrow{
       font-size:11px;letter-spacing:.28em;color:rgba(255,255,255,.4);
@@ -50,8 +46,8 @@
       color:#111111;background:#fff;padding:5px 16px;margin-bottom:32px;text-transform:uppercase;
     }
     .works-hero-client{
-      font-size:clamp(40px,7vw,100px);font-weight:700;line-height:1.05;
-      letter-spacing:-.04em;color:#fff;margin-bottom:24px;
+      font-size:var(--kv-h1-size);font-weight:var(--kv-h1-weight);line-height:1.05;
+      letter-spacing:var(--kv-h1-letter-spacing);color:#fff;margin-bottom:24px;
     }
     .works-hero-client em{font-style:normal;color:rgba(255,255,255,.35);}
     .works-hero-divider{
