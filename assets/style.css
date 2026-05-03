@@ -1103,7 +1103,7 @@ a.challenge-tag:hover{
 .area-group-label.adjust::before{background:#B0B0B5}
 .area-group-label.online::before{background:#D8D8DB;border:1px solid #B0B0B5}
 .area-group .area-tags{margin-bottom:0}
-.faq-sec{border-top:1px solid #E8E8E8}
+.faq-sec{border-top:1px solid #E8E8E8;padding-bottom:80px}
 .faq-head{
       padding:80px 80px 52px;
       display:flex;align-items:flex-end;justify-content:space-between;
