@@ -1420,8 +1420,8 @@ a.challenge-tag:hover{
       color:#C0C0C5;font-weight:700;margin-bottom:20px;
     }
 .problem-title{
-      font-size:clamp(16px,1.8vw,20px);
-      font-weight:600;line-height:1.4;
+      font-size:20px;
+      font-weight:700;line-height:1.4;
       letter-spacing:-.02em;color:#28282D;
       margin-bottom:12px;
     }
@@ -6722,7 +6722,8 @@ a.funnel-stage-service-tag:hover{
   margin-bottom: 1rem;
 }
 .problem-title {
-  font-weight: 600 !important;
+  font-size: 20px !important;
+  font-weight: 700 !important;
   margin-bottom: 1rem;
 }
 
