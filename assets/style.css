@@ -469,6 +469,58 @@ ul,ol{list-style:none}
       display:flex;align-items:flex-start;gap:72px;
       overflow:hidden;
     }
+/* ---- スプリットビュー（新デザイン） ---- */
+.challenge-split{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  min-height:420px;
+  overflow:hidden;
+  position:relative;
+}
+.challenge-split-left{
+  padding:80px 80px 72px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  gap:24px;
+  background:#fff;
+  position:relative;
+  z-index:1;
+}
+.challenge-split-left .sec-eyebrow{
+  color:#767680;
+}
+.challenge-split-left .sec-h2{
+  color:#28282D;
+}
+.challenge-split-left .sec-body{
+  color:#4A4A50;
+  font-size:clamp(14px,1.2vw,16px);
+  line-height:1.85;
+}
+.challenge-split-right{
+  background:#28282D;
+  clip-path:polygon(8% 0,100% 0,100% 100%,0 100%);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding:80px 72px 72px 10%;
+  gap:24px;
+  position:relative;
+}
+.challenge-split-voice{
+  font-size:clamp(36px,4.2vw,60px);
+  font-weight:900;
+  line-height:1.2;
+  letter-spacing:-0.04em;
+  color:#fff;
+}
+.challenge-split-sub{
+  font-size:clamp(13px,1vw,15px);
+  color:rgba(255,255,255,.55);
+  line-height:1.8;
+  letter-spacing:.02em;
+}
 .challenge-watermark{
       position:absolute;
       top:50%;left:50%;
@@ -1110,6 +1162,14 @@ a.challenge-tag:hover{
       .sec-head{padding:80px 24px 48px;flex-direction:column;gap:24px}
 
       .challenge-head{padding:80px 24px 48px;flex-direction:column;gap:24px}
+      /* スプリットビュー SP（タブレット） */
+      .challenge-split{grid-template-columns:1fr;min-height:auto}
+      .challenge-split-left{padding:64px 40px 56px}
+      .challenge-split-right{
+        clip-path:polygon(0 5%,100% 0,100% 100%,0 100%);
+        padding:72px 40px 64px;
+        min-height:280px;
+      }
       .challenge-overall-top{grid-template-columns:1fr;padding:48px 24px 32px;gap:32px}
       .challenge-overall-steps{grid-template-columns:1fr;border-left:none}
       .challenge-overall-step{border-right:none;border-bottom:1px solid #E8E8E8}
@@ -2303,6 +2363,16 @@ a.challenge-tag:hover{
       
       .challenge-sec{padding:0}
       .challenge-head{padding:56px 20px 32px;flex-direction:column;gap:16px}
+      /* スプリットビュー SP（スマホ） */
+      .challenge-split{grid-template-columns:1fr;min-height:auto}
+      .challenge-split-left{padding:56px 20px 48px;gap:16px}
+      .challenge-split-right{
+        clip-path:polygon(0 6%,100% 0,100% 100%,0 100%);
+        padding:72px 20px 56px;
+        min-height:240px;
+      }
+      .challenge-split-voice{font-size:clamp(28px,7.5vw,44px)}
+      .challenge-split-sub{font-size:13px}
       .sec-vert{display:none}
       .challenge-grid{
         display:flex;
