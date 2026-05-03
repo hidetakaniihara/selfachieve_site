@@ -724,9 +724,9 @@ a.challenge-tag:hover{
     }
 .about-eyebrow{font-size:12px;letter-spacing:.15em;color:#767680;margin-bottom:28px}
 .about-h2{
-      font-size:clamp(28px,3.5vw,48px);
-      font-weight:700;line-height:1.35;
-      letter-spacing:-.03em;color:#28282D;
+      font-size:var(--sec-h2-size);
+      font-weight:var(--sec-h2-weight);line-height:var(--sec-h2-line-height);
+      letter-spacing:var(--sec-h2-letter-spacing);color:#28282D;
       margin-bottom:24px;
     }
 .about-body{font-size:14px;line-height:1.9;color:#4A4A50;margin-bottom:48px;max-width:400px}
@@ -750,9 +750,9 @@ a.challenge-tag:hover{
 .about-mission{text-align:center;padding:40px}
 .about-mission-label{font-size:12px;letter-spacing:.15em;color:#767680;margin-bottom:20px}
 .about-mission-text{
-      font-size:clamp(20px,2.5vw,30px);
-      font-weight:700;line-height:1.65;
-      letter-spacing:-.02em;color:#28282D;
+      font-size:var(--sec-h2-size);
+      font-weight:var(--sec-h2-weight);line-height:var(--sec-h2-line-height);
+      letter-spacing:var(--sec-h2-letter-spacing);color:#28282D;
     }
 .sns-bar{
       border-top:1px solid #E8E8E8;
@@ -927,9 +927,9 @@ a.challenge-tag:hover{
     }
 .service-opt-eyebrow{font-size:12px;letter-spacing:.15em;color:#767680;margin-bottom:24px}
 .service-opt-h2{
-      font-size:clamp(32px,4.5vw,56px);
-      font-weight:700;letter-spacing:-.04em;
-      line-height:1.15;color:#28282D;
+      font-size:var(--sec-h2-size);
+      font-weight:var(--sec-h2-weight);letter-spacing:var(--sec-h2-letter-spacing);
+      line-height:var(--sec-h2-line-height);color:#28282D;
       margin-bottom:32px;
     }
 .service-opt-desc{font-size:15px;line-height:1.8;color:#3D3D42;max-width:440px}
@@ -985,9 +985,9 @@ a.challenge-tag:hover{
     }
 .area-eyebrow{font-size:12px;letter-spacing:.15em;color:#767680;margin-bottom:24px}
 .area-h2{
-      font-size:clamp(32px,4.5vw,56px);
-      font-weight:700;letter-spacing:-.04em;
-      line-height:1.15;color:#28282D;
+      font-size:var(--sec-h2-size);
+      font-weight:var(--sec-h2-weight);letter-spacing:var(--sec-h2-letter-spacing);
+      line-height:var(--sec-h2-line-height);color:#28282D;
       margin-bottom:24px;
     }
 .area-desc{font-size:15px;line-height:1.8;color:#3D3D42;max-width:400px}
@@ -2352,7 +2352,7 @@ a.challenge-tag:hover{
       .area-inner{grid-template-columns:1fr}
       .area-left{padding:48px 20px 32px;border-right:none;border-bottom:1px solid #E8E8E8}
       .area-right{padding:32px 20px 48px}
-      .area-h2{font-size:clamp(26px,7vw,40px)}
+      .area-h2{font-size:var(--sec-h2-size-sp)}
       .area-desc{font-size:14px}
 
       
@@ -7579,9 +7579,9 @@ a.funnel-stage-service-tag:hover{
     }
     .about-eyebrow{font-size:12px;letter-spacing:.15em;color:#555558;margin-bottom:28px}
     .about-h2{
-      font-size:clamp(28px,3.5vw,48px);
-      font-weight:700;line-height:1.35;
-      letter-spacing:-.03em;color:#28282D;
+      font-size:var(--sec-h2-size);
+      font-weight:var(--sec-h2-weight);line-height:var(--sec-h2-line-height);
+      letter-spacing:var(--sec-h2-letter-spacing);color:#28282D;
       margin-bottom:24px;
     }
     .about-body{font-size:16px;line-height:1.9;color:#333336;margin-bottom:48px;max-width:400px}
@@ -7605,9 +7605,9 @@ a.funnel-stage-service-tag:hover{
     .about-mission{text-align:center;padding:40px}
     .about-mission-label{font-size:12px;letter-spacing:.15em;color:#555558;margin-bottom:20px}
     .about-mission-text{
-      font-size:clamp(20px,2.5vw,30px);
-      font-weight:700;line-height:1.65;
-      letter-spacing:-.02em;color:#28282D;
+      font-size:var(--sec-h2-size);
+      font-weight:var(--sec-h2-weight);line-height:var(--sec-h2-line-height);
+      letter-spacing:var(--sec-h2-letter-spacing);color:#28282D;
     }
 
     /* SNS BAR */
@@ -7799,9 +7799,9 @@ a.funnel-stage-service-tag:hover{
     }
     .service-opt-eyebrow{font-size:12px;letter-spacing:.15em;color:#555558;margin-bottom:24px}
     .service-opt-h2{
-      font-size:clamp(32px,4.5vw,56px);
-      font-weight:700;letter-spacing:-.04em;
-      line-height:1.15;color:#28282D;
+      font-size:var(--sec-h2-size);
+      font-weight:var(--sec-h2-weight);letter-spacing:var(--sec-h2-letter-spacing);
+      line-height:var(--sec-h2-line-height);color:#28282D;
       margin-bottom:32px;
     }
     .service-opt-desc{font-size:16px;line-height:1.8;color:#3D3D42;max-width:440px}
@@ -7859,9 +7859,9 @@ a.funnel-stage-service-tag:hover{
     }
     .area-eyebrow{font-size:12px;letter-spacing:.15em;color:#555558;margin-bottom:24px}
     .area-h2{
-      font-size:clamp(32px,4.5vw,56px);
-      font-weight:700;letter-spacing:-.04em;
-      line-height:1.15;color:#28282D;
+      font-size:var(--sec-h2-size);
+      font-weight:var(--sec-h2-weight);letter-spacing:var(--sec-h2-letter-spacing);
+      line-height:var(--sec-h2-line-height);color:#28282D;
       margin-bottom:24px;
     }
     .area-desc{font-size:16px;line-height:1.8;color:#3D3D42;max-width:400px}
