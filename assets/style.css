@@ -648,12 +648,13 @@ ul,ol{list-style:none}
       padding:3px 10px;
     }
 .challenge-card-title{
-      font-size:clamp(20px,2.5vw,28px);
+      font-size:clamp(16px,1.8vw,22px);
       font-weight:700;line-height:1.35;
       letter-spacing:-.02em;color:#28282D;
       margin-bottom:10px;
       position:relative;
       display:inline-block;
+      white-space:nowrap;
     }
 .challenge-card-title::after{
       content:'';
@@ -7534,12 +7535,13 @@ a.funnel-stage-service-tag:hover{
       line-height:1.4;
     }
     .challenge-card-title{
-      font-size:clamp(20px,2.5vw,28px);
+      font-size:clamp(16px,1.8vw,22px);
       font-weight:700;line-height:1.35;
       letter-spacing:-.02em;color:#28282D;
       margin-bottom:16px;
       position:relative;
       display:inline-block;
+      white-space:nowrap;
     }
     .challenge-card-title::after{
       content:'';
