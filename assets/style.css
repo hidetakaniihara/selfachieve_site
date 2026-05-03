@@ -4406,7 +4406,10 @@ main{padding-top:72px;}
       display:block;
       margin-top:2px;
     }
-.case-head .sec-h2{color:#28282D;margin-bottom:0;}
+.case-head .sec-h2{color:#ffffff;margin-bottom:0;}
+.case-head .sec-eyebrow{color:rgba(255,255,255,.5);}
+.case-head .sec-eyebrow::before{background:rgba(255,255,255,.5) !important;}
+.case-head .view-all{color:#ffffff;border-bottom-color:#ffffff;}
 .case-card:hover{background:#F8F8F8;}
 .case-grid-row2{
       border-top:1px solid #E0E0E0;
