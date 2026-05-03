@@ -8374,6 +8374,15 @@ a.funnel-stage-service-tag:hover{
   color:#28282D;
   margin-bottom:4px;
 }
+/* 01タイトル: wall-wall-body-strongと同等サイズ・極太 */
+.wall-card-title--hero{
+  font-size:clamp(20px,2vw,26px);
+  font-weight:900;
+  letter-spacing:-.03em;
+  line-height:1.35;
+  color:#28282D;
+  margin-bottom:4px;
+}
 .wall-card-category{
   font-size:11px;
   letter-spacing:.14em;
