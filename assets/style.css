@@ -8350,7 +8350,7 @@ a.funnel-stage-service-tag:hover{
   gap:0;
 }
 .wall-card{
-  padding:40px 36px;
+  padding:48px 44px;
   border-right:1px solid #E8E8E8;
   border-bottom:1px solid #E8E8E8;
   display:flex;
@@ -8434,16 +8434,17 @@ a.funnel-stage-service-tag:hover{
   padding-bottom:28px;
   border-bottom:1px solid #E8E8E8;
 }
-/* あなたの壁はこれ！：カード内の絶対的主役 */
+/* あなたの壁はこれ！：24px/700/黒 */
 .wall-wall-label{
-  font-size:13px;
+  font-size:24px;
   font-weight:700;
-  letter-spacing:.12em;
-  text-transform:uppercase;
-  color:#A0A0A8;
+  letter-spacing:-.01em;
+  text-transform:none;
+  color:#000000;
   margin-top:32px;
-  margin-bottom:10px;
+  margin-bottom:16px;
   display:block;
+  line-height:1.4;
 }
 /* 壁の解説文（Body）：16〜18px Normal #333 */
 .wall-wall-body-strong{
@@ -8455,11 +8456,11 @@ a.funnel-stage-service-tag:hover{
   margin-bottom:0;
 }
 .wall-wall-body{
-  font-size:clamp(24px,2.4vw,30px);
-  font-weight:500;
-  line-height:1.5;
-  letter-spacing:-.01em;
-  color:#000000;
+  font-size:16px;
+  font-weight:400;
+  line-height:1.85;
+  letter-spacing:.01em;
+  color:#333333;
   margin-bottom:32px;
 }
 /* 推奨施策ラベル: 12〜14px Bold #999（ガイド役） */
