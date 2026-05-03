@@ -461,7 +461,7 @@ ul,ol{list-style:none}
       color:var(--sec-h2-color,#28282D);
       margin-bottom:var(--sec-h2-mb,20px);
     }
-.sec-body{font-size:14px;line-height:1.85;color:#4A4A50;max-width:460px}
+.sec-body{font-size:16px;line-height:1.85;color:#4A4A50;max-width:460px}
 .challenge-sec{border-top:1px solid #E8E8E8}
 .challenge-head{
       position:relative;
@@ -482,7 +482,7 @@ ul,ol{list-style:none}
   padding:80px 80px 72px;
   display:flex;
   flex-direction:column;
-  justify-content:center;
+  justify-content:flex-start;
   gap:24px;
   background:transparent;
   position:relative;
@@ -499,7 +499,7 @@ ul,ol{list-style:none}
 }
 .challenge-split-left .sec-body{
   color:rgba(255,255,255,.75);
-  font-size:clamp(14px,1.2vw,16px);
+  font-size:16px;
   line-height:1.85;
 }
 .challenge-split-right{
@@ -507,7 +507,7 @@ ul,ol{list-style:none}
   clip-path:polygon(12% 0,100% 0,100% 100%,0 100%);
   display:flex;
   flex-direction:column;
-  justify-content:center;
+  justify-content:flex-start;
   padding:80px 72px 72px 14%;
   gap:24px;
   position:relative;
@@ -521,7 +521,7 @@ ul,ol{list-style:none}
   color:#28282D;
 }
 .challenge-split-sub{
-  font-size:clamp(13px,1vw,15px);
+  font-size:16px;
   color:#767680;
   line-height:1.8;
   letter-spacing:.02em;
@@ -665,7 +665,7 @@ ul,ol{list-style:none}
       width:100%;
     }
 .challenge-card-desc{
-      font-size:13px;line-height:1.85;
+      font-size:16px;line-height:1.85;
       color:#4A4A50;margin-bottom:0;
     }
 .challenge-tags-label{
@@ -998,7 +998,7 @@ a.challenge-tag:hover{
       line-height:var(--sec-h2-line-height);color:#28282D;
       margin-bottom:32px;
     }
-.service-opt-desc{font-size:15px;line-height:1.8;color:#3D3D42;max-width:440px}
+.service-opt-desc{font-size:16px;line-height:1.8;color:#3D3D42;max-width:440px}
 .service-opt-right{
       display:grid;grid-template-columns:1fr 1fr;
       border-top:none;
@@ -2384,7 +2384,7 @@ a.challenge-tag:hover{
         min-height:240px;
       }
       .challenge-split-voice{font-size:clamp(28px,7.5vw,44px)}
-      .challenge-split-sub{font-size:13px}
+      .challenge-split-sub{font-size:14px}
       .sec-vert{display:none}
       .challenge-grid{
         display:flex;
@@ -7551,7 +7551,7 @@ a.funnel-stage-service-tag:hover{
       width:100%;
     }
     .challenge-card-desc{
-      font-size:13px;line-height:1.85;
+      font-size:16px;line-height:1.85;
       color:#333336;margin-bottom:0;
     }
     .challenge-tags-label{
