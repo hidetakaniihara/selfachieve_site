@@ -40,6 +40,11 @@
 /* ===== KV SPLASH: REMOVED ===== */
 .kv-right { display: none !important; }
 .kv-splash { display: none !important; }
+/* ===== KV PADDING: 上下余白削減 ===== */
+.kv {
+  min-height: auto !important;
+  padding: var(--kv-padding-v, 72px) 80px !important;
+}
 /* ===== KV INNER: full-width text layout (2-line H1) ===== */
 @media (min-width: 769px) {
   .kv .kv-inner {
@@ -50,6 +55,7 @@
     font-size: clamp(40px, 6vw, 88px) !important;
     line-height: 1.2 !important;
     letter-spacing: -0.04em !important;
+    margin-bottom: 32px !important;
   }
   /* メインラベル：「SEO対策」極太大型 */
   .kv .kv-eyebrow {
@@ -57,11 +63,20 @@
     font-weight: 900 !important;
     letter-spacing: -0.02em !important;
     color: #ffffff !important;
-    margin-bottom: 32px !important;
+    margin-bottom: 20px !important;
     gap: 20px !important;
   }
   .kv .kv-eyebrow::before {
     display: none !important;
+  }
+  .kv .kv-sub {
+    margin-bottom: 0 !important;
+  }
+}
+@media (max-width: 768px) {
+  .kv {
+    padding: var(--kv-padding-v-sp, 56px) 24px !important;
+    min-height: auto !important;
   }
 }
   </style>
