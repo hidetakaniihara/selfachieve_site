@@ -8360,7 +8360,35 @@ a.funnel-stage-service-tag:hover{
 .wall-card:hover{background:#F8F8F8;}
 .wall-card--full{grid-column:1/-1;}
 /* カード内要素 */
-.wall-card-num{display:block;margin-bottom:16px;}
+/* ヘッダー：01 | 戦略・全体 */
+.wall-card-header{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-bottom:20px;
+}
+.wall-card-header-num{
+  font-size:20px;
+  font-weight:700;
+  color:#666666;
+  letter-spacing:.04em;
+  line-height:1;
+}
+.wall-card-header-sep{
+  font-size:16px;
+  color:#CCCCCC;
+  font-weight:300;
+  line-height:1;
+}
+.wall-card-header-cat{
+  font-size:20px;
+  font-weight:700;
+  color:#666666;
+  letter-spacing:.04em;
+  line-height:1;
+}
+/* 旧クラス（互換性維持） */
+.wall-card-num{display:none;}
 .wall-card-num-n{
   font-size:14px;
   letter-spacing:.12em;
@@ -8373,17 +8401,18 @@ a.funnel-stage-service-tag:hover{
   line-height:1.35;
   letter-spacing:-.02em;
   color:#28282D;
-  margin-bottom:4px;
+  margin-bottom:28px;
 }
-/* 01タイトル: wall-wall-body-strongと同等サイズ・極太 */
+/* 01タイトル: 同サイズ・極太 */
 .wall-card-title--hero{
   font-size:clamp(20px,2vw,26px);
   font-weight:900;
   letter-spacing:-.03em;
   line-height:1.35;
   color:#28282D;
-  margin-bottom:4px;
+  margin-bottom:28px;
 }
+/* 旧クラス（互換性維持） */
 .wall-card-category{
   font-size:11px;
   letter-spacing:.14em;
@@ -8391,16 +8420,17 @@ a.funnel-stage-service-tag:hover{
   font-weight:600;
   margin-bottom:24px;
   text-transform:uppercase;
+  display:none;
 }
-/* 悩み（Feeling）: 16px イタリック・薄い色 */
+/* 悩み（Feeling）: 16px ノーマル */
 .wall-card-feeling{
   font-size:16px;
   line-height:1.85;
   color:#767680;
   font-weight:400;
-  font-style:italic;
+  font-style:normal;
   margin-bottom:0;
-  padding-bottom:24px;
+  padding-bottom:28px;
   border-bottom:1px solid #E8E8E8;
 }
 /* あなたの壁はこれ！ラベル */
@@ -8408,42 +8438,43 @@ a.funnel-stage-service-tag:hover{
   font-size:12px;
   letter-spacing:.12em;
   color:#A0A0A8;
-  font-weight:600;
-  margin-top:24px;
-  margin-bottom:8px;
+  font-weight:700;
+  margin-top:28px;
+  margin-bottom:10px;
   text-transform:uppercase;
   display:block;
 }
-/* あなたの壁はこれ！本文：clamp 22〜28px・極太・純黑 */
+/* あなたの壁はこれ！本文：24px以上・Bold・純黑 */
 .wall-wall-body-strong{
-  font-size:clamp(22px,2.2vw,28px);
-  font-weight:900;
+  font-size:clamp(24px,2.4vw,30px);
+  font-weight:700;
   line-height:1.45;
   letter-spacing:-.02em;
   color:#000000;
-  margin-bottom:24px;
+  margin-bottom:28px;
 }
 .wall-wall-body{
-  font-size:clamp(22px,2.2vw,28px);
-  font-weight:900;
+  font-size:clamp(24px,2.4vw,30px);
+  font-weight:700;
   line-height:1.5;
   letter-spacing:-.02em;
   color:#000000;
-  margin-bottom:24px;
+  margin-bottom:28px;
 }
-/* 推奨施策ラベル */
+/* 推奨施策ラベル: 14px Bold */
 .wall-tags-label{
   font-size:14px;
-  font-weight:600;
-  color:#A0A0A8;
-  letter-spacing:.1em;
-  text-transform:uppercase;
+  font-weight:700;
+  color:#666666;
+  letter-spacing:.08em;
+  margin-top:28px;
   margin-bottom:10px;
+  display:block;
 }
-.wall-tags-wrap{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px;}
+.wall-tags-wrap{display:flex;flex-wrap:wrap;gap:8px;}
 .wall-tag{
-  font-size:13px;
-  letter-spacing:.04em;
+  font-size:14px;
+  letter-spacing:.02em;
   color:#000000;
   background:#f0f0f0;
   padding:4px 12px;
