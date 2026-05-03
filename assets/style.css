@@ -551,7 +551,7 @@ ul,ol{list-style:none}
 .challenge-head-body{position:relative;z-index:1;padding-top:4px}
 .challenge-grid{
       display:grid;
-      grid-template-columns:repeat(4,1fr);
+      grid-template-columns:repeat(2,1fr);
       border-top:1px solid #E8E8E8;
       align-items:stretch;
     }
@@ -630,6 +630,9 @@ ul,ol{list-style:none}
       transition:background .2s;
     }
 .challenge-card:last-child{border-right:none}
+/* 2列グリッド: 偶数カードの右ボーダーを消し、上段2枚の下ボーダーを追加 */
+.challenge-card:nth-child(even){border-right:none}
+.challenge-card:nth-child(-n+2){border-bottom:1px solid #E8E8E8}
 .challenge-card:hover{background:#F8F8F8}
 .challenge-card-num{
       display:block;
@@ -1189,7 +1192,7 @@ a.challenge-tag:hover{
       .challenge-grid{grid-template-columns:repeat(2,1fr)}
       .challenge-card{border-bottom:1px solid #E8E8E8}
       .challenge-card:nth-child(even){border-right:none}
-      .challenge-card:nth-last-child(-n+2):not(:nth-child(even) ~ *){border-bottom:none}
+      .challenge-card:nth-last-child(-n+2){border-bottom:none}
       .voice-head,.works-head{padding:80px 24px 48px;flex-direction:column;gap:20px;align-items:flex-start}
       .voice-grid{grid-template-columns:1fr}
       .voice-card{border-right:none;border-bottom:1px solid #E8E8E8}
@@ -7394,7 +7397,7 @@ a.funnel-stage-service-tag:hover{
     .challenge-head-right .sec-body{max-width:none;font-size:16px;color:#333336;line-height:1.8}
     .challenge-grid{
       display:grid;
-      grid-template-columns:repeat(3,1fr);
+      grid-template-columns:repeat(2,1fr);
       
       align-items:stretch;
     }
