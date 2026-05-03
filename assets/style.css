@@ -527,7 +527,7 @@ ul,ol{list-style:none}
   letter-spacing:.02em;
 }
 .challenge-split-tags{
-  display:flex;flex-wrap:wrap;gap:8px;
+  display:flex;flex-direction:column;gap:0;
 }
 .challenge-watermark{
       position:absolute;
