@@ -502,166 +502,105 @@
   </div>
 </section>
 <!-- FUNNEL: 問題はこれです + うまくいかない例 + 課題別ナビ -->
-<section class="funnel-sec" aria-labelledby="funnel-h2">
-  <div class="funnel-inner">
-    <div class="funnel-head">
-      <span class="sec-eyebrow fu">問題はこれです</span>
-      <h2 class="sec-h2 fu" id="funnel-h2" style="transition-delay:.1s">
+<section class="wall-sec" aria-labelledby="wall-h2">
+  <div class="wall-inner">
+    <div class="wall-head">
+      <span class="sec-eyebrow fu">YOUR CHALLENGE</span>
+      <h2 class="sec-h2 fu" id="wall-h2" style="transition-delay:.1s">
         あなたの会社は、どこで<br>壁を感じていますか？
       </h2>
-      <p class="sec-body fu" style="transition-delay:.2s">
+      <p class="wall-lead fu" style="transition-delay:.2s">
         WEB施策がうまくいかないとき、必ずどこかのフェーズに原因があります。<br>
         当てはまるフェーズを確認してください。
       </p>
-      <p class="funnel-head-note fu" style="transition-delay:.3s">自分の会社が当てはまる「壁」はどれですか？</p>
     </div>
-
-    <!-- ファネル図（逆三角形）× 横スクロールカード -->
-    <div class="funnel-layout">
-
-      <!-- 左：逆三角形ファネル図 -->
-      <div class="funnel-visual" aria-hidden="true">
-        <span class="funnel-visual-title">FUNNEL</span>
-        <div class="funnel-shape">
-          <div class="funnel-bar" data-index="0">
-            <span class="funnel-bar-label">認知</span>
-          </div>
-          <div class="funnel-bar is-problem" data-index="1">
-            <span class="funnel-bar-label">流入</span>
-          </div>
-          <div class="funnel-bar is-problem" data-index="2">
-            <span class="funnel-bar-label">閲覧</span>
-          </div>
-          <div class="funnel-bar is-problem" data-index="3">
-            <span class="funnel-bar-label">追客</span>
-          </div>
-          <div class="funnel-bar is-success" data-index="4">
-            <span class="funnel-bar-label">成約</span>
-          </div>
+    <div class="wall-grid">
+      <!-- 01 戦略・全体（全幅） -->
+      <article class="wall-card wall-card--full fu">
+        <div class="wall-card-num">
+          <span class="wall-card-num-n">01</span>
         </div>
-        <!-- クリック誘導テキスト -->
-        <p class="funnel-click-hint">クリックして確認</p>
-      </div>
-
-      <!-- 右：縦積みカード -->
-      <div class="funnel-cards-wrap">
-        <!-- スクロール誘導ヒント（非表示） -->
-        <div class="funnel-scroll-hint">
-          <span class="funnel-scroll-label">SCROLL TO EXPLORE</span>
-          <div class="funnel-nav" role="group" aria-label="カードナビゲーション">
-            <button class="funnel-nav-btn" id="funnel-prev" aria-label="前のカード" disabled>
-              <svg viewBox="0 0 14 14" aria-hidden="true"><polyline points="9,2 4,7 9,12"/></svg>
-            </button>
-            <button class="funnel-nav-btn" id="funnel-next" aria-label="次のカード">
-              <svg viewBox="0 0 14 14" aria-hidden="true"><polyline points="5,2 10,7 5,12"/></svg>
-            </button>
-          </div>
+        <h3 class="wall-card-title">なんか、うまくいかない…</h3>
+        <p class="wall-card-category">戦略・全体</p>
+        <p class="wall-card-desc">何が問題かわからない。施策を試しても手応えがない。まず現状を整理したい。</p>
+        <p class="wall-tags-label">推奨施策</p>
+        <div class="wall-tags-wrap">
+          <a href="../strategy/" class="wall-tag">事業戦略</a>
+          <a href="../strategy/" class="wall-tag">ブランディング</a>
+          <a href="../strategy/" class="wall-tag">WEB戦略</a>
+          <a href="../strategy/" class="wall-tag">マーケティング戦略</a>
+          <a href="../strategy/" class="wall-tag">顧客戦略</a>
+          <a href="../strategy/" class="wall-tag">採用戦略</a>
         </div>
-        <div class="funnel-diagram" role="list" id="funnel-cards">
-
-        <!-- 01 認知 -->
-        <div class="funnel-stage" role="listitem" data-index="0">
-          <span class="funnel-stage-label">認知</span>
-          <span class="funnel-stage-num">01</span>
-          <div class="funnel-stage-body">
-            <div class="funnel-stage-head">
-              <p class="funnel-stage-title">そもそも知られていない</p>
-            </div>
-            <div class="funnel-stage-detail">
-              <p class="funnel-stage-desc">検索しても出てこない。SNSでも見かけない。存在を知られていなければ、どんなに良いサービスでも選ばれない。</p>
-            </div>
-          </div>
+      </article>
+      <!-- 02 集客 -->
+      <article class="wall-card fu" style="transition-delay:.1s">
+        <div class="wall-card-num">
+          <span class="wall-card-num-n">02</span>
         </div>
-
-        <!-- 02 流入（問題） -->
-        <div class="funnel-stage is-problem" role="listitem" data-index="1">
-          <span class="funnel-stage-label">流入</span>
-          <span class="funnel-stage-num">02</span>
-          <div class="funnel-stage-body">
-            <div class="funnel-stage-head">
-              <p class="funnel-stage-title">サイトに人が来ない</p>
-            </div>
-            <div class="funnel-stage-detail">
-              <p class="funnel-stage-desc">SEOや広告を出しているのにアクセスが増えない。キーワード選定や媒体選択が課題に合っていない可能性があります。</p>
-              <span class="funnel-stage-tag">集客フェーズで詰まっている</span>
-              <div class="funnel-stage-services">
-                <a href="../seo/" class="funnel-stage-service-tag">SEO対策</a>
-                <a href="../ads/listing/" class="funnel-stage-service-tag">リスティング広告</a>
-                <a href="../meo/" class="funnel-stage-service-tag">MEO対策</a>
-              </div>
-            </div>
-          </div>
+        <h3 class="wall-card-title">サイトへの訪問者を増やしたい</h3>
+        <p class="wall-card-category">集客</p>
+        <p class="wall-card-desc">検索で見つけてもらえない。広告を出しても費用対効果が悪い。もっと多くの見込み客に届けたい。</p>
+        <p class="wall-tags-label">推奨施策</p>
+        <div class="wall-tags-wrap">
+          <a href="../seo/" class="wall-tag">SEO対策</a>
+          <a href="../meo/" class="wall-tag">MEO対策</a>
+          <a href="../ads/" class="wall-tag">WEB広告</a>
+          <a href="../sns/" class="wall-tag">SNSマーケティング</a>
+          <a href="../sns/note/" class="wall-tag">note対策</a>
+          <a href="../ai-seo/" class="wall-tag">AI検索対策（LLM対策）</a>
         </div>
-
-        <!-- 03 閲覧・検討（問題） -->
-        <div class="funnel-stage is-problem" role="listitem" data-index="2">
-          <span class="funnel-stage-label">閲覧・検討</span>
-          <span class="funnel-stage-num">03</span>
-          <div class="funnel-stage-body">
-            <div class="funnel-stage-head">
-              <p class="funnel-stage-title">来ても問い合わせしない</p>
-            </div>
-            <div class="funnel-stage-detail">
-              <p class="funnel-stage-desc">アクセスはあるのに問い合わせがない。直帰率が高い。サイトの構造・コンテンツ・導線に問題があります。</p>
-              <span class="funnel-stage-tag">接客フェーズで詰まっている</span>
-              <div class="funnel-stage-services">
-                <a href="../website/" class="funnel-stage-service-tag">サイト制作・改善</a>
-                <a href="../strategy/" class="funnel-stage-service-tag">WEB戦略設計</a>
-              </div>
-            </div>
-          </div>
+      </article>
+      <!-- 03 成約 -->
+      <article class="wall-card fu" style="transition-delay:.2s">
+        <div class="wall-card-num">
+          <span class="wall-card-num-n">03</span>
         </div>
-
-        <!-- 04 追客・リピート（問題） -->
-        <div class="funnel-stage is-problem" role="listitem" data-index="3">
-          <span class="funnel-stage-label">追客・リピート</span>
-          <span class="funnel-stage-num">04</span>
-          <div class="funnel-stage-body">
-            <div class="funnel-stage-head">
-              <p class="funnel-stage-title">一度来た人が戻ってこない</p>
-            </div>
-            <div class="funnel-stage-detail">
-              <p class="funnel-stage-desc">新規集客に頼りすぎて、既存顧客のリピートやファン化ができていない。LINEやSNSの活用が不十分な状態。</p>
-              <span class="funnel-stage-tag">追客フェーズで詰まっている</span>
-              <div class="funnel-stage-services">
-                <a href="../sns/line/" class="funnel-stage-service-tag">LINE運用</a>
-                <a href="../sns/instagram/" class="funnel-stage-service-tag">Instagram</a>
-                <a href="../sns/" class="funnel-stage-service-tag">SNS運用</a>
-              </div>
-            </div>
-          </div>
+        <h3 class="wall-card-title">問い合わせ・売上を増やしたい</h3>
+        <p class="wall-card-category">成約</p>
+        <p class="wall-card-desc">アクセスはあるのに成約しない。サイトを見ても離脱してしまう。訪問者を顧客に変えたい。</p>
+        <p class="wall-tags-label">推奨施策</p>
+        <div class="wall-tags-wrap">
+          <a href="../website/" class="wall-tag">ホームページ制作</a>
+          <a href="../website/" class="wall-tag">分析改善</a>
+          <a href="../website/lp/" class="wall-tag">LP制作</a>
         </div>
-
-        <!-- 05 成約・継続（成功） -->
-        <div class="funnel-stage is-success" role="listitem" data-index="4">
-          <span class="funnel-stage-label">成約・継続</span>
-          <span class="funnel-stage-num">05</span>
-          <div class="funnel-stage-body">
-            <div class="funnel-stage-head">
-              <p class="funnel-stage-title">戦略が機能している状態</p>
-            </div>
-            <div class="funnel-stage-detail">
-              <p class="funnel-stage-desc">各フェーズの施策が連動し、認知から成約・リピートまでの流れが機能している。PDCAが回り、改善が積み上がっている。</p>
-              <span class="funnel-stage-tag">ここを目指します</span>
-            </div>
-          </div>
+      </article>
+      <!-- 04 再販・追客 -->
+      <article class="wall-card fu" style="transition-delay:.3s">
+        <div class="wall-card-num">
+          <span class="wall-card-num-n">04</span>
         </div>
-
-      </div><!-- /funnel-diagram -->
-        <!-- ドットインジケーター -->
-        <div class="funnel-dots" role="tablist" aria-label="カード位置">
-          <button class="funnel-dot is-active" data-dot="0" aria-label="1枚目" role="tab" aria-selected="true"></button>
-          <button class="funnel-dot" data-dot="1" aria-label="2枚目" role="tab" aria-selected="false"></button>
-          <button class="funnel-dot" data-dot="2" aria-label="3枚目" role="tab" aria-selected="false"></button>
-          <button class="funnel-dot" data-dot="3" aria-label="4枚目" role="tab" aria-selected="false"></button>
-          <button class="funnel-dot" data-dot="4" aria-label="5枚目" role="tab" aria-selected="false"></button>
+        <h3 class="wall-card-title">一度来た人にまた来てほしい</h3>
+        <p class="wall-card-category">再販・追客</p>
+        <p class="wall-card-desc">リピーターが増えない。既存顧客との関係を維持したい。ファンを育てる仕組みをつくりたい。</p>
+        <p class="wall-tags-label">推奨施策</p>
+        <div class="wall-tags-wrap">
+          <a href="../sns/line/" class="wall-tag">LINE</a>
+          <a href="../sns/instagram/" class="wall-tag">Instagram</a>
+          <a href="../sns/x/" class="wall-tag">X（旧Twitter）</a>
+          <a href="../sns/youtube/" class="wall-tag">YouTube</a>
         </div>
-      </div><!-- /funnel-cards-wrap -->
+      </article>
+      <!-- 05 AI活用 -->
+      <article class="wall-card fu" style="transition-delay:.4s">
+        <div class="wall-card-num">
+          <span class="wall-card-num-n">05</span>
+        </div>
+        <h3 class="wall-card-title">AIで業務を効率化・最適化したい</h3>
+        <p class="wall-card-category">AI活用</p>
+        <p class="wall-card-desc">手作業が多く時間がかかる。AIを使いたいが何から始めればいいかわからない。業務の無駄を省いて生産性を上げたい。</p>
+        <p class="wall-tags-label">推奨施策</p>
+        <div class="wall-tags-wrap">
+          <a href="../ai-automation/" class="wall-tag">業務効率化</a>
+          <a href="../ai-automation/" class="wall-tag">分析深化</a>
+        </div>
+      </article>
     </div>
   </div>
 </section>
-
 <!-- SOLUTION: 解決方法はこれです -->
+
 <section class="solution-sec" aria-labelledby="solution-h2">
   <div class="solution-inner">
     <div class="solution-head">
