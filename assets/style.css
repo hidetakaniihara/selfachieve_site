@@ -699,7 +699,7 @@ a.challenge-tag:hover{
       margin-bottom:32px;
     }
 .cta-h2-line{display:block}
-.cta-body{font-size:15px;line-height:1.85;color:rgba(255,255,255,.9);margin-bottom:52px;max-width:460px}
+.cta-body{font-size:15px;line-height:1.85;color:rgba(255,255,255,.9);margin-bottom:52px;max-width:460px;text-align:center;margin-left:auto;margin-right:auto}
 .cta-actions{display:flex;align-items:center;gap:40px;flex-wrap:wrap}
 .btn-cta{
       display:inline-flex;align-items:center;justify-content:center;
@@ -4021,7 +4021,7 @@ main{padding-top:72px;}
     }
 .cta-section-sub{
       font-size:15px;color:rgba(255,255,255,.92);line-height:1.8;
-      margin-bottom:48px;
+      margin-bottom:48px;text-align:center;
     }
 .cta-section-btns{
       display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;
@@ -4432,7 +4432,7 @@ main{padding-top:72px;}
     }
 .mid-cta-body{
       font-size:14px;line-height:1.8;
-      color:#ffffff;margin-top:12px;
+      color:#ffffff;margin-top:12px;text-align:center;
     }
 .mid-cta-actions{display:flex;flex-direction:column;gap:12px;align-items:flex-end;flex-shrink:0;}
 .btn-mid-cta{
@@ -5423,7 +5423,7 @@ main{padding-top:72px;}
     }
 .cta-mid-eyebrow{display:block;font-size:11px;letter-spacing:.16em;color:#EC4899;font-weight:700;text-transform:uppercase;margin-bottom:20px}
 .cta-mid-h2{font-size:clamp(24px,3vw,36px);font-weight:700;color:#fff;line-height:1.3;margin-bottom:16px}
-.cta-mid-body{font-size:14px;color:rgba(255,255,255,.65);line-height:1.8;margin-bottom:36px}
+.cta-mid-body{font-size:14px;color:rgba(255,255,255,.65);line-height:1.8;margin-bottom:36px;text-align:center}
 .cta-mid-actions{display:flex;align-items:center;justify-content:center;gap:24px;flex-wrap:wrap}
 .cta-mid-tel-wrap{display:flex;flex-direction:column;gap:4px;align-items:center}
 .cta-mid-tel-label{font-size:11px;letter-spacing:.08em;color:rgba(255,255,255,.5)}
