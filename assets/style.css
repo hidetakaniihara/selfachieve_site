@@ -7576,24 +7576,27 @@ a.funnel-stage-service-tag:hover{
       flex-shrink:0;
     }
     .challenge-tags-wrap{
-      display:flex;flex-direction:column;gap:0;
+      display:flex;flex-direction:row;flex-wrap:wrap;gap:0;
       margin-bottom:0;
     }
     .challenge-tag{
-      font-size:clamp(15px,1.4vw,18px);letter-spacing:-.01em;
+      font-size:clamp(13px,1.2vw,16px);letter-spacing:-.01em;
       font-weight:400;
       color:#28282D;
       background:transparent;
       padding:11px 12px;
-      margin:0 -12px;
       text-decoration:none;
       border-bottom:1px solid #E8E8E8;
       transition:background .18s,color .18s;
       display:flex;align-items:center;justify-content:space-between;
       gap:8px;
       border-radius:4px;
+      width:50%;
+      box-sizing:border-box;
     }
+    .challenge-tag:nth-child(even){border-left:1px solid #E8E8E8}
     .challenge-tag:last-child{border-bottom:none}
+    .challenge-tag:nth-last-child(2):nth-child(odd){border-bottom:none}
     .challenge-tag::after{
       content:'→';
       font-size:16px;
