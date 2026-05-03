@@ -20,7 +20,34 @@
   <meta property="og:image" content="https://selfachieve.jp/assets/ogp.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="theme-color" content="#ffffff">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <style>
+/* ===== KV SERVICE LABEL ===== */
+.kv-service-label {
+  display: inline-flex;
+  align-items: center;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 900;
+  font-size: clamp(11px, 1.1vw, 13px);
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: #fff;
+  border-left: 3px solid rgba(255,255,255,.9);
+  padding: 4px 0 4px 14px;
+  margin-bottom: 22px;
+  position: relative;
+  z-index: 2;
+}
+/* ===== KV SPLASH: REMOVED ===== */
+.kv-right { display: none !important; }
+.kv-splash { display: none !important; }
+/* ===== KV INNER: full-width text layout ===== */
+@media (min-width: 769px) {
+  .kv .kv-inner {
+    grid-template-columns: 1fr !important;
+    max-width: 760px !important;
+  }
+}
+  </style>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@graph":[
     {"@type":"Service","@id":"https://selfachieve.jp/seo/#service",
@@ -363,6 +390,7 @@
 <section class="kv" aria-labelledby="kv-h1" style="background:#28282D;position:relative;overflow:hidden;">
   <div class="kv-inner">
     <div class="kv-left">
+      <p class="kv-service-label">SEO対策</p>
       <p class="kv-eyebrow fu">SEO CONSULTING / AGENCY</p>
       <h1 class="kv-h1 fu" id="kv-h1" style="transition-delay:.08s">
         自社で証明したSEO成果を、<br>あなたのサイトに。
@@ -380,9 +408,6 @@
       </div>
     </div>
 
-    <div class="kv-right">
-      <img src="../assets/splash-seo.png" alt="SEO対策カテゴリーカラー" class="kv-splash" width="420" height="560" loading="eager">
-    </div>
 
   </div>
 </section>
