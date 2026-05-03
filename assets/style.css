@@ -518,7 +518,7 @@ ul,ol{list-style:none}
   font-weight:900;
   line-height:1.2;
   letter-spacing:-0.04em;
-  color:#28282D;
+  color:#ffffff;
 }
 .challenge-split-sub{
   font-size:16px;
@@ -3798,8 +3798,7 @@ main{padding-top:72px;}
 .case-eyebrow::before,
 .related-eyebrow::before,
 .works-hero-eyebrow::before{
-  content:'';display:block;width:24px;height:1px;background:#9B9BA0;
-  margin-bottom:12px;
+  content:none;display:none;
 }
 .sec-title{
       font-size:clamp(28px,3vw,44px);
@@ -8312,6 +8311,7 @@ a.funnel-stage-service-tag:hover{
 .wall-card-title{font-size:clamp(20px,2.2vw,28px);font-weight:700;line-height:1.35;letter-spacing:-.02em;color:#28282D;margin-bottom:6px;white-space:nowrap;}
 .wall-card-category{font-size:12px;letter-spacing:.12em;color:#767680;font-weight:600;margin-bottom:16px;}
 .wall-card-desc{font-size:16px;line-height:1.85;color:#4A4A50;flex:1;}
+.wall-card-feeling{font-size:16px;line-height:1.85;color:#4A4A50;margin-bottom:0;font-weight:400;}
 .wall-tags-label{font-size:11px;letter-spacing:.14em;color:#767680;font-weight:600;margin-top:24px;margin-bottom:8px;}
 .wall-tags-wrap{display:flex;flex-wrap:wrap;gap:8px;}
 .wall-tag{font-size:12px;letter-spacing:.06em;color:#4A4A50;background:#F3F4F6;padding:4px 12px;text-decoration:none;transition:background .15s,color .15s;}
@@ -8322,5 +8322,6 @@ a.wall-tag:hover{background:#28282D;color:#fff;}
 
 /* ===== WALL CARD: 壁説明ブロック ===== */
 .wall-wall-label{font-size:11px;letter-spacing:.14em;color:#28282D;font-weight:700;margin-top:28px;margin-bottom:8px;text-transform:uppercase;}
-.wall-wall-body{font-size:15px;line-height:1.8;color:#4A4A50;margin-bottom:0;padding-left:12px;border-left:2px solid #28282D;}
+.wall-wall-body-strong{font-size:clamp(20px,2.2vw,26px);font-weight:900;line-height:1.4;letter-spacing:-.02em;color:#28282D;margin-bottom:0;}
+.wall-wall-body{font-size:16px;line-height:1.8;color:#4A4A50;margin-bottom:0;padding-left:12px;border-left:2px solid #28282D;}
 /* ===== END WALL CARD: 壁説明ブロック ===== */
