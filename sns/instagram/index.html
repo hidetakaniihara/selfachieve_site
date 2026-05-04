@@ -98,6 +98,12 @@
 .what-head {
   text-align: left !important;
 }
+/* ===== what-sec: セクション全体 ===== */
+.what-sec {
+  padding-top: 150px !important;
+  padding-bottom: 150px !important;
+  background: #ffffff !important;
+}
 /* ===== what-strategy-block: 戦略上段エリア ===== */
 .what-strategy-block {
   background: #ffffff;
@@ -109,50 +115,66 @@
   max-width: 680px;
   margin: 0 auto;
 }
-/* 権威バッジ */
+/* 月桂樹バッジ */
 .what-badge {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   border: 1.5px solid #000000;
   border-radius: 2px;
-  padding: 7px 18px;
+  padding: 8px 20px;
   font-size: 11px;
   font-weight: 700;
   letter-spacing: .18em;
   text-transform: uppercase;
   color: #000000;
-  margin-bottom: 28px;
+  margin-bottom: 48px;
 }
 .what-badge-icon {
   display: inline-block;
-  width: 14px;
-  height: 14px;
+  width: 16px;
+  height: 16px;
   flex-shrink: 0;
 }
+/* 2行ヘッドライン */
 .what-strategy-headline {
   font-size: clamp(22px, 4vw, 30px);
   font-weight: 900;
   color: #000000;
-  line-height: 1.4;
-  margin: 0 0 28px;
+  line-height: 1.0;
+  margin: 0 0 48px;
   letter-spacing: -0.02em;
+  text-align: center;
 }
+.what-strategy-headline .hl-line1 {
+  display: block;
+  font-size: clamp(28px, 5vw, 40px);
+  margin-bottom: 20px;
+}
+.what-strategy-headline .hl-line2 {
+  display: block;
+  font-size: clamp(16px, 2.8vw, 22px);
+  font-weight: 700;
+  color: #444444;
+  letter-spacing: .01em;
+}
+/* 本文 */
 .what-strategy-body {
   font-size: 15px;
-  line-height: 1.9;
+  line-height: 2.0;
   color: #333333;
-  margin: 0 0 32px;
+  margin: 0 0 48px;
   text-align: left;
 }
+/* ボタン */
 .what-strategy-btn {
   display: inline-block;
-  padding: 14px 32px;
+  padding: 16px 40px;
   background: #000000;
   color: #ffffff;
   font-size: 14px;
   font-weight: 700;
-  letter-spacing: .04em;
+  letter-spacing: .06em;
   text-decoration: none;
   border: 2px solid #000000;
   transition: background .2s, color .2s;
@@ -167,13 +189,13 @@
   flex-direction: column;
   align-items: center;
   gap: 0;
-  padding: 40px 0 32px;
+  padding: 56px 0 40px;
   text-align: center;
 }
 .what-flow-arrow {
   display: block;
   width: 9px;
-  height: 110px;
+  height: 120px;
   background: #000000;
   position: relative;
   margin: 0 auto;
@@ -182,14 +204,14 @@
 .what-flow-arrow::after {
   content: '';
   position: absolute;
-  bottom: -16px;
+  bottom: -18px;
   left: 50%;
   transform: translateX(-50%);
   width: 0;
   height: 0;
-  border-left: 14px solid transparent;
-  border-right: 14px solid transparent;
-  border-top: 18px solid #000000;
+  border-left: 16px solid transparent;
+  border-right: 16px solid transparent;
+  border-top: 20px solid #000000;
 }
 @keyframes what-bounce {
   from { transform: translateY(0); }
@@ -199,7 +221,7 @@
   font-size: 20px;
   font-weight: 900;
   color: #000000;
-  margin-top: 32px;
+  margin-top: 40px;
   letter-spacing: .01em;
   line-height: 1.3;
 }
@@ -209,19 +231,26 @@
   border-width: 1px !important;
 }
 @media (max-width: 768px) {
-  .what-strategy-headline {
-    font-size: clamp(20px, 6vw, 26px);
+  .what-sec {
+    padding-top: 80px !important;
+    padding-bottom: 80px !important;
+  }
+  .what-strategy-headline .hl-line1 {
+    font-size: clamp(22px, 7vw, 32px);
+  }
+  .what-strategy-headline .hl-line2 {
+    font-size: clamp(14px, 4vw, 18px);
   }
   .what-strategy-body {
     font-size: 14px;
   }
   .what-flow-arrow {
-    height: 80px;
+    height: 90px;
     width: 7px;
   }
   .what-flow-label {
     font-size: 17px;
-    margin-top: 28px;
+    margin-top: 32px;
   }
 }
 /* ===== case-note: 背景・ボーダー無効化 ===== */
@@ -803,18 +832,34 @@
     <!-- ① 戦略設計ブロック（上段） -->
     <div class="what-strategy-block" style="opacity:1">
       <div class="what-strategy-inner">
-        <!-- 権威バッジ -->
+        <!-- 月桂樹バッジ -->
         <span class="what-badge">
-          <svg class="what-badge-icon" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85m19.5 1.9c-3.5-.93-6.63-.82-8.94 0-2.58.92-5.01 2.86-7.44 6.32"/></svg>
-          Instagram運用スペシャリスト
+          <!-- 月桂樹エンブレムSVG -->
+          <svg class="what-badge-icon" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <!-- 左枝 -->
+            <path d="M5 17 C3 14, 2 11, 3 8 C4 5, 6 4, 8 5"/>
+            <path d="M5 17 C4 14, 4 11, 5 9"/>
+            <path d="M5 17 C5 15, 5 13, 6 11"/>
+            <!-- 右枝 -->
+            <path d="M19 17 C21 14, 22 11, 21 8 C20 5, 18 4, 16 5"/>
+            <path d="M19 17 C20 14, 20 11, 19 9"/>
+            <path d="M19 17 C19 15, 19 13, 18 11"/>
+            <!-- 中央軸 -->
+            <line x1="12" y1="4" x2="12" y2="20"/>
+            <!-- 底部横線 -->
+            <line x1="5" y1="20" x2="19" y2="20"/>
+          </svg>
+          戦略を組み立てる
         </span>
-        <!-- ヘッドライン -->
-        <p class="what-strategy-headline">戦略なき、施策はターゲット層まで届きません。</p>
+        <!-- 2行ヘッドライン -->
+        <p class="what-strategy-headline">
+          <span class="hl-line1">戦略を組み上げる。</span>
+          <span class="hl-line2">戦略なき、施策はターゲット層まで届きません。</span>
+        </p>
         <!-- 本文 -->
         <p class="what-strategy-body">
           闇雲な運用や広告配信では、結果はついてきません。大切なのは、運用を始める前の「設計」です。<br><br>
-          セルフアチーブでは、まず一貫した戦略を構築します。<br><br>
-          この土台があるからこそ、その後の運用が初めて「確かな成果」へと繋がるのです。
+          セルフアチーブでは、事実（リサーチやヒアリング）から根拠ある設計を構築します。
         </p>
         <!-- 戦略ボタン -->
         <a href="../../strategy/" class="what-strategy-btn">マーケティング戦略ページを見る。</a>
