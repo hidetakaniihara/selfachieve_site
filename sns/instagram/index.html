@@ -98,6 +98,90 @@
 .what-head {
   text-align: left !important;
 }
+/* ===== what-strategy-block: 戦略上段エリア ===== */
+.what-strategy-block {
+  background: #111113;
+  border-left: 4px solid #7DC52E;
+  border-radius: 4px;
+  padding: 40px 48px;
+  margin-bottom: 0;
+}
+.what-strategy-inner {
+  max-width: 760px;
+}
+.what-strategy-label {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: #7DC52E;
+  margin-bottom: 16px;
+}
+.what-strategy-headline {
+  font-size: clamp(24px, 5vw, 30px);
+  font-weight: 900;
+  color: #ffffff;
+  line-height: 1.3;
+  margin: 0 0 20px;
+  letter-spacing: -0.02em;
+}
+.what-strategy-body {
+  font-size: 15px;
+  line-height: 1.85;
+  color: #cccccc;
+  margin: 0;
+}
+.what-strategy-link {
+  color: #7DC52E;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.what-strategy-link:hover {
+  opacity: .8;
+}
+/* ===== what-flow-bridge: 戦略→実行 フロー ===== */
+.what-flow-bridge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 28px 0;
+  text-align: center;
+}
+.what-flow-arrow {
+  font-size: 28px;
+  color: #7DC52E;
+  line-height: 1;
+  animation: what-bounce .8s ease-in-out infinite alternate;
+}
+@keyframes what-bounce {
+  from { transform: translateY(0); }
+  to   { transform: translateY(6px); }
+}
+.what-flow-label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: #7DC52E;
+}
+.what-flow-sub {
+  font-size: 13px;
+  color: #888;
+  letter-spacing: .04em;
+}
+@media (max-width: 768px) {
+  .what-strategy-block {
+    padding: 28px 24px;
+  }
+  .what-strategy-headline {
+    font-size: clamp(20px, 6vw, 26px);
+  }
+  .what-strategy-body {
+    font-size: 14px;
+  }
+}
 /* ===== case-note: 背景・ボーダー無効化 ===== */
 .case-note {
   background: none !important;
@@ -672,11 +756,28 @@
       <h2 class="sec-h2 fu" id="what-h2" style="transition-delay:.1s">
         我々のInstagramマーケティングとは？
       </h2>
-      <p class="sec-body fu" style="transition-delay:.15s;max-width:640px;margin:20px 0 0">
-        Instagramマーケティングは、大きく2つに分けられます。<br>
-        目標・フェーズ・予算に合わせて、最適な組み合わせをご提案します。
-      </p>
     </div>
+
+    <!-- ① 戦略設計ブロック（上段・強調） -->
+    <div class="what-strategy-block fu" style="transition-delay:.12s">
+      <div class="what-strategy-inner">
+        <span class="what-strategy-label">STEP 01 — STRATEGY</span>
+        <p class="what-strategy-headline">フォロワー数か、それとも「成約」か。</p>
+        <p class="what-strategy-body">
+          闇雲な運用や広告配信では、ビジネスの結果はついてきません。<br>
+          セルフアチーブでは、運用を始める前にまず<a href="../../strategy/" class="what-strategy-link">現状把握から施策設計までの一貫した戦略</a>を構築します。<br><br>
+          この強固な土台があるからこそ、その後の運用が初めて「確かな成果」へと繋がるのです。
+        </p>
+      </div>
+    </div>
+
+    <!-- ② 戦略→実行 の視覚的フロー -->
+    <div class="what-flow-bridge fu" style="transition-delay:.18s" aria-hidden="true">
+      <span class="what-flow-arrow">↓</span>
+      <span class="what-flow-label">EXECUTION — 実行</span>
+      <span class="what-flow-sub">戦略に基づいた、具体的な実行手段</span>
+    </div>
+
     <div class="what-grid">
       <div class="what-card fu">
         <span class="what-card-tag">
