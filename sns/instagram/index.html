@@ -133,128 +133,6 @@
 .case-swiper .case-card-result {
   margin-top: auto;
 }
-/* ===== plan-sec: 新構成スタイル ===== */
-/* 施策メニューグリッド */
-.plan-service-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  margin-top: 48px;
-}
-@media (max-width: 900px) {
-  .plan-service-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-@media (max-width: 600px) {
-  .plan-service-grid {
-    grid-template-columns: 1fr;
-    gap: 14px;
-  }
-}
-.plan-service-card {
-  display: flex;
-  align-items: flex-start;
-  gap: 16px;
-  background: #fff;
-  border: 1px solid #E0E0E5;
-  border-radius: 8px;
-  padding: 22px 20px;
-}
-.plan-service-icon {
-  flex-shrink: 0;
-  width: 36px;
-  height: 36px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #F5F5F7;
-  border-radius: 6px;
-}
-.plan-service-icon svg {
-  width: 20px;
-  height: 20px;
-  stroke: #111113;
-}
-.plan-service-body {
-  flex: 1;
-}
-.plan-service-name {
-  font-size: 15px;
-  font-weight: 700;
-  color: #111113;
-  line-height: 1.5;
-  margin: 0 0 6px;
-}
-.plan-service-name strong {
-  color: #7DC52E;
-}
-.plan-service-sub {
-  font-size: 13px;
-  color: #6B6B75;
-  line-height: 1.6;
-  margin: 0;
-}
-/* 強みの強調コピー */
-.plan-strength-block {
-  margin-top: 56px;
-  padding: 40px 48px;
-  background: #F8F8FA;
-  border-left: 4px solid #7DC52E;
-  border-radius: 0 8px 8px 0;
-}
-@media (max-width: 768px) {
-  .plan-strength-block {
-    padding: 28px 24px;
-    margin-top: 40px;
-  }
-}
-.plan-strength-text {
-  font-size: 16px;
-  color: #28282D;
-  line-height: 1.9;
-  margin: 0;
-}
-.plan-strength-em {
-  font-size: 18px;
-  font-weight: 900;
-  color: #7DC52E;
-}
-@media (max-width: 768px) {
-  .plan-strength-text {
-    font-size: 15px;
-  }
-  .plan-strength-em {
-    font-size: 16px;
-  }
-}
-/* CTAボタン */
-.plan-cta-wrap {
-  margin-top: 48px;
-  text-align: center;
-}
-.plan-cta-btn {
-  display: inline-block;
-  background: #7DC52E;
-  color: #fff;
-  font-size: 16px;
-  font-weight: 700;
-  letter-spacing: .04em;
-  padding: 18px 48px;
-  border-radius: 4px;
-  text-decoration: none;
-  transition: opacity .2s;
-}
-.plan-cta-btn:hover {
-  opacity: .85;
-}
-@media (max-width: 600px) {
-  .plan-cta-btn {
-    display: block;
-    padding: 18px 24px;
-    font-size: 15px;
-  }
-}
   </style>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@graph":[
@@ -931,80 +809,198 @@
     <div class="plan-head">
       <span class="sec-eyebrow fu">PRICING</span>
       <h2 class="sec-h2 fu" id="plan-h2" style="transition-delay:.1s">
-        費用について
+        料金プラン
       </h2>
-      <p class="sec-body fu" style="transition-delay:.15s;max-width:640px">
-        費用はクライアントによって異なります。<br>
-        業種・現在の素材状況・目標・投稿頻度によって、最適な戦略と工数が変わるため、一律の料金設定をしていません。<br>
-        まずは無料相談で、御社に合ったプランをご提案します。
+      <p class="sec-body fu" style="transition-delay:.15s;max-width:600px">
+        「運用代行プラン」と「広告運用代行プラン」の2つをご用意しています。<br>
+        目標・フェーズ・予算に合わせて、最適な組み合わせをご提案します。
       </p>
     </div>
+    <!-- タブナビゲーション -->
+    <div class="plan-tabs" role="tablist">
+      <button class="plan-tab-btn is-active" role="tab" aria-selected="true" aria-controls="plan-panel-1" id="plan-tab-1">運用代行プラン</button>
+      <button class="plan-tab-btn" role="tab" aria-selected="false" aria-controls="plan-panel-2" id="plan-tab-2">広告運用代行プラン</button>
+    </div>
 
-    <!-- 施策メニュー -->
-    <div class="plan-service-grid fu" style="transition-delay:.1s">
-      <div class="plan-service-card">
-        <div class="plan-service-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+    <!-- タブパネル 01：運用代行プラン -->
+    <div class="plan-tab-panel is-active" id="plan-panel-1" role="tabpanel" aria-labelledby="plan-tab-1">
+      <!-- アカウント運用代行 2プラン -->
+      <div class="plan-grid">
+        <div class="plan-card fu">
+          <span class="plan-type">ACCOUNT MANAGEMENT</span>
+          <h3 class="plan-name">ベーシック</h3>
+          <p class="plan-tagline">Instagramを本格的に始めたい方に。<br>月7投稿でアカウントを着実に育てます。</p>
+          <div class="plan-price-block">
+            <p class="plan-price-label">月額費用</p>
+            <div class="plan-price">160,000<span>円（税込）〜 / 月</span></div>
+            <p class="plan-price-note">※ 別途アカウント設計費（初回のみ）が必要です</p>
+          </div>
+          <div class="plan-fee-table">
+            <div class="plan-fee-row plan-fee-header">
+              <span>内容</span><span>仕様</span>
+            </div>
+            <div class="plan-fee-row">
+              <span>月間投稿数</span><span class="plan-fee-price">月7投稿</span>
+            </div>
+            <div class="plan-fee-row">
+              <span>投稿形式</span><span>フィード投稿・ストーリーズ・リール</span>
+            </div>
+            <div class="plan-fee-row">
+              <span>レポート</span><span>月次レポート</span>
+            </div>
+            <div class="plan-fee-row">
+              <span>ミーティング</span><span>月1回（オンライン）</span>
+            </div>
+          </div>
+          <div class="plan-features">
+            <div class="plan-feature">月次投稿企画・コンテンツカレンダー</div>
+            <div class="plan-feature">キャプション・ハッシュタグ作成</div>
+            <div class="plan-feature">既存素材を活用した投稿制作</div>
+            <div class="plan-feature">月次分析レポート</div>
+            <div class="plan-feature">エンゲージメント施策</div>
+          </div>
+          <p class="plan-caution">※ 撮影・動画制作は別途費用が必要です</p>
+          <a href="../../contact/" class="btn-plan">このプランで相談する</a>
         </div>
-        <div class="plan-service-body">
-          <p class="plan-service-name">月次投稿企画・コンテンツカレンダー</p>
-          <p class="plan-service-sub">戦略から設計するので場当たり的にならない</p>
+        <div class="plan-card fu" style="transition-delay:.1s">
+          <span class="plan-type">ACCOUNT MANAGEMENT</span>
+          <h3 class="plan-name">アドバンス</h3>
+          <p class="plan-tagline">Instagramを集客の主軸にしたい方に。<br>月20投稿＋動画制作で最大成果を追求します。</p>
+          <div class="plan-price-block">
+            <p class="plan-price-label">月額費用</p>
+            <div class="plan-price">250,000<span>円（税込）〜 / 月</span></div>
+            <p class="plan-price-note">※ 別途アカウント設計費（初回のみ）が必要です</p>
+          </div>
+          <div class="plan-fee-table">
+            <div class="plan-fee-row plan-fee-header">
+              <span>内容</span><span>仕様</span>
+            </div>
+            <div class="plan-fee-row">
+              <span>月間投稿数</span><span class="plan-fee-price">月20投稿</span>
+            </div>
+            <div class="plan-fee-row">
+              <span>投稿形式</span><span>フィード・ストーリーズ・リール・ライブ</span>
+            </div>
+            <div class="plan-fee-row">
+              <span>レポート</span><span>週次＋月次戦略レポート</span>
+            </div>
+            <div class="plan-fee-row">
+              <span>ミーティング</span><span>月2回（オンライン）</span>
+            </div>
+          </div>
+          <div class="plan-features">
+            <div class="plan-feature">月次投稿企画・コンテンツカレンダー</div>
+            <div class="plan-feature">キャプション・ハッシュタグ最適化</div>
+            <div class="plan-feature">リール動画制作（月4本）</div>
+            <div class="plan-feature">週次＋月次戦略レポート</div>
+            <div class="plan-feature">エンゲージメント施策・コメント対応</div>
+            <div class="plan-feature">Instagramショッピング設定対応</div>
+            <div class="plan-feature">広告運用との連携提案</div>
+          </div>
+          <p class="plan-caution">※ 撮影費用は別途お見積もりとなります</p>
+          <a href="../../contact/" class="btn-plan">このプランで相談する</a>
         </div>
       </div>
-      <div class="plan-service-card">
-        <div class="plan-service-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
-        </div>
-        <div class="plan-service-body">
-          <p class="plan-service-name">フィード投稿・ストーリーズ・<strong>リール動画</strong></p>
-          <p class="plan-service-sub">リールまで対応できる会社は阪神間では希少</p>
-        </div>
-      </div>
-      <div class="plan-service-card">
-        <div class="plan-service-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
-        </div>
-        <div class="plan-service-body">
-          <p class="plan-service-name">キャプション・ハッシュタグ最適化</p>
-          <p class="plan-service-sub">アルゴリズムを意識した設計</p>
+      <!-- 初期費用 -->
+      <div class="plan-init-card fu">
+        <p class="plan-init-title">アカウント設計費（初回のみ）</p>
+        <div class="plan-init-row">
+          <div class="plan-init-item">
+            <span class="plan-init-label">アカウント設計費</span>
+            <span class="plan-init-price">80,000<span>円（税込）～</span></span>
+          </div>
+          <div class="plan-init-sep"></div>
+          <p style="font-size:13px;color:#4A4A50;line-height:1.7;flex:1">
+            初回のみ発生する費用です。ターゲット設定・競合分析・プロフィール最適化・コンテンツ戦略の策定を行います。
+          </p>
         </div>
       </div>
-      <div class="plan-service-card">
-        <div class="plan-service-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
-        </div>
-        <div class="plan-service-body">
-          <p class="plan-service-name">月次分析レポート＋改善提案</p>
-          <p class="plan-service-sub">数字で振り返り、次の施策に活かす</p>
-        </div>
+      <!-- オプション -->
+      <div class="plan-option-card fu">
+        <p class="plan-option-title">オプション</p>
+        <table class="plan-option-table">
+          <thead>
+            <tr>
+              <th>メニュー</th>
+              <th>内容</th>
+              <th>費用</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>リール動画制作（追加）</td>
+              <td>1本あたりの追加制作（撮影なし）</td>
+              <td>30,000円～ / 本</td>
+            </tr>
+            <tr>
+              <td>撮影対応</td>
+              <td>プロカメラマンによる商品・店舗・人物撮影</td>
+              <td>別途お見積もり</td>
+            </tr>
+            <tr>
+              <td>Instagramショッピング設定</td>
+              <td>商品カタログ連携・ショッピング機能設定</td>
+              <td>50,000円～（初回のみ）</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
-      <div class="plan-service-card">
-        <div class="plan-service-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-        </div>
-        <div class="plan-service-body">
-          <p class="plan-service-name">エンゲージメント施策</p>
-          <p class="plan-service-sub">フォロワーとの関係構築まで担う</p>
-        </div>
+      <div class="plan-note-box fu">
+        <svg class="plan-note-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        <p class="plan-note-text">上記は標準プランです。投稿数・動画制作本数・撮影の有無などによってカスタマイズが可能です。まずは無料相談でご要望をお聴かせください。最低契約期間は3ヶ月です。</p>
       </div>
     </div>
 
-    <!-- 強みの強調コピー -->
-    <div class="plan-strength-block fu" style="transition-delay:.2s">
-      <p class="plan-strength-text">
-        「投稿する」だけなら誰でもできます。<br>
-        セルフアチーブが対応するのは、<br>
-        <strong class="plan-strength-em">リール動画を含む本格的なコンテンツ制作。</strong>
-      </p>
-      <p class="plan-strength-text" style="margin-top:1.4em">
-        再生数・保存数・プロフィールアクセスまで設計した運用で、<br>
-        フォロワーより<strong class="plan-strength-em">「問い合わせ」を増やします。</strong>
-      </p>
-    </div>
-
-    <!-- CTA -->
-    <div class="plan-cta-wrap fu" style="transition-delay:.25s">
-      <a href="../../contact/" class="plan-cta-btn">まずは無料相談で可能性を確かめる</a>
+    <!-- タブパネル 02：広告運用代行プラン -->
+    <div class="plan-tab-panel" id="plan-panel-2" role="tabpanel" aria-labelledby="plan-tab-2">
+      <!-- 広告運用代行 2プラン -->
+      <div class="plan-grid">
+        <div class="plan-card fu">
+          <span class="plan-type">FULL MANAGEMENT</span>
+          <h3 class="plan-name">Instagram広告運用代行</h3>
+          <p class="plan-tagline">設計から運用・改善まで一切対応。<br>Instagram広告運用をそのままお任せいただけます。</p>
+          <div class="plan-price-block">
+            <p class="plan-price-label">広告費（媒体への支払い）</p>
+            <div class="plan-ad-fee-table">
+              <div class="plan-ad-fee-row">
+                <span class="plan-ad-fee-range">300,000円以下</span>
+                <span class="plan-ad-fee-price">66,000<span>円（税込）</span></span>
+              </div>
+              <div class="plan-ad-fee-row">
+                <span class="plan-ad-fee-range">300,000円以上</span>
+                <span class="plan-ad-fee-price plan-ad-fee-percent">広告実費 × 20%</span>
+              </div>
+            </div>
+            <p class="plan-price-note">※ 表示価格はすべて税込 / 初回相談無料</p>
+          </div>
+          <div class="plan-features">
+            <div class="plan-feature">現状分析・アカウント診断</div>
+            <div class="plan-feature">ターゲット設定・オーディエンス分析</div>
+            <div class="plan-feature">広告クリエイティブ入稿・入札管理</div>
+            <div class="plan-feature">コンバージョン計測設定</div>
+            <div class="plan-feature">A/Bテスト・継続的な最適化</div>
+            <div class="plan-feature">月次パフォーマンスレポート・定例MTG</div>
+          </div>
+          <p class="plan-caution">※ 広告クリエイティブ制作が必要な場合は別途お見積りとなります</p>
+          <a href="../../contact/" class="btn-plan">無料相談を申し込む</a>
+        </div>
+        <div class="plan-card fu" style="transition-delay:.1s">
+          <span class="plan-type">CREATIVE</span>
+          <h3 class="plan-name">バナー制作・動画制作</h3>
+          <p class="plan-tagline">広告の結果を最大化させるクリエイティブを作成。<br>運用代行と併せてご依頼いただけます。</p>
+          <div class="plan-price-block">
+            <p class="plan-price-label">制作費用</p>
+            <div class="plan-price">別途見積もり</div>
+            <p class="plan-price-note">制作内容・数量により異なります / 初回相談無料</p>
+          </div>
+          <p style="color:#111111;font-size:15px;line-height:1.7;margin:0">広告運用代行と併せてのご依頼の場合、クリエイティブの内容を考慮した一体的な提案が可能です。</p>
+          <a href="../../contact/" class="btn-plan">無料相談を申し込む</a>
+        </div>
+      </div>
+      <div class="plan-note-box fu">
+        <svg class="plan-note-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        <p class="plan-note-text">広告設定・クリエイティブ制作・レポートは全て包含されています。最低契約期間は3ヶ月です。まずは無料相談で広告目標・予算をお聴かせください。</p>
+      </div>
     </div>
   </div>
 </section>
