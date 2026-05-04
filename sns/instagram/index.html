@@ -189,37 +189,34 @@
   flex-direction: column;
   align-items: center;
   gap: 0;
-  padding: 48px 0 0;
+  padding: 60px 0 0;
   text-align: center;
 }
-/* ブロックアロー本体（矩形ボディ） */
+/* ブロックアロー：ボディ（矩形） */
 .what-block-arrow {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: clamp(280px, 60%, 520px);
-  min-height: 72px;
+  width: clamp(300px, 65%, 560px);
+  min-height: 80px;
   background: #000000;
   position: relative;
-  padding: 20px 32px;
+  padding: 22px 40px;
   animation: what-bounce .9s ease-in-out infinite alternate;
 }
-/* 三角形（先端） */
-.what-block-arrow::after {
-  content: '';
-  position: absolute;
-  bottom: -28px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 0;
-  height: 0;
-  border-left: 36px solid transparent;
-  border-right: 36px solid transparent;
-  border-top: 30px solid #000000;
+/* ボディの::afterは使わない */
+.what-block-arrow::after { display: none; }
+/* ブロックアロー：三角形先端（独立要素） */
+.what-block-arrow-tip {
+  width: clamp(300px, 65%, 560px);
+  height: 40px;
+  background: #000000;
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+  flex-shrink: 0;
 }
 /* ブロックアロー内テキスト */
 .what-block-arrow-text {
-  font-size: clamp(16px, 2.5vw, 20px);
+  font-size: clamp(15px, 2.2vw, 18px);
   font-weight: 900;
   color: #ffffff;
   letter-spacing: .02em;
@@ -876,9 +873,10 @@
 
     <!-- ② 戦略→実行 ブロックアロー -->
     <div class="what-flow-bridge" style="opacity:1">
-      <div class="what-block-arrow" aria-hidden="false">
+      <div class="what-block-arrow">
         <span class="what-block-arrow-text">戦略に基づいた、具体的な実行手段</span>
       </div>
+      <div class="what-block-arrow-tip" aria-hidden="true"></div>
     </div>
 
     <div class="what-grid">
