@@ -1088,7 +1088,7 @@ a.challenge-tag:hover{
       width:6px;height:6px;border-radius:50%;
       background:currentColor;opacity:.5;
     }
-.area-note{font-size:12px;color:#767680;line-height:1.7}
+.area-note{font-size:14px;color:#767680;line-height:1.7}
 .area-group{margin-bottom:32px}
 .area-group:last-child{margin-bottom:0}
 .area-group-label{
@@ -1829,7 +1829,7 @@ a.challenge-tag:hover{
       margin-bottom:4px;
     }
 .plan-price-note{
-      font-size:12px;color:#9B9BA0;
+      font-size:14px;color:#9B9BA0;
       margin-bottom:28px;
     }
 .plan-divider{height:1px;background:#E8E8E8;margin-bottom:28px}
@@ -4797,8 +4797,8 @@ main{padding-top:72px;}
       cursor:default;
     }
 .case-tag:hover{background:#28282D;border-color:#28282D;color:#fff;}
-.case-tag.lg{font-size:16px;padding:8px 20px;}
-.case-tag.sm{font-size:12px;padding:5px 12px;}
+.case-tag.lg{font-size:20px;font-weight:700;padding:10px 20px;}
+.case-tag.sm{font-size:20px;font-weight:700;padding:10px 20px;}
 .case-body{
       font-size:13px;line-height:1.85;
       color:#5A5A60;margin-bottom:32px;
@@ -8023,7 +8023,7 @@ a.funnel-stage-service-tag:hover{
       width:6px;height:6px;border-radius:50%;
       background:currentColor;opacity:.5;
     }
-    .area-note{font-size:12px;color:#555558;line-height:1.7}
+    .area-note{font-size:14px;color:#555558;line-height:1.7}
     .area-group{margin-bottom:32px}
     .area-group:last-child{margin-bottom:0}
     .area-group-label{
