@@ -674,16 +674,22 @@
     </div>
     <div class="our-note-stats">
       <div class="our-note-stat fu">
-        <div class="our-note-stat-num">524</div>
-        <p class="our-note-stat-label">フォロワー数<br>（平均値の約9倍）</p>
+        <div class="case-result-item">
+          <div class="case-result-num" data-count="524" data-suffix="">0</div>
+          <div class="case-result-label">フォロワー数（平均値の約9倍）</div>
+        </div>
       </div>
       <div class="our-note-stat fu" style="transition-delay:.08s">
-        <div class="our-note-stat-num">327</div>
-        <p class="our-note-stat-label">最大スキ数（1記事）<br>（平均値の約30倍）</p>
+        <div class="case-result-item">
+          <div class="case-result-num" data-count="327" data-suffix="">0</div>
+          <div class="case-result-label">最大スキ数（1記事）（平均値の約30倍）</div>
+        </div>
       </div>
       <div class="our-note-stat fu" style="transition-delay:.16s">
-        <div class="our-note-stat-num">80+</div>
-        <p class="our-note-stat-label">平均スキ数（直近）<br>（平均値の約7倍）</p>
+        <div class="case-result-item">
+          <div class="case-result-num" data-count="80" data-suffix="+">0<span>+</span></div>
+          <div class="case-result-label">平均スキ数（直近）（平均値の約7倍）</div>
+        </div>
       </div>
     </div>
 
@@ -1270,6 +1276,33 @@
     ['crb-copy','crb-industries'].forEach(id=>{const el=document.getElementById(id);if(el)crbObs.observe(el);});
   } else {
     ['crb-copy','crb-industries'].forEach(id=>{const el=document.getElementById(id);if(el)el.classList.add('visible');});
+  }
+  /* ===== COUNT UP ===== */
+  function countUp(el){
+    const target=parseFloat(el.dataset.count);
+    const suffix=el.dataset.suffix||'';
+    const decimal=parseInt(el.dataset.decimal)||0;
+    const duration=1800;
+    const start=performance.now();
+    function update(now){
+      const t=Math.min((now-start)/duration,1);
+      const ease=1-Math.pow(1-t,3);
+      const val=target*ease;
+      el.innerHTML=(decimal>0?val.toFixed(decimal):Math.floor(val))+'<span>'+suffix+'</span>';
+      if(t<1)requestAnimationFrame(update);
+    }
+    requestAnimationFrame(update);
+  }
+  const countEls=document.querySelectorAll('.case-result-num[data-count]');
+  if('IntersectionObserver' in window){
+    const cio=new IntersectionObserver(entries=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting){countUp(e.target);cio.unobserve(e.target);}
+      });
+    },{threshold:.5});
+    countEls.forEach(el=>cio.observe(el));
+  } else {
+    countEls.forEach(el=>countUp(el));
   }
   const spCta=document.getElementById('sp-fixed-cta');
   if(spCta){let shown=false;const show=()=>{if(window.scrollY>300&&!shown){spCta.classList.add('visible');shown=true;}};window.addEventListener('scroll',show,{passive:true});show();}
