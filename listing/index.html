@@ -79,6 +79,37 @@
     min-height: auto !important;
   }
 }
+/* ===== TARGETING-CARD: 角丸なし・黒テキスト・黒アイコン ===== */
+.targeting-card {
+  border-radius: 0 !important;
+}
+.targeting-card.is-geo {
+  border-color: #E8E8E8 !important;
+  background: #fff !important;
+}
+.targeting-card-num {
+  color: #28282D !important;
+}
+.targeting-card-icon {
+  background: rgba(0,0,0,.06) !important;
+  border-radius: 0 !important;
+}
+.targeting-card-icon svg {
+  stroke: #28282D !important;
+}
+.targeting-card-tag {
+  color: #28282D !important;
+  background: #EBEBEB !important;
+  border-radius: 0 !important;
+}
+.targeting-card.is-geo .targeting-card-tag {
+  color: #28282D !important;
+  background: #EBEBEB !important;
+}
+.targeting-card:hover {
+  box-shadow: none !important;
+  transform: none !important;
+}
   </style>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@graph":[
@@ -566,6 +597,61 @@
     </article>
   </div>
   <p class="sp-swipe-hint">スワイプして見る</p>
+</section>
+
+<!-- TARGETING: ターゲティング手法 -->
+<section class="targeting-sec" aria-labelledby="targeting-h2-listing">
+  <div class="targeting-inner">
+    <div class="targeting-head">
+      <span class="sec-eyebrow fu">ターゲティング</span>
+      <h2 class="sec-h2 fu" id="targeting-h2-listing" style="transition-delay:.1s">ターゲティングの精度が、<br>成果を決める。</h2>
+      <p class="sec-lead fu" style="transition-delay:.2s">誰に・どこで・どのタイミングで届けるかを精密に設計。<br>リスティング広告の真価は、キーワード設計と入札戦略の組み合わせにある。</p>
+    </div>
+    <div class="targeting-grid">
+      <article class="targeting-card is-geo fu">
+        <p class="targeting-card-num">01 / KEYWORD TARGETING</p>
+        <div class="targeting-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+        <h3 class="targeting-card-title">検索意図を捕えて、<br>必要な人に届ける。</h3>
+        <p class="targeting-card-desc">「今すぐ欲しい」「近くで探している」など、購買意欲の高いキーワードに絞って配信。ブロード・フレーズ・完全一致を組み合わせ、無駄なクリックを排除します。</p>
+        <div class="targeting-card-tags"><span class="targeting-card-tag">ブロードマッチ</span><span class="targeting-card-tag">フレーズマッチ</span><span class="targeting-card-tag">完全一致</span></div>
+      </article>
+      <article class="targeting-card fu" style="transition-delay:.06s">
+        <p class="targeting-card-num">02 / NEGATIVE KEYWORD</p>
+        <div class="targeting-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg></div>
+        <h3 class="targeting-card-title">無駄打ちをなくして、<br>予算を守る。</h3>
+        <p class="targeting-card-desc">関係のない検索クエリへの表示を除外キーワードでブロック。クリック単価を下げ、限られた予算で最大の成果を引き出します。</p>
+        <div class="targeting-card-tags"><span class="targeting-card-tag">除外キーワード</span><span class="targeting-card-tag">クエリ管理</span><span class="targeting-card-tag">予算最適化</span></div>
+      </article>
+      <article class="targeting-card fu" style="transition-delay:.12s">
+        <p class="targeting-card-num">03 / GEO TARGETING</p>
+        <div class="targeting-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg></div>
+        <h3 class="targeting-card-title">地域を絞って、<br>地元客に届ける。</h3>
+        <p class="targeting-card-desc">神戸・兵庫を中心に市区町村・半径指定で配信エリアを精密設定。来店・問い合わせに繋がるユーザーだけに表示し、地域ビジネスの集客効率を高めます。</p>
+        <div class="targeting-card-tags"><span class="targeting-card-tag">市区町村指定</span><span class="targeting-card-tag">半径ターゲティング</span><span class="targeting-card-tag">除外設定</span></div>
+      </article>
+      <article class="targeting-card fu" style="transition-delay:.18s">
+        <p class="targeting-card-num">04 / DEVICE &amp; SCHEDULE</p>
+        <div class="targeting-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
+        <h3 class="targeting-card-title">デバイス・時間帯で、<br>入札を最適化。</h3>
+        <p class="targeting-card-desc">スマートフォン・ PC・タブレット別の入札調整と、曜日・時間帯別の配信スケジュールで無駄な消化を防止。コンバージョン率の高い時間帯に集中して予算効率を最大化。</p>
+        <div class="targeting-card-tags"><span class="targeting-card-tag">デバイス調整</span><span class="targeting-card-tag">時間帯設定</span><span class="targeting-card-tag">入札戦略</span></div>
+      </article>
+      <article class="targeting-card fu" style="transition-delay:.24s">
+        <p class="targeting-card-num">05 / AUDIENCE TARGETING</p>
+        <div class="targeting-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <h3 class="targeting-card-title">オーディエンスで、<br>購買層に絞る。</h3>
+        <p class="targeting-card-desc">購買意向・ライフイベント・リマーケティングリストなど、ユーザー層を絞り込んで入札を強化。検索キーワードとの組み合わせでコンバージョン率を大幅改善。</p>
+        <div class="targeting-card-tags"><span class="targeting-card-tag">購買意向オーディエンス</span><span class="targeting-card-tag">リマーケティング</span><span class="targeting-card-tag">類似オーディエンス</span></div>
+      </article>
+      <article class="targeting-card fu" style="transition-delay:.30s">
+        <p class="targeting-card-num">06 / AD PLATFORM</p>
+        <div class="targeting-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+        <h3 class="targeting-card-title">媒体を選んで、<br>最大の接点を作る。</h3>
+        <p class="targeting-card-desc">Google広告・Yahoo！リスティング・Microsoft広告など、業種・ターゲットに最適な媒体を選択。媒体ごとのアルゴリズム特性を活かし、配信効率を最大化します。</p>
+        <div class="targeting-card-tags"><span class="targeting-card-tag">Google広告</span><span class="targeting-card-tag">Yahoo！リスティング</span><span class="targeting-card-tag">Microsoft広告</span></div>
+      </article>
+    </div>
+  </div>
 </section>
 
 <!-- FLOW: 運用の流れ -->
