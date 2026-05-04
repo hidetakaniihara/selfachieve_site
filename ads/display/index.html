@@ -1248,13 +1248,76 @@
 </main>
 
 <script>
+  // Copyright year
+  (function(){
+    var jst = new Date(new Date().toLocaleString('en-US', {timeZone: 'Asia/Tokyo'}));
+    document.getElementById('copyright-year').textContent = jst.getFullYear();
+  })();
 
+  // Fade up on scroll
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('on'); obs.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fu').forEach(el => obs.observe(el));
 
+  // FAQ ACCORDION
+  (function(){
+    document.querySelectorAll('.faq-q').forEach(q => {
+      function toggle(){
+        const item = q.closest('.faq-item');
+        const isOpen = item.classList.toggle('open');
+        q.setAttribute('aria-expanded', isOpen);
+      }
+      q.addEventListener('click', toggle);
+      q.addEventListener('keydown', e => { if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); toggle(); } });
+    });
+  })();
 
+  // HEADER NAVIGATION
+  (function(){
+    const navItems = document.querySelectorAll('.hd-nav-item');
+    navItems.forEach(item => {
+      let timer;
+      item.addEventListener('mouseenter', () => { clearTimeout(timer); item.classList.add('open'); });
+      item.addEventListener('mouseleave', () => { timer = setTimeout(() => item.classList.remove('open'), 120); });
+      const link = item.querySelector(':scope > a');
+      if(link) link.addEventListener('click', e => { if(item.querySelector('.hd-mega-wrap, .hd-dropdown')){ e.preventDefault(); } });
+    });
+    document.addEventListener('click', e => {
+      if(!e.target.closest('.hd-nav-item')) navItems.forEach(i => i.classList.remove('open'));
+    });
+  })();
 
+  // HAMBURGER & DRAWER
+  (function(){
+    const btn = document.querySelector('.hd-hamburger');
+    const drawer = document.getElementById('hd-drawer');
+    if(!btn || !drawer) return;
+    btn.addEventListener('click', () => {
+      const isOpen = drawer.classList.toggle('open');
+      btn.classList.toggle('open', isOpen);
+      btn.setAttribute('aria-expanded', isOpen);
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+    document.querySelectorAll('[data-drawer-toggle]').forEach(el => {
+      el.addEventListener('click', () => {
+        const sub = el.nextElementSibling;
+        if(!sub) return;
+        const isOpen = sub.classList.toggle('open');
+        el.classList.toggle('open', isOpen);
+      });
+    });
+  })();
 
-
-
+  // SP FIXED CTA
+  (function(){
+    const cta = document.getElementById('sp-fixed-cta');
+    if(!cta) return;
+    let shown = false;
+    window.addEventListener('scroll', () => {
+      if(window.scrollY > 300 && !shown){ cta.classList.add('visible'); shown = true; }
+    }, { passive: true });
+  })();
 </script>
 </body>
 </html>
