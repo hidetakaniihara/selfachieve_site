@@ -98,6 +98,34 @@
 .what-head {
   text-align: left !important;
 }
+/* ===== case-note: 背景・ボーダー無効化 ===== */
+.case-note {
+  background: none !important;
+  border: none !important;
+  padding: 0 !important;
+  margin-top: 0 !important;
+}
+.case-note::before {
+  display: none !important;
+}
+/* ===== swiper-slide: 高さ揃え ===== */
+.case-swiper .swiper-slide {
+  height: auto;
+  display: flex;
+}
+.case-swiper .case-card {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.case-swiper .case-card-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.case-swiper .case-card-result {
+  margin-top: auto;
+}
   </style>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@graph":[
@@ -500,10 +528,7 @@
     </div>
   </div>
   <div class="case-note-wrap" style="padding:0 80px 24px;">
-    <p class="case-note" style="font-size:16px;color:rgba(255,255,255,0.7);line-height:1.8;border-left:3px solid rgba(255,255,255,0.3);padding-left:12px;">
-      ※クライアント保護のため加工済みです。<br>
-      初回相談時に実例をご紹介します。
-    </p>
+    <p class="case-note" style="font-size:16px;color:rgba(255,255,255,0.7);line-height:1.8;background:none !important;border:none !important;padding:0 !important;margin-top:0 !important;">※クライアント保護のため加工済みです。初回相談時に実例をご紹介します。</p>
   </div>
   <div class="case-swiper-wrap">
     <div class="swiper case-swiper" aria-label="成果事例スライダー">
