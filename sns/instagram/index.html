@@ -187,51 +187,39 @@
   background: #ffffff;
   color: #000000;
 }
-/* ===== what-flow-bridge: ブロックアロー ===== */
+/* ===== what-flow-bridge: ベクトル矢印 ===== */
 .what-flow-bridge {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 0;
   padding: 60px 0 0;
-  margin-bottom: 90px; /* アニメーション最下点でも60px以上の余白を確保 */
+  margin-bottom: 120px; /* アニメーション最下点でも 100px以上確保 */
   text-align: center;
-  /* アニメーションなし */
+  animation: what-float 2.0s ease-in-out infinite alternate;
 }
-/* ブロックアロー：ボディ（矩形） */
-.what-block-arrow {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: clamp(300px, 65%, 560px);
-  min-height: 80px;
-  background: #000000;
-  position: relative;
-  padding: 22px 40px;
-  margin-bottom: -2px; /* サブピクセル隙間を潰す */
+@keyframes what-float {
+  from { transform: translateY(0); }
+  to   { transform: translateY(12px); }
 }
-/* ボディの::afterは使わない */
-.what-block-arrow::after { display: none; }
-/* ブロックアロー：三角形先端（独立要素・ボディと同幅で完全結合） */
-.what-block-arrow-tip {
-  width: clamp(300px, 65%, 560px);
-  height: 38px;
-  background: #000000;
-  clip-path: polygon(0 0, 100% 0, 50% 100%);
-  flex-shrink: 0;
-  display: block; /* 確実に表示 */
-}
-/* ブロックアロー内テキスト */
-.what-block-arrow-text {
+/* 宣言テキスト（矢印の上） */
+.what-vector-label {
   font-size: clamp(15px, 2.2vw, 18px);
   font-weight: 900;
-  color: #ffffff;
-  letter-spacing: .02em;
-  line-height: 1.3;
+  color: #000000;
+  letter-spacing: .04em;
+  line-height: 1.4;
+  margin-bottom: 20px;
   white-space: nowrap;
 }
-/* what-bounce 削除 */
-/* 後方互換（旧クラス非表示） */
+/* 矢印本体（SVGコンテナ） */
+.what-vector-arrow {
+  display: block;
+  width: 4px; /* 線の太さ */
+  /* SVG自体のサイズで制御 */
+}
+/* 旧クラス非表示 */
+.what-block-arrow, .what-block-arrow-tip, .what-block-arrow-text { display: none; }
 .what-flow-arrow, .what-flow-label { display: none; }
 /* what-card: 背景・ボーダー・シャドウ復旧 */
 .what-card {
@@ -864,12 +852,17 @@
       </div>
     </div>
 
-    <!-- ② 戦略→実行 ブロックアロー -->
+    <!-- ② 戦略→実行 ベクトル矢印 -->
     <div class="what-flow-bridge" style="opacity:1">
-      <div class="what-block-arrow">
-        <span class="what-block-arrow-text">戦略に基づいた、インスタグラム運用</span>
-      </div>
-      <div class="what-block-arrow-tip" aria-hidden="true"></div>
+      <!-- 宣言テキスト（矢印の上） -->
+      <span class="what-vector-label">戦略に基づいた、インスタグラム運用</span>
+      <!-- SVGベクトル矢印：線（ステム）＋三角形ヘッド -->
+      <svg class="what-vector-arrow" width="40" height="120" viewBox="0 0 40 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <!-- ステム（線） -->
+        <line x1="20" y1="0" x2="20" y2="88" stroke="#000000" stroke-width="3.5" stroke-linecap="square"/>
+        <!-- ヘッド（三角形） -->
+        <polygon points="0,88 40,88 20,120" fill="#000000"/>
+      </svg>
     </div>
 
     <div class="what-grid">
