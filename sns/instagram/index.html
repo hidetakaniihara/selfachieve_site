@@ -89,6 +89,10 @@
   color: #444 !important;
   background: #fff !important;
 }
+/* ===== official-account-h2: 共通h2サイズに統一 ===== */
+.official-account-h2 {
+  font-size: clamp(36px, 4.2vw, 60px) !important;
+}
 /* ===== official-account-card: ホバー無効化 ===== */
 .official-account-card:hover {
   box-shadow: none !important;
@@ -192,7 +196,7 @@
   padding: 60px 0 0;
   margin-bottom: 90px; /* アニメーション最下点でも60px以上の余白を確保 */
   text-align: center;
-  animation: what-bounce 1.2s ease-in-out infinite alternate; /* 全体を一体でアニメーション */
+  /* アニメーションなし */
 }
 /* ブロックアロー：ボディ（矩形） */
 .what-block-arrow {
@@ -226,10 +230,7 @@
   line-height: 1.3;
   white-space: nowrap;
 }
-@keyframes what-bounce {
-  from { transform: translateY(0); }
-  to   { transform: translateY(10px); }
-}
+/* what-bounce 削除 */
 /* 後方互換（旧クラス非表示） */
 .what-flow-arrow, .what-flow-label { display: none; }
 /* what-card: 背景・ボーダー・シャドウ復旧 */
@@ -271,30 +272,37 @@
 .case-note::before {
   display: none !important;
 }
-/* ===== case-card: ホバー無効化 ===== */
-.case-swiper .case-card:hover {
-  background: inherit !important;
+/* ===== case-grid: 3枚固定グリッド ===== */
+.case-grid-wrap {
+  padding: 0 80px 0;
 }
-.case-swiper .case-card:hover .case-card-body {
-  background: inherit !important;
+.case-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  align-items: stretch;
 }
-/* ===== swiper-slide: 高さ揃え ===== */
-.case-swiper .swiper-slide {
-  height: auto;
+.case-grid .case-card {
   display: flex;
+  flex-direction: column;
 }
-.case-swiper .case-card {
+.case-grid .case-card-body {
   display: flex;
   flex-direction: column;
   flex: 1;
 }
-.case-swiper .case-card-body {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-}
-.case-swiper .case-card-result {
+.case-grid .case-card-result {
   margin-top: auto;
+}
+/* SP: 1列 */
+@media (max-width: 767px) {
+  .case-grid-wrap {
+    padding: 0 16px 0;
+  }
+  .case-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
 }
   </style>
   <script type="application/ld+json">
@@ -700,92 +708,74 @@
   <div class="case-note-wrap" style="padding:0 80px 24px;">
     <p class="case-note" style="font-size:16px;color:#ffffff;line-height:1.8;background:none !important;border:none !important;padding:0 !important;margin-top:0 !important;text-align:center;">※クライアント保護のため加工済みです。初回相談時に実例をご紹介します。</p>
   </div>
-  <div class="case-swiper-wrap">
-    <div class="swiper case-swiper" aria-label="成果事例スライダー">
-      <div class="swiper-wrapper">
-        <!-- slide 1 -->
-        <div class="swiper-slide">
-          <article class="case-card fu">
-            <div class="case-screenshot">
-              <div class="case-screenshot-placeholder">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="3" width="20" height="18" rx="2" stroke="#ABABAB" stroke-width="1.5"/><circle cx="12" cy="10" r="3" stroke="#ABABAB" stroke-width="1.5"/><path d="M5 20c0-3 3-5 7-5s7 2 7 5" stroke="#ABABAB" stroke-width="1.5"/></svg>
-                <span>アカウントスクリーンショット</span>
-              </div>
-            </div>
-            <div class="case-card-body">
-            <span class="case-industry">飲食店 / カフェ</span>
-            <p class="case-overview">
-              <strong>課題：</strong>Instagramを開設したが投稿が続かず、フォロワーが伸び悩んでいた。<br>
-              <strong>施策：</strong>月12投稿の運用代行を開始。ターゲット分析に基づくコンテンツ設計と、リール動画を活用した認知拡大を実施。
-            </p>
-            <div class="case-results">
-              <div class="case-result-item">
-                <div class="case-result-num" data-count="380" data-suffix="%">0<span>%</span></div>
-                <div class="case-result-label">フォロワー増加率（6ヶ月）</div>
-              </div>
-            </div>
-            </div>
-          </article>
+  <div class="case-grid-wrap">
+    <div class="case-grid">
+      <!-- card 1 -->
+      <article class="case-card fu">
+        <div class="case-screenshot">
+          <div class="case-screenshot-placeholder">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="3" width="20" height="18" rx="2" stroke="#ABABAB" stroke-width="1.5"/><circle cx="12" cy="10" r="3" stroke="#ABABAB" stroke-width="1.5"/><path d="M5 20c0-3 3-5 7-5s7 2 7 5" stroke="#ABABAB" stroke-width="1.5"/></svg>
+            <span>アカウントスクリーンショット</span>
+          </div>
         </div>
-        <!-- slide 2 -->
-        <div class="swiper-slide">
-          <article class="case-card fu" style="transition-delay:.08s">
-            <div class="case-screenshot">
-              <div class="case-screenshot-placeholder">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="3" width="20" height="18" rx="2" stroke="#ABABAB" stroke-width="1.5"/><circle cx="12" cy="10" r="3" stroke="#ABABAB" stroke-width="1.5"/><path d="M5 20c0-3 3-5 7-5s7 2 7 5" stroke="#ABABAB" stroke-width="1.5"/></svg>
-                <span>アカウントスクリーンショット</span>
-              </div>
+        <div class="case-card-body">
+          <span class="case-industry">飲食店 / カフェ</span>
+          <p class="case-overview">
+            <strong>課題：</strong>Instagramを開設したが投稿が続かず、フォロワーが伸び悩んでいた。<br>
+            <strong>施策：</strong>月 12投稿の運用代行を開始。ターゲット分析に基づくコンテンツ設計と、リール動画を活用した認知拡大を実施。
+          </p>
+          <div class="case-results">
+            <div class="case-result-item">
+              <div class="case-result-num" data-count="380" data-suffix="%">0<span>%</span></div>
+              <div class="case-result-label">フォロワー増加率（6ヶ月）</div>
             </div>
-            <div class="case-card-body">
-            <span class="case-industry">美容サロン / ヘアサロン</span>
-            <p class="case-overview">
-              <strong>課題：</strong>新規集客をInstagram広告に頼っていたが、費用対効果が悪く改善したかった。<br>
-              <strong>施策：</strong>アカウント運用代行 + Instagram広告の組み合わせで、オーガニック集客と広告集客を両立。
-            </p>
-            <div class="case-results">
-              <div class="case-result-item">
-                <div class="case-result-num" data-count="2.5" data-decimal="1" data-suffix="倍">0<span>倍</span></div>
-                <div class="case-result-label">新規問い合わせ数（3ヶ月比較）</div>
-              </div>
-            </div>
-            </div>
-          </article>
+          </div>
         </div>
-        <!-- slide 3 -->
-        <div class="swiper-slide">
-          <article class="case-card fu" style="transition-delay:.16s">
-            <div class="case-screenshot">
-              <div class="case-screenshot-placeholder">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="3" width="20" height="18" rx="2" stroke="#ABABAB" stroke-width="1.5"/><circle cx="12" cy="10" r="3" stroke="#ABABAB" stroke-width="1.5"/><path d="M5 20c0-3 3-5 7-5s7 2 7 5" stroke="#ABABAB" stroke-width="1.5"/></svg>
-                <span>アカウントスクリーンショット</span>
-              </div>
-            </div>
-            <div class="case-card-body">
-            <span class="case-industry">アパレル / セレクトショップ</span>
-            <p class="case-overview">
-              <strong>課題：</strong>ECサイトへの流入が少なく、SNSからの購買につながっていなかった。<br>
-              <strong>施策：</strong>商品の世界観を伝えるビジュアル投稿と、Instagramショッピング機能を活用した購買導線を構築。
-            </p>
-            <div class="case-results">
-              <div class="case-result-item">
-                <div class="case-result-num" data-count="320" data-suffix="%">0<span>%</span></div>
-                <div class="case-result-label">Instagram経由EC売上増加（年比）</div>
-              </div>
-            </div>
-            </div>
-          </article>
+      </article>
+      <!-- card 2 -->
+      <article class="case-card fu" style="transition-delay:.08s">
+        <div class="case-screenshot">
+          <div class="case-screenshot-placeholder">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="3" width="20" height="18" rx="2" stroke="#ABABAB" stroke-width="1.5"/><circle cx="12" cy="10" r="3" stroke="#ABABAB" stroke-width="1.5"/><path d="M5 20c0-3 3-5 7-5s7 2 7 5" stroke="#ABABAB" stroke-width="1.5"/></svg>
+            <span>アカウントスクリーンショット</span>
+          </div>
         </div>
-      </div>
-    </div>
-    <!-- ナビゲーション -->
-    <div class="case-swiper-nav">
-      <button class="case-swiper-btn case-prev" aria-label="前のスライド">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M15 18l-6-6 6-6" stroke="#28282D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </button>
-      <div class="case-swiper-pagination swiper-pagination"></div>
-      <button class="case-swiper-btn case-next" aria-label="次のスライド">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M9 18l6-6-6-6" stroke="#28282D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </button>
+        <div class="case-card-body">
+          <span class="case-industry">美容サロン / ヘアサロン</span>
+          <p class="case-overview">
+            <strong>課題：</strong>新規集客をInstagram広告に頼っていたが、費用対効果が悪く改善したかった。<br>
+            <strong>施策：</strong>アカウント運用代行 + Instagram広告の組み合わせで、オーガニック集客と広告集客を両立。
+          </p>
+          <div class="case-results">
+            <div class="case-result-item">
+              <div class="case-result-num" data-count="2.5" data-decimal="1" data-suffix="倍">0<span>倍</span></div>
+              <div class="case-result-label">新規問い合わせ数（3ヶ月比較）</div>
+            </div>
+          </div>
+        </div>
+      </article>
+      <!-- card 3 -->
+      <article class="case-card fu" style="transition-delay:.16s">
+        <div class="case-screenshot">
+          <div class="case-screenshot-placeholder">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="3" width="20" height="18" rx="2" stroke="#ABABAB" stroke-width="1.5"/><circle cx="12" cy="10" r="3" stroke="#ABABAB" stroke-width="1.5"/><path d="M5 20c0-3 3-5 7-5s7 2 7 5" stroke="#ABABAB" stroke-width="1.5"/></svg>
+            <span>アカウントスクリーンショット</span>
+          </div>
+        </div>
+        <div class="case-card-body">
+          <span class="case-industry">アパレル / セレクトショップ</span>
+          <p class="case-overview">
+            <strong>課題：</strong>ECサイトへの流入が少なく、SNSからの購買につながっていなかった。<br>
+            <strong>施策：</strong>商品の世界観を伝えるビジュアル投稿と、Instagramショッピング機能を活用した購買導線を構築。
+          </p>
+          <div class="case-results">
+            <div class="case-result-item">
+              <div class="case-result-num" data-count="320" data-suffix="%">0<span>%</span></div>
+              <div class="case-result-label">Instagram経由EC売上増加（年比）</div>
+            </div>
+          </div>
+        </div>
+      </article>
     </div>
   </div>
 </section>
