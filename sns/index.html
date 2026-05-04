@@ -22,6 +22,66 @@
   <meta name="theme-color" content="#ffffff">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <style>
+/* ===== KV SERVICE LABEL ===== */
+.kv-service-label {
+  display: inline-flex;
+  align-items: center;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 900;
+  font-size: clamp(13px, 1.1vw, 14px);
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: #fff;
+  border-left: 3px solid rgba(255,255,255,.9);
+  padding: 4px 0 4px 14px;
+  margin-bottom: 22px;
+  position: relative;
+  z-index: 2;
+}
+/* ===== KV SPLASH: REMOVED ===== */
+.kv-right { display: none !important; }
+.kv-splash { display: none !important; }
+/* ===== KV PADDING: 上下余白削減 ===== */
+.kv {
+  min-height: auto !important;
+  padding: var(--kv-padding-v, 72px) 80px !important;
+}
+/* ===== KV INNER: full-width text layout (2-line H1) ===== */
+@media (min-width: 769px) {
+  .kv .kv-inner {
+    grid-template-columns: 1fr !important;
+    max-width: 1400px !important;
+  }
+  .kv .kv-h1 {
+    font-size: clamp(40px, 6vw, 88px) !important;
+    line-height: 1.2 !important;
+    letter-spacing: -0.04em !important;
+    margin-bottom: 32px !important;
+  }
+  /* メインラベル：「SNSマーケティング」極太大型 */
+  .kv .kv-eyebrow {
+    font-size: clamp(28px, 4vw, 56px) !important;
+    font-weight: 900 !important;
+    letter-spacing: -0.02em !important;
+    color: #ffffff !important;
+    margin-bottom: 20px !important;
+    gap: 20px !important;
+  }
+  .kv .kv-eyebrow::before {
+    display: none !important;
+  }
+  .kv .kv-sub {
+    margin-bottom: 0 !important;
+  }
+}
+@media (max-width: 768px) {
+  .kv {
+    padding: var(--kv-padding-v-sp, 56px) 24px !important;
+    min-height: auto !important;
+  }
+}
+  </style>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@graph":[
     {"@type":"Service","@id":"https://selfachieve.jp/sns/#service",
@@ -357,30 +417,17 @@
 <main>
 
 <!-- KV -->
-<section class="kv" aria-labelledby="kv-h1" style="background:#28282D;position:relative;overflow:hidden;">
+<section class="kv" aria-labelledby="kv-h1" style="background:#111113;position:relative;overflow:hidden;">
   <div class="kv-inner">
     <div class="kv-left">
-      <p class="kv-eyebrow fu">SNS MARKETING / SOCIAL MEDIA</p>
+      <p class="kv-eyebrow fu">— SNSマーケティング</p>
       <h1 class="kv-h1 fu" id="kv-h1" style="transition-delay:.08s">
         <span class="kv-h1-l1">WEBマーケティングの主戦場。</span><br class="kv-h1-br-pc"><span class="kv-h1-l2">最適なSNS活用をご提案。</span>
       </h1>
       <p class="kv-sub fu" style="transition-delay:.16s">
         神戸・兵庫の中小企業に特化した、SNSを集客の柱へ。<br class="kv-sub-br-pc">アカウント運用からSNS広告まで、<br class="kv-sub-br-pc">目標に合わせて一貫して設計します。
       </p>
-      <div class="kv-actions fu" style="transition-delay:.24s">
-        <a href="../contact/" class="btn-primary">15分無料相談を申し込む</a>
-        <div class="kv-tel-wrap">
-          <p class="kv-tel-label">お電話でのご相談</p>
-        </div>
-      </div>
-      <div class="kv-badge-row fu" style="transition-delay:.32s">
-        <a href="../sns/instagram/" class="kv-badge kv-badge-link">Instagram</a>
-        <a href="../sns/tiktok/" class="kv-badge kv-badge-link">TikTok</a>
-        <a href="../sns/x/" class="kv-badge kv-badge-link">X（旧Twitter）</a>
-        <a href="../sns/youtube/" class="kv-badge kv-badge-link">YouTube</a>
-        <a href="../sns/line/" class="kv-badge kv-badge-link">LINE</a>
-        <a href="../sns/note/" class="kv-badge kv-badge-link">note</a>
-      </div>
+
     </div>
     <div class="kv-right">
     </div>
@@ -732,13 +779,31 @@
 <section class="case-sec" aria-labelledby="case-h2">
   <div class="case-inner">
     <div class="case-head">
-      <span class="case-eyebrow fu">REAL CASES</span>
-      <h2 class="case-h2 fu" id="case-h2" style="transition-delay:.1s">
-        課題と施策で見る、<br>改善の実例。
-      </h2>
-      <p class="case-body-text fu" style="transition-delay:.15s">
-        業種・課題・施策の概要をそのままお伝えします。<br>数値はすべて実際の支援案件をもとにした参考値です。
-      </p>
+      <div>
+        <span class="sec-eyebrow fu">支援事例</span>
+        <h2 class="sec-h2 fu" id="case-h2" style="transition-delay:.1s">
+          様々な業種・規模での<br>SNSマーケティング支援実績。
+        </h2>
+      </div>
+    </div>
+    <div class="case-tags-sec fu">
+      <span class="case-tags-label">SUPPORTED INDUSTRIES</span>
+      <div class="case-tags">
+        <span class="case-tag lg">美容・サロン</span>
+        <span class="case-tag lg">飲食・カフェ</span>
+        <span class="case-tag">医療・クリニック</span>
+        <span class="case-tag">法律・士業</span>
+        <span class="case-tag lg">EC・通販</span>
+        <span class="case-tag">不動産</span>
+        <span class="case-tag">建設・リフォーム</span>
+        <span class="case-tag sm">教育・スクール</span>
+        <span class="case-tag">フィットネス・ジム</span>
+        <span class="case-tag sm">ペット</span>
+        <span class="case-tag">旅行・観光</span>
+        <span class="case-tag sm">イベント・展示会</span>
+        <span class="case-tag">BtoB製造業</span>
+        <span class="case-tag sm">採用・HR</span>
+      </div>
     </div>
     <div class="case-grid">
 
@@ -815,6 +880,7 @@
       </div>
 
     </div>
+    <p class="sp-swipe-hint">スワイプして見る</p>
   </div>
 </section>
 
@@ -822,9 +888,9 @@
 <section class="voice-sec" aria-labelledby="voice-h2">
   <div class="voice-head">
     <div>
-      <span class="sec-eyebrow fu">CUSTOMER VOICE</span>
+      <span class="sec-eyebrow fu">CLIENT VOICES</span>
       <h2 class="sec-h2 fu" id="voice-h2" style="transition-delay:.1s">
-        お客さまの声
+        伴走してきた企業の、<br>リアルな声。
       </h2>
     </div>
     <a href="../voice/" class="view-all fu" style="transition-delay:.15s">すべて見る</a>
@@ -883,6 +949,7 @@
       </div>
       </a>
     </article>
+  <p class="sp-swipe-hint">スワイプして見る</p>
   </div>
 </section>
 
