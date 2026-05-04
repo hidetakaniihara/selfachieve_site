@@ -8,6 +8,66 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ホームページ制作・WEBサイト制作 | 戦略設計から分析改善まで一貫対応 | セルフアチーブ</title>
     <link rel="stylesheet" href="../assets/style.css">
+  <style>
+/* ===== KV SERVICE LABEL ===== */
+.kv-service-label {
+  display: inline-flex;
+  align-items: center;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 900;
+  font-size: clamp(13px, 1.1vw, 14px);
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: #fff;
+  border-left: 3px solid rgba(255,255,255,.9);
+  padding: 4px 0 4px 14px;
+  margin-bottom: 22px;
+  position: relative;
+  z-index: 2;
+}
+/* ===== KV SPLASH: REMOVED ===== */
+.kv-right { display: none !important; }
+.kv-splash { display: none !important; }
+/* ===== KV PADDING: 上下余白削減 ===== */
+.kv {
+  min-height: auto !important;
+  padding: var(--kv-padding-v, 72px) 80px !important;
+}
+/* ===== KV INNER: full-width text layout (2-line H1) ===== */
+@media (min-width: 769px) {
+  .kv .kv-inner {
+    grid-template-columns: 1fr !important;
+    max-width: 1400px !important;
+  }
+  .kv .kv-h1 {
+    font-size: clamp(40px, 6vw, 88px) !important;
+    line-height: 1.2 !important;
+    letter-spacing: -0.04em !important;
+    margin-bottom: 32px !important;
+  }
+  /* メインラベル：「ホームページ制作」極太大型 */
+  .kv .kv-eyebrow {
+    font-size: clamp(28px, 4vw, 56px) !important;
+    font-weight: 900 !important;
+    letter-spacing: -0.02em !important;
+    color: #ffffff !important;
+    margin-bottom: 20px !important;
+    gap: 20px !important;
+  }
+  .kv .kv-eyebrow::before {
+    display: none !important;
+  }
+  .kv .kv-sub {
+    margin-bottom: 0 !important;
+  }
+}
+@media (max-width: 768px) {
+  .kv {
+    padding: var(--kv-padding-v-sp, 56px) 24px !important;
+    min-height: auto !important;
+  }
+}
+  </style>
   <meta name="description" content="WEB戦略に基づいた、結果の出るホームページ制作。SEO・分析・戦略設計まで一貫対応。神戸・兵庫の中小企業に特化したWEBサイト制作・LP制作・保守・分析改善。初回15分無料相談。">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://selfachieve.jp/website/">
@@ -359,26 +419,17 @@
 <main>
 
 <!-- KV -->
-<section class="kv" aria-labelledby="kv-h1" style="background:#0a0a0f;position:relative;overflow:hidden;">
+<section class="kv" aria-labelledby="kv-h1" style="background:#28282D;position:relative;overflow:hidden;">
   <div class="kv-inner">
     <div class="kv-left">
-      <p class="kv-eyebrow fu">WEBSITE PRODUCTION / WEB STRATEGY</p>
-      <div class="kv-badge fu" style="transition-delay:.04s">
-        <span>ただ作るだけでは終わらない。<em>戦略設計から分析改善まで一貫対応。</em></span>
-      </div>
+      <p class="kv-eyebrow fu">— ホームページ制作</p>
       <h1 class="kv-h1 fu" id="kv-h1" style="transition-delay:.08s">
-        WEB戦略に基づいた、<br class="kv-h1-br">
-        <span class="kv-h1-line2"><span class="kv-h1-l2a">結果の出る</span><span class="kv-h1-l2b">ホームページ制作。</span></span>
+        WEB戦略に基づいた、<br>
+        結果の出るホームページ制作。
       </h1>
       <p class="kv-sub fu" style="transition-delay:.16s">
         「作って終わり」のホームページ制作では、集客も問い合わせも増えません。セルフアチーブは戦略設計・企画・SEO・分析改善まで一貫して支援し、ビジネスの成果に直結するWEBサイトを制作します。
       </p>
-      <div class="kv-actions fu" style="transition-delay:.24s">
-        <a href="../contact/" class="btn-primary">15分無料相談を申し込む</a>
-        <div class="kv-tel-wrap">
-          <p class="kv-tel-label">お電話でのご相談</p>
-        </div>
-      </div>
     </div>
   </div>
 </section>
@@ -442,18 +493,26 @@
 </section>
 
 <!-- MID CTA 1 -->
-<div class="mid-cta">
-  <div class="mid-cta-inner">
-    <div class="mid-cta-text">
-      <span class="mid-cta-label">FREE CONSULTATION</span>
-      <h2 class="mid-cta-title">まず、話してみませんか。</h2>
-      <p class="mid-cta-body">15分の無料相談で、貴社のWEB課題を整理します。「何から始めればいいかわからない」という段階でも大丈夫です。</p>
-    </div>
-    <div class="mid-cta-actions">
-      <a href="../contact/" class="btn-mid-cta">15分無料相談を申し込む</a>
+<section class="cta" aria-labelledby="cta-mid1-h2">
+  <div class="cta-wrap">
+    <p class="cta-eyebrow fu">FREE CONSULTATION</p>
+    <h2 class="cta-h2 fu" id="cta-mid1-h2" style="transition-delay:.1s">
+      <span class="cta-h2-line">まず、お話してみませんか。</span>
+      <span class="cta-h2-line">初回相談は無料です。</span>
+    </h2>
+    <p class="cta-body fu" style="transition-delay:.2s">
+      「何から始めればいいかわからない」という段階でも構いません。<br>
+      現状のヒアリングから、最適な施策をご提案します。
+    </p>
+    <div class="cta-actions fu" style="transition-delay:.3s">
+      <a href="../contact/" class="btn-cta" aria-label="無料相談を申し込む">無料相談を申し込む</a>
+      <div class="cta-tel-wrap">
+        <p class="cta-tel-label">お電話でのご相談</p>
+        <a href="tel:0788068338" class="cta-tel" aria-label="電話番号 078-806-8338">078-806-8338</a>
+      </div>
     </div>
   </div>
-</div>
+</section>
 
 <!-- WORKS: 制作事例 -->
 <section class="works-sec" aria-labelledby="works-h2">
@@ -619,18 +678,26 @@
 </section>
 
 <!-- MID CTA 2 -->
-<div class="mid-cta">
-  <div class="mid-cta-inner">
-    <div class="mid-cta-text">
-      <span class="mid-cta-label">FREE CONSULTATION</span>
-      <h2 class="mid-cta-title">どのプランが合うかわからない？</h2>
-      <p class="mid-cta-body">まずは15分の無料相談で現状をお聞きします。貴社の課題と目標に合わせて、最適なプランをご提案します。</p>
-    </div>
-    <div class="mid-cta-actions">
-      <a href="../contact/" class="btn-mid-cta">15分無料相談を申し込む</a>
+<section class="cta" aria-labelledby="cta-mid2-h2">
+  <div class="cta-wrap">
+    <p class="cta-eyebrow fu">FREE CONSULTATION</p>
+    <h2 class="cta-h2 fu" id="cta-mid2-h2" style="transition-delay:.1s">
+      <span class="cta-h2-line">まず、お話してみませんか。</span>
+      <span class="cta-h2-line">初回相談は無料です。</span>
+    </h2>
+    <p class="cta-body fu" style="transition-delay:.2s">
+      「何から始めればいいかわからない」という段階でも構いません。<br>
+      現状のヒアリングから、最適なプランをご提案します。
+    </p>
+    <div class="cta-actions fu" style="transition-delay:.3s">
+      <a href="../contact/" class="btn-cta" aria-label="無料相談を申し込む">無料相談を申し込む</a>
+      <div class="cta-tel-wrap">
+        <p class="cta-tel-label">お電話でのご相談</p>
+        <a href="tel:0788068338" class="cta-tel" aria-label="電話番号 078-806-8338">078-806-8338</a>
+      </div>
     </div>
   </div>
-</div>
+</section>
 
 <!-- CHALLENGE: 課題別（コンパクト版）-->
 <section class="challenge-sec" aria-labelledby="challenge-h2-website">
