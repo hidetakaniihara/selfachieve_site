@@ -7,7 +7,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MEO対策 代行・コンサルティング | Googleマップ上位表示で地域集客 | セルフアチーブ</title>
-    <link rel="stylesheet" href="../assets/style.css">
+  <link rel="stylesheet" href="../assets/style.css">
   <meta name="description" content="成果が出るまで料金0円！地域No.1を目指すMEO対策。Googleビジネスプロフィール最適化・口コミ管理・Googleマップ上位表示を神戸・兵庫の中小企業・店舗に特化して支援。初回15分無料相談。">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://selfachieve.jp/meo/">
@@ -19,7 +19,66 @@
   <meta property="og:image" content="https://selfachieve.jp/assets/ogp.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="theme-color" content="#ffffff">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <style>
+/* ===== KV SERVICE LABEL ===== */
+.kv-service-label {
+  display: inline-flex;
+  align-items: center;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 900;
+  font-size: clamp(11px, 1.1vw, 13px);
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: #fff;
+  border-left: 3px solid rgba(255,255,255,.9);
+  padding: 4px 0 4px 14px;
+  margin-bottom: 22px;
+  position: relative;
+  z-index: 2;
+}
+/* ===== KV SPLASH: REMOVED ===== */
+.kv-right { display: none !important; }
+.kv-splash { display: none !important; }
+/* ===== KV PADDING: 上下余白削減 ===== */
+.kv {
+  min-height: auto !important;
+  padding: var(--kv-padding-v, 72px) 80px !important;
+}
+/* ===== KV INNER: full-width text layout (2-line H1) ===== */
+@media (min-width: 769px) {
+  .kv .kv-inner {
+    grid-template-columns: 1fr !important;
+    max-width: 1400px !important;
+  }
+  .kv .kv-h1 {
+    font-size: clamp(40px, 6vw, 88px) !important;
+    line-height: 1.2 !important;
+    letter-spacing: -0.04em !important;
+    margin-bottom: 32px !important;
+  }
+  /* メインラベル：「MEO対策」極太大型 */
+  .kv .kv-eyebrow {
+    font-size: clamp(28px, 4vw, 56px) !important;
+    font-weight: 900 !important;
+    letter-spacing: -0.02em !important;
+    color: #ffffff !important;
+    margin-bottom: 20px !important;
+    gap: 20px !important;
+  }
+  .kv .kv-eyebrow::before {
+    display: none !important;
+  }
+  .kv .kv-sub {
+    margin-bottom: 0 !important;
+  }
+}
+@media (max-width: 768px) {
+  .kv {
+    padding: var(--kv-padding-v-sp, 56px) 24px !important;
+    min-height: auto !important;
+  }
+}
+  </style>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@graph":[
     {"@type":"Service","@id":"https://selfachieve.jp/meo/#service",
@@ -241,94 +300,7 @@
   </div>
   <div class="hd-drawer-cta">
     <a href="#contact" class="hd-btn" aria-label="無料相談を申し込む">無料相談を申し込む</a>
-    <a href="https://saicatsu-r.jp/" class="hd-btn-saicatsu" target="_blank" rel="noopener noreferrer" aria-label="企業の採用活動を成功に導く「サイカツ.R」（別サイトが開きます）">企業の採用活動を成功に導く「サイカツ.R」<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 2L2 10M10 2H5M10 2V7" stroke="#28282D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-  </div>
-  <div class="hd-drawer-sns">
-    <p class="hd-drawer-sns-label">FOLLOW US</p>
-    <div class="hd-drawer-sns-links">
-      <a href="https://www.instagram.com/self.achieve/" class="hd-drawer-sns-link hd-drawer-sns-ig" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="20" height="20" rx="5" stroke="#28282D" stroke-width="1.5"/><circle cx="12" cy="12" r="4" stroke="#28282D" stroke-width="1.5"/><circle cx="17.5" cy="6.5" r="1" fill="#28282D"/></svg>
-      </a>
-      <a href="https://www.tiktok.com/@selfachieve" class="hd-drawer-sns-link hd-drawer-sns-tt" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" stroke="#28282D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </a>
-      <a href="https://x.com/selfachieve" class="hd-drawer-sns-link hd-drawer-sns-x" target="_blank" rel="noopener noreferrer" aria-label="X（旧Twitter）">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 4l16 16M4 20L20 4" stroke="#28282D" stroke-width="1.5" stroke-linecap="round"/></svg>
-      </a>
-    </div>
-  </div>
-</div>
-
-<!-- MOBILE DRAWER -->
-<div class="hd-drawer" id="hd-drawer" role="dialog" aria-label="モバイルメニュー">
-  <div class="hd-drawer-item">
-    <div class="hd-drawer-link" data-drawer-toggle>課題から探す</div>
-    <div class="hd-drawer-sub">
-      <p class="hd-drawer-sub-label">なんかうまくいかない...</p>
-      <a href="../strategy/">WEB戦略設計</a>
-      <p class="hd-drawer-sub-label">集客したい</p>
-      <a href="../seo/">SEO対策</a>
-      <a href="../meo/">MEO対策</a>
-      <a href="../ads/display/">WEB広告</a>
-      <a href="../sns/">SNSマーケティング</a>
-      <a href="../sns/note/">note対策</a>
-      <a href="../ai-seo/">AI検索対策（LLM検索対策）</a>
-      <p class="hd-drawer-sub-label">成約したい</p>
-      <a href="../website/">ホームページ制作</a>
-      <a href="../website/#analysis">分析改善</a>
-      <a href="../website/#lp">LP制作</a>
-      <p class="hd-drawer-sub-label">追客したい</p>
-      <a href="../sns/line/">LINE</a>
-      <a href="../sns/instagram/">Instagram</a>
-      <a href="../sns/x/">X（旧Twitter）</a>
-      <a href="../sns/youtube/">YouTube</a>
-      <a href="../sns/tiktok/">TikTok</a>
-      <a href="../sns/note/">note</a>
-    </div>
-  </div>
-  <div class="hd-drawer-item">
-    <div class="hd-drawer-link" data-drawer-toggle>サービス</div>
-    <div class="hd-drawer-sub">
-      <a href="../strategy/">WEB戦略設計</a>
-      <a href="../website/">サイト制作・分析改善</a>
-      <a href="../seo/">SEO対策</a>
-      <a href="../meo/">MEO対策</a>
-      <a href="../ai-seo/">AI検索対策（LLM検索対策）</a>
-      <p class="hd-drawer-sub-label">SNSマーケティング</p>
-      <a href="../sns/instagram/">Instagram</a>
-      <a href="../sns/tiktok/">TikTok</a>
-      <a href="../sns/x/">X（旧Twitter）</a>
-      <a href="../sns/youtube/">YouTube</a>
-      <a href="../sns/note/">note</a>
-      <a href="../sns/line/">LINE</a>
-      <p class="hd-drawer-sub-label">WEB広告</p>
-      <a href="../ads/display/">ディスプレイ広告</a>
-      <p class="hd-drawer-sub-label">AX・業務改善</p>
-      <a href="../ai-automation/">AI業務効率化・導入支援</a>
-    </div>
-  </div>
-  <div class="hd-drawer-item">
-    <a href="https://selfachieve.jp/saikatsu_r/" class="hd-drawer-link no-arrow" target="_blank" rel="noopener noreferrer">採用戦略<svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-left:4px;vertical-align:middle"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
-  </div>
-  <div class="hd-drawer-item">
-    <a href="../works/" class="hd-drawer-link no-arrow">制作実績</a>
-  </div>
-  <div class="hd-drawer-item">
-    <a href="../voice/" class="hd-drawer-link no-arrow">お客さまの声</a>
-  </div>
-  <div class="hd-drawer-item">
-    <div class="hd-drawer-link" data-drawer-toggle="drawer-company">会社情報</div>
-    <div class="hd-drawer-sub" id="drawer-company">
-      <a href="../company/">会社情報 TOP</a>
-      <a href="../company/#mission">Mission / Vision / Value</a>
-      <a href="../company/#representative">代表メッセージ</a>
-      <a href="../company/#overview">会社概要</a>
-      <a href="../company/#access">アクセス</a>
-    </div>
-  </div>
-  <div class="hd-drawer-cta">
-    <a href="#contact" class="hd-btn" aria-label="無料相談を申し込む">無料相談を申し込む</a>
-    <a href="https://saicatsu-r.jp/" class="hd-btn-saicatsu" target="_blank" rel="noopener noreferrer" aria-label="企業の採用活動を成功に導く「サイカツ.R」（別サイトが開きます）">企業の採用活動を成功に導く「サイカツ.R」<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 2L2 10M10 2H5M10 2V7" stroke="#28282D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    <a href="https://saikatsu-r.jp/" class="hd-btn-saicatsu" target="_blank" rel="noopener noreferrer" aria-label="企業の採用活動を成功に導く「サイカツ.R」（別サイトが開きます）">企業の採用活動を成功に導く「サイカツ.R」<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 2L2 10M10 2H5M10 2V7" stroke="#28282D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
   </div>
   <div class="hd-drawer-sns">
     <p class="hd-drawer-sns-label">FOLLOW US</p>
@@ -362,7 +334,7 @@
 <section class="kv" aria-labelledby="kv-h1" style="background:#111113;position:relative;overflow:hidden;">
   <div class="kv-inner">
     <div class="kv-left">
-      <p class="kv-eyebrow fu">MEO CONSULTING / AGENCY</p>
+      <p class="kv-eyebrow fu">— MEO対策</p>
       <div class="kv-badge fu" style="transition-delay:.04s">
         <span>成果が出るまで<em style="color:#fff;font-style:normal;">料金0円</em>の成果報酬型</span>
       </div>
@@ -370,7 +342,8 @@
         <span class="kv-h1-accent">地域No.1</span>を<br>目指すMEO対策。
       </h1>
       <p class="kv-sub fu" style="transition-delay:.16s">
-        究極のローカル集客施策のMEO対策で、Googleマップで上位表示されれば、広告費ゼロで来店・電話・予約が増やせます。
+        究極のローカル集客施策のMEO対策で、Googleマップで上位表示されれば、広告費ゼロで来店・電話・予約が増やせます。<br>
+        <small style="font-size:.65em;opacity:.75;letter-spacing:.01em;display:block;margin-top:10px;">※案件規模を問わず、当社へ寄せられる平均お問い合わせ数</small>
       </p>
       <div class="kv-actions fu" style="transition-delay:.24s">
         <a href="../contact/" class="btn-primary">15分無料相談を申し込む</a>
@@ -390,124 +363,6 @@
     <li><span aria-current="page">MEO対策</span></li>
   </ol>
 </nav>
-
-<!-- RESULTS: 導入実績ギャラリー（KV直下）-->
-<section class="results-sec" aria-labelledby="results-h2">
-  <div class="results-inner">
-    <div class="results-head fu">
-      <span class="results-eyebrow fu">導入実績</span>
-      <h2 class="results-h2 fu" id="results-h2" style="transition-delay:.1s">業種を問わず、<br>実績を積み重ねています。</h2>
-    </div>
-    <div class="results-gallery">
-
-      <div class="result-card fu" style="transition-delay:0s">
-        <div class="result-card-title">兵庫県 <strong>歯科医院</strong></div>
-        <div class="result-img-wrap">
-          <div class="result-placeholder">
-            <div class="mock-graph">
-              <div class="mock-bar" style="height:20%"></div>
-              <div class="mock-bar" style="height:25%"></div>
-              <div class="mock-bar" style="height:22%"></div>
-              <div class="mock-bar" style="height:35%"></div>
-              <div class="mock-bar" style="height:42%"></div>
-              <div class="mock-bar" style="height:55%"></div>
-              <div class="mock-bar" style="height:68%"></div>
-              <div class="mock-bar" style="height:78%"></div>
-              <div class="mock-bar" style="height:88%"></div>
-              <div class="mock-bar" style="height:95%"></div>
-              <div class="mock-bar" style="height:92%"></div>
-              <div class="mock-bar" style="height:98%"></div>
-              <div class="mock-line"></div>
-            </div>
-            <span class="placeholder-label">写真は導入後に掲載予定</span>
-          </div>
-        </div>
-        <div class="result-body">
-          <div class="result-tags">
-            <span class="result-tag period">MEO対策導入後、お問い合わせ数が</span>
-          </div>
-          <p class="result-comment">「地域名＋歯科」でマップパック1位を獲得。電話件数が大幅増加しました。</p>
-        </div>
-        <div class="result-arrow"><span class="result-arrow-icon"></span></div>
-        <div class="result-big-num-wrap">
-          <span class="result-big-num" data-count="9.8" data-suffix="<span style='font-size:.55em'>倍</span>">9.8<span style="font-size:.55em">倍</span></span>
-          <span class="result-big-num-label">UP！</span>
-        </div>
-      </div>
-
-      <div class="result-card fu" style="transition-delay:.1s">
-        <div class="result-card-title">神奈川県 <strong>水道工事会社</strong></div>
-        <div class="result-img-wrap">
-          <div class="result-placeholder">
-            <div class="mock-graph">
-              <div class="mock-bar" style="height:30%"></div>
-              <div class="mock-bar" style="height:28%"></div>
-              <div class="mock-bar" style="height:35%"></div>
-              <div class="mock-bar" style="height:40%"></div>
-              <div class="mock-bar" style="height:50%"></div>
-              <div class="mock-bar" style="height:60%"></div>
-              <div class="mock-bar" style="height:72%"></div>
-              <div class="mock-bar" style="height:80%"></div>
-              <div class="mock-bar" style="height:88%"></div>
-              <div class="mock-bar" style="height:92%"></div>
-              <div class="mock-bar" style="height:96%"></div>
-              <div class="mock-bar" style="height:99%"></div>
-              <div class="mock-line"></div>
-            </div>
-            <span class="placeholder-label">写真は導入後に掲載予定</span>
-          </div>
-        </div>
-        <div class="result-body">
-          <div class="result-tags">
-            <span class="result-tag period">MEO×地域集客で売上が</span>
-          </div>
-          <p class="result-comment">緊急性の高い「水道修理」キーワードでの上位表示を実現。経路案内件数も大幅増加。</p>
-        </div>
-        <div class="result-arrow"><span class="result-arrow-icon"></span></div>
-        <div class="result-big-num-wrap">
-          <span class="result-big-num" data-count-range="true" data-count-from="4" data-count-to="5" data-suffix="<span style='font-size:.55em'>倍</span>">4＾5<span style="font-size:.55em">倍</span></span>
-          <span class="result-big-num-label">UP！</span>
-        </div>
-      </div>
-
-      <div class="result-card fu" style="transition-delay:.2s">
-        <div class="result-card-title">山梨県 <strong>キャンプ場</strong></div>
-        <div class="result-img-wrap">
-          <div class="result-placeholder">
-            <div class="mock-graph">
-              <div class="mock-bar" style="height:15%"></div>
-              <div class="mock-bar" style="height:18%"></div>
-              <div class="mock-bar" style="height:20%"></div>
-              <div class="mock-bar" style="height:25%"></div>
-              <div class="mock-bar" style="height:32%"></div>
-              <div class="mock-bar" style="height:42%"></div>
-              <div class="mock-bar" style="height:55%"></div>
-              <div class="mock-bar" style="height:65%"></div>
-              <div class="mock-bar" style="height:75%"></div>
-              <div class="mock-bar" style="height:82%"></div>
-              <div class="mock-bar" style="height:90%"></div>
-              <div class="mock-bar" style="height:97%"></div>
-              <div class="mock-line"></div>
-            </div>
-            <span class="placeholder-label">写真は導入後に掲載予定</span>
-          </div>
-        </div>
-        <div class="result-body">
-          <div class="result-tags">
-            <span class="result-tag period">MEO×SNS施策で年間予約数が</span>
-          </div>
-          <p class="result-comment">口コミ獲得施策と写真最適化で視覚的訴求力も大幅向上。</p>
-        </div>
-        <div class="result-arrow"><span class="result-arrow-icon"></span></div>
-        <div class="result-big-num-wrap">
-          <span class="result-big-num" data-count="8.3" data-suffix="<span style='font-size:.55em'>倍</span>">8.3<span style="font-size:.55em">倍</span></span>
-          <span class="result-big-num-label">UP！</span>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
 
 <!-- PROBLEM: こんなお悩みありませんか？ -->
 <section class="problem-sec" aria-labelledby="problem-h2">
@@ -538,129 +393,131 @@
         <p class="problem-desc">リスティング広告に毎月費用をかけているが、MEOなら広告費ゼロで継続的な集客ができると聞いた。何から始めればいいかわからない。</p>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- CASE: 具体事例 -->
-<section class="case-sec" aria-labelledby="case-h2">
-  <div class="case-inner">
-    <div class="case-head">
-      <div>
-        <span class="sec-eyebrow fu">具体事例</span>
-        <h2 class="sec-h2 fu" id="case-h2" style="transition-delay:.1s">
-          あらゆる業種での<br>上位表示実績。
-        </h2>
-      </div>
-    </div>
-    <div class="case-grid">
-      <div class="case-card fu">
-        <p class="case-industry">MEDICAL</p>
-        <p class="case-title">「地域名＋歯科」でマップパック1位を獲得し、新患予約が月30件増加</p>
-      </div>
-      <div class="case-card fu" style="transition-delay:.08s">
-        <p class="case-industry">BEAUTY</p>
-        <p class="case-title">「地域名＋美容室」で上位表示後、新規来客数が前年比180%に</p>
-      </div>
-      <div class="case-card fu" style="transition-delay:.16s">
-        <p class="case-industry">RESTAURANT</p>
-        <p class="case-title">「地域名＋ランチ」でマップパック上位表示、ランチ売上が2.5倍に</p>
-      </div>
-    </div>
-    <div class="case-grid case-grid-row2">
-      <div class="case-card fu">
-        <p class="case-industry">MEDICAL / CLINIC</p>
-        <p class="case-title">「地域名＋整体」でGoogleマップ1位、月間問い合わせが3倍に増加</p>
-      </div>
-      <div class="case-card fu" style="transition-delay:.08s">
-        <p class="case-industry">HOME SERVICES</p>
-        <p class="case-title">「地域名＋リフォーム」でマップ上位表示、見積もり依頼が月20件増加</p>
-      </div>
-      <div class="case-card fu" style="transition-delay:.16s">
-        <p class="case-industry">PROFESSIONAL SERVICES</p>
-        <p class="case-title">「地域名＋税理士」でローカル検索上位表示、新規顧問契約が増加</p>
-      </div>
+    <div class="sp-swipe-hint" aria-hidden="true">
+      <span class="active"></span><span></span><span></span>
     </div>
   </div>
 </section>
 
-<!-- VOICE: お客様の声 -->
-<section class="voice-sec" aria-labelledby="voice-h2">
-  <div class="voice-head">
-    <div class="voice-head-text">
-      <span class="sec-eyebrow fu">お客様の声</span>
-      <h2 class="sec-h2 fu" id="voice-h2" style="transition-delay:.1s">MEO対策で伴走したお客様の、<br>リアルな声。</h2>
-    </div>
-    <a href="../voice/" class="view-all fu" aria-label="お客さまの声をすべて見る">すべて見る</a>
-  </div>
-  <div class="voice-grid">
-    <article class="voice-card fu">
-      <a href="../voice/" class="voice-link" aria-label="歯科医院 院長様の声を詳しく見る">
-      <div class="voice-avatar">
-        <img src="../assets/voice_01.png" alt="歯科医院 院長様" width="280" height="280" loading="lazy">
-      </div>
-      <div class="voice-body">
-        <p class="voice-quote">
-          「Googleマップで上位に出てくるようになってから、電話での問い合わせが明らかに増えました。MEO対策に切り替えてから広告費も大幅に削減できています。」
-        </p>
-        <div class="voice-meta">
-          <p class="voice-co">歯科医院 / 神戸市</p>
-          <p class="voice-name">院長 様</p>
-          <p class="voice-more">詳しく見る →</p>
-        </div>
-      </div>
-      </a>
-    </article>
-    <article class="voice-card fu" style="transition-delay:.1s">
-      <a href="../voice/" class="voice-link" aria-label="美容室 オーナー様の声を詳しく見る">
-      <div class="voice-avatar">
-        <img src="../assets/voice_02.png" alt="美容室 オーナー様" width="280" height="280" loading="lazy">
-      </div>
-      <div class="voice-body">
-        <p class="voice-quote">
-          「口コミ管理がわからず放置していましたが、依頼してから口コミ返信テンプレートを作ってもらい、口コミ件数も増えました。順位が上がったのが数字でわかるので安心できます。」
-        </p>
-        <div class="voice-meta">
-          <p class="voice-co">美容室 / 西宮市</p>
-          <p class="voice-name">オーナー 様</p>
-          <p class="voice-more">詳しく見る →</p>
-        </div>
-      </div>
-      </a>
-    </article>
-    <article class="voice-card fu" style="transition-delay:.2s">
-      <a href="../voice/" class="voice-link" aria-label="飲食店 店主様の声を詳しく見る">
-      <div class="voice-avatar">
-        <img src="../assets/voice_03.png" alt="飲食店 店主様" width="280" height="280" loading="lazy">
-      </div>
-      <div class="voice-body">
-        <p class="voice-quote">
-          「成果が出るまで料金0円という点に最初は半信半疑でしたが、実際に3ヶ月でGoogleマップ上位表示され、来店数が増えました。リスクなく始められたのが良かったです。」
-        </p>
-        <div class="voice-meta">
-          <p class="voice-co">飲食店 / 明石市</p>
-          <p class="voice-name">店主 様</p>
-          <p class="voice-more">詳しく見る →</p>
-        </div>
-      </div>
-      </a>
-    </article>
-    <!-- 05 AI活用 -->
-    <article class="challenge-card fu challenge-card--last" style="transition-delay:.4s">
-      <div class="challenge-card-num">
-        <span class="challenge-card-num-n">05</span>
-      </div>
-      <h3 class="challenge-card-title">
-        AIで業務を<br>効率化・最適化したい
-      </h3>
-      <p class="challenge-card-desc">
-        手作業が多く時間がかかる。AIを使いたいが何から始めればいいかわからない。業務の無駄を省いて生産性を上げたい。
+<!-- STATS: 実績数値 -->
+<section class="stats-sec" aria-labelledby="stats-h2">
+  <div class="stats-inner">
+    <div class="stats-head">
+      <p class="stats-eyebrow fu">REAL RESULTS</p>
+      <h2 class="stats-h2 fu" id="stats-h2" style="transition-delay:.1s">実際の数値で見る、MEO集客の成果。</h2>
+      <p class="stats-body fu" style="transition-delay:.15s;font-weight:700;font-size:18px;line-height:1.9;">
+        実際の導入事例でお見せします。<br>
+        右肩上がりのトレンドが、お客様のビジネスにも再現できます。
       </p>
-      <p class="challenge-tags-label">推奨施策</p>
-      <div class="challenge-tags-wrap">
-        <a href="../ai-automation/" class="challenge-tag">業務効率化</a>
-        <a href="../ai-automation/" class="challenge-tag">分析深化</a>
+    </div>
+    <div class="results-gallery">
+
+      <!-- カード 01 -->
+      <div class="result-card fu" style="transition-delay:0s">
+        <div class="result-card-title">兵庫県 <strong>歯科医院</strong></div>
+        <div class="result-img-wrap">
+          <div class="result-placeholder">
+            <div class="mock-graph">
+              <div class="mock-bar" style="height:20%"></div>
+              <div class="mock-bar" style="height:25%"></div>
+              <div class="mock-bar" style="height:22%"></div>
+              <div class="mock-bar" style="height:35%"></div>
+              <div class="mock-bar" style="height:42%"></div>
+              <div class="mock-bar" style="height:55%"></div>
+              <div class="mock-bar" style="height:68%"></div>
+              <div class="mock-bar" style="height:78%"></div>
+              <div class="mock-bar" style="height:88%"></div>
+              <div class="mock-bar" style="height:95%"></div>
+              <div class="mock-bar" style="height:92%"></div>
+              <div class="mock-bar" style="height:98%"></div>
+              <div class="mock-line"></div>
+            </div>
+            <span class="placeholder-label">写真は導入後に掲載予定</span>
+          </div>
+          <span class="result-img-badge">Googleマップ</span>
+        </div>
+        <div class="result-body">
+          <div class="result-tags">
+            <span class="result-tag industry">🏥 医療・クリニック</span>
+            <span class="result-tag period">3ヶ月</span>
+          </div>
+          <p class="result-comment">「地域名＋歯科」でマップパック1位を獲得。電話件数が大幅増加しました。</p>
+          <p class="result-metric">お問い合わせ数 9.8倍 · 広告費ゼロ</p>
+        </div>
       </div>
-    </article>
+
+      <!-- カード 02 -->
+      <div class="result-card fu" style="transition-delay:.1s">
+        <div class="result-card-title">神奈川県 <strong>水道工事会社</strong></div>
+        <div class="result-img-wrap">
+          <div class="result-placeholder">
+            <div class="mock-graph">
+              <div class="mock-bar" style="height:30%"></div>
+              <div class="mock-bar" style="height:28%"></div>
+              <div class="mock-bar" style="height:35%"></div>
+              <div class="mock-bar" style="height:40%"></div>
+              <div class="mock-bar" style="height:50%"></div>
+              <div class="mock-bar" style="height:60%"></div>
+              <div class="mock-bar" style="height:72%"></div>
+              <div class="mock-bar" style="height:80%"></div>
+              <div class="mock-bar" style="height:88%"></div>
+              <div class="mock-bar" style="height:92%"></div>
+              <div class="mock-bar" style="height:96%"></div>
+              <div class="mock-bar" style="height:99%"></div>
+              <div class="mock-line"></div>
+            </div>
+            <span class="placeholder-label">写真は導入後に掲載予定</span>
+          </div>
+          <span class="result-img-badge">Googleマップ</span>
+        </div>
+        <div class="result-body">
+          <div class="result-tags">
+            <span class="result-tag industry">🔧 住宅・工事</span>
+            <span class="result-tag period">4ヶ月</span>
+          </div>
+          <p class="result-comment">緊急性の高い「水道修理」キーワードでの上位表示を実現。経路案内件数も大幅増加。</p>
+          <p class="result-metric">売上 4〜5倍 · 経路案内件数大幅増加</p>
+        </div>
+      </div>
+
+      <!-- カード 03 -->
+      <div class="result-card fu" style="transition-delay:.2s">
+        <div class="result-card-title">山梨県 <strong>キャンプ場</strong></div>
+        <div class="result-img-wrap">
+          <div class="result-placeholder">
+            <div class="mock-graph">
+              <div class="mock-bar" style="height:15%"></div>
+              <div class="mock-bar" style="height:18%"></div>
+              <div class="mock-bar" style="height:20%"></div>
+              <div class="mock-bar" style="height:25%"></div>
+              <div class="mock-bar" style="height:32%"></div>
+              <div class="mock-bar" style="height:42%"></div>
+              <div class="mock-bar" style="height:55%"></div>
+              <div class="mock-bar" style="height:65%"></div>
+              <div class="mock-bar" style="height:75%"></div>
+              <div class="mock-bar" style="height:82%"></div>
+              <div class="mock-bar" style="height:90%"></div>
+              <div class="mock-bar" style="height:97%"></div>
+              <div class="mock-line"></div>
+            </div>
+            <span class="placeholder-label">写真は導入後に掲載予定</span>
+          </div>
+          <span class="result-img-badge">Googleマップ</span>
+        </div>
+        <div class="result-body">
+          <div class="result-tags">
+            <span class="result-tag industry">🏕️ 観光・レジャー</span>
+            <span class="result-tag period">6ヶ月</span>
+          </div>
+          <p class="result-comment">口コミ獲得施策と写真最適化で視覚的訴求力も大幅向上。</p>
+          <p class="result-metric">年間予約数 8.3倍 · SNS施策との相乗効果</p>
+        </div>
+      </div>
+
+    </div>
+    <div class="sp-swipe-hint" aria-hidden="true">
+      <span class="active"></span><span></span><span></span>
+    </div>
   </div>
 </section>
 
@@ -722,6 +579,9 @@
         </div>
       </div>
     </div>
+    <div class="sp-swipe-hint" aria-hidden="true">
+      <span class="active"></span><span></span><span></span><span></span>
+    </div>
   </div>
 </section>
 
@@ -758,7 +618,7 @@
       </div>
       <!-- プラス記号 -->
       <div class="plan-plus">+</div>
-      <!-- 右カラム：成果報酥 -->
+      <!-- 右カラム：成果報酬 -->
       <div class="plan-col plan-col-right">
         <span class="plan-col-label">PERFORMANCE FEE</span>
         <p class="plan-col-ja">成果報酬費</p>
@@ -781,28 +641,149 @@
   </div>
 </section>
 
-<!-- MID CTA -->
-<div class="mid-cta">
-  <div class="mid-cta-inner">
-    <div class="mid-cta-text">
-      <span class="mid-cta-label">FREE CONSULTATION</span>
-      <h2 class="mid-cta-title">まず、話してみませんか。</h2>
-      <p class="mid-cta-body">15分の無料相談で、貴社のMEO課題を整理します。「何から始めればいいかわからない」という段階でも大丈夫です。</p>
+<!-- VOICE: 伴走してきた企業の、リアルな声。 -->
+<section class="voice-sec" aria-labelledby="voice-title-meo">
+  <div class="voice-head">
+    <div>
+      <p class="sec-eyebrow fu">CLIENT VOICES</p>
+      <h2 class="sec-title-lg fu" id="voice-title-meo">伴走してきた企業の、<br>リアルな声。</h2>
     </div>
-    <div class="mid-cta-actions">
-      <a href="../contact/" class="btn-mid-cta">15分無料相談を申し込む</a>
+    <a href="../voice/" class="view-all fu" aria-label="お客さまの声をすべて見る">すべて見る</a>
+  </div>
+  <div class="voice-grid">
+    <article class="voice-card fu">
+      <a href="../voice/" class="voice-link" aria-label="歯科医院 院長様の声を詳しく見る">
+      <div class="voice-avatar">
+        <img src="../assets/voice_01.png" alt="歯科医院 院長様" width="280" height="280" loading="lazy">
+      </div>
+      <div class="voice-body">
+        <p class="voice-quote">
+          「Googleマップで上位に出てくるようになってから、電話での問い合わせが明らかに増えました。MEO対策に切り替えてから広告費も大幅に削減できています。」
+        </p>
+        <div class="voice-meta">
+          <p class="voice-co">歯科医院 / 神戸市</p>
+          <p class="voice-name">院長 様</p>
+          <p class="voice-more">詳しく見る →</p>
+        </div>
+      </div>
+      </a>
+    </article>
+    <article class="voice-card fu" style="transition-delay:.1s">
+      <a href="../voice/" class="voice-link" aria-label="美容室 オーナー様の声を詳しく見る">
+      <div class="voice-avatar">
+        <img src="../assets/voice_02.png" alt="美容室 オーナー様" width="280" height="280" loading="lazy">
+      </div>
+      <div class="voice-body">
+        <p class="voice-quote">
+          「口コミ管理がわからず放置していましたが、依頼してから口コミ返信テンプレートを作ってもらい、口コミ件数も増えました。順位が上がったのが数字でわかるので安心できます。」
+        </p>
+        <div class="voice-meta">
+          <p class="voice-co">美容室 / 西宮市</p>
+          <p class="voice-name">オーナー 様</p>
+          <p class="voice-more">詳しく見る →</p>
+        </div>
+      </div>
+      </a>
+    </article>
+    <article class="voice-card fu" style="transition-delay:.2s">
+      <a href="../voice/" class="voice-link" aria-label="飲食店 店主様の声を詳しく見る">
+      <div class="voice-avatar">
+        <img src="../assets/voice_03.png" alt="飲食店 店主様" width="280" height="280" loading="lazy">
+      </div>
+      <div class="voice-body">
+        <p class="voice-quote">
+          「成果が出るまで料金0円という点に最初は半信半疑でしたが、実際に3ヶ月でGoogleマップ上位表示され、来店数が増えました。リスクなく始められたのが良かったです。」
+        </p>
+        <div class="voice-meta">
+          <p class="voice-co">飲食店 / 明石市</p>
+          <p class="voice-name">店主 様</p>
+          <p class="voice-more">詳しく見る →</p>
+        </div>
+      </div>
+      </a>
+    </article>
+  </div>
+</section>
+
+<!-- CASE: 支援事例 -->
+<section class="case-sec" aria-labelledby="case-h2">
+  <div class="case-inner">
+    <div class="case-head">
+      <div>
+        <span class="sec-eyebrow fu">支援事例</span>
+        <h2 class="sec-h2 fu" id="case-h2" style="transition-delay:.1s">
+          様々な業種・規模での<br>MEO支援実績。
+        </h2>
+      </div>
+    </div>
+    <div class="case-tags-sec fu">
+      <span class="case-tags-label">SUPPORTED INDUSTRIES</span>
+      <div class="case-tags">
+        <span class="case-tag lg">医療・クリニック</span>
+        <span class="case-tag lg">法律・士業</span>
+        <span class="case-tag">美容・エステ</span>
+        <span class="case-tag">飲食・カフェ</span>
+        <span class="case-tag lg">EC・通販</span>
+        <span class="case-tag">不動産</span>
+        <span class="case-tag">建設・リフォーム</span>
+        <span class="case-tag sm">教育・スクール</span>
+        <span class="case-tag">BtoB製造業</span>
+        <span class="case-tag sm">採用・HR</span>
+        <span class="case-tag">フィットネス</span>
+        <span class="case-tag sm">ペット</span>
+        <span class="case-tag">旅行・観光</span>
+        <span class="case-tag sm">金融・保険</span>
+      </div>
+    </div>
+    <div class="case-grid">
+      <div class="case-card fu">
+        <span class="case-industry">MEDICAL</span>
+        <h3 class="case-title">「地域名＋歯科」でマップパック1位を獲得し、新患予約が月30件増加</h3>
+        <p class="case-body">Googleビジネスプロフィールの最適化と口コミ獲得施策を組み合わせ、競合が強い医療分野でも確実に成果を出しました。</p>
+        <div class="case-result">
+          <span class="case-result-label">INQUIRIES</span>
+          <span class="case-result-num" data-count="9.8" data-suffix="x"><sup></sup>9.8x</span>
+          <p class="case-result-desc">お問い合わせ数 3ヶ月で9.8倍</p>
+        </div>
+      </div>
+      <div class="case-card fu" style="transition-delay:.1s">
+        <span class="case-industry">HOME SERVICES</span>
+        <h3 class="case-title">「地域名＋水道修理」でマップ上位表示、売上が4〜5倍に</h3>
+        <p class="case-body">緊急性の高いキーワードでの上位表示を実現。経路案内件数も大幅増加し、広告に頼らない集客基盤を構築しました。</p>
+        <div class="case-result">
+          <span class="case-result-label">MONTHLY SALES</span>
+          <span class="case-result-num" data-count="400" data-prefix="+" data-suffix="%"><sup></sup>+400%</span>
+          <p class="case-result-desc">売上 4〜5倍（広告費ゼロ）</p>
+        </div>
+      </div>
+      <div class="case-card fu" style="transition-delay:.2s">
+        <span class="case-industry">LEISURE / TOURISM</span>
+        <h3 class="case-title">口コミ獲得施策と写真最適化で、年間予約数が8.3倍に</h3>
+        <p class="case-body">SNS施策との連携で視覚的訴求力も大幅向上。Googleマップからの流入が継続的に増加しています。</p>
+        <div class="case-result">
+          <span class="case-result-label">ANNUAL BOOKINGS</span>
+          <span class="case-result-num" data-count="8.3" data-suffix="x"><sup></sup>8.3x</span>
+          <p class="case-result-desc">年間予約数 8.3倍</p>
+        </div>
+      </div>
+    </div>
+    <div class="sp-swipe-hint" aria-hidden="true">
+      <span class="active"></span><span></span><span></span>
     </div>
   </div>
-</div>
-
+</section>
 
 <!-- FAQ -->
-<section class="faq-sec" aria-labelledby="faq-h2">
+<section id="faq" class="faq-sec" aria-labelledby="faq-h2">
   <div class="faq-head">
-    <h2 class="faq-h2 fu" id="faq-h2">FAQ</h2>
+    <div>
+      <p class="sec-eyebrow fu">FAQ</p>
+      <h2 class="faq-h2 fu" id="faq-h2">よくある質問</h2>
+    </div>
+    <a href="../faq/" class="view-all fu" aria-label="よくある質問をすべて見る">すべて見る</a>
   </div>
-  <ul class="faq-list">
-    <li class="faq-item">
+  <div class="faq-list" role="list">
+    <div class="faq-item fu" role="listitem">
       <div class="faq-q" role="button" tabindex="0" aria-expanded="false">
         <span class="faq-q-mark">Q</span>
         <span class="faq-q-text">MEO対策とSEO対策の違いは何ですか？</span>
@@ -814,8 +795,8 @@
           <p class="faq-a-text">SEO対策はGoogle検索の通常結果（オーガニック検索）での上位表示を目指すのに対し、MEO対策はGoogleマップ・ローカル検索結果（マップパック）での上位表示を目指します。「地域名＋業種」で検索した際に表示されるGoogleマップの結果がMEOの対象です。来店・電話・予約に直結するため、実店舗・地域密着型ビジネスに特に効果的です。</p>
         </div>
       </div>
-    </li>
-    <li class="faq-item">
+    </div>
+    <div class="faq-item fu" role="listitem">
       <div class="faq-q" role="button" tabindex="0" aria-expanded="false">
         <span class="faq-q-mark">Q</span>
         <span class="faq-q-text">Googleマップで上位表示されるには何が必要ですか？</span>
@@ -827,8 +808,8 @@
           <p class="faq-a-text">主に①Googleビジネスプロフィールの最適化（正確な情報・写真・カテゴリ設定）、②口コミの獲得・管理（返信対応含む）、③投稿の継続更新、④ウェブサイトとの連携、⑤NAP情報（店名・住所・電話番号）の統一が重要です。弊社では現状分析から施策実施・効果測定まで一貫して対応します。</p>
         </div>
       </div>
-    </li>
-    <li class="faq-item">
+    </div>
+    <div class="faq-item fu" role="listitem">
       <div class="faq-q" role="button" tabindex="0" aria-expanded="false">
         <span class="faq-q-mark">Q</span>
         <span class="faq-q-text">成果報酬型とはどういう仕組みですか？</span>
@@ -840,8 +821,8 @@
           <p class="faq-a-text">弊社のMEO対策は、設定した成果指標（Googleマップでの表示回数・クリック数・電話件数など）が達成されるまでの期間は料金が発生しない成果報酬型の料金体系を採用しています。クライアントにとってリスクなく始められる仕組みです。詳細は無料相談にてご説明します。</p>
         </div>
       </div>
-    </li>
-    <li class="faq-item">
+    </div>
+    <div class="faq-item fu" role="listitem">
       <div class="faq-q" role="button" tabindex="0" aria-expanded="false">
         <span class="faq-q-mark">Q</span>
         <span class="faq-q-text">口コミ管理も対応してもらえますか？</span>
@@ -853,8 +834,8 @@
           <p class="faq-a-text">はい、対応しています。口コミへの返信文案作成・ネガティブ口コミへの対応方針アドバイス・口コミ獲得施策（依頼テンプレート作成など）まで包括的にサポートします。口コミの質と量はMEO順位に大きく影響するため、重要な施策の一つです。</p>
         </div>
       </div>
-    </li>
-    <li class="faq-item">
+    </div>
+    <div class="faq-item fu" role="listitem">
       <div class="faq-q" role="button" tabindex="0" aria-expanded="false">
         <span class="faq-q-mark">Q</span>
         <span class="faq-q-text">MEO対策の効果が出るまでどのくらいかかりますか？</span>
@@ -866,8 +847,8 @@
           <p class="faq-a-text">一般的に1〜3ヶ月で効果が現れ始めるケースが多いです。SEO対策と比べると比較的早く成果が出やすいのがMEOの特徴です。ただし、競合状況・現状のプロフィール完成度・業種・エリアによって異なります。まずは現状分析を行い、現実的な見通しをお伝えします。</p>
         </div>
       </div>
-    </li>
-    <li class="faq-item">
+    </div>
+    <div class="faq-item fu" role="listitem">
       <div class="faq-q" role="button" tabindex="0" aria-expanded="false">
         <span class="faq-q-mark">Q</span>
         <span class="faq-q-text">飲食店以外の業種でも効果はありますか？</span>
@@ -879,12 +860,12 @@
           <p class="faq-a-text">はい、飲食店に限らず、美容室・クリニック・歯科医院・整体院・リフォーム会社・弁護士事務所・税理士事務所など、地域の顧客を集客したいあらゆる業種に効果があります。「地域名＋業種」で検索されるビジネスであれば、MEO対策の恩恵を受けられます。</p>
         </div>
       </div>
-    </li>
-  </ul>
+    </div>
+  </div>
 </section>
 
-<!-- CHALLENGE（課題から探す 簡易版） -->
-<section class="challenge-sec" aria-labelledby="challenge-h2-meo" style="border-top:1px solid #E8E8E8">
+<!-- CHALLENGE（課題から探す） -->
+<section class="challenge-sec" id="challenge" aria-labelledby="challenge-h2-meo">
   <div class="challenge-split">
     <!-- 左：見出しエリア -->
     <div class="challenge-split-left">
@@ -905,7 +886,6 @@
       <p class="challenge-tags-label">推奨施策</p>
       <div class="challenge-split-tags">
         <a href="../strategy/" class="challenge-tag">WEB戦略設計</a>
-        <a href="../ai-automation/" class="challenge-tag">AI業務効率化・導入支援</a>
       </div>
     </div>
   </div>
@@ -965,9 +945,27 @@
         <a href="../sns/youtube/" class="challenge-tag">YouTube</a>
       </div>
     </article>
+    <!-- 05 AI活用 -->
+    <article class="challenge-card fu challenge-card--last" style="transition-delay:.4s">
+      <div class="challenge-card-num">
+        <span class="challenge-card-num-n">05</span>
+      </div>
+      <h3 class="challenge-card-title">
+        AIで業務を<br>効率化・最適化したい
+      </h3>
+      <p class="challenge-card-desc">
+        手作業が多く時間がかかる。AIを使いたいが何から始めればいいかわからない。業務の無駄を省いて生産性を上げたい。
+      </p>
+      <p class="challenge-tags-label">推奨施策</p>
+      <div class="challenge-tags-wrap">
+        <a href="../ai-automation/" class="challenge-tag">業務効率化</a>
+        <a href="../ai-automation/" class="challenge-tag">分析深化</a>
+      </div>
+    </article>
   </div>
 </section>
 
+<!-- BOTTOM CTA -->
 <!-- CTA -->
 <section id="contact" class="cta" aria-labelledby="cta-h2">
   <div class="cta-wrap">
@@ -1133,8 +1131,7 @@
         <a href="../works/">実績</a>
         <a href="../voice/">お客さまの声</a>
         <a href="../company/">会社情報</a>
-    
-                <a href="../columns/">コラム</a>
+        <a href="../columns/">コラム</a>
         <a href="../news/">お知らせ</a>
       </div>
       <div class="footer-nav-group">
@@ -1165,41 +1162,11 @@
   }, { threshold: 0.1 });
   document.querySelectorAll('.fu').forEach(el => obs.observe(el));
 
-  // STATS ITEMS SEQUENTIAL ANIMATION
+  // COUNT UP ANIMATION (case-result-num)
   (function(){
-    const items = document.querySelectorAll('.stat-item');
-    if(!items.length) return;
-    const staggerObs = new IntersectionObserver(entries => {
-      entries.forEach(e => {
-        if(!e.isIntersecting) return;
-        items.forEach((item, i) => {
-          const delay = parseInt(item.getAttribute('data-delay')) || i * 150;
-          setTimeout(() => item.classList.add('visible'), delay);
-        });
-        staggerObs.disconnect();
-      });
-    }, { threshold: 0.15 });
-    if(items[0]) staggerObs.observe(items[0]);
-  })();
+    const nums = document.querySelectorAll('[data-count]');
+    if(!nums.length) return;
 
-  // RESULT CARD ANIMATION
-  (function(){
-    const cards = document.querySelectorAll('.result-card');
-    if(!cards.length) return;
-    const cardObs = new IntersectionObserver(entries => {
-      entries.forEach(e => {
-        if(!e.isIntersecting) return;
-        cards.forEach((card, i) => {
-          setTimeout(() => card.classList.add('visible'), i * 100);
-        });
-        cardObs.disconnect();
-      });
-    }, { threshold: 0.1 });
-    if(cards[0]) cardObs.observe(cards[0]);
-  })();
-
-  // COUNT UP ANIMATION
-  (function(){
     function easeOutCubic(t){ return 1 - Math.pow(1 - t, 3); }
 
     function animateCount(el){
@@ -1209,6 +1176,7 @@
       const isDecimal = String(target).includes('.');
       const duration = 1800;
       const start = performance.now();
+
       function tick(now){
         const elapsed = now - start;
         const progress = Math.min(elapsed / duration, 1);
@@ -1222,118 +1190,65 @@
       requestAnimationFrame(tick);
     }
 
-    function animateRange(el){
-      const from = parseFloat(el.getAttribute('data-count-from'));
-      const to = parseFloat(el.getAttribute('data-count-to'));
-      const suffix = el.getAttribute('data-suffix') || '';
-      const duration = 1800;
-      const start = performance.now();
-      function tick(now){
-        const elapsed = now - start;
-        const progress = Math.min(elapsed / duration, 1);
-        const eased = easeOutCubic(progress);
-        const cur1 = Math.floor(from * eased);
-        const cur2 = Math.floor(to * eased);
-        el.innerHTML = cur1 + '～' + cur2 + suffix;
-        if(progress < 1) requestAnimationFrame(tick);
-        else el.innerHTML = from + '～' + to + suffix;
-      }
-      requestAnimationFrame(tick);
-    }
-
-    const allNums = document.querySelectorAll('[data-count],[data-count-range]');
-    if(!allNums.length) return;
-
     const countObs = new IntersectionObserver(entries => {
       entries.forEach(e => {
         if(!e.isIntersecting) return;
-        if(e.target.hasAttribute('data-count-range')){
-          animateRange(e.target);
-        } else {
-          animateCount(e.target);
-        }
+        animateCount(e.target);
         countObs.unobserve(e.target);
       });
     }, { threshold: 0.5, rootMargin: '0px 0px -80px 0px' });
 
-    allNums.forEach(el => countObs.observe(el));
+    nums.forEach(el => countObs.observe(el));
   })();
 
   // FAQ ACCORDION
   (function(){
     document.querySelectorAll('.faq-q').forEach(q => {
-      q.addEventListener('click', function(){
-        const item = this.closest('.faq-item');
-        const isOpen = item.classList.contains('open');
-        document.querySelectorAll('.faq-item.open').forEach(i => {
-          i.classList.remove('open');
-          i.querySelector('.faq-q').setAttribute('aria-expanded','false');
-        });
-        if(!isOpen){
-          item.classList.add('open');
-          this.setAttribute('aria-expanded','true');
-        }
-      });
-      q.addEventListener('keydown', function(e){
-        if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); this.click(); }
-      });
+      function toggle(){
+        const item = q.closest('.faq-item');
+        const isOpen = item.classList.toggle('open');
+        q.setAttribute('aria-expanded', isOpen);
+      }
+      q.addEventListener('click', toggle);
+      q.addEventListener('keydown', e => { if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); toggle(); } });
     });
   })();
 
-  // MEGA MENU
+  // HEADER NAVIGATION
   (function(){
-    const items = document.querySelectorAll('.hd-nav-item');
-    let closeTimer;
-    items.forEach(item => {
-      item.addEventListener('mouseenter', () => {
-        clearTimeout(closeTimer);
-        items.forEach(i => i.classList.remove('open'));
-        item.classList.add('open');
-      });
-      item.addEventListener('mouseleave', () => {
-        closeTimer = setTimeout(() => item.classList.remove('open'), 120);
-      });
-      const mega = item.querySelector('.hd-mega-wrap, .hd-dropdown');
-      if(mega){
-        mega.addEventListener('mouseenter', () => clearTimeout(closeTimer));
-        mega.addEventListener('mouseleave', () => {
-          closeTimer = setTimeout(() => item.classList.remove('open'), 120);
-        });
-      }
+    const navItems = document.querySelectorAll('.hd-nav-item');
+    navItems.forEach(item => {
+      let timer;
+      item.addEventListener('mouseenter', () => { clearTimeout(timer); item.classList.add('open'); });
+      item.addEventListener('mouseleave', () => { timer = setTimeout(() => item.classList.remove('open'), 120); });
+      const link = item.querySelector(':scope > a');
+      if(link) link.addEventListener('click', e => { if(item.querySelector('.hd-mega-wrap, .hd-dropdown')){ e.preventDefault(); } });
     });
     document.addEventListener('click', e => {
-      if(!e.target.closest('.hd-nav-item')) items.forEach(i => i.classList.remove('open'));
+      if(!e.target.closest('.hd-nav-item')) navItems.forEach(i => i.classList.remove('open'));
     });
   })();
 
   // HAMBURGER & DRAWER
   (function(){
     const btn = document.querySelector('.hd-hamburger');
-    const drawer = document.querySelector('.hd-drawer');
+    const drawer = document.getElementById('hd-drawer');
     if(!btn || !drawer) return;
     btn.addEventListener('click', () => {
-      const isOpen = btn.classList.toggle('open');
-      drawer.classList.toggle('open', isOpen);
+      const isOpen = drawer.classList.toggle('open');
+      btn.classList.toggle('open', isOpen);
       btn.setAttribute('aria-expanded', isOpen);
       document.body.style.overflow = isOpen ? 'hidden' : '';
     });
-    drawer.querySelectorAll('[data-drawer-toggle]').forEach(link => {
-      link.addEventListener('click', function(){
-        const targetId = this.getAttribute('data-drawer-toggle');
-        let sub;
-        if(targetId && targetId !== 'true'){
-          sub = document.getElementById(targetId);
-        } else {
-          sub = this.nextElementSibling;
-        }
+    document.querySelectorAll('[data-drawer-toggle]').forEach(el => {
+      el.addEventListener('click', () => {
+        const sub = el.nextElementSibling;
         if(!sub) return;
         const isOpen = sub.classList.toggle('open');
-        this.classList.toggle('open', isOpen);
+        el.classList.toggle('open', isOpen);
       });
     });
   })();
-
-
 
   // SP FIXED CTA
   (function(){
@@ -1344,6 +1259,7 @@
       if(window.scrollY > 300 && !shown){ cta.classList.add('visible'); shown = true; }
     }, { passive: true });
   })();
+
 </script>
 </body>
 </html>
