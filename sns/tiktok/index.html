@@ -302,45 +302,44 @@
     gap: 16px;
   }
 }
-  /* ===== TikTokカラーオーバーライド: #EC4899 → #69C9D0 ===== */
-  /* kv-service-label */
-  .kv-service-label { color: #69C9D0 !important; }
-  /* case-note */
-  .case-note { border-left-color: #69C9D0 !important; }
-  .case-note::before { color: #69C9D0 !important; }
-  /* what-card-tag.ads */
-  .what-card-tag.ads { background: #69C9D0 !important; color: #000 !important; }
-  /* what-card-desc-lead */
-  .what-card-desc-lead { border-left-color: #69C9D0 !important; }
-  /* what-card-feature bullet */
-  .what-card-feature::before { background: #69C9D0 !important; }
-  /* case-result-banner 左ライン */
-  .case-result-banner::before { background: linear-gradient(180deg, #69C9D0, #EE1D52) !important; }
-  /* crb-tag hover */
-  .crb-tag:hover { border-color: #69C9D0 !important; color: #69C9D0 !important; background: #F0FAFA !important; }
-  /* crb-metric-num 下線 */
-  .crb-metric-num::after { background: linear-gradient(90deg, #69C9D0, #EE1D52) !important; }
-  /* crb-eyebrow */
-  .crb-eyebrow { color: #69C9D0 !important; }
-  .crb-eyebrow::before { background: #69C9D0 !important; }
-  /* crb-headline em */
-  .crb-headline em { background: linear-gradient(135deg, #69C9D0, #EE1D52) !important; -webkit-background-clip: text !important; -webkit-text-fill-color: transparent !important; background-clip: text !important; }
-  /* crb-cta */
-  .crb-cta { background: linear-gradient(135deg, #69C9D0, #EE1D52) !important; }
-  /* plan-tab-btn active underline */
-  .plan-tab-btn::after { background: #69C9D0 !important; }
-  /* plan-card-recommended */
-  .plan-card-recommended { background: #69C9D0 !important; color: #000 !important; }
-  /* plan-redirect-link hover */
-  .plan-redirect-link:hover { border-color: #69C9D0 !important; background: rgba(105,201,208,.06) !important; color: #69C9D0 !important; }
-  /* official-account-arrow */
-  .official-account-arrow { color: #69C9D0 !important; }
-  /* cta-mid-eyebrow */
-  .cta-mid-eyebrow { color: #69C9D0 !important; }
-  /* swiper pagination active */
-  .case-swiper-pagination .swiper-pagination-bullet-active { background: #69C9D0 !important; }
-  /* case-swiper-pagination active bullet */
-  .swiper-pagination-bullet-active { background: #69C9D0 !important; }
+  /* ===== TikTokカラーオーバーライド: #EC4899 → TikTok gradient(#EE1D52→#69C9D0) / solid #010101 ===== */
+  /* kv-service-label: グラデ不可 → #010101 */
+  .kv-service-label { color: #010101 !important; }
+  /* case-note: グラデ不可 → #010101 */
+  .case-note { border-left-color: #010101 !important; }
+  .case-note::before { color: #010101 !important; }
+  /* what-card-tag.ads: グラデ背景 */
+  .what-card-tag.ads { background: linear-gradient(135deg, #EE1D52, #69C9D0) !important; color: #fff !important; }
+  /* what-card-desc-lead: グラデ不可 → #010101 */
+  .what-card-desc-lead { border-left-color: #010101 !important; }
+  /* what-card-feature bullet: グラデ不可 → #010101 */
+  .what-card-feature::before { background: #010101 !important; }
+  /* case-result-banner 左ライン: グラデ */
+  .case-result-banner::before { background: linear-gradient(180deg, #EE1D52, #69C9D0) !important; }
+  /* crb-tag hover: グラデ不可 → #010101 */
+  .crb-tag:hover { border-color: #010101 !important; color: #010101 !important; background: #F5F5F5 !important; }
+  /* crb-metric-num 下線: グラデ */
+  .crb-metric-num::after { background: linear-gradient(90deg, #EE1D52, #69C9D0) !important; }
+  /* crb-eyebrow: グラデ不可 → #010101 */
+  .crb-eyebrow { color: #010101 !important; }
+  .crb-eyebrow::before { background: #010101 !important; }
+  /* crb-headline em: グラデ文字 */
+  .crb-headline em { background: linear-gradient(135deg, #EE1D52, #69C9D0) !important; -webkit-background-clip: text !important; -webkit-text-fill-color: transparent !important; background-clip: text !important; }
+  /* crb-cta: グラデ背景 */
+  .crb-cta { background: linear-gradient(135deg, #EE1D52, #69C9D0) !important; }
+  /* plan-tab-btn active underline: グラデ */
+  .plan-tab-btn::after { background: linear-gradient(90deg, #EE1D52, #69C9D0) !important; }
+  /* plan-card-recommended: グラデ背景 */
+  .plan-card-recommended { background: linear-gradient(135deg, #EE1D52, #69C9D0) !important; color: #fff !important; }
+  /* plan-redirect-link hover: グラデ不可 → #010101 */
+  .plan-redirect-link:hover { border-color: #010101 !important; background: rgba(1,1,1,.04) !important; color: #010101 !important; }
+  /* official-account-arrow: グラデ不可 → #010101 */
+  .official-account-arrow { color: #010101 !important; }
+  /* cta-mid-eyebrow: グラデ不可 → #010101 */
+  .cta-mid-eyebrow { color: #010101 !important; }
+  /* swiper pagination active: グラデ不可 → #010101 */
+  .case-swiper-pagination .swiper-pagination-bullet-active { background: #010101 !important; }
+  .swiper-pagination-bullet-active { background: #010101 !important; }
   </style>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@graph":[
