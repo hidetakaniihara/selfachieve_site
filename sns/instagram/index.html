@@ -22,6 +22,68 @@
   <meta name="theme-color" content="#ffffff">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+  <style>
+/* ===== KV SERVICE LABEL ===== */
+.kv-service-label {
+  display: inline-flex;
+  align-items: center;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 900;
+  font-size: clamp(13px, 1.1vw, 14px);
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: #fff;
+  border-left: 3px solid rgba(255,255,255,.9);
+  padding: 4px 0 4px 14px;
+  margin-bottom: 22px;
+  position: relative;
+  z-index: 2;
+}
+/* ===== KV SPLASH: REMOVED ===== */
+.kv-right { display: none !important; }
+.kv-splash { display: none !important; }
+/* ===== KV PADDING: 上下余白削減 ===== */
+.kv {
+  min-height: auto !important;
+  padding: var(--kv-padding-v, 72px) 80px !important;
+}
+/* ===== KV INNER: full-width text layout (2-line H1) ===== */
+@media (min-width: 769px) {
+  .kv .kv-inner {
+    grid-template-columns: 1fr !important;
+    max-width: 1400px !important;
+  }
+  .kv .kv-h1 {
+    font-size: clamp(40px, 6vw, 88px) !important;
+    line-height: 1.2 !important;
+    letter-spacing: -0.04em !important;
+    margin-bottom: 32px !important;
+  }
+  .kv .kv-eyebrow {
+    font-size: clamp(28px, 4vw, 56px) !important;
+    font-weight: 900 !important;
+    letter-spacing: -0.02em !important;
+    color: #ffffff !important;
+    margin-bottom: 20px !important;
+    gap: 20px !important;
+  }
+  .kv .kv-eyebrow::before {
+    display: none !important;
+  }
+  .kv .kv-sub {
+    margin-bottom: 0 !important;
+  }
+}
+@media (max-width: 768px) {
+  .kv {
+    padding: var(--kv-padding-v-sp, 56px) 24px !important;
+    min-height: auto !important;
+  }
+}
+/* ===== KV ACTIONS: 非表示 ===== */
+.kv-actions { display: none !important; }
+.kv-service-label { display: none !important; }
+  </style>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@graph":[
     {"@type":"Service","@id":"https://selfachieve.jp/sns/instagram/#service",
@@ -359,10 +421,10 @@
 </div>
 <main>
 <!-- KV -->
-<section class="kv" aria-labelledby="kv-h1" style="background:#1A1A1F;position:relative;overflow:hidden;">
+<section class="kv" aria-labelledby="kv-h1" style="background:#111113;position:relative;overflow:hidden;">
   <div class="kv-inner">
     <div class="kv-left">
-      <span class="kv-eyebrow fu"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#EC4899" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>Instagram Marketing</span>
+      <p class="kv-eyebrow fu">— Instagram</p>
       <h1 class="kv-h1 fu" id="kv-h1" style="transition-delay:.08s">
         <span class="ig-kv-h1-l1">フォロワーより、予約。</span><br class="ig-kv-h1-br-pc"><span class="ig-kv-h1-l2">いいねより、売上。</span>
       </h1>
@@ -395,16 +457,31 @@
 <section class="case-sec" aria-labelledby="case-h2">
   <div class="case-inner">
     <div class="case-head">
-      <span class="sec-eyebrow fu">CASE STUDY</span>
-      <h2 class="sec-h2 fu" id="case-h2" style="transition-delay:.1s">
-        具体的な成果事例
-      </h2>
-      <p class="sec-body fu" style="transition-delay:.15s;max-width:600px;margin:20px auto 0">
-        「本当に成果が出るのか？」という疑問に、数字でお答えします。
-      </p>
-      <p class="case-note fu" style="transition-delay:.2s">
-        ※ お客様特定を防ぐため、アカウント画像にモザイクをかけております。ご相談時に実際のアカウントをお見せしながらご説明することも可能です。
-      </p>
+      <div>
+        <span class="sec-eyebrow fu">支援事例</span>
+        <h2 class="sec-h2 fu" id="case-h2" style="transition-delay:.1s">
+          様々な業種・規模での<br>Instagram支援実績。
+        </h2>
+      </div>
+    </div>
+    <div class="case-tags-sec fu">
+      <span class="case-tags-label">SUPPORTED INDUSTRIES</span>
+      <div class="case-tags">
+        <span class="case-tag lg">美容・サロン</span>
+        <span class="case-tag lg">飲食・カフェ</span>
+        <span class="case-tag">医療・クリニック</span>
+        <span class="case-tag">法律・士業</span>
+        <span class="case-tag lg">EC・通販</span>
+        <span class="case-tag">不動産</span>
+        <span class="case-tag">建設・リフォーム</span>
+        <span class="case-tag sm">教育・スクール</span>
+        <span class="case-tag">フィットネス・ジム</span>
+        <span class="case-tag sm">ペット</span>
+        <span class="case-tag">旅行・観光</span>
+        <span class="case-tag sm">イベント・展示会</span>
+        <span class="case-tag">BtoB製造業</span>
+        <span class="case-tag sm">採用・HR</span>
+      </div>
     </div>
   </div>
   <div class="case-swiper-wrap">
@@ -661,7 +738,7 @@
 <section class="voice-sec" aria-labelledby="voice-h2">
   <div class="voice-head">
     <div>
-      <span class="sec-eyebrow fu">CUSTOMER VOICE</span>
+      <span class="sec-eyebrow fu">CLIENT VOICES</span>
       <h2 class="sec-h2 fu" id="voice-h2" style="transition-delay:.1s">
         伴走してきた企業の、<br>リアルな声。
       </h2>
