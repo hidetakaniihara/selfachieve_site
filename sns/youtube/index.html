@@ -21,6 +21,255 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="theme-color" content="#ffffff">
   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Noto+Sans+JP:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+  <style>
+/* ===== KV SERVICE LABEL ===== */
+.kv-service-label {
+  display: inline-flex;
+  align-items: center;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 900;
+  font-size: clamp(13px, 1.1vw, 14px);
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: #fff;
+  border-left: 3px solid rgba(255,255,255,.9);
+  padding: 4px 0 4px 14px;
+  margin-bottom: 22px;
+  position: relative;
+  z-index: 2;
+}
+/* ===== KV SPLASH: REMOVED ===== */
+.kv-right { display: none !important; }
+.kv-splash { display: none !important; }
+/* ===== KV PADDING: 上下余白削減 ===== */
+.kv {
+  min-height: auto !important;
+  padding: var(--kv-padding-v, 72px) 80px !important;
+}
+/* ===== KV INNER: full-width text layout (2-line H1) ===== */
+@media (min-width: 769px) {
+  .kv .kv-inner {
+    grid-template-columns: 1fr !important;
+    max-width: 1400px !important;
+  }
+  .kv .kv-h1 {
+    font-size: clamp(40px, 6vw, 88px) !important;
+    line-height: 1.2 !important;
+    letter-spacing: -0.04em !important;
+    margin-bottom: 32px !important;
+  }
+  .kv .kv-eyebrow {
+    font-size: clamp(28px, 4vw, 56px) !important;
+    font-weight: 900 !important;
+    letter-spacing: -0.02em !important;
+    color: #ffffff !important;
+    margin-bottom: 20px !important;
+    gap: 20px !important;
+  }
+  .kv .kv-eyebrow::before {
+    display: none !important;
+  }
+  .kv .kv-sub {
+    margin-bottom: 0 !important;
+  }
+}
+@media (max-width: 768px) {
+  .kv {
+    padding: var(--kv-padding-v-sp, 56px) 24px !important;
+    min-height: auto !important;
+  }
+}
+/* ===== KV ACTIONS: 非表示 ===== */
+.kv-actions { display: none !important; }
+.kv-service-label { display: none !important; }
+/* ===== crb-tag: ホバー無効化 ===== */
+.crb-tag:hover {
+  border-color: #D8D8D8 !important;
+  color: #444 !important;
+  background: #fff !important;
+}
+/* ===== 見出し左端統一（voice-head基準: 80px） ===== */
+.what-sec,
+.plan-sec,
+.faq-sec,
+.blog-sec,
+.area-sec {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+.what-inner,
+.plan-inner,
+.faq-head,
+.blog-inner,
+.area-inner {
+  padding-left: 80px !important;
+  padding-right: 80px !important;
+  max-width: none !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+@media (max-width: 768px) {
+  .what-inner,
+  .plan-inner,
+  .faq-head,
+  .blog-inner,
+  .area-inner {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+}
+/* ===== what-card-tag.ads 背景を黒に ===== */
+.what-card-tag.ads {
+  background: #000000 !important;
+}
+/* ===== plan-tab アンダーラインを黒に ===== */
+.plan-tab-btn::after {
+  background: #000000 !important;
+}
+/* ===== what-head 左寄せ ===== */
+.what-head {
+  text-align: left !important;
+}
+.what-head .sec-body {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+/* ===== what-card アクセントカラー（黒） ===== */
+.what-card-desc-lead {
+  border-left-color: #000000 !important;
+}
+.what-card-feature::before {
+  background: #000000 !important;
+}
+/* ===== what-strategy-block: 戦略上段エリア ===== */
+.what-strategy-block {
+  background: #f8f8f8;
+  padding: 72px 40px;
+  margin-bottom: 0;
+  text-align: center;
+}
+.what-strategy-inner {
+  max-width: 680px;
+  margin: 0 auto;
+}
+/* 月桂樹バッジ */
+.what-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border: 1.5px solid #000000;
+  border-radius: 2px;
+  padding: 8px 20px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: #000000;
+  margin-bottom: 48px;
+}
+.what-badge-icon {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+/* 2行ヘッドライン */
+.what-strategy-headline {
+  font-size: clamp(22px, 4vw, 30px);
+  font-weight: 900;
+  color: #000000;
+  line-height: 1.0;
+  margin: 0 0 48px;
+  letter-spacing: -0.02em;
+  text-align: center;
+}
+.what-strategy-headline .hl-line1 {
+  display: block;
+  font-size: clamp(28px, 5vw, 40px);
+  margin-bottom: 20px;
+}
+.what-strategy-headline .hl-line2 {
+  display: block;
+  font-size: clamp(16px, 2.8vw, 22px);
+  font-weight: 700;
+  color: #444444;
+  letter-spacing: .01em;
+}
+/* 本文 */
+.what-strategy-body {
+  font-size: 15px;
+  line-height: 1.85;
+  color: #333333;
+  margin: 0 0 48px;
+  text-align: left;
+}
+/* ボタン */
+.what-strategy-btn {
+  display: inline-block;
+  padding: 16px 40px;
+  background: #000000;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-decoration: none;
+  border: 2px solid #000000;
+  transition: background .2s, color .2s;
+}
+.what-strategy-btn:hover {
+  background: #ffffff;
+  color: #000000;
+}
+/* ===== what-flow-bridge: 静止ブロックアロー ===== */
+.what-flow-bridge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  padding: 80px 0 0;
+  margin-bottom: 100px;
+  text-align: center;
+}
+/* ボディ（黒い長方形） */
+.what-block-arrow {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  width: clamp(320px, 70%, 600px);
+  min-height: 80px;
+  background: #000000;
+  padding: 24px 48px;
+  margin-bottom: -1px;
+  flex-shrink: 0;
+}
+/* ボディ内テキスト */
+.what-block-arrow-text {
+  display: block !important;
+  font-size: clamp(16px, 2.4vw, 20px);
+  font-weight: 900;
+  color: #ffffff;
+  letter-spacing: .04em;
+  line-height: 1.3;
+  white-space: nowrap;
+}
+/* 三角形ヘッド */
+.what-block-arrow-tip {
+  display: block !important;
+  width: clamp(320px, 70%, 600px);
+  height: 44px;
+  background: #000000;
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+  flex-shrink: 0;
+}
+@media (max-width: 768px) {
+  .what-strategy-block { padding: 56px 24px; }
+  .what-strategy-headline .hl-line1 { font-size: clamp(22px, 7vw, 32px); }
+  .what-strategy-headline .hl-line2 { font-size: clamp(14px, 4vw, 18px); }
+  .what-flow-bridge { padding: 56px 0 0; margin-bottom: 64px; }
+  .what-block-arrow-text { white-space: normal; }
+}
+  </style>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@graph":[
     {"@type":"Service","@id":"https://selfachieve.jp/sns/youtube/#service",
@@ -547,13 +796,46 @@
   <div class="what-inner">
     <div class="what-head">
       <span class="sec-eyebrow fu">WHAT WE DO</span>
-      <h2 class="sec-h2 fu" id="what-h2" style="transition-delay:.1s">
-        YouTubeで、何ができるのか。
-      </h2>
+      <h2 class="sec-h2 fu" id="what-h2" style="transition-delay:.1s">当社のYouTubeマーケティングで、<br>何ができるのか。</h2>
       <p class="sec-body fu" style="transition-delay:.15s;max-width:640px;margin:20px auto 0">
         既存顧客との信頼を育てる「チャンネル運用」と、新規顧客を獲得する「広告」。<br>
         目的に合わせて、最適な組み合わせをご提案します。
       </p>
+    </div>
+    <!-- 戦略上段エリア -->
+    <div class="what-strategy-block" style="opacity:1">
+      <div class="what-strategy-inner">
+        <!-- 月桂樹バッジ -->
+        <span class="what-badge">
+          <svg class="what-badge-icon" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 17 C3 14, 2 11, 3 8 C4 5, 6 4, 8 5"/>
+            <path d="M5 17 C4 14, 4 11, 5 9"/>
+            <path d="M5 17 C5 15, 5 13, 6 11"/>
+            <path d="M19 17 C21 14, 22 11, 21 8 C20 5, 18 4, 16 5"/>
+            <path d="M19 17 C20 14, 20 11, 19 9"/>
+            <path d="M19 17 C19 15, 19 13, 18 11"/>
+            <line x1="12" y1="4" x2="12" y2="20"/>
+            <line x1="5" y1="20" x2="19" y2="20"/>
+          </svg>
+          戦略を組み立てる
+        </span>
+        <p class="what-strategy-headline">
+          <span class="hl-line1">まずは、戦略を組む。</span>
+          <span class="hl-line2">戦略なき施策はターゲット層まで届かない。</span>
+        </p>
+        <p class="what-strategy-body">
+          闇雲な運用や広告配信では、結果はついてきません。大切なのは、運用を始める前の「設計」です。<br>
+          セルフアチーブでは、<strong>事実（リサーチやヒアリング）から根拠ある設計を構築</strong>します。
+        </p>
+        <a href="../../strategy/" class="what-strategy-btn">マーケティング戦略ページを見る</a>
+      </div>
+    </div>
+    <!-- 戦略→実行 静止ブロックアロー -->
+    <div class="what-flow-bridge" style="opacity:1">
+      <div class="what-block-arrow">
+        <span class="what-block-arrow-text">戦略に基づいた、YouTube運用</span>
+      </div>
+      <div class="what-block-arrow-tip" aria-hidden="true"></div>
     </div>
     <div class="what-grid">
       <div class="what-card fu">
@@ -948,6 +1230,15 @@
         <a href="../../sns/line/" class="challenge-tag">LINE構築</a>
         <a href="../../sns/youtube/" class="challenge-tag">YouTube</a>
         <a href="../../sns/x/" class="challenge-tag">X（旧Twitter）</a>
+      </div>
+    </article>
+    <article class="challenge-card fu" style="transition-delay:.32s">
+      <div class="challenge-card-num"><span class="challenge-card-num-n">05</span></div>
+      <h3 class="challenge-card-title">AIで業務を<br>効率化・最適化したい</h3>
+      <p class="challenge-card-desc">手作業が多く、人手や時間が足りない。AIや自動化で業務を削減し、コア業務に集中できる体制をつくりたい。</p>
+      <p class="challenge-tags-label">推奨施策</p>
+      <div class="challenge-tags-wrap">
+        <a href="../../ai-automation/" class="challenge-tag">AI業務効率化</a>
       </div>
     </article>
   </div>
