@@ -4445,7 +4445,7 @@ main{padding-top:72px;}
       display:flex;flex-direction:column;
     }
 .plan-col-left{
-      border-right:1px solid #E0E0E0;
+
     }
 .plan-col-right{
       
@@ -4454,7 +4454,7 @@ main{padding-top:72px;}
       display:flex;align-items:center;justify-content:center;
       font-size:40px;font-weight:200;color:#C0C0C8;
       padding:0 8px;
-      border-right:1px solid #E0E0E0;
+
     }
 .plan-col-label{
       font-size:11px;letter-spacing:.22em;color:#9B9BA0;
