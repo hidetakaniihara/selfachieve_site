@@ -439,6 +439,42 @@
 .what-card-feature::before {
   background: #41C9B4 !important;
 }
+/* ===== 全大見出し左端位置をvoice-head（80px）に統一 ===== */
+/* our-note-sec: padding:40px → 0、innerにpadding:0 80px */
+.our-note-sec {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+.our-note-inner {
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 80px !important;
+}
+/* what-sec: innerにpadding:0 80px、max-width解除 */
+.what-sec {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+.what-inner {
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 80px !important;
+}
+/* plan-sec: innerにpadding:0 80px、max-width解除 */
+.plan-sec {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+.plan-inner {
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 80px !important;
+}
+@media (max-width: 768px) {
+  .our-note-inner { padding: 0 20px !important; }
+  .what-inner { padding: 0 20px !important; }
+  .plan-inner { padding: 0 20px !important; }
+}
   </style>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@graph":[
