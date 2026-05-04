@@ -215,6 +215,40 @@
     background:#fff;
     color:#28282D;
   }
+/* ===== 見出し左端位置をworks-head/voice-headに統一（左端80px） ===== */
+/* why-sec: padding 40px → 0 に変更し、innerに80pxを持たせる */
+.why-sec {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+.why-inner {
+  max-width: none !important;
+  margin: 0 !important;
+  padding-left: 80px !important;
+  padding-right: 80px !important;
+}
+/* plan-sec: innerに80pxを持たせる */
+.plan-sec {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+.plan-inner {
+  max-width: none !important;
+  margin: 0 !important;
+  padding-left: 80px !important;
+  padding-right: 80px !important;
+}
+/* SP: 20px に統一 */
+@media (max-width: 767px) {
+  .why-inner {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+  .plan-inner {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+}
   </style>
   <meta name="description" content="WEB戦略に基づいた、結果の出るホームページ制作。SEO・分析・戦略設計まで一貫対応。神戸・兵庫の中小企業に特化したWEBサイト制作・LP制作・保守・分析改善。初回15分無料相談。">
   <meta name="robots" content="index, follow">
