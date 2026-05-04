@@ -20,6 +20,66 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="theme-color" content="#ffffff">
   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <style>
+/* ===== KV SERVICE LABEL ===== */
+.kv-service-label {
+  display: inline-flex;
+  align-items: center;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 900;
+  font-size: clamp(11px, 1.1vw, 13px);
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: #fff;
+  border-left: 3px solid rgba(255,255,255,.9);
+  padding: 4px 0 4px 14px;
+  margin-bottom: 22px;
+  position: relative;
+  z-index: 2;
+}
+/* ===== KV SPLASH: REMOVED ===== */
+.kv-right { display: none !important; }
+.kv-splash { display: none !important; }
+/* ===== KV PADDING: 上下余白削減 ===== */
+.kv {
+  min-height: auto !important;
+  padding: var(--kv-padding-v, 72px) 80px !important;
+}
+/* ===== KV INNER: full-width text layout (2-line H1) ===== */
+@media (min-width: 769px) {
+  .kv .kv-inner {
+    grid-template-columns: 1fr !important;
+    max-width: 1400px !important;
+  }
+  .kv .kv-h1 {
+    font-size: clamp(40px, 6vw, 88px) !important;
+    line-height: 1.2 !important;
+    letter-spacing: -0.04em !important;
+    margin-bottom: 32px !important;
+  }
+  /* メインラベル：「リスティング広告」極太大型 */
+  .kv .kv-eyebrow {
+    font-size: clamp(28px, 4vw, 56px) !important;
+    font-weight: 900 !important;
+    letter-spacing: -0.02em !important;
+    color: #ffffff !important;
+    margin-bottom: 20px !important;
+    gap: 20px !important;
+  }
+  .kv .kv-eyebrow::before {
+    display: none !important;
+  }
+  .kv .kv-sub {
+    margin-bottom: 0 !important;
+  }
+}
+@media (max-width: 768px) {
+  .kv {
+    padding: var(--kv-padding-v-sp, 56px) 24px !important;
+    min-height: auto !important;
+  }
+}
+  </style>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@graph":[
     {"@type":"Service","@id":"https://selfachieve.jp/listing/#service",
@@ -255,92 +315,6 @@
   </div>
 </div>
 
-<!-- MOBILE DRAWER -->
-<div class="hd-drawer" id="hd-drawer" role="dialog" aria-label="モバイルメニュー">
-  <div class="hd-drawer-item">
-    <div class="hd-drawer-link" data-drawer-toggle>課題から探す</div>
-    <div class="hd-drawer-sub">
-      <p class="hd-drawer-sub-label">なんかうまくいかない...</p>
-      <a href="../strategy/">WEB戦略設計</a>
-      <p class="hd-drawer-sub-label">集客したい</p>
-      <a href="../seo/">SEO対策</a>
-      <a href="../meo/">MEO対策</a>
-      <a href="../ads/display/">WEB広告</a>
-      <a href="../sns/">SNSマーケティング</a>
-      <a href="../sns/note/">note対策</a>
-      <a href="../ai-seo/">AI検索対策（LLM検索対策）</a>
-      <p class="hd-drawer-sub-label">成約したい</p>
-      <a href="../website/">ホームページ制作</a>
-      <a href="../website/#analysis">分析改善</a>
-      <a href="../website/#lp">LP制作</a>
-      <p class="hd-drawer-sub-label">追客したい</p>
-      <a href="../sns/line/">LINE</a>
-      <a href="../sns/instagram/">Instagram</a>
-      <a href="../sns/x/">X（旧Twitter）</a>
-      <a href="../sns/youtube/">YouTube</a>
-      <a href="../sns/tiktok/">TikTok</a>
-      <a href="../sns/note/">note</a>
-    </div>
-  </div>
-  <div class="hd-drawer-item">
-    <div class="hd-drawer-link" data-drawer-toggle>サービス</div>
-    <div class="hd-drawer-sub">
-      <a href="../strategy/">WEB戦略設計</a>
-      <a href="../website/">サイト制作・分析改善</a>
-      <a href="../seo/">SEO対策</a>
-      <a href="../meo/">MEO対策</a>
-      <a href="../ai-seo/">AI検索対策（LLM検索対策）</a>
-      <p class="hd-drawer-sub-label">SNSマーケティング</p>
-      <a href="../sns/instagram/">Instagram</a>
-      <a href="../sns/tiktok/">TikTok</a>
-      <a href="../sns/x/">X（旧Twitter）</a>
-      <a href="../sns/youtube/">YouTube</a>
-      <a href="../sns/note/">note</a>
-      <a href="../sns/line/">LINE</a>
-      <p class="hd-drawer-sub-label">WEB広告</p>
-      <a href="../ads/display/">ディスプレイ広告</a>
-      <p class="hd-drawer-sub-label">AX・業務改善</p>
-      <a href="../ai-automation/">AI業務効率化・導入支援</a>
-    </div>
-  </div>
-  <div class="hd-drawer-item">
-    <a href="https://selfachieve.jp/saikatsu_r/" class="hd-drawer-link no-arrow" target="_blank" rel="noopener noreferrer">採用戦略<svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-left:4px;vertical-align:middle"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
-  </div>
-  <div class="hd-drawer-item">
-    <a href="../works/" class="hd-drawer-link no-arrow">制作実績</a>
-  </div>
-  <div class="hd-drawer-item">
-    <a href="../voice/" class="hd-drawer-link no-arrow">お客さまの声</a>
-  </div>
-  <div class="hd-drawer-item">
-    <div class="hd-drawer-link" data-drawer-toggle="drawer-company">会社情報</div>
-    <div class="hd-drawer-sub" id="drawer-company">
-      <a href="../company/">会社情報 TOP</a>
-      <a href="../company/#mission">Mission / Vision / Value</a>
-      <a href="../company/#representative">代表メッセージ</a>
-      <a href="../company/#overview">会社概要</a>
-      <a href="../company/#access">アクセス</a>
-    </div>
-  </div>
-  <div class="hd-drawer-cta">
-    <a href="#contact" class="hd-btn" aria-label="無料相談を申し込む">無料相談を申し込む</a>
-    <a href="https://saicatsu-r.jp/" class="hd-btn-saicatsu" target="_blank" rel="noopener noreferrer" aria-label="企業の採用活動を成功に導く「サイカツ.R」（別サイトが開きます）">企業の採用活動を成功に導く「サイカツ.R」<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 2L2 10M10 2H5M10 2V7" stroke="#28282D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-  </div>
-  <div class="hd-drawer-sns">
-    <p class="hd-drawer-sns-label">FOLLOW US</p>
-    <div class="hd-drawer-sns-links">
-      <a href="https://www.instagram.com/self.achieve/" class="hd-drawer-sns-link hd-drawer-sns-ig" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="20" height="20" rx="5" stroke="#28282D" stroke-width="1.5"/><circle cx="12" cy="12" r="4" stroke="#28282D" stroke-width="1.5"/><circle cx="17.5" cy="6.5" r="1" fill="#28282D"/></svg>
-      </a>
-      <a href="https://www.tiktok.com/@selfachieve" class="hd-drawer-sns-link hd-drawer-sns-tt" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" stroke="#28282D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </a>
-      <a href="https://x.com/selfachieve" class="hd-drawer-sns-link hd-drawer-sns-x" target="_blank" rel="noopener noreferrer" aria-label="X（旧Twitter）">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 4l16 16M4 20L20 4" stroke="#28282D" stroke-width="1.5" stroke-linecap="round"/></svg>
-      </a>
-    </div>
-  </div>
-</div>
 
 <!-- FIXED MOBILE CTA -->
 <div class="sp-fixed-cta" id="sp-fixed-cta" role="complementary" aria-label="お問い合わせ">
@@ -355,7 +329,7 @@
 <main>
 
 <!-- KV -->
-<section class="kv" aria-labelledby="kv-h1" style="background:#28282D;position:relative;overflow:hidden;">
+<section class="kv" aria-labelledby="kv-h1" style="background:#111113;position:relative;overflow:hidden;">
   <div class="kv-inner">
     <div class="kv-left">
       <p class="kv-eyebrow fu">LISTING ADS / GOOGLE ADS</p>
@@ -429,17 +403,35 @@
   </div>
 </section>
 
-<!-- CASE: 具体事例 -->
+<!-- CASE: 支援事例 -->
 <section class="case-sec" aria-labelledby="case-h2">
   <div class="case-inner">
     <div class="case-head">
-      <span class="case-eyebrow fu">REAL CASES</span>
-      <h2 class="case-h2 fu" id="case-h2" style="transition-delay:.1s">
-        課題と施策で見る、<br>改善の実例。
-      </h2>
-      <p class="case-body-text fu" style="transition-delay:.15s">
-        業種・課題・施策の概要をそのままお伝えします。<br>数値はすべて実際の支援案件をもとにした参考値です。
-      </p>
+      <div>
+        <span class="sec-eyebrow fu">支援事例</span>
+        <h2 class="sec-h2 fu" id="case-h2" style="transition-delay:.1s">
+          様々な業種・規模での<br>リスティング広告支援実績。
+        </h2>
+      </div>
+    </div>
+    <div class="case-tags-sec fu">
+      <span class="case-tags-label">SUPPORTED INDUSTRIES</span>
+      <div class="case-tags">
+        <span class="case-tag lg">医療・クリニック</span>
+        <span class="case-tag lg">法律・士業</span>
+        <span class="case-tag">美容・エステ</span>
+        <span class="case-tag">飲食・カフェ</span>
+        <span class="case-tag lg">EC・通販</span>
+        <span class="case-tag">不動産</span>
+        <span class="case-tag">建設・リフォーム</span>
+        <span class="case-tag sm">教育・スクール</span>
+        <span class="case-tag">BtoB製造業</span>
+        <span class="case-tag sm">採用・HR</span>
+        <span class="case-tag">フィットネス</span>
+        <span class="case-tag sm">ペット</span>
+        <span class="case-tag">旅行・観光</span>
+        <span class="case-tag sm">金融・保険</span>
+      </div>
     </div>
     <div class="case-grid">
 
@@ -524,8 +516,8 @@
 <section id="voice" class="voice-sec" aria-labelledby="voice-title">
   <div class="voice-head">
     <div>
-      <span class="sec-eyebrow fu">CUSTOMER VOICE</span>
-      <h2 class="sec-h2 fu" id="voice-title" style="transition-delay:.1s">リスティング広告で結果を出した、<br>リアルな声。</h2>
+      <span class="sec-eyebrow fu">CLIENT VOICES</span>
+      <h2 class="sec-h2 fu" id="voice-title" style="transition-delay:.1s">伴走してきた企業の、<br>リアルな声。</h2>
     </div>
     <a href="../voice/" class="view-all fu" style="transition-delay:.2s" aria-label="お客さまの声をすべて見る">すべて見る</a>
   </div>
