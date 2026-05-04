@@ -21,6 +21,66 @@
   <meta name="theme-color" content="#ffffff">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <style>
+/* ===== KV SERVICE LABEL ===== */
+.kv-service-label {
+  display: inline-flex;
+  align-items: center;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 900;
+  font-size: clamp(13px, 1.1vw, 14px);
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: #fff;
+  border-left: 3px solid rgba(255,255,255,.9);
+  padding: 4px 0 4px 14px;
+  margin-bottom: 22px;
+  position: relative;
+  z-index: 2;
+}
+/* ===== KV SPLASH: REMOVED ===== */
+.kv-right { display: none !important; }
+.kv-splash { display: none !important; }
+/* ===== KV PADDING: 上下余白削減 ===== */
+.kv {
+  min-height: auto !important;
+  padding: var(--kv-padding-v, 72px) 80px !important;
+}
+/* ===== KV INNER: full-width text layout (2-line H1) ===== */
+@media (min-width: 769px) {
+  .kv .kv-inner {
+    grid-template-columns: 1fr !important;
+    max-width: 1400px !important;
+  }
+  .kv .kv-h1 {
+    font-size: clamp(40px, 6vw, 88px) !important;
+    line-height: 1.2 !important;
+    letter-spacing: -0.04em !important;
+    margin-bottom: 32px !important;
+  }
+  /* メインラベル：「ディスプレイ広告」極太大型 */
+  .kv .kv-eyebrow {
+    font-size: clamp(28px, 4vw, 56px) !important;
+    font-weight: 900 !important;
+    letter-spacing: -0.02em !important;
+    color: #ffffff !important;
+    margin-bottom: 20px !important;
+    gap: 20px !important;
+  }
+  .kv .kv-eyebrow::before {
+    display: none !important;
+  }
+  .kv .kv-sub {
+    margin-bottom: 0 !important;
+  }
+}
+@media (max-width: 768px) {
+  .kv {
+    padding: var(--kv-padding-v-sp, 56px) 24px !important;
+    min-height: auto !important;
+  }
+}
+  </style>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@graph":[
     {"@type":"Service","@id":"https://selfachieve.jp/ads/display/#service",
@@ -356,10 +416,10 @@
 <main>
 
 <!-- KV -->
-<section class="kv" aria-labelledby="kv-h1" style="background:#28282D;position:relative;overflow:hidden;">
+<section class="kv" aria-labelledby="kv-h1" style="background:#111113;position:relative;overflow:hidden;">
   <div class="kv-inner">
     <div class="kv-left">
-      <p class="kv-eyebrow fu">DISPLAY ADS / GOOGLE ADS</p>
+      <p class="kv-eyebrow fu">DISPLAY 広告 / GOOGLE 広告</p>
       <h1 class="kv-h1 fu" id="kv-h1" style="transition-delay:.08s">
         まだ知らない人に、<br>届ける。
       </h1>
@@ -367,20 +427,7 @@
         最適なターゲット設定で潜在層にリーチ。<br>
         認知からコンバージョンまで、一気通貫で設計します。
       </p>
-      <div class="kv-actions fu" style="transition-delay:.24s">
-        <a href="../../contact/" class="btn-primary">15分無料相談を申し込む</a>
-        <div class="kv-tel-wrap">
-          <p class="kv-tel-label">お電話でのご相談</p>
-        </div>
-      </div>
-      <div class="kv-badge-row fu" style="transition-delay:.32s">
-        <span class="kv-badge">Google広告</span>
-        <span class="kv-badge">Yahoo!広告</span>
-        <span class="kv-badge">バナー制作対応</span>
-        <span class="kv-badge">運用担当が直接対応</span>
-        <span class="kv-badge">最短翌営業日配信</span>
 
-      </div>
     </div>
     <div class="kv-right">
     </div>
@@ -508,13 +555,31 @@
 <section class="case-sec" aria-labelledby="case-h2">
   <div class="case-inner">
     <div class="case-head">
-      <span class="case-eyebrow fu">REAL CASES</span>
-      <h2 class="case-h2 fu" id="case-h2" style="transition-delay:.1s">
-        課題と施策で見る、<br>改善の実例。
-      </h2>
-      <p class="case-body-text fu" style="transition-delay:.15s">
-        業種・課題・施策の概要をそのままお伝えします。<br>数値はすべて実際の支援案件をもとにした参考値です。
-      </p>
+      <div>
+        <span class="sec-eyebrow fu">支援事例</span>
+        <h2 class="sec-h2 fu" id="case-h2" style="transition-delay:.1s">
+          様々な業種・規模での<br>ディスプレイ広告支援実績。
+        </h2>
+      </div>
+    </div>
+    <div class="case-tags-sec fu">
+      <span class="case-tags-label">SUPPORTED INDUSTRIES</span>
+      <div class="case-tags">
+        <span class="case-tag lg">医療・クリニック</span>
+        <span class="case-tag lg">法律・士業</span>
+        <span class="case-tag">美容・エステ</span>
+        <span class="case-tag">飲食・カフェ</span>
+        <span class="case-tag lg">EC・通販</span>
+        <span class="case-tag">不動産</span>
+        <span class="case-tag">建設・リフォーム</span>
+        <span class="case-tag sm">教育・スクール</span>
+        <span class="case-tag">BtoB製造業</span>
+        <span class="case-tag sm">採用・HR</span>
+        <span class="case-tag">フィットネス</span>
+        <span class="case-tag sm">ペット</span>
+        <span class="case-tag">旅行・観光</span>
+        <span class="case-tag sm">金融・保険</span>
+      </div>
     </div>
     <p class="swipe-hint-case" aria-hidden="true">← スワイプして見る →</p>
     <div class="case-grid">
@@ -524,8 +589,8 @@
         <span class="case-industry">MEDICAL / CLINIC</span>
         <h3 class="case-title">クリニックの認知広告でインプレッション数を大幅拡大</h3>
         <p class="case-summary">
-          <strong style="color:#28282D;font-weight:700;">課題：</strong>リスティング広告のみで運用していたが、「すでに検索している人」にしか届かず新規患者の獲得に限界を感じていた。<br><br>
-          <strong style="color:#28282D;font-weight:700;">施策：</strong>Googleディスプレイネットワークで類似ユーザーターゲティングを設定。「健康意識が高い30〜50代」に絞り込み、バナーを3パターン制作してA/Bテストを実施。
+          <strong style="color:#fff;font-weight:700;">課題：</strong>リスティング広告のみで運用していたが、「すでに検索している人」にしか届かず新規患者の獲得に限界を感じていた。<br><br>
+          <strong style="color:#fff;font-weight:700;">施策：</strong>Googleディスプレイネットワークで類似ユーザーターゲティングを設定。「健康意識が高30～50代」に絞り込み、バナーを3パターン制作してA/Bテストを実施。。
         </p>
         <div class="case-ba">
           <p class="case-ba-metric">月間インプレッション数</p>
@@ -548,8 +613,8 @@
         <span class="case-industry">E-COMMERCE / RETAIL</span>
         <h3 class="case-title">ECサイトのカゴ落ちリターゲティングでCV率を改善</h3>
         <p class="case-summary">
-          <strong style="color:#28282D;font-weight:700;">課題：</strong>カートに商品を入れたまま離脱するユーザーが多く、取り逃がしが課題。リターゲティング広告を出していたが「商品画像そのまま」で訴求力がなかった。<br><br>
-          <strong style="color:#28282D;font-weight:700;">施策：</strong>「残り在庫わずか」「期間限定割引」など限定性を強調したバナーに刷新。カゴ落ちから72時間以内に集中配信するスケジュール設定を実施。
+          <strong style="color:#fff;font-weight:700;">課題：</strong>カートに商品を入れたまま離脱するユーザーが多く、取り逃がしが課題。リターゲティング広告を出していたが「商品画像そのまま」で訴求力がなかった。<br><br>
+          <strong style="color:#fff;font-weight:700;">施策：</strong>「残り在庫わずか」「期間限定割引」など限定性を強調したバナーに刷新。カゴ落ちから72時間以内に集中配信するスケジュール設定を実施。
         </p>
         <div class="case-ba">
           <p class="case-ba-metric">カゴ落ち回収率</p>
@@ -572,8 +637,8 @@
         <span class="case-industry">REAL ESTATE</span>
         <h3 class="case-title">不動産会社のディスプレイ広告でCPAを大幅削減</h3>
         <p class="case-summary">
-          <strong style="color:#28282D;font-weight:700;">課題：</strong>物件スペックを前面に出したバナーでCTRが低く、クリックしても問い合わせに繋がらない状態。CPA（問い合わせ1件あたりのコスト）が高止まりしていた。<br><br>
-          <strong style="color:#28282D;font-weight:700;">施策：</strong>「暮らしのイメージ」を訴求するビジュアルに転換。「子育て世代向け」「共働き夫婦向け」など属性別にクリエイティブを分けて配信。LPも合わせて改修。
+          <strong style="color:#fff;font-weight:700;">課題：</strong>物件スペックを前面に出したバナーでCTRが低く、クリックしても問い合わせに繋がらない状態。CPA（問い合わせ1件あたりのコスト）が高止まりしていた。<br><br>
+          <strong style="color:#fff;font-weight:700;">施策：</strong>「暮らしのイメージ」を訴求するビジュアルに転換。「子育て世代向け」「共共元夕師向け」など属性別にクリエイティブを分けて配信。LPも合わせて改修。
         </p>
         <div class="case-ba">
           <p class="case-ba-metric">問い合わせCPA</p>
@@ -592,6 +657,7 @@
       </div>
 
     </div>
+    <p class="sp-swipe-hint">スワイプして見る</p>
   </div>
 </section>
 
@@ -599,12 +665,11 @@
 <section id="voice" class="voice-sec" aria-labelledby="voice-title">
   <div class="voice-head">
     <div>
-      <span class="sec-eyebrow fu">CUSTOMER VOICE</span>
-      <h2 class="sec-h2 fu" id="voice-title" style="transition-delay:.1s">ディスプレイ広告で結果を出した、<br>リアルな声。</h2>
+      <span class="sec-eyebrow fu">CLIENT VOICES</span>
+      <h2 class="sec-h2 fu" id="voice-title" style="transition-delay:.1s">伴走してきた企業の、<br>リアルな声。</h2>
     </div>
     <a href="../../voice/" class="view-all fu" style="transition-delay:.2s" aria-label="お客さまの声をすべて見る">すべて見る</a>
   </div>
-  <p class="swipe-hint-voice" aria-hidden="true">← スワイプして見る →</p>
   <div class="voice-grid">
     <article class="voice-card fu">
       <a href="../../voice/iwazawa/" class="voice-link" aria-label="岩澤法理事務所の声を詳しく見る">
@@ -660,24 +725,8 @@
       </div>
       </a>
     </article>
-    <!-- 05 AI活用 -->
-    <article class="challenge-card fu challenge-card--last" style="transition-delay:.4s">
-      <div class="challenge-card-num">
-        <span class="challenge-card-num-n">05</span>
-      </div>
-      <h3 class="challenge-card-title">
-        AIで業務を<br>効率化・最適化したい
-      </h3>
-      <p class="challenge-card-desc">
-        手作業が多く時間がかかる。AIを使いたいが何から始めればいいかわからない。業務の無駄を省いて生産性を上げたい。
-      </p>
-      <p class="challenge-tags-label">推奨施策</p>
-      <div class="challenge-tags-wrap">
-        <a href="../../ai-automation/" class="challenge-tag">業務効率化</a>
-        <a href="../../ai-automation/" class="challenge-tag">分析深化</a>
-      </div>
-    </article>
   </div>
+  <p class="sp-swipe-hint">スワイプして見る</p>
 </section>
 
 <!-- TARGETING: ターゲティング手法 -->
