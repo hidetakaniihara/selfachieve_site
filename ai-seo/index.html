@@ -9,6 +9,79 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AI検索対策（LLM対策）| ChatGPT・Geminiに表示される施策 | セルフアチーブ</title>
     <link rel="stylesheet" href="../assets/style.css">
+  <style>
+/* ===== KV SPLASH: REMOVED ===== */
+.kv-right { display: none !important; }
+.kv-splash { display: none !important; }
+/* ===== KV PADDING: 上下余白削減 ===== */
+.kv {
+  min-height: auto !important;
+  padding: var(--kv-padding-v, 72px) 80px !important;
+}
+/* ===== KV INNER: full-width text layout ===== */
+@media (min-width: 769px) {
+  .kv .kv-inner {
+    grid-template-columns: 1fr !important;
+    max-width: 1400px !important;
+  }
+  .kv .kv-h1 {
+    font-size: clamp(40px, 6vw, 88px) !important;
+    line-height: 1.2 !important;
+    letter-spacing: -0.04em !important;
+    margin-bottom: 32px !important;
+  }
+  .kv .kv-eyebrow {
+    font-size: clamp(13px, 1.1vw, 15px) !important;
+    font-weight: 700 !important;
+    letter-spacing: .22em !important;
+    color: rgba(255,255,255,.7) !important;
+    margin-bottom: 20px !important;
+  }
+  .kv .kv-sub {
+    margin-bottom: 0 !important;
+  }
+}
+@media (max-width: 768px) {
+  .kv {
+    padding: var(--kv-padding-v-sp, 56px) 24px !important;
+    min-height: auto !important;
+  }
+}
+/* ===== SECTION INNER: 余白統一 ===== */
+.what-inner,
+.problem-inner,
+.how-inner,
+.plan-inner,
+.faq-head,
+.faq-list,
+.challenge-head,
+.challenge-grid,
+.area-inner,
+.blog-inner {
+  padding-left: 80px !important;
+  padding-right: 80px !important;
+  box-sizing: border-box !important;
+}
+@media (max-width: 768px) {
+  .what-inner,
+  .problem-inner,
+  .how-inner,
+  .plan-inner,
+  .faq-head,
+  .faq-list,
+  .challenge-head,
+  .challenge-grid,
+  .area-inner,
+  .blog-inner {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+}
+/* ===== FONT SIZE: 最低14px保証 ===== */
+body {
+  font-size: 14px;
+}
+  </style>
   <meta name="description" content="ChatGPT・Gemini・Perplexityなどのai検索・LLM回答に自社を表示させるための施策。神戸・兵庫の中小企業向けAI検索対策（AIO）コンサルティング。初回15分無料相談。">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://selfachieve.jp/ai-seo/">
@@ -369,7 +442,7 @@
   </div>
   <div class="kv-inner">
     <div class="kv-left">
-      <p class="kv-eyebrow">AI SEARCH OPTIMIZATION</p>
+      <p class="kv-eyebrow">— AI 検索対策</p>
       <h1 class="kv-h1" id="kv-h1">
         誰かがAIに尋ねたとき、<br>
         あなたの会社が<br>
@@ -738,8 +811,25 @@
       <div class="challenge-tags-wrap">
         <a href="../sns/line/" class="challenge-tag">LINE</a>
         <a href="../sns/instagram/" class="challenge-tag">Instagram</a>
+        <a href="../sns/tiktok/" class="challenge-tag">TikTok</a>
         <a href="../sns/x/" class="challenge-tag">X（旧Twitter）</a>
         <a href="../sns/youtube/" class="challenge-tag">YouTube</a>
+      </div>
+    </article>
+    <!-- 05 AI活用 -->
+    <article class="challenge-card fu" style="transition-delay:.4s">
+      <div class="challenge-card-num">
+        <span class="challenge-card-num-n">05</span>
+      </div>
+      <h3 class="challenge-card-title">
+        AIで業務を<br>効率化・最適化したい
+      </h3>
+      <p class="challenge-card-desc">
+        繰り返しの作業やデータ分析をAIに任せ、コスト削減と生産性向上を同時に実現したい。
+      </p>
+      <p class="challenge-tags-label">推奨施策</p>
+      <div class="challenge-tags-wrap">
+        <a href="../ai-automation/" class="challenge-tag">AI業務効率化・導入支援</a>
       </div>
     </article>
   </div>
