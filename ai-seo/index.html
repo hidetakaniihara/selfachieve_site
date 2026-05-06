@@ -267,6 +267,60 @@ body {
   }
   /* ---- how-step-num: 白に上書き ---- */
   .how-step-num { color: #fff !important; }
+  /* ---- related-two ---- */
+  .related-two-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .related-two-card {
+    display: block;
+    border: 1px solid rgba(255,255,255,.18);
+    padding: 32px;
+    text-decoration: none;
+    transition: background .2s, border-color .2s;
+  }
+  .related-two-card:hover {
+    background: rgba(255,255,255,.06);
+    border-color: rgba(255,255,255,.4);
+  }
+  .related-two-icon {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 16px;
+  }
+  .related-two-icon svg {
+    width: 40px;
+    height: 40px;
+  }
+  .related-two-title {
+    font-size: clamp(16px, 1.4vw, 20px);
+    font-weight: 900;
+    color: #fff;
+    line-height: 1.4;
+    margin-bottom: 10px;
+  }
+  .related-two-sub {
+    font-size: 14px;
+    color: rgba(255,255,255,.6);
+    line-height: 1.7;
+    margin-bottom: 20px;
+  }
+  .related-two-btn {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 700;
+    color: #fff;
+    border-bottom: 1px solid rgba(255,255,255,.4);
+    padding-bottom: 2px;
+    letter-spacing: .04em;
+  }
+  @media (max-width: 767px) {
+    .related-two { padding: 32px 20px !important; }
+    .related-two-grid { grid-template-columns: 1fr; gap: 16px; }
+  }
   </style>
   <meta name="description" content="ChatGPT・Gemini・Perplexityなどのai検索・LLM回答に自社を表示させるための施策。神戸・兵庫の中小企業向けAI検索対策（AIO）コンサルティング。初回15分無料相談。">
   <meta name="robots" content="index, follow">
@@ -767,19 +821,27 @@ AI検索の回答に自社を表示させる施策。
 </section>
 
 <!-- SEO LINK BANNER -->
-<div class="seo-banner" style="background:#28282D;border-top:none;">
-  <div class="seo-banner-inner">
-    <div class="seo-banner-left">
-      <div class="seo-banner-icon" aria-hidden="true" style="width:48px;height:48px;flex-shrink:0;">
-        <svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.7)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:48px;height:48px;"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+<div class="related-two" style="background:#28282D;border-top:none;padding:40px 80px;">
+  <p class="seo-banner-label" style="color:rgba(255,255,255,.45);font-size:10px;letter-spacing:.22em;font-weight:700;text-transform:uppercase;display:block;margin-bottom:24px;">RELATED SERVICE</p>
+  <div class="related-two-grid">
+    <!-- SEO -->
+    <a href="../seo/" class="related-two-card">
+      <div class="related-two-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.7)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
       </div>
-      <div>
-        <span class="seo-banner-label" style="color:rgba(255,255,255,.45);font-size:10px;letter-spacing:.22em;">RELATED SERVICE</span>
-        <p class="seo-banner-text" style="color:#ffffff;font-size:clamp(20px,1.6vw,24px);font-weight:900;line-height:1.35;">SEO対策（Google検索）も全力で対応できます。</p>
-        <p class="seo-banner-sub" style="color:rgba(255,255,255,.65);font-size:15px;">AI検索対策と組み合わせることで、より広範な集客が実現できます。</p>
+      <p class="related-two-title">SEO対策（Google検索）も全力で対応できます。</p>
+      <p class="related-two-sub">AI検索対策と組み合わせることで、より広範な集客が実現できます。</p>
+      <span class="related-two-btn">SEO対策ページを見る →</span>
+    </a>
+    <!-- AI活用支援 -->
+    <a href="../ai-automation/" class="related-two-card">
+      <div class="related-two-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.7)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10"/><path d="M12 6v6l4 2"/><circle cx="19" cy="5" r="3"/></svg>
       </div>
-    </div>
-    <a href="../seo/" class="seo-banner-btn" style="background:#ffffff;color:#28282D;border-color:#ffffff;font-weight:700;font-size:14px;padding:0 28px;height:48px;">SEO対策ページを見る →</a>
+      <p class="related-two-title">AI活用支援（DX/AX）で、業務そのものを進化させる。</p>
+      <p class="related-two-sub">AI検索対策で集客を強化しながら、社内業務のAI化も同時に推進できます。</p>
+      <span class="related-two-btn">AI活用支援ページを見る →</span>
+    </a>
   </div>
 </div>
 
