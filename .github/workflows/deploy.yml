@@ -13,6 +13,14 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Restore FTP sync state cache
+        uses: actions/cache@v4
+        with:
+          path: .ftp-deploy-sync-state.json
+          key: ftp-sync-state-${{ github.ref_name }}
+          restore-keys: |
+            ftp-sync-state-
+
       - name: Deploy via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
@@ -20,9 +28,17 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           server-dir: ${{ secrets.REMOTE_ROOT }}
+          state-name: .ftp-deploy-sync-state.json
           exclude: |
             **/.git*
             **/.git*/**
             **/.github/**
             **/node_modules/**
             **/.DS_Store
+
+      - name: Save FTP sync state cache
+        uses: actions/cache/save@v4
+        if: always()
+        with:
+          path: .ftp-deploy-sync-state.json
+          key: ftp-sync-state-${{ github.ref_name }}-${{ github.run_id }}
