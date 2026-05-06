@@ -195,6 +195,40 @@ body {
     padding: 16px 16px;
   }
 }
+  /* ---- problem-evidence ---- */
+  .problem-evidence {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    padding: 48px 80px 64px;
+  }
+  .problem-evidence-item {
+    display: flex;
+    flex-direction: column;
+  }
+  .problem-evidence-label {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: #666;
+    margin-bottom: 12px;
+    padding-left: 10px;
+    border-left: 3px solid #000;
+  }
+  .problem-evidence-item img {
+    width: 100%;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(0,0,0,.08);
+  }
+  @media (max-width: 767px) {
+    .problem-evidence {
+      grid-template-columns: 1fr;
+      padding: 32px 20px 48px;
+      gap: 24px;
+    }
+  }
   </style>
   <meta name="description" content="ChatGPT・Gemini・Perplexityなどのai検索・LLM回答に自社を表示させるための施策。神戸・兵庫の中小企業向けAI検索対策（AIO）コンサルティング。初回15分無料相談。">
   <meta name="robots" content="index, follow">
@@ -600,6 +634,18 @@ AI検索の回答に自社を表示させる施策。
         <span class="problem-num">03</span>
         <p class="problem-title">何から始めればいいかわからない</p>
         <p class="problem-desc">「AI検索対策が必要」とは聞くが、具体的に何をすれば自社がAIに引用されるのか、情報が少なくて動けない。まず何を整えればいいのか、一緒に整理します。</p>
+      </div>
+    </div>
+    <!-- 実績イメージ -->
+    <div class="problem-evidence">
+      <div class="problem-evidence-item">
+        <p class="problem-evidence-label">Google AI Overviews での表示例</p>
+        <img src="img/overview.png" alt="GoogleのAI Overviewsに株式会社セルフアチーブが表示されているスクリーンショット" loading="lazy">
+      </div>
+      <div class="problem-evidence-item">
+        <p class="problem-evidence-label">ChatGPT での表示例</p>
+        <img src="img/gpt.png" alt="ChatGPTの回答に株式会社セルフアチーブが表示されているスクリーンショット（マップ）" loading="lazy">
+        <img src="img/gpt2.png" alt="ChatGPTの回答に株式会社セルフアチーブが表示されているスクリーンショット（テキスト）" loading="lazy" style="margin-top:12px">
       </div>
     </div>
   </div>
