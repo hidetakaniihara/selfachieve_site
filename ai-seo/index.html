@@ -87,6 +87,104 @@
 body {
   font-size: 14px;
 }
+/* ===== WHAT-AXIS: 守り×攻め 2軸カード ===== */
+.what-axis-wrap {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 32px;
+  flex-wrap: wrap;
+}
+.what-axis-card {
+  flex: 1;
+  min-width: 180px;
+  background: #f8f8f8;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 4px;
+  padding: 20px 20px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.what-axis-icon {
+  font-size: 22px;
+  line-height: 1;
+}
+.what-axis-label {
+  font-size: 15px;
+  font-weight: 900;
+  color: #000000;
+  letter-spacing: .02em;
+}
+.what-axis-desc {
+  font-size: 13px;
+  line-height: 1.7;
+  color: #444444;
+  margin: 0;
+}
+.what-axis-divider {
+  font-size: 22px;
+  font-weight: 900;
+  color: #999999;
+  flex-shrink: 0;
+}
+/* ===== HOW-AXIS: 2軸リスト ===== */
+.how-axis-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 24px;
+  margin-bottom: 48px;
+}
+.how-axis-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  background: #f8f8f8;
+  border-left: 4px solid #000000;
+  padding: 20px 24px;
+}
+.how-axis-num {
+  font-size: 28px;
+  font-weight: 900;
+  color: #000000;
+  line-height: 1;
+  flex-shrink: 0;
+  min-width: 24px;
+}
+.how-axis-body {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.how-axis-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #000000;
+  margin: 0;
+  line-height: 1.5;
+}
+.how-axis-desc {
+  font-size: 14px;
+  line-height: 1.75;
+  color: #444444;
+  margin: 0;
+}
+@media (max-width: 768px) {
+  .what-axis-wrap {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .what-axis-divider {
+    transform: rotate(90deg);
+  }
+  .what-axis-card {
+    width: 100%;
+  }
+  .how-axis-item {
+    padding: 16px 16px;
+  }
+}
   </style>
   <meta name="description" content="ChatGPT・Gemini・Perplexityなどのai検索・LLM回答に自社を表示させるための施策。神戸・兵庫の中小企業向けAI検索対策（AIO）コンサルティング。初回15分無料相談。">
   <meta name="robots" content="index, follow">
@@ -476,11 +574,24 @@ AI検索の回答に自社を表示させる施策。
         <p class="what-eyebrow">WHAT IS AI SEARCH</p>
         <h2 class="what-h2" id="what-h2">AI検索対策（LLM対策）とは？</h2>
         <p class="what-body">
-          ChatGPTやGeminiなどのAIが質問に答えるとき、そのAIが「信頼できる情報源」として自社のコンテンツを引用・紹介するよう最適化する施策です。
+          セルフアチーブのAI検索対策は、単に表示させることだけが目的ではありません。
+          Googleの『AI Overviews』によって変化する「今までの検索ユーザー」を確実に<strong>囲い込む</strong>こと。
+          そして、「ChatGPT・Gemini・Perplexity」などのAIを検索窓として使う「新しいユーザー層」を新たに<strong>獲得する</strong>こと。
+          この2つの施策を同時に行うことで、検索市場の劇的な変化をチャンスに変えます。
         </p>
-        <p class="what-body">
-          従来のSEOが「Googleの検索結果ページに表示される」ことを目指すのに対し、AI検索対策は「AIの回答文の中に自社が登場する」ことを目指します。検索行動がAIへシフトしつつある今、両方を押さえることが集客の鍵になります。
-        </p>
+        <div class="what-axis-wrap">
+          <div class="what-axis-card">
+            <span class="what-axis-icon">🛡️</span>
+            <span class="what-axis-label">守り（囲い込み）</span>
+            <p class="what-axis-desc">Googleの<strong>AI Overviews</strong>対策で、既存の検索ユーザーの流出を防ぐ。</p>
+          </div>
+          <div class="what-axis-divider">×</div>
+          <div class="what-axis-card">
+            <span class="what-axis-icon">🎯</span>
+            <span class="what-axis-label">攻め（獲得）</span>
+            <p class="what-axis-desc"><strong>ChatGPT・Gemini・Perplexity</strong>対策で、AIを使う高感度な新層を獲得する。</p>
+          </div>
+        </div>
       </div>
       <div class="what-right fu" style="transition-delay:.1s">
         <p class="what-compare-title">SEO対策 vs AI検索対策</p>
@@ -558,8 +669,26 @@ AI検索の回答に自社を表示させる施策。
   <div class="how-inner">
     <div class="how-head fu">
       <p class="how-eyebrow">HOW WE OPTIMIZE</p>
-      <h2 class="how-h2" id="how-h2">今、確実にできることを<br>正直にお伝えします。</h2>
-      <p class="how-body">「これがLLM対策の正解」と断言できるものは、現時点では存在しません。ただし、現状を把握し・継続的に観察することは今すぐ実施できます。その2つに絞って提供します。</p>
+      <h2 class="how-h2" id="how-h2">AI検索対策の核心は、<br>2つのユーザー行動の最適化。</h2>
+      <p class="how-body">
+        AI検索対策の核心は、異なる2つのユーザー行動を最適化することにあります。
+      </p>
+      <div class="how-axis-list">
+        <div class="how-axis-item">
+          <span class="how-axis-num">1</span>
+          <div class="how-axis-body">
+            <p class="how-axis-title"><strong>AI Overviews（SGE）対策</strong>：守り（囲い込み）</p>
+            <p class="how-axis-desc">従来の検索結果画面内で、AI回答に自社を引用させ、既存ユーザーの流出を防ぎ<strong>囲い込む</strong>。</p>
+          </div>
+        </div>
+        <div class="how-axis-item">
+          <span class="how-axis-num">2</span>
+          <div class="how-axis-body">
+            <p class="how-axis-title"><strong>生成AIプラットフォーム対策</strong>：攻め（獲得）</p>
+            <p class="how-axis-desc">ChatGPT、Gemini、Perplexity等のAI回答に自社を表示させ、AIで検索する高感度な新層を<strong>獲得する</strong>。</p>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="how-steps">
       <div class="how-step fu">
