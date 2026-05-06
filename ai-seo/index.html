@@ -230,6 +230,23 @@ body {
       gap: 24px;
     }
   }
+  /* ---- problem-evidence-catch ---- */
+  .problem-evidence-catch {
+    font-size: clamp(20px, 2.4vw, 32px);
+    font-weight: 700;
+    letter-spacing: -.03em;
+    color: #28282d;
+    text-align: center;
+    padding: 48px 80px 64px;
+    margin: 0;
+    line-height: 1.4;
+  }
+  @media (max-width: 767px) {
+    .problem-evidence-catch {
+      padding: 32px 20px 48px;
+      font-size: clamp(18px, 5vw, 26px);
+    }
+  }
   /* ---- how-step-num: 白に上書き ---- */
   .how-step-num { color: #fff !important; }
   </style>
@@ -651,6 +668,7 @@ AI検索の回答に自社を表示させる施策。
         <img src="img/overview.png" alt="GoogleのAI Overviewsに株式会社セルフアチーブが表示されているスクリーンショット" loading="lazy">
       </div>
     </div>
+    <p class="problem-evidence-catch fu">自社で証明したAI対策成果を、あなたのサイトに。</p>
   </div>
 </section>
 
