@@ -8611,3 +8611,363 @@ a.wall-tag:hover{background:#28282D;color:#fff;}
 }
 /* ===== END WALL SECTION ===== */
 
+
+/* ================================================================
+   SP最適化 — 全ページ共通 (@media max-width:768px 内のみ)
+   PC版デザインは一切変更しない。このブロック以外は触らない。
+   ================================================================ */
+@media(max-width:768px){
+
+  /* ---- ページヒーロー（下層ページ共通KV） ---- */
+  .page-hero{
+    padding:80px 20px 56px;
+  }
+  .page-hero-h1{
+    font-size:clamp(28px,8vw,44px);
+    white-space:normal;
+    word-break:break-word;
+  }
+  .page-hero-stats{
+    gap:24px;
+    margin-top:36px;
+    padding-top:28px;
+  }
+
+  /* ---- フィルターバー ---- */
+  .filter-sec{
+    padding:12px 16px;
+    top:60px;
+  }
+  .filter-inner{
+    gap:6px;
+    overflow-x:auto;
+    flex-wrap:nowrap;
+    -webkit-overflow-scrolling:touch;
+  }
+  .filter-inner::-webkit-scrollbar{display:none}
+
+  /* ---- パンくずSP表示切替 ---- */
+  .breadcrumb{display:none}
+  .breadcrumb-sp{display:block}
+
+  /* ---- 関連バナー ---- */
+  .related-banner{
+    padding:32px 20px;
+  }
+  .related-banner-inner{
+    flex-direction:column;
+    gap:20px;
+  }
+  .related-banner-left{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:12px;
+  }
+  .related-banner-btn{
+    width:100%;
+    justify-content:center;
+    padding:14px 20px;
+  }
+
+  /* ---- 関連記事グリッド ---- */
+  .related-sec{
+    padding:48px 20px;
+  }
+  .related-grid{
+    grid-template-columns:1fr;
+    gap:16px;
+  }
+
+  /* ---- 会社概要テーブル ---- */
+  .overview{
+    padding:56px 20px;
+  }
+  .overview-table th{
+    width:100px;
+    padding:16px 12px;
+    font-size:12px;
+  }
+  .overview-table td{
+    padding:16px 12px;
+    font-size:14px;
+  }
+
+  /* ---- アクセス ---- */
+  .access{
+    padding:56px 20px;
+  }
+  .access-body{
+    grid-template-columns:1fr;
+    gap:32px;
+  }
+
+  /* ---- CTAセクション（下層ページ用） ---- */
+  .cta-section{
+    padding:48px 20px;
+  }
+  .cta-section-title{
+    font-size:clamp(22px,6.5vw,34px);
+  }
+  .cta-section-sub{
+    font-size:14px;
+  }
+  .cta-section-actions{
+    flex-direction:column;
+    align-items:center;
+    gap:16px;
+  }
+  .cta-section-btn{
+    width:100%;
+    max-width:320px;
+    justify-content:center;
+  }
+
+  /* ---- ABOUT ミッション ---- */
+  .about-mission{
+    padding:56px 20px;
+  }
+
+  /* ---- v2系セクション（下層ページ） ---- */
+  .v2-works-sec{
+    padding:56px 20px;
+  }
+  .v2-works-head{
+    margin-bottom:32px;
+  }
+  .v2-works-grid{
+    grid-template-columns:1fr;
+  }
+  .v2-works-card{
+    padding:32px 20px 40px;
+    border-right:none;
+    border-bottom:1px solid #E0E0E0;
+  }
+  .v2-works-card:last-child{
+    border-bottom:none;
+  }
+
+  .v2-prob-sec{
+    padding:56px 20px 0;
+  }
+  .v2-prob-head{
+    margin-bottom:32px;
+  }
+  .v2-prob-grid{
+    grid-template-columns:1fr;
+  }
+  .v2-prob-card{
+    padding:32px 20px;
+    border-right:none;
+    border-bottom:1px solid #E0E0E0;
+  }
+  .v2-prob-card:last-child{
+    border-bottom:none;
+  }
+  .v2-prob-sum{
+    padding:40px 20px;
+  }
+
+  /* ---- v2 CTA ---- */
+  .v2-cta-sec{
+    padding:48px 20px;
+  }
+  .v2-cta-box{
+    padding:28px 20px;
+    width:100%;
+    box-sizing:border-box;
+  }
+  .v2-cta-btns{
+    flex-direction:column;
+    align-items:center;
+    gap:12px;
+  }
+  .v2-cta-btn-web,
+  .v2-cta-btn-tel{
+    width:100%;
+    max-width:320px;
+    justify-content:center;
+  }
+
+  /* ---- ソリューションセクション ---- */
+  .solution-sec{
+    padding:56px 20px;
+  }
+  .solution-head{
+    margin-bottom:32px;
+  }
+  .solution-head-reason{
+    padding:16px;
+  }
+  .solution-head-reason-q{
+    font-size:18px;
+  }
+
+  /* ---- ファネルセクション ---- */
+  .funnel-sec{
+    padding:56px 20px;
+  }
+  .funnel-head .sec-h2{
+    font-size:clamp(28px,8vw,44px);
+  }
+  .funnel-layout{
+    grid-template-columns:1fr;
+    gap:32px;
+    margin-top:40px;
+  }
+  .funnel-visual{
+    position:static;
+    padding-right:0;
+  }
+  .funnel-shape{
+    max-width:280px;
+    margin:0 auto;
+  }
+  .funnel-bar{
+    height:56px;
+  }
+  .funnel-stage{
+    padding:28px 20px;
+  }
+  .funnel-stage-num{
+    font-size:clamp(40px,10vw,64px);
+    top:20px;
+    right:20px;
+  }
+  .funnel-stage-title{
+    font-size:clamp(18px,5vw,24px);
+  }
+
+  /* ---- ミスセクション（WEB広告ページ等） ---- */
+  .myth-sec{
+    padding:56px 20px;
+  }
+  .myth-head{
+    margin-bottom:40px;
+  }
+  .myth-grid{
+    grid-template-columns:1fr;
+    gap:2px;
+  }
+  .myth-card{
+    padding:28px 20px;
+  }
+  .myth-card-num{
+    font-size:36px;
+  }
+
+  /* ---- WHYセクション ---- */
+  .why-sec{
+    padding:56px 20px;
+  }
+  .why-head{
+    margin-bottom:40px;
+  }
+  .why-grid{
+    grid-template-columns:1fr;
+    gap:2px;
+  }
+  .why-card{
+    padding:28px 20px;
+  }
+  .why-card-num{
+    font-size:36px;
+  }
+
+  /* ---- 課題解決バナー ---- */
+  .problem-resolve{
+    padding:40px 20px;
+  }
+  .problem-resolve-main{
+    font-size:clamp(18px,5.5vw,26px);
+  }
+
+  /* ---- インタビューセクション ---- */
+  .interview-sec{
+    padding:0 20px 64px;
+  }
+  .interview-item{
+    grid-template-columns:1fr;
+    gap:32px;
+    padding:40px 0;
+  }
+  .interview-item:nth-child(even) .interview-body{order:1;}
+  .interview-item:nth-child(even) .interview-img{order:2;}
+  .interview-q{
+    font-size:16px;
+  }
+
+  /* ---- 戻るリンク ---- */
+  .back-sec{
+    padding:0 20px 48px;
+  }
+
+  /* ---- 実績一覧ページ ---- */
+  .works-list-sec{
+    padding:48px 20px 64px;
+  }
+  .works-grid{
+    grid-template-columns:1fr;
+  }
+  .work-card{
+    border-right:none;
+    border-bottom:1px solid #E8E8E8;
+  }
+  .work-card:last-child{
+    border-bottom:none;
+  }
+
+  /* ---- wall-card-header 数字サイズ ---- */
+  .wall-card-header-num,
+  .wall-card-header-cat{
+    font-size:clamp(28px,7vw,44px);
+  }
+
+  /* ---- kv-h1-line2（サブタイトル行） ---- */
+  .kv-h1-line2{
+    font-size:clamp(20px,5.5vw,32px);
+    white-space:normal;
+    word-break:break-word;
+  }
+
+  /* ---- SEOバナー ---- */
+  .seo-banner{
+    padding:24px 20px;
+  }
+  .seo-banner-inner{
+    flex-direction:column;
+    gap:16px;
+  }
+  .seo-banner-btn{
+    width:100%;
+    justify-content:center;
+  }
+
+  /* ---- ブログセクション ---- */
+  .blog-sec{
+    padding:56px 20px;
+  }
+  .blog-grid{
+    grid-template-columns:1fr;
+  }
+  .blog-card{
+    border-right:none;
+    border-bottom:1px solid #E0E0E0;
+    padding:28px 20px 32px;
+  }
+  .blog-card:last-child{
+    border-bottom:none;
+  }
+
+  /* ---- 実績カード（works-card） ---- */
+  .works-card{
+    border-right:none;
+    border-bottom:1px solid #E0E0E0;
+  }
+  .works-card:last-child{
+    border-bottom:none;
+  }
+
+}
+/* ================================================================
+   END SP最適化
+   ================================================================ */
