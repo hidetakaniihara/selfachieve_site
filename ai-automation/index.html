@@ -53,6 +53,17 @@
 body {
   font-size: 14px;
 }
+/* ===== SECTION: 左右paddingをセクションレベルから削除しinnerで管理 ===== */
+.v2-works-sec,
+.v2-prob-sec,
+.v2-sol-sec,
+.v2-feat-sec,
+.v2-cases-sec,
+.v2-flow-sec,
+.v2-price-sec {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
 /* ===== SECTION INNER: 余白統一 ===== */
 .v2-works-inner,
 .v2-prob-inner,
@@ -61,13 +72,13 @@ body {
 .v2-cases-inner,
 .v2-flow-inner,
 .v2-price-inner,
-.v2-faq-inner,
 .faq-head,
 .faq-list,
 .voice-head,
 .voice-grid,
 .area-inner,
 .blog-inner {
+  max-width: none !important;
   padding-left: 80px !important;
   padding-right: 80px !important;
   box-sizing: border-box !important;
@@ -80,7 +91,6 @@ body {
   .v2-cases-inner,
   .v2-flow-inner,
   .v2-price-inner,
-  .v2-faq-inner,
   .faq-head,
   .faq-list,
   .voice-head,
