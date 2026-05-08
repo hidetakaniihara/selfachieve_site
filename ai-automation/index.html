@@ -8,6 +8,141 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AI業務自動化・業務効率化支援 | 中小企業向けAI活用代行 | セルフアチーブ</title>
     <link rel="stylesheet" href="../assets/style.css">
+  <style>
+/* ===== KV: ai-seo準拠 ===== */
+.kv-right { display: none !important; }
+.kv-splash { display: none !important; }
+.kv-actions { display: none !important; }
+.kv {
+  min-height: auto !important;
+  padding: var(--kv-padding-v, 72px) 80px !important;
+}
+@media (min-width: 769px) {
+  .kv .kv-inner {
+    grid-template-columns: 1fr !important;
+    max-width: 1400px !important;
+  }
+  .kv .kv-h1 {
+    font-size: clamp(40px, 6vw, 88px) !important;
+    line-height: 1.2 !important;
+    letter-spacing: -0.04em !important;
+    margin-bottom: 32px !important;
+  }
+  .kv .kv-eyebrow {
+    font-size: clamp(28px, 4vw, 56px) !important;
+    font-weight: 900 !important;
+    letter-spacing: -0.02em !important;
+    color: #ffffff !important;
+    margin-bottom: 20px !important;
+    gap: 20px !important;
+  }
+  .kv .kv-eyebrow::before {
+    display: none !important;
+  }
+  .kv .kv-sub {
+    margin-bottom: 0 !important;
+  }
+}
+@media (max-width: 768px) {
+  .kv {
+    padding: var(--kv-padding-v-sp, 56px) 24px !important;
+    min-height: auto !important;
+  }
+}
+/* ===== FONT SIZE: 最低14px保証 ===== */
+body {
+  font-size: 14px;
+}
+/* ===== SECTION INNER: 余白統一 ===== */
+.v2-works-inner,
+.v2-prob-inner,
+.v2-sol-inner,
+.v2-feat-inner,
+.v2-cases-inner,
+.v2-flow-inner,
+.v2-price-inner,
+.v2-faq-inner,
+.faq-head,
+.faq-list,
+.area-inner,
+.blog-inner {
+  padding-left: 80px !important;
+  padding-right: 80px !important;
+  box-sizing: border-box !important;
+}
+@media (max-width: 768px) {
+  .v2-works-inner,
+  .v2-prob-inner,
+  .v2-sol-inner,
+  .v2-feat-inner,
+  .v2-cases-inner,
+  .v2-flow-inner,
+  .v2-price-inner,
+  .v2-faq-inner,
+  .faq-head,
+  .faq-list,
+  .area-inner,
+  .blog-inner {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+}
+/* ===== RELATED-TWO: 2列カード ===== */
+.related-two-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.related-two-card {
+  display: block;
+  border: 1px solid rgba(255,255,255,.18);
+  padding: 32px;
+  text-decoration: none;
+  transition: background .2s, border-color .2s;
+}
+.related-two-card:hover {
+  background: rgba(255,255,255,.06);
+  border-color: rgba(255,255,255,.4);
+}
+.related-two-icon {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 16px;
+}
+.related-two-icon svg {
+  width: 40px;
+  height: 40px;
+  stroke: rgba(255,255,255,.7);
+}
+.related-two-title {
+  font-size: clamp(22px, 2.4vw, 32px);
+  font-weight: 900;
+  color: #ffffff;
+  line-height: 1.4;
+  margin-bottom: 10px;
+}
+.related-two-sub {
+  font-size: 16px;
+  color: #ffffff;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+.related-two-btn {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 700;
+  color: #ffffff;
+  border-bottom: 1px solid rgba(255,255,255,.4);
+  padding-bottom: 2px;
+  letter-spacing: .04em;
+}
+@media (max-width: 767px) {
+  .related-two { padding: 32px 20px !important; }
+  .related-two-grid { grid-template-columns: 1fr; gap: 16px; }
+}
+  </style>
   <meta name="description" content="繰り返し作業・手動集計・属人化など、社内業務のAI自動化・最適化を相談から構築・運用まで一貫支援。神戸・兵庫の中小企業向けAI業務効率化サービス。初回無料相談。">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://selfachieve.jp/ai-automation/">
@@ -701,22 +836,27 @@
   </div>
 </section>
 
-<!-- RELATED BANNER -->
-<div class="related-banner">
-  <div class="related-banner-inner">
-    <div class="related-banner-left">
-      <div class="related-banner-icon" aria-hidden="true">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#28282D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+<!-- RELATED SERVICE -->
+<div class="related-two" style="background:#28282D;border-top:none;padding:40px 80px;">
+  <p class="seo-banner-label" style="color:rgba(255,255,255,.45);font-size:10px;letter-spacing:.22em;font-weight:700;text-transform:uppercase;display:block;margin-bottom:24px;">RELATED SERVICE</p>
+  <div class="related-two-grid">
+    <!-- SEO -->
+    <a href="../seo/" class="related-two-card">
+      <div class="related-two-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.7)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
       </div>
-      <div>
-        <span class="related-banner-label">RELATED SERVICE</span>
-        <p class="related-banner-text">AI検索対策（LLM対策）にも対応しています。</p>
-        <p class="related-banner-sub">ChatGPT・Geminiなどのai検索に自社を表示させる集客施策です。</p>
+      <p class="related-two-title">SEO対策（Google検索）も全力で対応できます。</p>
+      <p class="related-two-sub">AI業務自動化と併せて、検索エンジンからの集客も同時に強化できます。</p>
+      <span class="related-two-btn">SEO対策ページを見る →</span>
+    </a>
+    <!-- AI検索対策 -->
+    <a href="../ai-seo/" class="related-two-card">
+      <div class="related-two-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.7)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10"/><path d="M12 6v6l4 2"/><circle cx="19" cy="5" r="3"/></svg>
       </div>
-    </div>
-    <a href="../ai-seo/" class="related-banner-btn">
-      AI検索対策ページを見る
-      <span class="related-banner-arrow" aria-hidden="true"></span>
+      <p class="related-two-title">AI検索対策（LLM対策）も全力で対応できます。</p>
+      <p class="related-two-sub">ChatGPT・GeminiなどのAI検索に自社を表示させる集客施策です。</p>
+      <span class="related-two-btn">AI検索対策ページを見る →</span>
     </a>
   </div>
 </div>
