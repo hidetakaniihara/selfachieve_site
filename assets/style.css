@@ -8954,6 +8954,83 @@ a.wall-tag:hover{background:#28282D;color:#fff;}
   }
 
 
+  /* ---- SPドロワー 改善デザイン ---- */
+
+  /* ドロワー全体背景 */
+  .hd-drawer{
+    background:#f8f8f8;
+  }
+
+  /* 各メニュー項目の区切り */
+  .hd-drawer-item{
+    border-bottom:1px solid #e8e8e8;
+  }
+
+  /* トップレベルリンク */
+  .hd-drawer-link{
+    font-size:15px;
+    font-weight:600;
+    color:#1a1a1e;
+    padding:16px 20px;
+    background:#fff;
+  }
+
+  /* アコーディオン矢印 */
+  .hd-drawer-link::after{
+    border-right:1.5px solid #1a1a1e;
+    border-bottom:1.5px solid #1a1a1e;
+  }
+
+  /* サブメニュー背景 */
+  .hd-drawer-sub{
+    background:#fff;
+    padding:4px 0 8px;
+    border-top:1px solid #f0f0f0;
+  }
+
+  /* カテゴリー見出し：左ボーダー＋太字で階層を明示 */
+  .hd-drawer-sub-label{
+    display:block;
+    font-size:11px;
+    font-weight:700;
+    color:#1a1a1e;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    padding:16px 20px 6px 20px;
+    margin-top:4px;
+    border-left:3px solid #1a1a1e;
+    margin-left:16px;
+    margin-right:16px;
+  }
+
+  /* サブリンク：14px・インデント揃え */
+  .hd-drawer-sub a{
+    font-size:14px;
+    font-weight:400;
+    color:#444;
+    padding:12px 20px 12px 36px;
+    border-bottom:1px solid #f4f4f4;
+  }
+  .hd-drawer-sub a:last-child{
+    border-bottom:none;
+  }
+
+  /* アコーディオンボタン（WEB広告等）*/
+  .hd-drawer-accordion-btn{
+    font-size:14px;
+    color:#444;
+    padding:12px 20px 12px 36px;
+    border-bottom:1px solid #f4f4f4;
+  }
+
+  /* アコーディオンサブリンク */
+  .hd-drawer-accordion-sub a{
+    font-size:13px !important;
+    padding-left:52px !important;
+    color:#666 !important;
+  }
+
+
 }
 /* ================================================================
    END SP最適化
