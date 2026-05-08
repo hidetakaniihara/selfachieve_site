@@ -8956,29 +8956,27 @@ a.wall-tag:hover{background:#28282D;color:#fff;}
   /* ---- ドロワーメニュー カテゴリー見出し ---- */
   .hd-drawer-sub-label{
     display:flex;
-    flex-direction:column;
-    gap:3px;
+    align-items:center;
+    justify-content:space-between;
     background:#000000;
-    padding:10px 15px;
-    margin:20px 0 8px;
-    border-radius:2px;
-    text-align:left;
-  }
-  .hd-drawer-sub-main{
-    display:block;
-    font-size:14px;
-    font-weight:900;
     color:#ffffff;
-    letter-spacing:.02em;
-    line-height:1.3;
-  }
-  .hd-drawer-sub-desc{
-    display:block;
-    font-size:10px;
-    font-weight:400;
-    color:#aaaaaa;
+    padding:8px 12px;
+    margin:24px 0 8px;
+    font-size:13px;
+    font-weight:900;
+    border-radius:2px;
     letter-spacing:.02em;
     line-height:1.4;
+  }
+  .hd-drawer-sub-label .sub-text{
+    font-size:10px;
+    font-weight:500;
+    color:#999999;
+    letter-spacing:.01em;
+    white-space:nowrap;
+  }
+  .hd-drawer-sub a{
+    padding-left:22px;
   }
 
 }
