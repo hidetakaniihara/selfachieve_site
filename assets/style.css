@@ -8983,9 +8983,13 @@ a.wall-tag:hover{background:#28282D;color:#fff;}
 
   /* サブメニュー背景 */
   .hd-drawer-sub{
+    display:none;
     background:#fff;
     padding:4px 0 8px;
     border-top:1px solid #f0f0f0;
+  }
+  .hd-drawer-sub.open{
+    display:block;
   }
 
   /* カテゴリー見出し：左ボーダー＋太字で階層を明示 */
