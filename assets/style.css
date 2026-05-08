@@ -290,6 +290,48 @@ ul,ol{list-style:none}
       border-bottom:1px solid #EFEFEF;
     }
 .hd-drawer-sub a:last-child{border-bottom:none}
+/* WEB広告アコーディオン */
+.hd-drawer-accordion{}
+.hd-drawer-accordion-btn{
+  display:flex;align-items:center;justify-content:space-between;
+  width:100%;padding:13px 24px 13px 36px;
+  font-size:13px;color:#28282D;
+  background:none;border:none;cursor:pointer;
+  border-bottom:1px solid #E8E8E8;
+  text-align:left;
+  font-family:inherit;
+}
+.hd-drawer-accordion-btn:hover{color:#000;background:none}
+.hd-drawer-accordion-icon{
+  transition:transform .25s;
+  flex-shrink:0;
+}
+.hd-drawer-accordion-btn.open .hd-drawer-accordion-icon{
+  transform:rotate(180deg);
+}
+.hd-drawer-accordion-sub{
+  display:none;
+  background:#EFEFEF;
+}
+.hd-drawer-accordion-sub.open{display:block}
+.hd-drawer-accordion-sub a{
+  padding-left:48px !important;
+  font-size:12px !important;
+  color:#555 !important;
+}
+/* PCメガメニュー WEB広告サブラベル */
+.hd-mega-sub-label{
+  display:block;
+  font-size:11px;letter-spacing:.08em;
+  color:#999;padding:10px 0 2px;
+  text-transform:uppercase;
+  font-weight:500;
+}
+.hd-mega-sub-link{
+  padding-left:10px !important;
+  font-size:12px !important;
+  color:#666 !important;
+}
 .hd-drawer-sub-label{
       font-size:11px;letter-spacing:.1em;
       color:#767680;padding:12px 24px 4px 36px;
