@@ -310,10 +310,10 @@ ul,ol{list-style:none}
   transform:rotate(180deg);
 }
 .hd-drawer-accordion-sub{
-  display:none;
+  display:none !important;
   background:#EFEFEF;
 }
-.hd-drawer-accordion-sub.open{display:block}
+.hd-drawer-accordion-sub.open{display:block !important}
 .hd-drawer-accordion-sub a{
   padding-left:48px !important;
   font-size:12px !important;
