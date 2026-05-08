@@ -379,8 +379,13 @@
       <a href="../../sns/youtube/">YouTube</a>
       <a href="../../sns/note/">note</a>
       <a href="../../sns/line/">LINE</a>
-      <p class="hd-drawer-sub-label">WEB広告</p>
-      <a href="../../ads/display/">ディスプレイ広告</a>
+      <div class="hd-drawer-accordion">
+        <button class="hd-drawer-accordion-btn" type="button">WEB広告<svg class="hd-drawer-accordion-icon" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="hd-drawer-accordion-sub">
+          <a href="../../listing/">リスティング広告</a>
+          <a href="../../ads/display/">ディスプレイ広告</a>
+        </div>
+      </div>
       <p class="hd-drawer-sub-label">AX・業務改善</p>
       <a href="../../ai-automation/">AI業務効率化・導入支援</a>
     </div>
@@ -695,6 +700,15 @@ document.querySelectorAll('.fu').forEach(el=>obs.observe(el));
     if(window.scrollY>300&&!shown){cta.classList.add('visible');shown=true;}
   },{passive:true});
 })();
+  // WEB広告ネストアコーディオン（全ドロワー共通）
+  document.querySelectorAll('.hd-drawer-accordion-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const sub = btn.nextElementSibling;
+      const isOpen = btn.classList.toggle('open');
+      sub.classList.toggle('open', isOpen);
+    });
+  });
 </script>
 </body>
 </html>

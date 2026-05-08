@@ -384,7 +384,11 @@
           <span class="hd-mega-col-label"><span class="col-label-main">集客</span><span class="col-label-sub">（サイトへの訪問者を増やしたい）</span></span>
           <a href="../seo/" role="menuitem">SEO対策</a>
           <a href="../meo/" role="menuitem">MEO対策</a>
-          <a href="../ads/" role="menuitem">WEB広告</a>
+          <button class="hd-mega-accordion-btn" type="button">WEB広告<svg class="hd-mega-accordion-icon" width="10" height="10" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <div class="hd-mega-accordion-sub">
+            <a href="../listing/" role="menuitem" class="hd-mega-sub-link">リスティング広告</a>
+            <a href="../ads/display/" role="menuitem" class="hd-mega-sub-link">ディスプレイ広告</a>
+          </div>
           <a href="../sns/" role="menuitem">SNSマーケティング</a>
           <a href="../sns/note/" role="menuitem">note対策</a>
           <a href="../ai-seo/" role="menuitem">AI検索対策（LLM対策）</a>
@@ -428,7 +432,11 @@
           <span class="hd-mega-col-label"><span class="col-label-main">集客施策</span></span>
           <a href="../seo/" role="menuitem">SEO対策</a>
           <a href="../meo/" role="menuitem">MEO対策</a>
-          <a href="../ads/" role="menuitem">WEB広告</a>
+          <button class="hd-mega-accordion-btn" type="button">WEB広告<svg class="hd-mega-accordion-icon" width="10" height="10" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <div class="hd-mega-accordion-sub">
+            <a href="../listing/" role="menuitem" class="hd-mega-sub-link">リスティング広告</a>
+            <a href="../ads/display/" role="menuitem" class="hd-mega-sub-link">ディスプレイ広告</a>
+          </div>
           <a href="../sns/" role="menuitem">SNSマーケティング</a>
           <a href="../sns/note/" role="menuitem">note対策</a>
           <a href="../ai-seo/" role="menuitem">AI検索対策（LLM対策）</a>
@@ -1064,6 +1072,24 @@
     });
   })();
 (function(){const cta=document.getElementById('sp-fixed-cta');if(!cta)return;let shown=false;window.addEventListener('scroll',()=>{if(window.scrollY>300&&!shown){cta.classList.add('visible');shown=true;}},{passive:true});})();
+  // PCメガメニューWEB広告アコーディオン
+  document.querySelectorAll('.hd-mega-accordion-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const sub = btn.nextElementSibling;
+      const isOpen = btn.classList.toggle('open');
+      sub.classList.toggle('open', isOpen);
+    });
+  });
+  // WEB広告ネストアコーディオン（全ドロワー共通）
+  document.querySelectorAll('.hd-drawer-accordion-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const sub = btn.nextElementSibling;
+      const isOpen = btn.classList.toggle('open');
+      sub.classList.toggle('open', isOpen);
+    });
+  });
 </script>
 </body>
 </html>
