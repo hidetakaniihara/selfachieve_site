@@ -107,6 +107,18 @@ body {
   line-height: 1.25 !important;
   letter-spacing: -.03em !important;
 }
+/* ===== V2-PROB-SUM: sec-h2と同じフォントサイズ ===== */
+.v2-prob-sum p {
+  font-size: var(--sec-h2-size, clamp(36px, 4.2vw, 60px)) !important;
+  font-weight: 900 !important;
+  line-height: 1.2 !important;
+  letter-spacing: -.04em !important;
+}
+@media (max-width: 768px) {
+  .v2-prob-sum p {
+    font-size: var(--sec-h2-size-sp, clamp(28px, 7.5vw, 44px)) !important;
+  }
+}
 /* ===== RELATED-TWO: 2列カード ===== */
 .related-two-grid {
   display: grid;
