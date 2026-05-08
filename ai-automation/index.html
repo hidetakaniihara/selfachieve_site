@@ -108,6 +108,15 @@ body {
   letter-spacing: -.03em !important;
 }
 /* ===== V2-SOL-SUB-HEAD: 「この様なことをご支援できます。」見出し ===== */
+.v2-sol-sub-desc {
+  display: block;
+  font-size: clamp(18px, 2vw, 24px);
+  font-weight: 400;
+  letter-spacing: -.01em;
+  color: #4A4A50;
+  margin-top: 12px;
+  line-height: 1.5;
+}
 .v2-sol-sub-head {
   font-size: var(--sec-h2-size, clamp(36px, 4.2vw, 60px));
   font-weight: 900;
@@ -580,7 +589,7 @@ body {
   <div class="problem-inner">
     <div class="problem-head fu">
       <span class="sec-eyebrow">Works</span>
-      <h2 class="sec-h2" id="works-h2-auto">導入実績</h2>
+      <h2 class="sec-h2" id="works-h2-auto">AI導入の実績</h2>
     </div>
     <div class="problem-cards">
       <div class="problem-card fu">
@@ -656,15 +665,7 @@ body {
 <!-- SOLUTIONS SECTION (v2) -->
 <section class="v2-sol-sec" aria-labelledby="v2-sol-h2">
   <div class="v2-sol-inner">
-    <div class="v2-sol-top fu">
-      <div>
-        <div class="v2-sol-en">Solutions</div>
-        <div class="v2-sol-bar"></div>
-        <h2 class="v2-sol-ttl" id="v2-sol-h2">相談だけで終わらず、<br>構築と運用まで。</h2>
-        <p class="v2-sol-desc">相談から構築・運用まで、一貫して伴走しながら進めます。</p>
-      </div>
-    </div>
-    <p class="v2-sol-sub-head fu">この様なことをご支援できます。</p>
+    <p class="v2-sol-sub-head fu">この様なことをご支援できます。<br><span class="v2-sol-sub-desc">相談だけで終わらず、構築と運用まで。</span></p>
     <div class="v2-svc-grid">
       <div class="v2-svc-card fu">
         <div class="v2-svc-ico">
