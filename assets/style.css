@@ -8953,31 +8953,6 @@ a.wall-tag:hover{background:#28282D;color:#fff;}
     border-bottom:none;
   }
 
-  /* ---- ドロワーメニュー カテゴリー見出し ---- */
-  .hd-drawer-sub-label{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    background:#000000;
-    color:#ffffff;
-    padding:8px 12px;
-    margin:24px 0 8px;
-    font-size:13px;
-    font-weight:900;
-    border-radius:2px;
-    letter-spacing:.02em;
-    line-height:1.4;
-  }
-  .hd-drawer-sub-label .sub-text{
-    font-size:10px;
-    font-weight:500;
-    color:#999999;
-    letter-spacing:.01em;
-    white-space:nowrap;
-  }
-  .hd-drawer-sub a{
-    padding-left:22px;
-  }
 
 }
 /* ================================================================
