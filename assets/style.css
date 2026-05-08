@@ -513,7 +513,6 @@ ul,ol{list-style:none}
     }
 .notice-bar-all:hover{color:#28282D}
 .notice-bar-arrow{display:inline-block;margin-left:6px;font-size:10px}
-}
 
     
     .sec-head{
@@ -7456,8 +7455,6 @@ a.funnel-stage-service-tag:hover{
     .notice-bar-all:hover{color:#28282D}
     .notice-bar-arrow{display:inline-block;margin-left:6px;font-size:10px}
 
-}
-
     /* SECTION COMMON */
     .sec-head{
       display:flex;align-items:flex-start;gap:72px;
@@ -8180,6 +8177,7 @@ a.funnel-stage-service-tag:hover{
     @media(max-width:900px){
       .hd{padding:0 20px;height:60px}.hd-logo img{height:28px}.hd-nav{display:none}
       .hd-hamburger{display:flex}
+      .hd-drawer{display:block}
       .hd-btns{display:none}
       .kv{padding:40px 24px 60px}
       .kv-stats{display:flex;flex-direction:row;gap:0;margin-top:40px;max-width:100%;border-top:1px solid #E0E0E4;padding-top:32px}
