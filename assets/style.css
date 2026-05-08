@@ -322,15 +322,25 @@ ul,ol{list-style:none}
 /* PCメガメニュー WEB広告アコーディオン */
 .hd-mega-accordion-btn{
   display:flex;align-items:center;justify-content:space-between;
-  width:100%;padding:8px 0 6px;
-  font-size:11px;letter-spacing:.08em;
-  color:#999;text-transform:uppercase;font-weight:500;
-  background:none;border:none;cursor:pointer;
-  font-family:inherit;
-  border-bottom:1px solid #E8E8E8;
-  margin-top:6px;
+  width:100%;padding:12px 0;
+  font-size:16px;
+  color:#28282D;
+  background:none;border:none;border-bottom:1px solid #F0F0F0;cursor:pointer;
+  font-family:inherit;font-weight:400;
+  white-space:nowrap;
+  gap:6px;
 }
-.hd-mega-accordion-btn:hover{color:#555;}
+.hd-mega-accordion-btn:hover{color:#000;}
+.hd-mega-accordion-btn::before{
+  content:'';
+  width:4px;height:4px;
+  border-radius:50%;
+  background:#1A1A1E;
+  flex-shrink:0;
+  opacity:.25;
+  transition:opacity .15s;
+}
+.hd-mega-accordion-btn:hover::before{opacity:1;}
 .hd-mega-accordion-icon{
   transition:transform .2s;
   flex-shrink:0;
