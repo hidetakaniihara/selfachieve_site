@@ -513,12 +513,14 @@ ul,ol{list-style:none}
     }
 .notice-bar-all:hover{color:#28282D}
 .notice-bar-arrow{display:inline-block;margin-left:6px;font-size:10px}
+}
 
     
     .sec-head{
       display:flex;align-items:flex-start;gap:72px;
       padding:120px 80px 80px;
       border-top:1px solid #E8E8E8;
+    }
 .sec-head-body{padding-top:4px}
 .sec-eyebrow{font-size:12px;letter-spacing:.15em;color:#767680;margin-bottom:20px}
 .sec-h2{
