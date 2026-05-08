@@ -107,6 +107,21 @@ body {
   line-height: 1.25 !important;
   letter-spacing: -.03em !important;
 }
+/* ===== V2-SOL-SUB-HEAD: 「この様なことをご支援できます。」見出し ===== */
+.v2-sol-sub-head {
+  font-size: var(--sec-h2-size, clamp(36px, 4.2vw, 60px));
+  font-weight: 900;
+  line-height: 1.2;
+  letter-spacing: -.04em;
+  color: #28282D;
+  margin: 64px 0 48px;
+}
+@media (max-width: 768px) {
+  .v2-sol-sub-head {
+    font-size: var(--sec-h2-size-sp, clamp(28px, 7.5vw, 44px));
+    margin: 40px 0 32px;
+  }
+}
 /* ===== V2-PROB-SUM: sec-h2と同じフォントサイズ ===== */
 .v2-prob-sum p {
   font-size: var(--sec-h2-size, clamp(36px, 4.2vw, 60px)) !important;
@@ -648,10 +663,8 @@ body {
         <h2 class="v2-sol-ttl" id="v2-sol-h2">相談だけで終わらず、<br>構築と運用まで。</h2>
         <p class="v2-sol-desc">単なるツール紹介ではなく、現状の業務整理から始め、何をどんなふうにAI化できるかを見立て、要件定義・構築・実装、さらに<span class="t">運用フォロー</span>まで対応します。</p>
       </div>
-      <div style="background:#EDEDEE;display:flex;align-items:center;justify-content:center;min-height:240px;">
-        <svg width="120" height="120" viewBox="0 0 120 120" fill="none"><circle cx="60" cy="60" r="58" stroke="#28282D" stroke-width="2" stroke-dasharray="8 4"/><circle cx="60" cy="60" r="40" fill="#D8D8DC"/><path d="M44 60l10 10 22-22" stroke="#28282D" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </div>
     </div>
+    <p class="v2-sol-sub-head fu">この様なことをご支援できます。</p>
     <div class="v2-svc-grid">
       <div class="v2-svc-card fu">
         <div class="v2-svc-ico">
