@@ -2589,6 +2589,10 @@ a.challenge-tag:hover{
       .footer-nav{grid-template-columns:1fr;gap:24px}
       .footer-nav-group a{font-size:14px}
       .footer-bottom{flex-direction:column-reverse;gap:12px;text-align:center}
+      /* challenge推奨施策タグ: SP 2列表示 */
+      .challenge-split-tags{flex-direction:row!important;flex-wrap:wrap!important}
+      .challenge-split-tags .challenge-tag{width:50%!important;box-sizing:border-box!important}
+      .challenge-tags-wrap .challenge-tag{width:50%!important;font-size:13px!important;padding:10px 10px!important}
     }
 .hd-mega-wrap::before{content:'';position:absolute;top:-14px;left:0;right:0;height:14px;}
 
