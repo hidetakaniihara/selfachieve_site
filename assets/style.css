@@ -9592,6 +9592,9 @@ a.wall-tag:hover{background:#28282D;color:#fff;}
   .page-title{
     font-size:clamp(32px,8.5vw,56px);
   }
+  .contact-wrap{
+    padding:40px 16px 80px;
+  }
 
   /* --- interview 系 --- */
   .interview-sec{
