@@ -2273,6 +2273,7 @@ a.challenge-tag:hover{
       .case-sec{padding:56px 0}
       .case-inner{padding:0}
       .case-head{padding:0 20px;margin-bottom:32px}
+      .case-head .sec-h2{margin-bottom:16px;}
       .case-grid{
         display:flex;
         overflow-x:auto;
