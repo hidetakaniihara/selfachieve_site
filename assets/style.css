@@ -5111,13 +5111,17 @@ main{padding-top:72px;}
       margin-bottom:28px;flex:1;
     }
 .sns-axis-anchor{
-      display:inline-flex;align-items:center;gap:8px;
-      font-size:13px;font-weight:700;color:#28282D;
-      letter-spacing:.04em;
-      transition:opacity .2s;
+      display:inline-flex;align-items:center;justify-content:center;gap:8px;
+      font-size:14px;font-weight:700;color:#fff;
+      letter-spacing:.06em;
+      background:#28282D;
+      border:1.5px solid #28282D;
+      padding:14px 28px;
+      margin-top:8px;
+      transition:background .2s,color .2s;
     }
-.sns-axis-anchor::after{content:'↓'}
-.sns-axis-anchor:hover{opacity:.5}
+.sns-axis-anchor::after{content:'↓';font-size:12px;}
+.sns-axis-anchor:hover{background:#fff;color:#28282D;}
 .sns-account-sec{
       background:#F7F7F5;
       padding:100px 80px;
