@@ -9609,7 +9609,8 @@ a.wall-tag:hover{background:#28282D;color:#fff;}
   }
   .result-card-full{
     border-right:none;
-    border-bottom:1px solid rgba(255,255,255,.12);
+    border-bottom:3px solid rgba(255,255,255,.25);
+    padding-bottom:0;
   }
   .result-card-full:last-child{
     border-bottom:none;
