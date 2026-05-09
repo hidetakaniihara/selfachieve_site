@@ -327,14 +327,29 @@
 .case-grid .case-card-result {
   margin-top: auto;
 }
-/* SP: 1列 */
+/* SP: スワイプ仕様 */
 @media (max-width: 767px) {
   .case-grid-wrap {
-    padding: 0 16px 0;
+    padding: 0;
+    overflow: hidden;
   }
   .case-grid {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
     gap: 16px;
+    padding: 0 16px 16px;
+    grid-template-columns: unset;
+  }
+  .case-grid::-webkit-scrollbar {
+    display: none;
+  }
+  .case-grid .case-card {
+    flex: 0 0 80vw;
+    max-width: 320px;
+    scroll-snap-align: start;
   }
 }
   </style>
