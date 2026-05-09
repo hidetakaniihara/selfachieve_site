@@ -4253,10 +4253,10 @@ main{padding-top:72px;}
       padding:36px 40px;background:#F7F7F7;border:1px solid #E8E8E8;
       flex-wrap:wrap;
     }
-.contact-tel-label{font-size:14px;letter-spacing:.08em;color:#4A4A52;font-weight:600}
+.contact-tel-label{font-size:clamp(22px,2.4vw,32px);font-weight:700;letter-spacing:-.02em;color:#28282D;margin-bottom:8px;}
 .contact-tel-num{
-      font-size:clamp(36px,4.5vw,52px);font-weight:700;letter-spacing:-.02em;color:#28282D;
-      text-decoration:none;transition:opacity .2s;
+      font-size:clamp(36px,4.2vw,60px);font-weight:900;letter-spacing:-.04em;color:#28282D;
+      text-decoration:none;transition:opacity .2s;display:block;margin-bottom:4px;
     }
 .contact-tel-num:hover{opacity:.6}
 .contact-tel-hours{font-size:16px;color:#767680;margin-top:6px}
