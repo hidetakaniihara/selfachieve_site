@@ -1351,6 +1351,11 @@ a.challenge-tag:hover{
     }
 @media(min-width:769px){
       .sp-fixed-cta{display:none!important}
+      /* results-gallery-full PC用余白 */
+      .results-gallery-full{
+        gap:0 32px;
+        padding:0 80px;
+      }
     }
 @media(max-width:768px){
       .sp-fixed-cta{display:block}
@@ -4831,8 +4836,6 @@ main{padding-top:72px;}
   display:grid;
   grid-template-columns:repeat(3,1fr);
   border-top:1px solid rgba(255,255,255,.12);
-  gap:0 32px;
-  padding:0 80px;
 }
 .result-card-full{
   overflow:hidden;
