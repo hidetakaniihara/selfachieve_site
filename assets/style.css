@@ -9100,7 +9100,401 @@ a.wall-tag:hover{background:#28282D;color:#fff;}
   .authority-stat-n{
     font-size:clamp(48px,12vw,72px);
   }
+  /* ============================================================
+     全ページ共通 スマホ横はみ出し修正 (2026-05-09)
+     対象: challenge / flow / plan / case / faq / stats / problem
+           sec-head / news / badge / how / sns-ads / sns-axis
+           platform / targeting / v2-feat / v2-sol / v2-flow
+           v2-price / voice-list / columns / area-inner
+  ============================================================ */
+
+  /* --- sec-head（共通見出し） --- */
+  .sec-head{
+    padding:56px 20px 40px;
+    flex-direction:column;
+    gap:20px;
+  }
+
+  /* --- challenge 系 --- */
+  .challenge-head{
+    padding:56px 20px 32px;
+    flex-direction:column;
+    gap:16px;
+  }
+  .challenge-split{
+    grid-template-columns:1fr;
+    min-height:auto;
+  }
+  .challenge-split-left{
+    padding:56px 20px 48px;
+    gap:16px;
+  }
+  .challenge-split-right{
+    clip-path:none;
+    padding:48px 20px 56px;
+    gap:16px;
+  }
+  .challenge-split-voice{
+    font-size:clamp(26px,7vw,40px);
+  }
+  .challenge-overall-top{
+    grid-template-columns:1fr;
+    padding:40px 20px 28px;
+    gap:24px;
+  }
+  .challenge-overall-heading{
+    min-width:0;
+  }
+  .challenge-overall-steps{
+    grid-template-columns:1fr;
+    border-left:none;
+  }
+  .challenge-overall-step{
+    border-right:none;
+    border-bottom:1px solid rgba(255,255,255,.12);
+  }
+  .challenge-overall-bottom{
+    grid-template-columns:1fr;
+    padding:28px 20px;
+    gap:20px;
+  }
+  .challenge-card-title{
+    white-space:normal;
+    word-break:break-word;
+    font-size:clamp(18px,5vw,26px);
+  }
+  .challenge-watermark{
+    display:none;
+  }
+  .challenge-grid{
+    grid-template-columns:1fr;
+  }
+  .challenge-card:nth-child(-n+2){
+    border-bottom:none;
+  }
+  .challenge-card:nth-child(even){
+    border-right:none;
+  }
+  .challenge-card{
+    border-right:none;
+    border-bottom:1px solid #E8E8E8;
+  }
+
+  /* --- flow 系 --- */
+  .flow-sec{
+    padding:56px 20px;
+  }
+
+  /* --- plan 系 --- */
+  .plan-sec{
+    padding:56px 20px;
+  }
+  .plan-grid{
+    grid-template-columns:1fr;
+  }
+
+  /* --- case 系 --- */
+  .case-sec{
+    padding:56px 20px;
+  }
+
+  /* --- stats 系 --- */
+  .stats-sec{
+    padding:56px 20px;
+  }
+
+  /* --- problem 系 --- */
+  .problem-sec{
+    padding:56px 20px;
+  }
+
+  /* --- faq 系 --- */
+  .faq-head{
+    padding:56px 20px 32px;
+    flex-direction:column;
+    gap:16px;
+    align-items:flex-start;
+  }
+  .faq-q{
+    padding:20px 20px;
+  }
+  .faq-a-inner{
+    padding:0 20px 24px;
+  }
+
+  /* --- news 系 --- */
+  .news-head{
+    padding:56px 20px 32px;
+    flex-direction:column;
+    gap:16px;
+    align-items:flex-start;
+  }
+  .news-item{
+    grid-template-columns:1fr;
+    padding:18px 20px;
+    gap:4px;
+  }
+
+  /* --- badge 系 --- */
+  .badge-sec{
+    padding:48px 20px;
+  }
+
+  /* --- how 系 --- */
+  .how-sec{
+    padding:56px 20px;
+  }
+  .how-step{
+    grid-template-columns:1fr;
+    gap:16px;
+    padding:40px 0;
+  }
+  .how-step-num{
+    font-size:clamp(48px,12vw,80px);
+  }
+  .how-step-body{
+    padding:0;
+    border-left:none;
+    border-top:1px solid rgba(255,255,255,.08);
+    padding-top:20px;
+  }
+
+  /* --- sns-ads 系 --- */
+  .sns-ads-sec{
+    padding:56px 20px;
+  }
+  .sns-ads-graph-grid{
+    grid-template-columns:1fr;
+  }
+  .sns-ads-work-grid{
+    grid-template-columns:1fr 1fr;
+  }
+  .sns-ads-work-card:nth-child(2n){
+    border-right:none;
+  }
+  .sns-ads-work-card:nth-child(n+3){
+    border-top:1px solid rgba(255,255,255,.12);
+  }
+
+  /* --- sns-axis 系 --- */
+  .sns-axis-sec{
+    padding:56px 20px;
+  }
+  .sns-axis-grid{
+    grid-template-columns:1fr;
+  }
+
+  /* --- platform 系 --- */
+  .platform-sec{
+    padding:56px 20px;
+  }
+  .platform-grid{
+    grid-template-columns:1fr;
+    gap:1px;
+  }
+
+  /* --- targeting 系 --- */
+  .targeting-sec{
+    padding:56px 20px;
+  }
+  .targeting-grid{
+    grid-template-columns:1fr;
+  }
+
+  /* --- v2-sol 系 --- */
+  .v2-sol-sec{
+    padding:56px 20px 40px;
+  }
+  .v2-sol-top{
+    grid-template-columns:1fr;
+    gap:32px;
+    margin-bottom:40px;
+  }
+  .v2-svc-grid{
+    grid-template-columns:1fr;
+  }
+  .v2-svc-card:nth-child(3){
+    border-right:none;
+  }
+  .v2-svc-card{
+    border-right:none;
+    border-bottom:1px solid #E0E0E0;
+  }
+
+  /* --- v2-feat 系 --- */
+  .v2-feat-sec{
+    padding:56px 20px;
+  }
+  .v2-feat-in{
+    grid-template-columns:1fr;
+    gap:32px;
+  }
+  .v2-feat-grid{
+    grid-template-columns:1fr;
+  }
+  .v2-feat-item{
+    border-right:none;
+  }
+  .v2-feat-item:nth-child(3),
+  .v2-feat-item:nth-child(4){
+    border-bottom:1px solid #E0E0E0;
+  }
+  .v2-feat-item:last-child{
+    border-bottom:none;
+  }
+
+  /* --- v2-flow 系 --- */
+  .v2-flow-sec{
+    padding:56px 20px;
+  }
+  .v2-flow-item{
+    grid-template-columns:1fr;
+    gap:16px;
+    padding:40px 0;
+  }
+  .v2-flow-body{
+    padding:0;
+    border-left:none;
+    border-top:1px solid #E8E8E8;
+    padding-top:20px;
+  }
+
+  /* --- v2-price 系 --- */
+  .v2-price-sec{
+    padding:56px 20px;
+  }
+  .v2-price-in{
+    grid-template-columns:1fr;
+    gap:0;
+  }
+  .v2-price-l{
+    padding-right:0;
+    border-right:none;
+    border-bottom:1px solid #E0E0E0;
+    padding-bottom:40px;
+    margin-bottom:40px;
+  }
+  .v2-price-pts{
+    padding-left:0;
+  }
+
+  /* --- v2-faq 系 --- */
+  .v2-faq-head{
+    padding:56px 20px 32px;
+    flex-direction:column;
+    gap:16px;
+    align-items:flex-start;
+  }
+  .v2-faq-q{
+    padding:20px 20px;
+  }
+  .v2-faq-a-inner{
+    padding:0 20px 24px;
+  }
+
+  /* --- v2-cases 系 --- */
+  .v2-cases-sec{
+    padding:56px 20px 0;
+  }
+  .v2-cases-list>div{
+    grid-template-columns:1fr;
+  }
+  .v2-case-q{
+    padding:32px 20px;
+    border-right:none;
+    border-bottom:1px solid #E0E0E0;
+  }
+  .v2-case-a{
+    padding:32px 20px;
+  }
+  .v2-cases-sum{
+    padding:40px 20px;
+  }
+
+  /* --- v2-cta 系 --- */
+  .v2-cta-sec{
+    padding:48px 20px;
+  }
+
+  /* --- voice-list 系 --- */
+  .voice-list-sec{
+    padding:56px 20px 80px;
+  }
+
+  /* --- columns 系 --- */
+  .columns-sec{
+    padding:48px 20px 80px;
+  }
+  .columns-grid{
+    grid-template-columns:1fr;
+  }
+
+  /* --- area-inner 2カラム --- */
+  .area-inner{
+    grid-template-columns:1fr;
+  }
+
+  /* --- about-text --- */
+  .about-text{
+    padding:56px 20px;
+  }
+
+  /* --- kv-h1-line2 nowrap 解除 --- */
+  .kv-h1-line2{
+    white-space:normal;
+    word-break:break-word;
+  }
+
+  /* --- page-header --- */
+  .page-header{
+    padding:100px 20px 60px;
+  }
+
+  /* --- interview 系 --- */
+  .interview-sec{
+    padding:0 20px 80px;
+  }
+  .interview-item{
+    grid-template-columns:1fr;
+    gap:32px;
+    padding:48px 0;
+  }
+  .interview-item:nth-child(even) .interview-body{
+    order:unset;
+  }
+  .interview-item:nth-child(even) .interview-img{
+    order:unset;
+  }
+
+  /* --- back-sec --- */
+  .back-sec{
+    padding:0 20px 60px;
+  }
+
+  /* --- client-info --- */
+  .client-info{
+    flex-direction:column;
+    gap:32px;
+    padding:48px 20px 60px;
+  }
+  .client-img{
+    width:100%;
+  }
+  .client-meta{
+    flex-direction:column;
+    gap:0;
+  }
+  .client-meta-item{
+    border-right:none;
+    border-bottom:1px solid #E8E8E8;
+  }
+  .client-meta-item:last-child{
+    border-bottom:none;
+  }
+
+
 }
+
 /* ================================================================
    END SP最適化
    ================================================================ */
