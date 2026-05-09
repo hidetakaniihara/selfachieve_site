@@ -2301,29 +2301,24 @@ a.challenge-tag:hover{
       .voice-sec{padding:0}
       .voice-head{padding:56px 20px 32px}
       .voice-grid{
-        display:flex;
-        overflow-x:auto;
-        scroll-snap-type:x mandatory;
-        -webkit-overflow-scrolling:touch;
-        grid-template-columns:unset;
-        padding:0 20px 16px;
+        display:grid;
+        grid-template-columns:1fr;
+        overflow-x:unset;
+        scroll-snap-type:unset;
+        padding:0;
         gap:0;
       }
-      .voice-grid::-webkit-scrollbar{display:none}
       .voice-card{
-        flex:0 0 80vw;
-        max-width:300px;
-        scroll-snap-align:start;
-        border-right:1px solid #E8E8E8;
-        border-bottom:none;
+        flex:unset;
+        width:100%;
+        max-width:none;
+        scroll-snap-align:unset;
+        border-right:none;
+        border-bottom:1px solid #E8E8E8;
       }
-      .voice-card:last-child{border-right:none}
+      .voice-card:last-child{border-bottom:none}
       .swipe-hint-voice{
-        display:flex;
-        font-size:11px;color:#9B9BA0;
-        letter-spacing:.06em;
-        padding:0 20px 12px;
-        text-align:right;
+        display:none;
       }
 
       
