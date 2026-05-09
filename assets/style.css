@@ -8168,7 +8168,8 @@ a.funnel-stage-service-tag:hover{
       .hd-hamburger{display:flex}
       .hd-drawer{display:block}
       .hd-btns{display:none}
-      .kv{padding:40px 24px 60px}
+      main{padding-top:60px}
+      .kv{padding:16px 24px 48px}
       .kv-stats{display:flex;flex-direction:row;gap:0;margin-top:40px;max-width:100%;border-top:1px solid #E0E0E4;padding-top:32px}
       .kv-stat{flex:1;padding:0 16px;border-right:1px solid #E0E0E4;border-bottom:none;background:transparent;border-radius:0;text-align:center}
       .kv-stat:first-child{padding-left:0;text-align:center}
