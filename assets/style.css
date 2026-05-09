@@ -8169,7 +8169,7 @@ a.funnel-stage-service-tag:hover{
       .hd-drawer{display:block}
       .hd-btns{display:none}
       main{padding-top:60px}
-      .kv{padding:8px 24px 32px}
+      .kv{padding:8px 24px 32px;min-height:auto;align-items:flex-start}
       .kv-eyebrow{margin-bottom:20px}
       .kv-h1{margin-bottom:16px}
       .kv-body{margin-bottom:24px}
