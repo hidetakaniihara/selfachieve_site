@@ -5212,10 +5212,10 @@ main{padding-top:72px;}
 .sns-ads-head{margin-bottom:64px}
 .sns-ads-tag{
       display:inline-flex;align-items:center;
-      height:28px;padding:0 14px;
-      background:rgba(0,0,0,.07);
-      font-size:11px;letter-spacing:.14em;color:rgba(40,40,45,.6);
-      font-weight:700;text-transform:uppercase;
+      height:auto;padding:8px 20px;
+      background:#28282D;
+      font-size:clamp(36px,4.2vw,60px);letter-spacing:-.04em;color:#fff;
+      font-weight:900;text-transform:none;
       margin-bottom:20px;
     }
 .sns-ads-eyebrow{
