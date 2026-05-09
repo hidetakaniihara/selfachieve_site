@@ -5195,7 +5195,7 @@ main{padding-top:72px;}
       font-weight:700;margin-bottom:16px;
     }
 .sns-work-title{
-      font-size:clamp(15px,1.6vw,18px);
+      font-size:clamp(20px,2.2vw,26px);
       font-weight:700;color:#28282D;
       margin-bottom:10px;line-height:1.4;
     }
@@ -5272,7 +5272,7 @@ main{padding-top:72px;}
       font-weight:700;margin-bottom:12px;
     }
 .sns-ads-work-title{
-      font-size:clamp(14px,1.4vw,16px);
+      font-size:clamp(20px,2.2vw,26px);
       font-weight:700;color:#fff;
       margin-bottom:8px;line-height:1.4;
     }
@@ -5381,7 +5381,7 @@ main{padding-top:72px;}
     }
 .platform-card-body{flex:1}
 .platform-card-name{
-      font-size:18px;font-weight:700;
+      font-size:clamp(20px,2.2vw,26px);font-weight:700;
       letter-spacing:-.02em;color:#28282D;
       margin-bottom:10px;
     }
