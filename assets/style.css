@@ -2488,6 +2488,8 @@ a.challenge-tag:hover{
         padding:36px 24px;
       }
       .challenge-card:last-child{border-bottom:none}
+      .challenge-card--last{border-bottom:none!important}
+      .challenge-card:not(:last-child):not(.challenge-card--last){border-bottom:1px solid #E8E8E8!important}
       .swipe-hint-challenge{
         display:none;
       }
