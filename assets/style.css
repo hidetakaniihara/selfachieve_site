@@ -9107,6 +9107,27 @@ a.wall-tag:hover{background:#28282D;color:#fff;}
     font-size:clamp(48px,12vw,72px);
   }
   /* ============================================================
+     KV テキスト 白色・フォントサイズ 共通ルール (2026-05-09)
+     黒背景KVを持つ全ページ共通：kv-h1 / kv-sub / kv-body を
+     必ず #ffffff・最低14px に統一
+  ============================================================ */
+  .kv .kv-h1{
+    color:#ffffff;
+  }
+  .kv .kv-sub{
+    color:#ffffff;
+    font-size:clamp(14px,4vw,16px);
+  }
+  .kv .kv-body{
+    color:#ffffff;
+    font-size:14px;
+  }
+  .kv .kv-question{
+    color:rgba(255,255,255,.85);
+    font-size:14px;
+  }
+
+  /* ============================================================
      全ページ共通 スマホ横はみ出し修正 (2026-05-09)
      対象: challenge / flow / plan / case / faq / stats / problem
            sec-head / news / badge / how / sns-ads / sns-axis
