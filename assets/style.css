@@ -5197,11 +5197,11 @@ main{padding-top:72px;}
     }
 .sns-work-title{
       font-size:clamp(20px,2.2vw,26px);
-      font-weight:700;color:#28282D;
+      font-weight:900;color:#28282D;
       margin-bottom:10px;line-height:1.4;
     }
 .sns-work-desc{
-      font-size:13px;line-height:1.8;color:#5A5A60;
+      font-size:15px;line-height:1.8;color:#5A5A60;
     }
 .sns-ads-sec{
       background:#ffffff;
@@ -5274,11 +5274,11 @@ main{padding-top:72px;}
     }
 .sns-ads-work-title{
       font-size:clamp(20px,2.2vw,26px);
-      font-weight:700;color:#28282D;
+      font-weight:900;color:#28282D;
       margin-bottom:8px;line-height:1.4;
     }
 .sns-ads-work-desc{
-      font-size:13px;line-height:1.8;color:rgba(40,40,45,.6);
+      font-size:15px;line-height:1.8;color:rgba(40,40,45,.6);
     }
 .plan-redirect-box{
       border:1px solid #E0E0E0;
