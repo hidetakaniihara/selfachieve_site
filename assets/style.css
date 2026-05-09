@@ -5127,10 +5127,10 @@ main{padding-top:72px;}
 .sns-account-head{margin-bottom:64px}
 .sns-account-tag{
       display:inline-flex;align-items:center;
-      height:28px;padding:0 14px;
+      height:auto;padding:8px 20px;
       background:#28282D;
-      font-size:11px;letter-spacing:.14em;color:#fff;
-      font-weight:700;text-transform:uppercase;
+      font-size:clamp(36px,4.2vw,60px);letter-spacing:-.04em;color:#fff;
+      font-weight:900;text-transform:none;
       margin-bottom:20px;
     }
 .sns-platform-row{
