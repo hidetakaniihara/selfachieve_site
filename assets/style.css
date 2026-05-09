@@ -9606,6 +9606,18 @@ a.wall-tag:hover{background:#28282D;color:#fff;}
     grid-template-columns:1fr;
     gap:40px;
   }
+  /* --- official-account SP対応 --- */
+  .official-account-sec{
+    padding:60px 0;
+  }
+  .official-account-inner{
+    grid-template-columns:1fr;
+    gap:32px;
+    padding:0 16px;
+  }
+  .official-account-card{
+    padding:24px;
+  }
   /* --- note: our-note-sec / inner / stats SP対応 --- */
   .our-note-sec{
     padding:80px 0 !important;
