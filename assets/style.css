@@ -447,7 +447,7 @@ ul,ol{list-style:none}
       line-height:1;color:#28282D;
     }
 .kv-stat-n sup{font-size:.45em;letter-spacing:0;vertical-align:super}
-.kv-stat-l{font-size:13px;color:#4A4A50;margin-top:10px;letter-spacing:.08em}
+.kv-stat-l{font-size:14px;color:#4A4A50;margin-top:10px;letter-spacing:.08em}
 .kv-stat-note{display:block;font-size:11px;color:#767680;letter-spacing:.04em;margin-top:3px}
 .voice-link,.work-link{
       display:block;text-decoration:none;color:inherit;
@@ -823,7 +823,7 @@ a.challenge-tag:hover{
 .work-info{padding:28px 36px 36px;border-top:1px solid #E8E8E8}
 .work-cat{font-size:12px;letter-spacing:.1em;color:#4A4A50;margin-bottom:10px}
 .work-title{font-size:17px;font-weight:500;letter-spacing:-.01em;color:#28282D;margin-bottom:6px}
-.work-result{font-size:13px;color:#3D3D42;font-weight:500}
+.work-result{font-size:14px;color:#3D3D42;font-weight:500}
 .cta{
       padding:80px 80px;
       border-top:1px solid #E8E8E8;
@@ -882,7 +882,7 @@ a.challenge-tag:hover{
       line-height:1;color:#28282D;
     }
 .about-stat-n sup{font-size:.45em;letter-spacing:0;vertical-align:super}
-.about-stat-l{font-size:13px;color:#4A4A50;margin-top:8px;letter-spacing:.06em}
+.about-stat-l{font-size:14px;color:#4A4A50;margin-top:8px;letter-spacing:.06em}
 .about-visual{
       background:#F7F7F7;
       display:flex;align-items:flex-start;justify-content:flex-start;
@@ -1035,7 +1035,7 @@ a.challenge-tag:hover{
 .footer-logo img{height:30px;width:auto}
 .footer-nav{display:grid;grid-template-columns:repeat(3,1fr);gap:48px}
 .footer-nav-title{font-size:12px;letter-spacing:.12em;color:#767680;margin-bottom:14px}
-.footer-nav-group a{display:block;font-size:13px;color:#28282D;margin-bottom:10px;letter-spacing:.01em;transition:opacity .2s}
+.footer-nav-group a{display:block;font-size:14px;color:#28282D;margin-bottom:10px;letter-spacing:.01em;transition:opacity .2s}
 .footer-nav-group a:hover{opacity:.5}
 .footer-bottom{
       display:flex;justify-content:flex-end;align-items:center;
@@ -4876,7 +4876,7 @@ main{padding-top:72px;}
 .case-tag.lg{font-size:20px;font-weight:700;padding:10px 20px;}
 .case-tag.sm{font-size:20px;font-weight:700;padding:10px 20px;}
 .case-body{
-      font-size:13px;line-height:1.85;
+      font-size:14px;line-height:1.85;
       color:#5A5A60;margin-bottom:32px;
     }
 .case-result{
@@ -4885,7 +4885,7 @@ main{padding-top:72px;}
       margin-top:auto;
     }
 .case-result-label{
-      font-size:11px;letter-spacing:.22em;
+      font-size:14px;letter-spacing:.22em;
       color:#767680;margin-bottom:8px;
       font-weight:700;
       text-transform:uppercase;
@@ -7761,7 +7761,7 @@ a.funnel-stage-service-tag:hover{
     .work-info{padding:28px 36px 36px;border-top:1px solid #E8E8E8}
     .work-cat{font-size:12px;letter-spacing:.1em;color:#333336;margin-bottom:10px}
     .work-title{font-size:17px;font-weight:500;letter-spacing:-.01em;color:#28282D;margin-bottom:6px}
-    .work-result{font-size:13px;color:#3D3D42;font-weight:500}
+    .work-result{font-size:14px;color:#3D3D42;font-weight:500}
     /* ABOUT */
     .about-inner{
       display:grid;grid-template-columns:1fr 1fr;
@@ -7792,7 +7792,7 @@ a.funnel-stage-service-tag:hover{
       line-height:1;color:#28282D;
     }
     .about-stat-n sup{font-size:.45em;letter-spacing:0;vertical-align:super}
-    .about-stat-l{font-size:13px;color:#333336;margin-top:8px;letter-spacing:.06em}
+    .about-stat-l{font-size:14px;color:#333336;margin-top:8px;letter-spacing:.06em}
     .about-visual{
       background:#F7F7F7;
       display:flex;align-items:flex-start;justify-content:flex-start;
@@ -7958,7 +7958,7 @@ a.funnel-stage-service-tag:hover{
        第3階層（ラベル・補足）: #767680
        ※ #B0B0B5以下はフッター内使用禁止 */
     .footer-nav-title{font-size:12px;letter-spacing:.12em;color:#555558;margin-bottom:14px}
-    .footer-nav-group a{display:block;font-size:13px;color:#28282D;margin-bottom:10px;letter-spacing:.01em;transition:opacity .2s}
+    .footer-nav-group a{display:block;font-size:14px;color:#28282D;margin-bottom:10px;letter-spacing:.01em;transition:opacity .2s}
     .footer-nav-group a:hover{opacity:.5}
     .footer-bottom{
       display:flex;justify-content:flex-end;align-items:center;
@@ -8184,7 +8184,7 @@ a.funnel-stage-service-tag:hover{
       .kv-stat:first-child{padding-left:0;text-align:center;align-items:center}
       .kv-stat:last-child{border-right:none;padding-right:0;text-align:center;align-items:center}
       .kv-stat-n{font-size:clamp(28px,7vw,40px)}
-      .kv-stat-l{font-size:12px;margin-top:6px}
+      .kv-stat-l{font-size:14px;margin-top:6px}
       .kv-stat-icon{display:none}
       .sec-head{padding:80px 24px 48px;flex-direction:column;gap:24px}
 
