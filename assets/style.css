@@ -755,6 +755,7 @@ ul,ol{list-style:none}
       margin-bottom:28px;
     }
 .challenge-tag{
+      display:inline-flex;align-items:center;gap:4px;
       font-size:12px;letter-spacing:.06em;
       color:#4A4A50;
       background:#F3F4F6;
