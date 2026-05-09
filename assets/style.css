@@ -38,6 +38,7 @@
   --kv-body-color: #4A4A50;
   --kv-body-mb: 48px;
 }
+.sp-br{display:none}
 
 /* ========================================
    Base CSS (extracted from index.html)
@@ -9050,6 +9051,9 @@ a.wall-tag:hover{background:#28282D;color:#fff;}
     color:#666 !important;
   }
   /* ================================================================
+  /* sp-br: スマホのみ改行 */
+  .sp-br{display:block}
+
      strategy ページ スマホ横はみ出し修正
      ================================================================ */
   /* wall-card-header: 数字＋カテゴリ名をスマホ適正サイズに */
