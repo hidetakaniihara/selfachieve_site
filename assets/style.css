@@ -5338,8 +5338,8 @@ main{padding-top:72px;}
 .cta-sec .btn-cta:hover{background:transparent;color:#28282D}
 .area-group:last-of-type{margin-bottom:0}
 .area-group-label.easy{color:#28282D}
-.area-group-label.adjust{color:#767680}
-.area-group-label.online{color:#9B9BA0}
+.area-group-label.adjust{color:#28282D}
+.area-group-label.online{color:#28282D}
 .hd-btn-saicatsu:hover svg path{stroke:#fff}
 
 .kv-eyebrow svg{flex-shrink:0;}
