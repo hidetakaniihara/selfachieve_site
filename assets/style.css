@@ -558,7 +558,7 @@ ul,ol{list-style:none}
   z-index:1;
 }
 .challenge-split-left .sec-eyebrow{
-  color:rgba(255,255,255,.55);
+  color:#ffffff;
 }
 .challenge-split-left .sec-eyebrow::before{
   background:rgba(255,255,255,.4);
@@ -829,8 +829,8 @@ a.challenge-tag:hover{
       background:#111111;
     }
 .cta-wrap{max-width:900px}
-.cta-eyebrow{font-size:12px;letter-spacing:.15em;color:rgba(255,255,255,.92);margin-bottom:28px;text-align:center}
-.cta-eyebrow::before{background:rgba(255,255,255,.6) !important;margin-left:auto;margin-right:auto}
+.cta-eyebrow{font-size:12px;letter-spacing:.15em;color:#ffffff;margin-bottom:28px;text-align:center}
+.cta-eyebrow::before{background:rgba(255,255,255,.7) !important;margin-left:auto;margin-right:auto}
 .cta-h2{
       font-size:clamp(36px,5vw,64px);
       font-weight:700;line-height:1.3;
@@ -3885,7 +3885,7 @@ main{padding-top:72px;}
       max-width:1200px;margin:0 auto;
       display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;
     }
-.mission .sec-eyebrow{color:rgba(255,255,255,.92)}
+.mission .sec-eyebrow{color:#ffffff}
 .mission .sec-eyebrow::before{background:rgba(255,255,255,.6)}
 .mission .sec-title{color:#fff}
 .mission-body{
@@ -4478,8 +4478,8 @@ main{padding-top:72px;}
       margin-top:2px;
     }
 .case-head .sec-h2{color:#ffffff;margin-bottom:0;}
-.case-head .sec-eyebrow{color:rgba(255,255,255,.5);}
-.case-head .sec-eyebrow::before{background:rgba(255,255,255,.5) !important;}
+.case-head .sec-eyebrow{color:#ffffff;}
+.case-head .sec-eyebrow::before{background:rgba(255,255,255,.7) !important;}
 .case-head .view-all{color:#ffffff;border-bottom-color:#ffffff;}
 .case-card:hover{background:#F8F8F8;}
 .case-grid-row2{
@@ -4938,7 +4938,7 @@ main{padding-top:72px;}
       letter-spacing:-.02em;line-height:1.4;
     }
 .ai-banner-sub{
-      font-size:16px;color:rgba(255,255,255,.55);
+      font-size:16px;color:#ffffff;
       margin-top:4px;letter-spacing:.01em;
     }
 .ai-banner-btn{
@@ -8307,7 +8307,7 @@ a.funnel-stage-service-tag:hover{
     .cta-wrap{max-width:860px;margin:0 auto;text-align:center;}
     .cta-eyebrow{
       font-size:11px;letter-spacing:.22em;
-      color:rgba(255,255,255,.55);
+      color:#ffffff;
       margin-bottom:32px;display:block;
       text-transform:uppercase;font-weight:500;
       font-style:normal;
@@ -8404,7 +8404,7 @@ a.funnel-stage-service-tag:hover{
   align-self:flex-start;
 }
 .wall-split-left .sec-eyebrow{
-  color:rgba(255,255,255,.55);
+  color:#ffffff;
 }
 .wall-split-left .sec-eyebrow::before{
   background:rgba(255,255,255,.4);
