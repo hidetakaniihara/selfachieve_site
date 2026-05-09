@@ -4831,13 +4831,15 @@ main{padding-top:72px;}
   display:grid;
   grid-template-columns:repeat(3,1fr);
   border-top:1px solid rgba(255,255,255,.12);
+  gap:0 32px;
+  padding:0 80px;
 }
 .result-card-full{
-  border-right:1px solid rgba(255,255,255,.12);
   overflow:hidden;
   transition:background .2s;
   display:flex;
   flex-direction:column;
+  border-right:1px solid rgba(255,255,255,.12);
 }
 .result-card-full:last-child{border-right:none;}
 .result-card-full:hover{background:rgba(255,255,255,.04);}
