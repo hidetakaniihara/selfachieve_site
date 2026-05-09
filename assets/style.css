@@ -9606,9 +9606,18 @@ a.wall-tag:hover{background:#28282D;color:#fff;}
     grid-template-columns:1fr;
     gap:40px;
   }
-  /* --- note: our-note-stats 2カラム化 --- */
+  /* --- note: our-note-sec / inner / stats SP対応 --- */
+  .our-note-sec{
+    padding:80px 0 !important;
+  }
+  .our-note-inner{
+    padding:0 16px !important;
+  }
   .our-note-stats{
     grid-template-columns:repeat(2,1fr);
+  }
+  .our-note-stat{
+    padding:24px 16px;
   }
   /* --- note: our-note-articles 1カラム化 --- */
   .our-note-articles{
