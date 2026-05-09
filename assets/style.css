@@ -9595,7 +9595,13 @@ a.wall-tag:hover{background:#28282D;color:#fff;}
   .contact-wrap{
     padding:40px 16px 80px;
   }
-  /* --- note: what-grid 1カラム化 --- */
+  /* --- what-sec / what-inner / what-grid SP対応 --- */
+  .what-sec{
+    padding:80px 0 !important;
+  }
+  .what-inner{
+    padding:0 16px !important;
+  }
   .what-grid{
     grid-template-columns:1fr;
     gap:40px;
