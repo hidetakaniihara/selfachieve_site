@@ -93,10 +93,14 @@ body {
   .faq-head,
   .faq-list,
   .voice-head,
-  .voice-grid,
   .blog-inner {
     padding-left: 20px !important;
     padding-right: 20px !important;
+  }
+  /* voice-gridはSPで縦積み・横幅いっぱいのためpadding不要 */
+  .voice-grid {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
   }
 }
 /* ===== V2-FEAT-TTL: v2-svc-nameと同じフォントサイズ ===== */
