@@ -5171,7 +5171,7 @@ main{padding-top:72px;}
       font-weight:700;text-transform:uppercase;margin-bottom:8px;
     }
 .sns-graph-title{
-      font-size:clamp(16px,1.8vw,20px);
+      font-size:clamp(20px,2.2vw,26px);
       font-weight:700;color:#28282D;margin-bottom:4px;
     }
 .sns-graph-sub{
@@ -5248,7 +5248,7 @@ main{padding-top:72px;}
       font-weight:700;text-transform:uppercase;margin-bottom:8px;
     }
 .sns-ads-graph-title{
-      font-size:clamp(16px,1.8vw,20px);
+      font-size:clamp(20px,2.2vw,26px);
       font-weight:700;color:#fff;margin-bottom:4px;
     }
 .sns-ads-graph-sub{
