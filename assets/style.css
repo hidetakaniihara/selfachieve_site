@@ -596,7 +596,7 @@ ul,ol{list-style:none}
   letter-spacing:.02em;
 }
 .challenge-split-num{
-  font-size:13px;letter-spacing:.08em;color:#767680;
+  font-size:18px;letter-spacing:.08em;color:#767680;font-weight:700;
   margin-bottom:0;
 }
 .challenge-split-tags{
