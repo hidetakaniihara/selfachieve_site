@@ -9357,6 +9357,26 @@ a.wall-tag:hover{background:#28282D;color:#fff;}
     padding-top:20px;
   }
 
+  /* --- sns-account 系 --- */
+  .sns-account-sec{
+    padding:56px 20px;
+  }
+  .sns-graph-grid{
+    grid-template-columns:1fr;
+  }
+  .sns-work-grid{
+    grid-template-columns:1fr;
+    border:none;
+  }
+  .sns-work-card{
+    border-right:none;
+    border-bottom:1px solid #E0E0E0;
+    padding:24px 20px 28px;
+  }
+  .sns-work-card:last-child{
+    border-bottom:none;
+  }
+
   /* --- sns-ads 系 --- */
   .sns-ads-sec{
     padding:56px 20px;
