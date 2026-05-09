@@ -8177,9 +8177,9 @@ a.funnel-stage-service-tag:hover{
       .kv-h1{margin-bottom:16px}
       .kv-body{margin-bottom:24px}
       .kv-stats{display:flex;flex-direction:row;gap:0;margin-top:24px;max-width:100%;border-top:1px solid #E0E0E4;padding-top:20px}
-      .kv-stat{flex:1;padding:0 16px;border-right:1px solid #E0E0E4;border-bottom:none;background:transparent;border-radius:0;text-align:center}
-      .kv-stat:first-child{padding-left:0;text-align:center}
-      .kv-stat:last-child{border-right:none;padding-right:0;text-align:center}
+      .kv-stat{flex:1;padding:0 16px;border-right:1px solid #E0E0E4;border-bottom:none;background:transparent;border-radius:0;text-align:center;display:flex;flex-direction:column;align-items:center}
+      .kv-stat:first-child{padding-left:0;text-align:center;align-items:center}
+      .kv-stat:last-child{border-right:none;padding-right:0;text-align:center;align-items:center}
       .kv-stat-n{font-size:clamp(28px,7vw,40px)}
       .kv-stat-l{font-size:12px;margin-top:6px}
       .kv-stat-icon{display:none}
