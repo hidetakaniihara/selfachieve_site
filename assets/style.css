@@ -9497,8 +9497,71 @@ a.wall-tag:hover{background:#28282D;color:#fff;}
   .client-meta-item:last-child{
     border-bottom:none;
   }
-
-
+  /* ============================================================
+     SEOページ固有 スマホ修正 (2026-05-09)
+     対象: results-gallery / result-body / sc-explain
+           stats-inner / stats-head / stats-h2
+           ai-banner / ai-banner-inner / ai-banner-left
+           voice-head / voice-grid / voice-card
+  ============================================================ */
+  /* --- stats-sec --- */
+  .stats-inner{
+    padding:0 20px;
+  }
+  .stats-head{
+    margin-bottom:40px;
+  }
+  .stats-h2{
+    font-size:clamp(22px,6vw,32px);
+  }
+  /* --- results-gallery --- */
+  .results-gallery{
+    grid-template-columns:1fr;
+    gap:24px;
+  }
+  .result-body{
+    padding:16px 16px 0;
+  }
+  /* --- sc-explain --- */
+  .sc-explain{
+    max-width:100%;
+    flex-direction:column;
+    gap:10px;
+  }
+  /* --- ai-banner --- */
+  .ai-banner{
+    padding:40px 20px;
+  }
+  .ai-banner-inner{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:24px;
+  }
+  .ai-banner-left{
+    flex-direction:column;
+    gap:16px;
+  }
+  .ai-banner-btn{
+    width:100%;
+    justify-content:center;
+  }
+  /* --- voice-head / voice-grid / voice-card --- */
+  .voice-head{
+    padding:56px 20px 32px;
+    flex-direction:column;
+    gap:16px;
+    align-items:flex-start;
+  }
+  .voice-grid{
+    grid-template-columns:1fr;
+  }
+  .voice-card{
+    border-right:none;
+    border-bottom:1px solid #E8E8E8;
+  }
+  .voice-card:last-child{
+    border-bottom:none;
+  }
 }
 
 /* ================================================================
