@@ -2469,30 +2469,27 @@ a.challenge-tag:hover{
       .sec-vert{display:none}
       .challenge-grid{
         display:flex;
-        overflow-x:auto;
-        scroll-snap-type:x mandatory;
-        -webkit-overflow-scrolling:touch;
+        flex-direction:column;
+        overflow-x:visible;
+        scroll-snap-type:unset;
         grid-template-columns:unset;
         border-top:none;
-        padding:0 20px 16px;
+        padding:0;
         gap:0;
       }
       .challenge-grid::-webkit-scrollbar{display:none}
       .challenge-card{
-        flex:0 0 80vw;
-        max-width:300px;
-        scroll-snap-align:start;
-        border-right:1px solid #E8E8E8;
-        border-bottom:none;
-        padding:32px 20px;
+        flex:0 0 auto;
+        width:100%;
+        max-width:none;
+        scroll-snap-align:unset;
+        border-right:none;
+        border-bottom:1px solid #E8E8E8;
+        padding:36px 24px;
       }
-      .challenge-card:last-child{border-right:none}
+      .challenge-card:last-child{border-bottom:none}
       .swipe-hint-challenge{
-        display:flex;
-        font-size:11px;color:#9B9BA0;
-        letter-spacing:.06em;
-        padding:0 20px 12px;
-        text-align:right;
+        display:none;
       }
 
       
