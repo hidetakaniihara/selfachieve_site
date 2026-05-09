@@ -9396,13 +9396,15 @@ a.wall-tag:hover{background:#28282D;color:#fff;}
     grid-template-columns:1fr;
   }
   .sns-ads-work-grid{
-    grid-template-columns:1fr 1fr;
+    grid-template-columns:1fr;
+    border:none;
   }
-  .sns-ads-work-card:nth-child(2n){
+  .sns-ads-work-card{
     border-right:none;
+    border-bottom:1px solid rgba(0,0,0,.1);
   }
-  .sns-ads-work-card:nth-child(n+3){
-    border-top:1px solid rgba(255,255,255,.12);
+  .sns-ads-work-card:last-child{
+    border-bottom:none;
   }
 
   /* --- sns-axis 系 --- */
