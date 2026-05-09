@@ -4344,9 +4344,10 @@ main{padding-top:72px;}
 .form-note a:hover{opacity:.6}
 .seo-banner-icon svg{width:20px;height:20px}
 .sp-swipe-hint{
+      display:block;
       font-size:12px;color:#9B9BA0;
       text-align:center;
-      padding:8px 0 0;
+      padding:20px 0;
       letter-spacing:.06em;
     }
 @media(min-width:769px){
