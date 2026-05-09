@@ -8919,7 +8919,7 @@ a.wall-tag:hover{background:#28282D;color:#fff;}
   /* ---- wall-card-header 数字サイズ ---- */
   .wall-card-header-num,
   .wall-card-header-cat{
-    font-size:clamp(28px,7vw,44px);
+    font-size:clamp(20px,5.5vw,28px);
   }
 
   /* ---- kv-h1-line2（サブタイトル行） ---- */
@@ -9048,8 +9048,58 @@ a.wall-tag:hover{background:#28282D;color:#fff;}
     padding-left:52px !important;
     color:#666 !important;
   }
-
-
+  /* ================================================================
+     strategy ページ スマホ横はみ出し修正
+     ================================================================ */
+  /* wall-card-header: 数字＋カテゴリ名をスマホ適正サイズに */
+  .wall-card-header-num,
+  .wall-card-header-cat{
+    font-size:clamp(20px,5.5vw,28px);
+  }
+  /* wall-wall-body: 解説文をスマホ適正サイズに・折り返し許可 */
+  .wall-wall-body{
+    font-size:16px;
+    white-space:normal;
+    word-break:break-word;
+  }
+  /* solution-sec: パディング縮小 */
+  .solution-sec{
+    padding:56px 20px;
+  }
+  /* solution-item: 2カラム→1カラム */
+  .solution-item{
+    grid-template-columns:1fr;
+    padding:40px 0;
+    gap:16px;
+  }
+  .solution-item-num{
+    font-size:clamp(48px,12vw,72px);
+    padding-top:0;
+  }
+  .solution-item-body{
+    padding:0;
+    border-left:none;
+    border-top:1px solid #E8E8E8;
+    padding-top:20px;
+  }
+  .solution-item-title{
+    font-size:clamp(18px,5vw,24px);
+  }
+  /* authority-sec: 2カラム→1カラム */
+  .authority-inner{
+    grid-template-columns:1fr;
+  }
+  .authority-left{
+    padding:56px 20px 40px;
+    border-right:none;
+    border-bottom:1px solid rgba(255,255,255,.1);
+  }
+  .authority-right{
+    padding:40px 20px 56px;
+  }
+  .authority-stat-n{
+    font-size:clamp(48px,12vw,72px);
+  }
 }
 /* ================================================================
    END SP最適化
