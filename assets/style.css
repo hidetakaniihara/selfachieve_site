@@ -9672,6 +9672,29 @@ a.wall-tag:hover{background:#28282D;color:#fff;}
   /* ================================================================
      MEOページ固有 スマホ修正 (2026-05-09)
   ================================================================ */
+  /* --- plan-horizontal（料金プラン 2カラム）--- */
+  .plan-horizontal{
+    grid-template-columns:1fr;
+  }
+  .plan-plus{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:16px 0;
+    font-size:32px;
+  }
+  .plan-col{
+    padding:40px 20px 48px;
+  }
+  .plan-col-price-val{
+    font-size:clamp(36px,9vw,52px);
+  }
+  .plan-col-ja{
+    font-size:clamp(20px,5.5vw,28px);
+  }
+  .plan-col-features li{
+    font-size:15px;
+  }
   /* --- case-tags-sec（業種タグ一覧） --- */
   .case-tags-sec{
     margin-bottom:32px;
