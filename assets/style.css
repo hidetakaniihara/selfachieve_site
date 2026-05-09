@@ -9595,6 +9595,24 @@ a.wall-tag:hover{background:#28282D;color:#fff;}
   .contact-wrap{
     padding:40px 16px 80px;
   }
+  /* --- note: what-grid 1カラム化 --- */
+  .what-grid{
+    grid-template-columns:1fr;
+    gap:40px;
+  }
+  /* --- note: our-note-stats 2カラム化 --- */
+  .our-note-stats{
+    grid-template-columns:repeat(2,1fr);
+  }
+  /* --- note: our-note-articles 1カラム化 --- */
+  .our-note-articles{
+    grid-template-columns:1fr;
+  }
+  /* --- note: our-note-account-info 縦並び --- */
+  .our-note-account-info{
+    flex-direction:column;
+    align-items:flex-start;
+  }
 
   /* --- interview 系 --- */
   .interview-sec{
