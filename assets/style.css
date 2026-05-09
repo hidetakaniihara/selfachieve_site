@@ -5309,9 +5309,9 @@ main{padding-top:72px;}
       transition:border-color .2s,background .2s,color .2s;
     }
 .plan-redirect-link:hover{
-      border-color:var(--platform-color,#28282D);
-      background:rgba(0,0,0,.04);
-      color:var(--platform-color,#28282D);
+      border-color:#010101;
+      background:rgba(0,0,0,.06);
+      color:#010101;
     }
 .plan-fee-row:last-child{border-bottom:none}
 .plan-fee-row span{
