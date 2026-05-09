@@ -838,7 +838,7 @@ a.challenge-tag:hover{
       margin-bottom:32px;
     }
 .cta-h2-line{display:block}
-.cta-body{font-size:16px;line-height:1.85;color:rgba(255,255,255,.9);margin-bottom:52px;max-width:460px;text-align:center;margin-left:auto;margin-right:auto}
+.cta-body{font-size:16px;line-height:1.85;color:#ffffff;margin-bottom:52px;max-width:460px;text-align:center;margin-left:auto;margin-right:auto}
 .cta-actions{display:flex;align-items:center;gap:40px;flex-wrap:wrap}
 .btn-cta{
       display:inline-flex;align-items:center;justify-content:center;
@@ -850,7 +850,7 @@ a.challenge-tag:hover{
     }
 .btn-cta:hover{background:transparent;color:#fff}
 .cta-tel-wrap{}
-.cta-tel-label{font-size:12px;letter-spacing:.1em;color:rgba(255,255,255,.92);margin-bottom:4px}
+.cta-tel-label{font-size:12px;letter-spacing:.1em;color:#ffffff;margin-bottom:4px}
 .cta-tel{font-size:28px;font-weight:400;letter-spacing:-.02em;color:#fff}
 .about-inner{
       display:grid;grid-template-columns:1fr 1fr;
@@ -8359,7 +8359,7 @@ a.funnel-stage-service-tag:hover{
     .btn-cta:hover{background:transparent;color:#ffffff;}
     .cta-tel-label{
       font-size:12px;letter-spacing:.1em;
-      color:rgba(255,255,255,.65);
+      color:#ffffff;
       margin-bottom:4px;
       font-style:normal;
     }
