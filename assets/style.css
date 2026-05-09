@@ -5258,7 +5258,7 @@ main{padding-top:72px;}
 .sns-ads-graph-canvas{height:200px;position:relative}
 .sns-ads-work-grid{
       display:grid;
-      grid-template-columns:repeat(4,1fr);
+      grid-template-columns:repeat(3,1fr);
       gap:0;
       border:1px solid rgba(0,0,0,.1);
     }
