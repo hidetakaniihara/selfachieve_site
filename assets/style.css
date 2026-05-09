@@ -3882,12 +3882,12 @@ main{padding-top:72px;}
 .about-mission-label::before,
 .cta-eyebrow::before,
 .results-eyebrow::before,
-.page-eyebrow::before,
 .case-eyebrow::before,
 .related-eyebrow::before,
 .works-hero-eyebrow::before{
   content:none;display:none;
 }
+.page-eyebrow::before{content:'';display:block;width:24px;height:1px;background:#9B9BA0;margin-bottom:12px;}
 .sec-title{
       font-size:clamp(28px,3vw,44px);
       font-weight:700;letter-spacing:-.03em;
