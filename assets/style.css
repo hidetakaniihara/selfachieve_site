@@ -1283,8 +1283,9 @@ a.challenge-tag:hover{
       .service-opt-inner{grid-template-columns:1fr}
       .service-opt-left{padding:60px 24px 40px;border-right:none;border-bottom:1px solid #E8E8E8}
       .service-opt-right{grid-template-columns:1fr}
-      .service-opt-card{border-right:none}
+      .service-opt-card{border-right:none;padding:32px 24px}
       .service-opt-card:nth-child(3){border-bottom:1px solid #E8E8E8}
+      .service-opt-name{font-size:18px}
       .area-inner{grid-template-columns:1fr}
       .area-left{padding:60px 24px 40px;border-right:none;border-bottom:1px solid #E8E8E8}
       .area-right{padding:40px 24px 60px}
@@ -8219,8 +8220,9 @@ a.funnel-stage-service-tag:hover{
       .service-opt-inner{grid-template-columns:1fr}
       .service-opt-left{padding:60px 24px 40px;border-right:none;border-bottom:1px solid #E8E8E8}
       .service-opt-right{grid-template-columns:1fr}
-      .service-opt-card{border-right:none}
+      .service-opt-card{border-right:none;padding:32px 24px}
       .service-opt-card:nth-child(3){border-bottom:1px solid #E8E8E8}
+      .service-opt-name{font-size:18px}
       .area-inner{grid-template-columns:1fr}
       .area-left{padding:60px 24px 40px;border-right:none;border-bottom:1px solid #E8E8E8}
       .area-right{padding:40px 24px 60px}
