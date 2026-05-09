@@ -4484,7 +4484,7 @@ main{padding-top:72px;}
       display:block;
       margin-top:2px;
     }
-.case-head .sec-h2{color:#ffffff;margin-bottom:0;}
+.case-head .sec-h2{color:#ffffff;}
 .case-head .sec-eyebrow{color:#ffffff;}
 .case-head .sec-eyebrow::before{background:rgba(255,255,255,.7) !important;}
 .case-head .view-all{color:#ffffff;border-bottom-color:#ffffff;}
