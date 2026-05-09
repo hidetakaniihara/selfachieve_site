@@ -5224,9 +5224,9 @@ main{padding-top:72px;}
       margin-bottom:16px;
     }
 .sns-ads-h2{
-      font-size:clamp(28px,3.5vw,48px);
-      font-weight:700;line-height:1.2;
-      letter-spacing:-.03em;color:#28282D;
+      font-size:clamp(36px,4.2vw,60px);
+      font-weight:900;line-height:1.2;
+      letter-spacing:-.04em;color:#28282D;
       margin-bottom:20px;
     }
 .sns-ads-body{
