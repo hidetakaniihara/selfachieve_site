@@ -9366,6 +9366,9 @@ a.wall-tag:hover{background:#28282D;color:#fff;}
   .sns-account-sec{
     padding:56px 20px;
   }
+  .sns-account-tag{
+    font-size:clamp(24px,6.5vw,36px);
+  }
   .sns-graph-grid{
     grid-template-columns:1fr;
   }
@@ -9385,6 +9388,9 @@ a.wall-tag:hover{background:#28282D;color:#fff;}
   /* --- sns-ads 系 --- */
   .sns-ads-sec{
     padding:56px 20px;
+  }
+  .sns-ads-tag{
+    font-size:clamp(24px,6.5vw,36px);
   }
   .sns-ads-graph-grid{
     grid-template-columns:1fr;
