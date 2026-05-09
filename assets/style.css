@@ -9668,10 +9668,40 @@ a.wall-tag:hover{background:#28282D;color:#fff;}
   .voice-card:last-child{
     border-bottom:none;
   }
-}
 
+  /* ================================================================
+     MEOページ固有 スマホ修正 (2026-05-09)
+  ================================================================ */
+  /* --- case-tags-sec（業種タグ一覧） --- */
+  .case-tags-sec{
+    margin-bottom:32px;
+  }
+  .case-tag{
+    font-size:14px;
+    padding:8px 14px;
+  }
+  .case-tag.lg{
+    font-size:14px;
+    padding:8px 14px;
+  }
+  .case-tag.sm{
+    font-size:14px;
+    padding:8px 14px;
+  }
+  /* --- result-img-wrap / result-card-title --- */
+  .result-img-wrap{
+    aspect-ratio:16/9;
+  }
+  .result-card-title{
+    padding:16px 16px 12px;
+    font-size:15px;
+  }
+  .result-card-title strong{
+    font-size:18px;
+  }
+}
 /* ================================================================
-   END SP最適化
+   END SP最適化化
    ================================================================ */
 
 /* ================================================================
