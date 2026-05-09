@@ -1242,7 +1242,7 @@ a.challenge-tag:hover{
       .hd-btns{display:none}
       .kv{padding:40px 24px 60px}
       .kv-stats{display:grid;grid-template-columns:1fr 1fr;gap:0}
-      .kv-stat{border-right:none;margin-right:0;padding-right:0;border-bottom:1px solid #E8E8E8;padding:24px 20px}
+      .kv-stat{border-right:none;margin-right:0;padding-right:0;border-bottom:1px solid #E8E8E8;padding:24px 20px;text-align:center}
       .kv-stat:nth-child(odd){border-right:1px solid #E8E8E8}
       .kv-stat:nth-child(3),.kv-stat:nth-child(4){border-bottom:none}
       .kv-stat:last-child{border-bottom:none;padding-bottom:24px}
