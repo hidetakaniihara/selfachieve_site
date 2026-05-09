@@ -249,11 +249,14 @@
 </header>
 <!-- MOBILE DRAWER -->
 <div class="hd-drawer" id="hd-drawer" role="dialog" aria-label="モバイルメニュー">
-
-  <!-- 課題から探す -->
-  <div class="hd-drawer-section">
-    <p class="hd-drawer-section-title">課題から探す</p>
-    <div class="hd-drawer-links">
+  <!-- メインリスト -->
+  <nav class="hd-drawer-nav" aria-label="モバイルナビゲーション">
+    <!-- 課題から探す（アコーディオン） -->
+    <button class="hd-drawer-item hd-drawer-item--accordion" data-drawer-accordion aria-expanded="false">
+      課題から探す
+      <svg class="hd-drawer-chevron" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+    </button>
+    <div class="hd-drawer-sub" aria-hidden="true">
       <p class="hd-drawer-group-label">戦略・全体（なんか、うまくいかない…）</p>
       <a class="hd-drawer-link-item" href="../strategy/">WEB戦略</a>
       <a class="hd-drawer-link-item" href="https://selfachieve.jp/saikatsu_r/" target="_blank" rel="noopener noreferrer">採用戦略<svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-left:4px;opacity:.6"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
@@ -277,12 +280,12 @@
       <p class="hd-drawer-group-label">AI活用（AIで業務を効率化・最適化したい）</p>
       <a class="hd-drawer-link-item" href="../ai-automation/">業務の自動化・最適化</a>
     </div>
-  </div>
-
-  <!-- サービス -->
-  <div class="hd-drawer-section">
-    <p class="hd-drawer-section-title">サービス</p>
-    <div class="hd-drawer-links">
+    <!-- サービス（アコーディオン） -->
+    <button class="hd-drawer-item hd-drawer-item--accordion" data-drawer-accordion aria-expanded="false">
+      サービス
+      <svg class="hd-drawer-chevron" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+    </button>
+    <div class="hd-drawer-sub" aria-hidden="true">
       <p class="hd-drawer-group-label">戦略設計</p>
       <a class="hd-drawer-link-item" href="../strategy/">WEB戦略</a>
       <a class="hd-drawer-link-item" href="https://selfachieve.jp/saikatsu_r/" target="_blank" rel="noopener noreferrer">採用戦略<svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-left:4px;opacity:.6"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
@@ -300,29 +303,24 @@
       <p class="hd-drawer-group-label">AI活用支援（DX/AX）</p>
       <a class="hd-drawer-link-item" href="../ai-automation/">業務の自動化・最適化</a>
     </div>
-  </div>
-
-  <!-- その他 -->
-  <div class="hd-drawer-section">
-    <div class="hd-drawer-links hd-drawer-links--flat">
-      <a class="hd-drawer-link-item" href="../works/">実績</a>
-      <a class="hd-drawer-link-item" href="../voice/">お客さまの声</a>
-      <a class="hd-drawer-link-item" href="../columns/">コラム</a>
-      <a class="hd-drawer-link-item" href="../news/">お知らせ</a>
-    </div>
-  </div>
-
-  <!-- 会社情報 -->
-  <div class="hd-drawer-section">
-    <p class="hd-drawer-section-title">会社情報</p>
-    <div class="hd-drawer-links">
+    <!-- 実績（フラットリンク） -->
+    <a class="hd-drawer-item" href="../works/">実績</a>
+    <!-- お客さまの声（フラットリンク） -->
+    <a class="hd-drawer-item" href="../voice/">お客さまの声</a>
+    <!-- お知らせ（フラットリンク） -->
+    <a class="hd-drawer-item" href="../news/">お知らせ</a>
+    <!-- 会社情報（アコーディオン） -->
+    <button class="hd-drawer-item hd-drawer-item--accordion" data-drawer-accordion aria-expanded="false">
+      会社情報
+      <svg class="hd-drawer-chevron" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+    </button>
+    <div class="hd-drawer-sub" aria-hidden="true">
       <a class="hd-drawer-link-item" href="../company/">会社概要</a>
       <a class="hd-drawer-link-item" href="../company/#mission">Mission / Vision / Value</a>
       <a class="hd-drawer-link-item" href="../company/#representative">代表メッセージ</a>
       <a class="hd-drawer-link-item" href="../company/#access">アクセス</a>
     </div>
-  </div>
-
+  </nav>
   <!-- CTAボタン -->
   <div class="hd-drawer-cta">
     <a href="../contact/" class="hd-btn" aria-label="初回の相談無料">初回の相談無料</a>
@@ -331,7 +329,6 @@
       <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
     </a>
   </div>
-
 </div>
 <main>
 
@@ -1332,12 +1329,15 @@
       document.body.style.overflow=open?'hidden':'';
     });
   }
-  document.querySelectorAll('[data-drawer-toggle]').forEach(el=>{
+  document.querySelectorAll('[data-drawer-accordion]').forEach(el=>{
     el.addEventListener('click',()=>{
-      el.classList.toggle('open');
       const sub=el.nextElementSibling;
-      if(sub)sub.classList.toggle('open');
+      if(!sub)return;
+      const isOpen=el.classList.toggle('open');
+      sub.classList.toggle('open',isOpen);
+      el.setAttribute('aria-expanded',isOpen);
     });
+  });
   });
   document.querySelectorAll('.hd-nav-item').forEach(item=>{
     item.addEventListener('mouseenter',()=>item.classList.add('open'));

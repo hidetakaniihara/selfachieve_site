@@ -9042,38 +9042,98 @@ a.wall-tag:hover{background:#28282D;color:#fff;}
    ================================================================ */
 
 /* ================================================================
-   新ドロワーメニュー — フラットリンク一覧スタイル
+   新ドロワーメニュー v2 — デフォルト6項目＋アコーディオン展開
    ================================================================ */
 
-/* ドロワー全体：上部パディングをリセット */
-.hd-drawer-section ~ .hd-drawer-section:first-of-type,
-.hd-drawer .hd-drawer-section:first-child {
-  padding-top: 12px;
-}
-
-/* セクション区切り */
-.hd-drawer-section {
-  border-bottom: 1px solid #EBEBEB;
-  padding: 16px 0 8px;
-}
-.hd-drawer-section:last-of-type {
-  border-bottom: none;
-}
-
-/* セクションタイトル（「課題から探す」「サービス」等） */
-.hd-drawer-section-title {
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: .14em;
-  text-transform: uppercase;
-  color: #9B9BA0;
-  padding: 0 24px 8px;
-}
-
-/* リンクコンテナ */
-.hd-drawer-links {
+/* ドロワー本体（上部パディングをリセット：ヘッダー行で代替） */
+.hd-drawer {
+  padding: 0 0 80px;
   display: flex;
   flex-direction: column;
+}
+
+/* ロゴ＋閉じるボタン行 */
+.hd-drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  height: 60px;
+  border-bottom: 1px solid #EBEBEB;
+  flex-shrink: 0;
+}
+.hd-drawer-logo img {
+  display: block;
+  height: 30px;
+  width: auto;
+}
+.hd-drawer-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #28282D;
+  padding: 0;
+  margin-right: -8px;
+}
+
+/* メインナビ */
+.hd-drawer-nav {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow-y: auto;
+}
+
+/* 各メインアイテム（ボタン＆リンク共通） */
+.hd-drawer-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 24px;
+  height: 52px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #28282D;
+  text-decoration: none;
+  background: none;
+  border: none;
+  border-bottom: 1px solid #EBEBEB;
+  cursor: pointer;
+  text-align: left;
+  letter-spacing: .02em;
+  box-sizing: border-box;
+  transition: background .15s;
+  font-family: inherit;
+}
+.hd-drawer-item:active {
+  background: #F7F7F7;
+}
+
+/* ▼アイコン（アコーディオン項目のみ） */
+.hd-drawer-chevron {
+  flex-shrink: 0;
+  color: #9B9BA0;
+  transition: transform .25s ease;
+}
+.hd-drawer-item--accordion.open .hd-drawer-chevron {
+  transform: rotate(-180deg);
+}
+
+/* サブメニュー（アコーディオン展開部分） */
+.hd-drawer-sub {
+  display: none;
+  flex-direction: column;
+  background: #F8F8F8;
+  border-bottom: 1px solid #EBEBEB;
+}
+.hd-drawer-sub.open {
+  display: flex;
 }
 
 /* グループ見出し（「戦略・全体」「集客」等） */
@@ -9087,9 +9147,10 @@ a.wall-tag:hover{background:#28282D;color:#fff;}
 }
 .hd-drawer-group-label:first-child {
   margin-top: 0;
+  padding-top: 12px;
 }
 
-/* 各リンク項目 */
+/* サブメニュー内の各リンク項目 */
 .hd-drawer-link-item {
   display: flex;
   align-items: center;
@@ -9097,12 +9158,13 @@ a.wall-tag:hover{background:#28282D;color:#fff;}
   font-size: 14px;
   color: #28282D;
   text-decoration: none;
-  border-bottom: 1px solid #F4F4F4;
+  border-bottom: 1px solid #EFEFEF;
   transition: background .15s, color .15s;
   line-height: 1.5;
 }
 .hd-drawer-link-item:last-child {
   border-bottom: none;
+  padding-bottom: 12px;
 }
 .hd-drawer-link-item::before {
   content: "–";
@@ -9113,20 +9175,8 @@ a.wall-tag:hover{background:#28282D;color:#fff;}
   line-height: 1;
 }
 .hd-drawer-link-item:active {
-  background: #F7F7F7;
+  background: #EFEFEF;
   color: #000;
-}
-
-/* フラットリンク（「実績」「お客さまの声」等のセクション区切りなし） */
-.hd-drawer-links--flat .hd-drawer-link-item {
-  padding: 11px 24px;
-  font-size: 15px;
-  font-weight: 500;
-}
-.hd-drawer-links--flat .hd-drawer-link-item::before {
-  content: "–";
-  color: #B8B8C0;
-  margin-right: 10px;
 }
 
 /* CTAエリア */
@@ -9136,7 +9186,7 @@ a.wall-tag:hover{background:#28282D;color:#fff;}
   flex-direction: column;
   gap: 12px;
   border-top: 1px solid #EBEBEB;
-  margin-top: 4px;
+  flex-shrink: 0;
 }
 .hd-drawer-cta .hd-btn {
   display: flex;
@@ -9145,7 +9195,6 @@ a.wall-tag:hover{background:#28282D;color:#fff;}
   height: 52px;
   font-size: 15px;
 }
-
 /* 外部リンクCTAボタン（サイカツ.R） */
 .hd-drawer-cta-external {
   display: flex;
@@ -9177,7 +9226,6 @@ a.wall-tag:hover{background:#28282D;color:#fff;}
 .hd-drawer-cta-external svg {
   flex-shrink: 0;
 }
-
 /* ================================================================
-   END 新ドロワーメニュー
+   END 新ドロワーメニュー v2
    ================================================================ */
