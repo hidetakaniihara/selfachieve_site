@@ -221,48 +221,91 @@
     <span></span><span></span><span></span>
   </button>
 </header>
+<!-- MOBILE DRAWER -->
 <div class="hd-drawer" id="hd-drawer" role="dialog" aria-label="モバイルメニュー">
-  <div class="hd-drawer-item">
-        <div class="hd-drawer-link" data-drawer-toggle>課題から探す</div>
-    <div class="hd-drawer-sub">
-      <p class="hd-drawer-sub-label">戦略・全体（なんか、うまくいかない…）</p>
-      <a href="../strategy/">WEB戦略</a>
-      <a href="https://selfachieve.jp/saikatsu_r/" target="_blank" rel="noopener noreferrer">採用戦略<svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-left:4px;opacity:.7"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
-      <p class="hd-drawer-sub-label">集客（サイトへの訪問者を増やしたい）</p>
-      <a href="../seo/">SEO対策</a>
-      <a href="../meo/">MEO対策</a>
-      <div class="hd-drawer-accordion">
-        <button class="hd-drawer-accordion-btn" type="button">WEB広告<svg class="hd-drawer-accordion-icon" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-        <div class="hd-drawer-accordion-sub">
-          <a href="../listing/">リスティング広告</a>
-          <a href="../ads/display/">ディスプレイ広告</a>
-        </div>
-      </div>
-      <a href="../sns/">SNSマーケティング</a>
-      <a href="../ai-seo/">AI検索対策（LLM対策）</a>
-      <a href="../sns/note/">note対策</a>
-      <p class="hd-drawer-sub-label">成約（問い合わせ・売上を増やしたい）</p>
-      <a href="../website/">ホームページ制作</a>
-      <a href="../website/">分析改善</a>
-      <p class="hd-drawer-sub-label">再販・追客（一度来た人にまた来てほしい）</p>
-      <a href="../sns/line/">LINE</a>
-      <a href="../sns/instagram/">Instagram</a>
-      <a href="../sns/x/">X（旧Twitter）</a>
-      <a href="../sns/youtube/">YouTube</a>
-      <a href="../sns/tiktok/">TikTok</a>
-      <p class="hd-drawer-sub-label">AI活用（AIで業務を効率化・最適化したい）</p>
-      <a href="../ai-automation/">業務の自動化・最適化</a>
+
+  <!-- 課題から探す -->
+  <div class="hd-drawer-section">
+    <p class="hd-drawer-section-title">課題から探す</p>
+    <div class="hd-drawer-links">
+      <p class="hd-drawer-group-label">戦略・全体（なんか、うまくいかない…）</p>
+      <a class="hd-drawer-link-item" href="../strategy/">WEB戦略</a>
+      <a class="hd-drawer-link-item" href="https://selfachieve.jp/saikatsu_r/" target="_blank" rel="noopener noreferrer">採用戦略<svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-left:4px;opacity:.6"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+      <p class="hd-drawer-group-label">集客（サイトへの訪問者を増やしたい）</p>
+      <a class="hd-drawer-link-item" href="../seo/">SEO対策</a>
+      <a class="hd-drawer-link-item" href="../meo/">MEO対策</a>
+      <a class="hd-drawer-link-item" href="../listing/">リスティング広告</a>
+      <a class="hd-drawer-link-item" href="../ads/display/">ディスプレイ広告</a>
+      <a class="hd-drawer-link-item" href="../sns/">SNSマーケティング</a>
+      <a class="hd-drawer-link-item" href="../ai-seo/">AI検索対策（LLM対策）</a>
+      <a class="hd-drawer-link-item" href="../sns/note/">note対策</a>
+      <p class="hd-drawer-group-label">成約（問い合わせ・売上を増やしたい）</p>
+      <a class="hd-drawer-link-item" href="../website/">ホームページ制作</a>
+      <a class="hd-drawer-link-item" href="../website/">分析改善</a>
+      <p class="hd-drawer-group-label">再販・追客（一度来た人にまた来てほしい）</p>
+      <a class="hd-drawer-link-item" href="../sns/line/">LINE</a>
+      <a class="hd-drawer-link-item" href="../sns/instagram/">Instagram</a>
+      <a class="hd-drawer-link-item" href="../sns/x/">X（旧Twitter）</a>
+      <a class="hd-drawer-link-item" href="../sns/youtube/">YouTube</a>
+      <a class="hd-drawer-link-item" href="../sns/tiktok/">TikTok</a>
+      <p class="hd-drawer-group-label">AI活用（AIで業務を効率化・最適化したい）</p>
+      <a class="hd-drawer-link-item" href="../ai-automation/">業務の自動化・最適化</a>
     </div>
+  </div>
+
+  <!-- サービス -->
+  <div class="hd-drawer-section">
+    <p class="hd-drawer-section-title">サービス</p>
+    <div class="hd-drawer-links">
+      <p class="hd-drawer-group-label">戦略設計</p>
+      <a class="hd-drawer-link-item" href="../strategy/">WEB戦略</a>
+      <a class="hd-drawer-link-item" href="https://selfachieve.jp/saikatsu_r/" target="_blank" rel="noopener noreferrer">採用戦略<svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-left:4px;opacity:.6"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+      <p class="hd-drawer-group-label">集客施策</p>
+      <a class="hd-drawer-link-item" href="../seo/">SEO対策</a>
+      <a class="hd-drawer-link-item" href="../meo/">MEO対策</a>
+      <a class="hd-drawer-link-item" href="../listing/">リスティング広告</a>
+      <a class="hd-drawer-link-item" href="../ads/display/">ディスプレイ広告</a>
+      <a class="hd-drawer-link-item" href="../sns/">SNSマーケティング</a>
+      <a class="hd-drawer-link-item" href="../ai-seo/">AI検索対策（LLM対策）</a>
+      <a class="hd-drawer-link-item" href="../sns/note/">note対策</a>
+      <p class="hd-drawer-group-label">成約</p>
+      <a class="hd-drawer-link-item" href="../website/">ホームページ制作</a>
+      <a class="hd-drawer-link-item" href="../website/">分析改善</a>
+      <p class="hd-drawer-group-label">AI活用支援（DX/AX）</p>
+      <a class="hd-drawer-link-item" href="../ai-automation/">業務の自動化・最適化</a>
     </div>
-<!-- FIXED MOBILE CTA -->
-<div class="sp-fixed-cta" id="sp-fixed-cta" role="complementary" aria-label="お問い合わせ">
-  <div class="sp-fixed-cta-inner">
-    <a href="../contact/" class="sp-fixed-cta-consult" aria-label="無料相談を申し込む">無料相談を申し込む</a>
-    <a href="tel:0788068338" class="sp-fixed-cta-tel" aria-label="電話番号 078-806-8338">
-      <svg class="sp-fixed-cta-tel-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.61 21 3 13.39 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1.02l-2.2 2.2z" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      <span class="sp-fixed-cta-tel-num">078-806-8338</span>
+  </div>
+
+  <!-- その他 -->
+  <div class="hd-drawer-section">
+    <div class="hd-drawer-links hd-drawer-links--flat">
+      <a class="hd-drawer-link-item" href="../works/">実績</a>
+      <a class="hd-drawer-link-item" href="../voice/">お客さまの声</a>
+      <a class="hd-drawer-link-item" href="../columns/">コラム</a>
+      <a class="hd-drawer-link-item" href="../news/">お知らせ</a>
+    </div>
+  </div>
+
+  <!-- 会社情報 -->
+  <div class="hd-drawer-section">
+    <p class="hd-drawer-section-title">会社情報</p>
+    <div class="hd-drawer-links">
+      <a class="hd-drawer-link-item" href="../company/">会社概要</a>
+      <a class="hd-drawer-link-item" href="../company/#mission">Mission / Vision / Value</a>
+      <a class="hd-drawer-link-item" href="../company/#representative">代表メッセージ</a>
+      <a class="hd-drawer-link-item" href="../company/#access">アクセス</a>
+    </div>
+  </div>
+
+  <!-- CTAボタン -->
+  <div class="hd-drawer-cta">
+    <a href="../contact/" class="hd-btn" aria-label="初回の相談無料">初回の相談無料</a>
+    <a href="https://saikatsu-r.jp/" class="hd-drawer-cta-external" target="_blank" rel="noopener noreferrer" aria-label="企業の採用活動を成功に導く「サイカツ.R」">
+      企業の採用活動を成功に導く「サイカツ.R」
+      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
     </a>
   </div>
+
 </div>
 <main>
 
