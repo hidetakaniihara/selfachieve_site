@@ -10396,3 +10396,45 @@ a.wall-tag:hover{background:#28282D;color:#fff;}
   .own-result-kw-list { font-size: 14px; }
 }
 /* ===== END OWN RESULT SEC ===== */
+
+/* ===== OWN RESULT TAG (case-tagデザイン流用) ===== */
+.own-result-kw-box {
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+.own-result-kw-title {
+  font-size: 11px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  display: block;
+}
+.own-result-kw-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 14px;
+}
+.own-result-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 16px;
+  border: 1px solid rgba(255,255,255,.3);
+  font-size: 15px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: .02em;
+  text-decoration: none;
+  transition: background .2s, border-color .2s, color .2s;
+}
+.own-result-tag:hover {
+  background: rgba(79,195,176,.15);
+  border-color: #4FC3B0;
+  color: #4FC3B0;
+}
+@media (max-width: 768px) {
+  .own-result-tag { font-size: 14px; padding: 7px 13px; }
+}
+/* ===== END OWN RESULT TAG ===== */
