@@ -10290,3 +10290,109 @@ a.wall-tag:hover{background:#28282D;color:#fff;}
 }
 
 
+
+/* ===== OWN RESULT SEC (SEO page) ===== */
+.own-result-sec {
+  background: #28282D;
+  overflow: hidden;
+}
+.own-result-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: 1160px;
+  margin: 0 auto;
+  gap: 0;
+  align-items: stretch;
+}
+.own-result-img-col {
+  overflow: hidden;
+  position: relative;
+  min-height: 480px;
+}
+.own-result-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
+.own-result-body-col {
+  padding: 72px 64px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 24px;
+}
+.own-result-h3 {
+  font-size: clamp(20px, 2vw, 28px);
+  font-weight: 800;
+  line-height: 1.5;
+  letter-spacing: -.02em;
+  color: #ffffff;
+  margin: 0;
+}
+.own-result-h3 em {
+  font-style: normal;
+  color: #4FC3B0;
+  text-decoration: underline;
+  text-decoration-color: #4FC3B0;
+  text-underline-offset: 3px;
+}
+.own-result-body {
+  font-size: 15px;
+  line-height: 1.9;
+  color: #ffffff;
+}
+.own-result-body strong {
+  font-weight: 700;
+  border-bottom: 2px solid #f5c518;
+}
+.own-result-kw-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #ffffff;
+  line-height: 1.7;
+}
+.own-result-kw-box {
+  background: rgba(79,195,176,.1);
+  border: 1px solid rgba(79,195,176,.3);
+  border-radius: 6px;
+  padding: 20px 24px;
+}
+.own-result-kw-title {
+  font-size: 11px;
+  font-weight: 700;
+  color: #4FC3B0;
+  letter-spacing: .1em;
+  margin-bottom: 10px;
+}
+.own-result-kw-list {
+  font-size: 14px;
+  line-height: 2.2;
+  color: #ffffff;
+}
+.own-result-kw-list a {
+  color: #ffffff;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color .2s;
+}
+.own-result-kw-list a:hover { color: #4FC3B0; }
+
+@media (max-width: 768px) {
+  .own-result-inner {
+    grid-template-columns: 1fr;
+  }
+  .own-result-img-col {
+    min-height: 260px;
+  }
+  .own-result-body-col {
+    padding: 48px 20px;
+    gap: 18px;
+  }
+  .own-result-h3 { font-size: 19px; }
+  .own-result-body { font-size: 14px; }
+  .own-result-kw-label { font-size: 14px; }
+  .own-result-kw-list { font-size: 14px; }
+}
+/* ===== END OWN RESULT SEC ===== */
