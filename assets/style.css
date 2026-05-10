@@ -10197,3 +10197,8 @@ a.wall-tag:hover{background:#28282D;color:#fff;}
   }
 }
 /* ===== END SC SLIDER ===== */
+.sc-slide-desc{
+  font-size:14px;
+  color:rgba(255,255,255,.75);
+  line-height:1.85;
+}
