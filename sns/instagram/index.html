@@ -308,10 +308,12 @@
 /* ===== case-grid: 3枚固定グリッド ===== */
 .case-grid-wrap {
   padding: 0 80px 0;
+  overflow-x: auto;
 }
 .case-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  min-width: 900px;
   gap: 24px;
   align-items: stretch;
 }
