@@ -35,200 +35,108 @@
   <style>
     /* ===== 詳細ページ専用スタイル ===== */
 
+    /* パンくずリスト SP */
+    .breadcrumb-sp{display:none;background:#F5F5F3;padding:10px 20px;border-top:1px solid #E8E8E8;}
+    .breadcrumb-sp ol{display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+    .breadcrumb-sp li{font-size:12px;color:#767680;display:flex;align-items:center;gap:8px;}
+    .breadcrumb-sp li::after{content:'/';color:#C0C0C0;}
+    .breadcrumb-sp li:last-child::after{display:none}
+    .breadcrumb-sp a{color:#767680;}
+
     /* ページヒーロー */
-    .page-hero{
-      padding:120px 48px 64px;
-      background:#fff;
-      border-bottom:1px solid #E8E8E8;
-    }
-    .page-hero-inner{max-width:960px;margin:0 auto;}
-    .page-hero-eyebrow{
-      display:block;
-      font-size:11px;letter-spacing:.18em;
-      color:#767680;margin-bottom:20px;
-      text-transform:uppercase;
-    }
+    .page-hero{padding:140px 80px 64px;background:#fff;border-bottom:1px solid #E8E8E8;}
+    .page-hero-inner{max-width:1100px;margin:0 auto;}
+    .page-hero-eyebrow{font-size:11px;letter-spacing:.22em;color:#767680;font-weight:700;text-transform:uppercase;margin-bottom:16px;display:block;}
+    #voice-title{font-size:clamp(22px,3.2vw,44px);font-weight:400;line-height:1.5;letter-spacing:-.02em;color:#28282D;}
 
     /* クライアント情報 */
-    .client-info{
-      display:flex;align-items:flex-start;justify-content:space-between;gap:32px;
-      max-width:960px;margin:0 auto;
-      padding:48px 48px 0;
-    }
+    .client-info{display:flex;align-items:flex-start;gap:80px;max-width:1100px;margin:0 auto;padding:64px 80px 80px;}
     .client-info-main{flex:1;}
-    .client-meta{display:flex;flex-direction:column;gap:12px;margin-bottom:24px;}
-    .client-meta-item{display:flex;align-items:baseline;gap:16px;}
-    .client-meta-label{
-      font-size:11px;letter-spacing:.12em;color:#767680;
-      text-transform:uppercase;min-width:56px;flex-shrink:0;
-    }
-    .client-meta-val{font-size:15px;font-weight:500;color:#1A1A1E;}
-    .client-service{display:flex;align-items:center;gap:12px;}
-    .client-service-label{font-size:11px;letter-spacing:.12em;color:#767680;text-transform:uppercase;}
-    .client-service-tag{
-      display:inline-block;
-      padding:4px 14px;
-      background:#1A1A1E;color:#fff;
-      font-size:11px;letter-spacing:.08em;font-weight:600;
-    }
-    .client-url{display:flex;align-items:center;gap:12px;}
-    .client-url-label{font-size:11px;letter-spacing:.12em;color:#767680;text-transform:uppercase;}
-    .client-url-link{font-size:13px;color:#28282D;text-decoration:underline;text-underline-offset:3px;}
+    .client-meta{display:flex;gap:0;margin-bottom:32px;border:1px solid #E8E8E8;}
+    .client-meta-item{display:flex;align-items:center;padding:14px 24px;border-right:1px solid #E8E8E8;gap:16px;}
+    .client-meta-item:last-child{border-right:none;}
+    .client-meta-label{font-size:11px;letter-spacing:.12em;color:#767680;font-weight:700;white-space:nowrap;background:#F7F7F5;padding:4px 10px;}
+    .client-meta-val{font-size:14px;color:#28282D;letter-spacing:.02em;}
+    .client-service{display:block;margin-bottom:16px;}
+    .client-service-label{font-size:11px;letter-spacing:.12em;color:#767680;font-weight:700;background:#F7F7F5;padding:4px 10px;white-space:nowrap;}
+    .client-service-tag{display:inline-flex;align-items:center;padding:6px 16px;border:1px solid #D8D8DC;font-size:13px;color:#28282D;letter-spacing:.04em;margin-top:8px;}
+    .client-url{display:block;margin-top:16px;}
+    .client-url-label{font-size:11px;letter-spacing:.12em;color:#767680;font-weight:700;background:#F7F7F5;padding:4px 10px;white-space:nowrap;}
+    .client-url-link{font-size:13px;color:#28282D;text-decoration:underline;text-underline-offset:3px;transition:opacity .2s;}
     .client-url-link:hover{opacity:.6;}
-    .client-img{
-      width:360px;height:240px;flex-shrink:0;
-      background:#F5F5F5;
-      display:flex;align-items:center;justify-content:center;
-      overflow:hidden;
-    }
+    .client-img{width:360px;flex-shrink:0;aspect-ratio:4/3;background:#EDEDEE;overflow:hidden;display:flex;align-items:center;justify-content:center;}
     .client-img img{width:100%;height:100%;object-fit:cover;}
 
     /* インタビューセクション */
-    .interview-sec{
-      max-width:960px;margin:0 auto;
-      padding:64px 48px;
-    }
-    .interview-inner{display:flex;flex-direction:column;}
-    .interview-item{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:48px;
-      align-items:start;
-      padding-top:72px;
-      padding-bottom:72px;
-      border-bottom:1px solid #E8E8E8;
-    }
-    .interview-item:first-child{padding-top:0;}
-    .interview-item:last-child{border-bottom:none;padding-bottom:0;}
-    .interview-num{
-      font-size:10px;letter-spacing:.2em;color:#767680;
-      text-transform:uppercase;margin-bottom:16px;
-    }
-    .interview-q{
-      font-size:clamp(16px,1.6vw,20px);
-      font-weight:700;line-height:1.6;
-      color:#1A1A1E;margin-bottom:24px;
-      letter-spacing:-.01em;
-    }
-    .interview-a{
-      font-size:14px;
-      line-height:1.95;
-      color:#4A4A50;
-      letter-spacing:.02em;
-    }
-    .interview-img{
-      aspect-ratio:1/1;
-      border-radius:2px;
-      overflow:hidden;
-      background:#F5F5F5;
-      display:flex;align-items:center;justify-content:center;
-    }
-    .interview-img img{width:100%;height:100%;object-fit:cover;}
+    .interview-sec{padding:0 80px 120px;}
+    .interview-inner{max-width:1100px;margin:0 auto;}
+    .interview-item{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;padding:80px 0;border-top:1px solid #E8E8E8;}
+    .interview-item:nth-child(even) .interview-body{order:2;}
+    .interview-item:nth-child(even) .interview-img{order:1;}
+    .interview-num{font-size:11px;letter-spacing:.18em;color:#BBBBC0;font-weight:700;margin-bottom:20px;display:block;}
+    .interview-q{font-size:clamp(16px,1.8vw,20px);font-weight:600;line-height:1.6;color:#28282D;letter-spacing:-.01em;margin-bottom:28px;position:relative;padding-left:24px;}
+    .interview-q::before{content:'Q.';position:absolute;left:0;top:0;font-size:13px;font-weight:700;color:#BBBBC0;letter-spacing:.04em;}
+    .interview-a{font-size:15px;line-height:2;color:#4A4A50;letter-spacing:.02em;}
+    .interview-img{aspect-ratio:4/3;background:#EDEDEE;overflow:hidden;display:flex;align-items:center;justify-content:center;}
+    .interview-img img{width:100%;height:100%;object-fit:cover;transition:transform .4s cubic-bezier(.16,1,.3,1);}
 
     /* 一覧へ戻るリンク */
-    .back-sec{
-      max-width:960px;margin:0 auto;
-      padding:0 48px 80px;
-    }
-    .back-inner{display:flex;}
-    .back-link{
-      display:inline-flex;align-items:center;gap:10px;
-      padding:14px 28px;
-      border:1px solid #28282D;
-      font-size:13px;letter-spacing:.06em;
-      color:#28282D;
-      transition:background .2s,color .2s;
-    }
-    .back-link:hover{background:#28282D;color:#fff;}
-    .back-link:hover svg path{stroke:#fff;}
+    .back-sec{padding:0 80px 80px;}
+    .back-inner{max-width:1100px;margin:0 auto;padding-top:64px;border-top:1px solid #E8E8E8;display:flex;align-items:center;justify-content:center;}
+    .back-link{display:inline-flex;align-items:center;gap:12px;font-size:13px;font-weight:700;color:#28282D;letter-spacing:.08em;text-transform:uppercase;border:1px solid #D8D8DC;padding:16px 40px;transition:background .2s,border-color .2s,color .2s;}
+    .back-link:hover{background:#28282D;color:#fff;border-color:#28282D;}
+    .back-link svg{transition:transform .2s;}
+    .back-link:hover svg{transform:translateX(-4px);}
 
     /* CTA */
-    .cta-sec{
-      background:#1A1A1E;
-      padding:96px 48px;
-      text-align:center;
-    }
-    .cta-wrap{max-width:720px;margin:0 auto;}
-    .cta-eyebrow{
-      display:block;
-      font-size:10px;letter-spacing:.22em;color:#767680;
-      text-transform:uppercase;margin-bottom:24px;
-    }
-    .cta-h2{
-      font-size:clamp(28px,3.2vw,44px);
-      font-weight:900;line-height:1.3;
-      color:#fff;margin-bottom:24px;
-      letter-spacing:-.02em;
-    }
-    .cta-h2-line{display:block;}
-    .cta-body{
-      font-size:15px;line-height:1.9;
-      color:rgba(255,255,255,.7);
-      margin-bottom:48px;
-    }
-    .cta-actions{display:flex;justify-content:center;gap:16px;}
-    .btn-cta{
-      display:inline-flex;align-items:center;justify-content:center;
-      height:60px;padding:0 48px;
-      background:#fff;color:#1A1A1E;
-      font-size:14px;letter-spacing:.08em;font-weight:700;
-      border:1px solid #fff;
-      transition:background .2s,color .2s;
-    }
-    .btn-cta:hover{background:transparent;color:#fff;}
+    .cta-sec{background:#111111;padding:120px 80px;position:relative;overflow:hidden;}
+    .cta-sec::before{content:'';position:absolute;top:-40px;right:80px;width:400px;height:400px;background:radial-gradient(circle,rgba(99,102,241,.15) 0%,transparent 70%);pointer-events:none;}
+    .cta-wrap{max-width:800px;margin:0 auto;text-align:center;position:relative;z-index:1;}
+    .cta-eyebrow{font-size:11px;letter-spacing:.22em;color:rgba(255,255,255,.5);margin-bottom:24px;display:block;text-transform:uppercase;font-weight:600;}
+    .cta-h2-line{display:block}
+    .cta-h2{font-size:clamp(28px,4vw,52px);font-weight:700;line-height:1.3;letter-spacing:-.04em;color:#fff;margin-bottom:24px;}
+    .cta-body{font-size:14px;line-height:1.9;color:rgba(255,255,255,.8);margin-bottom:56px;}
+    .cta-actions{display:flex;align-items:center;justify-content:center;gap:40px;flex-wrap:wrap;}
+    .btn-cta{display:inline-flex;align-items:center;justify-content:center;height:60px;padding:0 52px;background:#fff;color:#28282D;font-size:15px;font-weight:700;letter-spacing:.06em;transition:opacity .2s;}
+    .btn-cta:hover{opacity:.85;}
 
     /* SP固定CTA */
-    .sp-fixed-cta{
-      display:none;
-      position:fixed;bottom:0;left:0;right:0;
-      z-index:90;
-    }
-    .sp-fixed-cta.visible{display:block;}
-    .sp-fixed-cta-inner{
-      display:flex;
-    }
-    .sp-fixed-cta-consult{
-      flex:1;display:flex;align-items:center;justify-content:center;
-      height:56px;
-      background:#1A1A1E;color:#fff;
-      font-size:13px;font-weight:700;letter-spacing:.06em;
-    }
-    .sp-fixed-cta-tel{
-      display:flex;align-items:center;justify-content:center;gap:6px;
-      width:120px;height:56px;
-      background:#28282D;color:#fff;
-      font-size:12px;font-weight:600;
-    }
-    .sp-fixed-cta-tel-num{font-size:11px;letter-spacing:.04em;}
+    .sp-fixed-cta{display:none;position:fixed;bottom:0;left:0;right:0;background:#111111;padding:12px 16px;padding-bottom:calc(12px + env(safe-area-inset-bottom));z-index:90;box-shadow:0 -2px 12px rgba(0,0,0,.15);transform:translateY(100%);transition:transform .3s ease,opacity .3s ease;opacity:0;}
+    .sp-fixed-cta.visible{transform:translateY(0);opacity:1;}
+    .sp-fixed-cta-inner{display:flex;align-items:center;gap:10px;}
+    .sp-fixed-cta-consult{flex:1;display:flex;align-items:center;justify-content:center;height:48px;background:#fff;color:#28282D;font-size:14px;font-weight:700;text-decoration:none;letter-spacing:.02em;}
+    .sp-fixed-cta-tel{display:flex;align-items:center;justify-content:center;gap:6px;height:48px;padding:0 16px;border:1.5px solid rgba(255,255,255,.6);color:#fff;text-decoration:none;white-space:nowrap;}
+    .sp-fixed-cta-tel-num{font-size:13px;font-weight:500;letter-spacing:.03em;}
 
     /* フェードイン */
-    .fu{opacity:0;transform:translateY(16px);transition:opacity .55s ease,transform .55s ease;}
-    .fu.on{opacity:1;transform:none;}
+    .fu{opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1);}
+    .fu.on{opacity:1;transform:translateY(0);}
 
     /* ===== レスポンシブ ===== */
-    @media(max-width:1024px){
-      .page-hero{padding:100px 32px 48px;}
-      .client-info{padding:40px 32px 0;}
-      .interview-sec{padding:48px 32px;}
-      .back-sec{padding:0 32px 64px;}
-      .cta-sec{padding:72px 32px;}
-    }
-    @media(max-width:768px){
-      .page-hero{padding:88px 20px 40px;}
-      .client-info{flex-direction:column;padding:32px 20px 0;gap:24px;}
-      .client-img{width:100%;height:220px;}
-      .interview-sec{padding:40px 20px;}
-      .interview-item{
-        grid-template-columns:1fr;
-        gap:24px;
-        padding-bottom:48px;
-      }
+    @media(max-width:900px){
+      .breadcrumb{display:none}
+      .breadcrumb-sp{display:block}
+      .page-hero{padding:100px 20px 48px;}
+      #voice-title{font-size:clamp(17px,4.8vw,21px) !important;line-height:1.65 !important;letter-spacing:-.02em !important;word-break:auto-phrase;overflow-wrap:break-word;}
+      #voice-title br{display:none;}
+      .client-info{flex-direction:column;gap:24px;padding:32px 20px 40px;}
+      .client-img{width:100%;aspect-ratio:16/9;}
+      .client-meta{flex-direction:column;}
+      .client-meta-item{border-right:none;border-bottom:1px solid #E8E8E8;padding:12px 16px;}
+      .client-meta-item:last-child{border-bottom:none;}
+      .client-service{margin-bottom:12px;}
+      .interview-sec{padding:0 20px 72px;}
+      .interview-item{grid-template-columns:1fr;gap:24px;padding:40px 0;}
+      .interview-item:nth-child(even) .interview-body{order:1;}
+      .interview-item:nth-child(even) .interview-img{order:2;}
+      .interview-num{font-size:10px;letter-spacing:.2em;margin-bottom:14px;}
+      .interview-q{font-size:clamp(15px,4.5vw,18px);line-height:1.65;padding-left:28px;margin-bottom:20px;}
+      .interview-q::before{top:2px;font-size:12px;}
+      .interview-a{font-size:14px;line-height:1.95;}
+      .interview-img{aspect-ratio:16/9;}
       .back-sec{padding:0 20px 56px;}
       .back-inner{justify-content:center;}
-      .back-link{
-        width:100%;max-width:360px;justify-content:center;
-        min-height:52px;font-size:13px;
-      }
+      .back-link{width:100%;max-width:360px;justify-content:center;min-height:52px;font-size:13px;}
       .cta-sec{padding:72px 20px;}
       .cta-h2{font-size:clamp(22px,6vw,36px) !important;}
       .cta-h2-line{display:block;}
@@ -236,52 +144,16 @@
       .cta-body{font-size:14px;margin-bottom:40px;}
       .cta-actions{flex-direction:column;align-items:center;gap:16px;}
       .btn-cta{width:100%;max-width:360px;height:56px;font-size:15px;}
-      .sp-fixed-cta{display:block;}
-      body{padding-bottom:80px;}
+    }
+    @media(max-width:768px){
+      .sp-fixed-cta{display:block}
+      body{padding-bottom:80px}
     }
     @media(max-width:480px){
       #voice-title{font-size:clamp(15px,4.5vw,18px) !important;letter-spacing:-.02em !important;}
       .interview-q{font-size:clamp(14px,4.2vw,16px);}
     }
-  
-@media (max-width: 768px) {
-  .kv .kv-h1 {
-    color: #ffffff !important;
-  }
-  .kv .kv-eyebrow {
-    color: rgba(255,255,255,.85) !important;
-    font-size: 13px !important;
-    font-weight: 700 !important;
-    letter-spacing: .15em !important;
-    display: flex !important;
-    align-items: center !important;
-    gap: 10px !important;
-  }
-  .kv .kv-eyebrow::before {
-    content: '' !important;
-    display: inline-block !important;
-    width: 24px !important;
-    height: 2px !important;
-    background: rgba(255,255,255,.7) !important;
-    flex-shrink: 0 !important;
-  }
-  .kv .kv-sub {
-    color: #ffffff !important;
-    font-size: 15px !important;
-    font-weight: 400 !important;
-  }
-  .kv .kv-body {
-    color: #ffffff !important;
-    font-size: 14px !important;
-    line-height: 1.9 !important;
-    font-weight: 400 !important;
-  }
-  .kv-question {
-    color: rgba(255,255,255,.65) !important;
-    font-size: 14px !important;
-  }
-}
-</style>
+  </style>
 </head>
 <body>
 
@@ -473,6 +345,160 @@
   </div>
 </div>
 <!-- /wp:header -->
+
+<main id="main" role="main">
+
+  <!-- ページヒーロー -->
+  <section class="page-hero" aria-labelledby="voice-title">
+    <div class="page-hero-inner">
+      <span class="page-hero-eyebrow fu">VOICE No.18</span>
+      <h1 class="fu" id="voice-title" style="transition-delay:.08s;">
+        法律事務所のウェブ集客を、業界理解のあるパートナーと共に。
+      </h1>
+    </div>
+  </section>
+
+  <!-- パンくずリスト PC -->
+  <nav class="breadcrumb" aria-label="パンくずリスト">
+    <ol>
+      <li><a href="../../">ホーム</a></li>
+      <li><a href="../../voice/">お客さまの声</a></li>
+      <li><span aria-current="page">岩澤法理事務所</span></li>
+    </ol>
+  </nav>
+
+  <!-- クライアント情報 -->
+  <div class="client-info fu">
+    <div class="client-info-main">
+      <div class="client-meta">
+        <div class="client-meta-item">
+          <span class="client-meta-label">業　種</span>
+          <span class="client-meta-val">法律事務所</span>
+        </div>
+        <div class="client-meta-item">
+          <span class="client-meta-label">会社名</span>
+          <span class="client-meta-val">岩澤法理事務所 様</span>
+        </div>
+      </div>
+      <div class="client-service">
+        <span class="client-service-label">依頼内容</span>
+        <span class="client-service-tag">リスティング広告</span>
+      </div>
+      <div class="client-url">
+        <span class="client-url-label">サイトURL</span>
+        <a href="https://iwasawa-law.com/" class="client-url-link" target="_blank" rel="noopener noreferrer">https://iwasawa-law.com/</a>
+      </div>
+    </div>
+    <div class="client-img">
+      <img src="../../assets/voice/iwazawa.webp" alt="岩澤法理事務所" width="921" height="614" loading="eager">
+    </div>
+  </div>
+
+  <!-- インタビュー本文 -->
+  <section class="interview-sec" aria-label="インタビュー">
+    <div class="interview-inner">
+
+      <!-- Q01 -->
+      <div class="interview-item">
+        <div class="interview-body">
+          <p class="interview-num fu">QUESTION 01</p>
+          <h2 class="interview-q fu" style="transition-delay:.06s">御社のビジネスを教えてください。</h2>
+          <p class="interview-a fu" style="transition-delay:.12s">弁護士業務、民事事件・家事事件・刑事事件を幅広く扱う、いわゆる街弁（街の弁護士）です。特に対応させていただいているものが多い分野は離婚事件（離婚の他婚姻費用「家族の生活費」、養育費、親権、子どもの面会交流、男女トラブル等）です。また、相続事件や労働事件（解雇や賃金、パワーハラスメント問題等）、交通事故事件等のご相談も多いです。</p>
+        </div>
+        <div class="interview-img fu" style="transition-delay:.18s">
+          <img src="../../assets/voice/iwazawa.webp" alt="岩澤法理事務所 インタビュー" width="921" height="614" loading="lazy">
+        </div>
+      </div>
+
+      <!-- Q02 -->
+      <div class="interview-item">
+        <div class="interview-body">
+          <p class="interview-num fu">QUESTION 02</p>
+          <h2 class="interview-q fu" style="transition-delay:.06s">多くのWEB広告やWEBページ制作を行う企業がある中で、セルフアチーブを選んでいただいた理由を教えてください。</h2>
+          <p class="interview-a fu" style="transition-delay:.12s">法律相談をしたいけれど、何処に行ったらよいか分からない、行きづらいと思われている方は多くいらっしゃいます。また、そもそも相談するようなことなのかも分からないという方もいらっしゃいます。そのような方々にどのようにアプローチすればよいのか、もどかしく思っておりました。最近は多くの業者さんがWEB広告やWEBページ制作の宣伝をされています。そのような中、縁あってセルフアチーブさんとお話しをさせていただきましたところ、弁護士業務の特殊性をご理解してくださり、広告の対応について、真摩に納得のいく説明をしていただいたことが理由です。</p>
+        </div>
+        <div class="interview-img fu" style="transition-delay:.18s">
+          <img src="../../assets/voice/iwazawa.webp" alt="岩澤法理事務所 インタビュー" width="921" height="614" loading="lazy">
+        </div>
+      </div>
+
+      <!-- Q03 -->
+      <div class="interview-item">
+        <div class="interview-body">
+          <p class="interview-num fu">QUESTION 03</p>
+          <h2 class="interview-q fu" style="transition-delay:.06s">セルフアチーブの仕事の中で、特に満足している点があれば教えてください。</h2>
+          <p class="interview-a fu" style="transition-delay:.12s">月に１回ミーティングをしていただいているのですが、状況をきちんと認識・分析して、その都度、助言や対応をしていただいている点です。弁護士の業務は一般的にはやや特殊なもので、一般の方になじみが薄い、特殊な業界であると思います。また、相談・依頼に来られる方々は様々な問題、不安を抱えていらっしゃいます。そのような業務の特殊性についてきちんとヒアリングしていただき、単に広報すればよいというものではなく、いわゆる現場の状況も確認していただきながら対応していただいております。</p>
+        </div>
+        <div class="interview-img fu" style="transition-delay:.18s">
+          <img src="../../assets/voice/iwazawa.webp" alt="岩澤法理事務所 インタビュー" width="921" height="614" loading="lazy">
+        </div>
+      </div>
+
+      <!-- Q04 -->
+      <div class="interview-item">
+        <div class="interview-body">
+          <p class="interview-num fu">QUESTION 04</p>
+          <h2 class="interview-q fu" style="transition-delay:.06s">最後に、セルフアチーブへ一言あれば教えてください。</h2>
+          <p class="interview-a fu" style="transition-delay:.12s">毎月のミーティングでは、現状を的確に分析し、私たちの業務に寄り添った助言をいただけることに大変感謝しております。特殊な業界ゆえの難しさも共有しながら進められる点は、他社にはない大きな安心感です。単なる「業者」ではなく、同じ目線で課題に向き合ってくれるパートナーをお探しの方には、自信を持ってお勧めしたいと思います。これからも、どうぞよろしくお願いいたします。</p>
+        </div>
+        <div class="interview-img fu" style="transition-delay:.18s">
+          <img src="../../assets/voice/iwazawa.webp" alt="岩澤法理事務所 インタビュー" width="921" height="614" loading="lazy">
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 一覧へ戻るリンク -->
+  <div class="back-sec">
+    <div class="back-inner fu">
+      <a href="../../voice/" class="back-link">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M13 8H3M7 12l-4-4 4-4" stroke="#28282D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        お客さまの声一覧へ
+      </a>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <section class="cta-sec" id="contact" aria-labelledby="cta-h2">
+    <div class="cta-wrap">
+      <span class="cta-eyebrow fu">FREE CONSULTATION</span>
+      <h2 class="cta-h2 fu" id="cta-h2" style="transition-delay:.1s">
+        <span class="cta-h2-line">まず、お話してみませんか。</span>
+        <span class="cta-h2-line">初回相談は無料です。</span>
+      </h2>
+      <p class="cta-body fu" style="transition-delay:.15s">
+        15分の無料相談で、貴社の課題を整理します。<br>
+        「何から始めればいいかわからない」という段階でも大丈夫です。
+      </p>
+      <div class="cta-actions fu" style="transition-delay:.2s">
+        <a href="../../contact/" class="btn-cta">無料相談を申し込む</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- パンくずリスト SP（フッター直前） -->
+<nav class="breadcrumb-sp" aria-label="パンくずリスト">
+  <ol>
+    <li><a href="../../">ホーム</a></li>
+    <li><a href="../../voice/">お客さまの声</a></li>
+    <li><span aria-current="page">岩澤法理事務所</span></li>
+  </ol>
+</nav>
+
+<!-- SP固定CTA -->
+<div class="sp-fixed-cta" id="sp-fixed-cta">
+  <div class="sp-fixed-cta-inner">
+    <a href="../../contact/" class="sp-fixed-cta-consult">無料相談を申し込む</a>
+    <a href="tel:0788068338" class="sp-fixed-cta-tel">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span class="sp-fixed-cta-tel-num">078-806-8338</span>
+    </a>
+  </div>
+</div>
+
 <!-- wp:footer -->
 <!-- FOOTER -->
 <footer class="footer" role="contentinfo">
