@@ -519,6 +519,14 @@
       </div>
 
     </div>
+    <!-- 左矢印 -->
+    <button class="sc-arrow sc-arrow--prev" id="scPrev" aria-label="前のスライド">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M15 18l-6-6 6-6" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <!-- 右矢印 -->
+    <button class="sc-arrow sc-arrow--next" id="scNext" aria-label="次のスライド">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M9 18l6-6-6-6" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
     <!-- ドット・ナビ -->
     <div class="sc-slider-nav" aria-label="スライドナビゲーション">
       <button class="sc-dot active" data-index="0" aria-label="スライド1"></button>
@@ -1344,6 +1352,10 @@
       dots.forEach((d,i) => d.classList.toggle('active', i === current));
     }
     dots.forEach(d => d.addEventListener('click', () => goTo(parseInt(d.dataset.index))));
+    const prevBtn = document.getElementById('scPrev');
+    const nextBtn = document.getElementById('scNext');
+    if(prevBtn) prevBtn.addEventListener('click', () => goTo(current - 1));
+    if(nextBtn) nextBtn.addEventListener('click', () => goTo(current + 1));
     // touch swipe
     let startX = 0;
     slider.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });

@@ -10202,3 +10202,37 @@ a.wall-tag:hover{background:#28282D;color:#fff;}
   color:#ffffff;
   line-height:1.85;
 }
+
+/* SC SLIDER — 矢印ボタン */
+.sc-arrow{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  z-index:10;
+  width:56px;height:56px;
+  border-radius:50%;
+  background:rgba(255,255,255,.12);
+  border:1px solid rgba(255,255,255,.25);
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;
+  transition:background .2s,transform .2s;
+  backdrop-filter:blur(4px);
+}
+.sc-arrow:hover{
+  background:rgba(255,255,255,.25);
+  transform:translateY(-50%) scale(1.08);
+}
+.sc-arrow--prev{left:20px;}
+.sc-arrow--next{right:20px;}
+@media(max-width:768px){
+  .sc-arrow{
+    width:44px;height:44px;
+    top:auto;
+    bottom:72px;
+    transform:none;
+  }
+  .sc-arrow:hover{transform:scale(1.08);}
+  .sc-arrow--prev{left:16px;bottom:72px;}
+  .sc-arrow--next{right:16px;bottom:72px;}
+}
+/* ===== END SC ARROW ===== */
