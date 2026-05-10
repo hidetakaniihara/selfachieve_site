@@ -10280,3 +10280,11 @@ a.wall-tag:hover{background:#28282D;color:#fff;}
   }
 }
 /* ===== END SC NAV OVERRIDE ===== */
+
+/* stats-note */
+.stats-note{
+  font-size:13px;
+  color:#ffffff;
+  line-height:1.7;
+  margin-top:8px;
+}
