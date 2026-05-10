@@ -5493,7 +5493,7 @@ main{padding-top:72px;}
     }
 .case-card:hover .case-card-body{background:#F7F7F5}
 .case-overview{font-size:16px;line-height:1.8;color:#4A4A50;margin-bottom:32px;flex:1}
-.case-results{display:flex;flex-direction:column;gap:16px}
+.case-results{display:flex;flex-direction:column;gap:16px;margin-top:auto}
 .case-result-item{border-top:1px solid #E8E8E8;padding-top:16px}
 .case-result-num span{font-size:.45em;font-weight:700;vertical-align:super}
 .case-swiper-nav{
