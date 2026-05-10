@@ -5819,7 +5819,7 @@ main{padding-top:72px;}
     }
 .official-account-inner{
       max-width:1200px;margin:0 auto;padding:0 48px;
-      display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;
+      display:grid;grid-template-columns:3fr 2fr;gap:64px;align-items:center;
     }
 .official-account-head .sec-eyebrow{margin-bottom:16px}
 .official-account-h2{
