@@ -10321,6 +10321,7 @@ a.wall-tag:hover{background:#28282D;color:#fff;}
 .own-result-img-col {
   overflow: hidden;
   position: relative;
+  padding-bottom: 64px;
 }
 .own-result-img {
   width: 100%;
