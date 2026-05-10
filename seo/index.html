@@ -519,19 +519,19 @@
       </div>
 
     </div>
-    <!-- 左矢印 -->
-    <button class="sc-arrow sc-arrow--prev" id="scPrev" aria-label="前のスライド">
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M15 18l-6-6 6-6" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    </button>
-    <!-- 右矢印 -->
-    <button class="sc-arrow sc-arrow--next" id="scNext" aria-label="次のスライド">
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M9 18l6-6-6-6" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    </button>
-    <!-- ドット・ナビ -->
+    <!-- ナビゲーション：矢印＋ドット -->
     <div class="sc-slider-nav" aria-label="スライドナビゲーション">
-      <button class="sc-dot active" data-index="0" aria-label="スライド1"></button>
-      <button class="sc-dot" data-index="1" aria-label="スライド2"></button>
-      <button class="sc-dot" data-index="2" aria-label="スライド3"></button>
+      <button class="sc-arrow sc-arrow--prev" id="scPrev" aria-label="前のスライド">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M15 18l-6-6 6-6" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="sc-dots">
+        <button class="sc-dot active" data-index="0" aria-label="スライド1"></button>
+        <button class="sc-dot" data-index="1" aria-label="スライド2"></button>
+        <button class="sc-dot" data-index="2" aria-label="スライド3"></button>
+      </div>
+      <button class="sc-arrow sc-arrow--next" id="scNext" aria-label="次のスライド">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M9 18l6-6-6-6" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
     </div>
   </div>
   <div class="stats-inner">

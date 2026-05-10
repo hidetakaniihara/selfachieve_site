@@ -10236,3 +10236,47 @@ a.wall-tag:hover{background:#28282D;color:#fff;}
   .sc-arrow--next{right:16px;bottom:72px;}
 }
 /* ===== END SC ARROW ===== */
+
+/* SC SLIDER — ナビゲーション再定義（矢印をドット左右に配置） */
+.sc-slider-nav{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:16px;
+  padding:20px 0 28px;
+}
+.sc-dots{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.sc-arrow{
+  position:static;
+  top:auto;
+  transform:none;
+  width:44px;height:44px;
+  border-radius:50%;
+  background:rgba(255,255,255,.12);
+  border:1px solid rgba(255,255,255,.25);
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;
+  transition:background .2s,transform .2s;
+  flex-shrink:0;
+}
+.sc-arrow:hover{
+  background:rgba(255,255,255,.28);
+  transform:scale(1.1);
+}
+.sc-arrow--prev,.sc-arrow--next{
+  left:auto;right:auto;bottom:auto;
+}
+@media(max-width:768px){
+  .sc-arrow{
+    width:40px;height:40px;
+    bottom:auto;
+  }
+  .sc-arrow--prev,.sc-arrow--next{
+    left:auto;right:auto;bottom:auto;
+  }
+}
+/* ===== END SC NAV OVERRIDE ===== */
