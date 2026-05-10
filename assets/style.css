@@ -10329,6 +10329,12 @@ a.wall-tag:hover{background:#28282D;color:#fff;}
   height: auto;
   display: block;
 }
+.own-result-img-caption {
+  font-size: 12px;
+  color: rgba(255,255,255,.5);
+  margin-top: 10px;
+  line-height: 1.6;
+}
 .own-result-body-col {
   padding: 72px 64px;
   display: flex;
