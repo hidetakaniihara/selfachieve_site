@@ -5814,7 +5814,7 @@ main{padding-top:72px;}
     }
 .official-account-sec{
       padding:80px 0;
-      background:#F8F8F7;
+      background:#fff;
       border-top:1px solid #E8E8E8;
     }
 .official-account-inner{
@@ -5834,7 +5834,7 @@ main{padding-top:72px;}
 .official-account-card{
       display:flex;flex-direction:column;gap:20px;
       padding:36px;
-      background:#fff;
+      background:#F8F8F7;
       border:1px solid #E8E8E8;
       text-decoration:none;
       transition:box-shadow .2s,transform .2s;
