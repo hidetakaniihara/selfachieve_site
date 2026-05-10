@@ -10299,7 +10299,7 @@ a.wall-tag:hover{background:#28282D;color:#fff;}
 .own-result-head {
   max-width: 1160px;
   margin: 0 auto;
-  padding: 80px 80px 48px;
+  padding: 80px 0 48px;
 }
 .own-result-head .sec-eyebrow {
   color: #ffffff;
@@ -10347,10 +10347,8 @@ a.wall-tag:hover{background:#28282D;color:#fff;}
 }
 .own-result-h3 em {
   font-style: normal;
-  color: #4FC3B0;
-  text-decoration: underline;
-  text-decoration-color: #4FC3B0;
-  text-underline-offset: 3px;
+  color: #ffffff;
+  text-decoration: none;
 }
 .own-result-body {
   font-size: 15px;
@@ -10359,7 +10357,6 @@ a.wall-tag:hover{background:#28282D;color:#fff;}
 }
 .own-result-body strong {
   font-weight: 700;
-  border-bottom: 2px solid #f5c518;
 }
 .own-result-kw-label {
   font-size: 14px;
@@ -10395,7 +10392,7 @@ a.wall-tag:hover{background:#28282D;color:#fff;}
 
 @media (max-width: 768px) {
   .own-result-head {
-    padding: 56px 20px 32px;
+    padding: 56px 20px 32px 20px;
   }
   .own-result-inner {
     grid-template-columns: 1fr;
