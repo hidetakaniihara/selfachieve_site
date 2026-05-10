@@ -10296,6 +10296,20 @@ a.wall-tag:hover{background:#28282D;color:#fff;}
   background: #28282D;
   overflow: hidden;
 }
+.own-result-head {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 80px 80px 48px;
+}
+.own-result-head .sec-eyebrow {
+  color: #ffffff;
+}
+.own-result-head .sec-eyebrow::before {
+  background: rgba(255,255,255,.7) !important;
+}
+.own-result-head .sec-h2 {
+  color: #ffffff;
+}
 .own-result-inner {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -10380,6 +10394,9 @@ a.wall-tag:hover{background:#28282D;color:#fff;}
 .own-result-kw-list a:hover { color: #4FC3B0; }
 
 @media (max-width: 768px) {
+  .own-result-head {
+    padding: 56px 20px 32px;
+  }
   .own-result-inner {
     grid-template-columns: 1fr;
   }
@@ -10387,7 +10404,7 @@ a.wall-tag:hover{background:#28282D;color:#fff;}
     min-height: 260px;
   }
   .own-result-body-col {
-    padding: 48px 20px;
+    padding: 40px 20px 48px;
     gap: 18px;
   }
   .own-result-h3 { font-size: 19px; }
