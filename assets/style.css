@@ -4640,7 +4640,7 @@ main{padding-top:72px;}
     }
 .btn-mid-cta:hover{opacity:.8;}
 .mid-cta-tel{
-      font-size:13px;color:#ffffff;
+      font-size:15px;color:#ffffff;
       text-align:right;letter-spacing:.04em;
     }
 .mid-cta-tel a{color:#ffffff;font-weight:600;}
@@ -6395,13 +6395,13 @@ a.funnel-stage-service-tag:hover{
       display:inline-flex;align-items:center;
       padding:6px 14px;
       border:1px solid rgba(255,255,255,.4);
-      font-size:13px;color:#ffffff;
+      font-size:15px;color:#ffffff;
       letter-spacing:.04em;
       transition:border-color .2s,color .2s,background .2s;
     }
 .authority-tag:hover{border-color:rgba(255,255,255,.8);color:#fff;background:rgba(255,255,255,.08);}
 .authority-tag.lg{font-size:16px;padding:8px 18px;}
-.authority-tag.sm{font-size:12px;padding:5px 12px;}
+.authority-tag.sm{font-size:14px;padding:5px 12px;}
 .problem-swipe-hint,
     .solution-swipe-hint,
     .case-swipe-hint{
