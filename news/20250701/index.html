@@ -367,10 +367,6 @@
 <!-- /wp:footer -->
 
 <!-- SP FIXED CTA -->
-<div class="sp-fixed-cta" id="sp-fixed-cta" role="complementary" aria-label="お問い合わせ">
-  <div class="sp-fixed-cta-inner">
-    <a href="../../contact/" class="sp-fixed-cta-consult">無料相談を申し込む</a>
-  </div>
 </div>
 
 <script>
@@ -409,8 +405,6 @@
     const drawerClose=drawer.querySelector('.hd-drawer-close');
     if(drawerClose){drawerClose.addEventListener('click',()=>{btn.classList.remove('open');drawer.classList.remove('open');btn.setAttribute('aria-expanded','false');document.body.style.overflow='';});}
   })();
-  (function(){
-  (function(){const cta=document.getElementById('sp-fixed-cta');if(!cta)return;let shown=false;window.addEventListener('scroll',()=>{if(window.scrollY>300&&!shown){cta.classList.add('visible');shown=true;}},{passive:true});})();
   // PCメガメニューWEB広告アコーディオン
   document.querySelectorAll('.hd-mega-accordion-btn').forEach(btn => {
     btn.addEventListener('click', (e) => {
@@ -430,5 +424,6 @@
     });
   });
 </script>
+<script src="../../assets/common.js" defer></script>
 </body>
 </html>

@@ -756,64 +756,6 @@
   })();
 
   // SP固定CTA
-  (function(){
-    const cta=document.getElementById('sp-fixed-cta');
-    if(!cta)return;
-    const show=()=>{if(window.scrollY>300)cta.classList.add('visible');else cta.classList.remove('visible');};
-    window.addEventListener('scroll',show,{passive:true});show();
-  })();
-
-  // 目次自動生成
-  (function(){
-    const content=document.getElementById('article-content');
-    if(!content)return;
-    const headings=content.querySelectorAll('h2[id],h3[id]');
-    if(!headings.length)return;
-
-    function buildToc(listEl){
-      headings.forEach(h=>{
-        const li=document.createElement('li');
-        li.className=h.tagName==='H3'?'toc-list-h3':'';
-        const a=document.createElement('a');
-        a.href='#'+h.id;
-        a.textContent=h.textContent;
-        a.addEventListener('click',e=>{
-          e.preventDefault();
-          const target=document.getElementById(h.id);
-          if(target){const y=target.getBoundingClientRect().top+window.scrollY-100;window.scrollTo({top:y,behavior:'smooth'});}
-        });
-        li.appendChild(a);
-        listEl.appendChild(li);
-      });
-    }
-
-    const tocSp=document.getElementById('toc-list-sp');
-    if(tocSp)buildToc(tocSp);
-
-    // 目次アコーディオン（デフォルト閉じ）
-    const tocWrap=document.getElementById('toc-sp');
-    const tocHead=document.getElementById('toc-sp-head');
-    if(tocWrap&&tocHead){
-      const toggle=()=>{
-        const isOpen=tocWrap.classList.toggle('open');
-        tocHead.setAttribute('aria-expanded',isOpen);
-      };
-      tocHead.addEventListener('click',toggle);
-      tocHead.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();toggle();}});
-    }
-  })();
-
-  // FAQ アコーディオン
-  (function(){
-    document.querySelectorAll('.faq-q').forEach(q=>{
-      q.addEventListener('click',()=>{
-        const item=q.closest('.faq-item');
-        const isOpen=item.classList.toggle('open');
-        q.setAttribute('aria-expanded',isOpen);
-      });
-      q.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();q.click();}});
-    });
-  })();
   // PCメガメニューWEB広告アコーディオン
   document.querySelectorAll('.hd-mega-accordion-btn').forEach(btn => {
     btn.addEventListener('click', (e) => {
@@ -833,5 +775,6 @@
     });
   });
 </script>
+<script src="../../assets/common.js" defer></script>
 </body>
 </html>

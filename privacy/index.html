@@ -476,35 +476,6 @@
   })();
 
   // スマホ固定CTA 表示制御（ページトップを過ぎたら表示、フッターが見えたら非表示）
-  (function(){
-    var spCta = document.getElementById('sp-fixed-cta');
-    if (!spCta) return;
-    // ページトップから少しスクロールしたら表示
-    var shown = false;
-    var footer = document.querySelector('.footer');
-    var scrollHandler = function(){
-      var scrollY = window.scrollY || window.pageYOffset;
-      if (scrollY > 200) {
-        if (!shown) { spCta.classList.add('visible'); shown = true; }
-      } else {
-        if (shown) { spCta.classList.remove('visible'); shown = false; }
-      }
-    };
-    window.addEventListener('scroll', scrollHandler, {passive:true});
-    // フッターが見えたら非表示
-    if (footer) {
-      var footerObserver = new IntersectionObserver(function(entries){
-        entries.forEach(function(entry){
-          if (entry.isIntersecting) {
-            spCta.classList.remove('visible');
-          } else if ((window.scrollY || window.pageYOffset) > 200) {
-            spCta.classList.add('visible');
-          }
-        });
-      }, {threshold: 0.1});
-      footerObserver.observe(footer);
-    }
-  })();
 
   // DROPDOWN MENU (hover with delay)
   const NAV_ITEMS = document.querySelectorAll('.hd-nav-item');
@@ -570,5 +541,6 @@
 
 </script>
 
+<script src="../assets/common.js" defer></script>
 </body>
 </html>

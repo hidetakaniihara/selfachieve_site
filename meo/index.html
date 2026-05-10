@@ -535,7 +535,7 @@
   <div class="own-result-inner">
     <!-- 左：検索結果画像 -->
     <div class="own-result-img-col fu">
-      <img src="img/meo-googlemap-rank1.webp" alt="神戸MEO Googleマップ上位表示 selfachieve.jp" loading="lazy" class="own-result-img">
+      <img height="503" width="397" src="img/meo-googlemap-rank1.webp" alt="神戸MEO Googleマップ上位表示 selfachieve.jp" loading="lazy" class="own-result-img">
       <p class="own-result-img-caption">※「リスティング代行会社 神戸」と検索した際の画面</p>
     </div>
     <!-- 右：テキスト -->
@@ -1174,14 +1174,6 @@
   })();
 
   // SP FIXED CTA
-  (function(){
-    const cta = document.getElementById('sp-fixed-cta');
-    if(!cta) return;
-    let shown = false;
-    window.addEventListener('scroll', () => {
-      if(window.scrollY > 300 && !shown){ cta.classList.add('visible'); shown = true; }
-    }, { passive: true });
-  })();
 
   // PCメガメニューWEB広告アコーディオン
   document.querySelectorAll('.hd-mega-accordion-btn').forEach(btn => {
@@ -1202,5 +1194,6 @@
     });
   });
 </script>
+<script src="../assets/common.js" defer></script>
 </body>
 </html>

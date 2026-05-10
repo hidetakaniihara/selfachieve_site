@@ -1378,29 +1378,6 @@
   })();
 
   // SP FIXED CTA
-  (function(){
-    const cta = document.getElementById('sp-fixed-cta');
-    if(!cta) return;
-    let shown = false;
-    window.addEventListener('scroll', function(){
-      if(window.scrollY > 300 && !shown){
-        cta.classList.add('visible'); shown = true;
-      }
-    }, { passive: true });
-  })();
-
-</script>
-<script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<script>
-  // WHY WORKS SLIDER
-  (function(){
-    new Swiper('.why-works-swiper', {
-      loop: true,
-      autoplay: { delay: 3500, disableOnInteraction: false },
-      pagination: { el: '.why-works-slider .swiper-pagination', clickable: true },
-      speed: 700,
-    });
-  })();
   // PCメガメニューWEB広告アコーディオン
   document.querySelectorAll('.hd-mega-accordion-btn').forEach(btn => {
     btn.addEventListener('click', (e) => {
@@ -1420,5 +1397,6 @@
     });
   });
 </script>
+<script src="../assets/common.js" defer></script>
 </body>
 </html>

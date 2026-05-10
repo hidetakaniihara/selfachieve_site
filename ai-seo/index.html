@@ -664,12 +664,12 @@ AI検索の回答に自社を表示させる施策。
     <div class="problem-evidence">
       <div class="problem-evidence-item">
         <p class="problem-evidence-label">— ChatGPT での表示例</p>
-        <img src="img/gpt.webp" alt="ChatGPTの回答に株式会社セルフアチーブが表示されているスクリーンショット（マップ）" loading="lazy">
-        <img src="img/gpt2.webp" alt="ChatGPTの回答に株式会社セルフアチーブが表示されているスクリーンショット（テキスト）" loading="lazy" style="margin-top:12px">
+        <img height="799" width="1106" src="img/gpt.webp" alt="ChatGPTの回答に株式会社セルフアチーブが表示されているスクリーンショット（マップ）" loading="lazy">
+        <img height="349" width="1103" src="img/gpt2.webp" alt="ChatGPTの回答に株式会社セルフアチーブが表示されているスクリーンショット（テキスト）" loading="lazy" style="margin-top:12px">
       </div>
       <div class="problem-evidence-item">
         <p class="problem-evidence-label">— Google AI Overviews での表示例</p>
-        <img src="img/overview.webp" alt="GoogleのAI Overviewsに株式会社セルフアチーブが表示されているスクリーンショット" loading="lazy">
+        <img height="545" width="1194" src="img/overview.webp" alt="GoogleのAI Overviewsに株式会社セルフアチーブが表示されているスクリーンショット" loading="lazy">
       </div>
     </div>
     <p class="problem-evidence-catch fu">自社で証明したAI対策成果を、<br>あなたのサイトに。</p>
@@ -1209,10 +1209,6 @@ AI検索の回答に自社を表示させる施策。
 <!-- /wp:footer -->
 
 <!-- SP FIXED CTA -->
-<div class="sp-fixed-cta" id="sp-fixed-cta" aria-label="スマートフォン用固定CTA">
-  <div class="sp-fixed-cta-inner">
-    <a href="../contact/" class="sp-fixed-cta-consult">15分無料相談を申し込む</a>
-  </div>
 </div>
 
 <script>
@@ -1291,14 +1287,6 @@ AI検索の回答に自社を表示させる施策。
   })();
 
   // SP FIXED CTA
-  (function(){
-    const cta = document.getElementById('sp-fixed-cta');
-    if(!cta) return;
-    let shown = false;
-    window.addEventListener('scroll', () => {
-      if(window.scrollY > 300 && !shown){ cta.classList.add('visible'); shown = true; }
-    }, { passive: true });
-  })();
 
   // PCメガメニューWEB広告アコーディオン
   document.querySelectorAll('.hd-mega-accordion-btn').forEach(btn => {
@@ -1319,5 +1307,6 @@ AI検索の回答に自社を表示させる施策。
     });
   });
 </script>
+<script src="../assets/common.js" defer></script>
 </body>
 </html>

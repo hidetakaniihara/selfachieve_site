@@ -9,12 +9,12 @@
   <title>会社情報 | 神戸のWEBマーケティング会社 | セルフアチーブ</title>
     <link rel="stylesheet" href="../assets/style.css">
     <meta name="keywords" content="セルフアチーブ,会社情報,神戸,WEBマーケティング会社,株式会社セルフアチーブ">
-  <meta name="description" content="株式会社セルフアチーブの会社情報ページです。ミッション・ビジョン・バリュー、会社概要、アクセスをご確認いただけます。">
+  <meta name="description" content="神戸を拠点とする株式会社セルフアチーブの会社情報ページです。ミッション・ビジョン・バリュー、会社概要、アクセスをご確認いただけます。">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://htmlacheive.com/company/">
   <meta property="og:type" content="website">
   <meta property="og:title" content="会社情報 | 神戸のWEBマーケティング会社 セルフアチーブ">
-  <meta property="og:description" content="株式会社セルフアチーブの会社情報ページです。ミッション・ビジョン・バリュー、会社概要、アクセスをご確認いただけます。">
+  <meta property="og:description" content="神戸を拠点とする株式会社セルフアチーブの会社情報ページです。ミッション・ビジョン・バリュー、会社概要、アクセスをご確認いただけます。">
   <meta property="og:url" content="https://htmlacheive.com/company/">
   <meta property="og:locale" content="ja_JP">
   <meta property="og:image" content="https://htmlacheive.com/assets/ogp.jpg">
@@ -32,7 +32,7 @@
     {"@type":"WebPage","@id":"https://htmlacheive.com/company/#webpage",
      "url":"https://htmlacheive.com/company/",
      "name":"会社情報 | 神戸のWEBマーケティング会社 セルフアチーブ",
-     "description":"株式会社セルフアチーブの会社情報ページです。",
+     "description":"神戸を拠点とする株式会社セルフアチーブの会社情報ページです。",
      "isPartOf":{"@id":"https://htmlacheive.com/#website"},
      "breadcrumb":{"@id":"https://htmlacheive.com/company/#breadcrumb"},
      "inLanguage":"ja",
@@ -354,7 +354,7 @@
       <div class="rep-photo">
         <div class="rep-photo-wrapper">
           <div class="rep-photo-frame">
-            <img src="../images/niihara.webp" alt="新原 秀崇 代表取締役" loading="lazy">
+            <img height="1365" width="1023" src="../images/niihara.webp" alt="新原 秀崇 代表取締役" loading="lazy">
           </div>
         </div>
         <div class="rep-name-block">
@@ -634,127 +634,6 @@
   })();
 
   // スマホ固定CTA 表示制御
-  (function(){
-    var spCta = document.getElementById('sp-fixed-cta');
-    if (!spCta) return;
-    var shown = false;
-    var footer = document.querySelector('.footer');
-    var scrollHandler = function(){
-      var scrollY = window.scrollY || window.pageYOffset;
-      if (scrollY > 200) {
-        if (!shown) { spCta.classList.add('visible'); shown = true; }
-      } else {
-        if (shown) { spCta.classList.remove('visible'); shown = false; }
-      }
-    };
-    window.addEventListener('scroll', scrollHandler, {passive:true});
-    if (footer) {
-      var footerObserver = new IntersectionObserver(function(entries){
-        entries.forEach(function(entry){
-          if (entry.isIntersecting) {
-            spCta.classList.remove('visible');
-          } else if ((window.scrollY || window.pageYOffset) > 200) {
-            spCta.classList.add('visible');
-          }
-        });
-      }, {threshold: 0.1});
-      footerObserver.observe(footer);
-    }
-  })();
-
-  // DROPDOWN MENU (hover with delay)
-  const NAV_ITEMS = document.querySelectorAll('.hd-nav-item');
-  NAV_ITEMS.forEach(item => {
-    let closeTimer = null;
-    const open = () => {
-      clearTimeout(closeTimer);
-      NAV_ITEMS.forEach(i => { if(i !== item) i.classList.remove('open'); });
-      item.classList.add('open');
-    };
-    const close = () => {
-      closeTimer = setTimeout(() => item.classList.remove('open'), 200);
-    };
-    item.addEventListener('mouseenter', open);
-    item.addEventListener('mouseleave', close);
-    const dd = item.querySelector('.hd-dropdown, .hd-mega-wrap, .hd-mega');
-    if(dd){
-      dd.addEventListener('mouseenter', () => clearTimeout(closeTimer));
-      dd.addEventListener('mouseleave', close);
-    }
-    document.addEventListener('click', e => {
-      if(!item.contains(e.target)) item.classList.remove('open');
-    });
-  });
-
-  // HAMBURGER MENU
-  const hamburger = document.querySelector('.hd-hamburger');
-  const drawer = document.getElementById('hd-drawer');
-  hamburger.addEventListener('click', () => {
-    const isOpen = hamburger.classList.toggle('open');
-    drawer.classList.toggle('open', isOpen);
-    hamburger.setAttribute('aria-expanded', isOpen);
-    document.body.style.overflow = isOpen ? 'hidden' : '';
-  });
-  drawer.querySelectorAll('a').forEach(a => {
-    a.addEventListener('click', () => {
-      hamburger.classList.remove('open');
-      drawer.classList.remove('open');
-      hamburger.setAttribute('aria-expanded', 'false');
-      document.body.style.overflow = '';
-    });
-  });
-
-  // Drawer accordion（新仕様: data-drawer-accordion）
-  drawer.querySelectorAll('[data-drawer-accordion]').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const sub = btn.nextElementSibling;
-      const isOpen = btn.classList.toggle('open');
-      sub.classList.toggle('open', isOpen);
-      btn.setAttribute('aria-expanded', isOpen);
-    });
-  });
-  // ドロワー内の閉じるボタン
-  const drawerClose = drawer.querySelector('.hd-drawer-close');
-  if (drawerClose) {
-    drawerClose.addEventListener('click', () => {
-      hamburger.classList.remove('open');
-      drawer.classList.remove('open');
-      hamburger.setAttribute('aria-expanded', 'false');
-      document.body.style.overflow = '';
-    });
-  }
-
-  // SCROLL FADE-UP (.fu → .fu.on)
-  (function(){
-    var fuEls = document.querySelectorAll('.fu');
-    if (!fuEls.length) return;
-    var fuObserver = new IntersectionObserver(function(entries){
-      entries.forEach(function(entry){
-        if (entry.isIntersecting) {
-          entry.target.classList.add('on');
-          fuObserver.unobserve(entry.target);
-        }
-      });
-    }, {threshold: 0.1});
-    fuEls.forEach(function(el){ fuObserver.observe(el); });
-  })();
-
-  // VALUE フレーズ 下線アニメーション
-  (function(){
-    var phrases = document.querySelectorAll('.value-phrase');
-    if (!phrases.length) return;
-    var observer = new IntersectionObserver(function(entries){
-      entries.forEach(function(entry){
-        if (entry.isIntersecting) {
-          setTimeout(function(){
-            entry.target.classList.add('underline-active');
-          }, 200);
-          observer.unobserve(entry.target);
-        }
-      });
-    }, {threshold: 0.5});
-    phrases.forEach(function(el){ observer.observe(el); });
-  })();
   // PCメガメニューWEB広告アコーディオン
   document.querySelectorAll('.hd-mega-accordion-btn').forEach(btn => {
     btn.addEventListener('click', (e) => {
@@ -774,5 +653,6 @@
     });
   });
 </script>
+<script src="../assets/common.js" defer></script>
 </body>
 </html>

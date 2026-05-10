@@ -1263,14 +1263,6 @@
   })();
 
   // SP FIXED CTA
-  (function(){
-    const cta = document.getElementById('sp-fixed-cta');
-    if(!cta) return;
-    let shown = false;
-    window.addEventListener('scroll', () => {
-      if(window.scrollY > 300 && !shown){ cta.classList.add('visible'); shown = true; }
-    }, { passive: true });
-  })();
   // PCメガメニューWEB広告アコーディオン
   document.querySelectorAll('.hd-mega-accordion-btn').forEach(btn => {
     btn.addEventListener('click', (e) => {
@@ -1290,5 +1282,6 @@
     });
   });
 </script>
+<script src="../../assets/common.js" defer></script>
 </body>
 </html>
