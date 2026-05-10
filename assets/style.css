@@ -8554,24 +8554,24 @@ a.funnel-stage-service-tag:hover{
   margin-bottom:20px;
 }
 .wall-card-header-num{
-  font-size:clamp(36px,4.2vw,60px);
-  font-weight:700;
-  color:#666666;
-  letter-spacing:.04em;
+  font-size:clamp(13px,1.2vw,16px);
+  font-weight:400;
+  color:#AAAAAA;
+  letter-spacing:.08em;
   line-height:1;
 }
 .wall-card-header-sep{
-  font-size:16px;
-  color:#CCCCCC;
+  font-size:14px;
+  color:#DDDDDD;
   font-weight:300;
   line-height:1;
 }
 .wall-card-header-cat{
-  font-size:clamp(36px,4.2vw,60px);
+  font-size:clamp(18px,2vw,26px);
   font-weight:700;
-  color:#666666;
-  letter-spacing:.04em;
-  line-height:1;
+  color:#1a1a1a;
+  letter-spacing:-.01em;
+  line-height:1.3;
 }
 /* 旧クラス（互換性維持） */
 .wall-card-num{display:none;}
@@ -8641,11 +8641,11 @@ a.funnel-stage-service-tag:hover{
   margin-bottom:0;
 }
 .wall-wall-body{
-  font-size:clamp(24px,2.4vw,30px);
-  font-weight:700;
-  line-height:1.5;
-  letter-spacing:-.01em;
-  color:#000000;
+  font-size:clamp(15px,1.4vw,17px);
+  font-weight:400;
+  line-height:1.9;
+  letter-spacing:.01em;
+  color:#555555;
   margin-bottom:32px;
 }
 /* 推奨施策ラベル: 14px Bold グレー */
@@ -9009,9 +9009,11 @@ a.wall-tag:hover{background:#28282D;color:#fff;}
   }
 
   /* ---- wall-card-header 数字サイズ ---- */
-  .wall-card-header-num,
+  .wall-card-header-num{
+    font-size:13px;
+  }
   .wall-card-header-cat{
-    font-size:clamp(20px,5.5vw,28px);
+    font-size:clamp(16px,4.5vw,22px);
   }
 
   /* ---- kv-h1-line2（サブタイトル行） ---- */
@@ -9147,15 +9149,18 @@ a.wall-tag:hover{background:#28282D;color:#fff;}
      strategy ページ スマホ横はみ出し修正
      ================================================================ */
   /* wall-card-header: 数字＋カテゴリ名をスマホ適正サイズに */
-  .wall-card-header-num,
+  .wall-card-header-num{
+    font-size:12px;
+  }
   .wall-card-header-cat{
-    font-size:clamp(20px,5.5vw,28px);
+    font-size:clamp(16px,4.5vw,20px);
   }
   /* wall-wall-body: 解説文をスマホ適正サイズに・折り返し許可 */
   .wall-wall-body{
-    font-size:16px;
+    font-size:15px;
     white-space:normal;
     word-break:break-word;
+    line-height:1.9;
   }
   /* solution-sec: パディング縮小 */
   .solution-sec{
