@@ -417,28 +417,38 @@
       </p>
     </div>
   </div>
-  <!-- フルワイドグリッド（voice-gridと同構造） -->
-  <div class="results-gallery-full">
+  <!-- グラフスライダー -->
+  <div class="sc-slider-wrap">
+    <div class="sc-slider" id="scSlider">
 
-    <!-- カード 01 -->
-    <div class="result-card-full fu" style="transition-delay:0s">
-      <div class="result-img-wrap-full">
-        <img src="img/search-console-result.png" alt="サーチコンソール実績グラフ：クリック数・表示回数の推移" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;">
-      </div>
-      <div class="result-body-full">
-        <div class="result-tags">
-          <span class="result-tag industry">🏥 医療・クリニック</span>
-          <span class="result-tag period">6ヶ月</span>
+      <!-- スライド 01 -->
+      <div class="sc-slide fu">
+        <div class="sc-slide-img">
+          <img src="img/search-console-result.png" alt="サーチコンソール実績グラフ：クリック数・表示回数の推移" loading="lazy">
         </div>
-        <p class="result-comment-full">地域名・診療科キーワードで上位表示を実現。新患問い合わせが大幅増加しました。</p>
+        <div class="sc-slide-body">
+          <div class="sc-slide-num">01 / 03</div>
+          <div class="sc-slide-tags">
+            <span class="result-tag industry">🏥 医療・クリニック</span>
+            <span class="result-tag period">支援期間 6ヶ月</span>
+          </div>
+          <h3 class="sc-slide-title">地域×診療科キーワードで<br>新患問い合わせを増加</h3>
+          <ul class="sc-slide-list">
+            <li>地域名＋診療科の複合キーワードを選定・最適化</li>
+            <li>ページ構造・内部リンクを整備し検索評価を向上</li>
+            <li>コンテンツ拡充でロングテールキーワードも獲得</li>
+          </ul>
+          <div class="sc-slide-result">
+            <span class="sc-slide-result-label">RESULT</span>
+            <span class="sc-slide-result-val">クリック数 <strong>3.2倍</strong>・問い合わせ数 <strong>月+18件</strong></span>
+          </div>
+        </div>
       </div>
-    </div>
 
-    <!-- カード 02 -->
-    <div class="result-card-full fu" style="transition-delay:.1s">
-      <div class="result-img-wrap-full">
-        <div class="result-placeholder">
-          <div class="mock-graph">
+      <!-- スライド 02 -->
+      <div class="sc-slide fu">
+        <div class="sc-slide-img sc-slide-img--mock">
+          <div class="mock-graph-lg">
             <div class="mock-bar" style="height:25%"></div>
             <div class="mock-bar" style="height:22%"></div>
             <div class="mock-bar" style="height:30%"></div>
@@ -453,23 +463,31 @@
             <div class="mock-bar" style="height:98%"></div>
             <div class="mock-line"></div>
           </div>
-          <span class="placeholder-label">Search Console ↗ 表示回数</span>
+          <span class="sc-mock-label">Search Console — 表示回数の推移</span>
+        </div>
+        <div class="sc-slide-body">
+          <div class="sc-slide-num">02 / 03</div>
+          <div class="sc-slide-tags">
+            <span class="result-tag industry">🛒 EC・通販</span>
+            <span class="result-tag period">支援期間 8ヶ月</span>
+          </div>
+          <h3 class="sc-slide-title">広告ゼロで<br>安定した集客基盤を構築</h3>
+          <ul class="sc-slide-list">
+            <li>内部SEO（構造・速度・モバイル）を全面最適化</li>
+            <li>購買意欲の高いキーワードへのコンテンツを強化</li>
+            <li>被リンク獲得施策で検索評価をさらに向上</li>
+          </ul>
+          <div class="sc-slide-result">
+            <span class="sc-slide-result-label">RESULT</span>
+            <span class="sc-slide-result-val">表示回数 <strong>4.1倍</strong>・広告費 <strong>ゼロ</strong>で集客維持</span>
+          </div>
         </div>
       </div>
-      <div class="result-body-full">
-        <div class="result-tags">
-          <span class="result-tag industry">🛒 EC・通販</span>
-          <span class="result-tag period">8ヶ月</span>
-        </div>
-        <p class="result-comment-full">内部SEO最適化と購買意欲の高いキーワードへのコンテンツ強化で、広告に頼らない集客基盤を構築。</p>
-      </div>
-    </div>
 
-    <!-- カード 03 -->
-    <div class="result-card-full fu" style="transition-delay:.2s">
-      <div class="result-img-wrap-full">
-        <div class="result-placeholder">
-          <div class="mock-graph">
+      <!-- スライド 03 -->
+      <div class="sc-slide fu">
+        <div class="sc-slide-img sc-slide-img--mock">
+          <div class="mock-graph-lg">
             <div class="mock-bar" style="height:15%"></div>
             <div class="mock-bar" style="height:18%"></div>
             <div class="mock-bar" style="height:16%"></div>
@@ -484,18 +502,34 @@
             <div class="mock-bar" style="height:92%"></div>
             <div class="mock-line"></div>
           </div>
-          <span class="placeholder-label">Search Console ↗ クリック数</span>
+          <span class="sc-mock-label">Search Console — クリック数の推移</span>
+        </div>
+        <div class="sc-slide-body">
+          <div class="sc-slide-num">03 / 03</div>
+          <div class="sc-slide-tags">
+            <span class="result-tag industry">🏭 BtoB・製造業</span>
+            <span class="result-tag period">支援期間 10ヶ月</span>
+          </div>
+          <h3 class="sc-slide-title">技術キーワードで<br>商談につながる問い合わせを獲得</h3>
+          <ul class="sc-slide-list">
+            <li>技術系キーワード×購買担当者の検索意図を分析</li>
+            <li>製品ページ・技術資料ページのSEO最適化を実施</li>
+            <li>専門性の高いコンテンツで業界内の権威性を構築</li>
+          </ul>
+          <div class="sc-slide-result">
+            <span class="sc-slide-result-label">RESULT</span>
+            <span class="sc-slide-result-val">商談化率 <strong>2.8倍</strong>・月間問い合わせ <strong>+12件</strong></span>
+          </div>
         </div>
       </div>
-      <div class="result-body-full">
-        <div class="result-tags">
-          <span class="result-tag industry">🏭 BtoB・製造業</span>
-          <span class="result-tag period">10ヶ月</span>
-        </div>
-        <p class="result-comment-full">技術系キーワード×購買担当者の検索意図を組み合わせ、商談に繋がる質の高い問い合わせを継続獲得。</p>
-      </div>
-    </div>
 
+    </div>
+    <!-- ドット・ナビ -->
+    <div class="sc-slider-nav" aria-label="スライドナビゲーション">
+      <button class="sc-dot active" data-index="0" aria-label="スライド1"></button>
+      <button class="sc-dot" data-index="1" aria-label="スライド2"></button>
+      <button class="sc-dot" data-index="2" aria-label="スライド3"></button>
+    </div>
   </div>
   <div class="stats-inner">
     <div class="sc-explain fu" style="transition-delay:.2s;margin-top:24px;max-width:100%;">
@@ -1299,6 +1333,38 @@
     window.addEventListener('scroll', () => {
       if(window.scrollY > 300 && !shown){ cta.classList.add('visible'); shown = true; }
     }, { passive: true });
+  })();
+
+  // SC SLIDER
+  (function(){
+    const slider = document.getElementById('scSlider');
+    const dots = document.querySelectorAll('.sc-dot');
+    if(!slider || !dots.length) return;
+    let current = 0;
+    const slides = slider.querySelectorAll('.sc-slide');
+    const total = slides.length;
+    function goTo(idx){
+      current = (idx + total) % total;
+      slider.style.transform = 'translateX(-' + (current * 100) + '%)';
+      dots.forEach((d,i) => d.classList.toggle('active', i === current));
+    }
+    dots.forEach(d => d.addEventListener('click', () => goTo(parseInt(d.dataset.index))));
+    // touch swipe
+    let startX = 0;
+    slider.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
+    slider.addEventListener('touchend', e => {
+      const dx = e.changedTouches[0].clientX - startX;
+      if(Math.abs(dx) > 40) goTo(dx < 0 ? current + 1 : current - 1);
+    }, { passive: true });
+    // mouse drag
+    let mouseDown = false, mouseStartX = 0;
+    slider.addEventListener('mousedown', e => { mouseDown = true; mouseStartX = e.clientX; });
+    slider.addEventListener('mouseup', e => {
+      if(!mouseDown) return; mouseDown = false;
+      const dx = e.clientX - mouseStartX;
+      if(Math.abs(dx) > 40) goTo(dx < 0 ? current + 1 : current - 1);
+    });
+    slider.addEventListener('mouseleave', () => { mouseDown = false; });
   })();
 
   // PCメガメニューWEB広告アコーディオン

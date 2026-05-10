@@ -10018,3 +10018,182 @@ a.wall-tag:hover{background:#28282D;color:#fff;}
 /* ================================================================
    END 新ドロワーメニュー v2
    ================================================================ */
+
+/* ============================================================
+   SC SLIDER — SEOページ グラフスライダー
+   左2/3: グラフ画像、右1/3: 業種・施策説明
+============================================================ */
+.sc-slider-wrap{
+  position:relative;
+  overflow:hidden;
+  border-top:1px solid rgba(255,255,255,.12);
+}
+.sc-slider{
+  display:flex;
+  transition:transform .45s cubic-bezier(.4,0,.2,1);
+  cursor:grab;
+  user-select:none;
+}
+.sc-slider:active{cursor:grabbing;}
+.sc-slide{
+  min-width:100%;
+  display:grid;
+  grid-template-columns:2fr 1fr;
+}
+.sc-slide-img{
+  background:#0a0a0a;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  min-height:360px;
+}
+.sc-slide-img img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  object-position:center;
+  display:block;
+}
+.sc-slide-img--mock{
+  background:rgba(255,255,255,.04);
+  flex-direction:column;
+  gap:16px;
+  padding:40px;
+  position:relative;
+}
+.mock-graph-lg{
+  display:flex;
+  align-items:flex-end;
+  gap:6px;
+  width:100%;
+  height:200px;
+  position:relative;
+}
+.mock-graph-lg .mock-bar{
+  flex:1;
+  background:linear-gradient(to top,rgba(255,255,255,.2),rgba(255,255,255,.55));
+  border-radius:2px 2px 0 0;
+  transition:height .6s ease;
+}
+.mock-graph-lg .mock-line{
+  position:absolute;
+  bottom:0;left:0;right:0;
+  height:1px;
+  background:rgba(255,255,255,.15);
+}
+.sc-mock-label{
+  font-size:12px;
+  color:rgba(255,255,255,.4);
+  letter-spacing:.06em;
+  margin-top:12px;
+}
+.sc-slide-body{
+  padding:48px 40px;
+  border-left:1px solid rgba(255,255,255,.12);
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+  justify-content:center;
+}
+.sc-slide-num{
+  font-size:11px;
+  letter-spacing:.2em;
+  color:rgba(255,255,255,.3);
+  font-weight:700;
+}
+.sc-slide-tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+}
+.sc-slide-title{
+  font-size:clamp(18px,2vw,26px);
+  font-weight:700;
+  line-height:1.4;
+  letter-spacing:-.02em;
+  color:#ffffff;
+}
+.sc-slide-list{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  padding-left:0;
+  list-style:none;
+}
+.sc-slide-list li{
+  font-size:14px;
+  color:rgba(255,255,255,.75);
+  line-height:1.7;
+  padding-left:16px;
+  position:relative;
+}
+.sc-slide-list li::before{
+  content:'';
+  position:absolute;
+  left:0;top:.65em;
+  width:6px;height:1px;
+  background:rgba(255,255,255,.5);
+}
+.sc-slide-result{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+  padding-top:16px;
+  border-top:1px solid rgba(255,255,255,.12);
+}
+.sc-slide-result-label{
+  font-size:10px;
+  letter-spacing:.2em;
+  color:rgba(255,255,255,.4);
+  font-weight:700;
+}
+.sc-slide-result-val{
+  font-size:15px;
+  color:rgba(255,255,255,.85);
+  line-height:1.6;
+}
+.sc-slide-result-val strong{
+  color:#ffffff;
+  font-weight:700;
+}
+.sc-slider-nav{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  padding:20px 0 28px;
+}
+.sc-dot{
+  width:8px;height:8px;
+  border-radius:50%;
+  background:rgba(255,255,255,.25);
+  border:none;
+  cursor:pointer;
+  transition:background .2s,transform .2s;
+  padding:0;
+}
+.sc-dot.active{
+  background:#ffffff;
+  transform:scale(1.3);
+}
+@media(max-width:768px){
+  .sc-slide{
+    grid-template-columns:1fr;
+  }
+  .sc-slide-img{
+    min-height:220px;
+  }
+  .sc-slide-body{
+    padding:28px 20px 32px;
+    border-left:none;
+    border-top:1px solid rgba(255,255,255,.12);
+    gap:14px;
+  }
+  .sc-slide-title{
+    font-size:clamp(17px,5vw,22px);
+  }
+  .sc-slide-list li{
+    font-size:14px;
+  }
+}
+/* ===== END SC SLIDER ===== */
