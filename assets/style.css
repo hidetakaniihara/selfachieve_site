@@ -9230,6 +9230,13 @@ a.wall-tag:hover{background:#28282D;color:#fff;}
     font-size:14px;
   }
 
+  /* TOPページKVのみ：白背景のためテキストは黒に戻す */
+  body.page-top .kv .kv-h1,
+  body.page-top .kv .kv-eyebrow,
+  body.page-top .kv .kv-body {
+    color: #28282D;
+  }
+
   /* ============================================================
      全ページ共通 スマホ横はみ出し修正 (2026-05-09)
      対象: challenge / flow / plan / case / faq / stats / problem
