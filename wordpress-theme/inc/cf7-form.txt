@@ -1,0 +1,38 @@
+<!-- Contact Form 7 フォーム定義 -->
+<!-- 管理画面の「お問い合わせ」>「新規追加」に以下のコードを貼り付けてください -->
+
+<div class="form-group">
+  <label class="form-label">お問い合わせ項目 <span class="req">必須</span></label>
+  <div class="form-checkbox-group">
+    [checkbox* inquiry-type use_label_element "WEB戦略設計" "SEO対策" "MEO対策" "リスティング広告" "ディスプレイ広告" "サイト制作・分析改善" "その他" "SNS運用（Instagram）" "SNS運用（TikTok）" "SNS運用（X）" "SNS運用（YouTube）" "SNS運用（note）" "SNS運用（LINE）" "AI業務効率化・導入支援" "AI検索対策（LLM検索対策）"]
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="form-label" for="company">会社名</label>
+  [text company id:company class:form-input placeholder "例）株式会社セルフアチーブ"]
+</div>
+
+<div class="form-group">
+  <label class="form-label" for="name">お名前 <span class="req">必須</span></label>
+  [text* your-name id:name class:form-input placeholder "例）山田 太郎"]
+</div>
+
+<div class="form-group">
+  <label class="form-label" for="tel">電話番号</label>
+  [tel tel id:tel class:form-input placeholder "例）078-806-8338"]
+</div>
+
+<div class="form-group">
+  <label class="form-label" for="email">メールアドレス <span class="req">必須</span></label>
+  [email* your-email id:email class:form-input placeholder "例）info@selfachieve.jp"]
+</div>
+
+<div class="form-group">
+  <label class="form-label" for="message">お問い合わせ内容</label>
+  [textarea message id:message class:form-textarea placeholder "ご相談内容やご質問などをご自由にご記入ください。"]
+</div>
+
+<div class="form-submit-wrap">
+  [submit class:btn-submit "送信する"]
+</div>
