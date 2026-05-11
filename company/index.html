@@ -634,6 +634,38 @@
   })();
 
   // スマホ固定CTA 表示制御
+  // HAMBURGER & DRAWER
+  (function(){
+    const btn = document.querySelector('.hd-hamburger');
+    const drawer = document.getElementById('hd-drawer');
+    if(!btn || !drawer) return;
+    btn.addEventListener('click', () => {
+      const isOpen = drawer.classList.toggle('open');
+      btn.classList.toggle('open', isOpen);
+      btn.setAttribute('aria-expanded', isOpen);
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+    document.querySelectorAll('[data-drawer-accordion]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const sub = btn.nextElementSibling;
+        if(!sub) return;
+        const isOpen = btn.classList.toggle('open');
+        sub.classList.toggle('open', isOpen);
+        btn.setAttribute('aria-expanded', isOpen);
+      });
+    });
+    const drawerClose = document.querySelector('.hd-drawer-close');
+    if (drawerClose) {
+      const hamburger2 = document.querySelector('.hd-hamburger');
+      const drawer2 = document.getElementById('hd-drawer');
+      drawerClose.addEventListener('click', () => {
+        if(hamburger2) hamburger2.classList.remove('open');
+        if(drawer2) drawer2.classList.remove('open');
+        if(hamburger2) hamburger2.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      });
+    }
+  })();
   // PCメガメニューWEB広告アコーディオン
   document.querySelectorAll('.hd-mega-accordion-btn').forEach(btn => {
     btn.addEventListener('click', (e) => {

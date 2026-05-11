@@ -2133,6 +2133,16 @@ a.challenge-tag:hover{
       }
       .kv-badge{font-size:11px;padding:5px 12px}
 
+      /* KV スマホ用テキスト色（背景が#28282Dになるため白に変更） */
+      .kv-h1{color:#ffffff}
+      .kv-sub{color:rgba(255,255,255,.85)}
+      .kv-eyebrow{color:rgba(255,255,255,.55)}
+      .kv-body{color:rgba(255,255,255,.8)}
+      .kv-badge{
+        color:rgba(255,255,255,.7);
+        border-color:rgba(255,255,255,.25);
+        background:rgba(255,255,255,.06);
+      }
       
       .breadcrumb{display:none}
 

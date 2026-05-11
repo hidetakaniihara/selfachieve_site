@@ -128,8 +128,7 @@
     {"@type":"BreadcrumbList","@id":"https://htmlacheive.com/seo/#breadcrumb",
      "itemListElement":[
        {"@type":"ListItem","position":1,"name":"ホーム","item":"https://htmlacheive.com/"},
-       {"@type":"ListItem","position":2,"name":"サービス","item":"https://htmlacheive.com/service/"},
-       {"@type":"ListItem","position":3,"name":"SEO対策","item":"https://htmlacheive.com/seo/"}
+       {"@type":"ListItem","position":2,"name":"SEO対策","item":"https://htmlacheive.com/seo/"}
      ]
     },
     {"@type":"FAQPage","@id":"https://htmlacheive.com/seo/#faq",
@@ -366,7 +365,6 @@
 <nav class="breadcrumb" aria-label="パンくずリスト">
   <ol>
     <li><a href="../">ホーム</a></li>
-    <li><a href="../service/">サービス</a></li>
     <li><span aria-current="page">SEO対策</span></li>
   </ol>
 </nav>
@@ -1058,7 +1056,6 @@
 <nav class="breadcrumb-sp" aria-label="パンくずリスト（スマートフォン）">
   <ol>
     <li><a href="../">ホーム</a></li>
-    <li><a href="../service/">サービス</a></li>
     <li><span aria-current="page">SEO対策</span></li>
   </ol>
 </nav>
@@ -1290,5 +1287,49 @@
   });
 </script>
 <script src="../assets/common.js" defer></script>
+<script>
+// ===== SC SLIDER =====
+(function () {
+  var slider = document.querySelector('.sc-slider');
+  if (!slider) return;
+
+  var slides = slider.querySelectorAll('.sc-slide');
+  var total = slides.length;
+  var current = 0;
+
+  var prevBtn = document.getElementById('scPrev');
+  var nextBtn = document.getElementById('scNext');
+  var dots = document.querySelectorAll('.sc-dot');
+
+  function goTo(index) {
+    current = (index + total) % total;
+    slider.style.transform = 'translateX(-' + (current * 100) + '%)';
+    dots.forEach(function (d, i) {
+      d.classList.toggle('active', i === current);
+    });
+  }
+
+  if (prevBtn) prevBtn.addEventListener('click', function () { goTo(current - 1); });
+  if (nextBtn) nextBtn.addEventListener('click', function () { goTo(current + 1); });
+  dots.forEach(function (d) {
+    d.addEventListener('click', function () {
+      goTo(parseInt(d.dataset.index, 10));
+    });
+  });
+
+  var startX = 0;
+  slider.addEventListener('mousedown', function (e) { startX = e.clientX; });
+  slider.addEventListener('mouseup', function (e) {
+    var diff = startX - e.clientX;
+    if (Math.abs(diff) > 50) goTo(diff > 0 ? current + 1 : current - 1);
+  });
+  slider.addEventListener('touchstart', function (e) { startX = e.touches[0].clientX; }, { passive: true });
+  slider.addEventListener('touchend', function (e) {
+    var diff = startX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 50) goTo(diff > 0 ? current + 1 : current - 1);
+  }, { passive: true });
+})();
+// ===== END SC SLIDER =====
+</script>
 </body>
 </html>
