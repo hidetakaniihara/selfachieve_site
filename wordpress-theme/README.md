@@ -62,14 +62,3 @@
 
 ---
 以上でインストールと設定は完了です。
-
-## 更新履歴
-
-### v2.1（2026-05-11）
-
-| 修正項目 | 対象ファイル | 内容 |
-|---|---|---|
-| KVスマホ文字色（下層ページ白文字化） | `assets/style.css` | `@media(max-width:767px)` 内に `.kv-h1` 等の `color:#ffffff` を追加 |
-| TOPページKVスマホ文字色（黒戻し） | `assets/style.css` / `functions.php` | `body.page-top .kv .kv-h1` 等で `color:#28282D` に上書き。`functions.php` の `body_class` フィルターでTOPページに `page-top` クラスを自動付与 |
-| SEOページ スライダーJS | `assets/common.js` | `.sc-slider` の前後ボタン・ドット・スワイプ対応JSを追加（`.sc-slider` が存在しないページでは自動スキップ） |
-| パンくず「サービス」404修正 | 静的HTML側で対応済み（テーマのパンくずは動的生成のため影響なし） | — |

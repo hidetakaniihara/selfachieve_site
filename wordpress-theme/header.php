@@ -53,7 +53,7 @@
       </div>
     </span>
     <span class="hd-nav-item">
-      <a href="<?php echo esc_url( home_url( '/' ) ); ?>#service">サービスから探す</a>
+      <a href="<?php echo esc_url( home_url( '/' ) ); ?>#service">サービス</a>
       <div class="hd-mega-wrap">
       <div class="hd-mega" role="menu">
         <div class="hd-mega-col">
@@ -87,7 +87,6 @@
     </span>
     <a href="<?php echo esc_url( home_url( '/works/' ) ); ?>" class="hd-nav-item">実績</a>
     <a href="<?php echo esc_url( home_url( '/voice/' ) ); ?>" class="hd-nav-item">お客さまの声</a>
-    <a href="<?php echo esc_url( home_url( '/news/' ) ); ?>" class="hd-nav-item">お知らせ</a>
     <span class="hd-nav-item">
       <a href="<?php echo esc_url( home_url( '/company/' ) ); ?>">会社情報</a>
       <div class="hd-dropdown" role="menu">

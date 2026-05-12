@@ -66,12 +66,3 @@ function selfachieve_pagination( $pages = '', $range = 2 ) {
 
 // Contact Form 7 の不要なpタグを削除
 add_filter('wpcf7_autop_or_not', '__return_false');
-
-// TOPページのbodyにpage-topクラスを追加（KVスマホテキスト色制御用）
-function selfachieve_body_classes( $classes ) {
-    if ( is_front_page() ) {
-        $classes[] = 'page-top';
-    }
-    return $classes;
-}
-add_filter( 'body_class', 'selfachieve_body_classes' );
