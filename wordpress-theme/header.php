@@ -136,9 +136,9 @@
       <p class="hd-drawer-group-label">AI活用（AIで業務を効率化・最適化したい）</p>
       <a class="hd-drawer-link-item" href="<?php echo esc_url( home_url( '/ai-automation/' ) ); ?>">業務の自動化・最適化</a>
     </div>
-    <!-- サービスから探す（アコーディオン） -->
+    <!-- サービス（アコーディオン） -->
     <button class="hd-drawer-item hd-drawer-item--accordion" data-drawer-accordion aria-expanded="false">
-      サービスから探す
+      サービス
       <svg class="hd-drawer-chevron" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
     </button>
     <div class="hd-drawer-sub" aria-hidden="true">
@@ -152,6 +152,7 @@
       <a class="hd-drawer-link-item" href="<?php echo esc_url( home_url( '/ads/display/' ) ); ?>">ディスプレイ広告</a>
       <a class="hd-drawer-link-item" href="<?php echo esc_url( home_url( '/sns/' ) ); ?>">SNSマーケティング</a>
       <a class="hd-drawer-link-item" href="<?php echo esc_url( home_url( '/ai-seo/' ) ); ?>">AI検索対策（LLM対策）</a>
+      <a class="hd-drawer-link-item" href="<?php echo esc_url( home_url( '/sns/note/' ) ); ?>">note対策</a>
       <p class="hd-drawer-group-label">成約</p>
       <a class="hd-drawer-link-item" href="<?php echo esc_url( home_url( '/website/' ) ); ?>">ホームページ制作</a>
       <a class="hd-drawer-link-item" href="<?php echo esc_url( home_url( '/website/#grow' ) ); ?>">分析改善</a>
