@@ -1,47 +1,62 @@
 <?php
 /**
  * Template Name: お問い合わせ
+ * Description: お問い合わせページ（/contact/）のWordPressテンプレート
  */
 get_header(); ?>
 
-<main class="main" role="main">
-  <?php while ( have_posts() ) : the_post(); ?>
-  <div class="page-hero">
-    <div class="page-hero-inner">
-      <p class="page-hero-eyebrow">CONTACT</p>
-      <h1 class="page-hero-h1"><?php the_title(); ?></h1>
-      <p class="page-hero-desc">WEB集客に関するご相談や、サービスに関するご質問など、お気軽にお問い合わせください。</p>
+<main>
+
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <div class="page-header-inner">
+      <span class="page-eyebrow fu">CONTACT</span>
+      <h1 class="page-title fu" style="transition-delay:.08s;font-size:clamp(40px,5.5vw,80px)">まず、<br>課題をお聞かせください。</h1>
+      <p class="page-subtitle fu" style="transition-delay:.16s">お問い合わせ内容を確認後、担当者よりご連絡いたします。<br>まずはお気軽にご相談ください。</p>
     </div>
   </div>
 
-  <div class="breadcrumb">
-    <div class="breadcrumb-inner">
-      <a href="<?php echo esc_url( home_url( '/' ) ); ?>">HOME</a>
-      <span class="breadcrumb-sep">&gt;</span>
-      <span class="breadcrumb-current"><?php the_title(); ?></span>
-    </div>
-  </div>
+  <!-- BREADCRUMB（PC表示） -->
+  <nav class="breadcrumb" aria-label="パンくずリスト">
+    <ol>
+      <li><a href="<?php echo esc_url( home_url('/') ); ?>">ホーム</a></li>
+      <li><span aria-current="page">無料相談・お問い合わせ</span></li>
+    </ol>
+  </nav>
 
-  <section class="contact-sec">
-    <div class="contact-inner">
-      <div class="contact-form-wrap">
-        <?php 
-        // Contact Form 7 のショートコードを出力
-        // ※実際のショートコードIDは環境に合わせて変更してください
-        echo do_shortcode('[contact-form-7 id="1234" title="お問い合わせフォーム"]'); 
-        ?>
+  <!-- CONTACT CONTENT -->
+  <div class="contact-wrap">
+
+    <!-- 電話でのお問い合わせ -->
+    <div class="contact-intro fu">
+      <p class="contact-intro-text">フォームからのお問い合わせのほか、お電話でもご相談を承っております。</p>
+      <div class="contact-tel-box">
+        <div>
+          <p class="contact-tel-label">お電話でのご相談</p>
+          <a href="tel:0788068338" class="contact-tel-num">078-806-8338</a>
+          <p class="contact-tel-hours">営業時間：平日 9:00〜19:00</p>
+        </div>
       </div>
     </div>
-  </section>
 
-  <div class="breadcrumb-sp">
-    <div class="breadcrumb-inner">
-      <a href="<?php echo esc_url( home_url( '/' ) ); ?>">HOME</a>
-      <span class="breadcrumb-sep">&gt;</span>
-      <span class="breadcrumb-current"><?php the_title(); ?></span>
+    <!-- お問い合わせフォーム -->
+    <div class="contact-form-section fu" style="transition-delay:.1s">
+      <h2 class="contact-form-title">お問い合わせフォーム</h2>
+
+      <?php echo do_shortcode('[contact-form-7 id="7" title="コンタクトフォーム 1"]'); ?>
+
     </div>
+
   </div>
-  <?php endwhile; ?>
+
+  <!-- BREADCRUMB SP（スマホ時：フッター直前） -->
+  <nav class="breadcrumb-sp" aria-hidden="true">
+    <ol>
+      <li><a href="<?php echo esc_url( home_url('/') ); ?>">ホーム</a></li>
+      <li><span aria-current="page">無料相談・お問い合わせ</span></li>
+    </ol>
+  </nav>
+
 </main>
 
 <?php get_footer(); ?>
