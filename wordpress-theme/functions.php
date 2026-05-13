@@ -66,3 +66,112 @@ function selfachieve_pagination( $pages = '', $range = 2 ) {
 
 // Contact Form 7 の不要なpタグを削除
 add_filter('wpcf7_autop_or_not', '__return_false');
+
+// 静的HTMLファイルを削除してWordPressが処理できるようにする
+function selfachieve_delete_static_index_files() {
+    $dirs_to_clean = [
+        ABSPATH . 'company',
+    ];
+    foreach ($dirs_to_clean as $dir) {
+        if (is_dir($dir)) {
+            // ディレクトリ内のファイルを削除
+            $files = glob($dir . '/*');
+            if ($files) {
+                foreach ($files as $file) {
+                    if (is_file($file)) {
+                        unlink($file);
+                    }
+                }
+            }
+            // 空のディレクトリを削除
+            @rmdir($dir);
+        }
+    }
+}
+add_action('init', 'selfachieve_delete_static_index_files');
+
+// home_urlデバッグ用エンドポイント
+add_action('rest_api_init', function() {
+    register_rest_route('debug/v1', '/home_url', array(
+        'methods' => 'GET',
+        'callback' => function() {
+            return array(
+                'home_url' => home_url('/'),
+                'site_url' => site_url('/'),
+                'WP_HOME' => defined('WP_HOME') ? WP_HOME : 'not defined',
+                'WP_SITEURL' => defined('WP_SITEURL') ? WP_SITEURL : 'not defined',
+            );
+        },
+        'permission_callback' => '__return_true',
+    ));
+});
+// header.phpのパスを確認するデバッグ
+add_filter('get_header', function($name) {
+    $template_dir = get_template_directory();
+    $header_file = $template_dir . '/header' . ($name ? '-' . $name : '') . '.php';
+    error_log('HEADER_FILE_PATH: ' . $header_file . ' exists: ' . (file_exists($header_file) ? 'YES' : 'NO'));
+    // header.phpのMD5を確認
+    if (file_exists($header_file)) {
+        error_log('HEADER_MD5: ' . md5_file($header_file));
+    }
+    return $name;
+});
+// テンプレートディレクトリをREST APIで確認
+add_action('rest_api_init', function() {
+    register_rest_route('debug/v1', '/template_dir', array(
+        'methods' => 'GET',
+        'callback' => function() {
+            $template_dir = get_template_directory();
+            $header_file = $template_dir . '/header.php';
+            return array(
+                'template_dir' => $template_dir,
+                'header_file' => $header_file,
+                'header_exists' => file_exists($header_file),
+                'header_md5' => file_exists($header_file) ? md5_file($header_file) : 'not found',
+                'header_size' => file_exists($header_file) ? filesize($header_file) : 0,
+                'header_first_100' => file_exists($header_file) ? substr(file_get_contents($header_file), 0, 100) : 'not found',
+            );
+        },
+        'permission_callback' => '__return_true',
+    ));
+});
+// 固定ページのテンプレート設定を確認
+add_action('rest_api_init', function() {
+    register_rest_route('debug/v1', '/pages', array(
+        'methods' => 'GET',
+        'callback' => function() {
+            $pages = get_posts(array('post_type' => 'page', 'posts_per_page' => 20, 'post_status' => array('publish', 'draft')));
+            $result = array();
+            foreach ($pages as $page) {
+                $template = get_post_meta($page->ID, '_wp_page_template', true);
+                $result[] = array(
+                    'id' => $page->ID,
+                    'slug' => $page->post_name,
+                    'title' => $page->post_title,
+                    'template' => $template,
+                    'status' => $page->post_status,
+                );
+            }
+            return $result;
+        },
+        'permission_callback' => '__return_true',
+    ));
+});
+// companyフォルダの存在確認
+add_action('rest_api_init', function() {
+    register_rest_route('debug/v1', '/company_folder', array(
+        'methods' => 'GET',
+        'callback' => function() {
+            $public_html = ABSPATH;
+            $company_dir = $public_html . 'company';
+            $company_index = $public_html . 'company/index.html';
+            return array(
+                'abspath' => $public_html,
+                'company_dir_exists' => is_dir($company_dir),
+                'company_index_exists' => file_exists($company_index),
+                'company_dir_contents' => is_dir($company_dir) ? scandir($company_dir) : array(),
+            );
+        },
+        'permission_callback' => '__return_true',
+    ));
+});
