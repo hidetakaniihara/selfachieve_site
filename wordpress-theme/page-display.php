@@ -29,7 +29,7 @@ get_header();
 <!-- PC BREADCRUMB (KV直後) -->
 <nav class="breadcrumb" aria-label="パンくずリスト">
   <ol>
-    <li><a href="../../">ホーム</a></li>
+    <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>">ホーム</a></li>
     <li><span aria-current="page">ディスプレイ広告</span></li>
   </ol>
 </nav>
@@ -349,7 +349,7 @@ get_header();
           <li class="plan-feature">月次レポート・定例MTG</li>
         </ul>
         <p class="plan-caution">※ バナー・クリエイティブ制作が必要な場合は別途お見積りとなります。</p>
-        <a href="../../contact/" class="btn-plan">無料相談を申し込む</a>
+        <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="btn-plan">無料相談を申し込む</a>
       </div>
       <div class="plan-card fu" style="transition-delay:.1s">
         <span class="plan-type">CREATIVE</span>
@@ -366,7 +366,7 @@ get_header();
           <li class="plan-feature">LP（ランディングページ）制作</li>
         </ul>
         <p class="plan-caution">※運用代行と併せてのご依頼の場合、クリエイティブの内容を考慮した一体的な提案が可能です。</p>
-        <a href="../../contact/" class="btn-plan">無料相談を申し込む</a>
+        <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="btn-plan">無料相談を申し込む</a>
       </div>
     </div>
     <p class="swipe-hint-plan">← スワイプして見る →</p>
@@ -387,7 +387,7 @@ get_header();
         <p class="seo-banner-sub" style="color:#ffffff;font-size:15px;">ディスプレイで認知を広げ、リスティングで刈り取る。両方を組み合わせることで、広告の効果を最大化できます。</p>
       </div>
     </div>
-    <a href="../../ads/listing/" class="seo-banner-btn" style="background:#ffffff;color:#28282D;border-color:#ffffff;font-weight:700;font-size:14px;padding:0 28px;height:48px;">リスティング広告ページを見る →</a>
+    <a href="<?php echo esc_url( home_url( '/listing/' ) ); ?>" class="seo-banner-btn" style="background:#ffffff;color:#28282D;border-color:#ffffff;font-weight:700;font-size:14px;padding:0 28px;height:48px;">リスティング広告ページを見る →</a>
   </div>
 </div>
 
@@ -398,11 +398,11 @@ get_header();
       <span class="sec-eyebrow fu">CLIENT VOICES</span>
       <h2 class="sec-h2 fu" id="voice-title" style="transition-delay:.1s">伴走してきた企業の、<br>リアルな声。</h2>
     </div>
-    <a href="../../voice/" class="view-all fu" style="transition-delay:.2s" aria-label="お客さまの声をすべて見る">すべて見る</a>
+    <a href="<?php echo esc_url( home_url( '/voice/' ) ); ?>" class="view-all fu" style="transition-delay:.2s" aria-label="お客さまの声をすべて見る">すべて見る</a>
   </div>
   <div class="voice-grid">
     <article class="voice-card fu">
-      <a href="../../voice/iwazawa/" class="voice-link" aria-label="岩澤法理事務所の声を詳しく見る">
+      <a href="<?php echo esc_url( home_url( '/voice/iwazawa/' ) ); ?>" class="voice-link" aria-label="岩澤法理事務所の声を詳しく見る">
       <div class="voice-avatar">
         <img src="../<?php echo get_template_directory_uri(); ?>/assets/voice/iwazawa.webp" alt="岩澤法理事務所" width="280" height="280" loading="lazy">
       </div>
@@ -420,7 +420,7 @@ get_header();
       </a>
     </article>
     <article class="voice-card fu" style="transition-delay:.1s">
-      <a href="../../voice/" class="voice-link" aria-label="株式会社エデュラボの声を詳しく見る">
+      <a href="<?php echo esc_url( home_url( '/voice/' ) ); ?>" class="voice-link" aria-label="株式会社エデュラボの声を詳しく見る">
       <div class="voice-avatar">
         <img src="../<?php echo get_template_directory_uri(); ?>/assets/voice/edurabo.webp" alt="株式会社エデュラボ" width="280" height="280" loading="lazy">
       </div>
@@ -438,7 +438,7 @@ get_header();
       </a>
     </article>
     <article class="voice-card fu" style="transition-delay:.2s">
-      <a href="../../voice/" class="voice-link" aria-label="Nadiの声を詳しく見る">
+      <a href="<?php echo esc_url( home_url( '/voice/' ) ); ?>" class="voice-link" aria-label="Nadiの声を詳しく見る">
       <div class="voice-avatar">
         <img src="../<?php echo get_template_directory_uri(); ?>/assets/voice/nadi.webp" alt="Nadi ピラティス・ヨガスタジオ" width="280" height="280" loading="lazy">
       </div>
@@ -471,7 +471,7 @@ get_header();
       現状のヒアリングから、最適な施策をご提案します。
     </p>
     <div class="cta-actions fu" style="transition-delay:.3s">
-      <a href="../../contact/" class="btn-cta" aria-label="無料相談を申し込む">無料相談を申し込む</a>
+      <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="btn-cta" aria-label="無料相談を申し込む">無料相談を申し込む</a>
       <div class="cta-tel-wrap">
         <p class="cta-tel-label">お電話でのご相談</p>
         <a href="tel:0788068338" class="cta-tel" aria-label="電話番号 078-806-8338">078-806-8338</a>
@@ -487,7 +487,7 @@ get_header();
       <p class="sec-eyebrow fu">FAQ</p>
       <h2 class="faq-h2 fu" id="faq-h2">よくある質問</h2>
     </div>
-    <a href="../../faq/" class="view-all fu" aria-label="よくある質問をすべて見る">すべて見る</a>
+    <a href="<?php echo esc_url( home_url( '/faq/' ) ); ?>" class="view-all fu" aria-label="よくある質問をすべて見る">すべて見る</a>
   </div>
 <div class="faq-list" role="list">
     <div class="faq-item fu" role="listitem">
@@ -602,10 +602,10 @@ get_header();
         <a href="<?php echo esc_url( home_url( '/seo/' ) ); ?>" class="challenge-tag">SEO対策</a>
         <a href="<?php echo esc_url( home_url( '/meo/' ) ); ?>" class="challenge-tag">MEO対策</a>
         <a href="<?php echo esc_url( home_url( '/listing/' ) ); ?>" class="challenge-tag">リスティング広告</a>
-        <a href="../ads/display/" class="challenge-tag">ディスプレイ広告</a>
+        <a href="<?php echo esc_url( home_url( '/display/' ) ); ?>" class="challenge-tag">ディスプレイ広告</a>
         <a href="<?php echo esc_url( home_url( '/sns/' ) ); ?>" class="challenge-tag">SNSマーケティング</a>
         <a href="<?php echo esc_url( home_url( '/ai-seo/' ) ); ?>" class="challenge-tag">AI検索対策（LLM対策）</a>
-        <a href="../sns/note/" class="challenge-tag">note対策</a>
+        <a href="<?php echo esc_url( home_url( '/note/' ) ); ?>" class="challenge-tag">note対策</a>
       </div>
     </article>
     <!-- 03 転換 -->
@@ -622,7 +622,7 @@ get_header();
       <p class="challenge-tags-label">推奨施策</p>
             <div class="challenge-tags-wrap">
         <a href="<?php echo esc_url( home_url( '/website/' ) ); ?>" class="challenge-tag">ホームページ制作</a>
-        <a href="../website/#grow" class="challenge-tag">分析改善</a>
+        <a href="<?php echo esc_url( home_url( '/website/' ) ); ?>#grow" class="challenge-tag">分析改善</a>
       </div>
     </article>
     <!-- 04 追客 -->
@@ -638,11 +638,11 @@ get_header();
       </p>
       <p class="challenge-tags-label">推奨施策</p>
             <div class="challenge-tags-wrap">
-        <a href="../sns/line/" class="challenge-tag">LINE</a>
-        <a href="../sns/instagram/" class="challenge-tag">Instagram</a>
-        <a href="../sns/x/" class="challenge-tag">X（旧Twitter）</a>
-        <a href="../sns/youtube/" class="challenge-tag">YouTube</a>
-        <a href="../sns/tiktok/" class="challenge-tag">TikTok</a>
+        <a href="<?php echo esc_url( home_url( '/line/' ) ); ?>" class="challenge-tag">LINE</a>
+        <a href="<?php echo esc_url( home_url( '/instagram/' ) ); ?>" class="challenge-tag">Instagram</a>
+        <a href="<?php echo esc_url( home_url( '/x/' ) ); ?>" class="challenge-tag">X（旧Twitter）</a>
+        <a href="<?php echo esc_url( home_url( '/youtube/' ) ); ?>" class="challenge-tag">YouTube</a>
+        <a href="<?php echo esc_url( home_url( '/tiktok/' ) ); ?>" class="challenge-tag">TikTok</a>
       </div>
     </article>
   </div>
@@ -696,7 +696,7 @@ get_header();
   <div class="blog-inner">
     <div class="blog-head">
       <h2 class="blog-h2 fu" id="blog-h2">ディスプレイ広告 関連コラム</h2>
-      <a href="../../column/" class="view-all fu" style="transition-delay:.1s" aria-label="コラムをすべて見る">すべて見る</a>
+      <a href="<?php echo esc_url( home_url( '/column/' ) ); ?>" class="view-all fu" style="transition-delay:.1s" aria-label="コラムをすべて見る">すべて見る</a>
     </div>
     <div class="blog-grid">
       <article class="blog-card fu">
@@ -721,7 +721,7 @@ get_header();
 <!-- BREADCRUMB SP (フッター直前) -->
 <nav class="breadcrumb-sp" aria-label="パンくずリスト">
   <ol>
-    <li><a href="../../">ホーム</a></li>
+    <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>">ホーム</a></li>
     <li><span aria-current="page">ディスプレイ広告</span></li>
   </ol>
 </nav>
@@ -731,7 +731,7 @@ get_header();
 <footer class="footer" role="contentinfo">
   <div class="footer-top">
     <div class="footer-logo-wrap">
-      <a href="../../index.html" class="footer-logo" aria-label="セルフアチーブ トップページへ">
+      <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="footer-logo" aria-label="セルフアチーブ トップページへ">
         <img src="../<?php echo get_template_directory_uri(); ?>/assets/logo_color.webp" alt="selfachieve Acquisition Agency" width="140" height="30" loading="lazy">
       </a>
       <address class="footer-logo-addr">
@@ -761,32 +761,32 @@ get_header();
     <nav class="footer-nav" aria-label="フッターナビゲーション">
       <div class="footer-nav-group">
         <p class="footer-nav-title">サービス</p>
-        <a href="../../strategy/">WEB戦略設計</a>
-        <a href="../../website/">サイト制作・分析改善</a>
-        <a href="../../seo/">SEO対策</a>
-        <a href="../../meo/">MEO対策</a>
-        <a href="../../ai-seo/">AI検索対策（LLM検索対策）</a>
-        <a href="../../ads/display/">ディスプレイ広告</a>
-        <a href="../../sns/instagram/">Instagram</a>
-        <a href="../../sns/tiktok/">TikTok</a>
-        <a href="../../sns/x/">X（旧Twitter）</a>
-        <a href="../../sns/youtube/">YouTube</a>
-        <a href="../../sns/note/">note</a>
-        <a href="../../sns/line/">LINE</a>
-        <a href="../../ai-automation/">AI業務効率化・導入支援</a>
+        <a href="<?php echo esc_url( home_url( '/strategy/' ) ); ?>">WEB戦略設計</a>
+        <a href="<?php echo esc_url( home_url( '/website/' ) ); ?>">サイト制作・分析改善</a>
+        <a href="<?php echo esc_url( home_url( '/seo/' ) ); ?>">SEO対策</a>
+        <a href="<?php echo esc_url( home_url( '/meo/' ) ); ?>">MEO対策</a>
+        <a href="<?php echo esc_url( home_url( '/ai-seo/' ) ); ?>">AI検索対策（LLM検索対策）</a>
+        <a href="<?php echo esc_url( home_url( '/display/' ) ); ?>">ディスプレイ広告</a>
+        <a href="<?php echo esc_url( home_url( '/instagram/' ) ); ?>">Instagram</a>
+        <a href="<?php echo esc_url( home_url( '/tiktok/' ) ); ?>">TikTok</a>
+        <a href="<?php echo esc_url( home_url( '/x/' ) ); ?>">X（旧Twitter）</a>
+        <a href="<?php echo esc_url( home_url( '/youtube/' ) ); ?>">YouTube</a>
+        <a href="<?php echo esc_url( home_url( '/note/' ) ); ?>">note</a>
+        <a href="<?php echo esc_url( home_url( '/line/' ) ); ?>">LINE</a>
+        <a href="<?php echo esc_url( home_url( '/ai-automation/' ) ); ?>">AI業務効率化・導入支援</a>
       </div>
       <div class="footer-nav-group">
         <p class="footer-nav-title">会社情報</p>
-        <a href="../../works/">実績</a>
-        <a href="../../voice/">お客さまの声</a>
-        <a href="../../company/">会社情報</a>
-        <a href="../../columns/">コラム</a>
-        <a href="../../news/">お知らせ</a>
-        <a href="../../privacy/">プライバシーポリシー</a>
+        <a href="<?php echo esc_url( home_url( '/works/' ) ); ?>">実績</a>
+        <a href="<?php echo esc_url( home_url( '/voice/' ) ); ?>">お客さまの声</a>
+        <a href="<?php echo esc_url( home_url( '/company/' ) ); ?>">会社情報</a>
+        <a href="<?php echo esc_url( home_url( '/columns/' ) ); ?>">コラム</a>
+        <a href="<?php echo esc_url( home_url( '/news/' ) ); ?>">お知らせ</a>
+        <a href="<?php echo esc_url( home_url( '/privacy/' ) ); ?>">プライバシーポリシー</a>
       </div>
       <div class="footer-nav-group">
         <p class="footer-nav-title">お問い合わせ</p>
-        <a href="../../contact/">無料相談のお申し込み</a>
+        <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>">無料相談のお申し込み</a>
         <a href="tel:0788068338">078-806-8338（平日 9:00～19:00）</a>
       </div>
     </nav>
