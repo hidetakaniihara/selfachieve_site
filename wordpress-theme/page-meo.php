@@ -637,7 +637,7 @@ get_header(); ?>
 </section>
 
 <!-- SP BREADCRUMB（フッター直前） -->
-<nav class="breadcrumb-sp" aria-label="パンくずリスト（スマートフォン）">
+<nav class="breadcrumb-sp-footer" aria-label="パンくずリスト（スマートフォン）">
   <ol>
     <li><a href="<?php echo esc_url( home_url('/') ); ?>">ホーム</a></li>
     <li><span aria-current="page">MEO対策</span></li>

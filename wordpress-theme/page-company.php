@@ -276,7 +276,7 @@ get_header(); ?>
   </section>
 </main>
 <!-- BREADCRUMB SP（スマホ時：フッター直前） -->
-<nav class="breadcrumb-sp" aria-hidden="true">
+<nav class="breadcrumb-sp-footer" aria-hidden="true">
   <ol>
     <li><a href="<?php echo esc_url( home_url('/') ); ?>">ホーム</a></li>
     <li><span aria-current="page">会社情報</span></li>
