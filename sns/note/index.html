@@ -1,513 +1,32 @@
 <!DOCTYPE html>
+
 <html lang="ja">
 <head>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swa&display=swapp" rel="stylesheet">
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>note運用代行・記事制作 | 神戸・兵庫の中小企業向けnoteマーケティング | セルフアチーブ</title>
-  <link rel="stylesheet" href="../../assets/style.css">
-  <meta name="description" content="note運用代行・記事制作に対応。読まれるほど選ばれるnoteマーケティングを神戸・兵庫の中小企業・店舗に特化して提供。記事企画から執筆・公開・分析まで一貫支援。初回15分無料相談。">
-  <meta name="keywords" content="note 運用代行,note 記事制作,note マーケティング 神戸,note 運用代行 兵庫,note SEO">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://htmlacheive.com/sns/note/">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="note運用代行・記事制作 | 神戸・兵庫の中小企業向けnoteマーケティング | セルフアチーブ">
-  <meta property="og:description" content="note運用代行・記事制作に対応。読まれるほど選ばれるnoteマーケティングを神戸・兵庫の中小企業・店舗に特化して提供。">
-  <meta property="og:url" content="https://htmlacheive.com/sns/note/">
-  <meta property="og:locale" content="ja_JP">
-  <meta property="og:image" content="https://htmlacheive.com/assets/ogp.jpg">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="theme-color" content="#ffffff">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Noto+Sans+JP:wght@400;500;600;700;900&display=swa&display=swapp" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-  <style>
-/* ===== KV SERVICE LABEL ===== */
-.kv-service-label {
-  display: inline-flex;
-  align-items: center;
-  font-family: 'Noto Sans JP', sans-serif;
-  font-weight: 900;
-  font-size: clamp(13px, 1.1vw, 14px);
-  letter-spacing: .2em;
-  text-transform: uppercase;
-  color: #fff;
-  border-left: 3px solid rgba(255,255,255,.9);
-  padding: 4px 0 4px 14px;
-  margin-bottom: 22px;
-  position: relative;
-  z-index: 2;
-}
-/* ===== KV SPLASH: REMOVED ===== */
-.kv-right { display: none !important; }
-.kv-splash { display: none !important; }
-/* ===== KV PADDING: 上下余白削減 ===== */
-.kv {
-  min-height: auto !important;
-  padding: var(--kv-padding-v, 72px) 80px !important;
-}
-/* ===== KV INNER: full-width text layout (2-line H1) ===== */
-@media (min-width: 769px) {
-  .kv .kv-inner {
-    grid-template-columns: 1fr !important;
-    max-width: 1400px !important;
-  }
-  .kv .kv-h1 {
-    font-size: clamp(40px, 6vw, 88px) !important;
-    line-height: 1.2 !important;
-    letter-spacing: -0.04em !important;
-    margin-bottom: 32px !important;
-  }
-  .kv .kv-eyebrow {
-    font-size: clamp(28px, 4vw, 56px) !important;
-    font-weight: 900 !important;
-    letter-spacing: -0.02em !important;
-    color: #ffffff !important;
-    margin-bottom: 20px !important;
-    gap: 20px !important;
-  }
-  .kv .kv-eyebrow::before {
-    display: none !important;
-  }
-  .kv .kv-sub {
-    margin-bottom: 0 !important;
-  }
-}
-@media (max-width: 768px) {
-  .kv {
-    padding: var(--kv-padding-v-sp, 56px) 24px !important;
-    min-height: auto !important;
-  }
-  .kv .kv-h1 {
-    color: #ffffff !important;
-  }
-  .kv .kv-eyebrow {
-    color: rgba(255,255,255,.85) !important;
-    font-size: 13px !important;
-    font-weight: 700 !important;
-    letter-spacing: .15em !important;
-    display: flex !important;
-    align-items: center !important;
-    gap: 10px !important;
-  }
-  .kv .kv-eyebrow::before {
-    content: '' !important;
-    display: inline-block !important;
-    width: 24px !important;
-    height: 2px !important;
-    background: rgba(255,255,255,.7) !important;
-    flex-shrink: 0 !important;
-  }
-  .kv .kv-sub {
-    color: #ffffff !important;
-    font-size: 15px !important;
-    font-weight: 400 !important;
-  }
-  .kv .kv-body {
-    color: #ffffff !important;
-    font-size: 14px !important;
-    line-height: 1.9 !important;
-    font-weight: 400 !important;
-  }
-}
-/* ===== KV ACTIONS: 非表示 ===== */
-.kv-actions { display: none !important; }
-.kv-service-label { display: none !important; }
-/* ===== crb-tag: ホバー無効化 ===== */
-.crb-tag:hover {
-  border-color: #D8D8D8 !important;
-  color: #444 !important;
-  background: #fff !important;
-}
-/* ===== official-account-h2: 共通h2サイズに統一 ===== */
-.official-account-h2 {
-  font-size: clamp(36px, 4.2vw, 60px) !important;
-}
-/* ===== official-account-card: ホバー無効化 ===== */
-.official-account-card:hover {
-  box-shadow: none !important;
-  transform: none !important;
-}
-/* ===== what-head: 左寄せ ===== */
-.what-head {
-  text-align: left !important;
-}
-/* ===== what-sec: セクション全体 ===== */
-.what-sec {
-  padding-top: 150px !important;
-  padding-bottom: 150px !important;
-  background: #ffffff !important;
-}
-/* ===== what-strategy-block: 戦略上段エリア ===== */
-.what-strategy-block {
-  background: #f8f8f8;
-  padding: 72px 40px;
-  margin-bottom: 0;
-  text-align: center;
-}
-.what-strategy-inner {
-  max-width: 680px;
-  margin: 0 auto;
-}
-/* 月桂樹バッジ */
-.what-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  border: 1.5px solid #000000;
-  border-radius: 2px;
-  padding: 8px 20px;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: .18em;
-  text-transform: uppercase;
-  color: #000000;
-  margin-bottom: 48px;
-}
-.what-badge-icon {
-  display: inline-block;
-  width: 16px;
-  height: 16px;
-  flex-shrink: 0;
-}
-/* 2行ヘッドライン */
-.what-strategy-headline {
-  font-size: clamp(22px, 4vw, 30px);
-  font-weight: 900;
-  color: #000000;
-  line-height: 1.0;
-  margin: 0 0 48px;
-  letter-spacing: -0.02em;
-  text-align: center;
-}
-.what-strategy-headline .hl-line1 {
-  display: block;
-  font-size: clamp(28px, 5vw, 40px);
-  margin-bottom: 20px;
-}
-.what-strategy-headline .hl-line2 {
-  display: block;
-  font-size: clamp(16px, 2.8vw, 22px);
-  font-weight: 700;
-  color: #444444;
-  letter-spacing: .01em;
-}
-/* 本文 */
-.what-strategy-body {
-  font-size: 15px;
-  line-height: 1.85;
-  color: #333333;
-  margin: 0 0 48px;
-  text-align: left;
-}
-/* ボタン */
-.what-strategy-btn {
-  display: inline-block;
-  padding: 16px 40px;
-  background: #000000;
-  color: #ffffff;
-  font-size: 14px;
-  font-weight: 700;
-  letter-spacing: .06em;
-  text-decoration: none;
-  border: 2px solid #000000;
-  transition: background .2s, color .2s;
-}
-.what-strategy-btn:hover {
-  background: #ffffff;
-  color: #000000;
-}
-/* ===== what-flow-bridge: 静止ブロックアロー ===== */
-.what-flow-bridge {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0;
-  padding: 80px 0 0;
-  margin-bottom: 100px;
-  text-align: center;
-}
-/* ボディ（黒い長方形） */
-.what-block-arrow {
-  display: flex !important;
-  align-items: center;
-  justify-content: center;
-  width: clamp(320px, 70%, 600px);
-  min-height: 80px;
-  background: #000000;
-  padding: 24px 48px;
-  margin-bottom: -1px;
-  flex-shrink: 0;
-}
-/* ボディ内テキスト */
-.what-block-arrow-text {
-  display: block !important;
-  font-size: clamp(16px, 2.4vw, 20px);
-  font-weight: 900;
-  color: #ffffff;
-  letter-spacing: .04em;
-  line-height: 1.3;
-  white-space: nowrap;
-}
-/* 三角形ヘッド */
-.what-block-arrow-tip {
-  display: block !important;
-  width: clamp(320px, 70%, 600px);
-  height: 44px;
-  background: #000000;
-  clip-path: polygon(0 0, 100% 0, 50% 100%);
-  flex-shrink: 0;
-}
-/* SVG矢印・宣言テキストは非表示 */
-.what-vector-arrow, .what-vector-label { display: none; }
-.what-flow-arrow, .what-flow-label { display: none; }
-/* what-card: 背景・ボーダー・シャドウ復旧 */
-.what-card {
-  background: #f8f8f8 !important;
-  border: 1px solid #eeeeee !important;
-  box-shadow: none !important;
-}
-@media (max-width: 768px) {
-  .what-sec {
-    padding-top: 80px !important;
-    padding-bottom: 80px !important;
-  }
-  .what-strategy-headline .hl-line1 {
-    font-size: clamp(22px, 7vw, 32px);
-  }
-  .what-strategy-headline .hl-line2 {
-    font-size: clamp(14px, 4vw, 18px);
-  }
-  .what-strategy-body {
-    font-size: 14px;
-  }
-  .what-flow-arrow {
-    height: 90px;
-    width: 7px;
-  }
-  .what-flow-label {
-    font-size: 17px;
-    margin-top: 32px;
-  }
-}
-/* ===== case-note: 背景・ボーダー無効化 ===== */
-.case-note {
-  background: none !important;
-  border: none !important;
-  padding: 0 !important;
-  margin-top: 0 !important;
-}
-.case-note::before {
-  display: none !important;
-}
-/* ===== case-grid: 3枚固定グリッド ===== */
-.case-grid-wrap {
-  padding: 0 80px 0;
-}
-.case-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  align-items: stretch;
-}
-.case-grid .case-card {
-  display: flex;
-  flex-direction: column;
-}
-.case-grid .case-card-body {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-}
-.case-grid .case-card-result {
-  margin-top: auto;
-}
-/* SP: 1列 */
-@media (max-width: 767px) {
-  .case-grid-wrap {
-    padding: 0 16px 0;
-  }
-  .case-grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-}
-/* ===== our-note-head: 左寄せ ===== */
-.our-note-head {
-  text-align: left !important;
-}
-/* ===== our-note-stat-num: 黒文字 ===== */
-.our-note-stat-num {
-  color: #000000 !important;
-}
-/* ===== what-strategy-block: 戦略上段エリア ===== */
-.what-strategy-block {
-  background: #f8f8f8;
-  padding: 72px 40px;
-  margin-bottom: 0;
-  text-align: center;
-}
-.what-strategy-inner {
-  max-width: 680px;
-  margin: 0 auto;
-}
-.what-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  border: 1.5px solid #000000;
-  border-radius: 2px;
-  padding: 8px 20px;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: .18em;
-  text-transform: uppercase;
-  color: #000000;
-  margin-bottom: 48px;
-}
-.what-badge-icon {
-  display: inline-block;
-  width: 16px;
-  height: 16px;
-  flex-shrink: 0;
-}
-.what-strategy-headline {
-  font-size: clamp(22px, 4vw, 30px);
-  font-weight: 900;
-  color: #000000;
-  line-height: 1.0;
-  margin: 0 0 48px;
-  letter-spacing: -0.02em;
-  text-align: center;
-}
-.what-strategy-headline .hl-line1 {
-  display: block;
-  font-size: clamp(28px, 5vw, 40px);
-  margin-bottom: 20px;
-}
-.what-strategy-headline .hl-line2 {
-  display: block;
-  font-size: clamp(16px, 2.8vw, 22px);
-  font-weight: 700;
-  color: #444444;
-  letter-spacing: .01em;
-}
-.what-strategy-body {
-  font-size: 15px;
-  line-height: 1.85;
-  color: #333333;
-  margin: 0 0 48px;
-  text-align: left;
-}
-.what-strategy-btn {
-  display: inline-block;
-  padding: 16px 40px;
-  background: #000000;
-  color: #ffffff;
-  font-size: 14px;
-  font-weight: 700;
-  letter-spacing: .06em;
-  text-decoration: none;
-  border: 2px solid #000000;
-  transition: background .2s, color .2s;
-}
-.what-strategy-btn:hover {
-  background: #ffffff;
-  color: #000000;
-}
-/* ===== what-flow-bridge: 静止ブロックアロー ===== */
-.what-flow-bridge {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0;
-  padding: 80px 0 0;
-  margin-bottom: 100px;
-  text-align: center;
-}
-.what-block-arrow {
-  display: flex !important;
-  align-items: center;
-  justify-content: center;
-  width: clamp(320px, 70%, 600px);
-  min-height: 80px;
-  background: #000000;
-  padding: 24px 48px;
-  margin-bottom: -1px;
-  flex-shrink: 0;
-}
-.what-block-arrow-text {
-  display: block !important;
-  font-size: clamp(16px, 2.4vw, 20px);
-  font-weight: 900;
-  color: #ffffff;
-  letter-spacing: .04em;
-  line-height: 1.3;
-  white-space: nowrap;
-}
-.what-block-arrow-tip {
-  display: block !important;
-  width: clamp(320px, 70%, 600px);
-  height: 44px;
-  background: #000000;
-  clip-path: polygon(0 0, 100% 0, 50% 100%);
-  flex-shrink: 0;
-}
-@media (max-width: 768px) {
-  .what-strategy-block { padding: 56px 24px; }
-  .what-strategy-headline .hl-line1 { font-size: clamp(22px, 7vw, 32px); }
-  .what-strategy-headline .hl-line2 { font-size: clamp(14px, 4vw, 18px); }
-  .what-flow-bridge { padding: 56px 0 0; margin-bottom: 64px; }
-  .what-block-arrow-text { white-space: normal; }
-}
-/* ===== noteカラー上書き: 縦線・箇箇箇点 ===== */
-.what-card-desc-lead {
-  border-left-color: #41C9B4 !important;
-}
-.what-card-feature::before {
-  background: #41C9B4 !important;
-}
-/* ===== 全大見出し左端位置をvoice-head（80px）に統一 ===== */
-/* our-note-sec: padding:40px → 0、innerにpadding:0 80px */
-.our-note-sec {
-  padding-left: 0 !important;
-  padding-right: 0 !important;
-}
-.our-note-inner {
-  max-width: none !important;
-  margin: 0 !important;
-  padding: 0 80px !important;
-}
-/* what-sec: innerにpadding:0 80px、max-width解除 */
-.what-sec {
-  padding-left: 0 !important;
-  padding-right: 0 !important;
-}
-.what-inner {
-  max-width: none !important;
-  margin: 0 !important;
-  padding: 0 80px !important;
-}
-/* plan-sec: innerにpadding:0 80px、max-width解除 */
-.plan-sec {
-  padding-left: 0 !important;
-  padding-right: 0 !important;
-}
-.plan-inner {
-  max-width: none !important;
-  margin: 0 !important;
-  padding: 0 80px !important;
-}
-@media (max-width: 768px) {
-  .our-note-inner { padding: 0 20px !important; }
-  .what-inner { padding: 0 20px !important; }
-  .plan-inner { padding: 0 20px !important; }
-}
-  </style>
-  <script type="application/ld+json">
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&amp;display=swa&amp;display=swapp" rel="stylesheet"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>note運用代行・記事制作 | 神戸・兵庫の中小企業向けnoteマーケティング | セルフアチーブ</title>
+<link href="../../assets/style.css" rel="stylesheet"/><link href="../../assets/page-sns-note.css" rel="stylesheet"/>
+<meta content="note運用代行・記事制作に対応。読まれるほど選ばれるnoteマーケティングを神戸・兵庫の中小企業・店舗に特化して提供。記事企画から執筆・公開・分析まで一貫支援。初回15分無料相談。" name="description"/>
+<meta content="note 運用代行,note 記事制作,note マーケティング 神戸,note 運用代行 兵庫,note SEO" name="keywords"/>
+<meta content="index, follow" name="robots"/>
+<link href="https://htmlacheive.com/sns/note/" rel="canonical"/>
+<meta content="website" property="og:type"/>
+<meta content="note運用代行・記事制作 | 神戸・兵庫の中小企業向けnoteマーケティング | セルフアチーブ" property="og:title"/>
+<meta content="note運用代行・記事制作に対応。読まれるほど選ばれるnoteマーケティングを神戸・兵庫の中小企業・店舗に特化して提供。" property="og:description"/>
+<meta content="https://htmlacheive.com/sns/note/" property="og:url"/>
+<meta content="ja_JP" property="og:locale"/>
+<meta content="https://htmlacheive.com/assets/ogp.jpg" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="#ffffff" name="theme-color"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&amp;family=Noto+Sans+JP:wght@400;500;600;700;900&amp;display=swa&amp;display=swapp" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" rel="stylesheet"/>
+
+<script type="application/ld+json">
   {"@context":"https://schema.org","@graph":[
     {"@type":"Service","@id":"https://htmlacheive.com/sns/note/#service",
      "name":"note運用代行・記事制作",
@@ -535,843 +54,835 @@
   </script>
 </head>
 <body>
-
-
 <!-- wp:header -->
 <!-- HEADER -->
 <header class="hd" role="banner">
-  <a href="../../index.html" class="hd-logo" aria-label="セルフアチーブ トップページへ">
-    <img src="../../assets/logo_color.webp" alt="selfachieve Acquisition Agency" width="160" height="34" fetchpriority="high">
-  </a>
-  <nav class="hd-nav" aria-label="グローバルナビゲーション">
-    <span class="hd-nav-item">
-      <a href="#challenge">課題から探す</a>
-      <div class="hd-mega-wrap">
-      <div class="hd-mega" role="menu">
-        <div class="hd-mega-col">
-          <span class="hd-mega-col-label"><span class="col-label-main">戦略・全体</span><span class="col-label-sub">（なんか、うまくいかない…）</span></span>
-          <a href="../../strategy/" role="menuitem">WEB戦略</a>
-          <a href="https://htmlacheive.com/saikatsu_r/" role="menuitem" target="_blank" rel="noopener noreferrer">採用戦略<svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-left:4px;opacity:.7"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
-        </div>
-        <div class="hd-mega-col">
-          <span class="hd-mega-col-label"><span class="col-label-main">集客</span><span class="col-label-sub">（サイトへの訪問者を増やしたい）</span></span>
-          <a href="../../seo/" role="menuitem">SEO対策</a>
-          <a href="../../meo/" role="menuitem">MEO対策</a>
-          <button class="hd-mega-accordion-btn" type="button">WEB広告<svg class="hd-mega-accordion-icon" width="10" height="10" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-          <div class="hd-mega-accordion-sub">
-            <a href="../../listing/" role="menuitem" class="hd-mega-sub-link">リスティング広告</a>
-            <a href="../../ads/display/" role="menuitem" class="hd-mega-sub-link">ディスプレイ広告</a>
-          </div>
-          <a href="../../sns/" role="menuitem">SNSマーケティング</a>
-          <a href="../../ai-seo/" role="menuitem">AI検索対策（LLM対策）</a>
-          <a href="../../sns/note/" role="menuitem">note対策</a>
-        </div>
-        <div class="hd-mega-col">
-          <span class="hd-mega-col-label"><span class="col-label-main">成約</span><span class="col-label-sub">（問い合わせ・売上を増やしたい）</span></span>
-          <a href="../../website/" role="menuitem">ホームページ制作</a>
-          <a href="../../website/#grow" role="menuitem">分析改善</a>
-        </div>
-        <div class="hd-mega-col">
-          <span class="hd-mega-col-label"><span class="col-label-main">再販・追客</span><span class="col-label-sub">（一度来た人にまた来てほしい）</span></span>
-          <a href="../../sns/line/" role="menuitem">LINE</a>
-          <a href="../../sns/instagram/" role="menuitem">Instagram</a>
-          <a href="../../sns/x/" role="menuitem">X（旧Twitter）</a>
-          <a href="../../sns/youtube/" role="menuitem">YouTube</a>
-          <a href="../../sns/tiktok/" role="menuitem">TikTok</a>
-        </div>
-        <div class="hd-mega-col">
-          <span class="hd-mega-col-label"><span class="col-label-main">AI活用</span><span class="col-label-sub">（AIで業務を効率化・最適化したい）</span></span>
-          <a href="../../ai-automation/" role="menuitem">業務の自動化・最適化</a>
-        </div>
-      </div>
-      </div>
-    </span>
-    <span class="hd-nav-item">
-      <a href="javascript:void(0)">サービス</a>
-      <div class="hd-mega-wrap">
-      <div class="hd-mega" role="menu">
-        <div class="hd-mega-col">
-          <span class="hd-mega-col-label"><span class="col-label-main">戦略設計</span></span>
-          <a href="../../strategy/" role="menuitem">WEB戦略</a>
-          <a href="https://htmlacheive.com/saikatsu_r/" role="menuitem" target="_blank" rel="noopener noreferrer">採用戦略<svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-left:4px;opacity:.7"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
-        </div>
-        <div class="hd-mega-col">
-          <span class="hd-mega-col-label"><span class="col-label-main">集客施策</span></span>
-          <a href="../../seo/" role="menuitem">SEO対策</a>
-          <a href="../../meo/" role="menuitem">MEO対策</a>
-          <button class="hd-mega-accordion-btn" type="button">WEB広告<svg class="hd-mega-accordion-icon" width="10" height="10" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-          <div class="hd-mega-accordion-sub">
-            <a href="../../listing/" role="menuitem" class="hd-mega-sub-link">リスティング広告</a>
-            <a href="../../ads/display/" role="menuitem" class="hd-mega-sub-link">ディスプレイ広告</a>
-          </div>
-          <a href="../../sns/" role="menuitem">SNSマーケティング</a>
-          <a href="../../ai-seo/" role="menuitem">AI検索対策（LLM対策）</a>
-          <a href="../../sns/note/" role="menuitem">note対策</a>
-        </div>
-        <div class="hd-mega-col">
-          <span class="hd-mega-col-label"><span class="col-label-main">成約</span></span>
-          <a href="../../website/" role="menuitem">ホームページ制作</a>
-          <a href="../../website/#grow" role="menuitem">分析改善</a>
-        </div>
-        <div class="hd-mega-col">
-          <span class="hd-mega-col-label"><span class="col-label-main">AI活用支援（DX/AX）</span></span>
-          <a href="../../ai-automation/" role="menuitem">業務の自動化・最適化</a>
-        </div>
-      </div>
-      </div>
-    </span>
-    <a href="../../works/">実績</a>
-    <a href="../../voice/">お客さまの声</a>
-    <span class="hd-nav-item">
-      <a href="../../company/">会社情報</a>
-      <div class="hd-dropdown" role="menu">
-        <a href="../../company/#mission" role="menuitem">Mission / Vision / Value</a>
-        <a href="../../company/#representative" role="menuitem">代表メッセージ</a>
-        <a href="../../company/#overview" role="menuitem">会社概要</a>
-        <a href="../../company/#access" role="menuitem">アクセス</a>
-      </div>
-    </span>
-
-  </nav>
-  <div class="hd-btns">
-    <a href="https://saikatsu-r.jp/" class="hd-btn-external" target="_blank" rel="noopener noreferrer" aria-label="企業の採用活動を成功に導く「サイカツ.R」（別サイトが開きます）">企業の採用活動を成功に導く「サイカツ.R」<svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
-    <a href="../../contact/" class="hd-btn" aria-label="初回の相談無料">初回の相談無料</a>
-  </div>
-  <button class="hd-hamburger" aria-label="メニューを開く" aria-expanded="false" aria-controls="hd-drawer">
-    <span></span><span></span><span></span>
-  </button>
+<a aria-label="セルフアチーブ トップページへ" class="hd-logo" href="../../index.html">
+<img alt="selfachieve Acquisition Agency" fetchpriority="high" height="34" src="../../assets/logo_color.webp" width="160"/>
+</a>
+<nav aria-label="グローバルナビゲーション" class="hd-nav">
+<span class="hd-nav-item">
+<a href="#challenge">課題から探す</a>
+<div class="hd-mega-wrap">
+<div class="hd-mega" role="menu">
+<div class="hd-mega-col">
+<span class="hd-mega-col-label"><span class="col-label-main">戦略・全体</span><span class="col-label-sub">（なんか、うまくいかない…）</span></span>
+<a href="../../strategy/" role="menuitem">WEB戦略</a>
+<a href="https://htmlacheive.com/saikatsu_r/" rel="noopener noreferrer" role="menuitem" target="_blank">採用戦略<svg fill="none" height="11" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" style="vertical-align:middle;margin-left:4px;opacity:.7" viewbox="0 0 24 24" width="11" xmlns="http://www.w3.org/2000/svg"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" x2="21" y1="14" y2="3"></line></svg></a>
+</div>
+<div class="hd-mega-col">
+<span class="hd-mega-col-label"><span class="col-label-main">集客</span><span class="col-label-sub">（サイトへの訪問者を増やしたい）</span></span>
+<a href="../../seo/" role="menuitem">SEO対策</a>
+<a href="../../meo/" role="menuitem">MEO対策</a>
+<button class="hd-mega-accordion-btn" type="button">WEB広告<svg class="hd-mega-accordion-icon" fill="none" height="10" viewbox="0 0 12 12" width="10" xmlns="http://www.w3.org/2000/svg"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg></button>
+<div class="hd-mega-accordion-sub">
+<a class="hd-mega-sub-link" href="../../listing/" role="menuitem">リスティング広告</a>
+<a class="hd-mega-sub-link" href="../../ads/display/" role="menuitem">ディスプレイ広告</a>
+</div>
+<a href="../../sns/" role="menuitem">SNSマーケティング</a>
+<a href="../../ai-seo/" role="menuitem">AI検索対策（LLM対策）</a>
+<a href="../../sns/note/" role="menuitem">note対策</a>
+</div>
+<div class="hd-mega-col">
+<span class="hd-mega-col-label"><span class="col-label-main">成約</span><span class="col-label-sub">（問い合わせ・売上を増やしたい）</span></span>
+<a href="../../website/" role="menuitem">ホームページ制作</a>
+<a href="../../website/#grow" role="menuitem">分析改善</a>
+</div>
+<div class="hd-mega-col">
+<span class="hd-mega-col-label"><span class="col-label-main">再販・追客</span><span class="col-label-sub">（一度来た人にまた来てほしい）</span></span>
+<a href="../../sns/line/" role="menuitem">LINE</a>
+<a href="../../sns/instagram/" role="menuitem">Instagram</a>
+<a href="../../sns/x/" role="menuitem">X（旧Twitter）</a>
+<a href="../../sns/youtube/" role="menuitem">YouTube</a>
+<a href="../../sns/tiktok/" role="menuitem">TikTok</a>
+</div>
+<div class="hd-mega-col">
+<span class="hd-mega-col-label"><span class="col-label-main">AI活用</span><span class="col-label-sub">（AIで業務を効率化・最適化したい）</span></span>
+<a href="../../ai-automation/" role="menuitem">業務の自動化・最適化</a>
+</div>
+</div>
+</div>
+</span>
+<span class="hd-nav-item">
+<a href="javascript:void(0)">サービス</a>
+<div class="hd-mega-wrap">
+<div class="hd-mega" role="menu">
+<div class="hd-mega-col">
+<span class="hd-mega-col-label"><span class="col-label-main">戦略設計</span></span>
+<a href="../../strategy/" role="menuitem">WEB戦略</a>
+<a href="https://htmlacheive.com/saikatsu_r/" rel="noopener noreferrer" role="menuitem" target="_blank">採用戦略<svg fill="none" height="11" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" style="vertical-align:middle;margin-left:4px;opacity:.7" viewbox="0 0 24 24" width="11" xmlns="http://www.w3.org/2000/svg"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" x2="21" y1="14" y2="3"></line></svg></a>
+</div>
+<div class="hd-mega-col">
+<span class="hd-mega-col-label"><span class="col-label-main">集客施策</span></span>
+<a href="../../seo/" role="menuitem">SEO対策</a>
+<a href="../../meo/" role="menuitem">MEO対策</a>
+<button class="hd-mega-accordion-btn" type="button">WEB広告<svg class="hd-mega-accordion-icon" fill="none" height="10" viewbox="0 0 12 12" width="10" xmlns="http://www.w3.org/2000/svg"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg></button>
+<div class="hd-mega-accordion-sub">
+<a class="hd-mega-sub-link" href="../../listing/" role="menuitem">リスティング広告</a>
+<a class="hd-mega-sub-link" href="../../ads/display/" role="menuitem">ディスプレイ広告</a>
+</div>
+<a href="../../sns/" role="menuitem">SNSマーケティング</a>
+<a href="../../ai-seo/" role="menuitem">AI検索対策（LLM対策）</a>
+<a href="../../sns/note/" role="menuitem">note対策</a>
+</div>
+<div class="hd-mega-col">
+<span class="hd-mega-col-label"><span class="col-label-main">成約</span></span>
+<a href="../../website/" role="menuitem">ホームページ制作</a>
+<a href="../../website/#grow" role="menuitem">分析改善</a>
+</div>
+<div class="hd-mega-col">
+<span class="hd-mega-col-label"><span class="col-label-main">AI活用支援（DX/AX）</span></span>
+<a href="../../ai-automation/" role="menuitem">業務の自動化・最適化</a>
+</div>
+</div>
+</div>
+</span>
+<a href="../../works/">実績</a>
+<a href="../../voice/">お客さまの声</a>
+<span class="hd-nav-item">
+<a href="../../company/">会社情報</a>
+<div class="hd-dropdown" role="menu">
+<a href="../../company/#mission" role="menuitem">Mission / Vision / Value</a>
+<a href="../../company/#representative" role="menuitem">代表メッセージ</a>
+<a href="../../company/#overview" role="menuitem">会社概要</a>
+<a href="../../company/#access" role="menuitem">アクセス</a>
+</div>
+</span>
+</nav>
+<div class="hd-btns">
+<a aria-label="企業の採用活動を成功に導く「サイカツ.R」（別サイトが開きます）" class="hd-btn-external" href="https://saikatsu-r.jp/" rel="noopener noreferrer" target="_blank">企業の採用活動を成功に導く「サイカツ.R」<svg fill="none" height="13" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="13" xmlns="http://www.w3.org/2000/svg"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" x2="21" y1="14" y2="3"></line></svg></a>
+<a aria-label="初回の相談無料" class="hd-btn" href="../../contact/">初回の相談無料</a>
+</div>
+<button aria-controls="hd-drawer" aria-expanded="false" aria-label="メニューを開く" class="hd-hamburger">
+<span></span><span></span><span></span>
+</button>
 </header>
 <!-- MOBILE DRAWER -->
-<div class="hd-drawer" id="hd-drawer" role="dialog" aria-label="モバイルメニュー">
-  <!-- メインリスト -->
-  <nav class="hd-drawer-nav" aria-label="モバイルナビゲーション">
-    <!-- 課題から探す（アコーディオン） -->
-    <button class="hd-drawer-item hd-drawer-item--accordion" data-drawer-accordion aria-expanded="false">
+<div aria-label="モバイルメニュー" class="hd-drawer" id="hd-drawer" role="dialog">
+<!-- メインリスト -->
+<nav aria-label="モバイルナビゲーション" class="hd-drawer-nav">
+<!-- 課題から探す（アコーディオン） -->
+<button aria-expanded="false" class="hd-drawer-item hd-drawer-item--accordion" data-drawer-accordion="">
       課題から探す
-      <svg class="hd-drawer-chevron" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-    </button>
-    <div class="hd-drawer-sub" aria-hidden="true">
-      <p class="hd-drawer-group-label">戦略・全体（なんか、うまくいかない…）</p>
-      <a class="hd-drawer-link-item" href="../../strategy/">WEB戦略</a>
-      <a class="hd-drawer-link-item" href="https://htmlacheive.com/saikatsu_r/" target="_blank" rel="noopener noreferrer">採用戦略<svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-left:4px;opacity:.6"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
-      <p class="hd-drawer-group-label">集客（サイトへの訪問者を増やしたい）</p>
-      <a class="hd-drawer-link-item" href="../../seo/">SEO対策</a>
-      <a class="hd-drawer-link-item" href="../../meo/">MEO対策</a>
-      <a class="hd-drawer-link-item" href="../../listing/">リスティング広告</a>
-      <a class="hd-drawer-link-item" href="../../ads/display/">ディスプレイ広告</a>
-      <a class="hd-drawer-link-item" href="../../sns/">SNSマーケティング</a>
-      <a class="hd-drawer-link-item" href="../../ai-seo/">AI検索対策（LLM対策）</a>
-      <a class="hd-drawer-link-item" href="../../sns/note/">note対策</a>
-      <p class="hd-drawer-group-label">成約（問い合わせ・売上を増やしたい）</p>
-      <a class="hd-drawer-link-item" href="../../website/">ホームページ制作</a>
-      <a class="hd-drawer-link-item" href="../../website/#grow">分析改善</a>
-      <p class="hd-drawer-group-label">再販・追客（一度来た人にまた来てほしい）</p>
-      <a class="hd-drawer-link-item" href="../../sns/line/">LINE</a>
-      <a class="hd-drawer-link-item" href="../../sns/instagram/">Instagram</a>
-      <a class="hd-drawer-link-item" href="../../sns/x/">X（旧Twitter）</a>
-      <a class="hd-drawer-link-item" href="../../sns/youtube/">YouTube</a>
-      <a class="hd-drawer-link-item" href="../../sns/tiktok/">TikTok</a>
-      <p class="hd-drawer-group-label">AI活用（AIで業務を効率化・最適化したい）</p>
-      <a class="hd-drawer-link-item" href="../../ai-automation/">業務の自動化・最適化</a>
-    </div>
-    <!-- サービス（アコーディオン） -->
-    <button class="hd-drawer-item hd-drawer-item--accordion" data-drawer-accordion aria-expanded="false">
+      <svg class="hd-drawer-chevron" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="14" xmlns="http://www.w3.org/2000/svg"><polyline points="6 9 12 15 18 9"></polyline></svg>
+</button>
+<div aria-hidden="true" class="hd-drawer-sub">
+<p class="hd-drawer-group-label">戦略・全体（なんか、うまくいかない…）</p>
+<a class="hd-drawer-link-item" href="../../strategy/">WEB戦略</a>
+<a class="hd-drawer-link-item" href="https://htmlacheive.com/saikatsu_r/" rel="noopener noreferrer" target="_blank">採用戦略<svg fill="none" height="11" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" style="vertical-align:middle;margin-left:4px;opacity:.6" viewbox="0 0 24 24" width="11" xmlns="http://www.w3.org/2000/svg"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" x2="21" y1="14" y2="3"></line></svg></a>
+<p class="hd-drawer-group-label">集客（サイトへの訪問者を増やしたい）</p>
+<a class="hd-drawer-link-item" href="../../seo/">SEO対策</a>
+<a class="hd-drawer-link-item" href="../../meo/">MEO対策</a>
+<a class="hd-drawer-link-item" href="../../listing/">リスティング広告</a>
+<a class="hd-drawer-link-item" href="../../ads/display/">ディスプレイ広告</a>
+<a class="hd-drawer-link-item" href="../../sns/">SNSマーケティング</a>
+<a class="hd-drawer-link-item" href="../../ai-seo/">AI検索対策（LLM対策）</a>
+<a class="hd-drawer-link-item" href="../../sns/note/">note対策</a>
+<p class="hd-drawer-group-label">成約（問い合わせ・売上を増やしたい）</p>
+<a class="hd-drawer-link-item" href="../../website/">ホームページ制作</a>
+<a class="hd-drawer-link-item" href="../../website/#grow">分析改善</a>
+<p class="hd-drawer-group-label">再販・追客（一度来た人にまた来てほしい）</p>
+<a class="hd-drawer-link-item" href="../../sns/line/">LINE</a>
+<a class="hd-drawer-link-item" href="../../sns/instagram/">Instagram</a>
+<a class="hd-drawer-link-item" href="../../sns/x/">X（旧Twitter）</a>
+<a class="hd-drawer-link-item" href="../../sns/youtube/">YouTube</a>
+<a class="hd-drawer-link-item" href="../../sns/tiktok/">TikTok</a>
+<p class="hd-drawer-group-label">AI活用（AIで業務を効率化・最適化したい）</p>
+<a class="hd-drawer-link-item" href="../../ai-automation/">業務の自動化・最適化</a>
+</div>
+<!-- サービス（アコーディオン） -->
+<button aria-expanded="false" class="hd-drawer-item hd-drawer-item--accordion" data-drawer-accordion="">
       サービス
-      <svg class="hd-drawer-chevron" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-    </button>
-    <div class="hd-drawer-sub" aria-hidden="true">
-      <p class="hd-drawer-group-label">戦略設計</p>
-      <a class="hd-drawer-link-item" href="../../strategy/">WEB戦略</a>
-      <a class="hd-drawer-link-item" href="https://htmlacheive.com/saikatsu_r/" target="_blank" rel="noopener noreferrer">採用戦略<svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-left:4px;opacity:.6"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
-      <p class="hd-drawer-group-label">集客施策</p>
-      <a class="hd-drawer-link-item" href="../../seo/">SEO対策</a>
-      <a class="hd-drawer-link-item" href="../../meo/">MEO対策</a>
-      <a class="hd-drawer-link-item" href="../../listing/">リスティング広告</a>
-      <a class="hd-drawer-link-item" href="../../ads/display/">ディスプレイ広告</a>
-      <a class="hd-drawer-link-item" href="../../sns/">SNSマーケティング</a>
-      <a class="hd-drawer-link-item" href="../../ai-seo/">AI検索対策（LLM対策）</a>
-      <a class="hd-drawer-link-item" href="../../sns/note/">note対策</a>
-      <p class="hd-drawer-group-label">成約</p>
-      <a class="hd-drawer-link-item" href="../../website/">ホームページ制作</a>
-      <a class="hd-drawer-link-item" href="../../website/#grow">分析改善</a>
-      <p class="hd-drawer-group-label">AI活用支援（DX/AX）</p>
-      <a class="hd-drawer-link-item" href="../../ai-automation/">業務の自動化・最適化</a>
-    </div>
-    <!-- 実績（フラットリンク） -->
-    <a class="hd-drawer-item" href="../../works/">実績</a>
-    <!-- お客さまの声（フラットリンク） -->
-    <a class="hd-drawer-item" href="../../voice/">お客さまの声</a>
-    <!-- お知らせ（フラットリンク） -->
-    <a class="hd-drawer-item" href="../../news/">お知らせ</a>
-    <!-- 会社情報（アコーディオン） -->
-    <button class="hd-drawer-item hd-drawer-item--accordion" data-drawer-accordion aria-expanded="false">
+      <svg class="hd-drawer-chevron" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="14" xmlns="http://www.w3.org/2000/svg"><polyline points="6 9 12 15 18 9"></polyline></svg>
+</button>
+<div aria-hidden="true" class="hd-drawer-sub">
+<p class="hd-drawer-group-label">戦略設計</p>
+<a class="hd-drawer-link-item" href="../../strategy/">WEB戦略</a>
+<a class="hd-drawer-link-item" href="https://htmlacheive.com/saikatsu_r/" rel="noopener noreferrer" target="_blank">採用戦略<svg fill="none" height="11" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" style="vertical-align:middle;margin-left:4px;opacity:.6" viewbox="0 0 24 24" width="11" xmlns="http://www.w3.org/2000/svg"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" x2="21" y1="14" y2="3"></line></svg></a>
+<p class="hd-drawer-group-label">集客施策</p>
+<a class="hd-drawer-link-item" href="../../seo/">SEO対策</a>
+<a class="hd-drawer-link-item" href="../../meo/">MEO対策</a>
+<a class="hd-drawer-link-item" href="../../listing/">リスティング広告</a>
+<a class="hd-drawer-link-item" href="../../ads/display/">ディスプレイ広告</a>
+<a class="hd-drawer-link-item" href="../../sns/">SNSマーケティング</a>
+<a class="hd-drawer-link-item" href="../../ai-seo/">AI検索対策（LLM対策）</a>
+<a class="hd-drawer-link-item" href="../../sns/note/">note対策</a>
+<p class="hd-drawer-group-label">成約</p>
+<a class="hd-drawer-link-item" href="../../website/">ホームページ制作</a>
+<a class="hd-drawer-link-item" href="../../website/#grow">分析改善</a>
+<p class="hd-drawer-group-label">AI活用支援（DX/AX）</p>
+<a class="hd-drawer-link-item" href="../../ai-automation/">業務の自動化・最適化</a>
+</div>
+<!-- 実績（フラットリンク） -->
+<a class="hd-drawer-item" href="../../works/">実績</a>
+<!-- お客さまの声（フラットリンク） -->
+<a class="hd-drawer-item" href="../../voice/">お客さまの声</a>
+<!-- お知らせ（フラットリンク） -->
+<a class="hd-drawer-item" href="../../news/">お知らせ</a>
+<!-- 会社情報（アコーディオン） -->
+<button aria-expanded="false" class="hd-drawer-item hd-drawer-item--accordion" data-drawer-accordion="">
       会社情報
-      <svg class="hd-drawer-chevron" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-    </button>
-    <div class="hd-drawer-sub" aria-hidden="true">
-      <a class="hd-drawer-link-item" href="../../company/">会社概要</a>
-      <a class="hd-drawer-link-item" href="../../company/#mission">Mission / Vision / Value</a>
-      <a class="hd-drawer-link-item" href="../../company/#representative">代表メッセージ</a>
-      <a class="hd-drawer-link-item" href="../../company/#access">アクセス</a>
-    </div>
-  </nav>
-  <!-- CTAボタン -->
-  <div class="hd-drawer-cta">
-    <a href="../../contact/" class="hd-btn" aria-label="初回の相談無料">初回の相談無料</a>
-    <a href="https://saikatsu-r.jp/" class="hd-drawer-cta-external" target="_blank" rel="noopener noreferrer" aria-label="企業の採用活動を成功に導く「サイカツ.R」">
+      <svg class="hd-drawer-chevron" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="14" xmlns="http://www.w3.org/2000/svg"><polyline points="6 9 12 15 18 9"></polyline></svg>
+</button>
+<div aria-hidden="true" class="hd-drawer-sub">
+<a class="hd-drawer-link-item" href="../../company/">会社概要</a>
+<a class="hd-drawer-link-item" href="../../company/#mission">Mission / Vision / Value</a>
+<a class="hd-drawer-link-item" href="../../company/#representative">代表メッセージ</a>
+<a class="hd-drawer-link-item" href="../../company/#access">アクセス</a>
+</div>
+</nav>
+<!-- CTAボタン -->
+<div class="hd-drawer-cta">
+<a aria-label="初回の相談無料" class="hd-btn" href="../../contact/">初回の相談無料</a>
+<a aria-label="企業の採用活動を成功に導く「サイカツ.R」" class="hd-drawer-cta-external" href="https://saikatsu-r.jp/" rel="noopener noreferrer" target="_blank">
       企業の採用活動を成功に導く「サイカツ.R」
-      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-    </a>
-  </div>
+      <svg fill="none" height="12" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="12" xmlns="http://www.w3.org/2000/svg"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" x2="21" y1="14" y2="3"></line></svg>
+</a>
+</div>
 </div>
 <!-- /wp:header -->
 <main>
-<section class="kv" aria-labelledby="kv-h1" style="background:#0D0D0D;position:relative;overflow:hidden;">
-  <div class="kv-inner">
-    <div class="kv-left">
-      <p class="kv-eyebrow fu">— note マーケティング</p>
-      <h1 class="kv-h1 fu" id="kv-h1" style="transition-delay:.08s">note経由、SEO経由で<br>集客を可能とさせる万能SNS。</h1>
-      <span class="kv-service-label fu" style="transition-delay:.12s">note運用代行・記事制作</span>
-      <p class="kv-sub fu" style="transition-delay:.16s">noteは検索流入×ファン形成の両立が可能なメディア。<br>企画から執筆・公開・分析まで、一貫して対応します。</p>
-      <div class="kv-actions fu" style="transition-delay:.24s">
-        <a href="../../contact/" class="btn-primary">15分無料相談を申し込む</a>
-        <div class="kv-tel-wrap">
-          <p class="kv-tel-label">お電話でのご相談</p>
-        </div>
-      </div>
-    </div>
-    <div class="kv-right fu" style="transition-delay:.2s"></div>
-  </div>
+<section aria-labelledby="kv-h1" class="kv" style="background:#0D0D0D;position:relative;overflow:hidden;">
+<div class="kv-inner">
+<div class="kv-left">
+<p class="kv-eyebrow fu">— note マーケティング</p>
+<h1 class="kv-h1 fu" id="kv-h1" style="transition-delay:.08s">note経由、SEO経由で<br/>集客を可能とさせる万能SNS。</h1>
+<span class="kv-service-label fu" style="transition-delay:.12s">note運用代行・記事制作</span>
+<p class="kv-sub fu" style="transition-delay:.16s">noteは検索流入×ファン形成の両立が可能なメディア。<br/>企画から執筆・公開・分析まで、一貫して対応します。</p>
+<div class="kv-actions fu" style="transition-delay:.24s">
+<a class="btn-primary" href="../../contact/">15分無料相談を申し込む</a>
+<div class="kv-tel-wrap">
+<p class="kv-tel-label">お電話でのご相談</p>
+</div>
+</div>
+</div>
+<div class="kv-right fu" style="transition-delay:.2s"></div>
+</div>
 </section>
-<nav class="breadcrumb" aria-label="パンくずリスト">
-  <ol>
-    <li><a href="../../">ホーム</a></li>
-    <li><a href="../../sns/">SNSマーケティング</a></li>
-    <li><span aria-current="page">note運用代行</span></li>
-  </ol>
+<nav aria-label="パンくずリスト" class="breadcrumb">
+<ol>
+<li><a href="../../">ホーム</a></li>
+<li><a href="../../sns/">SNSマーケティング</a></li>
+<li><span aria-current="page">note運用代行</span></li>
+</ol>
 </nav>
-<section class="our-note-sec" aria-labelledby="our-note-h2">
-  <div class="our-note-inner">
-    <div class="our-note-head">
-      <span class="sec-eyebrow fu">OUR NOTE</span>
-      <h2 class="sec-h2 fu" id="our-note-h2" style="transition-delay:.1s">私たちも、<br>noteで発信しています。</h2>
-      <p class="our-note-head-sub fu" style="transition-delay:.15s">「依頼する前に、実力を確かめたい」という方へ。<br>私たちが実際に運営するnoteアカウントの実績をご覧ください。</p>
-    </div>
-    <div class="our-note-stats">
-      <div class="our-note-stat fu">
-        <div class="case-result-item">
-          <div class="case-result-num" data-count="524" data-suffix="">0</div>
-          <div class="case-result-label">フォロワー数（平均値の約9倍）</div>
-        </div>
-      </div>
-      <div class="our-note-stat fu" style="transition-delay:.08s">
-        <div class="case-result-item">
-          <div class="case-result-num" data-count="327" data-suffix="">0</div>
-          <div class="case-result-label">最大スキ数（1記事）（平均値の約30倍）</div>
-        </div>
-      </div>
-      <div class="our-note-stat fu" style="transition-delay:.16s">
-        <div class="case-result-item">
-          <div class="case-result-num" data-count="80" data-suffix="+">0<span>+</span></div>
-          <div class="case-result-label">平均スキ数（直近）（平均値の約7倍）</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="our-note-account-info fu">
-      <div class="our-note-account-desc">
-        <p class="our-note-account-desc-title">セルフアチーブ運営 noteアカウント</p>
-        <p class="our-note-account-desc-text">採用支援ブランド「サイカツ.R」として運営。中小企業の採用担当者・経営者に向けた採用戦略・求人設計のノウハウを発信しています。業界特化のコンテンツ設計と、読者の悩みに直接答える記事構成が高エンゲージメントの源泉です。</p>
-      </div>
-      <a href="https://note.com/sa_saikatsu_r10" class="our-note-account-link" target="_blank" rel="noopener noreferrer">実際のnoteアカウントを見る →</a>
-    </div>
-  </div>
+<section aria-labelledby="our-note-h2" class="our-note-sec">
+<div class="our-note-inner">
+<div class="our-note-head">
+<span class="sec-eyebrow fu">OUR NOTE</span>
+<h2 class="sec-h2 fu" id="our-note-h2" style="transition-delay:.1s">私たちも、<br/>noteで発信しています。</h2>
+<p class="our-note-head-sub fu" style="transition-delay:.15s">「依頼する前に、実力を確かめたい」という方へ。<br/>私たちが実際に運営するnoteアカウントの実績をご覧ください。</p>
+</div>
+<div class="our-note-stats">
+<div class="our-note-stat fu">
+<div class="case-result-item">
+<div class="case-result-num" data-count="524" data-suffix="">0</div>
+<div class="case-result-label">フォロワー数（平均値の約9倍）</div>
+</div>
+</div>
+<div class="our-note-stat fu" style="transition-delay:.08s">
+<div class="case-result-item">
+<div class="case-result-num" data-count="327" data-suffix="">0</div>
+<div class="case-result-label">最大スキ数（1記事）（平均値の約30倍）</div>
+</div>
+</div>
+<div class="our-note-stat fu" style="transition-delay:.16s">
+<div class="case-result-item">
+<div class="case-result-num" data-count="80" data-suffix="+">0<span>+</span></div>
+<div class="case-result-label">平均スキ数（直近）（平均値の約7倍）</div>
+</div>
+</div>
+</div>
+<div class="our-note-account-info fu">
+<div class="our-note-account-desc">
+<p class="our-note-account-desc-title">セルフアチーブ運営 noteアカウント</p>
+<p class="our-note-account-desc-text">採用支援ブランド「サイカツ.R」として運営。中小企業の採用担当者・経営者に向けた採用戦略・求人設計のノウハウを発信しています。業界特化のコンテンツ設計と、読者の悩みに直接答える記事構成が高エンゲージメントの源泉です。</p>
+</div>
+<a class="our-note-account-link" href="https://note.com/sa_saikatsu_r10" rel="noopener noreferrer" target="_blank">実際のnoteアカウントを見る →</a>
+</div>
+</div>
 </section>
-
-<section class="what-sec" aria-labelledby="what-h2">
-  <div class="what-inner">
-    <div class="what-head">
-      <span class="sec-eyebrow fu">WHAT WE DO</span>
-      <h2 class="sec-h2 fu" id="what-h2" style="transition-delay:.1s">当社のnoteマーケティングで、<br>何ができるのか。</h2>
-      <p class="sec-body fu" style="transition-delay:.15s;max-width:640px;margin:20px 0 0">SEO資産を積み上げる「記事運用」と、読者をファンに変える「コンテンツ設計」。<br>目的に合わせて、最適な運用をご提案します。</p>
-    </div>
-  </div>
+<section aria-labelledby="what-h2" class="what-sec">
+<div class="what-inner">
+<div class="what-head">
+<span class="sec-eyebrow fu">WHAT WE DO</span>
+<h2 class="sec-h2 fu" id="what-h2" style="transition-delay:.1s">当社のnoteマーケティングで、<br/>何ができるのか。</h2>
+<p class="sec-body fu" style="transition-delay:.15s;max-width:640px;margin:20px 0 0">SEO資産を積み上げる「記事運用」と、読者をファンに変える「コンテンツ設計」。<br/>目的に合わせて、最適な運用をご提案します。</p>
+</div>
+</div>
 </section>
-
 <!-- NOTE STRATEGY WALL -->
-<section class="wall-sec" aria-labelledby="note-strategy-h2">
-  <div class="wall-split">
-    <!-- 左：黒背景見出しエリア -->
-    <div class="wall-split-left">
-      <span class="sec-eyebrow fu">NOTE STRATEGY</span>
-      <h2 class="sec-h2 fu" id="note-strategy-h2" style="transition-delay:.1s">
-        note運用は、<br>戦略設計から始まります。
+<section aria-labelledby="note-strategy-h2" class="wall-sec">
+<div class="wall-split">
+<!-- 左：黒背景見出しエリア -->
+<div class="wall-split-left">
+<span class="sec-eyebrow fu">NOTE STRATEGY</span>
+<h2 class="sec-h2 fu" id="note-strategy-h2" style="transition-delay:.1s">
+        note運用は、<br/>戦略設計から始まります。
       </h2>
-      <p class="wall-split-body fu" style="transition-delay:.2s">
+<p class="wall-split-body fu" style="transition-delay:.2s">
         闇雲な投稿や広告配信では、結果はついてきません。大切なのは、運用を始める前の「設計」です。セルフアチーブでは、全体戦略から逆算してnote運用を設計します。
       </p>
-    </div>
-    <!-- 右：カードグリッドエリア -->
-    <div class="wall-split-right">
-      <div class="wall-grid">
-        <!-- 01 -->
-        <div class="wall-card fu">
-          <div class="wall-card-header">
-            <span class="wall-card-header-num">01</span>
-            <span class="wall-card-header-sep">|</span>
-            <span class="wall-card-header-cat">全体戦略・目標設定</span>
-          </div>
-          <p class="wall-wall-body">ビジネス目標・ターゲット・ KPIを明確にし、noteを「集客の柱」として機能させる全体戦略を設計。他施策（SEO・SNS・広告）との連動も含めて設計します。</p>
-        </div>
-        <!-- 02 -->
-        <div class="wall-card fu" style="transition-delay:.04s">
-          <div class="wall-card-header">
-            <span class="wall-card-header-num">02</span>
-            <span class="wall-card-header-sep">|</span>
-            <span class="wall-card-header-cat">ターゲット・キーワード調査</span>
-          </div>
-          <p class="wall-wall-body">読者の検索意図・課題・ペルソナを分析。「誤った人に届ける」を防ぎ、欲しい読者に確実に届くテーマ・キーワードを設計します。</p>
-        </div>
-        <!-- 03 -->
-        <div class="wall-card fu" style="transition-delay:.08s">
-          <div class="wall-card-header">
-            <span class="wall-card-header-num">03</span>
-            <span class="wall-card-header-sep">|</span>
-            <span class="wall-card-header-cat">コンテンツ設計・記事制作</span>
-          </div>
-          <p class="wall-wall-body">バズる記事ではなく、売れる記事を設計。ターゲットの検索意図に合わせた構成・文章表現・見出し設計で、読まれる記事を継続的に制作します。</p>
-        </div>
-        <!-- 04 -->
-        <div class="wall-card fu" style="transition-delay:.12s">
-          <div class="wall-card-header">
-            <span class="wall-card-header-num">04</span>
-            <span class="wall-card-header-sep">|</span>
-            <span class="wall-card-header-cat">公開・配信・運用管理</span>
-          </div>
-          <p class="wall-wall-body">最適なタイミングでの公開管理。コメント対応・フォロワーとのエンゲージメント維持も含め、アカウントを継続的に成長させます。</p>
-        </div>
-        <!-- 05 -->
-        <div class="wall-card fu" style="transition-delay:.16s">
-          <div class="wall-card-header">
-            <span class="wall-card-header-num">05</span>
-            <span class="wall-card-header-sep">|</span>
-            <span class="wall-card-header-cat">レポート・改善提案</span>
-          </div>
-          <p class="wall-wall-body">月次レポートでビュー数・スキ数・フォロワー増減・CV数を可視化。データをもとに次月の施策を改善し、PDCAを高速で回します。</p>
-        </div>
-      </div>
-    </div>
-  </div>
+</div>
+<!-- 右：カードグリッドエリア -->
+<div class="wall-split-right">
+<div class="wall-grid">
+<!-- 01 -->
+<div class="wall-card fu">
+<div class="wall-card-header">
+<span class="wall-card-header-num">01</span>
+<span class="wall-card-header-sep">|</span>
+<span class="wall-card-header-cat">全体戦略・目標設定</span>
+</div>
+<p class="wall-wall-body">ビジネス目標・ターゲット・ KPIを明確にし、noteを「集客の柱」として機能させる全体戦略を設計。他施策（SEO・SNS・広告）との連動も含めて設計します。</p>
+</div>
+<!-- 02 -->
+<div class="wall-card fu" style="transition-delay:.04s">
+<div class="wall-card-header">
+<span class="wall-card-header-num">02</span>
+<span class="wall-card-header-sep">|</span>
+<span class="wall-card-header-cat">ターゲット・キーワード調査</span>
+</div>
+<p class="wall-wall-body">読者の検索意図・課題・ペルソナを分析。「誤った人に届ける」を防ぎ、欲しい読者に確実に届くテーマ・キーワードを設計します。</p>
+</div>
+<!-- 03 -->
+<div class="wall-card fu" style="transition-delay:.08s">
+<div class="wall-card-header">
+<span class="wall-card-header-num">03</span>
+<span class="wall-card-header-sep">|</span>
+<span class="wall-card-header-cat">コンテンツ設計・記事制作</span>
+</div>
+<p class="wall-wall-body">バズる記事ではなく、売れる記事を設計。ターゲットの検索意図に合わせた構成・文章表現・見出し設計で、読まれる記事を継続的に制作します。</p>
+</div>
+<!-- 04 -->
+<div class="wall-card fu" style="transition-delay:.12s">
+<div class="wall-card-header">
+<span class="wall-card-header-num">04</span>
+<span class="wall-card-header-sep">|</span>
+<span class="wall-card-header-cat">公開・配信・運用管理</span>
+</div>
+<p class="wall-wall-body">最適なタイミングでの公開管理。コメント対応・フォロワーとのエンゲージメント維持も含め、アカウントを継続的に成長させます。</p>
+</div>
+<!-- 05 -->
+<div class="wall-card fu" style="transition-delay:.16s">
+<div class="wall-card-header">
+<span class="wall-card-header-num">05</span>
+<span class="wall-card-header-sep">|</span>
+<span class="wall-card-header-cat">レポート・改善提案</span>
+</div>
+<p class="wall-wall-body">月次レポートでビュー数・スキ数・フォロワー増減・CV数を可視化。データをもとに次月の施策を改善し、PDCAを高速で回します。</p>
+</div>
+</div>
+</div>
+</div>
 </section>
-
 <!-- NOTE WHAT WE DO 再開 -->
-<section class="what-sec" aria-labelledby="what-h2-dummy" style="padding-top:0">
-  <div class="what-inner">
-    <!-- 戦略→実行 セクションヘッダー -->
-    <div class="what-flow-head" style="margin-bottom:56px">
-      <span class="sec-eyebrow fu">NOTE MANAGEMENT</span>
-      <h2 class="sec-h2 fu" style="margin-top:12px">戦略に基づいた、note運用</h2>
-      <p class="sec-body fu" style="margin-top:16px;max-width:600px">noteを「読まれる記事」から「集客の資産」へ育てます。<br>運用の目的・規模・予算に合わせて、最適なプランをご提案します。</p>
-    </div>
-    <div class="what-grid">
-      <div class="what-card fu">
-        <span class="what-card-tag green">NOTE MANAGEMENT</span>
-        <h3 class="what-card-h3">note運用代行</h3>
-        <p class="what-card-desc">
-          <strong class="what-card-desc-lead">読まれる記事が、信頼の資産になる。</strong>
+<section aria-labelledby="what-h2-dummy" class="what-sec" style="padding-top:0">
+<div class="what-inner">
+<!-- 戦略→実行 セクションヘッダー -->
+<div class="what-flow-head" style="margin-bottom:56px">
+<span class="sec-eyebrow fu">NOTE MANAGEMENT</span>
+<h2 class="sec-h2 fu" style="margin-top:12px">戦略に基づいた、note運用</h2>
+<p class="sec-body fu" style="margin-top:16px;max-width:600px">noteを「読まれる記事」から「集客の資産」へ育てます。<br/>運用の目的・規模・予算に合わせて、最適なプランをご提案します。</p>
+</div>
+<div class="what-grid">
+<div class="what-card fu">
+<span class="what-card-tag green">NOTE MANAGEMENT</span>
+<h3 class="what-card-h3">note運用代行</h3>
+<p class="what-card-desc">
+<strong class="what-card-desc-lead">読まれる記事が、信頼の資産になる。</strong>
           記事企画・執筆・公開・分析まで一貫して対応。ターゲットの検索意図に合わせたテーマ設計と、読まれ続ける文章構成で、noteを集客・信頼構築の基盤に育てます。
         </p>
-        <div class="what-card-features">
-          <div class="what-card-feature">記事テーマ企画・キーワード設計</div>
-          <div class="what-card-feature">記事執筆・校正・公開</div>
-          <div class="what-card-feature">アイキャッチ画像制作</div>
-          <div class="what-card-feature">プロフィール・マガジン最適化</div>
-          <div class="what-card-feature">アクセス分析・月次レポート</div>
-        </div>
-      </div>
-      <div class="what-card fu" style="transition-delay:.1s">
-        <span class="what-card-tag">CONTENT STRATEGY</span>
-        <h3 class="what-card-h3">コンテンツ戦略設計</h3>
-        <p class="what-card-desc">
-          <strong class="what-card-desc-lead">書くだけでは、読まれない。</strong>
+<div class="what-card-features">
+<div class="what-card-feature">記事テーマ企画・キーワード設計</div>
+<div class="what-card-feature">記事執筆・校正・公開</div>
+<div class="what-card-feature">アイキャッチ画像制作</div>
+<div class="what-card-feature">プロフィール・マガジン最適化</div>
+<div class="what-card-feature">アクセス分析・月次レポート</div>
+</div>
+</div>
+<div class="what-card fu" style="transition-delay:.1s">
+<span class="what-card-tag">CONTENT STRATEGY</span>
+<h3 class="what-card-h3">コンテンツ戦略設計</h3>
+<p class="what-card-desc">
+<strong class="what-card-desc-lead">書くだけでは、読まれない。</strong>
           どのテーマで、誰に、何を伝えるか。ターゲット分析・競合調査・検索意図の把握から、noteを「選ばれる理由」に変えるコンテンツ戦略を設計します。
         </p>
-        <div class="what-card-features">
-          <div class="what-card-feature">ターゲット・ペルソナ設計</div>
-          <div class="what-card-feature">競合note分析</div>
-          <div class="what-card-feature">テーマ・キーワードマップ作成</div>
-          <div class="what-card-feature">既存記事の改善提案</div>
-          <div class="what-card-feature">他SNSとの連携設計</div>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="what-card-features">
+<div class="what-card-feature">ターゲット・ペルソナ設計</div>
+<div class="what-card-feature">競合note分析</div>
+<div class="what-card-feature">テーマ・キーワードマップ作成</div>
+<div class="what-card-feature">既存記事の改善提案</div>
+<div class="what-card-feature">他SNSとの連携設計</div>
+</div>
+</div>
+</div>
+</div>
 </section>
-<section class="plan-sec" aria-labelledby="plan-h2">
-  <div class="plan-inner">
-    <div class="plan-head">
-      <span class="sec-eyebrow fu">PRICING</span>
-      <h2 class="sec-h2 fu" id="plan-h2" style="transition-delay:.1s">料金プラン</h2>
-      <p class="sec-body fu" style="transition-delay:.15s;max-width:600px">月の記事本数に応じた3プランをご用意しています。<br>目標・フェーズ・予算に合わせて、最適なプランをご提案します。</p>
-    </div>
-    <div class="plan-grid">
-      <div class="plan-card fu">
-        <span class="plan-type">NOTE LIGHT</span>
-        <h3 class="plan-name">ライトプラン</h3>
-        <p class="plan-tagline">まずnoteを始めたい方に。月4本の継続発信でアカウントを立ち上げます。</p>
-        <div class="plan-price-block">
-          <p class="plan-price-label">月額費用</p>
-          <div class="plan-price">60,000<span>円（税込）〜</span></div>
-          <p class="plan-price-note">※ 記事文字数・画像制作有無により変動 / 初回相談無料</p>
-        </div>
-        <div class="plan-features">
-          <div class="plan-feature">記事企画・執筆（月4本）</div>
-          <div class="plan-feature">アイキャッチ画像制作</div>
-          <div class="plan-feature">プロフィール最適化</div>
-          <div class="plan-feature">月次アクセスレポート</div>
-        </div>
-        <a href="../../contact/" class="btn-plan">このプランで相談する</a>
-      </div>
-      <div class="plan-card fu" style="transition-delay:.05s">
-        <span class="plan-type">NOTE STANDARD</span>
-        <h3 class="plan-name">スタンダードプラン</h3>
-        <p class="plan-tagline">本格的な記事資産の蓄積に。月8本の継続発信でSEO・ファン形成を加速します。</p>
-        <div class="plan-price-block">
-          <p class="plan-price-label">月額費用</p>
-          <div class="plan-price">100,000<span>円（税込）〜</span></div>
-          <p class="plan-price-note">※ 記事文字数・画像制作数により変動 / 初回相談無料</p>
-        </div>
-        <div class="plan-features">
-          <div class="plan-feature">記事企画・執筆（月8本）</div>
-          <div class="plan-feature">アイキャッチ画像制作</div>
-          <div class="plan-feature">プロフィール・マガジン最適化</div>
-          <div class="plan-feature">キーワード・テーマ設計</div>
-          <div class="plan-feature">月次アクセス分析・改善レポート</div>
-        </div>
-        <a href="../../contact/" class="btn-plan">このプランで相談する</a>
-      </div>
-      <div class="plan-card fu" style="transition-delay:.1s">
-        <span class="plan-type">NOTE FULL</span>
-        <h3 class="plan-name">フルサポートプラン</h3>
-        <p class="plan-tagline">戦略設計から他SNS連携まで。noteをビジネスの集客基盤に育てたい方に。</p>
-        <div class="plan-price-block">
-          <p class="plan-price-label">月額費用</p>
-          <div class="plan-price">150,000<span>円（税込）〜</span></div>
-          <p class="plan-price-note">※ 記事本数・連携施策により変動 / 初回相談無料</p>
-        </div>
-        <div class="plan-features">
-          <div class="plan-feature">コンテンツ戦略設計・競合分析</div>
-          <div class="plan-feature">記事企画・執筆（月12本〜）</div>
-          <div class="plan-feature">アイキャッチ・バナー画像制作</div>
-          <div class="plan-feature">プロフィール・マガジン最適化</div>
-          <div class="plan-feature">他SNS（X・Instagram等）との連携設計</div>
-          <div class="plan-feature">月次アクセス分析・改善レポート・定例MTG</div>
-        </div>
-        <a href="../../contact/" class="btn-plan">このプランで相談する</a>
-      </div>
-    </div>
-    <p class="sp-swipe-hint">スワイプして見る</p>
-    <div class="plan-note-box fu">
-      <svg class="plan-note-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-      <p class="plan-note-text">上記は標準プランです。ご要望・規模に応じてカスタマイズが可能です。まずは無料相談でご要望をお聴かせください。</p>
-    </div>
-  </div>
+<section aria-labelledby="plan-h2" class="plan-sec">
+<div class="plan-inner">
+<div class="plan-head">
+<span class="sec-eyebrow fu">PRICING</span>
+<h2 class="sec-h2 fu" id="plan-h2" style="transition-delay:.1s">料金プラン</h2>
+<p class="sec-body fu" style="transition-delay:.15s;max-width:600px">月の記事本数に応じた3プランをご用意しています。<br/>目標・フェーズ・予算に合わせて、最適なプランをご提案します。</p>
+</div>
+<div class="plan-grid">
+<div class="plan-card fu">
+<span class="plan-type">NOTE LIGHT</span>
+<h3 class="plan-name">ライトプラン</h3>
+<p class="plan-tagline">まずnoteを始めたい方に。月4本の継続発信でアカウントを立ち上げます。</p>
+<div class="plan-price-block">
+<p class="plan-price-label">月額費用</p>
+<div class="plan-price">60,000<span>円（税込）〜</span></div>
+<p class="plan-price-note">※ 記事文字数・画像制作有無により変動 / 初回相談無料</p>
+</div>
+<div class="plan-features">
+<div class="plan-feature">記事企画・執筆（月4本）</div>
+<div class="plan-feature">アイキャッチ画像制作</div>
+<div class="plan-feature">プロフィール最適化</div>
+<div class="plan-feature">月次アクセスレポート</div>
+</div>
+<a class="btn-plan" href="../../contact/">このプランで相談する</a>
+</div>
+<div class="plan-card fu" style="transition-delay:.05s">
+<span class="plan-type">NOTE STANDARD</span>
+<h3 class="plan-name">スタンダードプラン</h3>
+<p class="plan-tagline">本格的な記事資産の蓄積に。月8本の継続発信でSEO・ファン形成を加速します。</p>
+<div class="plan-price-block">
+<p class="plan-price-label">月額費用</p>
+<div class="plan-price">100,000<span>円（税込）〜</span></div>
+<p class="plan-price-note">※ 記事文字数・画像制作数により変動 / 初回相談無料</p>
+</div>
+<div class="plan-features">
+<div class="plan-feature">記事企画・執筆（月8本）</div>
+<div class="plan-feature">アイキャッチ画像制作</div>
+<div class="plan-feature">プロフィール・マガジン最適化</div>
+<div class="plan-feature">キーワード・テーマ設計</div>
+<div class="plan-feature">月次アクセス分析・改善レポート</div>
+</div>
+<a class="btn-plan" href="../../contact/">このプランで相談する</a>
+</div>
+<div class="plan-card fu" style="transition-delay:.1s">
+<span class="plan-type">NOTE FULL</span>
+<h3 class="plan-name">フルサポートプラン</h3>
+<p class="plan-tagline">戦略設計から他SNS連携まで。noteをビジネスの集客基盤に育てたい方に。</p>
+<div class="plan-price-block">
+<p class="plan-price-label">月額費用</p>
+<div class="plan-price">150,000<span>円（税込）〜</span></div>
+<p class="plan-price-note">※ 記事本数・連携施策により変動 / 初回相談無料</p>
+</div>
+<div class="plan-features">
+<div class="plan-feature">コンテンツ戦略設計・競合分析</div>
+<div class="plan-feature">記事企画・執筆（月12本〜）</div>
+<div class="plan-feature">アイキャッチ・バナー画像制作</div>
+<div class="plan-feature">プロフィール・マガジン最適化</div>
+<div class="plan-feature">他SNS（X・Instagram等）との連携設計</div>
+<div class="plan-feature">月次アクセス分析・改善レポート・定例MTG</div>
+</div>
+<a class="btn-plan" href="../../contact/">このプランで相談する</a>
+</div>
+</div>
+<p class="sp-swipe-hint">スワイプして見る</p>
+<div class="plan-note-box fu">
+<svg class="plan-note-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewbox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="12" x2="12" y1="8" y2="12"></line><line x1="12" x2="12.01" y1="16" y2="16"></line></svg>
+<p class="plan-note-text">上記は標準プランです。ご要望・規模に応じてカスタマイズが可能です。まずは無料相談でご要望をお聴かせください。</p>
+</div>
+</div>
 </section>
-<section class="voice-sec" aria-labelledby="voice-h2">
-  <div class="voice-head">
-    <div>
-      <span class="sec-eyebrow fu">CUSTOMER VOICE</span>
-      <h2 class="sec-h2 fu" id="voice-h2" style="transition-delay:.1s">伴走してきた企業の、<br>リアルな声。</h2>
-    </div>
-    <a href="../../voice/" class="view-all fu" style="transition-delay:.15s">すべて見る</a>
-  </div>
-  <div class="voice-grid">
-    <article class="voice-card fu">
-      <a href="../../voice/iwazawa/" class="voice-link">
-        <div class="voice-avatar"><img src="../../assets/voice/iwazawa.webp" alt="岩澤法理事務所" width="280" height="280" loading="lazy"></div>
-        <div class="voice-body">
-          <p class="voice-quote">「特殊な業界だからこそ、心強い」<br>共に課題へ向き合うWeb集客のパートナー</p>
-          <div class="voice-meta">
-            <p class="voice-co">法律事務所</p>
-            <p class="voice-name">岩澤法理事務所 様</p>
-            <p class="voice-more">詳しく見る →</p>
-          </div>
-        </div>
-      </a>
-    </article>
-    <article class="voice-card fu" style="transition-delay:.1s">
-      <a href="../../voice/" class="voice-link">
-        <div class="voice-avatar"><img src="../../assets/voice/edurabo.webp" alt="株式会社エデュラボ" width="280" height="280" loading="lazy"></div>
-        <div class="voice-body">
-          <p class="voice-quote">SNS運用で「見てもらえる」から<br>「選んでもらえる」へ。</p>
-          <div class="voice-meta">
-            <p class="voice-co">学習塾の運営</p>
-            <p class="voice-name">株式会社 エデュラボ 様</p>
-            <p class="voice-more">詳しく見る →</p>
-          </div>
-        </div>
-      </a>
-    </article>
-    <article class="voice-card fu" style="transition-delay:.2s">
-      <a href="../../voice/" class="voice-link">
-        <div class="voice-avatar"><img src="../../assets/voice/nadi.webp" alt="Nadi ピラティス・ヨガスタジオ" width="280" height="280" loading="lazy"></div>
-        <div class="voice-body">
-          <p class="voice-quote">正解がない業態だからこそ、<br>同じ目線で、1つの「チーム」で。</p>
-          <div class="voice-meta">
-            <p class="voice-co">ピラティス・ヨガスタジオ</p>
-            <p class="voice-name">Nadi 様</p>
-            <p class="voice-more">詳しく見る →</p>
-          </div>
-        </div>
-      </a>
-    </article>
-  </div>
+<section aria-labelledby="voice-h2" class="voice-sec">
+<div class="voice-head">
+<div>
+<span class="sec-eyebrow fu">CUSTOMER VOICE</span>
+<h2 class="sec-h2 fu" id="voice-h2" style="transition-delay:.1s">伴走してきた企業の、<br/>リアルな声。</h2>
+</div>
+<a class="view-all fu" href="../../voice/" style="transition-delay:.15s">すべて見る</a>
+</div>
+<div class="voice-grid">
+<article class="voice-card fu">
+<a class="voice-link" href="../../voice/iwazawa/">
+<div class="voice-avatar"><img alt="岩澤法理事務所" height="280" loading="lazy" src="../../assets/voice/iwazawa.webp" width="280"/></div>
+<div class="voice-body">
+<p class="voice-quote">「特殊な業界だからこそ、心強い」<br/>共に課題へ向き合うWeb集客のパートナー</p>
+<div class="voice-meta">
+<p class="voice-co">法律事務所</p>
+<p class="voice-name">岩澤法理事務所 様</p>
+<p class="voice-more">詳しく見る →</p>
+</div>
+</div>
+</a>
+</article>
+<article class="voice-card fu" style="transition-delay:.1s">
+<a class="voice-link" href="../../voice/">
+<div class="voice-avatar"><img alt="株式会社エデュラボ" height="280" loading="lazy" src="../../assets/voice/edurabo.webp" width="280"/></div>
+<div class="voice-body">
+<p class="voice-quote">SNS運用で「見てもらえる」から<br/>「選んでもらえる」へ。</p>
+<div class="voice-meta">
+<p class="voice-co">学習塾の運営</p>
+<p class="voice-name">株式会社 エデュラボ 様</p>
+<p class="voice-more">詳しく見る →</p>
+</div>
+</div>
+</a>
+</article>
+<article class="voice-card fu" style="transition-delay:.2s">
+<a class="voice-link" href="../../voice/">
+<div class="voice-avatar"><img alt="Nadi ピラティス・ヨガスタジオ" height="280" loading="lazy" src="../../assets/voice/nadi.webp" width="280"/></div>
+<div class="voice-body">
+<p class="voice-quote">正解がない業態だからこそ、<br/>同じ目線で、1つの「チーム」で。</p>
+<div class="voice-meta">
+<p class="voice-co">ピラティス・ヨガスタジオ</p>
+<p class="voice-name">Nadi 様</p>
+<p class="voice-more">詳しく見る →</p>
+</div>
+</div>
+</a>
+</article>
+</div>
 </section>
-<section id="contact" class="cta" aria-labelledby="cta-mid-h2">
-  <div class="cta-wrap">
-    <p class="cta-eyebrow fu">FREE CONSULTATION</p>
-    <h2 class="cta-h2 fu" id="cta-mid-h2" style="transition-delay:.1s">
-      <span class="cta-h2-line">まず、お話してみませんか。</span>
-      <span class="cta-h2-line">初回相談は無料です。</span>
-    </h2>
-    <p class="cta-body fu" style="transition-delay:.2s">
+<section aria-labelledby="cta-mid-h2" class="cta" id="contact">
+<div class="cta-wrap">
+<p class="cta-eyebrow fu">FREE CONSULTATION</p>
+<h2 class="cta-h2 fu" id="cta-mid-h2" style="transition-delay:.1s">
+<span class="cta-h2-line">まず、お話してみませんか。</span>
+<span class="cta-h2-line">初回相談は無料です。</span>
+</h2>
+<p class="cta-body fu" style="transition-delay:.2s">
       「何から始めればいいかわからない」という段階でも構いません。
       現状のヒアリングから、最適な施策をご提案します。
     </p>
-    <div class="cta-actions fu" style="transition-delay:.3s">
-      <a href="../../contact/" class="btn-cta" aria-label="無料相談を申し込む">無料相談を申し込む</a>
-      <div class="cta-tel-wrap">
-        <p class="cta-tel-label">お電話でのご相談</p>
-        <a href="tel:0788068338" class="cta-tel" aria-label="電話番号 078-806-8338">078-806-8338</a>
-      </div>
-    </div>
-  </div>
+<div class="cta-actions fu" style="transition-delay:.3s">
+<a aria-label="無料相談を申し込む" class="btn-cta" href="../../contact/">無料相談を申し込む</a>
+<div class="cta-tel-wrap">
+<p class="cta-tel-label">お電話でのご相談</p>
+<a aria-label="電話番号 078-806-8338" class="cta-tel" href="tel:0788068338">078-806-8338</a>
+</div>
+</div>
+</div>
 </section>
-<section class="faq-sec" aria-labelledby="faq-h2">
-  <div class="faq-head">
-    <div>
-      <p class="sec-eyebrow fu">FAQ</p>
-      <h2 class="faq-h2 fu" id="faq-h2">よくある質問</h2>
-    </div>
-    <a href="../../faq/" class="view-all fu" aria-label="よくある質問をすべて見る">すべて見る</a>
-  </div>
+<section aria-labelledby="faq-h2" class="faq-sec">
+<div class="faq-head">
+<div>
+<p class="sec-eyebrow fu">FAQ</p>
+<h2 class="faq-h2 fu" id="faq-h2">よくある質問</h2>
+</div>
+<a aria-label="よくある質問をすべて見る" class="view-all fu" href="../../faq/">すべて見る</a>
+</div>
 <div class="faq-list" role="list">
-    <div class="faq-item fu" role="listitem">
-      <div class="faq-q" role="button" tabindex="0" aria-expanded="false" aria-controls="faq-a-1">
-        <span class="faq-q-mark">Q</span>
-        <span class="faq-q-text">note運用代行の費用はいくらですか？</span>
-        <span class="faq-q-icon" aria-hidden="true"></span>
-      </div>
-      <div class="faq-a" id="faq-a-1">
-        <div class="faq-a-inner">
-          <span class="faq-a-mark">A</span>
-          <p class="faq-a-text">ライトプランは月額60,000円（税込）〜、スタンダードプランは月額100,000円（税込）〜、フルサポートプランは月額150,000円（税込）〜となります。記事文字数・画像制作有無により変動します。まずは無料相談でご要望をお聞かせください。</p>
-        </div>
-      </div>
-    </div>
-    <div class="faq-item fu" style="transition-delay:0.05s" role="listitem">
-      <div class="faq-q" role="button" tabindex="0" aria-expanded="false" aria-controls="faq-a-2">
-        <span class="faq-q-mark">Q</span>
-        <span class="faq-q-text">記事の内容は確認・修正できますか？</span>
-        <span class="faq-q-icon" aria-hidden="true"></span>
-      </div>
-      <div class="faq-a" id="faq-a-2">
-        <div class="faq-a-inner">
-          <span class="faq-a-mark">A</span>
-          <p class="faq-a-text">はい、公開前に必ずご確認いただきます。修正も承ります。事前にブランドトーン・発信テーマ・NG表現などをヒアリングした上で執筆しますので、大幅な修正が必要になるケースは少ないです。</p>
-        </div>
-      </div>
-    </div>
-    <div class="faq-item fu" style="transition-delay:0.10s" role="listitem">
-      <div class="faq-q" role="button" tabindex="0" aria-expanded="false" aria-controls="faq-a-3">
-        <span class="faq-q-mark">Q</span>
-        <span class="faq-q-text">noteはSEOに効果がありますか？</span>
-        <span class="faq-q-icon" aria-hidden="true"></span>
-      </div>
-      <div class="faq-a" id="faq-a-3">
-        <div class="faq-a-inner">
-          <span class="faq-a-mark">A</span>
-          <p class="faq-a-text">はい、noteはGoogleの検索結果に表示されやすいドメインパワーを持っています。適切なキーワード設計と継続的な記事投稿により、検索流入を獲得できます。自社サイトのSEOと並行して活用することで、集客の間口を広げることができます。</p>
-        </div>
-      </div>
-    </div>
-    <div class="faq-item fu" style="transition-delay:0.15s" role="listitem">
-      <div class="faq-q" role="button" tabindex="0" aria-expanded="false" aria-controls="faq-a-4">
-        <span class="faq-q-mark">Q</span>
-        <span class="faq-q-text">どんな業種でも対応できますか？</span>
-        <span class="faq-q-icon" aria-hidden="true"></span>
-      </div>
-      <div class="faq-a" id="faq-a-4">
-        <div class="faq-a-inner">
-          <span class="faq-a-mark">A</span>
-          <p class="faq-a-text">はい、医療・士業・飲食・EC・教育・製造業など幅広い業種に対応しています。業種ごとの専門知識が必要な場合は、ヒアリングや資料提供をお願いすることがあります。まずは無料相談でご相談ください。</p>
-        </div>
-      </div>
-    </div>
-    <div class="faq-item fu" style="transition-delay:0.20s" role="listitem">
-      <div class="faq-q" role="button" tabindex="0" aria-expanded="false" aria-controls="faq-a-5">
-        <span class="faq-q-mark">Q</span>
-        <span class="faq-q-text">最低契約期間はありますか？</span>
-        <span class="faq-q-icon" aria-hidden="true"></span>
-      </div>
-      <div class="faq-a" id="faq-a-5">
-        <div class="faq-a-inner">
-          <span class="faq-a-mark">A</span>
-          <p class="faq-a-text">3ヶ月〜をお願いしています。note運用は記事が積み上がることで効果が出る施策のため、短期間では効果を正確に評価できません。</p>
-        </div>
-      </div>
-    </div>
-  
-  </div>
+<div class="faq-item fu" role="listitem">
+<div aria-controls="faq-a-1" aria-expanded="false" class="faq-q" role="button" tabindex="0">
+<span class="faq-q-mark">Q</span>
+<span class="faq-q-text">note運用代行の費用はいくらですか？</span>
+<span aria-hidden="true" class="faq-q-icon"></span>
+</div>
+<div class="faq-a" id="faq-a-1">
+<div class="faq-a-inner">
+<span class="faq-a-mark">A</span>
+<p class="faq-a-text">ライトプランは月額60,000円（税込）〜、スタンダードプランは月額100,000円（税込）〜、フルサポートプランは月額150,000円（税込）〜となります。記事文字数・画像制作有無により変動します。まずは無料相談でご要望をお聞かせください。</p>
+</div>
+</div>
+</div>
+<div class="faq-item fu" role="listitem" style="transition-delay:0.05s">
+<div aria-controls="faq-a-2" aria-expanded="false" class="faq-q" role="button" tabindex="0">
+<span class="faq-q-mark">Q</span>
+<span class="faq-q-text">記事の内容は確認・修正できますか？</span>
+<span aria-hidden="true" class="faq-q-icon"></span>
+</div>
+<div class="faq-a" id="faq-a-2">
+<div class="faq-a-inner">
+<span class="faq-a-mark">A</span>
+<p class="faq-a-text">はい、公開前に必ずご確認いただきます。修正も承ります。事前にブランドトーン・発信テーマ・NG表現などをヒアリングした上で執筆しますので、大幅な修正が必要になるケースは少ないです。</p>
+</div>
+</div>
+</div>
+<div class="faq-item fu" role="listitem" style="transition-delay:0.10s">
+<div aria-controls="faq-a-3" aria-expanded="false" class="faq-q" role="button" tabindex="0">
+<span class="faq-q-mark">Q</span>
+<span class="faq-q-text">noteはSEOに効果がありますか？</span>
+<span aria-hidden="true" class="faq-q-icon"></span>
+</div>
+<div class="faq-a" id="faq-a-3">
+<div class="faq-a-inner">
+<span class="faq-a-mark">A</span>
+<p class="faq-a-text">はい、noteはGoogleの検索結果に表示されやすいドメインパワーを持っています。適切なキーワード設計と継続的な記事投稿により、検索流入を獲得できます。自社サイトのSEOと並行して活用することで、集客の間口を広げることができます。</p>
+</div>
+</div>
+</div>
+<div class="faq-item fu" role="listitem" style="transition-delay:0.15s">
+<div aria-controls="faq-a-4" aria-expanded="false" class="faq-q" role="button" tabindex="0">
+<span class="faq-q-mark">Q</span>
+<span class="faq-q-text">どんな業種でも対応できますか？</span>
+<span aria-hidden="true" class="faq-q-icon"></span>
+</div>
+<div class="faq-a" id="faq-a-4">
+<div class="faq-a-inner">
+<span class="faq-a-mark">A</span>
+<p class="faq-a-text">はい、医療・士業・飲食・EC・教育・製造業など幅広い業種に対応しています。業種ごとの専門知識が必要な場合は、ヒアリングや資料提供をお願いすることがあります。まずは無料相談でご相談ください。</p>
+</div>
+</div>
+</div>
+<div class="faq-item fu" role="listitem" style="transition-delay:0.20s">
+<div aria-controls="faq-a-5" aria-expanded="false" class="faq-q" role="button" tabindex="0">
+<span class="faq-q-mark">Q</span>
+<span class="faq-q-text">最低契約期間はありますか？</span>
+<span aria-hidden="true" class="faq-q-icon"></span>
+</div>
+<div class="faq-a" id="faq-a-5">
+<div class="faq-a-inner">
+<span class="faq-a-mark">A</span>
+<p class="faq-a-text">3ヶ月〜をお願いしています。note運用は記事が積み上がることで効果が出る施策のため、短期間では効果を正確に評価できません。</p>
+</div>
+</div>
+</div>
+</div>
 </section>
-<section class="challenge-sec" id="challenge" aria-labelledby="challenge-h2">
-  <div class="challenge-split">
-    <!-- 左：見出しエリア -->
-    <div class="challenge-split-left">
-      <p class="sec-eyebrow fu">YOUR CHALLENGE</p>
-      <h2 class="sec-h2 fu" id="challenge-h2" style="transition-delay:.1s">
-        あなたの課題は<br>どれですか？
+<section aria-labelledby="challenge-h2" class="challenge-sec" id="challenge">
+<div class="challenge-split">
+<!-- 左：見出しエリア -->
+<div class="challenge-split-left">
+<p class="sec-eyebrow fu">YOUR CHALLENGE</p>
+<h2 class="sec-h2 fu" id="challenge-h2" style="transition-delay:.1s">
+        あなたの課題は<br/>どれですか？
       </h2>
-      <p class="sec-body fu" style="transition-delay:.2s">
-        WEBで成果が出ない理由は、必ずあります。<br>
+<p class="sec-body fu" style="transition-delay:.2s">
+        WEBで成果が出ない理由は、必ずあります。<br/>
         課題を特定し、最適な施策を設計します。
       </p>
-    </div>
-    <!-- 右：01の悩みカード -->
-    <div class="challenge-split-right">
-      <p class="challenge-split-num">01</p>
-      <p class="challenge-split-voice">なんかうまく<br>いかない...</p>
-      <p class="challenge-split-sub">何が問題かわからない。施策を試しても手応えがない。まず現状を整理したい。</p>
-      <p class="challenge-tags-label">推奨施策</p>
-            <div class="challenge-split-tags">
-        <a href="../strategy/" class="challenge-tag">WEB戦略</a>
-        <a href="https://htmlacheive.com/saikatsu_r/" class="challenge-tag" target="_blank" rel="noopener noreferrer">採用戦略<svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-left:4px;opacity:.7"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
-      </div>
-    </div>
-  </div>
-  <div class="challenge-grid">
-    <article class="challenge-card fu" style="transition-delay:.08s">
-      <div class="challenge-card-num"><span class="challenge-card-num-n">02</span></div>
-      <h3 class="challenge-card-title">サイトへの<br>訪問者を増やしたい</h3>
-      <p class="challenge-card-desc">検索で見つけてもらえない。広告を出しても費用対効果が悪い。もっと多くの見込み客に届けたい。</p>
-      <p class="challenge-tags-label">推奨施策</p>
-            <div class="challenge-tags-wrap">
-        <a href="../seo/" class="challenge-tag">SEO対策</a>
-        <a href="../meo/" class="challenge-tag">MEO対策</a>
-        <a href="../listing/" class="challenge-tag">リスティング広告</a>
-        <a href="../ads/display/" class="challenge-tag">ディスプレイ広告</a>
-        <a href="../sns/" class="challenge-tag">SNSマーケティング</a>
-        <a href="../ai-seo/" class="challenge-tag">AI検索対策（LLM対策）</a>
-        <a href="../sns/note/" class="challenge-tag">note対策</a>
-      </div>
-    </article>
-    <article class="challenge-card fu" style="transition-delay:.16s">
-      <div class="challenge-card-num"><span class="challenge-card-num-n">03</span></div>
-      <h3 class="challenge-card-title">来てくれた人が<br>問い合わせない</h3>
-      <p class="challenge-card-desc">アクセスはあるのに成約しない。サイトを見ても離脱してしまう。訪問者を顧客に変えたい。</p>
-      <p class="challenge-tags-label">推奨施策</p>
-            <div class="challenge-tags-wrap">
-        <a href="../website/" class="challenge-tag">ホームページ制作</a>
-        <a href="../website/#grow" class="challenge-tag">分析改善</a>
-      </div>
-    </article>
-    <article class="challenge-card fu" style="transition-delay:.24s">
-      <div class="challenge-card-num"><span class="challenge-card-num-n">04</span></div>
-      <h3 class="challenge-card-title">一度来た人に<br>また来てほしい</h3>
-      <p class="challenge-card-desc">リピーターが増えない。既存顧客との関係を維持したい。ファンを育てる仕組みをつくりたい。</p>
-      <p class="challenge-tags-label">推奨施策</p>
-            <div class="challenge-tags-wrap">
-        <a href="../sns/line/" class="challenge-tag">LINE</a>
-        <a href="../sns/instagram/" class="challenge-tag">Instagram</a>
-        <a href="../sns/x/" class="challenge-tag">X（旧Twitter）</a>
-        <a href="../sns/youtube/" class="challenge-tag">YouTube</a>
-        <a href="../sns/tiktok/" class="challenge-tag">TikTok</a>
-      </div>
-    </article>
-    <!-- 05 AI活用 -->
-    <article class="challenge-card fu challenge-card--last" style="transition-delay:.32s">
-      <div class="challenge-card-num"><span class="challenge-card-num-n">05</span></div>
-      <h3 class="challenge-card-title">AIで業務を<br>効率化・最適化したい</h3>
-      <p class="challenge-card-desc">手作業が多く時間がかかる。AIを使いたいが何から始めればいいかわからない。業務の無駄を省いて生産性を上げたい。</p>
-      <p class="challenge-tags-label">推奨施策</p>
-            <div class="challenge-tags-wrap">
-        <a href="../ai-automation/" class="challenge-tag">業務の自動化・最適化</a>
-      </div>
-    </article>
-  </div>
+</div>
+<!-- 右：01の悩みカード -->
+<div class="challenge-split-right">
+<p class="challenge-split-num">01</p>
+<p class="challenge-split-voice">なんかうまく<br/>いかない...</p>
+<p class="challenge-split-sub">何が問題かわからない。施策を試しても手応えがない。まず現状を整理したい。</p>
+<p class="challenge-tags-label">推奨施策</p>
+<div class="challenge-split-tags">
+<a class="challenge-tag" href="../strategy/">WEB戦略</a>
+<a class="challenge-tag" href="https://htmlacheive.com/saikatsu_r/" rel="noopener noreferrer" target="_blank">採用戦略<svg fill="none" height="11" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" style="vertical-align:middle;margin-left:4px;opacity:.7" viewbox="0 0 24 24" width="11" xmlns="http://www.w3.org/2000/svg"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" x2="21" y1="14" y2="3"></line></svg></a>
+</div>
+</div>
+</div>
+<div class="challenge-grid">
+<article class="challenge-card fu" style="transition-delay:.08s">
+<div class="challenge-card-num"><span class="challenge-card-num-n">02</span></div>
+<h3 class="challenge-card-title">サイトへの<br/>訪問者を増やしたい</h3>
+<p class="challenge-card-desc">検索で見つけてもらえない。広告を出しても費用対効果が悪い。もっと多くの見込み客に届けたい。</p>
+<p class="challenge-tags-label">推奨施策</p>
+<div class="challenge-tags-wrap">
+<a class="challenge-tag" href="../seo/">SEO対策</a>
+<a class="challenge-tag" href="../meo/">MEO対策</a>
+<a class="challenge-tag" href="../listing/">リスティング広告</a>
+<a class="challenge-tag" href="../ads/display/">ディスプレイ広告</a>
+<a class="challenge-tag" href="../sns/">SNSマーケティング</a>
+<a class="challenge-tag" href="../ai-seo/">AI検索対策（LLM対策）</a>
+<a class="challenge-tag" href="../sns/note/">note対策</a>
+</div>
+</article>
+<article class="challenge-card fu" style="transition-delay:.16s">
+<div class="challenge-card-num"><span class="challenge-card-num-n">03</span></div>
+<h3 class="challenge-card-title">来てくれた人が<br/>問い合わせない</h3>
+<p class="challenge-card-desc">アクセスはあるのに成約しない。サイトを見ても離脱してしまう。訪問者を顧客に変えたい。</p>
+<p class="challenge-tags-label">推奨施策</p>
+<div class="challenge-tags-wrap">
+<a class="challenge-tag" href="../website/">ホームページ制作</a>
+<a class="challenge-tag" href="../website/#grow">分析改善</a>
+</div>
+</article>
+<article class="challenge-card fu" style="transition-delay:.24s">
+<div class="challenge-card-num"><span class="challenge-card-num-n">04</span></div>
+<h3 class="challenge-card-title">一度来た人に<br/>また来てほしい</h3>
+<p class="challenge-card-desc">リピーターが増えない。既存顧客との関係を維持したい。ファンを育てる仕組みをつくりたい。</p>
+<p class="challenge-tags-label">推奨施策</p>
+<div class="challenge-tags-wrap">
+<a class="challenge-tag" href="../sns/line/">LINE</a>
+<a class="challenge-tag" href="../sns/instagram/">Instagram</a>
+<a class="challenge-tag" href="../sns/x/">X（旧Twitter）</a>
+<a class="challenge-tag" href="../sns/youtube/">YouTube</a>
+<a class="challenge-tag" href="../sns/tiktok/">TikTok</a>
+</div>
+</article>
+<!-- 05 AI活用 -->
+<article class="challenge-card fu challenge-card--last" style="transition-delay:.32s">
+<div class="challenge-card-num"><span class="challenge-card-num-n">05</span></div>
+<h3 class="challenge-card-title">AIで業務を<br/>効率化・最適化したい</h3>
+<p class="challenge-card-desc">手作業が多く時間がかかる。AIを使いたいが何から始めればいいかわからない。業務の無駄を省いて生産性を上げたい。</p>
+<p class="challenge-tags-label">推奨施策</p>
+<div class="challenge-tags-wrap">
+<a class="challenge-tag" href="../ai-automation/">業務の自動化・最適化</a>
+</div>
+</article>
+</div>
 </section>
 <!-- CTA -->
-<section id="contact" class="cta" aria-labelledby="cta-h2">
-  <div class="cta-wrap">
-    <p class="cta-eyebrow fu">FREE CONSULTATION</p>
-    <h2 class="cta-h2 fu" id="cta-h2" style="transition-delay:.1s">
-      <span class="cta-h2-line">まず、お話してみませんか。</span>
-      <span class="cta-h2-line">初回相談は無料です。</span>
-    </h2>
-    <p class="cta-body fu" style="transition-delay:.2s">
+<section aria-labelledby="cta-h2" class="cta" id="contact">
+<div class="cta-wrap">
+<p class="cta-eyebrow fu">FREE CONSULTATION</p>
+<h2 class="cta-h2 fu" id="cta-h2" style="transition-delay:.1s">
+<span class="cta-h2-line">まず、お話してみませんか。</span>
+<span class="cta-h2-line">初回相談は無料です。</span>
+</h2>
+<p class="cta-body fu" style="transition-delay:.2s">
       「何から始めればいいかわからない」という段階でも構いません。
       現状のヒアリングから、最適な施策をご提案します。
     </p>
-    <div class="cta-actions fu" style="transition-delay:.3s">
-      <a href="../../contact/" class="btn-cta" aria-label="無料相談を申し込む">無料相談を申し込む</a>
-      <div class="cta-tel-wrap">
-        <p class="cta-tel-label">お電話でのご相談</p>
-        <a href="tel:0788068338" class="cta-tel" aria-label="電話番号 078-806-8338">078-806-8338</a>
-      </div>
-    </div>
-  </div>
+<div class="cta-actions fu" style="transition-delay:.3s">
+<a aria-label="無料相談を申し込む" class="btn-cta" href="../../contact/">無料相談を申し込む</a>
+<div class="cta-tel-wrap">
+<p class="cta-tel-label">お電話でのご相談</p>
+<a aria-label="電話番号 078-806-8338" class="cta-tel" href="tel:0788068338">078-806-8338</a>
+</div>
+</div>
+</div>
 </section>
-<section class="area-sec" aria-labelledby="area-h2">
-  <div class="area-inner">
-    <div class="area-left">
-      <p class="area-eyebrow fu">SERVICE AREA</p>
-      <h2 class="area-h2 fu" id="area-h2" style="transition-delay:.1s">対応エリア</h2>
-      <p class="area-desc fu" style="transition-delay:.2s">神戸市を中心に、兵庫県全域および近隣府県の中小企業・店舗の集客支援を行っています。オンラインにて全国対応も可能です。</p>
-    </div>
-    <div class="area-right">
-      <div class="area-group fu">
-        <p class="area-group-label easy">柔軟にお伺いできます</p>
-        <div class="area-tags" role="list">
-          <span class="area-tag" role="listitem"><span class="area-tag-dot"></span>神戸市</span>
-          <span class="area-tag" role="listitem"><span class="area-tag-dot"></span>姫路市</span>
-          <span class="area-tag" role="listitem"><span class="area-tag-dot"></span>明石市</span>
-          <span class="area-tag" role="listitem"><span class="area-tag-dot"></span>加古川市</span>
-          <span class="area-tag" role="listitem"><span class="area-tag-dot"></span>芦屋市</span>
-          <span class="area-tag" role="listitem"><span class="area-tag-dot"></span>西宮市</span>
-          <span class="area-tag" role="listitem"><span class="area-tag-dot"></span>尼崎市</span>
-          <span class="area-tag" role="listitem"><span class="area-tag-dot"></span>宝塚市</span>
-          <span class="area-tag" role="listitem"><span class="area-tag-dot"></span>三木市</span>
-          <span class="area-tag" role="listitem"><span class="area-tag-dot"></span>三田市</span>
-          <span class="area-tag" role="listitem"><span class="area-tag-dot"></span>淡路市</span>
-        </div>
-      </div>
-      <div class="area-group fu" style="transition-delay:.1s">
-        <p class="area-group-label adjust">調整の上お伺いできます</p>
-        <div class="area-tags" role="list">
-          <span class="area-tag" role="listitem"><span class="area-tag-dot"></span>上記以外の兵庫県内</span>
-          <span class="area-tag" role="listitem"><span class="area-tag-dot"></span>大阪府</span>
-          <span class="area-tag" role="listitem"><span class="area-tag-dot"></span>京都府</span>
-          <span class="area-tag" role="listitem"><span class="area-tag-dot"></span>その他関西圏</span>
-        </div>
-      </div>
-      <div class="area-group fu" style="transition-delay:.2s">
-        <p class="area-group-label online">オンライン対応</p>
-        <div class="area-tags" role="list">
-          <span class="area-tag" role="listitem"><span class="area-tag-dot"></span>全国どこでも</span>
-        </div>
-      </div>
-      <p class="area-note fu" style="transition-delay:.3s">※ 訪問エリアは目安です。上記以外の地域もご相談ください。<br>※ オンラインでの打ち合わせも対応しています。</p>
-    </div>
-  </div>
+<section aria-labelledby="area-h2" class="area-sec">
+<div class="area-inner">
+<div class="area-left">
+<p class="area-eyebrow fu">SERVICE AREA</p>
+<h2 class="area-h2 fu" id="area-h2" style="transition-delay:.1s">対応エリア</h2>
+<p class="area-desc fu" style="transition-delay:.2s">神戸市を中心に、兵庫県全域および近隣府県の中小企業・店舗の集客支援を行っています。オンラインにて全国対応も可能です。</p>
+</div>
+<div class="area-right">
+<div class="area-group fu">
+<p class="area-group-label easy">柔軟にお伺いできます</p>
+<div class="area-tags" role="list">
+<span class="area-tag" role="listitem"><span class="area-tag-dot"></span>神戸市</span>
+<span class="area-tag" role="listitem"><span class="area-tag-dot"></span>姫路市</span>
+<span class="area-tag" role="listitem"><span class="area-tag-dot"></span>明石市</span>
+<span class="area-tag" role="listitem"><span class="area-tag-dot"></span>加古川市</span>
+<span class="area-tag" role="listitem"><span class="area-tag-dot"></span>芦屋市</span>
+<span class="area-tag" role="listitem"><span class="area-tag-dot"></span>西宮市</span>
+<span class="area-tag" role="listitem"><span class="area-tag-dot"></span>尼崎市</span>
+<span class="area-tag" role="listitem"><span class="area-tag-dot"></span>宝塚市</span>
+<span class="area-tag" role="listitem"><span class="area-tag-dot"></span>三木市</span>
+<span class="area-tag" role="listitem"><span class="area-tag-dot"></span>三田市</span>
+<span class="area-tag" role="listitem"><span class="area-tag-dot"></span>淡路市</span>
+</div>
+</div>
+<div class="area-group fu" style="transition-delay:.1s">
+<p class="area-group-label adjust">調整の上お伺いできます</p>
+<div class="area-tags" role="list">
+<span class="area-tag" role="listitem"><span class="area-tag-dot"></span>上記以外の兵庫県内</span>
+<span class="area-tag" role="listitem"><span class="area-tag-dot"></span>大阪府</span>
+<span class="area-tag" role="listitem"><span class="area-tag-dot"></span>京都府</span>
+<span class="area-tag" role="listitem"><span class="area-tag-dot"></span>その他関西圏</span>
+</div>
+</div>
+<div class="area-group fu" style="transition-delay:.2s">
+<p class="area-group-label online">オンライン対応</p>
+<div class="area-tags" role="list">
+<span class="area-tag" role="listitem"><span class="area-tag-dot"></span>全国どこでも</span>
+</div>
+</div>
+<p class="area-note fu" style="transition-delay:.3s">※ 訪問エリアは目安です。上記以外の地域もご相談ください。<br/>※ オンラインでの打ち合わせも対応しています。</p>
+</div>
+</div>
 </section>
-<section class="blog-sec" aria-labelledby="blog-h2">
-  <div class="blog-inner">
-    <div class="blog-head">
-      <h2 class="blog-h2 fu" id="blog-h2">noteコラム</h2>
-      <a href="../../blog/" class="view-all fu" style="transition-delay:.1s">すべて見る</a>
-    </div>
-    <div class="blog-grid">
-      <article class="blog-card fu">
-        <a href="../../blog/note-management/">
-          <p class="blog-cat">note運用</p>
-          <h3 class="blog-title">中小企業がnoteで集客するための5つの原則｜継続と設計が鍵</h3>
-          <p class="blog-date">2025.04.10</p>
-        </a>
-      </article>
-      <article class="blog-card fu" style="transition-delay:.1s">
-        <a href="../../blog/note-seo/">
-          <p class="blog-cat">note運用</p>
-          <h3 class="blog-title">noteはSEOに強い？Googleに評価される記事の書き方と設計方法</h3>
-          <p class="blog-date">2025.03.20</p>
-        </a>
-      </article>
-      <article class="blog-card fu" style="transition-delay:.2s">
-        <a href="../../blog/note-outsource/">
-          <p class="blog-cat">note運用</p>
-          <h3 class="blog-title">note運用代行の費用相場と依頼前に確認すべき5つのポイント</h3>
-          <p class="blog-date">2025.02.25</p>
-        </a>
-      </article>
-    </div>
-  </div>
+<section aria-labelledby="blog-h2" class="blog-sec">
+<div class="blog-inner">
+<div class="blog-head">
+<h2 class="blog-h2 fu" id="blog-h2">noteコラム</h2>
+<a class="view-all fu" href="../../blog/" style="transition-delay:.1s">すべて見る</a>
+</div>
+<div class="blog-grid">
+<article class="blog-card fu">
+<a href="../../blog/note-management/">
+<p class="blog-cat">note運用</p>
+<h3 class="blog-title">中小企業がnoteで集客するための5つの原則｜継続と設計が鍵</h3>
+<p class="blog-date">2025.04.10</p>
+</a>
+</article>
+<article class="blog-card fu" style="transition-delay:.1s">
+<a href="../../blog/note-seo/">
+<p class="blog-cat">note運用</p>
+<h3 class="blog-title">noteはSEOに強い？Googleに評価される記事の書き方と設計方法</h3>
+<p class="blog-date">2025.03.20</p>
+</a>
+</article>
+<article class="blog-card fu" style="transition-delay:.2s">
+<a href="../../blog/note-outsource/">
+<p class="blog-cat">note運用</p>
+<h3 class="blog-title">note運用代行の費用相場と依頼前に確認すべき5つのポイント</h3>
+<p class="blog-date">2025.02.25</p>
+</a>
+</article>
+</div>
+</div>
 </section>
-<nav class="breadcrumb-sp" aria-label="パンくずリスト（スマートフォン）">
-  <ol>
-    <li><a href="../../">ホーム</a></li>
-    <li><a href="../../sns/">SNSマーケティング</a></li>
-    <li><span aria-current="page">note運用代行</span></li>
-  </ol>
+<nav aria-label="パンくずリスト（スマートフォン）" class="breadcrumb-sp">
+<ol>
+<li><a href="../../">ホーム</a></li>
+<li><a href="../../sns/">SNSマーケティング</a></li>
+<li><span aria-current="page">note運用代行</span></li>
+</ol>
 </nav>
 <!-- wp:footer -->
 <!-- FOOTER -->
 <footer class="footer" role="contentinfo">
-  <div class="footer-top">
-    <div class="footer-logo-wrap">
-      <a href="../../index.html" class="footer-logo" aria-label="セルフアチーブ トップページへ">
-        <img src="../../assets/logo_color.webp" alt="selfachieve Acquisition Agency" width="140" height="30" loading="lazy">
-      </a>
-      <address class="footer-logo-addr">
-        〒658-0032 兵庫県神戸市東灘区向洋町6-9<br>
-        TEL：<a href="tel:0788068338">078-806-8338</a><br>
+<div class="footer-top">
+<div class="footer-logo-wrap">
+<a aria-label="セルフアチーブ トップページへ" class="footer-logo" href="../../index.html">
+<img alt="selfachieve Acquisition Agency" height="30" loading="lazy" src="../../assets/logo_color.webp" width="140"/>
+</a>
+<address class="footer-logo-addr">
+        〒658-0032 兵庫県神戸市東灘区向洋町6-9<br/>
+        TEL：<a href="tel:0788068338">078-806-8338</a><br/>
         営業時間：平日 9:00〜19:00
       </address>
-      <div class="footer-sns-block">
-        <p class="footer-sns-label">OFFICIAL SNS</p>
-        <div class="footer-sns" aria-label="公式SNSアカウント">
-          <a href="https://www.instagram.com/self.achieve/" class="footer-sns-link footer-sns-ig" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="20" height="20" rx="5" stroke="#28282D" stroke-width="1.5"/><circle cx="12" cy="12" r="4" stroke="#28282D" stroke-width="1.5"/><circle cx="17.5" cy="6.5" r="1" fill="#28282D"/></svg>
-          </a>
-          <a href="https://www.tiktok.com/@selfachieve" class="footer-sns-link footer-sns-tt" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" stroke="#28282D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
-          <a href="https://x.com/selfachieve" class="footer-sns-link footer-sns-x" target="_blank" rel="noopener noreferrer" aria-label="X（旧Twitter）">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 4l16 16M4 20L20 4" stroke="#28282D" stroke-width="1.5" stroke-linecap="round"/></svg>
-          </a>
-        </div>
-      </div>
-      <div class="footer-logo-related">
-        <span class="footer-related-label">RELATED SERVICE</span>
-        <a href="https://saikatsu-r.jp/" class="footer-related-link" target="_blank" rel="noopener noreferrer" aria-label="企業の採用活動を成功に導く「サイカツ.R」（別サイトが開きます）">企業の採用活動を成功に導く「サイカツ.R」<svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
-      </div>
-    </div>
-    <nav class="footer-nav" aria-label="フッターナビゲーション">
-      <div class="footer-nav-group">
-        <p class="footer-nav-title">サービス</p>
-        <a href="../../strategy/">WEB戦略設計</a>
-        <a href="../../website/">サイト制作・分析改善</a>
-        <a href="../../seo/">SEO対策</a>
-        <a href="../../meo/">MEO対策</a>
-        <a href="../../ai-seo/">AI検索対策（LLM検索対策）</a>
-        <a href="../../ads/display/">ディスプレイ広告</a>
-        <a href="../../sns/instagram/">Instagram</a>
-        <a href="../../sns/tiktok/">TikTok</a>
-        <a href="../../sns/x/">X（旧Twitter）</a>
-        <a href="../../sns/youtube/">YouTube</a>
-        <a href="../../sns/note/">note</a>
-        <a href="../../sns/line/">LINE</a>
-        <a href="../../ai-automation/">AI業務効率化・導入支援</a>
-      </div>
-      <div class="footer-nav-group">
-        <p class="footer-nav-title">会社情報</p>
-        <a href="../../works/">実績</a>
-        <a href="../../voice/">お客さまの声</a>
-        <a href="../../company/">会社情報</a>
-        <a href="../../columns/">コラム</a>
-        <a href="../../news/">お知らせ</a>
-        <a href="../../privacy/">プライバシーポリシー</a>
-      </div>
-      <div class="footer-nav-group">
-        <p class="footer-nav-title">お問い合わせ</p>
-        <a href="../../contact/">無料相談のお申し込み</a>
-        <a href="tel:0788068338">078-806-8338（平日 9:00～19:00）</a>
-      </div>
-    </nav>
-  </div>
-  <div class="footer-bottom">
-    <div class="footer-bottom-right">
-      <p class="footer-copy">&copy; <span id="copyright-year">2026</span> Self Achieve Inc. All Rights Reserved.</p>
-    </div>
-  </div>
+<div class="footer-sns-block">
+<p class="footer-sns-label">OFFICIAL SNS</p>
+<div aria-label="公式SNSアカウント" class="footer-sns">
+<a aria-label="Instagram" class="footer-sns-link footer-sns-ig" href="https://www.instagram.com/self.achieve/" rel="noopener noreferrer" target="_blank">
+<svg fill="none" height="16" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"><rect height="20" rx="5" stroke="#28282D" stroke-width="1.5" width="20" x="2" y="2"></rect><circle cx="12" cy="12" r="4" stroke="#28282D" stroke-width="1.5"></circle><circle cx="17.5" cy="6.5" fill="#28282D" r="1"></circle></svg>
+</a>
+<a aria-label="TikTok" class="footer-sns-link footer-sns-tt" href="https://www.tiktok.com/@selfachieve" rel="noopener noreferrer" target="_blank">
+<svg fill="none" height="16" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" stroke="#28282D" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg>
+</a>
+<a aria-label="X（旧Twitter）" class="footer-sns-link footer-sns-x" href="https://x.com/selfachieve" rel="noopener noreferrer" target="_blank">
+<svg fill="none" height="16" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M4 4l16 16M4 20L20 4" stroke="#28282D" stroke-linecap="round" stroke-width="1.5"></path></svg>
+</a>
+</div>
+</div>
+<div class="footer-logo-related">
+<span class="footer-related-label">RELATED SERVICE</span>
+<a aria-label="企業の採用活動を成功に導く「サイカツ.R」（別サイトが開きます）" class="footer-related-link" href="https://saikatsu-r.jp/" rel="noopener noreferrer" target="_blank">企業の採用活動を成功に導く「サイカツ.R」<svg fill="none" height="11" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="11" xmlns="http://www.w3.org/2000/svg"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" x2="21" y1="14" y2="3"></line></svg></a>
+</div>
+</div>
+<nav aria-label="フッターナビゲーション" class="footer-nav">
+<div class="footer-nav-group">
+<p class="footer-nav-title">サービス</p>
+<a href="../../strategy/">WEB戦略設計</a>
+<a href="../../website/">サイト制作・分析改善</a>
+<a href="../../seo/">SEO対策</a>
+<a href="../../meo/">MEO対策</a>
+<a href="../../ai-seo/">AI検索対策（LLM検索対策）</a>
+<a href="../../ads/display/">ディスプレイ広告</a>
+<a href="../../sns/instagram/">Instagram</a>
+<a href="../../sns/tiktok/">TikTok</a>
+<a href="../../sns/x/">X（旧Twitter）</a>
+<a href="../../sns/youtube/">YouTube</a>
+<a href="../../sns/note/">note</a>
+<a href="../../sns/line/">LINE</a>
+<a href="../../ai-automation/">AI業務効率化・導入支援</a>
+</div>
+<div class="footer-nav-group">
+<p class="footer-nav-title">会社情報</p>
+<a href="../../works/">実績</a>
+<a href="../../voice/">お客さまの声</a>
+<a href="../../company/">会社情報</a>
+<a href="../../columns/">コラム</a>
+<a href="../../news/">お知らせ</a>
+<a href="../../privacy/">プライバシーポリシー</a>
+</div>
+<div class="footer-nav-group">
+<p class="footer-nav-title">お問い合わせ</p>
+<a href="../../contact/">無料相談のお申し込み</a>
+<a href="tel:0788068338">078-806-8338（平日 9:00～19:00）</a>
+</div>
+</nav>
+</div>
+<div class="footer-bottom">
+<div class="footer-bottom-right">
+<p class="footer-copy">© <span id="copyright-year">2026</span> Self Achieve Inc. All Rights Reserved.</p>
+</div>
+</div>
 </footer>
 <!-- /wp:footer -->
 </main>
@@ -1507,6 +1018,6 @@
     });
   });
 </script>
-<script src="../../assets/common.js" defer></script>
+<script defer="" src="../../assets/common.js"></script>
 </body>
 </html>

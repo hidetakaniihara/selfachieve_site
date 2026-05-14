@@ -1,0 +1,116 @@
+
+/* ===== KV: WEB戦略設計 ===== */
+.kv-right { display: none !important; }
+.kv-splash { display: none !important; }
+.kv {
+  min-height: auto !important;
+  padding: var(--kv-padding-v, 72px) 80px !important;
+}
+@media (min-width: 769px) {
+  .kv .kv-inner {
+    grid-template-columns: 1fr !important;
+    max-width: 1400px !important;
+  }
+  .kv .kv-h1 {
+    font-size: clamp(40px, 6vw, 88px) !important;
+    line-height: 1.2 !important;
+    letter-spacing: -0.04em !important;
+    margin-bottom: 32px !important;
+  }
+  .kv .kv-eyebrow {
+    font-size: clamp(14px, 1.5vw, 18px) !important;
+    font-weight: 700 !important;
+    letter-spacing: .15em !important;
+    color: rgba(255,255,255,.85) !important;
+    margin-bottom: 24px !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+  }
+  .kv .kv-eyebrow::before {
+    content: '' !important;
+    display: inline-block !important;
+    width: 32px !important;
+    height: 2px !important;
+    background: rgba(255,255,255,.7) !important;
+    flex-shrink: 0 !important;
+  }
+  .kv .kv-sub {
+    font-size: clamp(16px, 1.6vw, 20px) !important;
+    color: #ffffff !important;
+    margin-bottom: 12px !important;
+    font-weight: 400 !important;
+  }
+  .kv .kv-body {
+    font-size: clamp(14px, 1.3vw, 16px) !important;
+    color: rgba(255,255,255,.75) !important;
+    line-height: 1.9 !important;
+    margin-bottom: 40px !important;
+    font-weight: 400 !important;
+  }
+}
+@media (max-width: 768px) {
+  .solution-head-reason-body { white-space: normal; }
+  .kv {
+    padding: var(--kv-padding-v-sp, 56px) 24px !important;
+    min-height: auto !important;
+  }
+  .kv .kv-h1 {
+    font-size: clamp(32px, 8vw, 48px) !important;
+    color: #ffffff !important;
+  }
+  .kv .kv-eyebrow {
+    color: rgba(255,255,255,.85) !important;
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    letter-spacing: .15em !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+  }
+  .kv .kv-eyebrow::before {
+    content: '' !important;
+    display: inline-block !important;
+    width: 24px !important;
+    height: 2px !important;
+    background: rgba(255,255,255,.7) !important;
+    flex-shrink: 0 !important;
+  }
+  .kv .kv-sub {
+    color: #ffffff !important;
+    font-size: 15px !important;
+    font-weight: 400 !important;
+  }
+  .kv .kv-body {
+    color: #ffffff !important;
+    font-size: 14px !important;
+    line-height: 1.9 !important;
+    font-weight: 400 !important;
+  }
+  .kv-question {
+    color: rgba(255,255,255,.65) !important;
+    font-size: 14px !important;
+  }
+}
+/* ===== KV em: 強調ワード（白・装飾なし） ===== */
+.kv .kv-h1 em {
+  font-style: normal !important;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  background-clip: unset !important;
+  font-weight: 900 !important;
+  border-bottom: none !important;
+  text-decoration: none !important;
+  padding-bottom: 0 !important;
+}
+/* ===== KV question（サブキャッチ） ===== */
+.kv-question {
+  font-size: clamp(14px, 1.4vw, 18px) !important;
+  color: rgba(255,255,255,.65) !important;
+  font-weight: 400 !important;
+  margin-bottom: 16px !important;
+  letter-spacing: .05em !important;
+}
+  

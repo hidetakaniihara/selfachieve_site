@@ -1,0 +1,95 @@
+
+/* ===== KV SERVICE LABEL ===== */
+.kv-service-label {
+  display: inline-flex;
+  align-items: center;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 900;
+  font-size: clamp(13px, 1.1vw, 14px);
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: #fff;
+  border-left: 3px solid rgba(255,255,255,.9);
+  padding: 4px 0 4px 14px;
+  margin-bottom: 22px;
+  position: relative;
+  z-index: 2;
+}
+/* ===== KV SPLASH: REMOVED ===== */
+.kv-right { display: none !important; }
+.kv-splash { display: none !important; }
+/* ===== KV PADDING: 上下余白削減 ===== */
+.kv {
+  min-height: auto !important;
+  padding: var(--kv-padding-v, 72px) 80px !important;
+}
+/* ===== KV INNER: full-width text layout (2-line H1) ===== */
+@media (min-width: 769px) {
+  .kv .kv-inner {
+    grid-template-columns: 1fr !important;
+    max-width: 1400px !important;
+  }
+  .kv .kv-h1 {
+    font-size: clamp(40px, 6vw, 88px) !important;
+    line-height: 1.2 !important;
+    letter-spacing: -0.04em !important;
+    margin-bottom: 32px !important;
+  }
+  /* メインラベル：「SEO対策」極太大型 */
+  .kv .kv-eyebrow {
+    font-size: clamp(28px, 4vw, 56px) !important;
+    font-weight: 900 !important;
+    letter-spacing: -0.02em !important;
+    color: #ffffff !important;
+    margin-bottom: 20px !important;
+    gap: 20px !important;
+  }
+  .kv .kv-eyebrow::before {
+    display: none !important;
+  }
+  .kv .kv-sub {
+    margin-bottom: 0 !important;
+  }
+}
+@media (max-width: 768px) {
+  .kv {
+    padding: var(--kv-padding-v-sp, 56px) 24px !important;
+    min-height: auto !important;
+  }
+  .kv .kv-h1 {
+    color: #ffffff !important;
+  }
+  .kv .kv-eyebrow {
+    color: rgba(255,255,255,.85) !important;
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    letter-spacing: .15em !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+  }
+  .kv .kv-eyebrow::before {
+    content: '' !important;
+    display: inline-block !important;
+    width: 24px !important;
+    height: 2px !important;
+    background: rgba(255,255,255,.7) !important;
+    flex-shrink: 0 !important;
+  }
+  .kv .kv-sub {
+    color: #ffffff !important;
+    font-size: 15px !important;
+    font-weight: 400 !important;
+  }
+  .kv .kv-body {
+    color: #ffffff !important;
+    font-size: 14px !important;
+    line-height: 1.9 !important;
+    font-weight: 400 !important;
+  }
+  .kv-question {
+    color: rgba(255,255,255,.65) !important;
+    font-size: 14px !important;
+  }
+}
+  
