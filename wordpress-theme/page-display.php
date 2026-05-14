@@ -292,7 +292,7 @@ get_header();
     </div>
     <div class="badge-img-block">
       <a href="https://www.google.com/partners/agency?id=7098540721" target="_blank" rel="noopener">
-        <img src="../../listing/img/google-partner-badge.svg" alt="Google Partner Badge" width="180" height="180" loading="lazy" style="display:block;width:180px;height:auto;">
+        <img src="<?php echo esc_url( home_url( '/listing/img/google-partner-badge.svg' ) ); ?>" alt="Google Partner Badge" width="180" height="180" loading="lazy" style="display:block;width:180px;height:auto;">
       </a>
     </div>
   </div>
@@ -404,7 +404,7 @@ get_header();
     <article class="voice-card fu">
       <a href="<?php echo esc_url( home_url( '/voice/iwazawa/' ) ); ?>" class="voice-link" aria-label="岩澤法理事務所の声を詳しく見る">
       <div class="voice-avatar">
-        <img src="../<?php echo get_template_directory_uri(); ?>/assets/voice/iwazawa.webp" alt="岩澤法理事務所" width="280" height="280" loading="lazy">
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/voice/iwazawa.webp" alt="岩澤法理事務所" width="280" height="280" loading="lazy">
       </div>
       <div class="voice-body">
         <p class="voice-quote">
@@ -422,7 +422,7 @@ get_header();
     <article class="voice-card fu" style="transition-delay:.1s">
       <a href="<?php echo esc_url( home_url( '/voice/' ) ); ?>" class="voice-link" aria-label="株式会社エデュラボの声を詳しく見る">
       <div class="voice-avatar">
-        <img src="../<?php echo get_template_directory_uri(); ?>/assets/voice/edurabo.webp" alt="株式会社エデュラボ" width="280" height="280" loading="lazy">
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/voice/edurabo.webp" alt="株式会社エデュラボ" width="280" height="280" loading="lazy">
       </div>
       <div class="voice-body">
         <p class="voice-quote">
@@ -440,7 +440,7 @@ get_header();
     <article class="voice-card fu" style="transition-delay:.2s">
       <a href="<?php echo esc_url( home_url( '/voice/' ) ); ?>" class="voice-link" aria-label="Nadiの声を詳しく見る">
       <div class="voice-avatar">
-        <img src="../<?php echo get_template_directory_uri(); ?>/assets/voice/nadi.webp" alt="Nadi ピラティス・ヨガスタジオ" width="280" height="280" loading="lazy">
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/voice/nadi.webp" alt="Nadi ピラティス・ヨガスタジオ" width="280" height="280" loading="lazy">
       </div>
       <div class="voice-body">
         <p class="voice-quote">
@@ -732,7 +732,7 @@ get_header();
   <div class="footer-top">
     <div class="footer-logo-wrap">
       <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="footer-logo" aria-label="セルフアチーブ トップページへ">
-        <img src="../<?php echo get_template_directory_uri(); ?>/assets/logo_color.webp" alt="selfachieve Acquisition Agency" width="140" height="30" loading="lazy">
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/logo_color.webp" alt="selfachieve Acquisition Agency" width="140" height="30" loading="lazy">
       </a>
       <address class="footer-logo-addr">
         〒658-0032 兵庫県神戸市東灘区向洋町6-9<br>
