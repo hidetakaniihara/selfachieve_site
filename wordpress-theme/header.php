@@ -43,7 +43,11 @@
         </div>
         <div class="hd-mega-col">
           <span class="hd-mega-col-label"><span class="col-label-main">再販・追客</span><span class="col-label-sub">（一度来た人にまた来てほしい）</span></span>
-          <a href="<?php echo esc_url( home_url( '/sns/line/' ) ); ?>" role="menuitem"<?php if ( is_page('line') ) echo ' class="active"'; ?>>LINE運用</a>
+          <a href="<?php echo esc_url( home_url( '/sns/line/' ) ); ?>" role="menuitem"<?php if ( is_page('line') ) echo ' class="active"'; ?>>LINE</a>
+          <a href="<?php echo esc_url( home_url( '/sns/instagram/' ) ); ?>" role="menuitem"<?php if ( is_page('instagram') ) echo ' class="active"'; ?>>Instagram</a>
+          <a href="<?php echo esc_url( home_url( '/sns/x/' ) ); ?>" role="menuitem"<?php if ( is_page('x') ) echo ' class="active"'; ?>>X（旧Twitter）</a>
+          <a href="<?php echo esc_url( home_url( '/sns/youtube/' ) ); ?>" role="menuitem"<?php if ( is_page('youtube') ) echo ' class="active"'; ?>>YouTube</a>
+          <a href="<?php echo esc_url( home_url( '/sns/tiktok/' ) ); ?>" role="menuitem"<?php if ( is_page('tiktok') ) echo ' class="active"'; ?>>TikTok</a>
         </div>
         <div class="hd-mega-col">
           <span class="hd-mega-col-label"><span class="col-label-main">AI活用</span><span class="col-label-sub">（AIで業務を効率化・最適化したい）</span></span>
@@ -133,7 +137,11 @@
       <a class="hd-drawer-link-item<?php if ( is_page('website') ) echo ' active'; ?>" href="<?php echo esc_url( home_url( '/website/' ) ); ?>">ホームページ制作</a>
       <a class="hd-drawer-link-item" href="<?php echo esc_url( home_url( '/website/#grow' ) ); ?>">分析改善</a>
       <p class="hd-drawer-group-label">再販・追客（一度来た人にまた来てほしい）</p>
-      <a class="hd-drawer-link-item<?php if ( is_page('line') ) echo ' active'; ?>" href="<?php echo esc_url( home_url( '/sns/line/' ) ); ?>">LINE運用</a>
+      <a class="hd-drawer-link-item<?php if ( is_page('line') ) echo ' active'; ?>" href="<?php echo esc_url( home_url( '/sns/line/' ) ); ?>">LINE</a>
+      <a class="hd-drawer-link-item<?php if ( is_page('instagram') ) echo ' active'; ?>" href="<?php echo esc_url( home_url( '/sns/instagram/' ) ); ?>">Instagram</a>
+      <a class="hd-drawer-link-item<?php if ( is_page('x') ) echo ' active'; ?>" href="<?php echo esc_url( home_url( '/sns/x/' ) ); ?>">X（旧Twitter）</a>
+      <a class="hd-drawer-link-item<?php if ( is_page('youtube') ) echo ' active'; ?>" href="<?php echo esc_url( home_url( '/sns/youtube/' ) ); ?>">YouTube</a>
+      <a class="hd-drawer-link-item<?php if ( is_page('tiktok') ) echo ' active'; ?>" href="<?php echo esc_url( home_url( '/sns/tiktok/' ) ); ?>">TikTok</a>
       <p class="hd-drawer-group-label">AI活用（AIで業務を効率化・最適化したい）</p>
       <a class="hd-drawer-link-item<?php if ( is_page('ai-automation') ) echo ' active'; ?>" href="<?php echo esc_url( home_url( '/ai-automation/' ) ); ?>">業務の自動化・最適化</a>
     </div>
