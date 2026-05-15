@@ -1,9 +1,11 @@
-<!-- FOOTER -->
 <footer class="footer" role="contentinfo">
   <div class="footer-top">
     <div class="footer-logo-wrap">
       <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="footer-logo" aria-label="セルフアチーブ トップページへ">
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/logo_color.webp" alt="selfachieve Acquisition Agency" width="140" height="30" loading="lazy">
+        <picture>
+          <source srcset="<?php echo get_template_directory_uri(); ?>/assets/logo_color.webp" type="image/webp">
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/logo_color.png" alt="selfachieve Acquisition Agency" width="140" height="30" loading="lazy">
+        </picture>
       </a>
       <address class="footer-logo-addr">
         〒658-0032 兵庫県神戸市東灘区向洋町6-9<br>
@@ -37,7 +39,8 @@
         <a href="<?php echo esc_url( home_url( '/seo/' ) ); ?>">SEO対策</a>
         <a href="<?php echo esc_url( home_url( '/meo/' ) ); ?>">MEO対策</a>
         <a href="<?php echo esc_url( home_url( '/ai-seo/' ) ); ?>">AI検索対策（LLM検索対策）</a>
-        <a href="<?php echo esc_url( home_url( '/ads/display/' ) ); ?>">ディスプレイ広告</a>
+        <a href="<?php echo esc_url( home_url( '/listing/' ) ); ?>">リスティング広告</a>
+        <a href="<?php echo esc_url( home_url( '/display/' ) ); ?>">ディスプレイ広告</a>
         <a href="<?php echo esc_url( home_url( '/sns/instagram/' ) ); ?>">Instagram</a>
         <a href="<?php echo esc_url( home_url( '/sns/tiktok/' ) ); ?>">TikTok</a>
         <a href="<?php echo esc_url( home_url( '/sns/x/' ) ); ?>">X（旧Twitter）</a>
@@ -51,7 +54,7 @@
         <a href="<?php echo esc_url( home_url( '/works/' ) ); ?>">実績</a>
         <a href="<?php echo esc_url( home_url( '/voice/' ) ); ?>">お客さまの声</a>
         <a href="<?php echo esc_url( home_url( '/company/' ) ); ?>">会社情報</a>
-        <a href="<?php echo esc_url( home_url( '/column/' ) ); ?>">コラム</a>
+        <a href="<?php echo esc_url( home_url( '/columns/' ) ); ?>">コラム</a>
         <a href="<?php echo esc_url( home_url( '/news/' ) ); ?>">お知らせ</a>
         <a href="<?php echo esc_url( home_url( '/privacy/' ) ); ?>">プライバシーポリシー</a>
       </div>
@@ -64,10 +67,164 @@
   </div>
   <div class="footer-bottom">
     <div class="footer-bottom-right">
-      <p class="footer-copy">&copy; <span id="copyright-year"><?php echo date('Y'); ?></span> Self Achieve Inc. All Rights Reserved.</p>
+      <p class="footer-copy">&copy; <?php echo date( 'Y' ); ?> Self Achieve Inc. All Rights Reserved.</p>
     </div>
   </div>
 </footer>
+
+<script>
+/* ===== Fade-up on scroll (.fu → .fu.on) ===== */
+(function(){
+  const obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){ e.target.classList.add('on'); obs.unobserve(e.target); }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fu').forEach(function(el){ obs.observe(el); });
+
+  /* ===== Count-up ===== */
+  function countUp(el){
+    var target = parseInt(el.getAttribute('data-count'), 10);
+    var sup = el.querySelector('sup') ? el.querySelector('sup').outerHTML : '';
+    var duration = 1200;
+    var step = target / (duration / 16);
+    var cur = 0;
+    var t = setInterval(function(){
+      cur = Math.min(cur + step, target);
+      el.innerHTML = Math.floor(cur) + sup;
+      if(cur >= target) clearInterval(t);
+    }, 16);
+  }
+  var cobs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ countUp(e.target); cobs.unobserve(e.target); } });
+  }, { threshold: 0.5 });
+  document.querySelectorAll('[data-count]').forEach(function(el){ cobs.observe(el); });
+
+  /* ===== FAQ accordion ===== */
+  document.querySelectorAll('.faq-q').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var item = btn.closest('.faq-item');
+      var isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(function(el){ el.classList.remove('open'); });
+      if(!isOpen) item.classList.add('open');
+    });
+  });
+
+  /* ===== Dropdown menu ===== */
+  var NAV_ITEMS = document.querySelectorAll('.hd-nav-item');
+  NAV_ITEMS.forEach(function(item){
+    var closeTimer = null;
+    var open = function(){
+      clearTimeout(closeTimer);
+      NAV_ITEMS.forEach(function(i){ if(i !== item) i.classList.remove('open'); });
+      item.classList.add('open');
+    };
+    var close = function(){
+      closeTimer = setTimeout(function(){ item.classList.remove('open'); }, 200);
+    };
+    item.addEventListener('mouseenter', open);
+    item.addEventListener('mouseleave', close);
+    var dd = item.querySelector('.hd-dropdown, .hd-mega-wrap, .hd-mega');
+    if(dd){
+      dd.addEventListener('mouseenter', function(){ clearTimeout(closeTimer); });
+      dd.addEventListener('mouseleave', close);
+    }
+    document.addEventListener('click', function(e){
+      if(!item.contains(e.target)) item.classList.remove('open');
+    });
+  });
+
+  /* ===== Hamburger menu ===== */
+  var hamburger = document.querySelector('.hd-hamburger');
+  var drawer = document.getElementById('hd-drawer');
+  if(hamburger && drawer){
+    hamburger.addEventListener('click', function(){
+      var isOpen = hamburger.classList.toggle('open');
+      drawer.classList.toggle('open', isOpen);
+      hamburger.setAttribute('aria-expanded', isOpen);
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+    drawer.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){
+        hamburger.classList.remove('open');
+        drawer.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      });
+    });
+    /* ドロワー内の閉じるボタン */
+    var drawerClose = drawer.querySelector('.hd-drawer-close');
+    if(drawerClose){
+      drawerClose.addEventListener('click', function(){
+        hamburger.classList.remove('open');
+        drawer.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      });
+    }
+    /* Drawer accordion */
+    drawer.querySelectorAll('[data-drawer-accordion]').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        var sub = btn.nextElementSibling;
+        var isOpen = btn.classList.toggle('open');
+        sub.classList.toggle('open', isOpen);
+        btn.setAttribute('aria-expanded', isOpen);
+      });
+    });
+    drawer.querySelectorAll('.hd-drawer-accordion-btn').forEach(function(btn){
+      btn.addEventListener('click', function(e){
+        e.stopPropagation();
+        var sub = btn.nextElementSibling;
+        var isOpen = btn.classList.toggle('open');
+        sub.classList.toggle('open', isOpen);
+      });
+    });
+  }
+
+  /* ===== Tablet drawer ===== */
+  var tabletDrawer = document.getElementById('hd-drawer-tablet');
+  if(tabletDrawer){
+    tabletDrawer.querySelectorAll('.hd-drawer-accordion-btn').forEach(function(btn){
+      btn.addEventListener('click', function(e){
+        e.stopPropagation();
+        var sub = btn.nextElementSibling;
+        var isOpen = btn.classList.toggle('open');
+        sub.classList.toggle('open', isOpen);
+      });
+    });
+  }
+
+  /* ===== PC mega menu accordion ===== */
+  document.querySelectorAll('.hd-mega-accordion-btn').forEach(function(btn){
+    btn.addEventListener('click', function(e){
+      e.stopPropagation();
+      var sub = btn.nextElementSibling;
+      var isOpen = btn.classList.toggle('open');
+      sub.classList.toggle('open', isOpen);
+    });
+  });
+
+  /* ===== SP fixed CTA ===== */
+  var spCta = document.getElementById('sp-fixed-cta');
+  if(spCta){
+    var kvSection = document.querySelector('.kv');
+    var contactSection = document.getElementById('contact');
+    var ctaObserver = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.target === kvSection){
+          if(!entry.isIntersecting){ spCta.classList.add('visible'); }
+          else { spCta.classList.remove('visible'); }
+        }
+        if(entry.target === contactSection){
+          if(entry.isIntersecting){ spCta.classList.remove('visible'); }
+        }
+      });
+    }, { threshold: 0.1 });
+    if(kvSection) ctaObserver.observe(kvSection);
+    if(contactSection) ctaObserver.observe(contactSection);
+  }
+})();
+</script>
 
 <?php wp_footer(); ?>
 </body>

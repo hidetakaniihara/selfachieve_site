@@ -1,177 +1,152 @@
 <?php
 /**
- * Self Achieve Theme Functions
+ * selfachieve テーマ functions.php
  */
 
-// テーマのセットアップ
-function selfachieve_setup() {
-    // タイトルタグのサポート
-    add_theme_support( 'title-tag' );
-    // アイキャッチ画像のサポート
-    add_theme_support( 'post-thumbnails' );
-    // HTML5のサポート
-    add_theme_support( 'html5', array(
-        'search-form',
-        'comment-form',
-        'comment-list',
-        'gallery',
-        'caption',
-        'style',
-        'script'
-    ) );
+// テーマサポート設定
+add_theme_support( 'title-tag' );
+add_theme_support( 'post-thumbnails' );
+add_theme_support( 'html5', [ 'search-form', 'comment-form', 'comment-list', 'gallery', 'caption' ] );
+
+// CSS / JS の読み込み
+function selfachieve_enqueue_assets() {
+    $ver = '1.0.0';
+    // Google Fonts
+    wp_enqueue_style(
+        'google-fonts',
+        'https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap',
+        [],
+        null
+    );
+    // メインCSS
+    wp_enqueue_style(
+        'selfachieve-style',
+        get_template_directory_uri() . '/assets/style.css',
+        [ 'google-fonts' ],
+        $ver
+    );
+    // Swiper（works/sanplaza専用。全ページで読み込むが軽量なため許容）
+    wp_enqueue_style(
+        'swiper',
+        'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css',
+        [],
+        '11'
+    );
+    // メインJS
+    wp_enqueue_script(
+        'selfachieve-common',
+        get_template_directory_uri() . '/assets/common.js',
+        [],
+        $ver,
+        true
+    );
 }
-add_action( 'after_setup_theme', 'selfachieve_setup' );
+add_action( 'wp_enqueue_scripts', 'selfachieve_enqueue_assets' );
 
-// スクリプトとスタイルの読み込み
-function selfachieve_scripts() {
-    // メインスタイルシート
-    wp_enqueue_style( 'selfachieve-style', get_template_directory_uri() . '/assets/style.css', array(), '1.0.0' );
-    // メインスクリプト
-    wp_enqueue_script( 'selfachieve-script', get_template_directory_uri() . '/assets/common.js', array(), '1.0.0', true );
-}
-add_action( 'wp_enqueue_scripts', 'selfachieve_scripts' );
-
-// カスタム投稿タイプとACFフィールドの読み込み
-require_once get_template_directory() . '/inc/custom-post-types.php';
-require_once get_template_directory() . '/inc/acf-fields.php';
-
-// ページネーション関数
-function selfachieve_pagination( $pages = '', $range = 2 ) {
-    $showitems = ( $range * 2 ) + 1;
-    global $paged;
-    if ( empty( $paged ) ) $paged = 1;
-    if ( $pages == '' ) {
-        global $wp_query;
-        $pages = $wp_query->max_num_pages;
-        if ( ! $pages ) {
-            $pages = 1;
-        }
-    }
-    if ( 1 != $pages ) {
-        echo '<nav class="pagination" aria-label="ページネーション">';
-        if ( $paged > 1 ) {
-            echo '<a href="' . get_pagenum_link( $paged - 1 ) . '" class="page-btn prev-btn" aria-label="前のページへ"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></a>';
-        }
-        for ( $i = 1; $i <= $pages; $i++ ) {
-            if ( 1 != $pages && ( ! ( $i >= $paged + $range + 1 || $i <= $paged - $range - 1 ) || $pages <= $showitems ) ) {
-                echo ( $paged == $i ) ? '<span class="page-btn current" aria-current="page">' . $i . '</span>' : '<a href="' . get_pagenum_link( $i ) . '" class="page-btn">' . $i . '</a>';
-            }
-        }
-        if ( $paged < $pages ) {
-            echo '<a href="' . get_pagenum_link( $paged + 1 ) . '" class="page-btn next-btn" aria-label="次のページへ"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></a>';
-        }
-        echo '</nav>';
-    }
+// 著作権年の動的出力
+function selfachieve_copyright_year() {
+    return date( 'Y' );
 }
 
-// Contact Form 7 の不要なpタグを削除
-add_filter('wpcf7_autop_or_not', '__return_false');
+// カスタム投稿タイプ：ニュース
+function selfachieve_register_post_types() {
+    register_post_type( 'news', [
+        'labels' => [
+            'name'          => 'お知らせ',
+            'singular_name' => 'お知らせ',
+            'add_new_item'  => '新しいお知らせを追加',
+            'edit_item'     => 'お知らせを編集',
+        ],
+        'public'        => true,
+        'has_archive'   => true,
+        'rewrite'       => [ 'slug' => 'news' ],
+        'supports'      => [ 'title', 'editor', 'thumbnail', 'excerpt' ],
+        'show_in_rest'  => true,
+        'menu_icon'     => 'dashicons-megaphone',
+    ] );
 
-// 静的HTMLファイルを削除してWordPressが処理できるようにする
-function selfachieve_delete_static_index_files() {
-    $dirs_to_clean = [
-        ABSPATH . 'company',
-    ];
-    foreach ($dirs_to_clean as $dir) {
-        if (is_dir($dir)) {
-            // ディレクトリ内のファイルを削除
-            $files = glob($dir . '/*');
-            if ($files) {
-                foreach ($files as $file) {
-                    if (is_file($file)) {
-                        unlink($file);
-                    }
-                }
-            }
-            // 空のディレクトリを削除
-            @rmdir($dir);
+    register_post_type( 'column', [
+        'labels' => [
+            'name'          => 'コラム',
+            'singular_name' => 'コラム',
+            'add_new_item'  => '新しいコラムを追加',
+            'edit_item'     => 'コラムを編集',
+        ],
+        'public'        => true,
+        'has_archive'   => false,
+        'rewrite'       => [ 'slug' => 'column-post' ],  // 固定ページ /columns/ との競合を避けるため変更
+        'supports'      => [ 'title', 'editor', 'thumbnail', 'excerpt' ],
+        'show_in_rest'  => true,
+        'menu_icon'     => 'dashicons-edit',
+    ] );
+
+    register_post_type( 'voice', [
+        'labels' => [
+            'name'          => 'お客さまの声',
+            'singular_name' => 'お客さまの声',
+            'add_new_item'  => '新しいお客さまの声を追加',
+            'edit_item'     => 'お客さまの声を編集',
+        ],
+        'public'        => true,
+        'has_archive'   => false,
+        'rewrite'       => [ 'slug' => 'voice-post' ],  // 固定ページ /voice/ との競合を避けるため変更
+        'supports'      => [ 'title', 'editor', 'thumbnail', 'excerpt' ],
+        'show_in_rest'  => true,
+        'menu_icon'     => 'dashicons-format-quote',
+    ] );
+
+    register_post_type( 'works', [
+        'labels' => [
+            'name'          => '実績',
+            'singular_name' => '実績',
+            'add_new_item'  => '新しい実績を追加',
+            'edit_item'     => '実績を編集',
+        ],
+        'public'        => true,
+        'has_archive'   => false,
+        'rewrite'       => [ 'slug' => 'works-post' ],  // 固定ページ /works/ との競合を避けるため変更
+        'supports'      => [ 'title', 'editor', 'thumbnail', 'excerpt' ],
+        'show_in_rest'  => true,
+        'menu_icon'     => 'dashicons-portfolio',
+    ] );
+}
+add_action( 'init', 'selfachieve_register_post_types' );
+
+// body_class フィルター：各ページに page-xxx クラスを付与
+function selfachieve_body_classes( $classes ) {
+    if ( is_front_page() ) {
+        $classes[] = 'page-top';
+    } elseif ( is_page() ) {
+        $slug = get_post_field( 'post_name', get_the_ID() );
+        if ( $slug ) {
+            $classes[] = 'page-' . $slug;
         }
+    } elseif ( is_singular( 'news' ) ) {
+        $classes[] = 'page-news-single';
+    } elseif ( is_post_type_archive( 'news' ) ) {
+        $classes[] = 'page-news';
+    } elseif ( is_singular( 'column' ) ) {
+        $classes[] = 'page-column-single';
+    } elseif ( is_post_type_archive( 'column' ) ) {
+        $classes[] = 'page-columns';
+    } elseif ( is_singular( 'voice' ) ) {
+        $classes[] = 'page-voice-single';
+    } elseif ( is_post_type_archive( 'voice' ) ) {
+        $classes[] = 'page-voice';
+    } elseif ( is_singular( 'works' ) ) {
+        $classes[] = 'page-works-single';
+    } elseif ( is_post_type_archive( 'works' ) ) {
+        $classes[] = 'page-works';
+    }
+    return $classes;
+}
+add_filter( 'body_class', 'selfachieve_body_classes' );
+
+// nginx環境でAuthorizationヘッダーをWordPressに転送する
+// エックスサーバーのnginxはAuthorizationヘッダーを直接転送しないため、
+// REDIRECT_HTTP_AUTHORIZATION から HTTP_AUTHORIZATION にコピーする
+if ( ! isset( $_SERVER['HTTP_AUTHORIZATION'] ) ) {
+    if ( isset( $_SERVER['REDIRECT_HTTP_AUTHORIZATION'] ) ) {
+        $_SERVER['HTTP_AUTHORIZATION'] = $_SERVER['REDIRECT_HTTP_AUTHORIZATION'];
     }
 }
-add_action('init', 'selfachieve_delete_static_index_files');
-
-// home_urlデバッグ用エンドポイント
-add_action('rest_api_init', function() {
-    register_rest_route('debug/v1', '/home_url', array(
-        'methods' => 'GET',
-        'callback' => function() {
-            return array(
-                'home_url' => home_url('/'),
-                'site_url' => site_url('/'),
-                'WP_HOME' => defined('WP_HOME') ? WP_HOME : 'not defined',
-                'WP_SITEURL' => defined('WP_SITEURL') ? WP_SITEURL : 'not defined',
-            );
-        },
-        'permission_callback' => '__return_true',
-    ));
-});
-// header.phpのパスを確認するデバッグ
-add_filter('get_header', function($name) {
-    $template_dir = get_template_directory();
-    $header_file = $template_dir . '/header' . ($name ? '-' . $name : '') . '.php';
-    error_log('HEADER_FILE_PATH: ' . $header_file . ' exists: ' . (file_exists($header_file) ? 'YES' : 'NO'));
-    // header.phpのMD5を確認
-    if (file_exists($header_file)) {
-        error_log('HEADER_MD5: ' . md5_file($header_file));
-    }
-    return $name;
-});
-// テンプレートディレクトリをREST APIで確認
-add_action('rest_api_init', function() {
-    register_rest_route('debug/v1', '/template_dir', array(
-        'methods' => 'GET',
-        'callback' => function() {
-            $template_dir = get_template_directory();
-            $header_file = $template_dir . '/header.php';
-            return array(
-                'template_dir' => $template_dir,
-                'header_file' => $header_file,
-                'header_exists' => file_exists($header_file),
-                'header_md5' => file_exists($header_file) ? md5_file($header_file) : 'not found',
-                'header_size' => file_exists($header_file) ? filesize($header_file) : 0,
-                'header_first_100' => file_exists($header_file) ? substr(file_get_contents($header_file), 0, 100) : 'not found',
-            );
-        },
-        'permission_callback' => '__return_true',
-    ));
-});
-// 固定ページのテンプレート設定を確認
-add_action('rest_api_init', function() {
-    register_rest_route('debug/v1', '/pages', array(
-        'methods' => 'GET',
-        'callback' => function() {
-            $pages = get_posts(array('post_type' => 'page', 'posts_per_page' => 20, 'post_status' => array('publish', 'draft')));
-            $result = array();
-            foreach ($pages as $page) {
-                $template = get_post_meta($page->ID, '_wp_page_template', true);
-                $result[] = array(
-                    'id' => $page->ID,
-                    'slug' => $page->post_name,
-                    'title' => $page->post_title,
-                    'template' => $template,
-                    'status' => $page->post_status,
-                );
-            }
-            return $result;
-        },
-        'permission_callback' => '__return_true',
-    ));
-});
-// companyフォルダの存在確認
-add_action('rest_api_init', function() {
-    register_rest_route('debug/v1', '/company_folder', array(
-        'methods' => 'GET',
-        'callback' => function() {
-            $public_html = ABSPATH;
-            $company_dir = $public_html . 'company';
-            $company_index = $public_html . 'company/index.html';
-            return array(
-                'abspath' => $public_html,
-                'company_dir_exists' => is_dir($company_dir),
-                'company_index_exists' => file_exists($company_index),
-                'company_dir_contents' => is_dir($company_dir) ? scandir($company_dir) : array(),
-            );
-        },
-        'permission_callback' => '__return_true',
-    ));
-});
