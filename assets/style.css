@@ -2138,6 +2138,10 @@ a.challenge-tag:hover{
       .kv-sub{color:rgba(255,255,255,.85)}
       .kv-eyebrow{color:rgba(255,255,255,.55)}
       .kv-body{color:rgba(255,255,255,.8)}
+      /* TOPページは白背景のため黒に戻す */
+      body.page-top .kv-h1{color:#28282D !important}
+      body.page-top .kv-eyebrow{color:#767680 !important}
+      body.page-top .kv-body{color:#4A4A50 !important}
       .kv-badge{
         color:rgba(255,255,255,.7);
         border-color:rgba(255,255,255,.25);
@@ -9234,7 +9238,7 @@ a.wall-tag:hover{background:#28282D;color:#fff;}
   body.page-top .kv .kv-h1,
   body.page-top .kv .kv-eyebrow,
   body.page-top .kv .kv-body {
-    color: #28282D;
+    color: #28282D !important;
   }
 
   /* ============================================================
@@ -10732,6 +10736,10 @@ a.wall-tag:hover{background:#28282D;color:#fff;}
   letter-spacing: .05em !important;
 }
   
+/* TOPページKVのみ：page-strategyの!importantを上書き */
+body.page-top .kv .kv-h1 { color: #28282D !important; }
+body.page-top .kv .kv-eyebrow { color: #767680 !important; }
+body.page-top .kv .kv-body { color: #4A4A50 !important; }
 /* PAGE: /seo/ - 固有スタイル (page-seo.css より統合) */
 
 /* ===== KV SERVICE LABEL ===== */
@@ -16014,4 +16022,19 @@ body {
     color: rgba(255,255,255,.65) !important;
     font-size: 14px !important;
   }
+}
+
+/* ============================================================
+   TOPページ KV テキスト色 最終確定 (2026-05-15)
+   白背景のため黒テキストに戻す - 全ての!importantを上書き
+   ============================================================ */
+body.page-top .kv .kv-h1 { color: #28282D !important; }
+body.page-top .kv .kv-eyebrow { color: #767680 !important; }
+body.page-top .kv .kv-body { color: #4A4A50 !important; }
+body.page-top .kv .kv-stat-n { color: #28282D !important; }
+body.page-top .kv .kv-stat-l { color: #4A4A50 !important; }
+@media(max-width:767px){
+  body.page-top .kv .kv-h1 { color: #28282D !important; }
+  body.page-top .kv .kv-eyebrow { color: #767680 !important; }
+  body.page-top .kv .kv-body { color: #4A4A50 !important; }
 }
