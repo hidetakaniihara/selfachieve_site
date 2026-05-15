@@ -10500,3 +10500,76 @@ a.wall-tag:hover{background:#28282D;color:#fff;}
   .rep-career-year{min-width:80px;font-size:12px;}
   .rep-career-text{font-size:14px;}
 }
+
+/* ============================================================
+   PAGE: /voice/ - スマホ対応 (page-voice.css より統合)
+   ============================================================ */
+@media(max-width:900px){
+  .voice-list-sec{padding:40px 16px 80px;}
+  .voice-grid{grid-template-columns:1fr;gap:16px;}
+  .voice-card{
+    border-radius:0;
+    border-left:3px solid #28282D;
+    transition:box-shadow .25s,transform .25s;
+  }
+  .voice-card-link{display:flex;flex-direction:column;}
+  .voice-card-img-wrap{height:200px;flex-shrink:0;}
+  .voice-card-img{order:-1;}
+  .voice-card-img-placeholder{min-height:200px;}
+  .voice-card-overlay{display:none;}
+  .voice-card-hover-quote{display:none;}
+  .voice-card-body{padding:16px 16px 20px;}
+  .voice-card-meta-top{gap:6px;margin-bottom:10px;}
+  .voice-card-num{font-size:11px;}
+  .voice-card-tag{font-size:11px;padding:3px 8px;}
+  .voice-card-title{
+    font-size:15px;
+    line-height:1.65;
+    margin-bottom:12px;
+    letter-spacing:-.01em;
+  }
+  .voice-card-title-quote{
+    display:block;
+    font-size:14px;
+    font-weight:700;
+    color:#28282D;
+    background:linear-gradient(transparent 60%,rgba(40,40,45,.1) 60%);
+    padding:0 2px;
+    margin-bottom:4px;
+    line-height:1.7;
+  }
+  .voice-card-sp-quote{
+    display:block;
+    font-size:13px;
+    color:#4A4A50;
+    line-height:1.7;
+    font-style:italic;
+    padding:10px 12px;
+    margin:0 0 12px;
+    background:#F7F7F5;
+    border-left:2px solid #BBBBC0;
+    position:relative;
+  }
+  .voice-card-sp-quote::before{
+    content:'\201C';
+    font-size:20px;
+    color:#BBBBC0;
+    line-height:1;
+    display:block;
+    margin-bottom:2px;
+  }
+  .voice-card-info{gap:8px;}
+  .voice-card-info-label{font-size:11px;}
+  .voice-card-info-val{font-size:13px;}
+  .voice-card-read{font-size:12px;margin-top:12px;}
+  .voice-card:nth-child(1){transition-delay:0s;}
+  .voice-card:nth-child(2){transition-delay:.06s;}
+  .voice-card:nth-child(3){transition-delay:.12s;}
+  .voice-card:nth-child(4){transition-delay:.18s;}
+  .voice-card:nth-child(5){transition-delay:.24s;}
+  .voice-card:nth-child(6){transition-delay:.30s;}
+}
+@media(max-width:480px){
+  .voice-card-img-wrap{height:180px;}
+  .voice-card-img-placeholder{min-height:180px;}
+}
