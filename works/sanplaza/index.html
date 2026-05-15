@@ -34,6 +34,14 @@
   ]}
   </script>
 
+<style>
+/* CUSTOM CURSOR - works/sanplaza のみ */
+@media(hover:hover) and (pointer:fine){body{cursor:none}a,button,[role="button"],[tabindex]{cursor:none}}
+#cursor-dot{position:fixed;top:0;left:0;z-index:9999;width:6px;height:6px;background:#28282D;border-radius:50%;pointer-events:none;transform:translate(-50%,-50%);transition:width .15s,height .15s;will-change:transform;}
+#cursor-ring{position:fixed;top:0;left:0;z-index:9998;width:32px;height:32px;border:1.5px solid #28282D;border-radius:50%;pointer-events:none;transform:translate(-50%,-50%);transition:width .25s cubic-bezier(.25,.46,.45,.94),height .25s cubic-bezier(.25,.46,.45,.94);will-change:transform;}
+#cursor-ring.is-hovering{width:48px;height:48px;background:rgba(40,40,45,.08);}
+@media(hover:none),not all and (pointer:fine){#cursor-dot,#cursor-ring{display:none}}
+</style>
 </head>
 <body>
 <div aria-hidden="true" id="cursor-dot"></div>
