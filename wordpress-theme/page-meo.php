@@ -193,7 +193,7 @@ get_header();
 <div class="own-result-inner">
 <!-- 左：検索結果画像 -->
 <div class="own-result-img-col fu">
-<img alt="神戸MEO Googleマップ上位表示 selfachieve.jp" class="own-result-img" height="503" loading="lazy" src="img/meo-googlemap-rank1.webp" width="397"/>
+<img alt="神戸MEO Googleマップ上位表示 selfachieve.jp" class="own-result-img" height="503" loading="lazy" src="<?php echo get_template_directory_uri(); ?>/assets/img/meo-googlemap-rank1.webp" width="397"/>
 <p class="own-result-img-caption">※「リスティング代行会社 神戸」と検索した際の画面</p>
 </div>
 <!-- 右：テキスト -->

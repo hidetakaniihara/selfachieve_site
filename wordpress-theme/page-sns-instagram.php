@@ -57,7 +57,7 @@ get_header();
 <!-- card 1 -->
 <article class="case-card fu">
 <div class="case-screenshot">
-<img alt="工務店様 Instagramアカウントスクリーンショット" height="703" loading="lazy" src="img/case-01-koumuten.webp" style="width:100%;height:100%;object-fit:cover;display:block;" width="1137"/>
+<img alt="工務店様 Instagramアカウントスクリーンショット" height="703" loading="lazy" src="<?php echo get_template_directory_uri(); ?>/assets/img/case-01-koumuten.webp" style="width:100%;height:100%;object-fit:cover;display:block;" width="1137"/>
 </div>
 <div class="case-card-body">
 <span class="case-industry">工務店 様</span>
@@ -76,7 +76,7 @@ get_header();
 <!-- card 2 -->
 <article class="case-card fu" style="transition-delay:.08s">
 <div class="case-screenshot">
-<img alt="衣料品メーカー様 Instagramアカウントスクリーンショット" height="703" loading="lazy" src="img/case-02-apparel.webp" style="width:100%;height:100%;object-fit:cover;display:block;" width="1137"/>
+<img alt="衣料品メーカー様 Instagramアカウントスクリーンショット" height="703" loading="lazy" src="<?php echo get_template_directory_uri(); ?>/assets/img/case-02-apparel.webp" style="width:100%;height:100%;object-fit:cover;display:block;" width="1137"/>
 </div>
 <div class="case-card-body">
 <span class="case-industry">20代-30代女性向け 衣料品メーカー 様</span>
@@ -95,7 +95,7 @@ get_header();
 <!-- card 3 -->
 <article class="case-card fu" style="transition-delay:.16s">
 <div class="case-screenshot">
-<img alt="ビール製造販売企業様 Instagramアカウントスクリーンショット" height="703" loading="lazy" src="img/case-03-beer.webp" style="width:100%;height:100%;object-fit:cover;display:block;" width="1137"/>
+<img alt="ビール製造販売企業様 Instagramアカウントスクリーンショット" height="703" loading="lazy" src="<?php echo get_template_directory_uri(); ?>/assets/img/case-03-beer.webp" style="width:100%;height:100%;object-fit:cover;display:block;" width="1137"/>
 </div>
 <div class="case-card-body">
 <span class="case-industry">ビール製造/販売 企業 様</span>

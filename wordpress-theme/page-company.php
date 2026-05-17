@@ -91,7 +91,7 @@ get_header();
 <div class="rep-photo">
 <div class="rep-photo-wrapper">
 <div class="rep-photo-frame">
-<img alt="新原 秀崇 代表取締役" height="1365" loading="lazy" src="../images/niihara.webp" width="1023"/>
+<img alt="新原 秀崇 代表取締役" height="1365" loading="lazy" src="<?php echo get_template_directory_uri(); ?>/assets/img/niihara.webp" width="1023"/>
 </div>
 </div>
 <div class="rep-name-block">

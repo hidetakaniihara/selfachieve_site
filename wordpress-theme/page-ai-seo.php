@@ -67,12 +67,12 @@ AI検索の回答に自社を表示させる施策。
 <div class="problem-evidence">
 <div class="problem-evidence-item">
 <p class="problem-evidence-label">— ChatGPT での表示例</p>
-<img alt="ChatGPTの回答に株式会社セルフアチーブが表示されているスクリーンショット（マップ）" height="799" loading="lazy" src="img/gpt.webp" width="1106"/>
-<img alt="ChatGPTの回答に株式会社セルフアチーブが表示されているスクリーンショット（テキスト）" height="349" loading="lazy" src="img/gpt2.webp" style="margin-top:12px" width="1103"/>
+<img alt="ChatGPTの回答に株式会社セルフアチーブが表示されているスクリーンショット（マップ）" height="799" loading="lazy" src="<?php echo get_template_directory_uri(); ?>/assets/img/gpt.webp" width="1106"/>
+<img alt="ChatGPTの回答に株式会社セルフアチーブが表示されているスクリーンショット（テキスト）" height="349" loading="lazy" src="<?php echo get_template_directory_uri(); ?>/assets/img/gpt2.webp" style="margin-top:12px" width="1103"/>
 </div>
 <div class="problem-evidence-item">
 <p class="problem-evidence-label">— Google AI Overviews での表示例</p>
-<img alt="GoogleのAI Overviewsに株式会社セルフアチーブが表示されているスクリーンショット" height="545" loading="lazy" src="img/overview.webp" width="1194"/>
+<img alt="GoogleのAI Overviewsに株式会社セルフアチーブが表示されているスクリーンショット" height="545" loading="lazy" src="<?php echo get_template_directory_uri(); ?>/assets/img/overview.webp" width="1194"/>
 </div>
 </div>
 <p class="problem-evidence-catch fu">自社で証明したAI対策成果を、<br/>あなたのサイトに。</p>
