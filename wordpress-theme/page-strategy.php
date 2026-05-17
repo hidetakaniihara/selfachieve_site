@@ -96,7 +96,7 @@ get_header();
 <p class="wall-tags-label">推奨施策はこちら</p>
 <div class="wall-tags-wrap">
 <a class="wall-tag" href="<?php echo esc_url( home_url( '/strategy/' ) ); ?>">WEB戦略</a>
-<a class="wall-tag" href="https://htmlacheive.com/saikatsu_r/" rel="noopener noreferrer" target="_blank">採用戦略</a>
+<a class="wall-tag" href="https://selfachieve.jp/saikatsu_r/" rel="noopener noreferrer" target="_blank">採用戦略</a>
 </div>
 </article>
 <!-- 02 集客・認知 -->

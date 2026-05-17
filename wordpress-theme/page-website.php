@@ -368,7 +368,7 @@ get_header();
 <p class="challenge-tags-label">推奨施策</p>
 <div class="challenge-split-tags">
 <a class="challenge-tag" href="<?php echo esc_url( home_url( '/strategy/' ) ); ?>">WEB戦略</a>
-<a class="challenge-tag" href="https://htmlacheive.com/saikatsu_r/" rel="noopener noreferrer" target="_blank">採用戦略<svg fill="none" height="11" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" style="vertical-align:middle;margin-left:4px;opacity:.7" viewbox="0 0 24 24" width="11" xmlns="http://www.w3.org/2000/svg"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" x2="21" y1="14" y2="3"></line></svg></a>
+<a class="challenge-tag" href="https://selfachieve.jp/saikatsu_r/" rel="noopener noreferrer" target="_blank">採用戦略<svg fill="none" height="11" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" style="vertical-align:middle;margin-left:4px;opacity:.7" viewbox="0 0 24 24" width="11" xmlns="http://www.w3.org/2000/svg"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" x2="21" y1="14" y2="3"></line></svg></a>
 </div>
 </div>
 </div>
