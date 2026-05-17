@@ -1,43 +1,77 @@
-<?php get_header(); ?>
+<?php
+/**
+ * お知らせ詳細テンプレート
+ * single-news.php
+ */
+get_header();
 
-<main class="main" role="main">
-  <?php while ( have_posts() ) : the_post(); ?>
-  <div class="page-hero">
+$cat  = get_post_meta( get_the_ID(), '_news_category', true );
+$cat  = $cat ? esc_html( $cat ) : 'お知らせ';
+$date = get_the_date( 'Y.m.d' );
+?>
+<main id="main" role="main">
+
+  <!-- PAGE HERO -->
+  <section class="page-hero" aria-labelledby="news-title">
     <div class="page-hero-inner">
-      <p class="page-hero-eyebrow">NEWS</p>
-      <h1 class="page-hero-h1"><?php the_title(); ?></h1>
-      <time class="page-hero-date" datetime="<?php echo get_the_date( 'Y-m-d' ); ?>"><?php echo get_the_date( 'Y.m.d' ); ?></time>
+      <span class="page-hero-eyebrow fu">NEWS</span>
+      <h1 class="page-hero-h1 fu" id="news-title" style="transition-delay:.08s"><?php the_title(); ?></h1>
     </div>
-  </div>
+  </section>
 
-  <div class="breadcrumb">
-    <div class="breadcrumb-inner">
-      <a href="<?php echo esc_url( home_url( '/' ) ); ?>">HOME</a>
-      <span class="breadcrumb-sep">&gt;</span>
-      <a href="<?php echo esc_url( home_url( '/news/' ) ); ?>">お知らせ</a>
-      <span class="breadcrumb-sep">&gt;</span>
-      <span class="breadcrumb-current"><?php the_title(); ?></span>
-    </div>
-  </div>
+  <!-- BREADCRUMB -->
+  <nav class="breadcrumb" aria-label="パンくずリスト">
+    <ol>
+      <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>">ホーム</a></li>
+      <li><a href="<?php echo esc_url( home_url( '/news/' ) ); ?>">お知らせ</a></li>
+      <li><span aria-current="page"><?php the_title(); ?></span></li>
+    </ol>
+  </nav>
 
-  <article class="article-content">
-    <div class="article-inner">
-      <div class="article-body">
+  <!-- ARTICLE -->
+  <article class="news-article-sec">
+    <div class="news-article-inner">
+      <div class="news-article-meta">
+        <span class="news-date"><?php echo esc_html( $date ); ?></span>
+        <span class="news-cat"><?php echo $cat; ?></span>
+      </div>
+      <div class="news-article-body">
         <?php the_content(); ?>
       </div>
     </div>
   </article>
 
-  <div class="breadcrumb-sp">
-    <div class="breadcrumb-inner">
-      <a href="<?php echo esc_url( home_url( '/' ) ); ?>">HOME</a>
-      <span class="breadcrumb-sep">&gt;</span>
-      <a href="<?php echo esc_url( home_url( '/news/' ) ); ?>">お知らせ</a>
-      <span class="breadcrumb-sep">&gt;</span>
-      <span class="breadcrumb-current"><?php the_title(); ?></span>
+  <!-- 一覧へ戻る -->
+  <div class="back-sec">
+    <div class="back-inner fu">
+      <a class="back-link" href="<?php echo esc_url( home_url( '/news/' ) ); ?>">
+        <svg fill="none" height="16" viewBox="0 0 16 16" width="16"><path d="M13 8H3M7 12l-4-4 4-4" stroke="#28282D" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg>
+        お知らせ一覧へ
+      </a>
     </div>
   </div>
-  <?php endwhile; ?>
-</main>
 
+  <!-- CTA -->
+  <section id="contact" class="cta" aria-labelledby="cta-h2">
+    <div class="cta-wrap">
+      <p class="cta-eyebrow fu">FREE CONSULTATION</p>
+      <h2 class="cta-h2 fu" id="cta-h2" style="transition-delay:.1s">
+        <span class="cta-h2-line">まず、お話してみませんか。</span>
+        <span class="cta-h2-line">初回相談は無料です。</span>
+      </h2>
+      <p class="cta-body fu" style="transition-delay:.2s">
+        「何から始めればいいかわからない」という段階でも構いません。
+        現状のヒアリングから、最適な施策をご提案します。
+      </p>
+      <div class="cta-actions fu" style="transition-delay:.3s">
+        <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="btn-cta" aria-label="無料相談を申し込む">無料相談を申し込む</a>
+        <div class="cta-tel-wrap">
+          <p class="cta-tel-label">お電話でのご相談</p>
+          <a href="tel:0788068338" class="cta-tel" aria-label="電話番号 078-806-8338">078-806-8338</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
 <?php get_footer(); ?>
