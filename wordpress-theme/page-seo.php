@@ -81,7 +81,7 @@ get_header();
 <!-- スライド 01 -->
 <div class="sc-slide fu">
 <div class="sc-slide-img">
-<img alt="サーチコンソール実績グラフ：クリック数・表示回数の推移" height="413" loading="lazy" src="img/search-console-result.webp" width="948"/>
+<img alt="サーチコンソール実績グラフ：クリック数・表示回数の推移" height="413" loading="lazy" src="<?php echo get_template_directory_uri(); ?>/assets/img/search-console-result.webp" width="948"/>
 </div>
 <div class="sc-slide-body">
 <div class="sc-slide-num">01 / 03</div>
@@ -95,7 +95,7 @@ get_header();
 <!-- スライド 02 -->
 <div class="sc-slide fu">
 <div class="sc-slide-img">
-<img alt="サーチコンソール実績グラフ：メディアサイトのクリック数推移" height="398" loading="lazy" src="img/search-console-result-02.webp" width="944"/>
+<img alt="サーチコンソール実績グラフ：メディアサイトのクリック数推移" height="398" loading="lazy" src="<?php echo get_template_directory_uri(); ?>/assets/img/search-console-result-02.webp" width="944"/>
 </div>
 <div class="sc-slide-body">
 <div class="sc-slide-num">02 / 03</div>
@@ -109,7 +109,7 @@ get_header();
 <!-- スライド 03 -->
 <div class="sc-slide fu">
 <div class="sc-slide-img">
-<img alt="サーチコンソール実績グラフ：包装業界のクリック数推移" height="403" loading="lazy" src="img/search-console-result-03.webp" width="949"/>
+<img alt="サーチコンソール実績グラフ：包装業界のクリック数推移" height="403" loading="lazy" src="<?php echo get_template_directory_uri(); ?>/assets/img/search-console-result-03.webp" width="949"/>
 </div>
 <div class="sc-slide-body">
 <div class="sc-slide-num">03 / 03</div>
@@ -221,7 +221,7 @@ get_header();
 <div class="own-result-inner">
 <!-- 左：検索結果画像 -->
 <div class="own-result-img-col fu">
-<img alt="神戸SEO Google検索上位表示 selfachieve.jp" class="own-result-img" height="938" loading="lazy" src="img/seo-kobe-rank1.webp" width="992"/>
+<img alt="神戸SEO Google検索上位表示 selfachieve.jp" class="own-result-img" height="938" loading="lazy" src="<?php echo get_template_directory_uri(); ?>/assets/img/seo-kobe-rank1.webp" width="992"/>
 </div>
 <!-- 右：テキスト -->
 <div class="own-result-body-col">
@@ -327,7 +327,7 @@ get_header();
 <article class="voice-card fu">
 <a aria-label="岩沢法理事務所の声を詳しく見る" class="voice-link" href="<?php echo esc_url( home_url( '/voice/iwazawa/' ) ); ?>">
 <div class="voice-avatar">
-<img alt="岩沢法理事務所" height="280" loading="lazy" <?php echo get_template_directory_uri(); ?>/assets/voice/iwazawa.webp" width="280"/>
+<img alt="岩沢法理事務所" height="280" loading="lazy" src="<?php echo get_template_directory_uri(); ?>/assets/voice/iwazawa.webp" width="280"/>
 </div>
 <div class="voice-body">
 <p class="voice-quote">
@@ -345,7 +345,7 @@ get_header();
 <article class="voice-card fu" style="transition-delay:.1s">
 <a aria-label="株式会社エデュラボの声を詳しく見る" class="voice-link" href="<?php echo esc_url( home_url( '/voice/' ) ); ?>">
 <div class="voice-avatar">
-<img alt="株式会社エデュラボ" height="280" loading="lazy" <?php echo get_template_directory_uri(); ?>/assets/voice/edurabo.webp" width="280"/>
+<img alt="株式会社エデュラボ" height="280" loading="lazy" src="<?php echo get_template_directory_uri(); ?>/assets/voice/edurabo.webp" width="280"/>
 </div>
 <div class="voice-body">
 <p class="voice-quote">
@@ -363,7 +363,7 @@ get_header();
 <article class="voice-card fu" style="transition-delay:.2s">
 <a aria-label="Nadiの声を詳しく見る" class="voice-link" href="<?php echo esc_url( home_url( '/voice/' ) ); ?>">
 <div class="voice-avatar">
-<img alt="Nadi ピラティス・ヨガスタジオ" height="280" loading="lazy" <?php echo get_template_directory_uri(); ?>/assets/voice/nadi.webp" width="280"/>
+<img alt="Nadi ピラティス・ヨガスタジオ" height="280" loading="lazy" src="<?php echo get_template_directory_uri(); ?>/assets/voice/nadi.webp" width="280"/>
 </div>
 <div class="voice-body">
 <p class="voice-quote">
@@ -692,4 +692,43 @@ get_header();
 </div>
 </section>
 </main>
+<script>
+// ===== SC SLIDER =====
+(function () {
+  var slider = document.querySelector('.sc-slider');
+  if (!slider) return;
+  var slides = slider.querySelectorAll('.sc-slide');
+  var total = slides.length;
+  var current = 0;
+  var prevBtn = document.getElementById('scPrev');
+  var nextBtn = document.getElementById('scNext');
+  var dots = document.querySelectorAll('.sc-dot');
+  function goTo(index) {
+    current = (index + total) % total;
+    slider.style.transform = 'translateX(-' + (current * 100) + '%)';
+    dots.forEach(function (d, i) {
+      d.classList.toggle('active', i === current);
+    });
+  }
+  if (prevBtn) prevBtn.addEventListener('click', function () { goTo(current - 1); });
+  if (nextBtn) nextBtn.addEventListener('click', function () { goTo(current + 1); });
+  dots.forEach(function (d) {
+    d.addEventListener('click', function () {
+      goTo(parseInt(d.dataset.index, 10));
+    });
+  });
+  var startX = 0;
+  slider.addEventListener('mousedown', function (e) { startX = e.clientX; });
+  slider.addEventListener('mouseup', function (e) {
+    var diff = startX - e.clientX;
+    if (Math.abs(diff) > 50) goTo(diff > 0 ? current + 1 : current - 1);
+  });
+  slider.addEventListener('touchstart', function (e) { startX = e.touches[0].clientX; }, { passive: true });
+  slider.addEventListener('touchend', function (e) {
+    var diff = startX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 50) goTo(diff > 0 ? current + 1 : current - 1);
+  }, { passive: true });
+})();
+// ===== END SC SLIDER =====
+</script>
 <?php get_footer(); ?>
