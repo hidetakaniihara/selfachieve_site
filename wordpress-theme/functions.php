@@ -78,8 +78,11 @@ function selfachieve_register_post_types() {
             'edit_item'     => 'コラムを編集',
         ],
         'public'        => true,
-        'has_archive'   => false,
-        'rewrite'       => [ 'slug' => 'column-post' ],
+        'has_archive'   => true,
+        'rewrite'       => [
+            'slug'       => 'column/%column_cat%',
+            'with_front' => false,
+        ],
         'supports'      => [ 'title', 'editor', 'thumbnail', 'excerpt' ],
         'show_in_rest'  => true,
         'menu_icon'     => 'dashicons-edit',
@@ -133,7 +136,10 @@ function selfachieve_register_taxonomies() {
         ],
         'hierarchical'  => true,
         'public'        => true,
-        'rewrite'       => [ 'slug' => 'column-cat' ],
+        'rewrite'       => [
+            'slug'       => 'column',
+            'with_front' => false,
+        ],
         'show_in_rest'  => true,
     ] );
 
@@ -164,6 +170,31 @@ function selfachieve_register_taxonomies() {
     ] );
 }
 add_action( 'init', 'selfachieve_register_taxonomies' );
+
+// ============================================================
+// コラムパーマリンク: %column_cat% を実際のカテゴリスラッグに置換
+// ============================================================
+function selfachieve_column_permalink( $post_link, $post ) {
+    if ( 'column' !== $post->post_type ) {
+        return $post_link;
+    }
+    $terms = get_the_terms( $post->ID, 'column_cat' );
+    if ( $terms && ! is_wp_error( $terms ) ) {
+        // 親カテゴリを優先する（階層がある場合に備えてルートを使用）
+        $root_term = null;
+        foreach ( $terms as $term ) {
+            if ( 0 === $term->parent ) {
+                $root_term = $term;
+                break;
+            }
+        }
+        $cat_slug = $root_term ? $root_term->slug : $terms[0]->slug;
+    } else {
+        $cat_slug = 'uncategorized';
+    }
+    return str_replace( '%column_cat%', $cat_slug, $post_link );
+}
+add_filter( 'post_type_link', 'selfachieve_column_permalink', 10, 2 );
 
 // ============================================================
 // メタボックス登録
