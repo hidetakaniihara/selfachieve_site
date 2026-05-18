@@ -521,22 +521,30 @@
     <a href="<?php echo esc_url( home_url( '/news/' ) ); ?>" class="view-all fu" aria-label="お知らせをすべて見る">すべて見る</a>
   </div>
   <div class="news-list" role="list">
-    <a href="news/20260110/" class="news-item fu" role="listitem">
-      <span class="news-date">2026.01.10</span>
-      <span class="news-title">2026年の営業開始について</span>
+    <?php
+    $news_query = new WP_Query([
+      'post_type'      => 'news',
+      'posts_per_page' => 4,
+      'post_status'    => 'publish',
+      'orderby'        => 'date',
+      'order'          => 'DESC',
+    ]);
+    $delays = ['', ' style="transition-delay:.05s"', ' style="transition-delay:.1s"', ' style="transition-delay:.15s"'];
+    $i = 0;
+    if ( $news_query->have_posts() ) :
+      while ( $news_query->have_posts() ) : $news_query->the_post();
+        $delay = $delays[$i] ?? '';
+    ?>
+    <a href="<?php the_permalink(); ?>" class="news-item fu" role="listitem"<?php echo $delay; ?>>
+      <span class="news-date"><?php echo get_the_date('Y.m.d'); ?></span>
+      <span class="news-title"><?php the_title(); ?></span>
     </a>
-    <a href="news/20251201/" class="news-item fu" role="listitem" style="transition-delay:.05s">
-      <span class="news-date">2025.12.01</span>
-      <span class="news-title">年末年始の休業のお知らせ</span>
-    </a>
-    <a href="news/20251001/" class="news-item fu" role="listitem" style="transition-delay:.1s">
-      <span class="news-date">2025.10.01</span>
-      <span class="news-title">サービス料金改定のお知らせ（2025年11月以降）</span>
-    </a>
-    <a href="news/20250701/" class="news-item fu" role="listitem" style="transition-delay:.15s">
-      <span class="news-date">2025.07.01</span>
-      <span class="news-title">オフィス移転のお知らせ</span>
-    </a>
+    <?php
+        $i++;
+      endwhile;
+      wp_reset_postdata();
+    endif;
+    ?>
   </div>
 </section>
 
@@ -550,22 +558,30 @@
     <a href="column/" class="view-all fu" aria-label="コラムをすべて見る">すべて見る</a>
   </div>
   <div class="news-list" role="list">
-    <a href="column/seo-2026/" class="news-item fu" role="listitem">
-      <span class="news-date">2026.03.01</span>
-      <span class="news-title">2026年最新版：中小企業がSEOで成果を出すための5つのポイント</span>
+    <?php
+    $col_query = new WP_Query([
+      'post_type'      => 'column',
+      'posts_per_page' => 4,
+      'post_status'    => 'publish',
+      'orderby'        => 'date',
+      'order'          => 'DESC',
+    ]);
+    $delays = ['', ' style="transition-delay:.05s"', ' style="transition-delay:.1s"', ' style="transition-delay:.15s"'];
+    $i = 0;
+    if ( $col_query->have_posts() ) :
+      while ( $col_query->have_posts() ) : $col_query->the_post();
+        $delay = $delays[$i] ?? '';
+    ?>
+    <a href="<?php the_permalink(); ?>" class="news-item fu" role="listitem"<?php echo $delay; ?>>
+      <span class="news-date"><?php echo get_the_date('Y.m.d'); ?></span>
+      <span class="news-title"><?php the_title(); ?></span>
     </a>
-    <a href="column/performance-max/" class="news-item fu" role="listitem" style="transition-delay:.05s">
-      <span class="news-date">2026.02.15</span>
-      <span class="news-title">Google広告「Performance Max」活用事例：小地域店舗の広告費を半分に削減した方法</span>
-    </a>
-    <a href="column/meo-restaurant/" class="news-item fu" role="listitem" style="transition-delay:.1s">
-      <span class="news-date">2025.12.01</span>
-      <span class="news-title">MEO対策で飲食店の集客を改善した事例3選：実蹟から学ぶコツ</span>
-    </a>
-    <a href="column/lp-cta/" class="news-item fu" role="listitem" style="transition-delay:.15s">
-      <span class="news-date">2025.11.10</span>
-      <span class="news-title">問い合わせ率が2倍になったLP改善の実証報告：CTAボタンの文言を変えるだけ</span>
-    </a>
+    <?php
+        $i++;
+      endwhile;
+      wp_reset_postdata();
+    endif;
+    ?>
   </div>
 </section>
 
