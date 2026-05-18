@@ -1,3 +1,18 @@
+<?php if ( is_singular( 'column' ) ) :
+  $sp_cats     = get_the_terms( get_the_ID(), 'column_cat' );
+  $sp_cat_name = ( $sp_cats && ! is_wp_error( $sp_cats ) ) ? $sp_cats[0]->name : '';
+?>
+<nav class="breadcrumb-sp-footer" aria-label="パンくずリスト">
+  <ol>
+    <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>">ホーム</a></li>
+    <li><a href="<?php echo esc_url( home_url( '/column/' ) ); ?>">コラム</a></li>
+    <?php if ( $sp_cat_name ) : ?>
+    <li><a href="<?php echo esc_url( get_term_link( $sp_cats[0] ) ); ?>"><?php echo esc_html( $sp_cat_name ); ?></a></li>
+    <?php endif; ?>
+    <li><span aria-current="page"><?php the_title(); ?></span></li>
+  </ol>
+</nav>
+<?php endif; ?>
 <footer class="footer" role="contentinfo">
   <div class="footer-top">
     <div class="footer-logo-wrap">
@@ -99,6 +114,42 @@
     entries.forEach(function(e){ if(e.isIntersecting){ countUp(e.target); cobs.unobserve(e.target); } });
   }, { threshold: 0.5 });
   document.querySelectorAll('[data-count]').forEach(function(el){ cobs.observe(el); });
+
+  /* ===== TOC accordion ===== */
+  (function(){
+    var tocHead = document.getElementById('toc-sp-head');
+    var tocWrap = document.getElementById('toc-sp');
+    if(!tocHead || !tocWrap) return;
+    tocHead.addEventListener('click', function(){
+      var isOpen = tocWrap.classList.toggle('open');
+      tocHead.setAttribute('aria-expanded', isOpen);
+    });
+    tocHead.addEventListener('keydown', function(e){
+      if(e.key === 'Enter' || e.key === ' '){
+        e.preventDefault();
+        tocHead.click();
+      }
+    });
+  })();
+
+  /* ===== TOC 自動生成 ===== */
+  (function(){
+    var content = document.getElementById('article-content');
+    var tocList = document.getElementById('toc-list-sp');
+    if(!content || !tocList) return;
+    var headings = content.querySelectorAll('h2, h3');
+    if(headings.length < 2){ var tocWrap = document.getElementById('toc-sp'); if(tocWrap) tocWrap.style.display='none'; return; }
+    headings.forEach(function(h, i){
+      if(!h.id) h.id = 'toc-heading-' + i;
+      var li = document.createElement('li');
+      li.className = h.tagName.toLowerCase() === 'h3' ? 'toc-list-h3' : '';
+      var a = document.createElement('a');
+      a.href = '#' + h.id;
+      a.textContent = h.textContent;
+      li.appendChild(a);
+      tocList.appendChild(li);
+    });
+  })();
 
   /* ===== FAQ accordion ===== */
   document.querySelectorAll('.faq-q').forEach(function(btn){

@@ -261,6 +261,9 @@ function selfachieve_column_meta_cb( $post ) {
     $reading_time = get_post_meta( $post->ID, '_column_reading_time', true );
     $updated      = get_post_meta( $post->ID, '_column_updated', true );
     $author_name  = get_post_meta( $post->ID, '_column_author_name', true );
+    $author_title = get_post_meta( $post->ID, '_column_author_title', true );
+    $author_bio   = get_post_meta( $post->ID, '_column_author_bio', true );
+    $author_photo = get_post_meta( $post->ID, '_column_author_photo', true );
     ?>
     <p>
         <label style="font-weight:bold;">読了時間（分）</label><br>
@@ -273,6 +276,18 @@ function selfachieve_column_meta_cb( $post ) {
     <p>
         <label style="font-weight:bold;">著者名</label><br>
         <input type="text" name="column_author_name" value="<?php echo esc_attr( $author_name ); ?>" style="width:100%;" placeholder="例：新原 秀崇">
+    </p>
+    <p>
+        <label style="font-weight:bold;">著者肩書き</label><br>
+        <input type="text" name="column_author_title" value="<?php echo esc_attr( $author_title ); ?>" style="width:100%;" placeholder="例：セルフアチーブ / WEBマーケター">
+    </p>
+    <p>
+        <label style="font-weight:bold;">著者プロフィール</label><br>
+        <textarea name="column_author_bio" style="width:100%;height:80px;" placeholder="例：神戸・兵庫を中心に100社以上のSEO対策を支援。"><?php echo esc_textarea( $author_bio ); ?></textarea>
+    </p>
+    <p>
+        <label style="font-weight:bold;">著者写真URL（任意）</label><br>
+        <input type="url" name="column_author_photo" value="<?php echo esc_attr( $author_photo ); ?>" style="width:100%;" placeholder="https://example.com/photo.jpg">
     </p>
     <?php
 }
@@ -488,6 +503,9 @@ function selfachieve_save_meta_boxes( $post_id ) {
         update_post_meta( $post_id, '_column_reading_time', absint( $_POST['column_reading_time'] ?? 0 ) );
         update_post_meta( $post_id, '_column_updated',      sanitize_text_field( $_POST['column_updated'] ?? '' ) );
         update_post_meta( $post_id, '_column_author_name',  sanitize_text_field( $_POST['column_author_name'] ?? '' ) );
+        update_post_meta( $post_id, '_column_author_title', sanitize_text_field( $_POST['column_author_title'] ?? '' ) );
+        update_post_meta( $post_id, '_column_author_bio',   sanitize_textarea_field( $_POST['column_author_bio'] ?? '' ) );
+        update_post_meta( $post_id, '_column_author_photo', esc_url_raw( $_POST['column_author_photo'] ?? '' ) );
     }
 
     // ---- お客さまの声 ----

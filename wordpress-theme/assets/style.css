@@ -1408,6 +1408,7 @@ a.challenge-tag:hover{
 .breadcrumb-sp li:last-child::after{content:''}
 .breadcrumb-sp a{color:#9B9BA0;transition:color .2s}
 .breadcrumb-sp span{color:#28282D}
+.breadcrumb-sp-footer{display:none;}
 .btn-primary{
       display:inline-flex;align-items:center;justify-content:center;
       height:56px;padding:0 40px;
@@ -3788,6 +3789,18 @@ main{padding-top:72px;}
 .article-content .inline-cta .inline-cta-body{color:#D8D8DC !important;margin-bottom:24px !important;}
 .article-content .inline-cta .inline-cta-btn{color:#28282D !important;}
 .article-content .inline-cta .inline-cta-btn:hover{color:#ffffff !important;}
+.related-service-sec{padding:56px 80px;background:#F0F4FF;border-top:1px solid #D8E0F0;}
+.related-service-inner{max-width:1100px;margin:0 auto;}
+.related-service-eyebrow{font-size:11px;letter-spacing:.22em;color:#5A6A8A;font-weight:700;text-transform:uppercase;display:block;margin-bottom:8px;}
+.related-service-title{font-size:clamp(16px,2vw,22px);font-weight:700;color:#28282D;margin-bottom:24px;}
+.related-service-card{border:1px solid #C8D4E8;background:#fff;padding:28px 32px;}
+.related-service-card-body{display:flex;flex-direction:column;gap:12px;}
+.related-service-label{display:inline-flex;align-items:center;padding:4px 12px;background:#EBF4FF;color:#1A6FBF;font-size:11px;font-weight:700;letter-spacing:.06em;border-radius:2px;align-self:flex-start;}
+.related-service-desc{font-size:14px;line-height:1.8;color:#4A4A50;margin:0;}
+.related-service-btn{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;color:#28282D;letter-spacing:.06em;border:1px solid #D8D8DC;padding:14px 28px;transition:background .2s,border-color .2s,color .2s;align-self:flex-start;}
+.related-service-btn:hover{background:#28282D;color:#fff;border-color:#28282D;}
+.related-service-btn svg{transition:transform .2s;}
+.related-service-btn:hover svg{transform:translateX(4px);}
 .related-sec{padding:64px 80px;background:#F7F7F5;border-top:1px solid #E8E8E8;}
 .related-inner{max-width:1100px;margin:0 auto;}
 .related-head{margin-bottom:36px;}
@@ -8752,6 +8765,69 @@ a.wall-tag:hover{background:#28282D;color:#fff;}
   .breadcrumb{display:none}
   .breadcrumb-sp{display:block}
 
+  /* ---- コラム詳細SPパンくず（フッター直前） ---- */
+  .breadcrumb-sp-footer{
+    display:block;
+    background:#F5F5F3;
+    padding:12px 20px;
+    border-top:1px solid #E8E8E8;
+  }
+  .breadcrumb-sp-footer ol{
+    display:flex;
+    align-items:center;
+    gap:6px;
+    flex-wrap:wrap;
+    list-style:none;
+    margin:0;
+    padding:0;
+  }
+  .breadcrumb-sp-footer li{
+    font-size:12px;
+    color:#767680;
+    display:flex;
+    align-items:center;
+    gap:6px;
+  }
+  .breadcrumb-sp-footer li::after{
+    content:'/';
+    color:#C0C0C0;
+  }
+  .breadcrumb-sp-footer li:last-child::after{
+    display:none;
+  }
+  .breadcrumb-sp-footer a{
+    color:#767680;
+  }
+
+  /* ---- コラム詳細ページレイアウト ---- */
+  .article-wrap{
+    padding-top:60px;
+  }
+  .article-header{
+    padding:32px 20px 24px;
+  }
+  .article-eyecatch{
+    padding:0 20px;
+  }
+  .article-body-wrap{
+    padding:32px 20px 48px;
+  }
+  .article-title{
+    font-size:clamp(20px,5.5vw,28px);
+  }
+  .article-meta{
+    gap:12px;
+  }
+  .toc-sp{
+    margin-bottom:32px;
+  }
+  .supervisor-box{
+    flex-direction:column;
+    gap:16px;
+    padding:20px;
+    margin:40px 0 0;
+  }
+
   /* ---- 関連バナー ---- */
   .related-banner{
     padding:32px 20px;
@@ -8769,6 +8845,15 @@ a.wall-tag:hover{background:#28282D;color:#fff;}
     width:100%;
     justify-content:center;
     padding:14px 20px;
+  }
+
+  /* ---- 関連サービス ---- */
+  .related-service-sec{
+    padding:40px 20px;
+  }
+  .related-service-btn{
+    width:100%;
+    justify-content:center;
   }
 
   /* ---- 関連記事グリッド ---- */
