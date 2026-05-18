@@ -674,27 +674,41 @@ get_header();
 </section>
 <!-- BLOG -->
 <section aria-labelledby="blog-h2" class="blog-sec">
+<?php
+$_blog_query = new WP_Query( [
+    'post_type'      => 'column',
+    'posts_per_page' => 3,
+    'orderby'        => 'date',
+    'order'          => 'DESC',
+    'tax_query'      => [ [
+        'taxonomy' => 'column_cat',
+        'field'    => 'slug',
+        'terms'    => 'listing',
+    ] ],
+] );
+?>
 <div class="blog-inner">
 <div class="blog-head">
 <h2 class="blog-h2 fu" id="blog-h2">リスティング広告関連コラム</h2>
-<a class="view-all fu" href="<?php echo esc_url( home_url( '/column/' ) ); ?>" style="transition-delay:.1s">すべて見る</a>
+<a class="view-all fu" href="<?php echo esc_url( home_url( '/column/listing/' ) ); ?>" style="transition-delay:.1s">すべて見る &rarr;</a>
 </div>
 <div class="blog-grid">
-<a class="blog-card fu" href="<?php echo esc_url( home_url( '/column/listing-basics/' ) ); ?>">
-<span class="blog-cat">LISTING BASICS</span>
-<h3 class="blog-title">リスティング広告で成果を出すために最初に設定すべき3つのこと</h3>
-<p class="blog-date">2026.03.10</p>
-</a>
-<a class="blog-card fu" href="<?php echo esc_url( home_url( '/column/listing-cpa/' ) ); ?>" style="transition-delay:.1s">
-<span class="blog-cat">CPA IMPROVEMENT</span>
-<h3 class="blog-title">CPAを下げるためのキーワード整理術——除外キーワードが9割</h3>
-<p class="blog-date">2026.02.20</p>
-</a>
-<a class="blog-card fu" href="<?php echo esc_url( home_url( '/column/listing-vs-seo/' ) ); ?>" style="transition-delay:.2s">
-<span class="blog-cat">STRATEGY</span>
-<h3 class="blog-title">リスティング広告とSEOの使い分け——即効性と長期性の両立戦略</h3>
-<p class="blog-date">2026.02.05</p>
-</a>
+<?php if ( $_blog_query->have_posts() ) : ?>
+  <?php $__i = 0; while ( $_blog_query->have_posts() ) : $_blog_query->the_post(); ?>
+    <?php
+    $_cats = get_the_terms( get_the_ID(), 'column_cat' );
+    $_cat_name = ( $_cats && ! is_wp_error( $_cats ) ) ? $_cats[0]->name : '';
+    $_delay = $__i === 0 ? '' : ' style="transition-delay:' . ( $__i * 0.1 ) . 's"';
+    ?>
+    <a class="blog-card fu" href="<?php the_permalink(); ?>"<?php echo $_delay; ?>>
+      <span class="blog-cat"><?php echo esc_html( strtoupper( $_cat_name ) ); ?></span>
+      <h3 class="blog-title"><?php the_title(); ?></h3>
+      <p class="blog-date"><?php echo get_the_date( 'Y.m.d' ); ?></p>
+    </a>
+  <?php $__i++; endwhile; wp_reset_postdata(); ?>
+<?php else : ?>
+  <p style="grid-column:1/-1;padding:40px 0;color:#999;text-align:center;">コラムが見つかりませんでした。</p>
+<?php endif; ?>
 </div>
 </div>
 </section>

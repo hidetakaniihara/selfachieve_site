@@ -901,27 +901,41 @@ get_header();
 </section>
 <!-- BLOG -->
 <section aria-labelledby="blog-h2" class="blog-sec">
+<?php
+$_blog_query = new WP_Query( [
+    'post_type'      => 'column',
+    'posts_per_page' => 3,
+    'orderby'        => 'date',
+    'order'          => 'DESC',
+    'tax_query'      => [ [
+        'taxonomy' => 'column_cat',
+        'field'    => 'slug',
+        'terms'    => 'sns',
+    ] ],
+] );
+?>
 <div class="blog-inner">
 <div class="blog-head">
 <h2 class="blog-h2 fu" id="blog-h2">SNSマーケティング関連コラム</h2>
-<a class="view-all fu" href="<?php echo esc_url( home_url( '/column/' ) ); ?>" style="transition-delay:.1s">すべて見る</a>
+<a class="view-all fu" href="<?php echo esc_url( home_url( '/column/sns/' ) ); ?>" style="transition-delay:.1s">すべて見る &rarr;</a>
 </div>
 <div class="blog-grid">
-<article class="blog-card fu">
-<p class="blog-cat">SNS MARKETING</p>
-<h3 class="blog-title">Instagramフォロワーが増えない本当の理由と、改善のための5つのチェックポイント</h3>
-<p class="blog-date">2025.03.10</p>
-</article>
-<article class="blog-card fu" style="transition-delay:.08s">
-<p class="blog-cat">SNS MARKETING</p>
-<h3 class="blog-title">TikTok運用代行の費用相場と、失敗しない業者選びの3つのポイント</h3>
-<p class="blog-date">2025.02.20</p>
-</article>
-<article class="blog-card fu" style="transition-delay:.16s">
-<p class="blog-cat">SNS MARKETING</p>
-<h3 class="blog-title">SNS広告とリスティング広告の違いを徹底比較。どちらを選ぶべきか？</h3>
-<p class="blog-date">2025.01.15</p>
-</article>
+<?php if ( $_blog_query->have_posts() ) : ?>
+  <?php $__i = 0; while ( $_blog_query->have_posts() ) : $_blog_query->the_post(); ?>
+    <?php
+    $_cats = get_the_terms( get_the_ID(), 'column_cat' );
+    $_cat_name = ( $_cats && ! is_wp_error( $_cats ) ) ? $_cats[0]->name : '';
+    $_delay = $__i === 0 ? '' : ' style="transition-delay:' . ( $__i * 0.1 ) . 's"';
+    ?>
+    <a class="blog-card fu" href="<?php the_permalink(); ?>"<?php echo $_delay; ?>>
+      <span class="blog-cat"><?php echo esc_html( strtoupper( $_cat_name ) ); ?></span>
+      <h3 class="blog-title"><?php the_title(); ?></h3>
+      <p class="blog-date"><?php echo get_the_date( 'Y.m.d' ); ?></p>
+    </a>
+  <?php $__i++; endwhile; wp_reset_postdata(); ?>
+<?php else : ?>
+  <p style="grid-column:1/-1;padding:40px 0;color:#999;text-align:center;">コラムが見つかりませんでした。</p>
+<?php endif; ?>
 </div>
 </div>
 </section>

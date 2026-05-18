@@ -491,27 +491,41 @@ AI検索の回答に自社を表示させる施策。
 </section>
 <!-- BLOG -->
 <section aria-labelledby="blog-h2" class="blog-sec">
+<?php
+$_blog_query = new WP_Query( [
+    'post_type'      => 'column',
+    'posts_per_page' => 3,
+    'orderby'        => 'date',
+    'order'          => 'DESC',
+    'tax_query'      => [ [
+        'taxonomy' => 'column_cat',
+        'field'    => 'slug',
+        'terms'    => 'ai',
+    ] ],
+] );
+?>
 <div class="blog-inner">
 <div class="blog-head">
 <h2 class="blog-h2 fu" id="blog-h2">AI検索・LLM対策コラム</h2>
-<a class="view-all fu" href="<?php echo esc_url( home_url( '/column/' ) ); ?>" style="transition-delay:.1s">すべて見る</a>
+<a class="view-all fu" href="<?php echo esc_url( home_url( '/column/ai/' ) ); ?>" style="transition-delay:.1s">すべて見る &rarr;</a>
 </div>
 <div class="blog-grid">
-<a class="blog-card fu" href="<?php echo esc_url( home_url( '/column/ai-search-basics/' ) ); ?>">
-<span class="blog-cat">AI SEARCH BASICS</span>
-<h3 class="blog-title">ChatGPTに自社名が出てこない理由——AI検索対策の基本を解説</h3>
-<p class="blog-date">2026.03.10</p>
-</a>
-<a class="blog-card fu" href="<?php echo esc_url( home_url( '/column/llm-optimization/' ) ); ?>" style="transition-delay:.1s">
-<span class="blog-cat">LLM OPTIMIZATION</span>
-<h3 class="blog-title">LLMに引用されるコンテンツの作り方——E-E-A-TとAI最適化の関係</h3>
-<p class="blog-date">2026.03.01</p>
-</a>
-<a class="blog-card fu" href="<?php echo esc_url( home_url( '/column/seo-vs-aio/' ) ); ?>" style="transition-delay:.2s">
-<span class="blog-cat">SEO vs AIO</span>
-<h3 class="blog-title">SEO対策とAI検索対策は何が違うのか——2026年の集客戦略を整理する</h3>
-<p class="blog-date">2026.02.20</p>
-</a>
+<?php if ( $_blog_query->have_posts() ) : ?>
+  <?php $__i = 0; while ( $_blog_query->have_posts() ) : $_blog_query->the_post(); ?>
+    <?php
+    $_cats = get_the_terms( get_the_ID(), 'column_cat' );
+    $_cat_name = ( $_cats && ! is_wp_error( $_cats ) ) ? $_cats[0]->name : '';
+    $_delay = $__i === 0 ? '' : ' style="transition-delay:' . ( $__i * 0.1 ) . 's"';
+    ?>
+    <a class="blog-card fu" href="<?php the_permalink(); ?>"<?php echo $_delay; ?>>
+      <span class="blog-cat"><?php echo esc_html( strtoupper( $_cat_name ) ); ?></span>
+      <h3 class="blog-title"><?php the_title(); ?></h3>
+      <p class="blog-date"><?php echo get_the_date( 'Y.m.d' ); ?></p>
+    </a>
+  <?php $__i++; endwhile; wp_reset_postdata(); ?>
+<?php else : ?>
+  <p style="grid-column:1/-1;padding:40px 0;color:#999;text-align:center;">コラムが見つかりませんでした。</p>
+<?php endif; ?>
 </div>
 </div>
 </section>

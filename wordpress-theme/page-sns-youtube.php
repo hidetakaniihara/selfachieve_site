@@ -718,33 +718,41 @@ get_header();
 </section>
 <!-- BLOG -->
 <section aria-labelledby="blog-h2" class="blog-sec">
+<?php
+$_blog_query = new WP_Query( [
+    'post_type'      => 'column',
+    'posts_per_page' => 3,
+    'orderby'        => 'date',
+    'order'          => 'DESC',
+    'tax_query'      => [ [
+        'taxonomy' => 'column_cat',
+        'field'    => 'slug',
+        'terms'    => 'youtube',
+    ] ],
+] );
+?>
 <div class="blog-inner">
 <div class="blog-head">
 <h2 class="blog-h2 fu" id="blog-h2">YouTubeコラム</h2>
-<a class="view-all fu" href="<?php echo esc_url( home_url( '/../blog/' ) ); ?>" style="transition-delay:.1s">すべて見る</a>
+<a class="view-all fu" href="<?php echo esc_url( home_url( '/column/youtube/' ) ); ?>" style="transition-delay:.1s">すべて見る &rarr;</a>
 </div>
 <div class="blog-grid">
-<article class="blog-card fu">
-<a href="<?php echo esc_url( home_url( '/../blog/youtube-channel-start/' ) ); ?>">
-<p class="blog-cat">YouTube</p>
-<h3 class="blog-title">中小企業がYouTubeチャンネルを始める前に知っておくべき7つのこと</h3>
-<p class="blog-date">2025.04.10</p>
-</a>
-</article>
-<article class="blog-card fu" style="transition-delay:.1s">
-<a href="<?php echo esc_url( home_url( '/../blog/youtube-seo/' ) ); ?>">
-<p class="blog-cat">YouTube</p>
-<h3 class="blog-title">YouTube SEO対策の基本｜検索で見つけてもらうための動画タイトル・タグ・概要欄の書き方</h3>
-<p class="blog-date">2025.03.20</p>
-</a>
-</article>
-<article class="blog-card fu" style="transition-delay:.2s">
-<a href="<?php echo esc_url( home_url( '/../blog/youtube-ads-cost/' ) ); ?>">
-<p class="blog-cat">YouTube広告</p>
-<h3 class="blog-title">YouTube広告の費用相場と効果的な予算配分｜2025年最新版</h3>
-<p class="blog-date">2025.02.15</p>
-</a>
-</article>
+<?php if ( $_blog_query->have_posts() ) : ?>
+  <?php $__i = 0; while ( $_blog_query->have_posts() ) : $_blog_query->the_post(); ?>
+    <?php
+    $_cats = get_the_terms( get_the_ID(), 'column_cat' );
+    $_cat_name = ( $_cats && ! is_wp_error( $_cats ) ) ? $_cats[0]->name : '';
+    $_delay = $__i === 0 ? '' : ' style="transition-delay:' . ( $__i * 0.1 ) . 's"';
+    ?>
+    <a class="blog-card fu" href="<?php the_permalink(); ?>"<?php echo $_delay; ?>>
+      <span class="blog-cat"><?php echo esc_html( strtoupper( $_cat_name ) ); ?></span>
+      <h3 class="blog-title"><?php the_title(); ?></h3>
+      <p class="blog-date"><?php echo get_the_date( 'Y.m.d' ); ?></p>
+    </a>
+  <?php $__i++; endwhile; wp_reset_postdata(); ?>
+<?php else : ?>
+  <p style="grid-column:1/-1;padding:40px 0;color:#999;text-align:center;">コラムが見つかりませんでした。</p>
+<?php endif; ?>
 </div>
 </div>
 </section>
