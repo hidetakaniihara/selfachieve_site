@@ -135,16 +135,12 @@ if ( $cats && ! is_wp_error( $cats ) ) {
     </div>
   </header>
 
-  <!-- アイキャッチ画像 -->
+  <!-- アイキャッチ画像（設定されている場合のみ表示） -->
+  <?php if ( $thumb_url ) : ?>
   <div class="article-eyecatch">
-    <?php if ( $thumb_url ) : ?>
     <img src="<?php echo esc_url( $thumb_url ); ?>" alt="<?php the_title_attribute(); ?>" loading="eager" itemprop="image">
-    <?php else : ?>
-    <div class="article-eyecatch-placeholder" role="img" aria-label="<?php the_title_attribute(); ?> アイキャッチ画像">
-      <svg fill="none" height="60" viewBox="0 0 24 24" width="60"><rect height="18" rx="2" stroke="#C0C0C0" stroke-width="1.5" width="18" x="3" y="3"></rect><circle cx="8.5" cy="8.5" r="1.5" stroke="#C0C0C0" stroke-width="1.5"></circle><path d="M21 15l-5-5L5 21" stroke="#C0C0C0" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg>
-    </div>
-    <?php endif; ?>
   </div>
+  <?php endif; ?>
 
   <!-- 本文 -->
   <div class="article-body-wrap">
