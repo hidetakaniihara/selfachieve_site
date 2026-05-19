@@ -10,6 +10,7 @@ $company     = get_post_meta( get_the_ID(), '_voice_company',     true );
 $industry    = get_post_meta( get_the_ID(), '_voice_industry',    true );
 $service_tag = get_post_meta( get_the_ID(), '_voice_service_tag', true );
 $site_url    = get_post_meta( get_the_ID(), '_voice_site_url',    true );
+$main_title  = get_post_meta( get_the_ID(), '_voice_main_title',  true );
 $thumb_url   = get_the_post_thumbnail_url( get_the_ID(), 'full' );
 
 $number_label = $number ? 'VOICE No.' . str_pad( $number, 2, '0', STR_PAD_LEFT ) : 'VOICE';
@@ -70,6 +71,13 @@ $number_label = $number ? 'VOICE No.' . str_pad( $number, 2, '0', STR_PAD_LEFT )
   </div>
   <?php endif; ?>
 </div>
+
+<?php if ( $main_title ) : ?>
+<!-- メインタイトル（キャッチコピー） -->
+<div class="voice-main-title fu">
+  <p class="voice-main-title-text"><?php echo esc_html( $main_title ); ?></p>
+</div>
+<?php endif; ?>
 
 <!-- インタビュー本文 -->
 <section aria-label="インタビュー" class="interview-sec">
