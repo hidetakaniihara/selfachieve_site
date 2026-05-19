@@ -21,7 +21,7 @@ $number_label = $number ? 'VOICE No.' . str_pad( $number, 2, '0', STR_PAD_LEFT )
 <section aria-labelledby="voice-title" class="page-hero">
   <div class="page-hero-inner">
     <span class="page-hero-eyebrow fu"><?php echo esc_html( $number_label ); ?></span>
-    <h1 class="fu" id="voice-title" style="transition-delay:.08s;"><?php the_title(); ?></h1>
+    <h1 class="fu" id="voice-title" style="transition-delay:.08s;"><?php echo $main_title ? esc_html( $main_title ) : get_the_title(); ?></h1>
   </div>
 </section>
 
@@ -72,10 +72,10 @@ $number_label = $number ? 'VOICE No.' . str_pad( $number, 2, '0', STR_PAD_LEFT )
   <?php endif; ?>
 </div>
 
-<?php if ( $main_title ) : ?>
-<!-- メインタイトル（キャッチコピー） -->
-<div class="voice-main-title fu">
-  <p class="voice-main-title-text"><?php echo esc_html( $main_title ); ?></p>
+<!-- 会社名サブタイトル -->
+<?php if ( $company ) : ?>
+<div class="voice-company-sub fu">
+  <p class="voice-company-sub-text"><?php echo esc_html( $company ); ?></p>
 </div>
 <?php endif; ?>
 
