@@ -72,13 +72,6 @@ $number_label = $number ? 'VOICE No.' . str_pad( $number, 2, '0', STR_PAD_LEFT )
   <?php endif; ?>
 </div>
 
-<!-- 会社名サブタイトル -->
-<?php if ( $company ) : ?>
-<div class="voice-company-sub fu">
-  <p class="voice-company-sub-text"><?php echo esc_html( $company ); ?></p>
-</div>
-<?php endif; ?>
-
 <!-- インタビュー本文 -->
 <section aria-label="インタビュー" class="interview-sec">
   <div class="interview-inner">
