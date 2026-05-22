@@ -267,4 +267,42 @@ if ( $content ) :
 </section>
 
 </main>
+
+<!-- パンくずリスト SP（フッター直前） -->
+<nav aria-label="パンくずリスト（スマートフォン）" class="breadcrumb-sp">
+  <ol>
+    <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>">ホーム</a></li>
+    <li><a href="<?php echo esc_url( home_url( '/works/' ) ); ?>">制作実績</a></li>
+    <li><span aria-current="page"><?php echo esc_html( $client ?: get_the_title() ); ?></span></li>
+  </ol>
+</nav>
+
 <?php get_footer(); ?>
+
+<script>
+(function(){
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('on'); obs.unobserve(e.target); }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fu').forEach(el => obs.observe(el));
+
+  // カウントアップアニメーション
+  document.querySelectorAll('.result-count[data-target]').forEach(el => {
+    const target = parseInt(el.dataset.target, 10);
+    const duration = 1200;
+    const start = performance.now();
+    function update(now) {
+      const elapsed = now - start;
+      const progress = Math.min(elapsed / duration, 1);
+      el.textContent = Math.round(progress * target);
+      if (progress < 1) requestAnimationFrame(update);
+    }
+    const io = new IntersectionObserver(entries => {
+      if (entries[0].isIntersecting) { requestAnimationFrame(update); io.disconnect(); }
+    });
+    io.observe(el);
+  });
+})();
+</script>

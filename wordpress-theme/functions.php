@@ -114,7 +114,7 @@ function selfachieve_register_post_types() {
         ],
         'public'        => true,
         'has_archive'   => false,
-        'rewrite'       => [ 'slug' => 'works-post' ],
+        'rewrite'       => [ 'slug' => 'works', 'with_front' => false ],
         'supports'      => [ 'title', 'editor', 'thumbnail', 'excerpt' ],
         'show_in_rest'  => true,
         'menu_icon'     => 'dashicons-portfolio',

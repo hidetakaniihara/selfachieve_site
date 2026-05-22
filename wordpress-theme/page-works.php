@@ -153,4 +153,24 @@ $works_cats = get_terms( [
 </section>
 
 </main>
+
+<!-- パンくずリスト SP（フッター直前） -->
+<nav aria-label="パンくずリスト（スマートフォン）" class="breadcrumb-sp">
+  <ol>
+    <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>">ホーム</a></li>
+    <li><span aria-current="page">制作実績</span></li>
+  </ol>
+</nav>
+
 <?php get_footer(); ?>
+
+<script>
+(function(){
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('on'); obs.unobserve(e.target); }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fu').forEach(el => obs.observe(el));
+})();
+</script>
