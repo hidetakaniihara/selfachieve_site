@@ -16206,10 +16206,14 @@ body.page-top .kv .kv-stat-l { color: #4A4A50 !important; }
 }
 .wpcf7-not-valid{border-color:#D94F4F !important}
 
-/* CF7の送信結果メッセージ */
+/* CF7の送信結果メッセージ（初期は非表示、送信後に表示） */
 .wpcf7-response-output{
+  display:none;
   margin-top:16px;padding:12px 16px;font-size:14px;
   border:1px solid #D8D8DC;
+}
+.wpcf7-response-output:not(:empty){
+  display:block;
 }
 .wpcf7-mail-sent-ok{
   border-color:#4CAF50;color:#2E7D32;background:#F1F8F1;
@@ -16222,12 +16226,20 @@ body.page-top .kv .kv-stat-l { color: #4A4A50 !important; }
   border-color:#FF9800;color:#E65100;background:#FFF8F0;
 }
 
-/* CF7のスピナー（送信中アニメーション） */
+/* CF7のスピナー（送信前は非表示、送信中のみ表示） */
 .wpcf7-spinner{
-  display:inline-block;width:24px;height:24px;
+  display:none;
+  width:24px;height:24px;
   border:2px solid #E8E8E8;border-top-color:#28282D;
   border-radius:50%;animation:wpcf7-spin .8s linear infinite;
   margin-left:8px;vertical-align:middle;
+}
+.wpcf7-spinner.wpcf7-display-none{
+  display:none !important;
+}
+/* CF7が送信中に付与するクラスでスピナーを表示 */
+.wpcf7-form.submitting .wpcf7-spinner{
+  display:inline-block;
 }
 @keyframes wpcf7-spin{to{transform:rotate(360deg)}}
 
