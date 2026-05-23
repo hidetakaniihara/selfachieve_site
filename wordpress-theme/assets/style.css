@@ -327,7 +327,7 @@ ul,ol{list-style:none}
   font-size:16px;
   color:#28282D;
   background:none;border:none;border-bottom:1px solid #F0F0F0;cursor:pointer;
-  font-family:inherit;font-weight:400;
+  font-family:inherit;font-weight:400;font-size:inherit;
   white-space:nowrap;
   gap:6px;
 }
