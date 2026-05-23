@@ -347,7 +347,6 @@ AI検索の回答に自社を表示させる施策。
 <p class="sec-eyebrow fu">FAQ</p>
 <h2 class="faq-h2 fu" id="faq-h2">よくある質問</h2>
 </div>
-<a aria-label="よくある質問をすべて見る" class="view-all fu" href="<?php echo esc_url( home_url( '/faq/' ) ); ?>">すべて見る</a>
 </div>
 <div class="faq-list" role="list">
 <div class="faq-item fu" role="listitem">

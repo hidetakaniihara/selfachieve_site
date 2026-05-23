@@ -454,7 +454,7 @@
       <p class="sec-eyebrow fu">FAQ</p>
       <h2 class="faq-h2 fu" id="faq-h2">よくある質問</h2>
     </div>
-    <a href="faq/" class="view-all fu" aria-label="よくある質問をすべて見る">すべて見る</a>
+    
   </div>
   <div class="faq-list" role="list">
     <div class="faq-item fu" role="listitem">
