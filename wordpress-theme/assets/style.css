@@ -13879,7 +13879,7 @@ body {
 .case-grid .case-card {
   display: flex;
   flex-direction: column;
-  padding: 0 !important;
+  padding: 48px !important;
   overflow: hidden;
 }
 .case-grid .case-card-body {
