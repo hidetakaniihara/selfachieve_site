@@ -4347,7 +4347,10 @@ main{padding-top:72px;}
       border-radius:0;
       -webkit-appearance:none;
       appearance:none;
+      box-sizing:border-box;
     }
+/* CF7のwpcf7-form-control-wrapを100%幅に */
+.form-field .wpcf7-form-control-wrap{display:block;width:100%}
 .form-field input:focus,
     .form-field textarea:focus{
       outline:none;border-color:#28282D;
