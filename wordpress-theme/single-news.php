@@ -11,15 +11,18 @@ $date = get_the_date( 'Y.m.d' );
 ?>
 <main id="main" role="main">
 
-  <!-- PAGE HERO -->
-  <section class="page-hero" aria-labelledby="news-title">
-    <div class="page-hero-inner">
-      <span class="page-hero-eyebrow fu">NEWS</span>
-      <h1 class="page-hero-h1 fu" id="news-title" style="transition-delay:.08s"><?php the_title(); ?></h1>
+  <!-- ARTICLE HEADER -->
+  <section class="article-header" aria-labelledby="article-title">
+    <div class="article-header-inner">
+      <div class="article-meta fu">
+        <span class="article-date"><?php echo esc_html( $date ); ?></span>
+        <span class="article-cat"><?php echo $cat; ?></span>
+      </div>
+      <h1 class="article-title fu" id="article-title" style="transition-delay:.08s"><?php the_title(); ?></h1>
     </div>
   </section>
 
-  <!-- BREADCRUMB -->
+  <!-- BREADCRUMB（PC表示） -->
   <nav class="breadcrumb" aria-label="パンくずリスト">
     <ol>
       <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>">ホーム</a></li>
@@ -28,27 +31,30 @@ $date = get_the_date( 'Y.m.d' );
     </ol>
   </nav>
 
-  <!-- ARTICLE -->
-  <article class="news-article-sec">
-    <div class="news-article-inner">
-      <div class="news-article-meta">
-        <span class="news-date"><?php echo esc_html( $date ); ?></span>
-        <span class="news-cat"><?php echo $cat; ?></span>
-      </div>
-      <div class="news-article-body">
-        <?php the_content(); ?>
-      </div>
+  <!-- ARTICLE BODY -->
+  <div class="article-sec">
+    <div class="article-body fu">
+      <?php the_content(); ?>
     </div>
-  </article>
 
-  <!-- 一覧へ戻る -->
-  <div class="back-sec">
-    <div class="back-inner fu">
-      <a class="back-link" href="<?php echo esc_url( home_url( '/news/' ) ); ?>">
-        <svg fill="none" height="16" viewBox="0 0 16 16" width="16"><path d="M13 8H3M7 12l-4-4 4-4" stroke="#28282D" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg>
-        お知らせ一覧へ
-      </a>
-    </div>
+    <!-- ARTICLE NAV -->
+    <nav class="article-nav fu" aria-label="記事ナビゲーション">
+      <?php
+      $prev = get_previous_post();
+      $next = get_next_post();
+      if ( $prev ) :
+      ?>
+        <a href="<?php echo esc_url( get_permalink( $prev ) ); ?>" class="article-nav-btn">← 前の記事：<?php echo esc_html( get_the_title( $prev ) ); ?></a>
+      <?php else : ?>
+        <span></span>
+      <?php endif; ?>
+      <a href="<?php echo esc_url( home_url( '/news/' ) ); ?>" class="article-nav-back">お知らせ一覧へ戻る</a>
+      <?php if ( $next ) : ?>
+        <a href="<?php echo esc_url( get_permalink( $next ) ); ?>" class="article-nav-btn">次の記事：<?php echo esc_html( get_the_title( $next ) ); ?> →</a>
+      <?php else : ?>
+        <span></span>
+      <?php endif; ?>
+    </nav>
   </div>
 
   <!-- CTA -->
@@ -74,4 +80,14 @@ $date = get_the_date( 'Y.m.d' );
   </section>
 
 </main>
+
+<!-- BREADCRUMB（スマホ：フッター直前） -->
+<nav class="breadcrumb-sp" aria-label="パンくずリスト（スマートフォン）">
+  <ol>
+    <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>">ホーム</a></li>
+    <li><a href="<?php echo esc_url( home_url( '/news/' ) ); ?>">お知らせ</a></li>
+    <li><span aria-current="page"><?php the_title(); ?></span></li>
+  </ol>
+</nav>
+
 <?php get_footer(); ?>
