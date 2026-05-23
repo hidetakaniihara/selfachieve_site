@@ -591,3 +591,72 @@ if ( ! isset( $_SERVER['HTTP_AUTHORIZATION'] ) ) {
 
 // 構造化データ（JSON-LD）
 require_once get_template_directory() . '/inc/schema.php';
+
+
+// ============================================================
+// OGP og:image フォールバック（アイキャッチ未設定時にデフォルト画像を使用）
+// ============================================================
+function selfachieve_ogp_image_fallback() {
+    // AIOSEOが出力するog:imageを上書きしないよう、アイキャッチがない場合のみ出力
+    if ( is_singular() ) {
+        $post_id = get_the_ID();
+        $has_thumbnail = has_post_thumbnail( $post_id );
+        // アイキャッチなし かつ AIOSEOが設定したog:imageもない場合にフォールバック出力
+        if ( ! $has_thumbnail ) {
+            $default_ogp = get_template_directory_uri() . '/assets/ogp-default.jpg';
+            echo '<meta property="og:image" content="' . esc_url( $default_ogp ) . '">' . "\n";
+            echo '<meta property="og:image:width" content="1200">' . "\n";
+            echo '<meta property="og:image:height" content="630">' . "\n";
+        }
+    } elseif ( is_front_page() || is_home() || is_archive() || is_search() ) {
+        $default_ogp = get_template_directory_uri() . '/assets/ogp-default.jpg';
+        echo '<meta property="og:image" content="' . esc_url( $default_ogp ) . '">' . "\n";
+        echo '<meta property="og:image:width" content="1200">' . "\n";
+        echo '<meta property="og:image:height" content="630">' . "\n";
+    }
+}
+add_action( 'wp_head', 'selfachieve_ogp_image_fallback', 99 );
+
+// ============================================================
+// コンテンツ内 img タグへの width/height 自動付与
+// ============================================================
+function selfachieve_add_image_dimensions( $content ) {
+    if ( ! $content ) {
+        return $content;
+    }
+    // width/height が未設定の img タグを検索
+    $content = preg_replace_callback(
+        '/<img([^>]+)>/i',
+        function( $matches ) {
+            $tag = $matches[1];
+            // すでに width または height が設定されている場合はスキップ
+            if ( preg_match( '/\bwidth\s*=/i', $tag ) || preg_match( '/\bheight\s*=/i', $tag ) ) {
+                return '<img' . $tag . '>';
+            }
+            // src を取得
+            if ( ! preg_match( '/\bsrc\s*=\s*["\']([^"\']+)["\']/', $tag, $src_match ) ) {
+                return '<img' . $tag . '>';
+            }
+            $src = $src_match[1];
+            // アップロードディレクトリ内の画像のみ対象
+            $upload_dir = wp_upload_dir();
+            $base_url   = $upload_dir['baseurl'];
+            if ( strpos( $src, $base_url ) === false ) {
+                return '<img' . $tag . '>';
+            }
+            // ローカルパスに変換してサイズ取得
+            $local_path = str_replace( $base_url, $upload_dir['basedir'], $src );
+            if ( ! file_exists( $local_path ) ) {
+                return '<img' . $tag . '>';
+            }
+            $size = @getimagesize( $local_path );
+            if ( ! $size ) {
+                return '<img' . $tag . '>';
+            }
+            return '<img' . $tag . ' width="' . $size[0] . '" height="' . $size[1] . '">';
+        },
+        $content
+    );
+    return $content;
+}
+add_filter( 'the_content', 'selfachieve_add_image_dimensions', 10 );
