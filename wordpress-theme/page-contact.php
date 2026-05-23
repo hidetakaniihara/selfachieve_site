@@ -45,12 +45,23 @@ get_header();
       <?php
       // CF7フォームを出力（タイトルで検索して動的に取得）
       $cf7_forms = get_posts([
-        'post_type'   => 'wpcf7_contact_form',
-        'title'       => 'お問い合わせフォーム',
-        'numberposts' => 1,
+        'post_type'      => 'wpcf7_contact_form',
+        'posts_per_page' => -1,
+        'post_status'    => 'publish',
       ]);
-      if ( ! empty( $cf7_forms ) ) {
-        echo do_shortcode( '[contact-form-7 id="' . $cf7_forms[0]->ID . '" title="お問い合わせフォーム"]' );
+      $cf7_form = null;
+      foreach ( $cf7_forms as $f ) {
+        if ( $f->post_title === 'お問い合わせフォーム' ) {
+          $cf7_form = $f;
+          break;
+        }
+      }
+      // フォームが見つからない場合は最初のフォームを使用
+      if ( ! $cf7_form && ! empty( $cf7_forms ) ) {
+        $cf7_form = $cf7_forms[0];
+      }
+      if ( $cf7_form ) {
+        echo do_shortcode( '[contact-form-7 id="' . $cf7_form->ID . '" title="' . esc_attr( $cf7_form->post_title ) . '"]' );
       } else {
         echo '<p>フォームが見つかりません。Contact Form 7 のセットアップを実行してください。</p>';
       }
