@@ -701,3 +701,21 @@ add_filter( 'wpcf7_form_elements', function( $html ) {
     );
     return $html;
 } );
+
+// ============================================================
+// Google Analytics 4 (GA4) タグ
+// ============================================================
+function selfachieve_ga4_tag() {
+    if ( is_admin() ) return;
+    ?>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-E5W4CKGE19"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-E5W4CKGE19');
+</script>
+    <?php
+}
+add_action( 'wp_head', 'selfachieve_ga4_tag', 1 );
