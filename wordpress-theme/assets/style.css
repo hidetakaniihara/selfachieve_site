@@ -814,10 +814,10 @@ a.challenge-tag:hover{
     }
 .works-grid{
       display:grid;grid-template-columns:repeat(3,1fr);
-      border-top:1px solid #E8E8E8;
+      gap:28px 20px;
     }
-.work-card{border-right:1px solid #E8E8E8;overflow:hidden}
-.work-card:last-child{border-right:none}
+.work-card{border:1px solid #E8E8E8;overflow:hidden}
+.work-card:last-child{border:1px solid #E8E8E8;}
 .work-thumb{aspect-ratio:16/10;overflow:hidden;background:#F3F4F6}
 .work-thumb img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
 .work-card:hover .work-thumb img{transform:scale(1.04)}
@@ -1270,8 +1270,8 @@ a.challenge-tag:hover{
       .voice-head,.works-head{padding:80px 24px 48px;flex-direction:column;gap:20px;align-items:flex-start}
       .voice-grid{grid-template-columns:1fr;gap:16px;}
       .voice-card{border:1px solid #E8E8E8;}
-      .works-grid{grid-template-columns:1fr}
-      .work-card{border-right:none;border-bottom:1px solid #E8E8E8}
+      .works-grid{grid-template-columns:1fr;gap:16px;}
+      .work-card{border:1px solid #E8E8E8;}
       .cta{padding:56px 24px}
       .about-inner{grid-template-columns:1fr}
       .about-text{padding:80px 24px}
@@ -6566,12 +6566,12 @@ a.funnel-stage-service-tag:hover{
     }
 .works-card{
       background:#fff;
-      border-right:1px solid #E0E0E0;
+      border:1px solid #E0E0E0;
       display:flex;flex-direction:column;
       transition:transform .25s,box-shadow .25s;
       overflow:hidden;
     }
-.works-card:last-child{border-right:none;}
+.works-card:last-child{border:1px solid #E0E0E0;}
 .works-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.1);}
 .works-card-img{
       width:100%;
@@ -7899,10 +7899,10 @@ a.funnel-stage-service-tag:hover{
     }
     .works-grid{
       display:grid;grid-template-columns:repeat(3,1fr);
-      border-top:1px solid #E8E8E8;
+      gap:28px 20px;
     }
-    .work-card{border-right:1px solid #E8E8E8;overflow:hidden}
-    .work-card:last-child{border-right:none}
+    .work-card{border:1px solid #E8E8E8;overflow:hidden}
+    .work-card:last-child{border:1px solid #E8E8E8;}
     .work-thumb{aspect-ratio:16/10;overflow:hidden;background:#F3F4F6}
     .work-thumb img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
     .work-card:hover .work-thumb img{transform:scale(1.04)}
@@ -8356,8 +8356,8 @@ a.funnel-stage-service-tag:hover{
       .voice-head,.works-head{padding:80px 24px 48px;flex-direction:column;gap:20px;align-items:flex-start}
       .voice-grid{grid-template-columns:1fr;gap:16px;}
       .voice-card{border:1px solid #E8E8E8;}
-      .works-grid{grid-template-columns:1fr}
-      .work-card{border-right:none;border-bottom:1px solid #E8E8E8}
+      .works-grid{grid-template-columns:1fr;gap:16px;}
+      .work-card{border:1px solid #E8E8E8;}
       .about-inner{grid-template-columns:1fr}
       .about-text{padding:80px 24px}
       .about-visual{min-height:280px}
@@ -9187,11 +9187,10 @@ a.wall-tag:hover{background:#28282D;color:#fff;}
 
   /* ---- 実績カード（works-card） ---- */
   .works-card{
-    border-right:none;
-    border-bottom:1px solid #E0E0E0;
+    border:1px solid #E0E0E0;
   }
   .works-card:last-child{
-    border-bottom:none;
+    border:1px solid #E0E0E0;
   }
 
 
