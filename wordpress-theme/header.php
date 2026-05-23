@@ -22,6 +22,11 @@
       <div class="hd-mega-wrap">
       <div class="hd-mega" role="menu">
         <div class="hd-mega-col">
+          <span class="hd-mega-col-label"><span class="col-label-main">戦略・全体</span><span class="col-label-sub">（なんか、うまくいかない…）</span></span>
+          <a href="<?php echo esc_url( home_url( '/strategy/' ) ); ?>" role="menuitem">WEB戦略</a>
+          <a href="https://selfachieve.jp/saikatsu_r/" role="menuitem" target="_blank" rel="noopener noreferrer">採用戦略<svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-left:4px;opacity:.7"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+        </div>
+        <div class="hd-mega-col">
           <span class="hd-mega-col-label"><span class="col-label-main">集客施策</span><span class="col-label-sub">（サイトへの訪問者を増やしたい）</span></span>
           <a href="<?php echo esc_url( home_url( '/seo/' ) ); ?>" role="menuitem">SEO対策</a>
           <a href="<?php echo esc_url( home_url( '/meo/' ) ); ?>" role="menuitem">MEO対策</a>
