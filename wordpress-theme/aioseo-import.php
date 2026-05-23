@@ -62,7 +62,10 @@ $success = 0; $error = 0;
 
     // /
     {
-        $post_id = (int)get_option('page_on_front');
+        // フロントページが「最新の投稿」の場合はpost_id=0になるため、直接IDを指定
+        // ホームページ用のAIOSEO設定はwp_aioseo_postsではなくオプションで管理されるため
+        // ここではスキップし、AIOSEO管理画面から手動設定する
+        $post_id = 0; // トップページはAIOSEO管理画面 > 検索の外観 > グローバル設定から設定
         if ($post_id) {
             aioseo_set_meta($post_id, '神戸のWEBマーケティング・集客支援会社 | セルフアチーブ', '神戸の中小企業に特化したWEBマーケティング会社。SEO対策・リスティング広告・ホームページ制作で集客を支援。累計200社以上・14年の実績。初回相談無料。', '神戸のWEBマーケティング・集客支援会社 | セルフアチーブ', '神戸の中小企業に特化したWEBマーケティング会社。SEO対策・リスティング広告・ホームページ制作で集客を支援。累計200社以上・14年の実績。', 'https://htmlacheive.com/assets/ogp.jpg', 'website');
             echo "✓ [/] post_id=$post_id\n";
@@ -101,10 +104,9 @@ $success = 0; $error = 0;
         }
     }
 
-    // /columns
+    // /columns (実際のスラッグは 'column')
     {
-        $p = get_page_by_path('columns', OBJECT, 'page');
-    $post_id = $p ? $p->ID : 0;
+        $post_id = 21; // page-id-21 確認済み
         if ($post_id) {
             aioseo_set_meta($post_id, 'コラム一覧 | WEBマーケティング情報 | セルフアチーブ', 'セルフアチーブのWEBマーケティングコラム。SEO対策・MEO対策・リスティング広告・SNS集客・ホームページ制作に関する実践的な情報を発信しています。', 'コラム一覧 | セルフアチーブ', 'SEO・MEO・リスティング広告・SNS集客など、WEBマーケティングの実践情報を発信。', 'https://htmlacheive.com/assets/ogp.jpg', 'website');
             echo "✓ [/columns] post_id=$post_id\n";
@@ -299,8 +301,7 @@ $success = 0; $error = 0;
 
     // /sns/instagram
     {
-        $p = get_page_by_path('instagram', OBJECT, 'page');
-    $post_id = $p ? $p->ID : 0;
+        $post_id = 22; // page-id-22 確認済み
         if ($post_id) {
             aioseo_set_meta($post_id, 'Instagram運用代行・広告代行 | 神戸・兵庫の中小企業向けInstagramマーケティング | セルフアチーブ', 'Instagram運用代行・広告代行に対応。フォロワーを顧客に変えるInstagramマーケティングを神戸・兵庫の中小企業・店舗に特化して提供。アカウント運用から広告まで一貫支援。初回15分無料相談。', 'Instagram運用代行・広告代行 | 神戸・兵庫の中小企業向けInstagramマーケティング | セルフアチーブ', 'Instagram運用代行・広告代行に対応。フォロワーを顧客に変えるInstagramマーケティングを神戸・兵庫の中小企業・店舗に特化して提供。', 'https://htmlacheive.com/assets/ogp.jpg', 'website');
             echo "✓ [/sns/instagram] post_id=$post_id\n";
@@ -313,8 +314,7 @@ $success = 0; $error = 0;
 
     // /sns/line
     {
-        $p = get_page_by_path('line', OBJECT, 'page');
-    $post_id = $p ? $p->ID : 0;
+        $post_id = 26; // page-id-26 確認済み
         if ($post_id) {
             aioseo_set_meta($post_id, 'LINE構築・運用代行 | 神戸・兵庫の中小企業向けLINEマーケティング | セルフアチーブ', 'LINE構築・運用代行に対応。フォロワーを顧客に変えるLINEマーケティングを神戸・兵庫の中小企業・店舗に特化して提供。アカウント運用から広告まで一貫支援。初回15分無料相談。', 'LINE構築・運用代行 | 神戸・兵庫の中小企業向けLINEマーケティング | セルフアチーブ', 'LINE構築・運用代行に対応。フォロワーを顧客に変えるLINEマーケティングを神戸・兵庫の中小企業・店舗に特化して提供。', 'https://htmlacheive.com/assets/ogp.jpg', 'website');
             echo "✓ [/sns/line] post_id=$post_id\n";
@@ -327,8 +327,7 @@ $success = 0; $error = 0;
 
     // /sns/note
     {
-        $p = get_page_by_path('note', OBJECT, 'page');
-    $post_id = $p ? $p->ID : 0;
+        $post_id = 27; // page-id-27 確認済み
         if ($post_id) {
             aioseo_set_meta($post_id, 'note運用代行・記事制作 | 神戸・兵庫の中小企業向けnoteマーケティング | セルフアチーブ', 'note運用代行・記事制作に対応。読まれるほど選ばれるnoteマーケティングを神戸・兵庫の中小企業・店舗に特化して提供。記事企画から執筆・公開・分析まで一貫支援。初回15分無料相談。', 'note運用代行・記事制作 | 神戸・兵庫の中小企業向けnoteマーケティング | セルフアチーブ', 'note運用代行・記事制作に対応。読まれるほど選ばれるnoteマーケティングを神戸・兵庫の中小企業・店舗に特化して提供。', 'https://htmlacheive.com/assets/ogp.jpg', 'website');
             echo "✓ [/sns/note] post_id=$post_id\n";
@@ -341,8 +340,7 @@ $success = 0; $error = 0;
 
     // /sns/tiktok
     {
-        $p = get_page_by_path('tiktok', OBJECT, 'page');
-    $post_id = $p ? $p->ID : 0;
+        $post_id = 23; // page-id-23 確認済み
         if ($post_id) {
             aioseo_set_meta($post_id, 'TikTok運用代行・広告代行 | 神戸・兵庫の中小企業向けTikTokマーケティング | セルフアチーブ', 'TikTok運用代行・広告代行に対応。フォロワーを顧客に変えるTikTokマーケティングを神戸・兵庫の中小企業・店舗に特化して提供。アカウント運用から広告まで一貫支援。初回15分無料相談。', 'TikTok運用代行・広告代行 | 神戸・兵庫の中小企業向けTikTokマーケティング | セルフアチーブ', 'TikTok運用代行・広告代行に対応。フォロワーを顧客に変えるTikTokマーケティングを神戸・兵庫の中小企業・店舗に特化して提供。', 'https://htmlacheive.com/assets/ogp.jpg', 'website');
             echo "✓ [/sns/tiktok] post_id=$post_id\n";
@@ -355,8 +353,7 @@ $success = 0; $error = 0;
 
     // /sns/x
     {
-        $p = get_page_by_path('x', OBJECT, 'page');
-    $post_id = $p ? $p->ID : 0;
+        $post_id = 24; // page-id-24 確認済み
         if ($post_id) {
             aioseo_set_meta($post_id, 'X（旧Twitter）運用代行・X広告 | 神戸・兵庫の中小企業向けXマーケティング | セルフアチーブ', 'X（旧Twitter）の運用代行・広告運用を神戸から全国へ。毎日の発信が信頼を勝ち取る。中小企業・店舗向けにX運用代行・X広告を一貫支援します。', 'X（旧Twitter）運用代行・X広告 | 神戸・兵庫の中小企業向けXマーケティング | セルフアチーブ', '神戸・兵庫の中小企業向けX（旧Twitter）運用代行・X広告。毎日の発信で信頼を構築し、集客につなげる戦略的X運用を支援。初回相談無料。', 'https://htmlacheive.com/assets/ogp.jpg', 'website');
             echo "✓ [/sns/x] post_id=$post_id\n";
@@ -369,8 +366,7 @@ $success = 0; $error = 0;
 
     // /sns/youtube
     {
-        $p = get_page_by_path('youtube', OBJECT, 'page');
-    $post_id = $p ? $p->ID : 0;
+        $post_id = 25; // page-id-25 確認済み
         if ($post_id) {
             aioseo_set_meta($post_id, 'YouTube運用代行・YouTube広告 | 神戸・兵庫の中小企業向けYouTubeマーケティング | セルフアチーブ', 'YouTube運用代行・YouTube広告に対応。動画で信頼を積み上げ、問い合わせを増やすYouTubeマーケティングを神戸・兵庫の中小企業・店舗に特化して提供。企画から撮影・編集・広告まで一貫支援。初回15分無料相談。', 'YouTube運用代行・YouTube広告 | 神戸・兵庫の中小企業向けYouTubeマーケティング | セルフアチーブ', 'YouTube運用代行・YouTube広告に対応。動画で信頼を積み上げ、問い合わせを増やすYouTubeマーケティングを神戸・兵庫の中小企業・店舗に特化して提供。', 'https://htmlacheive.com/assets/ogp.jpg', 'website');
             echo "✓ [/sns/youtube] post_id=$post_id\n";
