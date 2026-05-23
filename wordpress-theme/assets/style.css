@@ -4275,6 +4275,38 @@ main{padding-top:72px;}
 .hd-nav>a:hover::before,.footer-nav-group a:hover::before{width:100%}
 .page-subtitle{font-size:16px;color:#4A4A50;line-height:1.85;max-width:600px;}
 .contact-wrap{max-width:800px;margin:0 auto;padding:64px 80px 120px}
+
+/* ============================================================
+   サンクスページ
+   ============================================================ */
+.thanks-wrap{max-width:800px;margin:0 auto;padding:64px 80px 120px}
+.thanks-inner{}
+.thanks-text{
+  font-size:16px;line-height:1.85;color:#4A4A52;
+  margin-bottom:48px;
+}
+.thanks-tel-box{
+  display:flex;flex-direction:column;gap:8px;
+  padding:36px 40px;background:#F7F7F7;border:1px solid #E8E8E8;
+  margin-bottom:48px;
+}
+.thanks-tel-label{
+  font-size:14px;letter-spacing:.04em;color:#767680;font-weight:500;
+}
+.thanks-btn-wrap{
+  text-align:center;
+}
+.thanks-btn-wrap .btn-primary{
+  background:#28282D;color:#fff;border-color:#28282D;
+  display:inline-flex;align-items:center;justify-content:center;
+  height:56px;padding:0 48px;
+  font-size:14px;letter-spacing:.06em;font-weight:700;
+  text-decoration:none;
+  transition:background .2s,color .2s,border-color .2s;
+}
+.thanks-btn-wrap .btn-primary:hover{
+  background:#fff;color:#28282D;border-color:#28282D;
+}
 .contact-intro{margin-bottom:56px}
 .contact-intro-text{font-size:16px;line-height:1.85;color:#4A4A52;margin-bottom:24px}
 .contact-tel-box{
@@ -9711,6 +9743,12 @@ a.wall-tag:hover{background:#28282D;color:#fff;}
   }
   .contact-wrap{
     padding:40px 16px 80px;
+  }
+  .thanks-wrap{
+    padding:40px 16px 80px;
+  }
+  .thanks-tel-box{
+    padding:24px 20px;
   }
   /* --- what-sec / what-inner / what-grid SP対応 --- */
   .what-sec{
