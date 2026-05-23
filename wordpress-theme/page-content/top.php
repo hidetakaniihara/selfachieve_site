@@ -3,7 +3,7 @@
 <!-- KV -->
 <section class="kv" aria-labelledby="kv-h1">
   <div class="kv-wrap">
-    <p class="kv-eyebrow fu">WEB MARKETING AGENCY — KOBE</p>
+    <p class="kv-eyebrow fu">WEB MARKETING AGENCY</p>
     <h1 class="kv-h1 fu" id="kv-h1" style="transition-delay:.1s">
       向き合う姿勢、<br>どこまでも真摯に。
     </h1>
