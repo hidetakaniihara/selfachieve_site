@@ -785,10 +785,10 @@ a.challenge-tag:hover{
     }
 .voice-grid{
       display:grid;grid-template-columns:repeat(3,1fr);
-      border-top:1px solid #E8E8E8;
+      gap:28px 20px;
     }
-.voice-card{border-right:1px solid #E8E8E8;overflow:hidden;transition:background .2s}
-.voice-card:last-child{border-right:none}
+.voice-card{border:1px solid #E8E8E8;overflow:hidden;transition:background .2s}
+.voice-card:last-child{border:1px solid #E8E8E8;}
 .voice-card:hover{background:#EFEFEF}
 .voice-link{
       display:block;
@@ -1268,8 +1268,8 @@ a.challenge-tag:hover{
       .challenge-card:nth-child(even){border-right:none}
       .challenge-card:nth-last-child(-n+2){border-bottom:none}
       .voice-head,.works-head{padding:80px 24px 48px;flex-direction:column;gap:20px;align-items:flex-start}
-      .voice-grid{grid-template-columns:1fr}
-      .voice-card{border-right:none;border-bottom:1px solid #E8E8E8}
+      .voice-grid{grid-template-columns:1fr;gap:16px;}
+      .voice-card{border:1px solid #E8E8E8;}
       .works-grid{grid-template-columns:1fr}
       .work-card{border-right:none;border-bottom:1px solid #E8E8E8}
       .cta{padding:56px 24px}
@@ -8354,8 +8354,8 @@ a.funnel-stage-service-tag:hover{
       .challenge-card:nth-child(even){border-right:none}
       .challenge-card:nth-last-child(-n+2):not(:nth-child(even) ~ *){border-bottom:none}
       .voice-head,.works-head{padding:80px 24px 48px;flex-direction:column;gap:20px;align-items:flex-start}
-      .voice-grid{grid-template-columns:1fr}
-      .voice-card{border-right:none;border-bottom:1px solid #E8E8E8}
+      .voice-grid{grid-template-columns:1fr;gap:16px;}
+      .voice-card{border:1px solid #E8E8E8;}
       .works-grid{grid-template-columns:1fr}
       .work-card{border-right:none;border-bottom:1px solid #E8E8E8}
       .about-inner{grid-template-columns:1fr}
