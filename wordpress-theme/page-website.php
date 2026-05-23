@@ -160,7 +160,7 @@ get_header();
 <article class="work-card fu">
 <a aria-label="さんプラザコンタクトレンズの制作実績を詳しく見る" class="work-link" href="<?php echo esc_url( home_url( '/works/sanplaza/' ) ); ?>">
 <div class="work-thumb">
-<img alt="さんプラザコンタクトレンズ ホームページ制作実績" height="375" loading="lazy" <?php echo get_template_directory_uri(); ?>/assets/works/sanplaza_pc.webp" width="600"/>
+<img alt="さんプラザコンタクトレンズ ホームページ制作実績" height="375" loading="lazy" src="<?php echo get_template_directory_uri(); ?>/assets/works/sanplaza_pc.webp" width="600"/>
 </div>
 <div class="work-info">
 <p class="work-cat">SEO対策 / ホームページ制作</p>
@@ -173,7 +173,7 @@ get_header();
 <article class="work-card fu" style="transition-delay:.1s">
 <a aria-label="猪原食べる総合歯科医療クリニックの制作実績を詳しく見る" class="work-link" href="<?php echo esc_url( home_url( '/works/inohara/' ) ); ?>">
 <div class="work-thumb">
-<img alt="猪原[食べる]総合歯科医療クリニック 制作実績" height="375" loading="lazy" <?php echo get_template_directory_uri(); ?>/assets/works/inohara_pc.webp" width="600"/>
+<img alt="猪原[食べる]総合歯科医療クリニック 制作実績" height="375" loading="lazy" src="<?php echo get_template_directory_uri(); ?>/assets/works/inohara_pc.webp" width="600"/>
 </div>
 <div class="work-info">
 <p class="work-cat">MEO対策 / リスティング広告</p>
@@ -186,7 +186,7 @@ get_header();
 <article class="work-card fu" style="transition-delay:.2s">
 <a aria-label="Nadiヨガスタジオの制作実績を詳しく見る" class="work-link" href="<?php echo esc_url( home_url( '/works/nadi/' ) ); ?>">
 <div class="work-thumb">
-<img alt="Nadi ヨガスタジオ 制作実績" height="375" loading="lazy" <?php echo get_template_directory_uri(); ?>/assets/works/nadi_pc.webp" width="600"/>
+<img alt="Nadi ヨガスタジオ 制作実績" height="375" loading="lazy" src="<?php echo get_template_directory_uri(); ?>/assets/works/nadi_pc.webp" width="600"/>
 </div>
 <div class="work-info">
 <p class="work-cat">ホームページ制作 / SNS運用</p>
@@ -309,7 +309,7 @@ get_header();
 <article class="voice-card fu">
 <a aria-label="岩沢法理事務所の声を詳しく見る" class="voice-link" href="<?php echo esc_url( home_url( '/voice/iwazawa/' ) ); ?>">
 <div class="voice-avatar">
-<img alt="岩沢法理事務所" height="280" loading="lazy" <?php echo get_template_directory_uri(); ?>/assets/voice/iwazawa.webp" width="280"/>
+<img alt="岩沢法理事務所" height="280" loading="lazy" src="<?php echo get_template_directory_uri(); ?>/assets/voice/iwazawa.webp" width="280"/>
 </div>
 <div class="voice-body">
 <p class="voice-quote">
@@ -327,7 +327,7 @@ get_header();
 <article class="voice-card fu" style="transition-delay:.1s">
 <a aria-label="株式会社エデュラボの声を詳しく見る" class="voice-link" href="<?php echo esc_url( home_url( '/voice/' ) ); ?>">
 <div class="voice-avatar">
-<img alt="株式会社エデュラボ" height="280" loading="lazy" <?php echo get_template_directory_uri(); ?>/assets/voice/edurabo.webp" width="280"/>
+<img alt="株式会社エデュラボ" height="280" loading="lazy" src="<?php echo get_template_directory_uri(); ?>/assets/voice/edurabo.webp" width="280"/>
 </div>
 <div class="voice-body">
 <p class="voice-quote">
