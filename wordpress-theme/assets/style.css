@@ -6576,6 +6576,7 @@ a.funnel-stage-service-tag:hover{
 .works-card-img{
       width:100%;
       aspect-ratio:16/9;
+      height:220px;
       background:#EDEDEE;
       overflow:hidden;
       position:relative;
