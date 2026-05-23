@@ -123,9 +123,8 @@
     </button>
   </div>
   <nav class="hd-drawer-nav" aria-label="モバイルナビゲーション">
-    <a class="hd-drawer-item" href="<?php echo esc_url( home_url( '/' ) ); ?>">トップ</a>
     <button class="hd-drawer-item hd-drawer-item--accordion" data-drawer-accordion aria-expanded="false">
-      集客
+      課題から探す
       <svg class="hd-drawer-chevron" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
     </button>
     <div class="hd-drawer-sub" aria-hidden="true">
@@ -150,7 +149,7 @@
       <a class="hd-drawer-link-item" href="<?php echo esc_url( home_url( '/ai-automation/' ) ); ?>">業務の自動化・最適化</a>
     </div>
     <button class="hd-drawer-item hd-drawer-item--accordion" data-drawer-accordion aria-expanded="false">
-      サービス
+      サービスから探す
       <svg class="hd-drawer-chevron" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
     </button>
     <div class="hd-drawer-sub" aria-hidden="true">
