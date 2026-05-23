@@ -38,6 +38,31 @@ $date = get_the_date( 'Y.m.d' );
       <div class="news-article-body">
         <?php the_content(); ?>
       </div>
+      
+      <!-- 監修者欄 -->
+      <div class="article-supervisor">
+        <div class="supervisor-header">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M12 16V12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M12 8H12.01" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>このコラムの監修者</span>
+        </div>
+        <div class="supervisor-body">
+          <div class="supervisor-image">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/niihara.webp" alt="新原 秀崇" width="120" height="120" loading="lazy">
+          </div>
+          <div class="supervisor-info">
+            <p class="supervisor-title">代表取締役</p>
+            <p class="supervisor-name">新原 秀崇</p>
+            <p class="supervisor-profile">
+              大学卒業後、外資系企業やラジオ局で営業・マーケティングを経験。2011年に株式会社セルフアチーブを創業し、神戸を拠点に中小企業のWEB集客支援を開始。累計200社以上の顧客獲得を支援し、コンテンツマーケティング・SEO・WEB広告を専門領域として代表自ら戦略設計に携わる。
+            </p>
+          </div>
+        </div>
+      </div>
+      
     </div>
   </article>
 

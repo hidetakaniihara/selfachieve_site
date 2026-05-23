@@ -16303,3 +16303,91 @@ body.page-top .kv .kv-stat-l { color: #4A4A50 !important; }
   .wpcf7-form input[type="tel"],
   .wpcf7-form textarea{font-size:16px}
 }
+
+/* ==========================================================================
+   Article Supervisor (監修者欄)
+   ========================================================================== */
+.article-supervisor {
+  margin-top: 60px;
+  padding: 32px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  border: 1px solid #e5e5e5;
+}
+
+.supervisor-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #e5e5e5;
+  color: #28282D;
+  font-weight: 700;
+  font-size: 1.125rem;
+}
+
+.supervisor-header svg {
+  color: #00A3A3; /* セルフアチーブのブランドカラーに近い色 */
+}
+
+.supervisor-body {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+.supervisor-image {
+  flex-shrink: 0;
+  width: 120px;
+  height: 120px;
+  border-radius: 4px; /* 四角（角丸） */
+  overflow: hidden;
+}
+
+.supervisor-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.supervisor-info {
+  flex-grow: 1;
+}
+
+.supervisor-title {
+  font-size: 0.875rem;
+  color: #666;
+  margin-bottom: 4px;
+}
+
+.supervisor-name {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #28282D;
+  margin-bottom: 12px;
+}
+
+.supervisor-profile {
+  font-size: 0.9375rem;
+  line-height: 1.8;
+  color: #444;
+}
+
+@media screen and (max-width: 767px) {
+  .article-supervisor {
+    padding: 24px 20px;
+    margin-top: 48px;
+  }
+  
+  .supervisor-body {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .supervisor-image {
+    width: 100px;
+    height: 100px;
+  }
+}
