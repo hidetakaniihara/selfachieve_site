@@ -49,7 +49,12 @@
 
     <!-- PAGINATION -->
     <nav class="pagination" id="news-pagination" aria-label="ページの移動">
-      <?php selfachieve_pagination(); ?>
+      <?php
+      the_posts_pagination( [
+          'prev_text' => '← 前へ',
+          'next_text' => '次へ →',
+      ] );
+      ?>
     </nav>
   </div>
 
