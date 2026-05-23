@@ -660,3 +660,38 @@ function selfachieve_add_image_dimensions( $content ) {
     return $content;
 }
 add_filter( 'the_content', 'selfachieve_add_image_dimensions', 10 );
+
+
+// ============================================================
+// Contact Form 7 設定
+// ============================================================
+
+/**
+ * CF7のデフォルトCSSを無効化（テーマCSSで管理するため）
+ */
+add_filter( 'wpcf7_load_css', '__return_false' );
+
+/**
+ * CF7送信成功時にサンクスページへリダイレクト
+ * additional_settings に on_sent_ok を設定しているが、
+ * wpcf7_mail_sent フックでも確実に対応する
+ */
+add_action( 'wpcf7_mail_sent', function( $contact_form ) {
+    $redirect_url = home_url( '/thanks/' );
+    // JavaScriptリダイレクト（CF7のAJAX送信後に実行）
+    // additional_settings の on_sent_ok で設定済みのためここでは何もしない
+} );
+
+/**
+ * CF7のチェックボックスをラベル付きで出力するためのクラス調整
+ * form-check-item クラスをCF7のチェックボックスラベルに付与
+ */
+add_filter( 'wpcf7_form_elements', function( $html ) {
+    // CF7が出力するチェックボックスのlabelにform-check-itemクラスを追加
+    $html = preg_replace(
+        '/<label class="wpcf7-list-item-label">/',
+        '<label class="wpcf7-list-item-label form-check-item">',
+        $html
+    );
+    return $html;
+} );
