@@ -673,13 +673,19 @@ add_filter( 'wpcf7_load_css', '__return_false' );
 
 /**
  * CF7送信成功時にサンクスページへリダイレクト
- * additional_settings に on_sent_ok を設定しているが、
- * wpcf7_mail_sent フックでも確実に対応する
+ * CF7 6.x系では on_sent_ok が廃止されたため、
+ * wpcf7mailsentイベント（JavaScript）で対応する
  */
-add_action( 'wpcf7_mail_sent', function( $contact_form ) {
-    $redirect_url = home_url( '/thanks/' );
-    // JavaScriptリダイレクト（CF7のAJAX送信後に実行）
-    // additional_settings の on_sent_ok で設定済みのためここでは何もしない
+add_action( 'wp_footer', function() {
+    if ( ! function_exists( 'wpcf7' ) ) return;
+    $thanks_url = home_url( '/wp/thanks/' );
+    ?>
+    <script>
+    document.addEventListener( 'wpcf7mailsent', function( event ) {
+        window.location.href = '<?php echo esc_js( $thanks_url ); ?>';
+    }, false );
+    </script>
+    <?php
 } );
 
 /**
