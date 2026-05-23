@@ -16,15 +16,6 @@ get_header();
     </div>
   </div>
 
-  <!-- BREADCRUMB（PC表示） -->
-  <nav class="breadcrumb" aria-label="パンくずリスト">
-    <ol>
-      <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>">ホーム</a></li>
-      <li><a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>">無料相談・お問い合わせ</a></li>
-      <li><span aria-current="page">送信完了</span></li>
-    </ol>
-  </nav>
-
   <!-- THANKS CONTENT -->
   <div class="thanks-wrap">
     <div class="thanks-inner fu">
@@ -39,15 +30,6 @@ get_header();
       </div>
     </div>
   </div>
-
-  <!-- BREADCRUMB SP（スマホ時：フッター直前） -->
-  <nav class="breadcrumb-sp" aria-hidden="true">
-    <ol>
-      <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>">ホーム</a></li>
-      <li><a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>">無料相談・お問い合わせ</a></li>
-      <li><span aria-current="page">送信完了</span></li>
-    </ol>
-  </nav>
 
 </main>
 <?php get_footer(); ?>
