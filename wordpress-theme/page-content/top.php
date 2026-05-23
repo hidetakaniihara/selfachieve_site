@@ -32,10 +32,25 @@
 <!-- NOTICE BAR -->
 <div class="notice-bar" role="complementary" aria-label="最新のお知らせ">
   <span class="notice-bar-label">お知らせ</span>
-  <a href="news/20260110/" class="notice-bar-item">
-    <span class="notice-bar-date">2026.01.10</span>
-    <span class="notice-bar-title">2026年の営業開始について</span>
+<?php
+  $notice_query = new WP_Query([
+    'post_type'      => 'news',
+    'posts_per_page' => 1,
+    'post_status'    => 'publish',
+    'orderby'        => 'date',
+    'order'          => 'DESC',
+  ]);
+  if ( $notice_query->have_posts() ) :
+    $notice_query->the_post();
+?>
+  <a href="<?php the_permalink(); ?>" class="notice-bar-item">
+    <span class="notice-bar-date"><?php echo get_the_date('Y.m.d'); ?></span>
+    <span class="notice-bar-title"><?php the_title(); ?></span>
   </a>
+<?php
+    wp_reset_postdata();
+  endif;
+?>
   <a href="<?php echo esc_url( home_url( '/news/' ) ); ?>" class="notice-bar-all" aria-label="お知らせ一覧を見る">一覧を見る<span class="notice-bar-arrow">→</span></a>
 </div>
 
