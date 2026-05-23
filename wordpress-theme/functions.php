@@ -25,12 +25,20 @@ function selfachieve_enqueue_assets() {
         [ 'google-fonts' ],
         $ver
     );
-    // Swiper（works/sanplaza専用。全ページで読み込むが軽量なため許容）
+    // Swiper CSS
     wp_enqueue_style(
         'swiper',
         'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css',
         [],
         '11'
+    );
+    // Swiper JS
+    wp_enqueue_script(
+        'swiper-js',
+        'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js',
+        [],
+        '11',
+        true
     );
     // メインJS
     wp_enqueue_script(

@@ -58,3 +58,28 @@
   }, { passive: true });
 
 })();
+
+/* ===== WHY WORKS SLIDER (Swiper) ===================================
+ * .why-works-swiper が存在するページのみ初期化する
+ * ================================================================= */
+(function () {
+  'use strict';
+  document.addEventListener('DOMContentLoaded', function () {
+    if (!document.querySelector('.why-works-swiper')) return;
+    if (typeof Swiper === 'undefined') return;
+    new Swiper('.why-works-swiper', {
+      loop: true,
+      autoplay: {
+        delay: 3500,
+        disableOnInteraction: false,
+      },
+      speed: 700,
+      slidesPerView: 1,
+      spaceBetween: 0,
+      pagination: {
+        el: '.why-works-slider .swiper-pagination',
+        clickable: true,
+      },
+    });
+  });
+})();

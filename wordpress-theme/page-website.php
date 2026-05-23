@@ -78,31 +78,46 @@ get_header();
 <div class="swiper why-works-swiper">
 <div class="swiper-wrapper">
 <div class="swiper-slide why-works-slide">
-<div class="why-works-slide-placeholder">
-<svg class="why-works-slide-placeholder-icon" fill="none" stroke="#28282D" stroke-width="1.5" viewbox="0 0 24 24"><rect height="18" rx="2" width="18" x="3" y="3"></rect><path d="M3 9h18"></path><circle cx="8" cy="6" r="1"></circle><circle cx="12" cy="6" r="1"></circle></svg>
-</div>
+<img alt="猫山医院 ホームページ制作実績" class="why-works-slide-img" height="375" loading="lazy" src="<?php echo get_template_directory_uri(); ?>/assets/works/inohara_pc.webp" width="600">
 <div class="why-works-slide-label">
-<small>MEDICAL · 神戸市</small>
-                歯科医院のコーポレートサイトリニューアル
-              </div>
+<small>MEDICAL ・ 神戸市</small>
+歯科医院のコーポレートサイトリニューアル
+</div>
 </div>
 <div class="swiper-slide why-works-slide">
-<div class="why-works-slide-placeholder">
-<svg class="why-works-slide-placeholder-icon" fill="none" stroke="#28282D" stroke-width="1.5" viewbox="0 0 24 24"><rect height="18" rx="2" width="18" x="3" y="3"></rect><path d="M3 9h18"></path><circle cx="8" cy="6" r="1"></circle><circle cx="12" cy="6" r="1"></circle></svg>
-</div>
+<img alt="明石土建株式会社 ホームページ制作実績" class="why-works-slide-img" height="375" loading="lazy" src="<?php echo get_template_directory_uri(); ?>/assets/works/akashi_doken_pc.webp" width="600">
 <div class="why-works-slide-label">
-<small>CONSTRUCTION · 兵庫県</small>
-                リフォーム会社の新規ホームページ制作＋SEO
-              </div>
+<small>CONSTRUCTION ・ 兵庫県</small>
+建設会社のホームページ制作＋SEO対策
+</div>
 </div>
 <div class="swiper-slide why-works-slide">
-<div class="why-works-slide-placeholder">
-<svg class="why-works-slide-placeholder-icon" fill="none" stroke="#28282D" stroke-width="1.5" viewbox="0 0 24 24"><rect height="18" rx="2" width="18" x="3" y="3"></rect><path d="M3 9h18"></path><circle cx="8" cy="6" r="1"></circle><circle cx="12" cy="6" r="1"></circle></svg>
-</div>
+<img alt="Nadi ヨガスタジオ ホームページ制作実績" class="why-works-slide-img" height="375" loading="lazy" src="<?php echo get_template_directory_uri(); ?>/assets/works/nadi_pc.webp" width="600">
 <div class="why-works-slide-label">
-<small>BEAUTY · 西宮市</small>
-                美容サロンのLP制作＋広告運用
-              </div>
+<small>FITNESS ・ 神戸市</small>
+ヨガスタジオのLP制作＋WordPress導入
+</div>
+</div>
+<div class="swiper-slide why-works-slide">
+<img alt="さんプラザコンタクトレンズ ホームページ制作実績" class="why-works-slide-img" height="375" loading="lazy" src="<?php echo get_template_directory_uri(); ?>/assets/works/sanplaza_pc.webp" width="600">
+<div class="why-works-slide-label">
+<small>RETAIL ・ 神戸市</small>
+コンタクトレンズ販売のホームページ制作＋SEO対策
+</div>
+</div>
+<div class="swiper-slide why-works-slide">
+<img alt="Nature's Gift ホームページ制作実績" class="why-works-slide-img" height="375" loading="lazy" src="<?php echo get_template_directory_uri(); ?>/assets/works/naturegift_pc.webp" width="600">
+<div class="why-works-slide-label">
+<small>HEALTH FOOD ・ 全国</small>
+健康食品LP制作
+</div>
+</div>
+<div class="swiper-slide why-works-slide">
+<img alt="株式会社トライク ホームページ制作実績" class="why-works-slide-img" height="375" loading="lazy" src="<?php echo get_template_directory_uri(); ?>/assets/works/trike_pc.webp" width="600">
+<div class="why-works-slide-label">
+<small>CONSTRUCTION ・ 大阪府</small>
+屋根工事会社のホームページ制作＋WEB広告
+</div>
 </div>
 </div>
 <div class="swiper-pagination"></div>
