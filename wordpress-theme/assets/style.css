@@ -16236,6 +16236,12 @@ body.page-top .kv .kv-stat-l { color: #4A4A50 !important; }
 
 /* CF7のhiddenフィールドを非表示 */
 .wpcf7-hidden{display:none !important}
+/* [hidden]タグのwrapも非表示 */
+.wpcf7-form-control-wrap[data-name="_wpcf7_locale"],
+.wpcf7-form span[data-name="_wpcf7_locale"],
+.wpcf7-form .wpcf7-form-control-wrap:has(input[name="_wpcf7_locale"]){
+  display:none !important;
+}
 
 /* スマホ対応 */
 @media(max-width:768px){
