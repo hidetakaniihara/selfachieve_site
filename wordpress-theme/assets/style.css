@@ -16166,14 +16166,15 @@ body.page-top .kv .kv-stat-l { color: #4A4A50 !important; }
 
 /* CF7のチェックボックスリスト */
 .wpcf7-list-item{
-  display:inline-flex;align-items:center;gap:8px;
-  padding:10px 16px;border:1px solid #E8E8E8;cursor:pointer;
+  display:inline-flex;align-items:center;gap:10px;
+  padding:10px 18px;border:1px solid #E8E8E8;cursor:pointer;
   transition:border-color .2s,background .2s;font-size:16px;color:#28282D;
   user-select:none;margin:0;
 }
 .wpcf7-list-item:hover{border-color:#28282D}
 .wpcf7-list-item input[type="checkbox"]{
   width:16px;height:16px;accent-color:#28282D;cursor:pointer;flex-shrink:0;
+  margin-right:4px;
 }
 .wpcf7-list-item-label{
   font-size:16px;color:#28282D;cursor:pointer;
