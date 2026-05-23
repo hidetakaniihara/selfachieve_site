@@ -587,3 +587,7 @@ if ( ! isset( $_SERVER['HTTP_AUTHORIZATION'] ) ) {
         $_SERVER['HTTP_AUTHORIZATION'] = $_SERVER['REDIRECT_HTTP_AUTHORIZATION'];
     }
 }
+
+
+// 構造化データ（JSON-LD）
+require_once get_template_directory() . '/inc/schema.php';
