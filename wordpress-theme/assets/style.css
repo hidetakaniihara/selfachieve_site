@@ -16123,3 +16123,123 @@ body.page-top .kv .kv-stat-l { color: #4A4A50 !important; }
   body.page-top .kv .kv-eyebrow { color: #767680 !important; }
   body.page-top .kv .kv-body { color: #4A4A50 !important; }
 }
+
+/* ============================================================
+   Contact Form 7 スタイル
+   ============================================================ */
+
+/* フォーム全体のラッパー */
+.wpcf7-form{display:block}
+
+/* CF7のinput/textarea をテーマのform-fieldスタイルに合わせる */
+.wpcf7-form input[type="text"],
+.wpcf7-form input[type="email"],
+.wpcf7-form input[type="tel"],
+.wpcf7-form textarea{
+  width:100%;
+  padding:14px 16px;
+  border:1px solid #D8D8DC;
+  font-size:16px;color:#28282D;
+  font-family:inherit;
+  background:#fff;
+  transition:border-color .2s;
+  border-radius:0;
+  -webkit-appearance:none;
+  appearance:none;
+  box-sizing:border-box;
+}
+.wpcf7-form input[type="text"]:focus,
+.wpcf7-form input[type="email"]:focus,
+.wpcf7-form input[type="tel"]:focus,
+.wpcf7-form textarea:focus{
+  outline:none;border-color:#28282D;
+}
+.wpcf7-form textarea{resize:vertical;min-height:140px;line-height:1.7}
+.wpcf7-form input::placeholder,
+.wpcf7-form textarea::placeholder{color:#B0B0B5;font-size:14px}
+
+/* CF7のform-control-wrap（inputを包むspan）をブロック表示に */
+.wpcf7-form-control-wrap{display:block;width:100%}
+
+/* CF7のチェックボックスリスト */
+.wpcf7-list-item{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:10px 16px;border:1px solid #E8E8E8;cursor:pointer;
+  transition:border-color .2s,background .2s;font-size:16px;color:#28282D;
+  user-select:none;margin:0;
+}
+.wpcf7-list-item:hover{border-color:#28282D}
+.wpcf7-list-item input[type="checkbox"]{
+  width:16px;height:16px;accent-color:#28282D;cursor:pointer;flex-shrink:0;
+}
+.wpcf7-list-item-label{
+  font-size:16px;color:#28282D;cursor:pointer;
+}
+
+/* CF7のチェックボックスグループ（.wpcf7-checkbox）をflex表示 */
+.wpcf7-checkbox{display:flex;flex-wrap:wrap;gap:10px}
+
+/* CF7の送信ボタン */
+.wpcf7-form input[type="submit"],
+.wpcf7-submit{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  width:100%;max-width:400px;height:60px;
+  background:#28282D;color:#fff;
+  font-size:15px;letter-spacing:.1em;font-weight:600;
+  border:none;cursor:pointer;
+  transition:background .2s,color .2s;
+  font-family:inherit;
+  -webkit-appearance:none;
+  appearance:none;
+  border-radius:0;
+}
+.wpcf7-form input[type="submit"]:hover,
+.wpcf7-submit:hover{background:#fff;color:#28282D;border:1px solid #28282D}
+
+/* CF7のバリデーションエラーメッセージ */
+.wpcf7-not-valid-tip{
+  display:block;font-size:12px;color:#D94F4F;margin-top:6px;
+}
+.wpcf7-not-valid{border-color:#D94F4F !important}
+
+/* CF7の送信結果メッセージ */
+.wpcf7-response-output{
+  margin-top:16px;padding:12px 16px;font-size:14px;
+  border:1px solid #D8D8DC;
+}
+.wpcf7-mail-sent-ok{
+  border-color:#4CAF50;color:#2E7D32;background:#F1F8F1;
+}
+.wpcf7-mail-sent-ng,
+.wpcf7-aborted{
+  border-color:#D94F4F;color:#D94F4F;background:#FFF5F5;
+}
+.wpcf7-spam-blocked{
+  border-color:#FF9800;color:#E65100;background:#FFF8F0;
+}
+
+/* CF7のスピナー（送信中アニメーション） */
+.wpcf7-spinner{
+  display:inline-block;width:24px;height:24px;
+  border:2px solid #E8E8E8;border-top-color:#28282D;
+  border-radius:50%;animation:wpcf7-spin .8s linear infinite;
+  margin-left:8px;vertical-align:middle;
+}
+@keyframes wpcf7-spin{to{transform:rotate(360deg)}}
+
+/* form-submitラッパー内でCF7ボタンを中央揃え */
+.form-submit .wpcf7-form-control-wrap{display:inline-block;width:auto}
+.form-submit .wpcf7-submit{width:100%;max-width:400px}
+
+/* CF7のhiddenフィールドを非表示 */
+.wpcf7-hidden{display:none !important}
+
+/* スマホ対応 */
+@media(max-width:768px){
+  .wpcf7-checkbox{gap:8px}
+  .wpcf7-list-item{padding:8px 12px;font-size:14px}
+  .wpcf7-form input[type="text"],
+  .wpcf7-form input[type="email"],
+  .wpcf7-form input[type="tel"],
+  .wpcf7-form textarea{font-size:16px}
+}
