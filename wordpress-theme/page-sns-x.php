@@ -322,7 +322,7 @@ get_header();
 <div class="voice-grid">
 <article class="voice-card fu">
 <a class="voice-link" href="<?php echo esc_url( home_url( '/../voice/iwazawa/' ) ); ?>">
-<div class="voice-avatar"><img alt="岩澤法理事務所" height="280" loading="lazy" <?php echo get_template_directory_uri(); ?>/assets/voice/iwazawa.webp" width="280"/></div>
+<div class="voice-avatar"><img alt="岩澤法理事務所" height="280" loading="lazy" src="<?php echo get_template_directory_uri(); ?>/assets/voice/iwazawa.webp" width="280"/></div>
 <div class="voice-body">
 <p class="voice-quote">「特殊な業界だからこそ、心強い」<br/>共に課題へ向き合うWeb集客のパートナー</p>
 <div class="voice-meta">
@@ -335,7 +335,7 @@ get_header();
 </article>
 <article class="voice-card fu" style="transition-delay:.1s">
 <a class="voice-link" href="<?php echo esc_url( home_url( '/../voice/' ) ); ?>">
-<div class="voice-avatar"><img alt="株式会社エデュラボ" height="280" loading="lazy" <?php echo get_template_directory_uri(); ?>/assets/voice/edurabo.webp" width="280"/></div>
+<div class="voice-avatar"><img alt="株式会社エデュラボ" height="280" loading="lazy" src="<?php echo get_template_directory_uri(); ?>/assets/voice/edurabo.webp" width="280"/></div>
 <div class="voice-body">
 <p class="voice-quote">SNS運用で「見てもらえる」から<br/>「選んでもらえる」へ。</p>
 <div class="voice-meta">
@@ -611,7 +611,7 @@ $_blog_query = new WP_Query( [
 <div class="footer-top">
 <div class="footer-logo-wrap">
 <a aria-label="セルフアチーブ トップページへ" class="footer-logo" href="/">
-<img alt="selfachieve Acquisition Agency" height="30" loading="lazy" <?php echo get_template_directory_uri(); ?>/assets/logo_color.webp" width="140"/>
+<img alt="selfachieve Acquisition Agency" height="30" loading="lazy" src="<?php echo get_template_directory_uri(); ?>/assets/logo_color.webp" width="140"/>
 </a>
 <address class="footer-logo-addr">
         〒658-0032 兵庫県神戸市東灘区向洋町6-9<br/>

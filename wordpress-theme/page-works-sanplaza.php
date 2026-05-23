@@ -115,12 +115,12 @@ get_header();
 <div class="mockup-full-inner fu">
 <div class="mockup-pc-wrap">
 <div class="mockup-pc">
-<img alt="さんプラザコンタクトレンズ PCサイト画面" height="591" loading="lazy" <?php echo get_template_directory_uri(); ?>/assets/works/sanplaza_pc.webp" width="1000"/>
+<img alt="さんプラザコンタクトレンズ PCサイト画面" height="591" loading="lazy" src="<?php echo get_template_directory_uri(); ?>/assets/works/sanplaza_pc.webp" width="1000"/>
 </div>
 </div>
 <div class="mockup-sp-wrap">
 <div class="mockup-sp">
-<img alt="さんプラザコンタクトレンズ スマートフォンサイト画面" height="520" loading="lazy" <?php echo get_template_directory_uri(); ?>/assets/works/sanplaza_sp.webp" width="321"/>
+<img alt="さんプラザコンタクトレンズ スマートフォンサイト画面" height="520" loading="lazy" src="<?php echo get_template_directory_uri(); ?>/assets/works/sanplaza_sp.webp" width="321"/>
 </div>
 </div>
 </div>

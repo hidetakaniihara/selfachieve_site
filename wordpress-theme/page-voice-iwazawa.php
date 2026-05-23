@@ -60,7 +60,7 @@ get_header();
 <p class="interview-a fu" style="transition-delay:.12s">弁護士業務、民事事件・家事事件・刑事事件を幅広く扱う、いわゆる街弁（街の弁護士）です。特に対応させていただいているものが多い分野は離婚事件（離婚の他婚姻費用「家族の生活費」、養育費、親権、子どもの面会交流、男女トラブル等）です。また、相続事件や労働事件（解雇や賃金、パワーハラスメント問題等）、交通事故事件等のご相談も多いです。</p>
 </div>
 <div class="interview-img fu" style="transition-delay:.18s">
-<img alt="岩澤法理事務所 インタビュー" height="614" loading="lazy" <?php echo get_template_directory_uri(); ?>/assets/voice/iwazawa.webp" width="921"/>
+<img alt="岩澤法理事務所 インタビュー" height="614" loading="lazy" src="<?php echo get_template_directory_uri(); ?>/assets/voice/iwazawa.webp" width="921"/>
 </div>
 </div>
 <!-- Q02 -->
@@ -71,7 +71,7 @@ get_header();
 <p class="interview-a fu" style="transition-delay:.12s">法律相談をしたいけれど、何処に行ったらよいか分からない、行きづらいと思われている方は多くいらっしゃいます。また、そもそも相談するようなことなのかも分からないという方もいらっしゃいます。そのような方々にどのようにアプローチすればよいのか、もどかしく思っておりました。最近は多くの業者さんがWEB広告やWEBページ制作の宣伝をされています。そのような中、縁あってセルフアチーブさんとお話しをさせていただきましたところ、弁護士業務の特殊性をご理解してくださり、広告の対応について、真摩に納得のいく説明をしていただいたことが理由です。</p>
 </div>
 <div class="interview-img fu" style="transition-delay:.18s">
-<img alt="岩澤法理事務所 インタビュー" height="614" loading="lazy" <?php echo get_template_directory_uri(); ?>/assets/voice/iwazawa.webp" width="921"/>
+<img alt="岩澤法理事務所 インタビュー" height="614" loading="lazy" src="<?php echo get_template_directory_uri(); ?>/assets/voice/iwazawa.webp" width="921"/>
 </div>
 </div>
 <!-- Q03 -->
@@ -82,7 +82,7 @@ get_header();
 <p class="interview-a fu" style="transition-delay:.12s">月に１回ミーティングをしていただいているのですが、状況をきちんと認識・分析して、その都度、助言や対応をしていただいている点です。弁護士の業務は一般的にはやや特殊なもので、一般の方になじみが薄い、特殊な業界であると思います。また、相談・依頼に来られる方々は様々な問題、不安を抱えていらっしゃいます。そのような業務の特殊性についてきちんとヒアリングしていただき、単に広報すればよいというものではなく、いわゆる現場の状況も確認していただきながら対応していただいております。</p>
 </div>
 <div class="interview-img fu" style="transition-delay:.18s">
-<img alt="岩澤法理事務所 インタビュー" height="614" loading="lazy" <?php echo get_template_directory_uri(); ?>/assets/voice/iwazawa.webp" width="921"/>
+<img alt="岩澤法理事務所 インタビュー" height="614" loading="lazy" src="<?php echo get_template_directory_uri(); ?>/assets/voice/iwazawa.webp" width="921"/>
 </div>
 </div>
 <!-- Q04 -->
@@ -93,7 +93,7 @@ get_header();
 <p class="interview-a fu" style="transition-delay:.12s">毎月のミーティングでは、現状を的確に分析し、私たちの業務に寄り添った助言をいただけることに大変感謝しております。特殊な業界ゆえの難しさも共有しながら進められる点は、他社にはない大きな安心感です。単なる「業者」ではなく、同じ目線で課題に向き合ってくれるパートナーをお探しの方には、自信を持ってお勧めしたいと思います。これからも、どうぞよろしくお願いいたします。</p>
 </div>
 <div class="interview-img fu" style="transition-delay:.18s">
-<img alt="岩澤法理事務所 インタビュー" height="614" loading="lazy" <?php echo get_template_directory_uri(); ?>/assets/voice/iwazawa.webp" width="921"/>
+<img alt="岩澤法理事務所 インタビュー" height="614" loading="lazy" src="<?php echo get_template_directory_uri(); ?>/assets/voice/iwazawa.webp" width="921"/>
 </div>
 </div>
 </div>

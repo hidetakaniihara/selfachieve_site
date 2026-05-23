@@ -281,7 +281,7 @@ get_header();
 <article class="voice-card fu">
 <a aria-label="歯科医院 院長様の声を詳しく見る" class="voice-link" href="<?php echo esc_url( home_url( '/voice/' ) ); ?>">
 <div class="voice-avatar">
-<img alt="歯科医院 院長様" height="280" loading="lazy" <?php echo get_template_directory_uri(); ?>/assets/voice_01.webp" width="280"/>
+<img alt="歯科医院 院長様" height="280" loading="lazy" src="<?php echo get_template_directory_uri(); ?>/assets/voice_01.webp" width="280"/>
 </div>
 <div class="voice-body">
 <p class="voice-quote">
@@ -298,7 +298,7 @@ get_header();
 <article class="voice-card fu" style="transition-delay:.1s">
 <a aria-label="美容室 オーナー様の声を詳しく見る" class="voice-link" href="<?php echo esc_url( home_url( '/voice/' ) ); ?>">
 <div class="voice-avatar">
-<img alt="美容室 オーナー様" height="280" loading="lazy" <?php echo get_template_directory_uri(); ?>/assets/voice_02.webp" width="280"/>
+<img alt="美容室 オーナー様" height="280" loading="lazy" src="<?php echo get_template_directory_uri(); ?>/assets/voice_02.webp" width="280"/>
 </div>
 <div class="voice-body">
 <p class="voice-quote">
@@ -315,7 +315,7 @@ get_header();
 <article class="voice-card fu" style="transition-delay:.2s">
 <a aria-label="飲食店 店主様の声を詳しく見る" class="voice-link" href="<?php echo esc_url( home_url( '/voice/' ) ); ?>">
 <div class="voice-avatar">
-<img alt="飲食店 店主様" height="280" loading="lazy" <?php echo get_template_directory_uri(); ?>/assets/voice_03.webp" width="280"/>
+<img alt="飲食店 店主様" height="280" loading="lazy" src="<?php echo get_template_directory_uri(); ?>/assets/voice_03.webp" width="280"/>
 </div>
 <div class="voice-body">
 <p class="voice-quote">
