@@ -5549,7 +5549,7 @@ main{padding-top:72px;}
 .case-screenshot-placeholder svg{opacity:.4}
 .case-screenshot-placeholder span{font-size:11px;letter-spacing:.06em;color:#ABABAB}
 .case-card-body{
-      padding:32px 28px;
+      padding:48px;
       display:flex;flex-direction:column;flex:1;
     }
 .case-card:hover .case-card-body{background:#F7F7F5}
