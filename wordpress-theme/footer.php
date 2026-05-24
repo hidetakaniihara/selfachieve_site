@@ -99,14 +99,17 @@
 
   /* ===== Count-up ===== */
   function countUp(el){
-    var target = parseInt(el.getAttribute('data-count'), 10);
+    var target = parseFloat(el.getAttribute('data-count'));
+    var pfx = el.getAttribute('data-prefix') || '';
     var sup = el.querySelector('sup') ? el.querySelector('sup').outerHTML : '';
+    var isDecimal = (target % 1 !== 0);
     var duration = 1200;
     var step = target / (duration / 16);
     var cur = 0;
     var t = setInterval(function(){
       cur = Math.min(cur + step, target);
-      el.innerHTML = Math.floor(cur) + sup;
+      var display = isDecimal ? cur.toFixed(1) : Math.floor(cur);
+      el.innerHTML = pfx + display + sup;
       if(cur >= target) clearInterval(t);
     }, 16);
   }
