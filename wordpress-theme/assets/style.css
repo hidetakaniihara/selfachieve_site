@@ -13894,7 +13894,7 @@ body {
 @media (max-width: 767px) {
   .case-grid-wrap {
     padding: 0;
-    overflow: hidden;
+    overflow-x: clip;
   }
   .case-grid {
     display: flex;
@@ -14256,7 +14256,7 @@ body {
 @media (max-width: 767px) {
   .case-grid-wrap {
     padding: 0;
-    overflow: hidden;
+    overflow-x: clip;
   }
   .case-grid {
     display: flex;
