@@ -275,7 +275,7 @@ get_header();
 <div class="badge-inner">
 <div class="badge-head">
 <span class="badge-label">Certification</span>
-<p class="badge-title">Google 広告 認定パートナー</p>
+<p class="badge-title">我々は、Google 広告 認定パートナーです。</p>
 <p class="badge-desc">Googleが認定する広告代理店として、Google広告・Yahoo!広告・bing広告の運用を担います。認定資格の取得と継続的な学習により、最新の広告プロダクトと運用手法を常にアップデートしています。</p>
 </div>
 <div class="badge-img-block">
