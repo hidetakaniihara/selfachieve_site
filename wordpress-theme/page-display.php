@@ -12,7 +12,7 @@ get_header();
 <div class="kv-left">
 <p class="kv-eyebrow fu">— ディスプレイ広告</p>
 <h1 class="kv-h1 fu" id="kv-h1" style="transition-delay:.08s">
-        まだ知らない<br/>人に、届ける。
+        露出を増やし、<br/>的確に認知させる。
       </h1>
 <p class="kv-sub fu" style="transition-delay:.16s">
         最適なターゲット設定で潜在層にリーチ。<br/>
