@@ -280,7 +280,7 @@ get_header();
 </div>
 <div class="badge-img-block">
 <a href="https://www.google.com/partners/agency?id=7098540721" rel="noopener" target="_blank">
-<img alt="Google Partner Badge" height="180" loading="lazy" src="../listing/img/google-partner-badge.svg" style="display:block;width:180px;height:auto;" width="180"/>
+<img alt="Google Partner Badge" height="180" loading="lazy" src="<?php echo get_template_directory_uri(); ?>/assets/img/google-partner-badge.svg" style="display:block;width:180px;height:auto;" width="180"/>
 </a>
 </div>
 </div>
