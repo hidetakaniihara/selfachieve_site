@@ -269,67 +269,69 @@ get_header();
 </div>
 </section>
 <!-- VOICE: 伴走してきた企業の、リアルな声。 -->
-<section aria-labelledby="voice-title-meo" class="voice-sec">
-<div class="voice-head">
-<div>
-<p class="sec-eyebrow fu">CLIENT VOICES</p>
-<h2 class="sec-title-lg fu" id="voice-title-meo">伴走してきた企業の、<br/>リアルな声。</h2>
-</div>
-<a aria-label="お客さまの声をすべて見る" class="view-all fu" href="<?php echo esc_url( home_url( '/voice/' ) ); ?>">すべて見る</a>
-</div>
-<div class="voice-grid">
-<article class="voice-card fu">
-<a aria-label="歯科医院 院長様の声を詳しく見る" class="voice-link" href="<?php echo esc_url( home_url( '/voice/' ) ); ?>">
-<div class="voice-avatar">
-<img alt="歯科医院 院長様" height="280" loading="lazy" src="<?php echo get_template_directory_uri(); ?>/assets/voice_01.webp" width="280"/>
-</div>
-<div class="voice-body">
-<p class="voice-quote">
-          「Googleマップで上位に出てくるようになってから、電話での問い合わせが明らかに増えました。MEO対策に切り替えてから広告費も大幅に削減できています。」
+<section id="voice" aria-labelledby="voice-title-meo" class="voice-sec">
+  <div class="voice-head">
+    <div>
+      <p class="sec-eyebrow fu">CLIENT VOICES</p>
+      <h2 class="sec-title-lg fu" id="voice-title-meo">伴走してきた企業<br>の、リアルな声。</h2>
+    </div>
+    <a href="<?php echo esc_url( home_url( '/voice/' ) ); ?>" class="view-all fu" aria-label="お客さまの声をすべて見る">すべて見る</a>
+  </div>
+  <div class="voice-grid">
+    <article class="voice-card fu">
+      <a href="<?php echo esc_url( home_url( '/voice/iwazawa/' ) ); ?>" class="voice-link" aria-label="岩澤法理事務所の声を詳しく見る">
+      <div class="voice-avatar">
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/voice/iwazawa.webp" alt="岩澤法理事務所" width="280" height="280" loading="lazy">
+      </div>
+      <div class="voice-body">
+        <p class="voice-quote">
+          「特殊な業界だからこそ、心強い」
+          共に課題へ向き合うWeb集客のパートナー
         </p>
-<div class="voice-meta">
-<p class="voice-co">歯科医院 / 神戸市</p>
-<p class="voice-name">院長 様</p>
-<p class="voice-more">詳しく見る →</p>
-</div>
-</div>
-</a>
-</article>
-<article class="voice-card fu" style="transition-delay:.1s">
-<a aria-label="美容室 オーナー様の声を詳しく見る" class="voice-link" href="<?php echo esc_url( home_url( '/voice/' ) ); ?>">
-<div class="voice-avatar">
-<img alt="美容室 オーナー様" height="280" loading="lazy" src="<?php echo get_template_directory_uri(); ?>/assets/voice_02.webp" width="280"/>
-</div>
-<div class="voice-body">
-<p class="voice-quote">
-          「口コミ管理がわからず放置していましたが、依頼してから口コミ返信テンプレートを作ってもらい、口コミ件数も増えました。順位が上がったのが数字でわかるので安心できます。」
+        <div class="voice-meta">
+          <p class="voice-co">法律事務所</p>
+          <p class="voice-name">岩澤法理事務所 様</p>
+          <p class="voice-more">詳しく見る →</p>
+        </div>
+      </div>
+      </a>
+    </article>
+    <article class="voice-card fu" style="transition-delay:.1s">
+      <a href="<?php echo esc_url( home_url( '/voice/' ) ); ?>" class="voice-link" aria-label="株式会社エデュラボの声を詳しく見る">
+      <div class="voice-avatar">
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/voice/edurabo.webp" alt="株式会社エデュラボ" width="280" height="280" loading="lazy">
+      </div>
+      <div class="voice-body">
+        <p class="voice-quote">
+          リスティング×SEOで成果。
+          「順位」だけでなく「実利」に直結する集客へ
         </p>
-<div class="voice-meta">
-<p class="voice-co">美容室 / 西宮市</p>
-<p class="voice-name">オーナー 様</p>
-<p class="voice-more">詳しく見る →</p>
-</div>
-</div>
-</a>
-</article>
-<article class="voice-card fu" style="transition-delay:.2s">
-<a aria-label="飲食店 店主様の声を詳しく見る" class="voice-link" href="<?php echo esc_url( home_url( '/voice/' ) ); ?>">
-<div class="voice-avatar">
-<img alt="飲食店 店主様" height="280" loading="lazy" src="<?php echo get_template_directory_uri(); ?>/assets/voice_03.webp" width="280"/>
-</div>
-<div class="voice-body">
-<p class="voice-quote">
-          「成果が出るまで料金0円という点に最初は半信半疑でしたが、実際に3ヶ月でGoogleマップ上位表示され、来店数が増えました。リスクなく始められたのが良かったです。」
+        <div class="voice-meta">
+          <p class="voice-co">学習塾の運営</p>
+          <p class="voice-name">株式会社 エデュラボ 様</p>
+          <p class="voice-more">詳しく見る →</p>
+        </div>
+      </div>
+      </a>
+    </article>
+    <article class="voice-card fu" style="transition-delay:.2s">
+      <a href="<?php echo esc_url( home_url( '/voice-post/hyogo-university-graduate/' ) ); ?>" class="voice-link" aria-label="兵庫県立大学大学院 情報科学研究科の声を詳しく見る">
+      <div class="voice-avatar">
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/voice/hyogo-univ.webp" alt="兵庫県立大学大学院 情報科学研究科" width="280" height="280" loading="lazy">
+      </div>
+      <div class="voice-body">
+        <p class="voice-quote">
+          低予算でも効果を実感。SNS広告を中心に過去最高の出願者数を獲得！
         </p>
-<div class="voice-meta">
-<p class="voice-co">飲食店 / 明石市</p>
-<p class="voice-name">店主 様</p>
-<p class="voice-more">詳しく見る →</p>
-</div>
-</div>
-</a>
-</article>
-</div>
+        <div class="voice-meta">
+          <p class="voice-co">教育機関</p>
+          <p class="voice-name">兵庫県立大学大学院 情報科学研究科 様</p>
+          <p class="voice-more">詳しく見る →</p>
+        </div>
+      </div>
+      </a>
+    </article>
+  </div>
 </section>
 <!-- FAQ -->
 <section aria-labelledby="faq-h2" class="faq-sec" id="faq">
