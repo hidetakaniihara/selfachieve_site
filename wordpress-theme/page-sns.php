@@ -12,7 +12,7 @@ get_header();
 <div class="kv-left">
 <p class="kv-eyebrow fu">— SNS マーケティング</p>
 <h1 class="kv-h1 fu" id="kv-h1" style="transition-delay:.08s">
-<span class="kv-h1-l1">WEBマーケティングの主戦場。</span><br class="kv-h1-br-pc"/><span class="kv-h1-l2">最適なSNS活用をご提案。</span>
+<span class="kv-h1-l1">WEBマーケティングの主戦場。</span><br class="kv-h1-br-pc"/><span class="kv-h1-l2">最適なSNS戦略をご提案。</span>
 </h1>
 <p class="kv-sub fu" style="transition-delay:.16s">
         神戸・兵庫の中小企業に特化した、SNSを集客の柱へ。<br class="kv-sub-br-pc"/>アカウント運用からSNS広告まで、<br class="kv-sub-br-pc"/>目標に合わせて一貫して設計します。
