@@ -2464,7 +2464,7 @@ a.challenge-tag:hover{
       }
       .plan-card:last-child{border-right:none}
       .swipe-hint-plan{
-        display:flex;
+        display:flex!important;
         justify-content:center;
         align-items:center;
         gap:6px;
