@@ -4422,10 +4422,10 @@ main{padding-top:72px;}
   .sp-swipe-hint{display:block!important}
 }
 .sp-swipe-hint::before{
-      content:'← ';
+      content:'\2190  ';
     }
 .sp-swipe-hint::after{
-      content:' →';
+      content:' \2192';
     }
 .sp-scroll-track{
       display:none;
