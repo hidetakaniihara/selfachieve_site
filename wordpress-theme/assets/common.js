@@ -83,3 +83,40 @@
     });
   });
 })();
+
+/* ===== CASE RESULT COUNT UP ===== */
+(function(){
+  'use strict';
+  function countUp(el){
+    var target = parseFloat(el.dataset.count);
+    var suffix = el.dataset.suffix || '';
+    var decimal = parseInt(el.dataset.decimal) || 0;
+    var duration = 1800;
+    var start = performance.now();
+    function update(now){
+      var t = Math.min((now - start) / duration, 1);
+      var ease = 1 - Math.pow(1 - t, 3);
+      var val = target * ease;
+      el.innerHTML = (decimal > 0 ? val.toFixed(decimal) : Math.floor(val)) + '<span>' + suffix + '</span>';
+      if(t < 1) requestAnimationFrame(update);
+    }
+    requestAnimationFrame(update);
+  }
+  document.addEventListener('DOMContentLoaded', function(){
+    var countEls = document.querySelectorAll('.case-result-num[data-count]');
+    if(!countEls.length) return;
+    if('IntersectionObserver' in window){
+      var cio = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+          if(e.isIntersecting){
+            countUp(e.target);
+            cio.unobserve(e.target);
+          }
+        });
+      },{threshold:.5});
+      countEls.forEach(function(el){ cio.observe(el); });
+    } else {
+      countEls.forEach(function(el){ countUp(el); });
+    }
+  });
+})();
