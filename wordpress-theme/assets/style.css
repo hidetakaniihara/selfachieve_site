@@ -1604,7 +1604,7 @@ a.challenge-tag:hover{
     }
 .case-body-text{
       font-size:16px;line-height:1.9;
-      color:rgba(255,255,255,.7);max-width:600px;
+      color:#ffffff;max-width:600px;
     }
 .case-grid{
       display:grid;grid-template-columns:repeat(3,1fr);
@@ -1817,7 +1817,7 @@ a.challenge-tag:hover{
     }
 .badge-desc{
       font-size:16px;line-height:1.9;
-      color:rgba(255,255,255,.7);max-width:600px;
+      color:#ffffff;max-width:600px;
     }
 .badge-card{
       background:#ffffff;
@@ -2413,7 +2413,7 @@ a.challenge-tag:hover{
         color:#ffffff;
       }
       .badge-label{color:rgba(255,255,255,.5);font-size:10px;letter-spacing:.22em}
-      .badge-desc{font-size:16px;color:rgba(255,255,255,.75);line-height:1.85}
+      .badge-desc{font-size:16px;color:#ffffff;line-height:1.85}
       .badge-card{
         flex-direction:column;
         align-items:flex-start;
