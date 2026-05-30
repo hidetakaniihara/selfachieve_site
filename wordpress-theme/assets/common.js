@@ -84,11 +84,20 @@
   });
 })();
 
-/* ===== CASE RESULT COUNT UP ===== */
+/* ===== COUNT UP =====================================================
+ * 対象: [data-count] を持つ全要素
+ *   - .kv-stat-n        TOPページ KVエリア
+ *   - .about-stat-n     TOPページ ABOUTエリア
+ *   - .case-result-num  各SNSページ 実績カード
+ * ================================================================= */
 (function(){
   'use strict';
   function countUp(el){
     var target = parseFloat(el.dataset.count);
+    if(isNaN(target)) return;
+    /* kv-stat-n / about-stat-n は <sup> を内包するため保持する */
+    var sup = el.querySelector('sup') ? el.querySelector('sup').outerHTML : '';
+    /* case-result-num は data-suffix / data-decimal を使う */
     var suffix = el.dataset.suffix || '';
     var decimal = parseInt(el.dataset.decimal) || 0;
     var duration = 1800;
@@ -97,13 +106,20 @@
       var t = Math.min((now - start) / duration, 1);
       var ease = 1 - Math.pow(1 - t, 3);
       var val = target * ease;
-      el.innerHTML = (decimal > 0 ? val.toFixed(decimal) : Math.floor(val)) + '<span>' + suffix + '</span>';
+      var display = decimal > 0 ? val.toFixed(decimal) : Math.floor(val);
+      if(sup){
+        /* kv-stat-n / about-stat-n: 数字 + <sup>単位</sup> */
+        el.innerHTML = display + sup;
+      } else {
+        /* case-result-num: 数字 + <span>suffix</span> */
+        el.innerHTML = display + (suffix ? '<span>' + suffix + '</span>' : '');
+      }
       if(t < 1) requestAnimationFrame(update);
     }
     requestAnimationFrame(update);
   }
   document.addEventListener('DOMContentLoaded', function(){
-    var countEls = document.querySelectorAll('.case-result-num[data-count]');
+    var countEls = document.querySelectorAll('[data-count]');
     if(!countEls.length) return;
     if('IntersectionObserver' in window){
       var cio = new IntersectionObserver(function(entries){
@@ -113,11 +129,10 @@
             cio.unobserve(e.target);
           }
         });
-      },{threshold:.5});
+      },{threshold:.3});
       countEls.forEach(function(el){ cio.observe(el); });
     } else {
       countEls.forEach(function(el){ countUp(el); });
     }
   });
 })();
-
