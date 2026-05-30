@@ -415,7 +415,7 @@ ul,ol{list-style:none}
     }
 .kv-wrap{max-width:1100px;width:100%}
 .kv-eyebrow{
-      font-size:clamp(22px,2.4vw,32px);letter-spacing:.18em;
+      font-size:11px;letter-spacing:.22em;font-weight:700;
       color:#767680;margin-bottom:48px;
       display:flex;align-items:center;gap:16px;
     }
@@ -7489,7 +7489,7 @@ a.funnel-stage-service-tag:hover{
     }
     .kv-wrap{max-width:1100px;width:100%}
     .kv-eyebrow{
-      font-size:12px;letter-spacing:.18em;
+      font-size:11px;letter-spacing:.22em;font-weight:700;
       color:#555558;margin-bottom:48px;
       display:flex;align-items:center;gap:16px;
     }
@@ -16183,13 +16183,13 @@ body {
    白背景のため黒テキストに戻す - 全ての!importantを上書き
    ============================================================ */
 body.page-top .kv .kv-h1 { color: #28282D !important; }
-body.page-top .kv .kv-eyebrow { color: #767680 !important; }
+body.page-top .kv .kv-eyebrow { color: #767680 !important; font-size: 11px !important; letter-spacing: .22em !important; font-weight: 700 !important; }
 body.page-top .kv .kv-body { color: #4A4A50 !important; }
 body.page-top .kv .kv-stat-n { color: #28282D !important; }
 body.page-top .kv .kv-stat-l { color: #4A4A50 !important; }
 @media(max-width:767px){
   body.page-top .kv .kv-h1 { color: #28282D !important; }
-  body.page-top .kv .kv-eyebrow { color: #767680 !important; }
+  body.page-top .kv .kv-eyebrow { color: #767680 !important; font-size: 11px !important; letter-spacing: .22em !important; font-weight: 700 !important; }
   body.page-top .kv .kv-body { color: #4A4A50 !important; }
 }
 
