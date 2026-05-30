@@ -16456,8 +16456,29 @@ body.page-top .kv .kv-stat-l { color: #4A4A50 !important; }
   }
   .page-instagram .case-grid {
     display: grid !important;
-    grid-template-columns: repeat(3, 1fr) !important;
-    gap: 24px !important;
+    grid-template-columns: 1fr !important;
+    gap: 0 !important;
+  }
+  /* カード内を横並び（画像左・テキスト右）に変更 */
+  .page-instagram .case-card {
+    flex-direction: row !important;
+    padding: 0 !important;
+    border-right: none !important;
+    border-bottom: 1px solid #E0E0E0 !important;
+  }
+  .page-instagram .case-card:last-child {
+    border-bottom: none !important;
+  }
+  .page-instagram .case-screenshot {
+    width: 320px !important;
+    min-width: 320px !important;
+    flex-shrink: 0 !important;
+    aspect-ratio: unset !important;
+    align-self: stretch !important;
+  }
+  .page-instagram .case-card-body {
+    padding: 40px 56px !important;
+    justify-content: center !important;
   }
 }
 
