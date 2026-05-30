@@ -12,7 +12,7 @@ get_header();
 <div class="kv-left">
 <p class="kv-eyebrow fu">— Instagram マーケティング</p>
 <h1 class="kv-h1 fu" id="kv-h1" style="transition-delay:.08s">
-<span class="ig-kv-h1-l1">欲しいのは、</span><br class="ig-kv-h1-br-pc"/><span class="ig-kv-h1-l2">本当にフォロワー数ですか？</span>
+<span class="ig-kv-h1-l1">欲しいのは、</span><br class="ig-kv-h1-br-pc"/><span class="ig-kv-h1-l2">フォロワー数ですか？顧客数ですか？</span>
 </h1>
 <span class="kv-service-label fu" style="transition-delay:.12s">Instagram運用代行・広告代行</span>
 <p class="kv-sub fu" style="transition-delay:.16s">
