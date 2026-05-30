@@ -278,6 +278,19 @@
     if(contactSection) ctaObserver.observe(contactSection);
   }
 })();
+/* ===== CRB（case-result-banner）アニメーション =====
+ * .crb-copy / .crb-industries がビューポートに入ったとき .visible を付与
+ * ================================================================= */
+(function(){
+  var crbEls = document.querySelectorAll('.crb-copy, .crb-industries');
+  if(!crbEls.length) return;
+  var crbObs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){ e.target.classList.add('visible'); crbObs.unobserve(e.target); }
+    });
+  }, { threshold: 0.15 });
+  crbEls.forEach(function(el){ crbObs.observe(el); });
+})();
 </script>
 
 <?php wp_footer(); ?>
