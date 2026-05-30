@@ -11,7 +11,7 @@ get_header();
 <div class="kv-left">
 <p class="kv-eyebrow fu">— X（Twitter）マーケティング</p>
 <h1 class="kv-h1 fu" id="kv-h1" style="transition-delay:.08s">
-        気づけない「強み」を、<br/>「言葉」に変えて投稿。
+        拡散させる言葉で、<br/>信頼を積み上げる。
       </h1>
 <span class="kv-service-label fu" style="transition-delay:.12s">X運用代行・X広告運用代行</span>
 <p class="kv-sub fu" style="transition-delay:.16s">
