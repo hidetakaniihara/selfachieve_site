@@ -16423,8 +16423,8 @@ body.page-top .kv .kv-stat-l { color: #4A4A50 !important; }
 /* ===== instagram: case-grid タブレット〜SP スワイプ仕様 ===== */
 @media (max-width: 1024px) {
   .page-instagram .case-grid-wrap {
-    padding: 0;
-    overflow-x: clip;
+    padding: 0 !important;
+    overflow-x: clip !important;
   }
   .page-instagram .case-note-wrap {
     padding: 0 20px 20px !important;
@@ -16451,8 +16451,8 @@ body.page-top .kv .kv-stat-l { color: #4A4A50 !important; }
 }
 @media (min-width: 1025px) {
   .page-instagram .case-grid-wrap {
-    padding: 0 80px;
-    overflow-x: visible;
+    padding: 0 80px !important;
+    overflow-x: visible !important;
   }
   .page-instagram .case-grid {
     display: grid !important;
