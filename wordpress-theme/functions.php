@@ -10,7 +10,7 @@ add_theme_support( 'html5', [ 'search-form', 'comment-form', 'comment-list', 'ga
 
 // CSS / JS の読み込み
 function selfachieve_enqueue_assets() {
-    $ver = '1.0.1';
+    $ver = '1.0.2';
     // Google Fonts
     wp_enqueue_style(
         'google-fonts',
