@@ -4408,15 +4408,15 @@ main{padding-top:72px;}
 .form-note a:hover{opacity:.6}
 .seo-banner-icon svg{width:20px;height:20px}
 .sp-swipe-hint{
-      display:block;
+      display:none;
       font-size:14px;color:#5A5A60;
       text-align:center;
       padding:20px 0;
       letter-spacing:.08em;
       font-weight:600;
     }
-@media(min-width:769px){
-  .sp-swipe-hint{display:none!important}
+@media(max-width:768px){
+  .sp-swipe-hint{display:block!important}
 }
 .sp-swipe-hint::before{
       content:'← ';
