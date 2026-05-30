@@ -16604,3 +16604,12 @@ body.page-top .kv .kv-stat-l { color: #4A4A50 !important; }
     max-width: 300px !important;
   }
 }
+
+/* ===== TOPページ KV H1 font-size 強制確定 ===== */
+body.page-top .kv-h1,
+body.page-top .kv-h1.fu {
+  font-size: clamp(56px, 8vw, 120px) !important;
+  font-weight: 700 !important;
+  line-height: 1.2 !important;
+  letter-spacing: -0.04em !important;
+}
