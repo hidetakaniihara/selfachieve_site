@@ -16473,9 +16473,9 @@ body.page-top .kv .kv-stat-l { color: #4A4A50 !important; }
     width: 320px !important;
     min-width: 320px !important;
     max-width: 320px !important;
-    height: 320px !important;
+    height: auto !important;
     flex-shrink: 0 !important;
-    aspect-ratio: 1 / 1 !important;
+    aspect-ratio: 9 / 6.5 !important;
     align-self: flex-start !important;
     overflow: hidden !important;
   }
