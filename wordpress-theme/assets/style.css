@@ -16583,3 +16583,24 @@ body.page-top .kv .kv-stat-l { color: #4A4A50 !important; }
     color: #767680 !important;
   }
 }
+
+/* ===== instagram: SP（767px以下）カード内余白・テキスト間隔改善 ===== */
+@media (max-width: 767px) {
+  .page-instagram .case-card-body {
+    padding: 20px 20px 24px !important;
+  }
+  .page-instagram .case-overview {
+    margin-bottom: 16px !important;
+    flex: unset !important;
+  }
+  .page-instagram .case-results {
+    margin-top: 0 !important;
+  }
+  .page-instagram .case-screenshot {
+    margin-bottom: 0 !important;
+  }
+  .page-instagram .case-grid .case-card {
+    flex: 0 0 85vw !important;
+    max-width: 300px !important;
+  }
+}
