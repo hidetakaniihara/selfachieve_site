@@ -4415,6 +4415,9 @@ main{padding-top:72px;}
       letter-spacing:.08em;
       font-weight:600;
     }
+.swipe-hint-plan{
+      display:none;
+    }
 @media(max-width:768px){
   .sp-swipe-hint{display:block!important}
 }
