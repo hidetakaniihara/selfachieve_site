@@ -131,8 +131,8 @@ get_header();
 <p class="wall-wall-body">ホームページが単なる「情報の紹介」になっており、顧客の動機に対応する「接客」が機能していない。訪問者の迷いを取り除く設計がないため、検討の土台にすら乗れず、機会損失を続けている。</p>
 <p class="wall-tags-label">推奨施策はこちら</p>
 <div class="wall-tags-wrap">
-<a class="wall-tag" href="<?php echo esc_url( home_url( '/website/' ) ); ?>">ホームページ制作</a>
-<a class="wall-tag" href="<?php echo esc_url( home_url( '/website/#grow' ) ); ?>">分析改善</a>
+<a class="wall-tag" href="<?php echo esc_url( home_url( '/webdesign/' ) ); ?>">ホームページ制作</a>
+<a class="wall-tag" href="<?php echo esc_url( home_url( '/webdesign/#grow' ) ); ?>">分析改善</a>
 </div>
 </article>
 <!-- 04 継続・LTV -->

@@ -587,8 +587,8 @@ get_header();
 <p class="challenge-card-desc">アクセスはあるのに成約しない。サイトを見ても離脱してしまう。訪問者を顧客に変えたい。</p>
 <p class="challenge-tags-label">推奨施策</p>
 <div class="challenge-tags-wrap">
-<a class="challenge-tag" href="<?php echo esc_url( home_url( '/website/' ) ); ?>">ホームページ制作</a>
-<a class="challenge-tag" href="<?php echo esc_url( home_url( '/website/#grow' ) ); ?>">分析改善</a>
+<a class="challenge-tag" href="<?php echo esc_url( home_url( '/webdesign/' ) ); ?>">ホームページ制作</a>
+<a class="challenge-tag" href="<?php echo esc_url( home_url( '/webdesign/#grow' ) ); ?>">分析改善</a>
 </div>
 </article>
 <article class="challenge-card fu" style="transition-delay:.3s">

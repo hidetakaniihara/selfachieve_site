@@ -600,8 +600,8 @@ get_header();
       </p>
 <p class="challenge-tags-label">推奨施策</p>
 <div class="challenge-tags-wrap">
-<a class="challenge-tag" href="<?php echo esc_url( home_url( '/website/' ) ); ?>">ホームページ制作</a>
-<a class="challenge-tag" href="<?php echo esc_url( home_url( '/website/#grow' ) ); ?>">分析改善</a>
+<a class="challenge-tag" href="<?php echo esc_url( home_url( '/webdesign/' ) ); ?>">ホームページ制作</a>
+<a class="challenge-tag" href="<?php echo esc_url( home_url( '/webdesign/#grow' ) ); ?>">分析改善</a>
 </div>
 </article>
 <!-- 04 追客 -->
@@ -751,7 +751,7 @@ $_blog_query = new WP_Query( [
 <div class="footer-nav-group">
 <p class="footer-nav-title">サービス</p>
 <a href="<?php echo esc_url( home_url( '/strategy/' ) ); ?>">WEB戦略設計</a>
-<a href="<?php echo esc_url( home_url( '/website/' ) ); ?>">サイト制作・分析改善</a>
+<a href="<?php echo esc_url( home_url( '/webdesign/' ) ); ?>">サイト制作・分析改善</a>
 <a href="<?php echo esc_url( home_url( '/seo/' ) ); ?>">SEO対策</a>
 <a href="<?php echo esc_url( home_url( '/meo/' ) ); ?>">MEO対策</a>
 <a href="<?php echo esc_url( home_url( '/ai-seo/' ) ); ?>">AI検索対策（LLM検索対策）</a>

@@ -50,7 +50,7 @@
       <div class="footer-nav-group">
         <p class="footer-nav-title">サービス</p>
         <a href="<?php echo esc_url( home_url( '/strategy/' ) ); ?>">WEB戦略設計</a>
-        <a href="<?php echo esc_url( home_url( '/website/' ) ); ?>">サイト制作・分析改善</a>
+        <a href="<?php echo esc_url( home_url( '/webdesign/' ) ); ?>">サイト制作・分析改善</a>
         <a href="<?php echo esc_url( home_url( '/seo/' ) ); ?>">SEO対策</a>
         <a href="<?php echo esc_url( home_url( '/meo/' ) ); ?>">MEO対策</a>
         <a href="<?php echo esc_url( home_url( '/ai-seo/' ) ); ?>">AI検索対策（LLM検索対策）</a>

@@ -41,8 +41,8 @@
         </div>
         <div class="hd-mega-col">
           <span class="hd-mega-col-label"><span class="col-label-main">成約</span><span class="col-label-sub">（問い合わせ・売上を増やしたい）</span></span>
-          <a href="<?php echo esc_url( home_url( '/website/' ) ); ?>" role="menuitem">ホームページ制作</a>
-          <a href="<?php echo esc_url( home_url( '/website/#grow' ) ); ?>" role="menuitem">分析改善</a>
+          <a href="<?php echo esc_url( home_url( '/webdesign/' ) ); ?>" role="menuitem">ホームページ制作</a>
+          <a href="<?php echo esc_url( home_url( '/webdesign/#grow' ) ); ?>" role="menuitem">分析改善</a>
         </div>
         <div class="hd-mega-col">
           <span class="hd-mega-col-label"><span class="col-label-main">再販・追客</span><span class="col-label-sub">（一度来た人にまた来てほしい）</span></span>
@@ -83,8 +83,8 @@
         </div>
         <div class="hd-mega-col">
           <span class="hd-mega-col-label"><span class="col-label-main">成約</span></span>
-          <a href="<?php echo esc_url( home_url( '/website/' ) ); ?>" role="menuitem">ホームページ制作</a>
-          <a href="<?php echo esc_url( home_url( '/website/#grow' ) ); ?>" role="menuitem">分析改善</a>
+          <a href="<?php echo esc_url( home_url( '/webdesign/' ) ); ?>" role="menuitem">ホームページ制作</a>
+          <a href="<?php echo esc_url( home_url( '/webdesign/#grow' ) ); ?>" role="menuitem">分析改善</a>
         </div>
         <div class="hd-mega-col">
           <span class="hd-mega-col-label"><span class="col-label-main">AI活用支援（DX/AX）</span></span>
@@ -142,8 +142,8 @@
       <a class="hd-drawer-link-item" href="<?php echo esc_url( home_url( '/ai-seo/' ) ); ?>">AI検索対策（LLM対策）</a>
       <a class="hd-drawer-link-item" href="<?php echo esc_url( home_url( '/sns/note/' ) ); ?>">note対策</a>
       <p class="hd-drawer-group-label">成約（問い合わせ・売上を増やしたい）</p>
-      <a class="hd-drawer-link-item" href="<?php echo esc_url( home_url( '/website/' ) ); ?>">ホームページ制作</a>
-      <a class="hd-drawer-link-item" href="<?php echo esc_url( home_url( '/website/#grow' ) ); ?>">分析改善</a>
+      <a class="hd-drawer-link-item" href="<?php echo esc_url( home_url( '/webdesign/' ) ); ?>">ホームページ制作</a>
+      <a class="hd-drawer-link-item" href="<?php echo esc_url( home_url( '/webdesign/#grow' ) ); ?>">分析改善</a>
       <p class="hd-drawer-group-label">再販・追客（一度来た人にまた来てほしい）</p>
       <a class="hd-drawer-link-item" href="<?php echo esc_url( home_url( '/sns/line/' ) ); ?>">LINE</a>
       <a class="hd-drawer-link-item" href="<?php echo esc_url( home_url( '/sns/instagram/' ) ); ?>">Instagram</a>
@@ -170,8 +170,8 @@
       <a class="hd-drawer-link-item" href="<?php echo esc_url( home_url( '/ai-seo/' ) ); ?>">AI検索対策（LLM対策）</a>
       <a class="hd-drawer-link-item" href="<?php echo esc_url( home_url( '/sns/note/' ) ); ?>">note対策</a>
       <p class="hd-drawer-group-label">成約</p>
-      <a class="hd-drawer-link-item" href="<?php echo esc_url( home_url( '/website/' ) ); ?>">ホームページ制作</a>
-      <a class="hd-drawer-link-item" href="<?php echo esc_url( home_url( '/website/#grow' ) ); ?>">分析改善</a>
+      <a class="hd-drawer-link-item" href="<?php echo esc_url( home_url( '/webdesign/' ) ); ?>">ホームページ制作</a>
+      <a class="hd-drawer-link-item" href="<?php echo esc_url( home_url( '/webdesign/#grow' ) ); ?>">分析改善</a>
       <p class="hd-drawer-group-label">AI活用支援（DX/AX）</p>
       <a class="hd-drawer-link-item" href="<?php echo esc_url( home_url( '/ai-automation/' ) ); ?>">業務の自動化・最適化</a>
     </div>
