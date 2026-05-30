@@ -62,6 +62,21 @@ get_header();
 <p class="sp-swipe-hint">スワイプして見る</p>
 </div>
 </section>
+
+<section class="badge-sec">
+<div class="badge-inner">
+<div class="badge-head">
+<span class="badge-label">Certification</span>
+<p class="badge-title">我々は、Google 広告 認定パートナーです。</p>
+<p class="badge-desc">Googleが認定する広告代理店として、Google広告・Yahoo!広告・bing広告の運用を担います。認定資格の取得と継続的な学習により、最新の広告プロダクトと運用手法を常にアップデートしています。</p>
+</div>
+<div class="badge-img-block">
+<a href="https://www.google.com/partners/agency?id=7098540721" rel="noopener" target="_blank">
+<img alt="Google Partner Badge" height="180" loading="lazy" src="<?php echo get_template_directory_uri(); ?>/assets/img/google-partner-badge.svg" style="display:block;width:180px;height:auto;" width="180"/>
+</a>
+</div>
+</div>
+</section>
 <!-- CASE: 具体事例 -->
 <section aria-labelledby="case-h2" class="case-sec">
 <div class="case-inner">
@@ -270,22 +285,7 @@ get_header();
 </div>
 </div>
 </section>
-<!-- BADGE: Google Partner認定帯 -->
-<section class="badge-sec">
-<div class="badge-inner">
-<div class="badge-head">
-<span class="badge-label">Certification</span>
-<p class="badge-title">我々は、Google 広告 認定パートナーです。</p>
-<p class="badge-desc">Googleが認定する広告代理店として、Google広告・Yahoo!広告・bing広告の運用を担います。認定資格の取得と継続的な学習により、最新の広告プロダクトと運用手法を常にアップデートしています。</p>
-</div>
-<div class="badge-img-block">
-<a href="https://www.google.com/partners/agency?id=7098540721" rel="noopener" target="_blank">
-<img alt="Google Partner Badge" height="180" loading="lazy" src="<?php echo get_template_directory_uri(); ?>/assets/img/google-partner-badge.svg" style="display:block;width:180px;height:auto;" width="180"/>
-</a>
-</div>
-</div>
-</section>
-<!-- PLAN: 料金プラン -->
+<!-- BADGE: Google Partner認定帯 --><!-- PLAN: 料金プラン -->
 <section aria-labelledby="plan-h2" class="plan-sec">
 <div class="plan-inner">
 <div class="plan-head">
