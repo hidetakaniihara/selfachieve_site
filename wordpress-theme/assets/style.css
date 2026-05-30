@@ -16476,7 +16476,7 @@ body.page-top .kv .kv-stat-l { color: #4A4A50 !important; }
     height: auto !important;
     flex-shrink: 0 !important;
     aspect-ratio: 9 / 6.5 !important;
-    align-self: flex-start !important;
+    align-self: center !important;
     overflow: hidden !important;
   }
   .page-instagram .case-screenshot img {
@@ -16487,7 +16487,10 @@ body.page-top .kv .kv-stat-l { color: #4A4A50 !important; }
   }
   .page-instagram .case-card-body {
     padding: 40px 56px !important;
-    justify-content: center !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    gap: 24px !important;
   }
 }
 
