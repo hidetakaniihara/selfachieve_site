@@ -10,7 +10,7 @@ get_header();
 <section aria-labelledby="kv-h1" class="kv" style="background:#111113;position:relative;overflow:hidden;">
 <div class="kv-inner">
 <div class="kv-left">
-<p class="kv-eyebrow fu">— LISTING 広告</p>
+<p class="kv-eyebrow fu">— リスティング広告</p>
 <h1 class="kv-h1 fu" id="kv-h1" style="transition-delay:.08s">
         速攻で集客し、<br/>勝ちパターンをつくる。
       </h1>
