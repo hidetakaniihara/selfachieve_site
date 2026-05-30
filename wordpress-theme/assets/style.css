@@ -16419,3 +16419,52 @@ body.page-top .kv .kv-stat-l { color: #4A4A50 !important; }
     height: 100px;
   }
 }
+
+/* ===== instagram: case-grid タブレット〜SP スワイプ仕様 ===== */
+@media (max-width: 1024px) {
+  .page-sns-instagram .case-grid-wrap {
+    padding: 0;
+    overflow-x: clip;
+  }
+  .page-sns-instagram .case-note-wrap {
+    padding: 0 20px 20px !important;
+  }
+  .page-sns-instagram .case-grid {
+    display: flex !important;
+    flex-direction: row !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    -webkit-overflow-scrolling: touch !important;
+    gap: 16px !important;
+    padding: 0 20px 16px !important;
+    grid-template-columns: unset !important;
+  }
+  .page-sns-instagram .case-grid::-webkit-scrollbar {
+    display: none;
+  }
+  .page-sns-instagram .case-grid .case-card {
+    flex: 0 0 80vw !important;
+    max-width: 340px !important;
+    scroll-snap-align: start !important;
+    min-width: 280px !important;
+  }
+}
+@media (min-width: 1025px) {
+  .page-sns-instagram .case-grid-wrap {
+    padding: 0 80px;
+    overflow-x: visible;
+  }
+  .page-sns-instagram .case-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 24px !important;
+  }
+}
+
+/* ===== instagram: sp-swipe-hint タブレット（769px〜1024px）でも表示 ===== */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .page-sns-instagram .case-sec .sp-swipe-hint {
+    display: block !important;
+    color: #767680 !important;
+  }
+}
