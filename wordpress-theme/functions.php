@@ -707,7 +707,7 @@ add_filter( 'wpcf7_load_css', '__return_false' );
  */
 add_action( 'wp_footer', function() {
     if ( ! function_exists( 'wpcf7' ) ) return;
-    $thanks_url = home_url( '/wp/thanks/' );
+    $thanks_url = home_url( '/thanks/' );
     ?>
     <script>
     document.addEventListener( 'wpcf7mailsent', function( event ) {
