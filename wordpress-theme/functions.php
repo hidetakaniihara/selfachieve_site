@@ -748,3 +748,26 @@ function selfachieve_ga4_tag() {
     <?php
 }
 add_action( 'wp_head', 'selfachieve_ga4_tag', 1 );
+
+// ============================================================
+// CF7 お問い合わせ項目：いずれか1グループ以上チェック必須バリデーション
+// inquiry / inquiry_sns / inquiry_ai / inquiry_other のいずれか1つ以上
+// ============================================================
+add_filter( 'wpcf7_validate', function( $result, $tags ) {
+    $checked = false;
+    $target_fields = [ 'inquiry', 'inquiry_sns', 'inquiry_ai', 'inquiry_other' ];
+    foreach ( $tags as $tag ) {
+        if ( in_array( $tag->name, $target_fields, true ) ) {
+            $value = isset( $_POST[ $tag->name ] ) ? (array) $_POST[ $tag->name ] : [];
+            $value = array_filter( array_map( 'trim', $value ) );
+            if ( ! empty( $value ) ) {
+                $checked = true;
+                break;
+            }
+        }
+    }
+    if ( ! $checked ) {
+        $result->invalidate( 'inquiry', 'お問い合わせ項目を1つ以上選択してください。' );
+    }
+    return $result;
+}, 20, 2 );
