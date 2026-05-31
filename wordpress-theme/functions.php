@@ -671,6 +671,27 @@ add_filter( 'the_content', 'selfachieve_add_image_dimensions', 10 );
 
 
 // ============================================================
+// スクリプトへの defer 属性付与（レンダリングブロック解消）
+// ============================================================
+function selfachieve_add_defer_to_scripts( $tag, $handle, $src ) {
+    // defer を付与するスクリプトハンドル一覧
+    $defer_handles = [
+        'swiper-js',
+        'selfachieve-common',
+        'contact-form-7',
+        'wp-hooks',
+    ];
+    if ( in_array( $handle, $defer_handles, true ) ) {
+        // すでに defer が付いている場合は二重付与しない
+        if ( false === strpos( $tag, ' defer' ) ) {
+            $tag = str_replace( ' src=', ' defer src=', $tag );
+        }
+    }
+    return $tag;
+}
+add_filter( 'script_loader_tag', 'selfachieve_add_defer_to_scripts', 10, 3 );
+
+// ============================================================
 // Contact Form 7 設定
 // ============================================================
 
