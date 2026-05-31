@@ -779,9 +779,13 @@ function selfachieve_generate_lead_event() {
     if ( is_page( 'thanks' ) ) {
         ?>
         <script>
-          gtag('event', 'generate_lead', {
-            'event_category': 'contact',
-            'event_label': 'form_complete'
+          window.addEventListener('load', function() {
+            if (typeof gtag === 'function') {
+              gtag('event', 'generate_lead', {
+                'event_category': 'contact',
+                'event_label': 'form_complete'
+              });
+            }
           });
         </script>
         <?php
