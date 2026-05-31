@@ -771,3 +771,20 @@ add_filter( 'wpcf7_validate', function( $result, $tags ) {
     }
     return $result;
 }, 20, 2 );
+
+// ============================================================
+// GA4 generate_lead イベント：/thanks/ ページ閲覧時に発火
+// ============================================================
+function selfachieve_generate_lead_event() {
+    if ( is_page( 'thanks' ) ) {
+        ?>
+        <script>
+          gtag('event', 'generate_lead', {
+            'event_category': 'contact',
+            'event_label': 'form_complete'
+          });
+        </script>
+        <?php
+    }
+}
+add_action( 'wp_footer', 'selfachieve_generate_lead_event' );
