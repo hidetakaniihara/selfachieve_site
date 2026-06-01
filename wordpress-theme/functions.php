@@ -781,25 +781,60 @@ add_filter( 'wpcf7_validate', function( $result, $tags ) {
 // CF7 メール本文：空のお問い合わせ項目ブロックを非表示にする
 // ============================================================
 add_filter( 'wpcf7_mail_components', function( $components, $form, $mail ) {
+    // 各フィールド名 → メールテンプレート内のプレースホルダー文字列のマッピング
     $fields = [
-        'inquiry'     => '■ お問い合わせ項目（WEB施策）',
-        'inquiry_sns' => '■ お問い合わせ項目（SNS運用・広告）',
-        'inquiry_ai'  => '■ お問い合わせ項目（AI活用）',
+        'inquiry'       => '[inquiry]',
+        'inquiry_sns'   => '[inquiry_sns]',
+        'inquiry_ai'    => '[inquiry_ai]',
+        'inquiry_other' => '[inquiry_other]',
+    ];
+    // 各フィールドのラベル（メールテンプレートのプレースホルダーの前の行）
+    $labels = [
+        'inquiry'       => '■ お問い合わせ項目（WEB施策）',
+        'inquiry_sns'   => '■ お問い合わせ項目（SNS運用・広告）',
+        'inquiry_ai'    => '■ お問い合わせ項目（AI活用）',
         'inquiry_other' => '■ お問い合わせ項目（その他）',
     ];
 
     $body = $components['body'];
+    $lines = explode( "\n", $body );
+    $new_lines = [];
+    $skip_next = false;
 
-    foreach ( $fields as $field => $label ) {
-        $value = isset( $_POST[ $field ] ) ? (array) $_POST[ $field ] : [];
-        $value = array_filter( array_map( 'trim', $value ) );
-        if ( empty( $value ) ) {
-            // ラベル行 + 値行（空行含む）を削除
-            $body = preg_replace( '/^' . preg_quote( $label, '/' ) . '\s*\n[^\n]*\n?/m', '', $body );
+    for ( $i = 0; $i < count( $lines ); $i++ ) {
+        $line = $lines[ $i ];
+
+        // 削除対象のラベル行かチェック
+        $matched_field = null;
+        foreach ( $labels as $field => $label ) {
+            if ( trim( $line ) === $label ) {
+                $matched_field = $field;
+                break;
+            }
         }
+
+        if ( $matched_field !== null ) {
+            // 値を確認
+            $value = isset( $_POST[ $matched_field ] ) ? (array) $_POST[ $matched_field ] : [];
+            $value = array_filter( array_map( 'trim', $value ) );
+            if ( empty( $value ) ) {
+                // ラベル行と次の値行をスキップ
+                $skip_next = true;
+                continue;
+            }
+        }
+
+        if ( $skip_next ) {
+            $skip_next = false;
+            // 値行をスキップ
+            continue;
+        }
+
+        $new_lines[] = $line;
     }
 
     // 連続する空行を1行にまとめる
+    $body = implode( "\n", $new_lines );
     $body = preg_replace( "/\n{3,}/", "\n\n", $body );
 
     $components['body'] = $body;
