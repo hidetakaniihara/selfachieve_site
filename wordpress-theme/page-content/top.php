@@ -98,7 +98,7 @@
         <a href="display/" class="challenge-tag">ディスプレイ広告</a>
         <a href="sns/" class="challenge-tag">SNSマーケティング</a>
         <a href="ai-seo/" class="challenge-tag">AI検索対策（LLM対策）</a>
-        <a href="sns/note/" class="challenge-tag">note対策</a>
+        <a href="<?php echo home_url('/sns/note/'); ?>" class="challenge-tag">note対策</a>
       </div>
     </article>
     <!-- 03 成約 -->
@@ -112,8 +112,8 @@
       </p>
       <p class="challenge-tags-label">推奨施策</p>
                   <div class="challenge-tags-wrap">
-        <a href="website/" class="challenge-tag">ホームページ制作</a>
-        <a href="website/#grow" class="challenge-tag">分析改善</a>
+        <a href="<?php echo home_url('/webdesign/'); ?>" class="challenge-tag">ホームページ制作</a>
+        <a href="<?php echo home_url('/webdesign/#grow'); ?>" class="challenge-tag">分析改善</a>
       </div>
     </article>
     <!-- 04 追客 -->
@@ -127,11 +127,11 @@
       </p>
       <p class="challenge-tags-label">推奨施策</p>
                   <div class="challenge-tags-wrap">
-        <a href="sns/line/" class="challenge-tag">LINE</a>
-        <a href="sns/instagram/" class="challenge-tag">Instagram</a>
-        <a href="sns/x/" class="challenge-tag">X（旧Twitter）</a>
-        <a href="sns/youtube/" class="challenge-tag">YouTube</a>
-        <a href="sns/tiktok/" class="challenge-tag">TikTok</a>
+        <a href="<?php echo home_url('/sns/line/'); ?>" class="challenge-tag">LINE</a>
+        <a href="<?php echo home_url('/sns/instagram/'); ?>" class="challenge-tag">Instagram</a>
+        <a href="<?php echo home_url('/sns/x/'); ?>" class="challenge-tag">X（旧Twitter）</a>
+        <a href="<?php echo home_url('/sns/youtube/'); ?>" class="challenge-tag">YouTube</a>
+        <a href="<?php echo home_url('/sns/tiktok/'); ?>" class="challenge-tag">TikTok</a>
       </div>
     </article>
     <!-- 05 AI活用 -->
