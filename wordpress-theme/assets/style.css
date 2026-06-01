@@ -8579,7 +8579,7 @@ a.funnel-stage-service-tag:hover{
 }
 .wall-split-left .sec-h2{
   color:#fff;
-  font-size:clamp(28px,3.2vw,48px);
+  font-size:clamp(20px,2.4vw,40px);
   line-height:1.25;
 }
 .wall-split-body{
@@ -8757,7 +8757,7 @@ a.wall-tag:hover{background:#28282D;color:#fff;}
     padding:64px 24px 56px;
     position:static;
   }
-  .wall-split-left .sec-h2{font-size:clamp(28px,7vw,40px);word-break:keep-all;overflow-wrap:break-word;}
+  .wall-split-left .sec-h2{font-size:clamp(20px,5.5vw,32px);word-break:keep-all;overflow-wrap:break-word;}
   .wall-split-left .sec-h2 br{display:none;}
   .wall-grid{grid-template-columns:1fr;border-left:none;}
   .wall-card--full{grid-column:1;}
