@@ -16613,3 +16613,41 @@ body.page-top .kv-h1.fu {
   line-height: 1.2 !important;
   letter-spacing: -0.04em !important;
 }
+
+/* ===== PAGE: /sns/line/ - CASE GRID (PC:3列 / SP:スワイプ) ===== */
+.line-case-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  background: #ffffff;
+  border-radius: 4px;
+  overflow: hidden;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.line-case-grid .case-card {
+  border-right: 1px solid #E0E0E0;
+}
+.line-case-grid .case-card:last-child {
+  border-right: none;
+}
+@media (max-width: 768px) {
+  .line-case-grid {
+    display: flex;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    gap: 0;
+    border-radius: 4px;
+    padding-bottom: 4px;
+  }
+  .line-case-grid .case-card {
+    flex: 0 0 80vw;
+    max-width: 80vw;
+    scroll-snap-align: start;
+    border-right: 1px solid #E0E0E0;
+  }
+  .line-case-grid .case-card:last-child {
+    border-right: none;
+  }
+}

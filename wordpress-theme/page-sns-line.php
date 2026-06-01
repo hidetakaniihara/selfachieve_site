@@ -46,8 +46,8 @@ get_header();
       </p>
 </div>
 </div>
-<div class="case-swiper-wrap">
-<div class="case-swiper">
+<!-- PC: 3列グリッド / SP: スワイプスライダー -->
+<div class="line-case-grid">
 <!-- card 1 -->
 <article class="case-card fu">
 <div class="case-card-body">
@@ -64,7 +64,7 @@ get_header();
 </div>
 </article>
 <!-- card 2 -->
-<article class="case-card fu" style="transition-delay:.08s">
+<article class="case-card fu">
 <div class="case-card-body">
 <span class="case-industry">クリニック / 医療</span>
 <p class="case-overview">
@@ -79,7 +79,7 @@ get_header();
 </div>
 </article>
 <!-- card 3 -->
-<article class="case-card fu" style="transition-delay:.16s">
+<article class="case-card fu">
 <div class="case-card-body">
 <span class="case-industry">整体院 / 治療院</span>
 <p class="case-overview">
@@ -93,7 +93,6 @@ get_header();
 </div>
 </div>
 </article>
-</div>
 </div>
 </section>
 <!-- CASE RESULT BANNER -->
