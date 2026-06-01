@@ -37,14 +37,35 @@ get_header();
 <section aria-labelledby="case-h2" class="case-sec">
 <div class="case-inner">
 <div class="case-head">
+<div>
 <span class="sec-eyebrow fu">CASE STUDY</span>
 <h2 class="sec-h2 fu" id="case-h2" style="transition-delay:.1s">
-        具体的な成果事例
-      </h2>
-<p class="sec-body fu" style="transition-delay:.15s;max-width:600px;margin:20px auto 0">
-        「本当に成果が出るのか？」という疑問に、数字でお答えします。
-      </p>
+          様々な業種・規模での<br/>LINE支援実績。
+        </h2>
 </div>
+</div>
+<div class="case-tags-sec fu">
+<span class="case-tags-label">SUPPORTED INDUSTRIES</span>
+<div class="case-tags">
+<span class="case-tag lg">美容・サロン</span>
+<span class="case-tag lg">飲食・カフェ</span>
+<span class="case-tag">医療・クリニック</span>
+<span class="case-tag">法律・士業</span>
+<span class="case-tag lg">EC・通販</span>
+<span class="case-tag">不動産</span>
+<span class="case-tag">建設・リフォーム</span>
+<span class="case-tag sm">教育・スクール</span>
+<span class="case-tag">フィットネス・ジム</span>
+<span class="case-tag sm">ペット</span>
+<span class="case-tag">旅行・観光</span>
+<span class="case-tag sm">イベント・展示会</span>
+<span class="case-tag">BtoB製造業</span>
+<span class="case-tag sm">採用・HR</span>
+</div>
+</div>
+</div>
+<div class="case-note-wrap" style="padding:0 80px 24px;">
+<p class="case-note" style="font-size:16px;color:#28282D;line-height:1.8;background:none !important;border:none !important;padding:0 !important;margin-top:0 !important;text-align:center;">※クライアント保護のため詳細は非公開です。初回相談時に多くの実例をご紹介可能です。</p>
 </div>
 <div class="case-grid-wrap">
 <div class="case-grid">

@@ -16651,3 +16651,10 @@ body.page-top .kv-h1.fu {
     border-right: none;
   }
 }
+
+/* ===== LINE: case-note-wrap SP対応 ===== */
+@media (max-width: 767px) {
+  .case-note-wrap {
+    padding: 0 20px 20px !important;
+  }
+}
