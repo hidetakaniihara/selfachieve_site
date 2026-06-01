@@ -47,20 +47,11 @@ get_header();
 <div class="case-tags-sec fu">
 <span class="case-tags-label">SUPPORTED INDUSTRIES</span>
 <div class="case-tags">
-<span class="case-tag lg">美容・サロン</span>
-<span class="case-tag lg">飲食・カフェ</span>
-<span class="case-tag">医療・クリニック</span>
-<span class="case-tag">法律・士業</span>
-<span class="case-tag lg">EC・通販</span>
-<span class="case-tag">不動産</span>
-<span class="case-tag">建設・リフォーム</span>
-<span class="case-tag sm">教育・スクール</span>
-<span class="case-tag">フィットネス・ジム</span>
-<span class="case-tag sm">ペット</span>
-<span class="case-tag">旅行・観光</span>
-<span class="case-tag sm">イベント・展示会</span>
-<span class="case-tag">BtoB製造業</span>
-<span class="case-tag sm">採用・HR</span>
+<span class="case-tag lg">スクール</span>
+<span class="case-tag lg">クリニック</span>
+<span class="case-tag lg">整体院</span>
+<span class="case-tag lg">飲食店</span>
+<span class="case-tag lg">求人関連</span>
 </div>
 </div>
 </div>
