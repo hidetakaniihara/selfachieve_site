@@ -16739,3 +16739,38 @@ body.page-top .kv-h1.fu {
     color: #767680 !important;
   }
 }
+
+/* ===== LINE: problem-cards 4列レイアウト（PC） ===== */
+.page-line .problem-sec {
+  background: #F7F7F8;
+}
+.page-line .problem-cards {
+  grid-template-columns: repeat(4, 1fr) !important;
+}
+.page-line .problem-card:last-child {
+  border-right: none !important;
+}
+@media (max-width: 1024px) {
+  .page-line .problem-cards {
+    display: flex !important;
+    flex-direction: row !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    -webkit-overflow-scrolling: touch !important;
+    gap: 0 !important;
+    grid-template-columns: unset !important;
+  }
+  .page-line .problem-cards::-webkit-scrollbar {
+    display: none;
+  }
+  .page-line .problem-card {
+    flex: 0 0 80vw !important;
+    max-width: 320px !important;
+    scroll-snap-align: start !important;
+    min-width: 260px !important;
+    border-right: 1px solid #E0E0E0 !important;
+  }
+  .page-line .problem-card:last-child {
+    border-right: none !important;
+  }
+}

@@ -33,6 +33,45 @@ get_header();
 <li><span aria-current="page">LINE運用代行</span></li>
 </ol>
 </nav>
+<!-- PROBLEM: 解決できる課題 -->
+<section aria-labelledby="problem-h2-line" class="problem-sec">
+<div class="problem-inner">
+<div class="problem-head">
+<span class="sec-eyebrow fu">Problems</span>
+<h2 class="sec-h2 fu" id="problem-h2-line" style="transition-delay:.1s">
+        LINEマーケティングで、<br/>解決できる課題。
+      </h2>
+<p class="sec-body fu" style="transition-delay:.15s">
+        「メルマガの開封率が低く、情報が届かない」「リピート率が上がらず広告費に依存している」——そのお悩み、LINEマーケティングの戦略と継続的な施策が揃っていないことが原因かもしれません。
+      </p>
+</div>
+<div class="problem-cards">
+<div class="problem-card fu">
+<span class="problem-num">01</span>
+<p class="problem-title">メルマガの開封率が低く、<br/>情報が届かない</p>
+<p class="problem-desc">LINE特有のプッシュ通知により、メルマガと比べて圧倒的に高い開封率とクリック率を実現。キャンペーン情報や重要なお知らせを確実にターゲットに届けます。</p>
+</div>
+<div class="problem-card fu" style="transition-delay:.08s">
+<span class="problem-num">02</span>
+<p class="problem-title">リピート率が上がらず、<br/>広告費に依存している</p>
+<p class="problem-desc">顧客の来店日や購入履歴に基づいたステップ配信で、最適なタイミングでの再来店・再購入を促進。LTV（顧客生涯価値）を最大化し、広告費用の最適化を実現します。</p>
+</div>
+<div class="problem-card fu" style="transition-delay:.16s">
+<span class="problem-num">03</span>
+<p class="problem-title">問い合わせ・予約管理で<br/>本来の業務が圧迫されている</p>
+<p class="problem-desc">チャットボットによる自動応答や、LINE内での予約完結システムを導入することで、電話対応や事務作業の工数を大幅に削減。コア業務に集中できる環境を構築します。</p>
+</div>
+<div class="problem-card fu" style="transition-delay:.24s">
+<span class="problem-num">04</span>
+<p class="problem-title">どの集客施策が<br/>効果的か見えない</p>
+<p class="problem-desc">流入経路ごとのQRコードやリンクを発行し、どの媒体から追加された友だちが最も売上に繋がっているかを可視化。費用対効果の高い施策へ予算を集中できます。</p>
+</div>
+</div>
+<div aria-hidden="true" class="sp-swipe-hint">
+<span class="active"></span><span></span><span></span><span></span>
+</div>
+</div>
+</section>
 <!-- CASE STUDY (SLIDER) -->
 <section aria-labelledby="case-h2" class="case-sec">
 <div class="case-inner">
