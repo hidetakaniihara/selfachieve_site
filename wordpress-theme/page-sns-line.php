@@ -50,12 +50,6 @@ get_header();
 <div class="case-swiper">
 <!-- card 1 -->
 <article class="case-card fu">
-<div class="case-screenshot">
-<div class="case-screenshot-placeholder">
-<svg fill="none" height="32" viewbox="0 0 24 24" width="32" xmlns="http://www.w3.org/2000/svg"><rect height="18" rx="2" stroke="#ABABAB" stroke-width="1.5" width="20" x="2" y="3"></rect><circle cx="12" cy="10" r="3" stroke="#ABABAB" stroke-width="1.5"></circle><path d="M5 20c0-3 3-5 7-5s7 2 7 5" stroke="#ABABAB" stroke-width="1.5"></path></svg>
-<span>LINEアカウントスクリーンショット</span>
-</div>
-</div>
 <div class="case-card-body">
 <span class="case-industry">教室 / スクール</span>
 <p class="case-overview">
@@ -64,19 +58,13 @@ get_header();
           </p>
 <div class="case-results">
 <div class="case-result-item">
-<div class="case-result-label" style="font-size:14px;line-height:1.7;color:#28282D;font-weight:600">診断コンテンツでLINE登録を促進し、<br/>イベント満員集客を実現</div>
+<div class="case-result-label" style="font-size:15px;line-height:1.7;color:#28282D;font-weight:700;letter-spacing:0">診断コンテンツでLINE登録を促進し、<br/>イベント満員集客を実現</div>
 </div>
 </div>
 </div>
 </article>
 <!-- card 2 -->
 <article class="case-card fu" style="transition-delay:.08s">
-<div class="case-screenshot">
-<div class="case-screenshot-placeholder">
-<svg fill="none" height="32" viewbox="0 0 24 24" width="32" xmlns="http://www.w3.org/2000/svg"><rect height="18" rx="2" stroke="#ABABAB" stroke-width="1.5" width="20" x="2" y="3"></rect><circle cx="12" cy="10" r="3" stroke="#ABABAB" stroke-width="1.5"></circle><path d="M5 20c0-3 3-5 7-5s7 2 7 5" stroke="#ABABAB" stroke-width="1.5"></path></svg>
-<span>LINEアカウントスクリーンショット</span>
-</div>
-</div>
 <div class="case-card-body">
 <span class="case-industry">クリニック / 医療</span>
 <p class="case-overview">
@@ -85,19 +73,13 @@ get_header();
           </p>
 <div class="case-results">
 <div class="case-result-item">
-<div class="case-result-label" style="font-size:14px;line-height:1.7;color:#28282D;font-weight:600">一斉配信で冬眠顧客を呼び起こし、<br/>カウンセリング予約増加を実現</div>
+<div class="case-result-label" style="font-size:15px;line-height:1.7;color:#28282D;font-weight:700;letter-spacing:0">一斉配信で冬眠顧客を呼び起こし、<br/>カウンセリング予約増加を実現</div>
 </div>
 </div>
 </div>
 </article>
 <!-- card 3 -->
 <article class="case-card fu" style="transition-delay:.16s">
-<div class="case-screenshot">
-<div class="case-screenshot-placeholder">
-<svg fill="none" height="32" viewbox="0 0 24 24" width="32" xmlns="http://www.w3.org/2000/svg"><rect height="18" rx="2" stroke="#ABABAB" stroke-width="1.5" width="20" x="2" y="3"></rect><circle cx="12" cy="10" r="3" stroke="#ABABAB" stroke-width="1.5"></circle><path d="M5 20c0-3 3-5 7-5s7 2 7 5" stroke="#ABABAB" stroke-width="1.5"></path></svg>
-<span>LINEアカウントスクリーンショット</span>
-</div>
-</div>
 <div class="case-card-body">
 <span class="case-industry">整体院 / 治療院</span>
 <p class="case-overview">
@@ -106,7 +88,7 @@ get_header();
           </p>
 <div class="case-results">
 <div class="case-result-item">
-<div class="case-result-label" style="font-size:14px;line-height:1.7;color:#28282D;font-weight:600">予約・リマインド・キャンセル対応を自動化し、<br/>業務量を大幅削減</div>
+<div class="case-result-label" style="font-size:15px;line-height:1.7;color:#28282D;font-weight:700;letter-spacing:0">予約・リマインド・キャンセル対応を自動化し、<br/>業務量を大幅削減</div>
 </div>
 </div>
 </div>
