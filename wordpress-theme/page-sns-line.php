@@ -196,7 +196,7 @@ get_header();
 <div class="wall-split-left">
 <span class="sec-eyebrow fu">LINE STRATEGY</span>
 <h2 class="sec-h2 fu" id="line-strategy-h2" style="transition-delay:.1s">
-        LINE運用は、<br/>設計から始まります。
+        LINE運用では、<br/>主な機能全て活用し、<br/>御社の目的を実現します。
       </h2>
 <p class="wall-split-body fu" style="transition-delay:.2s">
         闇雲なメッセージ配信では、ブロックされるだけです。大切なのは、友だち追加から購買・リピートまでの「導線設計」です。セルファチーブでは、ビジネス目標から逆算してLINE運用を設計します。
