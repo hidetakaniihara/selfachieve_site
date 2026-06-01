@@ -387,7 +387,7 @@ get_header();
 </div>
 <div class="voice-grid">
 <article class="voice-card fu">
-<a aria-label="岩澤法理事務所の声を詳しく見る" class="voice-link" href="<?php echo esc_url( home_url( '/voice/iwazawa/' ) ); ?>">
+<a aria-label="岩澤法理事務所の声を詳しく見る" class="voice-link" href="<?php echo esc_url( home_url( '/voice-post/iwazawa-law-office/' ) ); ?>">
 <div class="voice-avatar">
 <img alt="岩澤法理事務所" height="280" loading="lazy" src="<?php echo get_template_directory_uri(); ?>/assets/voice/iwazawa.webp" width="280"/>
 </div>
@@ -405,7 +405,7 @@ get_header();
 </a>
 </article>
 <article class="voice-card fu" style="transition-delay:.1s">
-<a aria-label="株式会社エデュラボの声を詳しく見る" class="voice-link" href="<?php echo esc_url( home_url( '/voice/' ) ); ?>">
+<a aria-label="株式会社エデュラボの声を詳しく見る" class="voice-link" href="<?php echo esc_url( home_url( '/voice-post/edulabo/' ) ); ?>">
 <div class="voice-avatar">
 <img alt="株式会社エデュラボ" height="280" loading="lazy" src="<?php echo get_template_directory_uri(); ?>/assets/voice/edurabo.webp" width="280"/>
 </div>

@@ -162,7 +162,7 @@
   </div>
   <div class="voice-grid">
     <article class="voice-card fu">
-      <a href="voice/iwazawa/" class="voice-link" aria-label="岩澤法理事務所の声を詳しく見る">
+      <a href="<?php echo esc_url( home_url( '/voice-post/iwazawa-law-office/' ) ); ?>" class="voice-link" aria-label="岩澤法理事務所の声を詳しく見る">
       <div class="voice-avatar">
         <img src="<?php echo get_template_directory_uri(); ?>/assets/voice/iwazawa.webp" alt="岩澤法理事務所」" width="280" height="280" loading="lazy">
       </div>

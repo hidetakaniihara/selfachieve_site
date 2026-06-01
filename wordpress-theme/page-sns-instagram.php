@@ -517,11 +517,11 @@ get_header();
         伴走してきた企業の、<br/>リアルな声。
       </h2>
 </div>
-<a class="view-all fu" href="<?php echo esc_url( home_url( '/../voice/' ) ); ?>" style="transition-delay:.15s">すべて見る</a>
+<a class="view-all fu" href="<?php echo esc_url( home_url( '/voice/' ) ); ?>" style="transition-delay:.15s">すべて見る</a>
 </div>
 <div class="voice-grid">
 <article class="voice-card fu">
-<a aria-label="岩澤法理事務所の声を詳しく見る" class="voice-link" href="<?php echo esc_url( home_url( '/../voice/iwazawa/' ) ); ?>">
+<a aria-label="岩澤法理事務所の声を詳しく見る" class="voice-link" href="<?php echo esc_url( home_url( '/voice-post/iwazawa-law-office/' ) ); ?>">
 <div class="voice-avatar">
 <img alt="岩澤法理事務所" height="280" loading="lazy" src="<?php echo get_template_directory_uri(); ?>/assets/voice/iwazawa.webp" width="280"/>
 </div>
@@ -539,7 +539,7 @@ get_header();
 </a>
 </article>
 <article class="voice-card fu" style="transition-delay:.1s">
-<a aria-label="株式会社エデュラボの声を詳しく見る" class="voice-link" href="<?php echo esc_url( home_url( '/../voice/' ) ); ?>">
+<a aria-label="株式会社エデュラボの声を詳しく見る" class="voice-link" href="<?php echo esc_url( home_url( '/voice-post/edulabo/' ) ); ?>">
 <div class="voice-avatar">
 <img alt="株式会社エデュラボ" height="280" loading="lazy" src="<?php echo get_template_directory_uri(); ?>/assets/voice/edurabo.webp" width="280"/>
 </div>
@@ -929,7 +929,7 @@ $_blog_query = new WP_Query( [
 <div class="footer-nav-group">
 <p class="footer-nav-title">会社情報</p>
 <a href="<?php echo esc_url( home_url( '/../works/' ) ); ?>">実績</a>
-<a href="<?php echo esc_url( home_url( '/../voice/' ) ); ?>">お客さまの声</a>
+<a href="<?php echo esc_url( home_url( '/voice/' ) ); ?>">お客さまの声</a>
 <a href="<?php echo esc_url( home_url( '/../company/' ) ); ?>">会社情報</a>
 <a href="<?php echo esc_url( home_url( '/../columns/' ) ); ?>">コラム</a>
 <a href="<?php echo esc_url( home_url( '/../news/' ) ); ?>">お知らせ</a>

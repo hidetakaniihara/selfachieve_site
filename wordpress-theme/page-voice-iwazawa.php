@@ -19,7 +19,7 @@ get_header();
 <nav aria-label="パンくずリスト" class="breadcrumb">
 <ol>
 <li><a href="<?php echo esc_url( home_url( '/../' ) ); ?>">ホーム</a></li>
-<li><a href="<?php echo esc_url( home_url( '/../voice/' ) ); ?>">お客さまの声</a></li>
+<li><a href="<?php echo esc_url( home_url( '/voice/' ) ); ?>">お客さまの声</a></li>
 <li><span aria-current="page">岩澤法理事務所</span></li>
 </ol>
 </nav>
@@ -101,7 +101,7 @@ get_header();
 <!-- 一覧へ戻るリンク -->
 <div class="back-sec">
 <div class="back-inner fu">
-<a class="back-link" href="<?php echo esc_url( home_url( '/../voice/' ) ); ?>">
+<a class="back-link" href="<?php echo esc_url( home_url( '/voice/' ) ); ?>">
 <svg fill="none" height="16" viewbox="0 0 16 16" width="16"><path d="M13 8H3M7 12l-4-4 4-4" stroke="#28282D" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg>
         お客さまの声一覧へ
       </a>
