@@ -127,7 +127,7 @@ get_header();
 </div>
 <!-- 右：対応業種タグ -->
 <div class="crb-industries" id="crb-industries">
-<p class="crb-industries-label">過去の対応業種</p>
+<p class="crb-industries-label">過去のSNSマーケティング対応業種</p>
 <div class="crb-tag-list">
 <span class="crb-tag">医療・クリニック</span>
 <span class="crb-tag">飲食・カフェ</span>

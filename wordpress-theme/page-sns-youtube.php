@@ -131,7 +131,7 @@ get_header();
 <a class="crb-cta" href="<?php echo esc_url( home_url( '/../contact/' ) ); ?>">無料相談で可能性を確かめる →</a>
 </div>
 <div class="crb-industries" id="crb-industries">
-<p class="crb-industries-label">過去の対応業種</p>
+<p class="crb-industries-label">過去のSNSマーケティング対応業種</p>
 <div class="crb-tag-list">
 <span class="crb-tag">医療・クリニック</span>
 <span class="crb-tag">飲食・カフェ</span>
