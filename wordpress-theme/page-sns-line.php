@@ -429,7 +429,7 @@ get_header();
 <p class="plan-tagline">まずはLINEを始めたい方に。必要最小限の構築をリーズナブルに。</p>
 <div class="plan-price-block">
 <p class="plan-price-label">構築費用（一括）</p>
-<div class="plan-price">50,000<span>円（税込）〜</span></div>
+<div class="plan-price">80,000<span>円（税込）〜</span></div>
 <p class="plan-price-note">※ 内容・規模によって変動します / 初回相談無料</p>
 </div>
 <div class="plan-features">
@@ -447,7 +447,7 @@ get_header();
 <p class="plan-tagline">集客から顧客管理まで一通り対応したい方に。最も選ばれているプランです。</p>
 <div class="plan-price-block">
 <p class="plan-price-label">構築費用（一括）</p>
-<div class="plan-price">100,000<span>円（税込）〜</span></div>
+<div class="plan-price">150,000<span>円（税込）〜</span></div>
 <p class="plan-price-note">※ 内容・規模によって変動します / 初回相談無料</p>
 </div>
 <div class="plan-features">
@@ -468,7 +468,7 @@ get_header();
 <p class="plan-tagline">シナリオ構築まで含めた本格的なLINEマーケティング基盤を構築したい方に。</p>
 <div class="plan-price-block">
 <p class="plan-price-label">構築費用（一括）</p>
-<div class="plan-price">150,000<span>円（税込）〜</span></div>
+<div class="plan-price">200,000<span>円（税込）〜</span></div>
 <p class="plan-price-note">※ 連携システム・規模によって変動します / 初回相談無料</p>
 </div>
 <div class="plan-features">
