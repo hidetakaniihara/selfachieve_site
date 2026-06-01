@@ -46,8 +46,8 @@ get_header();
       </p>
 </div>
 </div>
-<!-- PC: 3列グリッド / SP: スワイプスライダー -->
-<div class="line-case-grid">
+<div class="case-grid-wrap">
+<div class="case-grid">
 <!-- card 1 -->
 <article class="case-card fu">
 <div class="case-card-body">
@@ -58,13 +58,14 @@ get_header();
           </p>
 <div class="case-results">
 <div class="case-result-item">
-<div class="case-result-label" style="font-size:15px;line-height:1.7;color:#28282D;font-weight:700;letter-spacing:0">診断コンテンツでLINE登録を促進し、<br/>イベント満員集客を実現</div>
+<div class="case-result-num" data-count="280" data-suffix="%">0<span>%</span></div>
+<div class="case-result-label">LINE友だち登録数増加率（6ヶ月）</div>
 </div>
 </div>
 </div>
 </article>
 <!-- card 2 -->
-<article class="case-card fu">
+<article class="case-card fu" style="transition-delay:.08s">
 <div class="case-card-body">
 <span class="case-industry">クリニック / 医療</span>
 <p class="case-overview">
@@ -73,13 +74,14 @@ get_header();
           </p>
 <div class="case-results">
 <div class="case-result-item">
-<div class="case-result-label" style="font-size:15px;line-height:1.7;color:#28282D;font-weight:700;letter-spacing:0">一斉配信で冬眠顧客を呼び起こし、<br/>カウンセリング予約増加を実現</div>
+<div class="case-result-num" data-count="3.2" data-decimal="1" data-suffix="倍">0<span>倍</span></div>
+<div class="case-result-label">カウンセリング予約数（3ヶ月比較）</div>
 </div>
 </div>
 </div>
 </article>
 <!-- card 3 -->
-<article class="case-card fu">
+<article class="case-card fu" style="transition-delay:.16s">
 <div class="case-card-body">
 <span class="case-industry">整体院 / 治療院</span>
 <p class="case-overview">
@@ -88,11 +90,14 @@ get_header();
           </p>
 <div class="case-results">
 <div class="case-result-item">
-<div class="case-result-label" style="font-size:15px;line-height:1.7;color:#28282D;font-weight:700;letter-spacing:0">予約・リマインド・キャンセル対応を自動化し、<br/>業務量を大幅削減</div>
+<div class="case-result-num" data-count="60" data-suffix="%">0<span>%</span></div>
+<div class="case-result-label">業務対応時間削減率</div>
 </div>
 </div>
 </div>
 </article>
+</div>
+<p class="sp-swipe-hint">スワイプして見る</p>
 </div>
 </section>
 <!-- CASE RESULT BANNER -->
