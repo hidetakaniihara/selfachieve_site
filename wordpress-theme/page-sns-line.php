@@ -152,6 +152,80 @@ get_header();
 </div>
 </div>
 </div>
+<!-- LINE STRATEGY -->
+<section aria-labelledby="line-strategy-h2" class="wall-sec">
+<div class="wall-split">
+<!-- 左：黒背景見出しエリア -->
+<div class="wall-split-left">
+<span class="sec-eyebrow fu">LINE STRATEGY</span>
+<h2 class="sec-h2 fu" id="line-strategy-h2" style="transition-delay:.1s">
+        LINE運用は、<br/>設計から始まります。
+      </h2>
+<p class="wall-split-body fu" style="transition-delay:.2s">
+        闇雲なメッセージ配信では、ブロックされるだけです。大切なのは、友だち追加から購買・リピートまでの「導線設計」です。セルファチーブでは、ビジネス目標から逆算してLINE運用を設計します。
+      </p>
+</div>
+<!-- 右：カードグリッドエリア -->
+<div class="wall-split-right">
+<div class="wall-grid">
+<!-- 01 -->
+<div class="wall-card fu">
+<div class="wall-card-header">
+<span class="wall-card-header-num">01</span>
+<span class="wall-card-header-sep">|</span>
+<span class="wall-card-header-cat">リッチメニュー設計・制作</span>
+</div>
+<p class="wall-card-body">トーク画面の下部に、ホームページや予約システム、クーポンなどへ直接飛べる画像メニューを常時設置。視覚的に誘導し、ユーザーの行動を促します。</p>
+</div>
+<!-- 02 -->
+<div class="wall-card fu" style="transition-delay:.04s">
+<div class="wall-card-header">
+<span class="wall-card-header-num">02</span>
+<span class="wall-card-header-sep">|</span>
+<span class="wall-card-header-cat">LINE内予約・問い合わせ完結</span>
+</div>
+<p class="wall-card-body">外部サイトに移動させることなく、LINEの画面上でそのまま来院予約や日程変更、キャンセル手続きができる仕組みを構築します。</p>
+</div>
+<!-- 03 -->
+<div class="wall-card fu" style="transition-delay:.08s">
+<div class="wall-card-header">
+<span class="wall-card-header-num">03</span>
+<span class="wall-card-header-sep">|</span>
+<span class="wall-card-header-cat">ステップ配信・自動メッセージ</span>
+</div>
+<p class="wall-card-body">友だち追加から「3日後」「7日後」など、あらかじめ設定したスケジュール通りにメッセージを自動配信し、顧客の購買意欲を育てます。</p>
+</div>
+<!-- 04 -->
+<div class="wall-card fu" style="transition-delay:.12s">
+<div class="wall-card-header">
+<span class="wall-card-header-num">04</span>
+<span class="wall-card-header-sep">|</span>
+<span class="wall-card-header-cat">セグメント配信・タグ管理</span>
+</div>
+<p class="wall-card-body">全員への一斉送信ではなく、年齢・性別・アンケート回答結果などに合わせて、必要な人にだけピンポイントで情報を届けます。ブロック率を下げ、配信効果を最大化します。</p>
+</div>
+<!-- 05 -->
+<div class="wall-card fu" style="transition-delay:.16s">
+<div class="wall-card-header">
+<span class="wall-card-header-num">05</span>
+<span class="wall-card-header-sep">|</span>
+<span class="wall-card-header-cat">チャットボット（自動応答）</span>
+</div>
+<p class="wall-card-body">よくある質問（営業時間・料金など）に対して、システムが自動で即座に返信。24時間365日対応でスタッフの工数を大幅に削減します。</p>
+</div>
+<!-- 06 -->
+<div class="wall-card fu" style="transition-delay:.20s">
+<div class="wall-card-header">
+<span class="wall-card-header-num">06</span>
+<span class="wall-card-header-sep">|</span>
+<span class="wall-card-header-cat">顧客分類・データ管理</span>
+</div>
+<p class="wall-card-body">「来店済み」「○○商品に興味あり」といったステータスを自動でタグ仕けし、顧客リストとして一元管理。流入経路ごとのQRコードで、どの施策が成果に繋がっているかを可視化します。</p>
+</div>
+</div>
+</div>
+</div>
+</section>
 <!-- WHAT IS LINE MARKETING -->
 <section aria-labelledby="what-h2" class="what-sec">
 <div class="what-inner">
@@ -266,28 +340,6 @@ get_header();
 </div>
 </div>
 </a>
-</article>
-<!-- 05 AI活用 -->
-<article class="challenge-card fu challenge-card--last" style="transition-delay:.4s">
-<div class="challenge-card-num">
-<span class="challenge-card-num-n">05</span>
-</div>
-<h3 class="challenge-card-title">
-        AIで業務を<br/>効率化・最適化したい
-      </h3>
-<p class="challenge-card-desc">
-        手作業が多く時間がかかる。AIを使いたいが何から始めればいいかわからない。業務の無駄を省いて生産性を上げたい。
-      </p>
-<p class="challenge-tags-label">推奨施策</p>
-<div class="challenge-tags-wrap">
-<a class="challenge-tag" href="<?php echo esc_url( home_url( '/seo/' ) ); ?>">SEO対策</a>
-<a class="challenge-tag" href="<?php echo esc_url( home_url( '/meo/' ) ); ?>">MEO対策</a>
-<a class="challenge-tag" href="<?php echo esc_url( home_url( '/listing/' ) ); ?>">リスティング広告</a>
-<a class="challenge-tag" href="<?php echo esc_url( home_url( '/display/' ) ); ?>">ディスプレイ広告</a>
-<a class="challenge-tag" href="<?php echo esc_url( home_url( '/sns/' ) ); ?>">SNSマーケティング</a>
-<a class="challenge-tag" href="<?php echo esc_url( home_url( '/ai-seo/' ) ); ?>">AI検索対策（LLM対策）</a>
-<a class="challenge-tag" href="<?php echo esc_url( home_url( '/sns/note/' ) ); ?>">note対策</a>
-</div>
 </article>
 </div>
 </section>
