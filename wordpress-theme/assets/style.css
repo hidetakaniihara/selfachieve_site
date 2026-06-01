@@ -16658,3 +16658,84 @@ body.page-top .kv-h1.fu {
     padding: 0 20px 20px !important;
   }
 }
+
+/* ===== LINE: case-grid スワイプ（1024px以下）＆ 横並び行レイアウト（1025px以上） ===== */
+@media (max-width: 1024px) {
+  .page-line .case-grid-wrap {
+    padding: 0 !important;
+    overflow-x: clip !important;
+  }
+  .page-line .case-note-wrap {
+    padding: 0 20px 20px !important;
+  }
+  .page-line .case-grid {
+    display: flex !important;
+    flex-direction: row !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    -webkit-overflow-scrolling: touch !important;
+    gap: 16px !important;
+    padding: 0 20px 16px !important;
+    grid-template-columns: unset !important;
+  }
+  .page-line .case-grid::-webkit-scrollbar {
+    display: none;
+  }
+  .page-line .case-grid .case-card {
+    flex: 0 0 80vw !important;
+    max-width: 340px !important;
+    scroll-snap-align: start !important;
+    min-width: 280px !important;
+  }
+}
+@media (min-width: 1025px) {
+  .page-line .case-grid-wrap {
+    padding: 0 80px !important;
+    overflow-x: visible !important;
+  }
+  .page-line .case-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 0 !important;
+  }
+  .page-line .case-card {
+    flex-direction: row !important;
+    padding: 0 !important;
+    border-right: none !important;
+    border-bottom: 1px solid #E0E0E0 !important;
+  }
+  .page-line .case-card:last-child {
+    border-bottom: none !important;
+  }
+  .page-line .case-card-body {
+    padding: 40px 56px !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: flex-start !important;
+    gap: 48px !important;
+    width: 100% !important;
+  }
+  .page-line .case-card-body .case-industry {
+    min-width: 200px !important;
+    max-width: 200px !important;
+    flex-shrink: 0 !important;
+    font-size: 20px !important;
+    font-weight: 700 !important;
+    padding-top: 4px !important;
+  }
+  .page-line .case-card-body .case-overview {
+    flex: 1 !important;
+  }
+  .page-line .case-card-body .case-results {
+    min-width: 200px !important;
+    max-width: 220px !important;
+    flex-shrink: 0 !important;
+  }
+}
+/* ===== LINE: sp-swipe-hint タブレット（769px〜1024px）でも表示 ===== */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .page-line .case-sec .sp-swipe-hint {
+    display: block !important;
+    color: #767680 !important;
+  }
+}
