@@ -754,20 +754,25 @@ add_action( 'wp_head', 'selfachieve_ga4_tag', 1 );
 // inquiry / inquiry_sns / inquiry_ai / inquiry_other のいずれか1つ以上
 // ============================================================
 add_filter( 'wpcf7_validate', function( $result, $tags ) {
-    $checked = false;
+    // $_POST を直接チェックして4グループすべて空なら無効
     $target_fields = [ 'inquiry', 'inquiry_sns', 'inquiry_ai', 'inquiry_other' ];
-    foreach ( $tags as $tag ) {
-        if ( in_array( $tag->name, $target_fields, true ) ) {
-            $value = isset( $_POST[ $tag->name ] ) ? (array) $_POST[ $tag->name ] : [];
-            $value = array_filter( array_map( 'trim', $value ) );
-            if ( ! empty( $value ) ) {
-                $checked = true;
-                break;
-            }
+    $checked = false;
+    foreach ( $target_fields as $field ) {
+        $value = isset( $_POST[ $field ] ) ? (array) $_POST[ $field ] : [];
+        $value = array_filter( array_map( 'trim', $value ) );
+        if ( ! empty( $value ) ) {
+            $checked = true;
+            break;
         }
     }
     if ( ! $checked ) {
-        $result->invalidate( 'inquiry', 'お問い合わせ項目を1つ以上選択してください。' );
+        // タグオブジェクトから inquiry タグを取得してinvalidate
+        foreach ( $tags as $tag ) {
+            if ( $tag->name === 'inquiry' ) {
+                $result->invalidate( $tag, 'お問い合わせ項目を1つ以上選択してください。' );
+                break;
+            }
+        }
     }
     return $result;
 }, 20, 2 );
