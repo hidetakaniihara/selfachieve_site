@@ -12,7 +12,7 @@ get_header();
 <div class="kv-left">
 <p class="kv-eyebrow fu">— LINE マーケティング</p>
 <h1 class="kv-h1 fu" id="kv-h1" style="transition-delay:.08s">
-        顧客とつながり、<br/>何度でも呼び戻す。
+        顧客とつながり、<br/>何度でも呼び戻す
       </h1>
 <p class="kv-sub fu" style="transition-delay:.16s">
         月間9,700万人が使うLINEは、<br/>
