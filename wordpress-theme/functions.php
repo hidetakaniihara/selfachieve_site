@@ -778,6 +778,35 @@ add_filter( 'wpcf7_validate', function( $result, $tags ) {
 }, 20, 2 );
 
 // ============================================================
+// CF7 メール本文：空のお問い合わせ項目ブロックを非表示にする
+// ============================================================
+add_filter( 'wpcf7_mail_components', function( $components, $form, $mail ) {
+    $fields = [
+        'inquiry'     => '■ お問い合わせ項目（WEB施策）',
+        'inquiry_sns' => '■ お問い合わせ項目（SNS運用・広告）',
+        'inquiry_ai'  => '■ お問い合わせ項目（AI活用）',
+        'inquiry_other' => '■ お問い合わせ項目（その他）',
+    ];
+
+    $body = $components['body'];
+
+    foreach ( $fields as $field => $label ) {
+        $value = isset( $_POST[ $field ] ) ? (array) $_POST[ $field ] : [];
+        $value = array_filter( array_map( 'trim', $value ) );
+        if ( empty( $value ) ) {
+            // ラベル行 + 値行（空行含む）を削除
+            $body = preg_replace( '/^' . preg_quote( $label, '/' ) . '\s*\n[^\n]*\n?/m', '', $body );
+        }
+    }
+
+    // 連続する空行を1行にまとめる
+    $body = preg_replace( "/\n{3,}/", "\n\n", $body );
+
+    $components['body'] = $body;
+    return $components;
+}, 10, 3 );
+
+// ============================================================
 // GA4 generate_lead イベント：/thanks/ ページ閲覧時に発火
 // ============================================================
 function selfachieve_generate_lead_event() {
