@@ -622,7 +622,7 @@ get_header();
 </div>
 </section>
 <!-- CHALLENGE (SEOページと同一コンテンツ) -->
-<section aria-labelledby="challenge-h2" class="challenge-sec" id="challenge">
+<section aria-labelledby="challenge-h2" class="challenge-sec">
 <div class="challenge-split">
 <!-- 左：見出しエリア -->
 <div class="challenge-split-left">
@@ -648,20 +648,56 @@ get_header();
 </div>
 </div>
 <div class="challenge-grid">
-<article class="challenge-card fu" style="transition-delay:.08s">
-<div class="challenge-card-num"><span class="challenge-card-num-n">02</span></div>
-<h3 class="challenge-card-title">サイトへの<br/>訪問者を増やしたい</h3>
-<p class="challenge-card-desc">検索で見つけてもらえない。広告を出しても費用対効果が悪い。もっと多くの見込み客に届けたい。</p>
+<!-- 02 集客 -->
+<article class="challenge-card fu" style="transition-delay:.1s">
+<div class="challenge-card-num">
+<span class="challenge-card-num-n">02</span>
+</div>
+<h3 class="challenge-card-title">
+        サイトへの<br/>訪問者を増やしたい
+      </h3>
+<p class="challenge-card-desc">
+        検索で見つけてもらえない。広告を出しても費用対効果が悪い。もっと多くの見込み客に届けたい。
+      </p>
+<p class="challenge-tags-label">推奨施策</p>
+<div class="challenge-tags-wrap">
+<a class="challenge-tag" href="<?php echo esc_url( home_url( '/seo/' ) ); ?>">SEO対策</a>
+<a class="challenge-tag" href="<?php echo esc_url( home_url( '/meo/' ) ); ?>">MEO対策</a>
+<a class="challenge-tag" href="<?php echo esc_url( home_url( '/listing/' ) ); ?>">リスティング広告</a>
+<a class="challenge-tag" href="<?php echo esc_url( home_url( '/display/' ) ); ?>">ディスプレイ広告</a>
+<a class="challenge-tag" href="<?php echo esc_url( home_url( '/sns/' ) ); ?>">SNSマーケティング</a>
+<a class="challenge-tag" href="<?php echo esc_url( home_url( '/ai-seo/' ) ); ?>">AI検索対策（LLM対策）</a>
+<a class="challenge-tag" href="<?php echo esc_url( home_url( '/sns/note/' ) ); ?>">note対策</a>
+</div>
+</article>
+<!-- 03 転換 -->
+<article class="challenge-card fu" style="transition-delay:.2s">
+<div class="challenge-card-num">
+<span class="challenge-card-num-n">03</span>
+</div>
+<h3 class="challenge-card-title">
+        来てくれた人が<br/>問い合わせない
+      </h3>
+<p class="challenge-card-desc">
+        アクセスはあるのに成約しない。サイトを見ても離脱してしまう。訪問者を顧客に変えたい。
+      </p>
 <p class="challenge-tags-label">推奨施策</p>
 <div class="challenge-tags-wrap">
 <a class="challenge-tag" href="<?php echo esc_url( home_url( '/webdesign/' ) ); ?>">ホームページ制作</a>
 <a class="challenge-tag" href="<?php echo esc_url( home_url( '/webdesign/#grow' ) ); ?>">分析改善</a>
 </div>
 </article>
-<article class="challenge-card fu" style="transition-delay:.16s">
-<div class="challenge-card-num"><span class="challenge-card-num-n">03</span></div>
-<h3 class="challenge-card-title">来てくれた人が<br/>問い合わせない</h3>
-<p class="challenge-card-desc">アクセスはあるのに成約しない。サイトを見ても離脱してしまう。訪問者を顧客に変えたい。</p>
+<!-- 04 追客 -->
+<article class="challenge-card fu" style="transition-delay:.3s">
+<div class="challenge-card-num">
+<span class="challenge-card-num-n">04</span>
+</div>
+<h3 class="challenge-card-title">
+        一度来た人に<br/>また来てほしい
+      </h3>
+<p class="challenge-card-desc">
+        リピーターが増えない。既存顧客との関係を維持したい。ファンを育てる仕組みをつくりたい。
+      </p>
 <p class="challenge-tags-label">推奨施策</p>
 <div class="challenge-tags-wrap">
 <a class="challenge-tag" href="<?php echo esc_url( home_url( '/sns/line/' ) ); ?>">LINE</a>
@@ -671,10 +707,17 @@ get_header();
 <a class="challenge-tag" href="<?php echo esc_url( home_url( '/sns/tiktok/' ) ); ?>">TikTok</a>
 </div>
 </article>
-<article class="challenge-card fu" style="transition-delay:.24s">
-<div class="challenge-card-num"><span class="challenge-card-num-n">04</span></div>
-<h3 class="challenge-card-title">一度来た人に<br/>また来てほしい</h3>
-<p class="challenge-card-desc">リピーターが増えない。既存顧客との関係を維持したい。ファンを育てる仕組みをつくりたい。</p>
+<!-- 05 AI活用 -->
+<article class="challenge-card fu challenge-card--last" style="transition-delay:.4s">
+<div class="challenge-card-num">
+<span class="challenge-card-num-n">05</span>
+</div>
+<h3 class="challenge-card-title">
+        AIで業務を<br/>効率化・最適化したい
+      </h3>
+<p class="challenge-card-desc">
+        手作業が多く時間がかかる。AIを使いたいが何から始めればいいかわからない。業務の無駄を省いて生産性を上げたい。
+      </p>
 <p class="challenge-tags-label">推奨施策</p>
 <div class="challenge-tags-wrap">
 <a class="challenge-tag" href="<?php echo esc_url( home_url( '/ai-automation/' ) ); ?>">業務の自動化・最適化</a>
