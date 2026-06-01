@@ -8561,7 +8561,7 @@ a.funnel-stage-service-tag:hover{
 }
 /* 左：黒背景見出しエリア */
 .wall-split-left{
-  padding:40px 0 80px 80px;
+  padding:40px 0 80px 40px;
   display:flex;
   flex-direction:column;
   justify-content:flex-start;
