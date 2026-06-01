@@ -781,53 +781,35 @@ add_filter( 'wpcf7_validate', function( $result, $tags ) {
 // CF7 メール本文：空のお問い合わせ項目ブロックを非表示にする
 // ============================================================
 add_filter( 'wpcf7_mail_components', function( $components, $form, $mail ) {
-    // 各フィールド名 → メールテンプレート内のプレースホルダー文字列のマッピング
-    $fields = [
-        'inquiry'       => '[inquiry]',
-        'inquiry_sns'   => '[inquiry_sns]',
-        'inquiry_ai'    => '[inquiry_ai]',
-        'inquiry_other' => '[inquiry_other]',
-    ];
-    // 各フィールドのラベル（メールテンプレートのプレースホルダーの前の行）
+    // CF7展開後の本文を行単位で処理する
+    // ラベル行の次行が空（未選択）ならラベル行ごと削除
     $labels = [
-        'inquiry'       => '■ お問い合わせ項目（WEB施策）',
-        'inquiry_sns'   => '■ お問い合わせ項目（SNS運用・広告）',
-        'inquiry_ai'    => '■ お問い合わせ項目（AI活用）',
-        'inquiry_other' => '■ お問い合わせ項目（その他）',
+        '■ お問い合わせ項目（WEB施策）',
+        '■ お問い合わせ項目（SNS運用・広告）',
+        '■ お問い合わせ項目（AI活用）',
+        '■ お問い合わせ項目（その他）',
     ];
 
     $body = $components['body'];
     $lines = explode( "\n", $body );
     $new_lines = [];
-    $skip_next = false;
+    $count = count( $lines );
 
-    for ( $i = 0; $i < count( $lines ); $i++ ) {
+    for ( $i = 0; $i < $count; $i++ ) {
         $line = $lines[ $i ];
+        $trimmed = trim( $line );
 
-        // 削除対象のラベル行かチェック
-        $matched_field = null;
-        foreach ( $labels as $field => $label ) {
-            if ( trim( $line ) === $label ) {
-                $matched_field = $field;
-                break;
-            }
-        }
+        // ラベル行かどうか確認
+        $is_label = in_array( $trimmed, $labels, true );
 
-        if ( $matched_field !== null ) {
-            // 値を確認
-            $value = isset( $_POST[ $matched_field ] ) ? (array) $_POST[ $matched_field ] : [];
-            $value = array_filter( array_map( 'trim', $value ) );
-            if ( empty( $value ) ) {
-                // ラベル行と次の値行をスキップ
-                $skip_next = true;
+        if ( $is_label ) {
+            // 次の行を確認（展開後の値）
+            $next_line = isset( $lines[ $i + 1 ] ) ? trim( $lines[ $i + 1 ] ) : '';
+            if ( $next_line === '' ) {
+                // 値が空：ラベル行と次の空行をスキップ
+                $i++; // 次行（空行）もスキップ
                 continue;
             }
-        }
-
-        if ( $skip_next ) {
-            $skip_next = false;
-            // 値行をスキップ
-            continue;
         }
 
         $new_lines[] = $line;
