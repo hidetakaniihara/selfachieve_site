@@ -293,7 +293,7 @@ get_header();
 <p class="plan-tagline">Instagramを本格的に始めたい方に。<br/>月7投稿でアカウントを着実に育てます。</p>
 <div class="plan-price-block">
 <p class="plan-price-label">月額費用</p>
-<div class="plan-price">160,000<span>円（税込）〜 / 月</span></div>
+<div class="plan-price">160,000<span>円（税別）〜 / 月</span></div>
 <p class="plan-price-note">※ 別途アカウント設計費（初回のみ）が必要です</p>
 </div>
 <div class="plan-fee-table">
@@ -329,7 +329,7 @@ get_header();
 <p class="plan-tagline">Instagramを集客の主軸にしたい方に。<br/>月20投稿＋動画制作で最大成果を追求します。</p>
 <div class="plan-price-block">
 <p class="plan-price-label">月額費用</p>
-<div class="plan-price">250,000<span>円（税込）〜 / 月</span></div>
+<div class="plan-price">250,000<span>円（税別）〜 / 月</span></div>
 <p class="plan-price-note">※ 別途アカウント設計費（初回のみ）が必要です</p>
 </div>
 <div class="plan-fee-table">
@@ -369,7 +369,7 @@ get_header();
 <div class="plan-init-row">
 <div class="plan-init-item">
 <span class="plan-init-label">アカウント設計費</span>
-<span class="plan-init-price">80,000<span>円（税込）～</span></span>
+<span class="plan-init-price">80,000<span>円（税別）～</span></span>
 </div>
 <div class="plan-init-sep"></div>
 <p style="font-size:13px;color:#4A4A50;line-height:1.7;flex:1">
@@ -425,14 +425,14 @@ get_header();
 <div class="plan-ad-fee-table">
 <div class="plan-ad-fee-row">
 <span class="plan-ad-fee-range">300,000円以下</span>
-<span class="plan-ad-fee-price">66,000<span>円（税込）</span></span>
+<span class="plan-ad-fee-price">66,000<span>円（税別）</span></span>
 </div>
 <div class="plan-ad-fee-row">
 <span class="plan-ad-fee-range">300,000円以上</span>
 <span class="plan-ad-fee-price plan-ad-fee-percent">広告実費 × 20%</span>
 </div>
 </div>
-<p class="plan-price-note">※ 表示価格はすべて税込 / 初回相談無料</p>
+<p class="plan-price-note">※ 表示価格はすべて税別 / 初回相談無料</p>
 </div>
 <div class="plan-features">
 <div class="plan-feature">現状分析・アカウント診断</div>
@@ -592,7 +592,7 @@ get_header();
 <div class="faq-a" id="faq-a-1">
 <div class="faq-a-inner">
 <span class="faq-a-mark">A</span>
-<p class="faq-a-text">ベーシックプランは月額160,000円（税込）〜、アドバンスプランは月額250,000円（税込）〜となります。別途アカウント設計費（初回のみ80,000円〜）が必要です。投稿数・動画制作の有無・広告運用の有無によって異なります。まずは無料相談でご要望をお聞かせください。</p>
+<p class="faq-a-text">ベーシックプランは月額160,000円（税別）〜、アドバンスプランは月額250,000円（税別）〜となります。別途アカウント設計費（初回のみ80,000円〜）が必要です。投稿数・動画制作の有無・広告運用の有無によって異なります。まずは無料相談でご要望をお聞かせください。</p>
 </div>
 </div>
 </div>
