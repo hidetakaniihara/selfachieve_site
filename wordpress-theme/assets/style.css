@@ -8748,7 +8748,7 @@ a.wall-tag{
 a.wall-tag:hover{background:#28282D;color:#fff;}
 /* レスポンシブ */
 @media(max-width:1100px){
-  .wall-split{grid-template-columns:1fr 1.6fr;}
+  .wall-split{grid-template-columns:1fr 1.6fr;gap:0 40px;}
   .wall-split-left{padding:64px 40px 64px 48px;}
 }
 @media(max-width:900px){
