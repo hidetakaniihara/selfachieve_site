@@ -116,7 +116,7 @@ get_header();
 <div class="wall-split-left">
 <span class="sec-eyebrow fu">SNS MARKETING</span>
 <h2 class="sec-h2 fu" id="sns-intro-h2" style="transition-delay:.1s">
-        SNSアカウント運用を<br/>戦略的に担当します。
+        SNSアカウント運用を、<br/>戦略的に担当します。
       </h2>
 <p class="wall-split-body fu" style="transition-delay:.2s">
         投稿して終わりではなく、<br/>目標から逆算した戦略設計・コンテンツ制作・<br/>数値分析まで一貫して伴走します。
