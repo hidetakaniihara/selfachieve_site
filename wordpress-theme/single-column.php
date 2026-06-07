@@ -34,7 +34,7 @@ $service_map = [
     ],
     'sns' => [
         'label' => 'SNSマーケティング',
-        'url'   => '/sns-instagram/',
+        'url'   => '/sns/',
         'desc'  => 'Instagram・X・LINE等のSNS運用代行・戦略設計。フォロワー獲得から問い合わせ創出まで支援します。',
         'cta'   => 'SNSマーケティングサービスを見る',
     ],
