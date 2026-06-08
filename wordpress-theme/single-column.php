@@ -46,7 +46,7 @@ $service_map = [
     ],
     'instagram' => [
         'label' => 'Instagram運用',
-        'url'   => '/sns-instagram/',
+        'url'   => '/sns/instagram/',
         'desc'  => 'Instagram運用代行・コンサルティング。投稿設計からフォロワー獲得・集客導線の構築まで一貫支援。',
         'cta'   => 'Instagram運用サービスを見る',
     ],
