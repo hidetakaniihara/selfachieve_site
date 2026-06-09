@@ -8761,7 +8761,7 @@ a.wall-tag:hover{background:#28282D;color:#fff;}
     position:static;
   }
   .wall-split-left .sec-h2{font-size:clamp(20px,5.5vw,32px);word-break:keep-all;overflow-wrap:break-word;}
-  .wall-split-left .sec-h2 br{display:none;}
+  .wall-split-left .sec-h2 br{display:inline;}
   .wall-grid{grid-template-columns:1fr;border-left:none;}
   .wall-card--full{grid-column:1;}
   .wall-card{padding:32px 24px;}
