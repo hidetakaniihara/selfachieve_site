@@ -16690,6 +16690,7 @@ body.page-top .kv-h1.fu {
     max-width: 340px !important;
     scroll-snap-align: start !important;
     min-width: 280px !important;
+    padding: 24px 20px !important;
   }
 }
 @media (min-width: 1025px) {
