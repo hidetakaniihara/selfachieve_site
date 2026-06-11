@@ -897,7 +897,7 @@ $_blog_query = new WP_Query( [
 <a href="<?php echo esc_url( home_url( '/../works/' ) ); ?>">実績</a>
 <a href="<?php echo esc_url( home_url( '/voice/' ) ); ?>">お客さまの声</a>
 <a href="<?php echo esc_url( home_url( '/../company/' ) ); ?>">会社情報</a>
-<a href="<?php echo esc_url( home_url( '/../columns/' ) ); ?>">コラム</a>
+<a href="<?php echo esc_url( home_url( '/column/' ) ); ?>">コラム</a>
 <a href="<?php echo esc_url( home_url( '/../news/' ) ); ?>">お知らせ</a>
 <a href="<?php echo esc_url( home_url( '/../privacy/' ) ); ?>">プライバシーポリシー</a>
 </div>

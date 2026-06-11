@@ -398,9 +398,9 @@ function selfachieve_get_schema() {
                 return [
                     '@context' => 'https://schema.org',
                     '@graph'   => [
-                        selfachieve_breadcrumb( $base . '/columns/', [
+                        selfachieve_breadcrumb( $base . '/column/', [
                             [ 'ホーム', 'https://htmlacheive.com/' ],
-                            [ 'コラム', $base . '/columns/' ],
+                            [ 'コラム', $base . '/column/' ],
                         ] ),
                     ],
                 ];
@@ -448,7 +448,7 @@ function selfachieve_get_schema() {
         $terms = get_the_terms( $post->ID, 'column_cat' );
         $cat_name = ( $terms && ! is_wp_error( $terms ) ) ? $terms[0]->name : 'コラム';
         $cat_slug = ( $terms && ! is_wp_error( $terms ) ) ? $terms[0]->slug : '';
-        $cat_url  = $cat_slug ? $base . '/columns/' . $cat_slug . '/' : $base . '/columns/';
+        $cat_url  = $cat_slug ? $base . '/column/' . $cat_slug . '/' : $base . '/column/';
 
         return [
             '@context' => 'https://schema.org',
@@ -467,7 +467,7 @@ function selfachieve_get_schema() {
                 ],
                 selfachieve_breadcrumb( $url, [
                     [ 'ホーム', 'https://htmlacheive.com/' ],
-                    [ 'コラム', $base . '/columns/' ],
+                    [ 'コラム', $base . '/column/' ],
                     [ $cat_name, $cat_url ],
                     [ $title, $url ],
                 ] ),

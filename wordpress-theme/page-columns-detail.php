@@ -13,7 +13,7 @@ get_header();
   <nav class="breadcrumb" aria-label="パンくずリスト">
     <ol>
       <li><a href="<?php echo esc_url( home_url( '/../' ) ); ?>">ホーム</a></li>
-      <li><a href="<?php echo esc_url( home_url( '/../columns/' ) ); ?>">コラム</a></li>
+      <li><a href="<?php echo esc_url( home_url( '/column/' ) ); ?>">コラム</a></li>
       <li><span aria-current="page">SEO対策とは？基礎から実践まで完全ガイド</span></li>
     </ol>
   </nav>
