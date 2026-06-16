@@ -343,17 +343,17 @@ get_header();
 </a>
 </article>
 <article class="voice-card fu" style="transition-delay:.2s">
-<a aria-label="兵庫県立大学大学院 情報科学研究科の声を詳しく見る" class="voice-link" href="<?php echo esc_url( home_url( '/voice-post/hyogo-university-graduate/' ) ); ?>">
+<a aria-label="ハルペッツ神戸の声を詳しく見る" class="voice-link" href="<?php echo esc_url( home_url( '/voice-post/halpets-kobe/' ) ); ?>">
 <div class="voice-avatar">
-<img alt="兵庫県立大学大学院 情報科学研究科" height="280" loading="lazy" src="<?php echo get_template_directory_uri(); ?>/assets/voice/hyogo-univ.webp" width="280"/>
+<img alt="ハルペッツ神戸" height="280" loading="lazy" src="<?php echo get_template_directory_uri(); ?>/assets/voice/harupets.webp" width="280"/>
 </div>
 <div class="voice-body">
 <p class="voice-quote">
-          低予算でも効果を実感。SNS広告を中心に過去最高の出願者数を獲得！
+          専門的な分野で難しいと思いますが、当院の考えや方針をよく研究してくださり、とても助かっております。
         </p>
 <div class="voice-meta">
-<p class="voice-co">教育機関</p>
-<p class="voice-name">兵庫県立大学大学院 情報科学研究科 様</p>
+<p class="voice-co">獣医業</p>
+<p class="voice-name">ハルペッツ神戸 様</p>
 <p class="voice-more">詳しく見る →</p>
 </div>
 </div>
