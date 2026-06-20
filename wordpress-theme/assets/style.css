@@ -16779,3 +16779,72 @@ body.page-top .kv-h1.fu {
     border-right: none !important;
   }
 }
+
+/* ===== WALL: SP horizontal overflow fix ===== */
+@media (max-width: 768px) {
+  .wall-sec,
+  .wall-split,
+  .wall-split-left,
+  .wall-split-right,
+  .wall-grid,
+  .wall-card {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
+  .wall-split {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+  }
+
+  .wall-grid {
+    grid-template-columns: minmax(0, 1fr);
+    border-left: none;
+  }
+
+  .page-x .wall-sec,
+  .page-x .wall-split,
+  .page-x .wall-split-left,
+  .page-x .wall-split-right,
+  .page-x .wall-grid,
+  .page-x .wall-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  .page-x .wall-split {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 0 !important;
+  }
+
+  .page-x .wall-grid {
+    grid-template-columns: minmax(0, 1fr) !important;
+    border-left: none !important;
+  }
+
+  .page-x .wall-card {
+    padding: 32px 24px !important;
+    border-right: none !important;
+  }
+
+  .page-x .plan-grid,
+  .page-x .plan-grid.plan-grid-3 {
+    display: flex !important;
+    grid-template-columns: unset !important;
+    overflow-x: auto !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .page-x .plan-card {
+    flex: 0 0 78vw !important;
+    max-width: 300px !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+  }
+}
