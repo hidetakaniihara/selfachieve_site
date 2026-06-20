@@ -843,3 +843,6 @@ function selfachieve_generate_lead_event() {
     }
 }
 add_action( 'wp_footer', 'selfachieve_generate_lead_event' );
+
+// AIOSEOのスキーマ自動出力を無効化（schema.phpで独自出力のため重複防止）
+add_filter( 'aioseo_schema_output', '__return_empty_array' );
