@@ -600,6 +600,132 @@ if ( ! isset( $_SERVER['HTTP_AUTHORIZATION'] ) ) {
 // 構造化データ（JSON-LD）
 require_once get_template_directory() . '/inc/schema.php';
 
+// ============================================================
+// コラムカテゴリ SEO メタ情報
+// ============================================================
+function selfachieve_column_cat_seo_meta() {
+    if ( ! is_tax( 'column_cat' ) ) {
+        return null;
+    }
+
+    $term = get_queried_object();
+    if ( ! $term || is_wp_error( $term ) || empty( $term->slug ) ) {
+        return null;
+    }
+
+    $meta_map = [
+        'seo' => [
+            'title' => 'SEO対策コラム｜検索順位・集客改善の実践情報｜セルフアチーブ',
+            'desc'  => 'SEO対策の基礎、キーワード選定、内部対策、コンテンツ改善、業種別SEOなど、検索順位とWeb集客改善に役立つ実践情報を発信しています。',
+        ],
+        'meo' => [
+            'title' => 'MEO対策コラム｜Googleマップ集客の実践情報｜セルフアチーブ',
+            'desc'  => 'MEO対策、Googleビジネスプロフィール、口コミ対策、地域集客など、店舗・クリニックのGoogleマップ集客に役立つ実践情報を発信しています。',
+        ],
+        'listing' => [
+            'title' => 'リスティング広告コラム｜Google広告運用の実践情報｜セルフアチーブ',
+            'desc'  => 'Google広告・Yahoo!広告などリスティング広告運用に関するコラム。キーワード設計、広告文改善、予算設計、費用対効果改善の実践情報を発信しています。',
+        ],
+        'sns' => [
+            'title' => 'SNSマーケティングコラム｜運用代行・集客の実践情報｜セルフアチーブ',
+            'desc'  => 'Instagram、TikTok、X、YouTube、LINEなどSNS運用に関するコラム。企業アカウントの集客、投稿改善、広告活用の実践情報を発信しています。',
+        ],
+        'webdesign' => [
+            'title' => 'ホームページ制作コラム｜SEO・集客サイト改善の実践情報｜セルフアチーブ',
+            'desc'  => 'ホームページ制作、サイトリニューアル、SEO設計、UI/UX改善、LP改善など、集客につながるWebサイトづくりの実践情報を発信しています。',
+        ],
+        'instagram' => [
+            'title' => 'Instagram運用コラム｜集客・広告活用の実践情報｜セルフアチーブ',
+            'desc'  => 'Instagram運用、リール活用、ハッシュタグ戦略、インスタ広告、店舗集客など、企業アカウントの成果改善に役立つ実践情報を発信しています。',
+        ],
+        'marketing' => [
+            'title' => 'Webマーケティングコラム｜集客戦略・施策改善の実践情報｜セルフアチーブ',
+            'desc'  => 'Webマーケティング、集客戦略、SEO、広告運用、SNS活用など、売上・問い合わせ増加につながる実践的な情報を発信しています。',
+        ],
+    ];
+
+    return $meta_map[ $term->slug ] ?? null;
+}
+
+function selfachieve_column_cat_document_title( $title ) {
+    $meta = selfachieve_column_cat_seo_meta();
+    return $meta ? $meta['title'] : $title;
+}
+add_filter( 'pre_get_document_title', 'selfachieve_column_cat_document_title', 20 );
+add_filter( 'aioseo_title', 'selfachieve_column_cat_document_title', 20 );
+
+function selfachieve_column_cat_aioseo_description( $description ) {
+    $meta = selfachieve_column_cat_seo_meta();
+    return $meta ? $meta['desc'] : $description;
+}
+add_filter( 'aioseo_description', 'selfachieve_column_cat_aioseo_description', 20 );
+
+function selfachieve_column_cat_ogp_meta() {
+    $meta = selfachieve_column_cat_seo_meta();
+    if ( ! $meta ) {
+        return;
+    }
+
+    echo '<meta property="og:title" content="' . esc_attr( $meta['title'] ) . '">' . "\n";
+    echo '<meta property="og:description" content="' . esc_attr( $meta['desc'] ) . '">' . "\n";
+    echo '<meta property="og:type" content="article">' . "\n";
+    echo '<meta property="og:url" content="' . esc_url( get_term_link( get_queried_object() ) ) . '">' . "\n";
+}
+add_action( 'wp_head', 'selfachieve_column_cat_ogp_meta', 98 );
+
+// ============================================================
+// お知らせアーカイブ SEO メタ情報
+// ============================================================
+function selfachieve_news_archive_seo_meta() {
+    if ( ! is_post_type_archive( 'news' ) ) {
+        return null;
+    }
+
+    return [
+        'title' => 'お知らせ・最新情報｜セルフアチーブ',
+        'desc'  => 'セルフアチーブの最新情報、営業日、サービスに関するお知らせを掲載しています。Webマーケティング支援やサイト更新情報はこちらをご確認ください。',
+    ];
+}
+
+function selfachieve_news_archive_document_title( $title ) {
+    $meta = selfachieve_news_archive_seo_meta();
+    return $meta ? $meta['title'] : $title;
+}
+add_filter( 'pre_get_document_title', 'selfachieve_news_archive_document_title', 21 );
+add_filter( 'aioseo_title', 'selfachieve_news_archive_document_title', 21 );
+
+function selfachieve_news_archive_aioseo_description( $description ) {
+    $meta = selfachieve_news_archive_seo_meta();
+    return $meta ? $meta['desc'] : $description;
+}
+add_filter( 'aioseo_description', 'selfachieve_news_archive_aioseo_description', 21 );
+
+function selfachieve_news_archive_facebook_tags( $tags ) {
+    $meta = selfachieve_news_archive_seo_meta();
+    if ( ! $meta || ! is_array( $tags ) ) {
+        return $tags;
+    }
+
+    $tags['og:title']       = $meta['title'];
+    $tags['og:description'] = $meta['desc'];
+
+    return $tags;
+}
+add_filter( 'aioseo_facebook_tags', 'selfachieve_news_archive_facebook_tags', 21 );
+
+function selfachieve_news_archive_twitter_tags( $tags ) {
+    $meta = selfachieve_news_archive_seo_meta();
+    if ( ! $meta || ! is_array( $tags ) ) {
+        return $tags;
+    }
+
+    $tags['twitter:title']       = $meta['title'];
+    $tags['twitter:description'] = $meta['desc'];
+
+    return $tags;
+}
+add_filter( 'aioseo_twitter_tags', 'selfachieve_news_archive_twitter_tags', 21 );
+
 
 // ============================================================
 // OGP og:image フォールバック（アイキャッチ未設定時にデフォルト画像を使用）

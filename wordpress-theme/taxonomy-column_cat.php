@@ -66,6 +66,19 @@ $card_query = new WP_Query( $card_args );
 
 // カテゴリページURL（ページネーション用）
 $cat_base_url = get_term_link( $current_term );
+
+// カテゴリページから親サービスページへの導線
+$service_link_map = [
+    'seo'       => [ 'url' => home_url( '/seo/' ), 'label' => 'SEO対策サービスを見る' ],
+    'meo'       => [ 'url' => home_url( '/meo/' ), 'label' => 'MEO対策サービスを見る' ],
+    'listing'   => [ 'url' => home_url( '/listing/' ), 'label' => 'リスティング広告運用を見る' ],
+    'sns'       => [ 'url' => home_url( '/sns/' ), 'label' => 'SNS運用代行を見る' ],
+    'instagram' => [ 'url' => home_url( '/sns/instagram/' ), 'label' => 'Instagram運用代行を見る' ],
+    'webdesign' => [ 'url' => home_url( '/webdesign/' ), 'label' => 'ホームページ制作を見る' ],
+    'marketing' => [ 'url' => home_url( '/strategy/' ), 'label' => 'Web戦略設計を見る' ],
+];
+$service_link = $service_link_map[ $current_slug ] ?? null;
+$current_desc = $current_term ? term_description( $current_term->term_id, 'column_cat' ) : '';
 ?>
 <main id="main" role="main">
 
@@ -112,7 +125,15 @@ $cat_base_url = get_term_link( $current_term );
 <section aria-labelledby="columns-list-h2" class="columns-sec">
   <div class="columns-inner">
     <div class="columns-sec-head">
-      <h2 class="columns-sec-title" id="columns-list-h2"><?php echo esc_html( $current_name ); ?></h2>
+      <div>
+        <h2 class="columns-sec-title" id="columns-list-h2"><?php echo esc_html( $current_name ); ?></h2>
+        <?php if ( $current_desc ) : ?>
+          <div class="columns-sec-desc"><?php echo wp_kses_post( $current_desc ); ?></div>
+        <?php endif; ?>
+        <?php if ( $service_link ) : ?>
+          <a class="view-all" href="<?php echo esc_url( $service_link['url'] ); ?>"><?php echo esc_html( $service_link['label'] ); ?> &rarr;</a>
+        <?php endif; ?>
+      </div>
       <p class="columns-count">全 <span><?php echo esc_html( $card_query->found_posts ); ?></span> 件</p>
     </div>
 
