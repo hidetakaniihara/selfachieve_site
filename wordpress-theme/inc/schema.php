@@ -101,7 +101,7 @@ function selfachieve_get_schema() {
             '@type'       => 'SearchAction',
             'target'      => [
                 '@type'       => 'EntryPoint',
-                'urlTemplate' => $base . '/search?q={search_term_string}',
+                'urlTemplate' => $base . '/?s={search_term_string}',
             ],
             'query-input' => 'required name=search_term_string',
         ],
