@@ -8,10 +8,11 @@
  * - Person（代表者）スキーマを追加し、E-E-A-TとAI検索対策を強化
  * - 全サービスページに FAQPage を追加
  * - 固定ページ・サービスページ: ページスラッグで判定して固定JSON-LDを出力
- * - コラム詳細 (single-column): 投稿データから動的に Article スキーマを生成
+ * - ニュース一覧・コラムカテゴリ: CollectionPage / BreadcrumbList を動的生成
+ * - コラム詳細 (single-column): 投稿データから動的に BlogPosting スキーマを生成
+ * - ニュース詳細 (single-news): 投稿データから動的に Article スキーマを生成
  * - お客様の声詳細 (single-voice): BreadcrumbList のみ動的生成
  * - 実績詳細 (single-works): BreadcrumbList のみ動的生成
- * - ニュース詳細 (single-news): BreadcrumbList のみ動的生成
  */
 
 add_action( 'wp_head', 'selfachieve_output_schema', 5 );
@@ -29,6 +30,8 @@ function selfachieve_get_schema() {
     $site_id = 'https://selfachieve.jp/#website';
     $founder_id = 'https://selfachieve.jp/#founder';
     $today = '2026-06-20';
+    $default_image = $base . '/wp-content/themes/selfachieve-theme/assets/ogp-default.jpg';
+    $publisher_logo = $base . '/wp-content/themes/selfachieve-theme/assets/logo_color.png';
 
     // 共通エンティティ
     $founder = [
@@ -104,6 +107,66 @@ function selfachieve_get_schema() {
                 'urlTemplate' => $base . '/?s={search_term_string}',
             ],
             'query-input' => 'required name=search_term_string',
+        ],
+    ];
+
+    $publisher = [
+        '@type' => 'Organization',
+        '@id'   => $org_id,
+        'name'  => 'セルフアチーブ',
+        'logo'  => [
+            '@type' => 'ImageObject',
+            'url'   => $publisher_logo,
+        ],
+    ];
+
+    $make_post_description = function( $post ) {
+        if ( has_excerpt( $post ) ) {
+            return wp_strip_all_tags( get_the_excerpt( $post ) );
+        }
+
+        return wp_trim_words( strip_shortcodes( wp_strip_all_tags( $post->post_content ) ), 120, '...' );
+    };
+
+    $make_post_image = function( $post_id ) use ( $default_image ) {
+        return has_post_thumbnail( $post_id ) ? get_the_post_thumbnail_url( $post_id, 'full' ) : $default_image;
+    };
+
+    $column_cat_schema_map = [
+        'seo' => [
+            'name'  => 'SEO対策コラム',
+            'about' => 'SEO対策',
+            'desc'  => 'SEO対策の基礎、キーワード選定、内部対策、コンテンツ改善、業種別SEOなど、検索順位とWeb集客改善に役立つ実践情報を発信しています。',
+        ],
+        'meo' => [
+            'name'  => 'MEO対策コラム',
+            'about' => 'MEO対策',
+            'desc'  => 'MEO対策、Googleビジネスプロフィール、口コミ対策、地域集客など、店舗・クリニックのGoogleマップ集客に役立つ実践情報を発信しています。',
+        ],
+        'listing' => [
+            'name'  => 'リスティング広告コラム',
+            'about' => 'リスティング広告',
+            'desc'  => 'Google広告・Yahoo!広告などリスティング広告運用に関するコラム。キーワード設計、広告文改善、予算設計、費用対効果改善の実践情報を発信しています。',
+        ],
+        'sns' => [
+            'name'  => 'SNSマーケティングコラム',
+            'about' => 'SNSマーケティング',
+            'desc'  => 'Instagram、TikTok、X、YouTube、LINEなどSNS運用に関するコラム。企業アカウントの集客、投稿改善、広告活用の実践情報を発信しています。',
+        ],
+        'webdesign' => [
+            'name'  => 'ホームページ制作コラム',
+            'about' => 'ホームページ制作',
+            'desc'  => 'ホームページ制作、サイトリニューアル、SEO設計、UI/UX改善、LP改善など、集客につながるWebサイトづくりの実践情報を発信しています。',
+        ],
+        'instagram' => [
+            'name'  => 'Instagram運用コラム',
+            'about' => 'Instagram運用',
+            'desc'  => 'Instagram運用、リール活用、ハッシュタグ戦略、インスタ広告、店舗集客など、企業アカウントの成果改善に役立つ実践情報を発信しています。',
+        ],
+        'marketing' => [
+            'name'  => 'Webマーケティングコラム',
+            'about' => 'Webマーケティング',
+            'desc'  => 'Webマーケティング、集客戦略、SEO、広告運用、SNS活用など、売上・問い合わせ増加につながる実践的な情報を発信しています。',
         ],
     ];
 
@@ -583,16 +646,97 @@ function selfachieve_get_schema() {
     }
 
     // ─────────────────────────────────────────
+    // ニュース一覧 (archive-news)
+    // ─────────────────────────────────────────
+    if ( is_post_type_archive( 'news' ) ) {
+        $url = $base . '/news/';
+        $name = 'お知らせ・最新情報';
+        $desc = 'セルフアチーブの最新情報、営業日、サービスに関するお知らせを掲載しています。Webマーケティング支援やサイト更新情報はこちらをご確認ください。';
+
+        return [
+            '@context' => 'https://schema.org',
+            '@graph'   => [
+                [
+                    '@type'       => 'CollectionPage',
+                    '@id'         => $url . '#webpage',
+                    'name'        => $name,
+                    'url'         => $url,
+                    'description' => $desc,
+                    'isPartOf'    => [ '@id' => $website['@id'] ],
+                    'breadcrumb'  => [ '@id' => $url . '#breadcrumb' ],
+                    'inLanguage'  => 'ja',
+                ],
+                [
+                    '@type'           => 'BreadcrumbList',
+                    '@id'             => $url . '#breadcrumb',
+                    'itemListElement' => [
+                        [ '@type' => 'ListItem', 'position' => 1, 'name' => 'TOP', 'item' => $base . '/' ],
+                        [ '@type' => 'ListItem', 'position' => 2, 'name' => 'お知らせ', 'item' => $url ],
+                    ],
+                ],
+            ],
+        ];
+    }
+
+    // ─────────────────────────────────────────
+    // コラムカテゴリ (taxonomy-column_cat)
+    // ─────────────────────────────────────────
+    if ( is_tax( 'column_cat' ) ) {
+        $term = get_queried_object();
+        if ( $term && ! is_wp_error( $term ) && isset( $column_cat_schema_map[ $term->slug ] ) ) {
+            $meta = $column_cat_schema_map[ $term->slug ];
+            $url = get_term_link( $term );
+
+            return [
+                '@context' => 'https://schema.org',
+                '@graph'   => [
+                    [
+                        '@type'       => 'CollectionPage',
+                        '@id'         => $url . '#webpage',
+                        'name'        => $meta['name'],
+                        'url'         => $url,
+                        'description' => $meta['desc'],
+                        'about'       => [
+                            '@type' => 'Thing',
+                            'name'  => $meta['about'],
+                        ],
+                        'isPartOf'    => [ '@id' => $website['@id'] ],
+                        'breadcrumb'  => [ '@id' => $url . '#breadcrumb' ],
+                        'inLanguage'  => 'ja',
+                    ],
+                    [
+                        '@type'           => 'BreadcrumbList',
+                        '@id'             => $url . '#breadcrumb',
+                        'itemListElement' => [
+                            [ '@type' => 'ListItem', 'position' => 1, 'name' => 'TOP', 'item' => $base . '/' ],
+                            [ '@type' => 'ListItem', 'position' => 2, 'name' => 'コラム', 'item' => $base . '/column/' ],
+                            [ '@type' => 'ListItem', 'position' => 3, 'name' => $meta['about'], 'item' => $url ],
+                        ],
+                    ],
+                ],
+            ];
+        }
+    }
+
+    // ─────────────────────────────────────────
     // コラム詳細 (single-column)
     // ─────────────────────────────────────────
     if ( is_singular( 'column' ) ) {
         global $post;
         $url = get_permalink();
         $title = get_the_title();
-        $desc = wp_trim_words( strip_shortcodes( wp_strip_all_tags( $post->post_content ) ), 120, '...' );
-        $thumb_url = has_post_thumbnail() ? get_the_post_thumbnail_url( $post->ID, 'full' ) : $base . '/wp-content/uploads/2026/05/default_ogp.png';
+        $desc = $make_post_description( $post );
+        $thumb_url = $make_post_image( $post->ID );
         $pub_date = get_the_time( 'c' );
         $mod_date = get_the_modified_time( 'c' );
+        $author_name = get_post_meta( $post->ID, '_column_author_name', true );
+        if ( ! $author_name ) {
+            $author_name = 'セルフアチーブ編集部';
+        }
+        $cats = get_the_terms( $post->ID, 'column_cat' );
+        $cat = ( $cats && ! is_wp_error( $cats ) ) ? $cats[0] : null;
+        $cat_name = $cat ? $cat->name : 'コラム';
+        $cat_url = $cat ? get_term_link( $cat ) : $base . '/column/';
 
         return [
             '@context' => 'https://schema.org',
@@ -601,10 +745,58 @@ function selfachieve_get_schema() {
                     '@type'           => 'BreadcrumbList',
                     '@id'             => $url . '#breadcrumb',
                     'itemListElement' => [
-                        [ '@type' => 'ListItem', 'position' => 1, 'name' => 'ホーム', 'item' => $base . '/' ],
+                        [ '@type' => 'ListItem', 'position' => 1, 'name' => 'TOP', 'item' => $base . '/' ],
                         [ '@type' => 'ListItem', 'position' => 2, 'name' => 'コラム', 'item' => $base . '/column/' ],
-                        [ '@type' => 'ListItem', 'position' => 3, 'name' => $title, 'item' => $url ]
+                        [ '@type' => 'ListItem', 'position' => 3, 'name' => $cat_name, 'item' => $cat_url ],
+                        [ '@type' => 'ListItem', 'position' => 4, 'name' => $title, 'item' => $url ],
                     ]
+                ],
+                [
+                    '@type'         => 'BlogPosting',
+                    '@id'           => $url . '#article',
+                    'url'           => $url,
+                    'headline'      => $title,
+                    'description'   => $desc,
+                    'image'         => $thumb_url,
+                    'datePublished' => $pub_date,
+                    'dateModified'  => $mod_date,
+                    'author'        => [
+                        '@type' => 'Person',
+                        'name'  => $author_name,
+                    ],
+                    'publisher'     => $publisher,
+                    'mainEntityOfPage' => [ '@type' => 'WebPage', '@id' => $url ],
+                    'articleSection' => $cat_name,
+                    'about'          => [
+                        '@type' => 'Thing',
+                        'name'  => $cat_name,
+                    ],
+                ]
+            ]
+        ];
+    }
+
+    // ─────────────────────────────────────────
+    // ニュース詳細 (single-news)
+    // ─────────────────────────────────────────
+    if ( is_singular( 'news' ) ) {
+        global $post;
+        $url = get_permalink();
+        $title = get_the_title();
+        $desc = $make_post_description( $post );
+        $thumb_url = $make_post_image( $post->ID );
+
+        return [
+            '@context' => 'https://schema.org',
+            '@graph'   => [
+                [
+                    '@type'           => 'BreadcrumbList',
+                    '@id'             => $url . '#breadcrumb',
+                    'itemListElement' => [
+                        [ '@type' => 'ListItem', 'position' => 1, 'name' => 'TOP', 'item' => $base . '/' ],
+                        [ '@type' => 'ListItem', 'position' => 2, 'name' => 'お知らせ', 'item' => $base . '/news/' ],
+                        [ '@type' => 'ListItem', 'position' => 3, 'name' => $title, 'item' => $url ],
+                    ],
                 ],
                 [
                     '@type'         => 'Article',
@@ -612,21 +804,24 @@ function selfachieve_get_schema() {
                     'url'           => $url,
                     'headline'      => $title,
                     'description'   => $desc,
-                    'image'         => [ '@type' => 'ImageObject', 'url' => $thumb_url ],
-                    'datePublished' => $pub_date,
-                    'dateModified'  => $mod_date,
-                    'author'        => [ '@id' => $founder_id ],
-                    'publisher'     => [ '@id' => $org_id ],
-                    'mainEntityOfPage' => [ '@type' => 'WebPage', '@id' => $url ]
-                ]
-            ]
+                    'image'         => $thumb_url,
+                    'datePublished' => get_the_time( 'c' ),
+                    'dateModified'  => get_the_modified_time( 'c' ),
+                    'author'        => [
+                        '@type' => 'Organization',
+                        'name'  => 'セルフアチーブ',
+                    ],
+                    'publisher'     => $publisher,
+                    'mainEntityOfPage' => [ '@type' => 'WebPage', '@id' => $url ],
+                ],
+            ],
         ];
     }
 
     // ─────────────────────────────────────────
     // その他の詳細ページ (BreadcrumbListのみ)
     // ─────────────────────────────────────────
-    if ( is_singular( 'voice' ) || is_singular( 'works' ) || is_singular( 'news' ) ) {
+    if ( is_singular( 'voice' ) || is_singular( 'works' ) ) {
         $url = get_permalink();
         $title = get_the_title();
         $post_type = get_post_type();
