@@ -819,39 +819,87 @@ function selfachieve_get_schema() {
     }
 
     // ─────────────────────────────────────────
-    // その他の詳細ページ (BreadcrumbListのみ)
+    // お客様の声詳細・制作実績詳細
     // ─────────────────────────────────────────
     if ( is_singular( 'voice' ) || is_singular( 'works' ) ) {
-        $url = get_permalink();
-        $title = get_the_title();
-        $post_type = get_post_type();
-        
-        $parent_name = '';
-        $parent_url = '';
-        if ( $post_type === 'voice' ) {
-            $parent_name = 'お客さまの声';
-            $parent_url = $base . '/voice/';
-        } elseif ( $post_type === 'works' ) {
-            $parent_name = '制作実績';
-            $parent_url = $base . '/works/';
-        } elseif ( $post_type === 'news' ) {
-            $parent_name = 'お知らせ';
-            $parent_url = $base . '/news/';
+        $meta = function_exists( 'selfachieve_singular_case_seo_meta' ) ? selfachieve_singular_case_seo_meta() : null;
+        if ( ! $meta ) {
+            return [];
+        }
+
+        $url = $meta['url'];
+        $parent_name = 'voice' === $meta['type'] ? 'お客様の声' : '制作実績';
+        $parent_url = 'voice' === $meta['type'] ? $base . '/voice/' : $base . '/works/';
+        $page_type = 'voice' === $meta['type'] ? 'Article' : 'CreativeWork';
+        $about_name = 'voice' === $meta['type'] ? 'お客様の声' : 'Web集客支援・制作実績';
+
+        $graph = [
+            [
+                '@type'           => 'BreadcrumbList',
+                '@id'             => $url . '#breadcrumb',
+                'itemListElement' => [
+                    [ '@type' => 'ListItem', 'position' => 1, 'name' => 'TOP', 'item' => $base . '/' ],
+                    [ '@type' => 'ListItem', 'position' => 2, 'name' => $parent_name, 'item' => $parent_url ],
+                    [ '@type' => 'ListItem', 'position' => 3, 'name' => $meta['name'], 'item' => $url ],
+                ],
+            ],
+            [
+                '@type'       => 'WebPage',
+                '@id'         => $url . '#webpage',
+                'url'         => $url,
+                'name'        => $meta['title'],
+                'description' => $meta['description'],
+                'isPartOf'    => [ '@id' => $website['@id'] ],
+                'breadcrumb'  => [ '@id' => $url . '#breadcrumb' ],
+                'inLanguage'  => 'ja',
+            ],
+        ];
+
+        if ( 'voice' === $meta['type'] ) {
+            $graph[] = [
+                '@type'            => $page_type,
+                '@id'              => $url . '#article',
+                'headline'         => $meta['name'] . '｜お客様の声',
+                'description'      => $meta['description'],
+                'url'              => $url,
+                'mainEntityOfPage' => [
+                    '@type' => 'WebPage',
+                    '@id'   => $url,
+                ],
+                'author'           => [
+                    '@type' => 'Organization',
+                    'name'  => 'セルフアチーブ',
+                ],
+                'publisher'        => $publisher,
+                'image'            => $meta['image'],
+                'datePublished'    => get_the_time( 'c' ),
+                'dateModified'     => get_the_modified_time( 'c' ),
+                'about'            => [
+                    '@type' => 'Thing',
+                    'name'  => $about_name,
+                ],
+            ];
+        } else {
+            $graph[] = [
+                '@type'        => $page_type,
+                '@id'          => $url . '#creativework',
+                'name'         => $meta['name'] . '様｜制作実績',
+                'description'  => $meta['description'],
+                'url'          => $url,
+                'image'        => $meta['image'],
+                'creator'      => $publisher,
+                'datePublished'=> get_the_time( 'c' ),
+                'dateModified' => get_the_modified_time( 'c' ),
+                'about'        => [
+                    '@type' => 'Thing',
+                    'name'  => $about_name,
+                ],
+            ];
         }
 
         return [
             '@context' => 'https://schema.org',
-            '@graph'   => [
-                [
-                    '@type'           => 'BreadcrumbList',
-                    '@id'             => $url . '#breadcrumb',
-                    'itemListElement' => [
-                        [ '@type' => 'ListItem', 'position' => 1, 'name' => 'ホーム', 'item' => $base . '/' ],
-                        [ '@type' => 'ListItem', 'position' => 2, 'name' => $parent_name, 'item' => $parent_url ],
-                        [ '@type' => 'ListItem', 'position' => 3, 'name' => $title, 'item' => $url ]
-                    ]
-                ]
-            ]
+            '@graph'   => $graph,
         ];
     }
 

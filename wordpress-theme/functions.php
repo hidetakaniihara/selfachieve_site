@@ -726,6 +726,124 @@ function selfachieve_news_archive_twitter_tags( $tags ) {
 }
 add_filter( 'aioseo_twitter_tags', 'selfachieve_news_archive_twitter_tags', 21 );
 
+// ============================================================
+// お客様の声詳細・制作実績詳細 SEO メタ情報
+// ============================================================
+function selfachieve_seo_clean_entity_name( $name ) {
+    $name = trim( wp_strip_all_tags( (string) $name ) );
+    $name = preg_replace( '/\s+/u', ' ', $name );
+    $name = preg_replace( '/\s*(様|さま)\s*$/u', '', $name );
+    return trim( $name );
+}
+
+function selfachieve_singular_case_seo_meta() {
+    if ( ! is_singular( [ 'voice', 'works' ] ) ) {
+        return null;
+    }
+
+    $post_id = get_the_ID();
+    $post_type = get_post_type( $post_id );
+    $url = get_permalink( $post_id );
+    $default_ogp = get_template_directory_uri() . '/assets/ogp-default.jpg';
+    $image = has_post_thumbnail( $post_id ) ? get_the_post_thumbnail_url( $post_id, 'full' ) : $default_ogp;
+
+    if ( 'voice' === $post_type ) {
+        $name = selfachieve_seo_clean_entity_name( get_post_meta( $post_id, '_voice_company', true ) ?: get_the_title( $post_id ) );
+        $industry = trim( (string) get_post_meta( $post_id, '_voice_industry', true ) );
+        $service = trim( (string) get_post_meta( $post_id, '_voice_service_tag', true ) );
+        $title = $name . '｜お客様の声｜神戸・兵庫のWebマーケティング会社 セルフアチーブ';
+
+        if ( $industry && $service ) {
+            $description = $name . 'さまからセルフアチーブへの評価をご紹介しています。' . $industry . 'の' . $service . 'を通じたWeb集客支援に関するお客様の声です。';
+        } else {
+            $description = $name . 'さまからセルフアチーブへの評価をご紹介しています。Web戦略設計、SEO対策、広告運用、ホームページ制作、SNS運用など、Web集客支援に関するお客様の声です。';
+        }
+
+        return [
+            'type'        => 'voice',
+            'name'        => $name,
+            'title'       => $title,
+            'description' => $description,
+            'url'         => $url,
+            'image'       => $image,
+        ];
+    }
+
+    if ( 'works' === $post_type ) {
+        $name = selfachieve_seo_clean_entity_name( get_post_meta( $post_id, '_works_client', true ) ?: get_the_title( $post_id ) );
+        $service = trim( (string) get_post_meta( $post_id, '_works_service', true ) );
+        $title = $name . '様｜制作実績｜神戸・兵庫のWebマーケティング会社 セルフアチーブ';
+
+        if ( $service ) {
+            $description = $name . 'さまの' . $service . 'の制作実績をご紹介しています。セルフアチーブのWeb集客支援内容をご覧ください。';
+        } else {
+            $description = $name . 'さまのWeb集客支援・制作実績をご紹介しています。セルフアチーブが行ったWeb戦略設計、SEO対策、広告運用、ホームページ制作、SNS運用などの支援内容をご覧ください。';
+        }
+
+        return [
+            'type'        => 'works',
+            'name'        => $name,
+            'title'       => $title,
+            'description' => $description,
+            'url'         => $url,
+            'image'       => $image,
+        ];
+    }
+
+    return null;
+}
+
+function selfachieve_singular_case_document_title( $title ) {
+    $meta = selfachieve_singular_case_seo_meta();
+    return $meta ? $meta['title'] : $title;
+}
+add_filter( 'pre_get_document_title', 'selfachieve_singular_case_document_title', 22 );
+add_filter( 'aioseo_title', 'selfachieve_singular_case_document_title', 22 );
+
+function selfachieve_singular_case_description( $description ) {
+    $meta = selfachieve_singular_case_seo_meta();
+    return $meta ? $meta['description'] : $description;
+}
+add_filter( 'aioseo_description', 'selfachieve_singular_case_description', 22 );
+
+function selfachieve_singular_case_canonical( $canonical ) {
+    $meta = selfachieve_singular_case_seo_meta();
+    return $meta ? $meta['url'] : $canonical;
+}
+add_filter( 'aioseo_canonical_url', 'selfachieve_singular_case_canonical', 22 );
+
+function selfachieve_singular_case_facebook_tags( $tags ) {
+    $meta = selfachieve_singular_case_seo_meta();
+    if ( ! $meta || ! is_array( $tags ) ) {
+        return $tags;
+    }
+
+    $tags['og:type']        = 'article';
+    $tags['og:title']       = $meta['title'];
+    $tags['og:description'] = $meta['description'];
+    $tags['og:url']         = $meta['url'];
+    $tags['og:site_name']   = 'セルフアチーブ';
+    $tags['og:image']       = $meta['image'];
+
+    return $tags;
+}
+add_filter( 'aioseo_facebook_tags', 'selfachieve_singular_case_facebook_tags', 22 );
+
+function selfachieve_singular_case_twitter_tags( $tags ) {
+    $meta = selfachieve_singular_case_seo_meta();
+    if ( ! $meta || ! is_array( $tags ) ) {
+        return $tags;
+    }
+
+    $tags['twitter:card']        = 'summary_large_image';
+    $tags['twitter:title']       = $meta['title'];
+    $tags['twitter:description'] = $meta['description'];
+    $tags['twitter:image']       = $meta['image'];
+
+    return $tags;
+}
+add_filter( 'aioseo_twitter_tags', 'selfachieve_singular_case_twitter_tags', 22 );
+
 
 // ============================================================
 // OGP og:image フォールバック（アイキャッチ未設定時にデフォルト画像を使用）
